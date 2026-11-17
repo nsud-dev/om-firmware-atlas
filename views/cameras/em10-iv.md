@@ -4,23 +4,50 @@
 
 E140: port/signature research and emulator coverage; no physical feature report imported.
 
-**Model codes:** E140. **Catalogue depth:** discovery only.
+**Model code:** E140 · **Also known as:** E-M10 IV, E-M10 Mark IV, EM10IV · **Catalogue depth:** discovery only
+{ .facts }
 
-Aliases: E-M10 IV, E-M10 Mark IV, EM10IV, E140.
+## Projects for this camera
 
-## Projects
+<div class="project-grid" markdown="1">
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md), [OM-Emu](../projects/om-emu.md).
+<div class="project-card" markdown="1">
 
-## Firmware inputs
+[Caduceus for E-P7](../projects/caduceus-ep7.md){ .card-title }
 
-None catalogued.
+E-P7 modifications and shared-panel/port research.
+
+[Project home](https://github.com/cakelesscoder/caduceus-ep7) · [Ask or report issues](https://github.com/cakelesscoder/caduceus-ep7/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[OM-Emu](../projects/om-emu.md){ .card-title }
+
+Firmware lab, model ports, traces and patch overlays.
+
+[Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
+{ .card-links }
+
+</div>
+
+</div>
+
+Install and support instructions belong to each project. Follow its documentation for this exact camera.
 
 ## Features and observations
 
 No feature-level assertion is catalogued yet. This is a coverage gap, not a finding that modifications are impossible.
 
-Results belong to the named project and package. Emulator output does not establish physical-camera behaviour. Follow upstream installation/support documentation for that exact target.
+## Where to talk
+
+[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
+
+## Firmware
+
+None catalogued.
 
 ## Sources and record
 

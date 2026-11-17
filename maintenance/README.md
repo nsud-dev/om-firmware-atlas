@@ -15,7 +15,7 @@ python scripts/atlas.py route --job research --camera om5-ii --topic emulation
 python scripts/atlas.py freshness --fetch
 ```
 
-`check` validates schemas, identity/reference semantics, dependencies, local links, generated drift and fixed routing cases. `build` validates and builds MkDocs strictly from an ignored staging tree. `generate` writes only Atlas-owned `views/` and `agents/routes/`; do not edit those files manually. Costs are UTF-8 bytes and `ceil(bytes / 4)` approximate tokens, not measured model usage.
+`check` validates schemas, identity/reference semantics, dependencies, local links, generated drift and fixed routing cases. `build` validates and builds MkDocs strictly from an ignored staging tree; it also fills the camera and guide lists in the site navigation from records ([decision 0004](decisions/0004-journey-navigation.md)). `generate` writes only Atlas-owned `views/` and `agents/routes/`; do not edit those files manually. Costs are UTF-8 bytes and `ceil(bytes / 4)` approximate tokens, not measured model usage.
 
 Read [record format](record-format.md) for canonical data and [the implementation plan](plan.md) for scope and remaining improvements. [Decisions](decisions/0001-foundation.md) record why the library is built this way.
 

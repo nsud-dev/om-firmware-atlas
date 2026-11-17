@@ -8,4 +8,9 @@ The initial material is a bounded synthesis of public sources examined on 17 Nov
 
 Original Atlas contributions use the repository's [Apache-2.0 licence](../LICENSE). Third-party works remain under their own terms. No affiliation with Olympus or OM Digital Solutions is implied.
 
-[Source repository](https://github.com/xulfr/om-firmware-atlas) · [Contribution guide](contribute.md) · [Community](../views/community/index.md)
+## Read next
+
+- [Reading the evidence](evidence.md): what a release, an emulator run and a camera report each establish.
+- [How it works](how-it-works.md): records, checks, review and publication.
+- [Get involved](contribute.md): talk, report a result or add a source.
+- [Source repository](https://github.com/xulfr/om-firmware-atlas)

@@ -2,6 +2,8 @@
 
 # Projects
 
+Independent projects, each with its own home, maintainers and support route. A listing does not imply endorsement or that a project works on every camera it mentions.
+
 | Entry | What you will find |
 |---|---|
 | [Caduceus for E-P7](caduceus-ep7.md) | E-P7 modifications and shared-panel/port research. |

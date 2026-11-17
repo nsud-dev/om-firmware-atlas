@@ -2,6 +2,8 @@
 
 # Sources
 
+Every source the Atlas cites, with its revision and when it was last checked.
+
 | Entry | What you will find |
 |---|---|
 | [r/M43 community page](community.m43.md) | Public photography venue; Caduceus relevance supplied by the Atlas maintainer. |

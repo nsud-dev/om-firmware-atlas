@@ -4,17 +4,82 @@
 
 E147: advanced Caduceus work, other modifications and an established research notebook.
 
-**Model codes:** E147. **Catalogue depth:** initial review.
+**Model code:** E147 · **Also known as:** OM-3, OM3 · **Catalogue depth:** initial review
+{ .facts }
 
-Aliases: OM-3, OM3, E147.
+## Projects for this camera
 
-## Projects
+<div class="project-grid" markdown="1">
 
-[Caduceus for OM-3](../projects/caduceus-om3.md), [db firmware / om-c-firmware](../projects/db-firmware.md), [Olympus firmware research](../projects/oly-fw-analysis.md), [OM-Emu](../projects/om-emu.md), [OM-3 downstream experiments](../projects/camera-stuff.md), [Historical manual update research](../projects/manual-update.md).
+<div class="project-card" markdown="1">
 
-## Firmware inputs
+[Caduceus for OM-3](../projects/caduceus-om3.md){ .card-title }
 
-[om3 firmware 1.1, build 1100](../firmware/om3-1100.md).
+OM-3 looks, colour editing, persistence and research.
+
+[Project home](https://github.com/androidfanman/caduceus-om3) · [Ask or report issues](https://github.com/androidfanman/caduceus-om3/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[db firmware / om-c-firmware](../projects/db-firmware.md){ .card-title }
+
+Release-centred controls, localisation and other modifications.
+
+[Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[Olympus firmware research](../projects/oly-fw-analysis.md){ .card-title }
+
+Foundational firmware work with deep PEN-F coverage.
+
+[Project home](https://github.com/fishcu/oly_fw_analysis) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[OM-Emu](../projects/om-emu.md){ .card-title }
+
+Firmware lab, model ports, traces and patch overlays.
+
+[Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[OM-3 downstream experiments](../projects/camera-stuff.md){ .card-title }
+
+Downstream experiments intended to send fixes upstream.
+
+[Project home](https://github.com/fernandezk26/camera-stuff) · [Ask or report issues](https://github.com/fernandezk26/camera-stuff/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[Historical manual update research](../projects/manual-update.md){ .card-title }
+
+Historical SD update procedure and model naming.
+
+[Project home](https://github.com/iKenndac/om-1-manual-firmware-install) · [Ask or report issues](https://github.com/iKenndac/om-1-manual-firmware-install/issues)
+{ .card-links }
+
+</div>
+
+</div>
+
+Install and support instructions belong to each project. Follow its documentation for this exact camera.
 
 ## Features and observations
 
@@ -22,7 +87,15 @@ Aliases: OM-3, OM3, E147.
 |---|---|---|---|
 | [OM-3 HSL editor](../capabilities/om3-hsl.md) | [Caduceus for OM-3](../projects/caduceus-om3.md) / v0.30.3 | published release | Upstream description; no separate test observation catalogued |
 
-Results belong to the named project and package. Emulator output does not establish physical-camera behaviour. Follow upstream installation/support documentation for that exact target.
+Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
+
+## Where to talk
+
+[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
+
+## Firmware
+
+[om3 firmware 1.1, build 1100](../firmware/om3-1100.md).
 
 ## Sources and record
 

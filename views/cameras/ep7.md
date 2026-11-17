@@ -4,17 +4,60 @@
 
 E142: original Caduceus project and a documented Ghidra/REA setup.
 
-**Model codes:** E142. **Catalogue depth:** initial review.
+**Model code:** E142 · **Also known as:** E-P7, EP7, PEN E-P7 · **Catalogue depth:** initial review
+{ .facts }
 
-Aliases: E-P7, EP7, PEN E-P7, E142.
+## Projects for this camera
 
-## Projects
+<div class="project-grid" markdown="1">
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md), [db firmware / om-c-firmware](../projects/db-firmware.md), [Olympus firmware research](../projects/oly-fw-analysis.md), [OM-Emu](../projects/om-emu.md).
+<div class="project-card" markdown="1">
 
-## Firmware inputs
+[Caduceus for E-P7](../projects/caduceus-ep7.md){ .card-title }
 
-[ep7 firmware 1.1, build 1100](../firmware/ep7-1100.md).
+E-P7 modifications and shared-panel/port research.
+
+[Project home](https://github.com/cakelesscoder/caduceus-ep7) · [Ask or report issues](https://github.com/cakelesscoder/caduceus-ep7/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[db firmware / om-c-firmware](../projects/db-firmware.md){ .card-title }
+
+Release-centred controls, localisation and other modifications.
+
+[Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[Olympus firmware research](../projects/oly-fw-analysis.md){ .card-title }
+
+Foundational firmware work with deep PEN-F coverage.
+
+[Project home](https://github.com/fishcu/oly_fw_analysis) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[OM-Emu](../projects/om-emu.md){ .card-title }
+
+Firmware lab, model ports, traces and patch overlays.
+
+[Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
+{ .card-links }
+
+</div>
+
+</div>
+
+Install and support instructions belong to each project. Follow its documentation for this exact camera.
 
 ## Features and observations
 
@@ -22,7 +65,15 @@ Aliases: E-P7, EP7, PEN E-P7, E142.
 |---|---|---|---|
 | [E-P7 HSLFX](../capabilities/ep7-hsl.md) | [Caduceus for E-P7](../projects/caduceus-ep7.md) / v0.34a | published release | Upstream description; no separate test observation catalogued |
 
-Results belong to the named project and package. Emulator output does not establish physical-camera behaviour. Follow upstream installation/support documentation for that exact target.
+Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
+
+## Where to talk
+
+[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
+
+## Firmware
+
+[ep7 firmware 1.1, build 1100](../firmware/ep7-1100.md).
 
 ## Sources and record
 

@@ -2,13 +2,107 @@
 
 # Cameras
 
-Choose the exact model and generation. A listing is a research starting point, not a compatibility claim. The initial catalogue is not exhaustive.
+Choose your exact model and generation. A listing is a research starting point, not a compatibility claim. The catalogue is not exhaustive.
 
-| Entry | What you will find |
-|---|---|
-| [Olympus OM-D E-M10 Mark IV](em10-iv.md) | E140: port/signature research and emulator coverage; no physical feature report imported. |
-| [Olympus PEN E-P7](ep7.md) | E142: original Caduceus project and a documented Ghidra/REA setup. |
-| [OM SYSTEM OM-3](om3.md) | E147: advanced Caduceus work, other modifications and an established research notebook. |
-| [OM SYSTEM OM-5](om5.md) | Original E144: several projects have distinct experiments. Mark II results do not apply. |
-| [OM SYSTEM OM-5 Mark II](om5-ii.md) | E148: alpha12 has an incomplete positive owner report; original OM-5 work is separate. |
-| [Olympus PEN-F](pen-f.md) | E122: foundational HSL research; exact internal build identity matters. |
+## OM SYSTEM
+
+<div class="camera-grid" markdown="1">
+
+<div class="camera-card" markdown="1">
+
+[OM-3](om3.md){ .card-title }
+
+E147
+{ .model-code }
+
+E147: advanced Caduceus work, other modifications and an established research notebook.
+
+6 projects · 1 feature catalogued
+{ .card-meta }
+
+</div>
+
+<div class="camera-card" markdown="1">
+
+[OM-5](om5.md){ .card-title }
+
+E144
+{ .model-code }
+
+Original E144: several projects have distinct experiments. Mark II results do not apply.
+
+5 projects · 3 features catalogued
+{ .card-meta }
+
+</div>
+
+<div class="camera-card" markdown="1">
+
+[OM-5 Mark II](om5-ii.md){ .card-title }
+
+E148
+{ .model-code }
+
+E148: alpha12 has an incomplete positive owner report; original OM-5 work is separate.
+
+3 projects · 3 features catalogued
+{ .card-meta }
+
+</div>
+
+</div>
+
+## Olympus OM-D
+
+<div class="camera-grid" markdown="1">
+
+<div class="camera-card" markdown="1">
+
+[OM-D E-M10 Mark IV](em10-iv.md){ .card-title }
+
+E140
+{ .model-code }
+
+E140: port/signature research and emulator coverage; no physical feature report imported.
+
+2 projects · 0 features catalogued · discovery only
+{ .card-meta }
+
+</div>
+
+</div>
+
+## Olympus PEN
+
+<div class="camera-grid" markdown="1">
+
+<div class="camera-card" markdown="1">
+
+[PEN E-P7](ep7.md){ .card-title }
+
+E142
+{ .model-code }
+
+E142: original Caduceus project and a documented Ghidra/REA setup.
+
+4 projects · 1 feature catalogued
+{ .card-meta }
+
+</div>
+
+<div class="camera-card" markdown="1">
+
+[PEN-F](pen-f.md){ .card-title }
+
+E122
+{ .model-code }
+
+E122: foundational HSL research; exact internal build identity matters.
+
+3 projects · 1 feature catalogued
+{ .card-meta }
+
+</div>
+
+</div>
+

@@ -1,16 +1,44 @@
 {#- The Atlas page shell. It replaces the stock MkDocs/Bootstrap layout entirely; styles live in docs/assets/atlas.css,
-    behaviour in docs/assets/atlas.js. Page content still comes from the staged Markdown. -#}
-{%- set section_names = {
-  'views/cameras/': 'Cameras', 'views/projects/': 'Projects', 'views/firmware/': 'Firmware',
-  'views/capabilities/': 'Features & observations', 'views/evidence/': 'Evidence', 'views/sources/': 'Sources',
-  'views/community/': 'Community', 'knowledge/': 'Knowledge'
+    behaviour in docs/assets/atlas.js. Page content still comes from the staged Markdown.
+    Navigation: four journey sections from mkdocs.yml (expanded at build time by scripts/atlas.py expand_nav).
+    Generated record pages outside the nav join a section, and highlight their directory, through their URL. -#}
+{%- set homes = {
+  'views/cameras/': ['Cameras', 'views/cameras/'],
+  'views/projects/': ['Research', 'views/projects/'], 'views/firmware/': ['Research', 'views/firmware/'],
+  'views/capabilities/': ['Research', 'views/capabilities/'], 'views/evidence/': ['Research', 'views/evidence/'],
+  'views/sources/': ['Research', 'views/sources/'], 'knowledge/': ['Research', none],
+  'views/community/': ['Get involved', 'views/community/']
 } -%}
-{%- set ns = namespace(section=none) -%}
-{%- if page and page.url -%}
-  {%- for prefix, name in section_names.items() -%}
-    {%- if page.url.startswith(prefix) and not ns.section -%}{%- set ns.section = name -%}{%- endif -%}
+{%- set ns = namespace(section=none, parent=none, parent_title=none, item=none, top=none) -%}
+{%- for item in nav -%}
+  {%- if item.active and not item.is_homepage -%}{%- set ns.section = item.title -%}{%- endif -%}
+{%- endfor -%}
+{%- if page and page.url and not ns.section -%}
+  {%- for prefix, home in homes.items() -%}
+    {%- if page.url.startswith(prefix) and not ns.section -%}{%- set ns.section = home[0] -%}{%- set ns.parent = home[1] -%}{%- endif -%}
   {%- endfor -%}
 {%- endif -%}
+{%- for item in nav -%}
+  {%- if item.title == ns.section and item.children -%}{%- set ns.item = item -%}{%- endif -%}
+  {%- for a in item.children or [] -%}
+    {%- if ns.parent and a.url == ns.parent -%}{%- set ns.parent_title = a.title -%}{%- endif -%}
+    {%- for b in a.children or [] -%}
+      {%- if ns.parent and b.url == ns.parent -%}{%- set ns.parent_title = b.title -%}{%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- macro first_url(item) -%}{%- if item.children -%}{{ first_url(item.children[0]) }}{%- else -%}{{ item.url }}{%- endif -%}{%- endmacro -%}
+{%- macro side_list(items, parent) -%}
+<ul>
+{%- for c in items %}
+  {%- if c.children %}
+  <li class="side-group"><span class="side-label">{{ c.title }}</span>{{ side_list(c.children, parent) }}</li>
+  {%- else %}
+  <li><a href="{{ c.url|url }}"{% if c.active or (parent and c.url == parent) %} class="is-active" aria-current="page"{% endif %}>{{ c.title }}</a></li>
+  {%- endif %}
+{%- endfor %}
+</ul>
+{%- endmacro -%}
 {%- set is_home = page and page.is_homepage -%}
 <!DOCTYPE html>
 <html lang="{{ config.theme.locale|default('en') }}">
@@ -52,12 +80,8 @@
       <nav class="primary-nav" id="primary-nav" aria-label="Primary">
         <ul>
         {%- for item in nav %}
-          {%- if not item.children and item.url %}
-          {%- set item_dir = item.url.rsplit('/', 1)[0] ~ '/' if '/' in item.url else '' %}
-          {%- set active = item.active or (page and item_dir and page.url.startswith(item_dir) and not item.is_homepage) %}
           {%- if not item.is_homepage %}
-          <li><a href="{{ item.url|url }}"{% if active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
-          {%- endif %}
+          <li><a href="{{ first_url(item)|trim|url }}"{% if item.title == ns.section %} class="active" aria-current="true"{% endif %}>{{ item.title }}</a></li>
           {%- endif %}
         {%- endfor %}
         </ul>
@@ -95,10 +119,26 @@
     </article>
   </main>
   {%- else %}
-  <div class="doc-shell">
+  <div class="doc-shell{% if ns.item %} has-side{% endif %}">
+    {%- if ns.item %}
+    <nav class="doc-side" aria-label="{{ ns.item.title }}">
+      <div class="side-sticky">
+        <p class="side-title">{{ ns.item.title }}</p>
+        {{ side_list(ns.item.children, ns.parent) }}
+      </div>
+    </nav>
+    {%- endif %}
     <main id="main" class="doc-main">
       {%- if ns.section %}
-      <p class="crumb"><a href="{{ nav.homepage.url|url }}">Atlas</a><span aria-hidden="true">/</span>{{ ns.section }}</p>
+      <p class="crumb"><a href="{{ nav.homepage.url|url }}">Atlas</a><span aria-hidden="true">/</span>
+        {%- if ns.item %}<a href="{{ first_url(ns.item)|trim|url }}">{{ ns.section }}</a>{% else %}{{ ns.section }}{% endif %}
+        {%- if ns.parent_title %}<span aria-hidden="true">/</span><a href="{{ ns.parent|url }}">{{ ns.parent_title }}</a>{% endif %}</p>
+      {%- endif %}
+      {%- if ns.item %}
+      <details class="side-mobile">
+        <summary>In {{ ns.item.title }}</summary>
+        {{ side_list(ns.item.children, ns.parent) }}
+      </details>
       {%- endif %}
       <article class="prose">
         {%- block content %}
@@ -106,13 +146,24 @@
         {%- endblock %}
       </article>
 
-      {%- if page and (page.previous_page or page.next_page) %}
-      <nav class="pager" aria-label="Previous and next pages">
-        {%- if page.previous_page %}
-        <a class="pager-prev" href="{{ page.previous_page.url|url }}"><small>Previous</small><span>{{ page.previous_page.title }}</span></a>
+      {#- Previous/next stay within the current section. -#}
+      {%- set pn = namespace(prev=none, next=none) %}
+      {%- if page and ns.item %}
+        {%- for candidate in [page.previous_page, page.next_page] %}
+          {%- set t = namespace(node=candidate) %}
+          {%- for _ in range(4) %}{% if t.node and t.node.parent %}{% set t.node = t.node.parent %}{% endif %}{% endfor %}
+          {%- if candidate and t.node and t.node.title == ns.section %}
+            {%- if loop.first %}{% set pn.prev = candidate %}{% else %}{% set pn.next = candidate %}{% endif %}
+          {%- endif %}
+        {%- endfor %}
+      {%- endif %}
+      {%- if pn.prev or pn.next %}
+      <nav class="pager" aria-label="Previous and next pages in {{ ns.section }}">
+        {%- if pn.prev %}
+        <a class="pager-prev" href="{{ pn.prev.url|url }}"><small>Previous</small><span>{{ pn.prev.title }}</span></a>
         {%- else %}<span></span>{%- endif %}
-        {%- if page.next_page %}
-        <a class="pager-next" href="{{ page.next_page.url|url }}"><small>Next</small><span>{{ page.next_page.title }}</span></a>
+        {%- if pn.next %}
+        <a class="pager-next" href="{{ pn.next.url|url }}"><small>Next</small><span>{{ pn.next.title }}</span></a>
         {%- endif %}
       </nav>
       {%- endif %}
@@ -149,7 +200,7 @@
         <p>{{ config.site_description }}</p>
       </div>
       <nav class="footer-links" aria-label="Footer">
-        {%- for item in nav %}{% if item.url %}<a href="{{ item.url|url }}">{{ item.title }}</a>{% endif %}{% endfor %}
+        {%- for item in nav %}{% if not item.is_homepage %}<a href="{{ first_url(item)|trim|url }}">{{ item.title }}</a>{% endif %}{% endfor %}
         {%- if config.repo_url %}<a href="{{ config.repo_url }}">{{ config.repo_name }}</a>{% endif %}
       </nav>
       {%- block footer %}{% include "footer.html" %}{% endblock %}

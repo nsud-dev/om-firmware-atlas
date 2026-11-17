@@ -2,6 +2,8 @@
 
 # Firmware
 
+Stock firmware versions that catalogued work starts from. A version number alone is not byte-exact identity.
+
 | Entry | What you will find |
 |---|---|
 | [ep7 firmware 1.1, build 1100](ep7-1100.md) | The guide separates container and runtime mappings; full digest is not imported. |
