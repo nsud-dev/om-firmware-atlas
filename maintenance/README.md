@@ -23,7 +23,7 @@ Read [record format](record-format.md) for canonical data and [the implementatio
 
 PR checks use read-only repository access. The main workflow validates, tests, builds and publishes GitHub Pages using the `github-pages` environment. The site displays its source commit and publication time. Only `main` and manual runs on `main` can publish. Scheduled freshness checks create a report artifact and rebuild the main site so age notices advance; they never change factual records.
 
-The initial setup was explicitly authorised to push to main. Normal agent contributions raise PRs; humans review and merge. Main requires a PR, passing **Atlas validation**, an up-to-date branch and resolved conversations, including for administrators. Another person's approval is not required, so maintainers can merge their own PRs after reviewing them. Force pushes and branch deletion are blocked. CODEOWNERS provides ownership and review routing without mandatory code-owner approval. Branch protection is a repository setting, not something AGENTS.md can enforce.
+The initial setup was explicitly authorised to push to main. Normal agent contributions raise PRs; humans review and merge. Agents never approve or merge. Main requires a PR, passing **Atlas validation**, an up-to-date branch and resolved conversations, including for administrators. Another person's approval is not required, so maintainers can merge their own PRs after reviewing them. Force pushes and branch deletion are blocked. CODEOWNERS provides ownership and review routing without mandatory code-owner approval. Branch protection is a repository setting, not something AGENTS.md can enforce. [How the Atlas works](../docs/how-it-works.md) explains this for contributors.
 
 ## Scope of verification
 
