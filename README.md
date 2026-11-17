@@ -29,6 +29,6 @@ python scripts/atlas.py build
 
 `site/` is the local static site. For a preview, run `python -m http.server 8000 --directory site --bind 127.0.0.1`. See [maintenance](maintenance/README.md) for routing, freshness, CI and publication.
 
-Give an agent a source with: “Read AGENTS.md, follow agents/start.md, add this source: SOURCE_URL, validate the useful changes and raise a PR.” Agents may raise PRs; humans review and merge. Before committing, install and verify [the repository's identity checks](maintenance/git-identity.md).
+Give an agent a source with: “Read AGENTS.md, follow agents/start.md, add this source: SOURCE_URL, validate the useful changes and raise a PR.” Agents may raise PRs; humans review and merge.
 
 Original Atlas contributions use the existing [Apache-2.0 licence](LICENSE). External projects retain their own terms. No vendor firmware is stored here. Not affiliated with Olympus or OM Digital Solutions.

@@ -2,7 +2,7 @@
 
 The scripts maintain documentation only. Python 3.10+ and `requirements.txt` are the complete application dependencies. Use an isolated environment. No vendor firmware, camera access or upstream development toolchain is needed.
 
-Before committing or pushing, follow [the identity gate](git-identity.md). Authentication, author and committer are checked separately; an inherited machine identity must never be used.
+Contributors use their own GitHub accounts and commit identities through GitHub's normal repository permissions. The Atlas has no custom author allowlist or authentication hooks. Choose your preferred public name and email in your own Git configuration.
 
 ## Commands
 
@@ -23,7 +23,7 @@ Read [record format](record-format.md) for canonical data and [the implementatio
 
 PR checks use read-only repository access. The main workflow validates, tests, builds and publishes GitHub Pages using the `github-pages` environment. The site displays its source commit and publication time. Only `main` and manual runs on `main` can publish. Scheduled freshness checks create a report artifact and rebuild the main site so age notices advance; they never change factual records.
 
-The initial setup was explicitly authorised to push to main. Normal agent contributions raise PRs; humans approve and merge. The owner will enable branch protection after setup. Require the **Atlas validation** check and designated human approval, dismiss stale approvals, and cover schemas, policies and workflows with CODEOWNERS. Separate agent authorship from the human reviewer where practical. Shared credentials cannot prove that an action was performed by a human. Branch protection is an account/repository setting, not something AGENTS.md can enforce.
+The initial setup was explicitly authorised to push to main. Normal agent contributions raise PRs; humans review and merge. Main requires a PR, passing **Atlas validation**, an up-to-date branch and resolved conversations, including for administrators. Another person's approval is not required, so maintainers can merge their own PRs after reviewing them. Force pushes and branch deletion are blocked. CODEOWNERS provides ownership and review routing without mandatory code-owner approval. Branch protection is a repository setting, not something AGENTS.md can enforce.
 
 ## Scope of verification
 

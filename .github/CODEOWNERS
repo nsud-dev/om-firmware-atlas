@@ -7,5 +7,3 @@
 /taxonomy/ @xulfr
 /.github/ @xulfr
 /maintenance/decisions/ @xulfr
-/maintenance/git-identity* @xulfr
-/.githooks/ @xulfr

@@ -16,7 +16,7 @@ The OM-5 evidence slice retains a named-package failure, restoration from that i
 
 ## After bootstrap
 
-1. The owner protects main with passing **Atlas validation**, human review and appropriate CODEOWNERS. Verify the actual agent/reviewer identities; shared credentials cannot enforce a human-only boundary.
+1. Main is protected with required PRs, passing **Atlas validation**, an up-to-date branch and resolved conversations. Maintainers can review and merge their own PRs without a separate approval. Contributors use normal GitHub permissions and their own commit identities; there is no custom author/authentication gate.
 2. Give ordinary agents a new source URL and exercise the PR workflow. The CLI routing tests are deterministic checks, not proof of external client compliance.
 3. Deepen OM-3/E-P7 feature-level evidence and interface records, including minimum-release semantics and unsupported exports. Do not infer a shared-panel agreement.
 4. Add exact input hashes for the firmware entries that currently record version/build only. Review individual db firmware camera reports before promoting its release-level claims.
