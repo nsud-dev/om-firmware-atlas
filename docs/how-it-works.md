@@ -25,9 +25,9 @@ This page explains that route for contributors. If you only want to add somethin
 | `AGENTS.md` | The short entry point that every agent reads first. | Kept deliberately small |
 | `schemas/`, `taxonomy/` | Rules for record fields, and the allowed topic and feature names. | Policy files |
 | `scripts/`, `tests/` | The checker, generator, site builder and their tests. | Tooling |
-| `maintenance/` | Record format, decisions, routing test cases and the commit identity policy. | Maintainer reference |
+| `maintenance/` | Record format, decisions and routing test cases. | Maintainer reference |
 
-The [CODEOWNERS](https://github.com/xulfr/om-firmware-atlas/blob/main/.github/CODEOWNERS) file names the repository owner as the reviewer for the agent instructions, schemas, taxonomy, scripts, workflows, decisions and identity policy.
+The [CODEOWNERS](https://github.com/xulfr/om-firmware-atlas/blob/main/.github/CODEOWNERS) file names the repository owner as the reviewer for the agent instructions, schemas, taxonomy, scripts, workflows and decisions. It routes review requests; it does not make the owner's approval mandatory.
 
 "Canonical" means this is the one place a fact is stored. Pages that show the fact are built from it, so a correction made once appears everywhere. The [record format](https://github.com/xulfr/om-firmware-atlas/blob/main/maintenance/record-format.md) lists the fields for each kind of record.
 
@@ -74,7 +74,7 @@ This example is illustrative. It follows the [source ingestion workflow](../agen
 6. **Generate.** Run `python scripts/atlas.py generate`. This rewrites the affected pages in `views/` and routes in `agents/routes/`.
 7. **Validate.** Run the checks, tests and build listed under [Contributing](#contributing-locally). Then open the built pages and read them as a visitor would.
 8. **Open a PR.** Describe the sources and revisions, which claims changed, what is still missing or in conflict, which pages are affected and which checks ran. The [PR template](https://github.com/xulfr/om-firmware-atlas/blob/main/.github/pull_request_template.md) asks for exactly this.
-9. **CI and human review.** GitHub runs the same checks and attaches a preview of the built site. The repository owner reviews the PR and decides whether to merge it. Agents never approve or merge.
+9. **CI and human review.** GitHub runs the same checks and attaches a preview of the built site. A maintainer reviews the PR and decides whether to merge it. Agents never approve or merge.
 10. **Publication.** Merging into `main` runs the checks again, rebuilds the site and publishes it to GitHub Pages. The footer of every page shows the commit it was built from.
 
 Sometimes the right outcome is no content change, because the source only repeats what is already recorded. A small record that shows its gaps is better than a guessed result.
@@ -147,12 +147,13 @@ Every Monday at 06:17 UTC, GitHub runs the Atlas workflow on a schedule.
 
 These are the current rules for `main`:
 
-- **Changes reach `main` through a PR.**
+- **Changes reach `main` through a PR**, including changes by administrators. Force pushes and branch deletion are blocked.
 - **The Atlas validation check must pass** before a PR can merge.
-- **Another person's approval is not required.** The repository owner can review and merge their own PRs.
+- **The PR branch must be up to date with `main`, and review conversations must be resolved.**
+- **Another person's approval is not required.** Maintainers, including the repository owner, can review and merge their own PRs.
 - **Agents must not approve or merge.** They open PRs and stop there. This is an instruction in `AGENTS.md`, not something GitHub enforces on its own.
 
-Commits must use an approved public identity. Local Git hooks check the author, the committer and the account used to push before anything leaves your machine. See the [identity gate](https://github.com/xulfr/om-firmware-atlas/blob/main/maintenance/git-identity.md).
+Contributors use their own GitHub accounts and choose their own commit name and email. The Atlas has no custom identity checks ([decision 0003](https://github.com/xulfr/om-firmware-atlas/blob/main/maintenance/decisions/0003-contributor-access.md)).
 
 ## Inspecting a PR's site preview
 
@@ -201,7 +202,6 @@ You need Python 3.10 or newer. In a virtual environment:
 
 ```sh
 python -m pip install -r requirements.txt
-python scripts/check_identity.py setup
 python scripts/atlas.py generate
 python scripts/atlas.py check
 python -m unittest discover -s tests -v

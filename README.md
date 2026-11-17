@@ -29,6 +29,6 @@ python scripts/atlas.py build
 
 `site/` is the local static site. For a preview, run `python -m http.server 8000 --directory site --bind 127.0.0.1`. See [maintenance](maintenance/README.md) for routing, freshness, CI and publication.
 
-[How the Atlas works](docs/how-it-works.md) explains records, generated pages, checks, review and publication, and has copyable agent prompts. Agents may raise PRs; the repository owner reviews and merges. Before committing, install and verify [the repository's identity checks](maintenance/git-identity.md).
+[How the Atlas works](docs/how-it-works.md) explains records, generated pages, checks, review and publication, and has copyable agent prompts. Agents may raise PRs; humans review and merge.
 
 Original Atlas contributions use the existing [Apache-2.0 licence](LICENSE). External projects retain their own terms. No vendor firmware is stored here. Not affiliated with Olympus or OM Digital Solutions.
