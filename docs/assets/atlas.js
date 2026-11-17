@@ -30,6 +30,23 @@
     wrap.appendChild(table);
   });
 
+  /* Copy buttons on code blocks, for commands and agent prompts. */
+  if (navigator.clipboard) {
+    document.querySelectorAll('.prose pre').forEach(function (pre) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'copy-btn';
+      button.textContent = 'Copy';
+      button.addEventListener('click', function () {
+        navigator.clipboard.writeText(pre.querySelector('code') ? pre.querySelector('code').innerText : pre.innerText).then(function () {
+          button.textContent = 'Copied';
+          setTimeout(function () { button.textContent = 'Copy'; }, 1600);
+        });
+      });
+      pre.appendChild(button);
+    });
+  }
+
   /* Search dialog: "/" or Ctrl/Cmd+K opens it; the MkDocs search plugin fills the results. */
   var dialog = document.getElementById('search-dialog');
   var input = document.getElementById('mkdocs-search-query');

@@ -1,6 +1,15 @@
 # Contribute to the Atlas
 
-Bring a useful source, correction, project or test result. You can open an issue using the intake forms, or ask an agent to read [AGENTS.md](AGENTS.md), follow the ingestion workflow and raise a PR.
+Bring a useful source, correction, project or test result. You can open an issue using the intake forms, or ask an agent to read [AGENTS.md](AGENTS.md), follow the ingestion workflow and raise a PR. [How the Atlas works](docs/how-it-works.md) explains the whole route, with a worked example and copyable agent prompts.
+
+## Steps
+
+1. Run `python scripts/check_identity.py setup` once in your checkout. Commit only as an approved public identity ([identity gate](maintenance/git-identity.md)).
+2. Create a branch from `main`.
+3. Change facts in `records/`, explanations in `knowledge/` and site pages in `docs/`. Never hand-edit the generated `views/` or `agents/routes/`.
+4. Regenerate, check, test and build (commands below). Read the affected pages in `site/`.
+5. Commit the generated changes with your edits and open a PR using the template.
+6. Wait for the **Atlas validation** check to pass and for the owner's review. Agents must not approve or merge.
 
 ## What belongs here
 
@@ -25,6 +34,6 @@ python -m unittest discover -s tests -v
 python scripts/atlas.py build
 ```
 
-Inspect affected pages in `site/`. A PR includes sources/revisions, changed assertions, gaps/conflicts, human pages affected and checks performed. Generated diffs belong in the same PR. Changes to schemas, routing or policy include appropriate regression cases and a decision record when consequential.
+Inspect affected pages in `site/`, or download the PR's `atlas-preview` artifact ([how](docs/how-it-works.md#inspecting-a-prs-site-preview)). A PR includes sources/revisions, changed assertions, gaps/conflicts, human pages affected and checks performed. Generated diffs belong in the same PR. Changes to schemas, routing or policy include appropriate regression cases and a decision record when consequential.
 
-Humans review and merge. Avoid unrelated formatting or importing an entire upstream knowledge base. Original contributions follow [LICENSE](LICENSE); linking to an external work does not change its terms.
+PRs and a passing **Atlas validation** check are required to change `main`. Another person's approval is not required: the repository owner can review and merge their own PRs. Agents never approve or merge. Avoid unrelated formatting or importing an entire upstream knowledge base. Original contributions follow [LICENSE](LICENSE); linking to an external work does not change its terms.
