@@ -4,17 +4,71 @@
 
 Original E144: several projects have distinct experiments. Mark II results do not apply.
 
-**Model codes:** E144. **Catalogue depth:** initial review.
+**Model code:** E144 · **Also known as:** Original OM-5, OM5 · **Catalogue depth:** initial review
+{ .facts }
 
-Aliases: Original OM-5, OM5, E144.
+## Projects for this camera
 
-## Projects
+<div class="project-grid" markdown="1">
 
-[Caduceus for OM-5](../projects/caduceus-om5.md), [db firmware / om-c-firmware](../projects/db-firmware.md), [Olympus firmware research](../projects/oly-fw-analysis.md), [OM-Emu](../projects/om-emu.md), [Historical manual update research](../projects/manual-update.md).
+<div class="project-card" markdown="1">
 
-## Firmware inputs
+[Caduceus for OM-5](../projects/caduceus-om5.md){ .card-title }
 
-[om5 firmware 1.2, build 1200](../firmware/om5-1200.md).
+Separate original OM-5 and Mark II work, strict builders and failures.
+
+[Project home](https://github.com/xulfr/caduceus-om5) · [Ask or report issues](https://github.com/xulfr/caduceus-om5/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[db firmware / om-c-firmware](../projects/db-firmware.md){ .card-title }
+
+Release-centred controls, localisation and other modifications.
+
+[Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[Olympus firmware research](../projects/oly-fw-analysis.md){ .card-title }
+
+Foundational firmware work with deep PEN-F coverage.
+
+[Project home](https://github.com/fishcu/oly_fw_analysis) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[OM-Emu](../projects/om-emu.md){ .card-title }
+
+Firmware lab, model ports, traces and patch overlays.
+
+[Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[Historical manual update research](../projects/manual-update.md){ .card-title }
+
+Historical SD update procedure and model naming.
+
+[Project home](https://github.com/iKenndac/om-1-manual-firmware-install) · [Ask or report issues](https://github.com/iKenndac/om-1-manual-firmware-install/issues)
+{ .card-links }
+
+</div>
+
+</div>
+
+Install and support instructions belong to each project. Follow its documentation for this exact camera.
 
 ## Features and observations
 
@@ -24,7 +78,15 @@ Aliases: Original OM-5, OM5, E144.
 | [Restoration after pre-alpha 1](../capabilities/om5-prealpha1-recovery.md) | [Caduceus for OM-5](../projects/caduceus-om5.md) / original-om5-prealpha1 | candidate | physical camera; reported pass; partial report; reported hash |
 | [Original OM-5 pre-alpha 1 startup](../capabilities/om5-prealpha1-start.md) | [Caduceus for OM-5](../projects/caduceus-om5.md) / original-om5-prealpha1 | candidate | physical camera; reported fail; partial report; reported hash |
 
-Results belong to the named project and package. Emulator output does not establish physical-camera behaviour. Follow upstream installation/support documentation for that exact target.
+Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
+
+## Where to talk
+
+[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
+
+## Firmware
+
+[om5 firmware 1.2, build 1200](../firmware/om5-1200.md).
 
 ## Sources and record
 

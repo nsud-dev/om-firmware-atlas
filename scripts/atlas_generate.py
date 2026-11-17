@@ -19,6 +19,42 @@ def cell(value):
     return str(value).replace("|", "\\|").replace("\n", " ")
 
 
+CAMERA_LINES = ("OM SYSTEM", "Olympus OM-D", "Olympus PEN", "Other")
+INDEX_TITLES = {"camera": "Cameras", "firmware": "Firmware", "project": "Projects", "capability": "Features",
+                "evidence": "Observations", "source": "Sources", "community": "Find the community"}
+INDEX_INTROS = {
+    "camera": "Choose your exact model and generation. A listing is a research starting point, not a compatibility claim. The catalogue is not exhaustive.",
+    "project": "Independent projects, each with its own home, maintainers and support route. A listing does not imply endorsement or that a project works on every camera it mentions.",
+    "firmware": "Stock firmware versions that catalogued work starts from. A version number alone is not byte-exact identity.",
+    "capability": "Scoped feature claims: one camera, firmware, project and build each. Availability and test evidence are listed separately.",
+    "evidence": "Individual observations from physical cameras, emulators and code inspection, with their missing details kept visible.",
+    "source": "Every source the Atlas cites, with its revision and when it was last checked.",
+    "community": "Meet other camera owners and researchers. Choose a venue for discussion; use the implementation project's own issue tracker for reproducible bugs. Listings are independently maintained and can change.",
+}
+
+
+def camera_line(title):
+    """Group a camera for navigation by its product line, derived from the record title."""
+    if title.startswith("OM SYSTEM"):
+        return "OM SYSTEM"
+    if "OM-D" in title:
+        return "Olympus OM-D"
+    if "PEN" in title:
+        return "Olympus PEN"
+    return "Other"
+
+
+def short_name(title):
+    for prefix in ("OM SYSTEM ", "Olympus "):
+        if title.startswith(prefix):
+            return title[len(prefix):]
+    return title
+
+
+def plural(count, word):
+    return f"{count} {word}{'' if count == 1 else 's'}"
+
+
 def evidence_label(row):
     return f"{label(row['method'])}; {label(row['outcome'])}; {row['quality']} report; {label(row['identity_level'])}"
 
@@ -48,11 +84,23 @@ def render(catalogue):
         text = GENERATED + f"# {row['title']}\n\n{row['summary']}\n"
         kind = row["type"]
         if kind == "camera":
-            text += f"\n**Model codes:** {', '.join(row['model_codes']) or 'Not recorded'}. **Catalogue depth:** {label(row['coverage'])}.\n"
-            text += "\nAliases: " + ", ".join(row["aliases"]) + ".\n"
-            text += "\n## Projects\n\n" + refs(path, row["project_ids"]) + ".\n"
-            firmwares = [r for r in catalogue.of_type("firmware") if r["camera_id"] == row["id"]]
-            text += "\n## Firmware inputs\n\n" + refs(path, [r["id"] for r in firmwares]) + ".\n"
+            facts = [f"**Model code{'s' if len(row['model_codes']) != 1 else ''}:** {', '.join(row['model_codes']) or 'not recorded'}"]
+            aliases = [a for a in row["aliases"] if a not in row["model_codes"]]
+            if aliases:
+                facts.append("**Also known as:** " + ", ".join(aliases))
+            facts.append(f"**Catalogue depth:** {label(row['coverage'])}")
+            text += "\n" + " · ".join(facts) + "\n{ .facts }\n"
+            text += "\n## Projects for this camera\n\n"
+            if row["project_ids"]:
+                text += '<div class="project-grid" markdown="1">\n\n'
+                for project_id in row["project_ids"]:
+                    project = records[project_id]
+                    text += '<div class="project-card" markdown="1">\n\n'
+                    text += f"[{cell(project['title'])}]({link(path, view_path(project))}){{ .card-title }}\n\n{project['summary']}\n\n"
+                    text += f"[Project home]({project['url']}) · [Ask or report issues]({project['contribution_home']})\n{{ .card-links }}\n\n</div>\n\n"
+                text += "</div>\n\nInstall and support instructions belong to each project. Follow its documentation for this exact camera.\n"
+            else:
+                text += "No project is catalogued for this camera yet. This is a coverage gap, not a finding that nobody is working on it.\n"
             caps = [r for r in catalogue.of_type("capability") if r["camera_id"] == row["id"]]
             text += "\n## Features and observations\n\n"
             if caps:
@@ -61,9 +109,14 @@ def render(catalogue):
                     evs = [records[e] for e in cap["evidence_refs"]]
                     state = "; ".join(evidence_label(e) for e in evs) or "Upstream description; no separate test observation catalogued"
                     text += f"| {ref(path, cap['id'])} | {ref(path, cap['project_id'])} / {cell(cap['mod_build'] or 'unspecified')} | {label(cap['availability'])} | {cell(state)} |\n"
+                text += "\nResults belong to the named project and package. Emulator output does not establish physical-camera behaviour.\n"
             else:
                 text += "No feature-level assertion is catalogued yet. This is a coverage gap, not a finding that modifications are impossible.\n"
-            text += "\nResults belong to the named project and package. Emulator output does not establish physical-camera behaviour. Follow upstream installation/support documentation for that exact target.\n"
+            venues = [r["id"] for r in catalogue.of_type("community") if set(r["project_ids"]) & set(row["project_ids"])]
+            if venues:
+                text += "\n## Where to talk\n\n" + refs(path, venues) + ". For a reproducible bug, use the project's own issue tracker.\n"
+            firmwares = [r for r in catalogue.of_type("firmware") if r["camera_id"] == row["id"]]
+            text += "\n## Firmware\n\n" + refs(path, [r["id"] for r in firmwares]) + ".\n"
         elif kind == "firmware":
             text += f"\n**Camera:** {ref(path, row['camera_id'])}. **Advertised version:** {row['version']}. **Internal build:** {label(row['internal_build'])}.\n"
             text += f"\n**Container SHA-256:** `{row['container_sha256']}`\n" if row["container_sha256"] else "\n**Container SHA-256:** not recorded in this entry.\n"
@@ -124,18 +177,32 @@ def render(catalogue):
 
     for kind, directory in KINDS.items():
         path = f"views/{directory}/index.md"
-        title = "Find the community" if kind == "community" else directory.capitalize()
-        text = GENERATED + f"# {title}\n\n"
-        if kind == "community":
-            text += "Meet other camera owners and researchers. Choose a venue for discussion; use the implementation project's own issue tracker for reproducible bugs. Listings are independently maintained and can change.\n\n"
+        text = GENERATED + f"# {INDEX_TITLES[kind]}\n\n{INDEX_INTROS[kind]}\n\n"
         if kind == "camera":
-            text += "Choose the exact model and generation. A listing is a research starting point, not a compatibility claim. The initial catalogue is not exhaustive.\n\n"
+            rows = catalogue.of_type("camera")
+            for line in CAMERA_LINES:
+                members = sorted((r for r in rows if camera_line(r["title"]) == line), key=lambda r: r["title"])
+                if not members:
+                    continue
+                text += f"## {line}\n\n" + '<div class="camera-grid" markdown="1">\n\n'
+                for row in members:
+                    features = sum(1 for r in catalogue.of_type("capability") if r["camera_id"] == row["id"])
+                    meta = [plural(len(row["project_ids"]), "project"), plural(features, "feature") + " catalogued"]
+                    if row["coverage"] == "discovery-only":
+                        meta.append("discovery only")
+                    text += '<div class="camera-card" markdown="1">\n\n'
+                    text += f"[{cell(short_name(row['title']))}]({link(path, view_path(row))}){{ .card-title }}\n\n"
+                    text += f"{', '.join(row['model_codes'])}\n{{ .model-code }}\n\n{row['summary']}\n\n"
+                    text += " · ".join(meta) + "\n{ .card-meta }\n\n</div>\n\n"
+                text += "</div>\n\n"
+            outputs[path] = text
+            continue
         text += "| Entry | What you will find | Visit |\n|---|---|---|\n" if kind == "community" else "| Entry | What you will find |\n|---|---|\n"
         for row in catalogue.of_type(kind):
             visit = f" [{label(row['platform']).title()}]({row['url']}) |" if kind == "community" else ""
             text += f"| {ref(path, row['id'])} | {cell(row['summary'])} |{visit}\n"
         if kind == "community":
-            text += "\n[How to turn a discussion into durable knowledge](../../docs/community.md).\n"
+            text += "\n[How to turn a discussion into durable knowledge](../../docs/add.md#from-a-discussion-to-documentation).\n"
         outputs[path] = text
 
     manifest = {}

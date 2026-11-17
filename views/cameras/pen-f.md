@@ -4,17 +4,49 @@
 
 E122: foundational HSL research; exact internal build identity matters.
 
-**Model codes:** E122. **Catalogue depth:** initial review.
+**Model code:** E122 · **Also known as:** PEN-F, PENF · **Catalogue depth:** initial review
+{ .facts }
 
-Aliases: PEN-F, PENF, E122.
+## Projects for this camera
 
-## Projects
+<div class="project-grid" markdown="1">
 
-[Olympus firmware research](../projects/oly-fw-analysis.md), [db firmware / om-c-firmware](../projects/db-firmware.md), [OM-Emu](../projects/om-emu.md).
+<div class="project-card" markdown="1">
 
-## Firmware inputs
+[Olympus firmware research](../projects/oly-fw-analysis.md){ .card-title }
 
-[pen-f firmware 3.1, build 3101](../firmware/pen-f-3101.md).
+Foundational firmware work with deep PEN-F coverage.
+
+[Project home](https://github.com/fishcu/oly_fw_analysis) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[db firmware / om-c-firmware](../projects/db-firmware.md){ .card-title }
+
+Release-centred controls, localisation and other modifications.
+
+[Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
+{ .card-links }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[OM-Emu](../projects/om-emu.md){ .card-title }
+
+Firmware lab, model ports, traces and patch overlays.
+
+[Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
+{ .card-links }
+
+</div>
+
+</div>
+
+Install and support instructions belong to each project. Follow its documentation for this exact camera.
 
 ## Features and observations
 
@@ -22,7 +54,11 @@ Aliases: PEN-F, PENF, E122.
 |---|---|---|---|
 | [PEN-F HSL release](../capabilities/pen-f-hsl.md) | [Olympus firmware research](../projects/oly-fw-analysis.md) / alpha-20261017 | published release | Upstream description; no separate test observation catalogued |
 
-Results belong to the named project and package. Emulator output does not establish physical-camera behaviour. Follow upstream installation/support documentation for that exact target.
+Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
+
+## Firmware
+
+[pen-f firmware 3.1, build 3101](../firmware/pen-f-3101.md).
 
 ## Sources and record
 

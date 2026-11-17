@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from atlas_core import Catalogue
 from atlas_generate import generated_diff, render
-from atlas import freshness, inspect_remote, review_notice
+from atlas import expand_nav, freshness, inspect_remote, review_notice
+from atlas_core import read_yaml
 
 
 class AtlasTests(unittest.TestCase):
@@ -147,6 +148,29 @@ class AtlasTests(unittest.TestCase):
         output = render(self.catalogue)["views/community/index.md"]
         self.assertIn("https://discord.gg/fKpcKGsNPY", output)
         self.assertIn("https://www.reddit.com/r/M43/", output)
+
+    def test_navigation_lists_every_camera_and_guide(self):
+        nav = expand_nav(read_yaml(ROOT / "mkdocs.yml")["nav"], self.catalogue)
+        paths = []
+
+        def walk(entries):
+            for entry in entries:
+                for value in entry.values():
+                    walk(value) if isinstance(value, list) else paths.append(value)
+
+        walk(nav)
+        for row in self.catalogue.of_type("camera"):
+            self.assertIn(f"views/cameras/{row['id'].split('.', 1)[1]}.md", paths)
+        for article in self.catalogue.articles.values():
+            self.assertIn(article["path"], paths)
+        self.assertNotIn("knowledge/README.md", paths)
+
+    def test_camera_page_leads_with_projects_and_support(self):
+        output = render(self.catalogue)["views/cameras/om5-ii.md"]
+        project = self.catalogue.records["project.caduceus-om5"]
+        self.assertLess(output.index("## Projects for this camera"), output.index("## Features and observations"))
+        self.assertIn(f"[Ask or report issues]({project['contribution_home']})", output)
+        self.assertIn("partial report", output)
 
 
 if __name__ == "__main__":

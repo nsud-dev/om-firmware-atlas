@@ -9,6 +9,6 @@ These guides connect local conventions and findings to their detailed upstream h
 - [Colour and settings research](subsystems/colour.md)
 - [Looks and interfaces](interfaces/looks.md)
 - [Cross-model reasoning](comparisons/models.md)
-- [Community source handling](../docs/community.md)
+- [From a discussion to documentation](../docs/add.md#from-a-discussion-to-documentation)
 
 The absence of a detailed guide is a visible coverage gap. Keep a useful topic together rather than creating a file for every discovery. Large notebooks, symbol databases and executable tools remain upstream.

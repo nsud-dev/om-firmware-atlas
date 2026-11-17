@@ -9,4 +9,4 @@ Meet other camera owners and researchers. Choose a venue for discussion; use the
 | [Caduceus Discord](caduceus-discord.md) | Public invite linked by the OM-3 project and confirmed for this directory by the Atlas maintainer. | [Discord](https://discord.gg/fKpcKGsNPY) |
 | [r/M43](m43.md) | Broad Micro Four Thirds photography discussion, including Caduceus discussion identified by the Atlas maintainer. | [Reddit](https://www.reddit.com/r/M43/) |
 
-[How to turn a discussion into durable knowledge](../../docs/community.md).
+[How to turn a discussion into durable knowledge](../../docs/add.md#from-a-discussion-to-documentation).

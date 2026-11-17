@@ -11,14 +11,28 @@ theme:
   user_color_mode_toggle: false
   navigation_depth: 2
 nav:
+  # The build expands the Cameras entry into per-line camera lists and the Guides entry into the
+  # knowledge guides (scripts/atlas.py expand_nav), so neither list is maintained by hand.
   - Home: index.md
   - Cameras: views/cameras/index.md
-  - Projects: views/projects/index.md
-  - Research: research.md
-  - Knowledge: knowledge/README.md
-  - Community: views/community/index.md
-  - Contribute: contribute.md
-  - About: about.md
+  - Research:
+      - Start here: research.md
+      - Guides: knowledge/README.md
+      - Catalogue:
+          - Projects: views/projects/index.md
+          - Firmware: views/firmware/index.md
+          - Features: views/capabilities/index.md
+          - Observations: views/evidence/index.md
+          - Sources: views/sources/index.md
+  - Get involved:
+      - Overview: contribute.md
+      - Talk: views/community/index.md
+      - Report a result: report.md
+      - Add or correct: add.md
+  - About:
+      - About the Atlas: about.md
+      - Reading the evidence: evidence.md
+      - How it works: how-it-works.md
 plugins:
   - search
 markdown_extensions:

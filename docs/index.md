@@ -33,36 +33,36 @@
 <div class="route-card" markdown="1">
 <span class="route-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="19" height="13" rx="3"/><path d="M8.5 6.5 10 4h4l1.5 2.5"/><circle cx="12" cy="13" r="3.6"/></svg></span>
 
-### [Find your camera](../views/cameras/index.md)
+### [I own a camera](../views/cameras/index.md)
 
-Projects, firmware inputs, features and reported results for the exact model and generation.
+See which projects cover your exact model, what has been tested, and where to ask.
 
 </div>
 
 <div class="route-card" markdown="1">
 <span class="route-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5.5 5.5M8 10.5h5M10.5 8v5"/></svg></span>
 
-### [Start researching](research.md)
+### [I research firmware](research.md)
 
-Existing findings, analysis tools and contribution routes before you begin new work.
+Guides, tools and the catalogue of projects, firmware and observations, before you start new work.
 
 </div>
 
 <div class="route-card" markdown="1">
 <span class="route-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h11a2 2 0 0 1 2 2V13a2 2 0 0 1-2 2H9l-4 3.5V15H4a2 2 0 0 1-2-2V7.5a2 2 0 0 1 2-2Z"/><path d="M19.5 9h.5a2 2 0 0 1 2 2v5.5a2 2 0 0 1-2 2h-1V21l-3-2.5h-4"/></svg></span>
 
-### [Meet the community](../views/community/index.md)
+### [I want to help](contribute.md)
 
-r/M43, Caduceus Discord and the project homes where work is discussed.
+Talk to the community, report a camera result or add a source. No code needed.
 
 </div>
 
 <div class="route-card" markdown="1">
-<span class="route-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M12 11v6M9 14h6"/></svg></span>
+<span class="route-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".6"/></svg></span>
 
-### [Bring a source](contribute.md)
+### [What is this?](about.md)
 
-Turn a repository, release, post or camera report into useful shared knowledge.
+Why the Atlas exists, how to read a status, and how it all fits together.
 
 </div>
 
