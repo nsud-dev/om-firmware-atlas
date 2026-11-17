@@ -18,6 +18,7 @@ nav:
   - Knowledge: knowledge/README.md
   - Community: views/community/index.md
   - Contribute: contribute.md
+  - How it works: how-it-works.md
   - About: about.md
 plugins:
   - search
