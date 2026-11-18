@@ -8,11 +8,53 @@ Compact, sourced facts that projects and agents reuse: named addresses for one e
 
 | Rule | Cameras | Status |
 |---|---|---|
-| [Never write to the logical flash range](hazard.logical-flash-writes.md) | PEN E-P7 | Single source |
+| [Start or stop the ARM co-processor only between shots](hazard.arm-power-mid-shot.md) | OM-D E-M5 Mark III | Camera-confirmed |
+| [Write card files with 8.3 names from cached heap buffers](hazard.card-file-names.md) | OM-D E-M5 Mark III | Camera-confirmed |
+| [Keep CPU reads of image memory below 0xc0000000](hazard.cpu-read-high-ram.md) | OM-D E-M5 Mark III | Camera-confirmed |
+| [Check image-engine records against the bridge's limits](hazard.engine-record-refused.md) | OM-D E-M5 Mark III | Camera-confirmed |
+| [Never write to the logical flash range](hazard.logical-flash-writes.md) | PEN E-P7, OM-D E-M5 Mark III | Corroborated |
 | [Never CPU-read an image buffer through its raw descriptor address](hazard.raw-image-buffer-read.md) | PEN E-P7 | Camera-confirmed |
-| [Only call code in a section that has already loaded](hazard.section-load-order.md) | PEN E-P7, OM-3 | Corroborated |
+| [Only call code in a section that has already loaded](hazard.section-load-order.md) | PEN E-P7, OM-3, OM-D E-M5 Mark III | Camera-confirmed |
 | [Keep patch state out of the loaded firmware image](hazard.state-in-loaded-image.md) | PEN E-P7, OM-5 Mark II | Camera-confirmed |
+| [A hung task does not trigger the watchdog](hazard.task-hang-no-reset.md) | OM-D E-M5 Mark III | Camera-confirmed |
+| [Give added shooting states a handler for every event they can receive](hazard.unhandled-state-event.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Align structures with 32-bit fields to four bytes](hazard.word-alignment.md) | PEN-F | Camera-confirmed |
+
+## Olympus OM-D E-M5 Mark III, E-M5 Mark III firmware 1.7, build 1700
+
+| Name | Address | Category | Status |
+|---|---|---|---|
+| [Main CPU base](em5-iii-1700.main-cpu-base.md) | `0x60021020` | layout | Camera-confirmed |
+| [Hardware tick counter](em5-iii-1700.tick-counter.md) | `0x60022e5c` | function | Camera-confirmed |
+| [Always-ready range copied by the boot stub](em5-iii-1700.always-ready-range.md) | `0x60030000` | layout | Camera-confirmed |
+| [Current task id](em5-iii-1700.task-id.md) | `0x600317b4` | function | Single source |
+| [Sleep (milliseconds)](em5-iii-1700.sleep-ms.md) | `0x60036eeb` | function | Single source |
+| [Interrupt-context test](em5-iii-1700.in-interrupt.md) | `0x600386ae` | function | Single source |
+| [Section ready test](em5-iii-1700.section-ready-test.md) | `0x60045d92` | function | Single source |
+| [Take a lock with timeout](em5-iii-1700.lock-take.md) | `0x60051679` | function | Single source |
+| [Convert an address for the image engine](em5-iii-1700.engine-address.md) | `0x600590c9` | function | Single source |
+| [Enter a critical section](em5-iii-1700.critical-enter.md) | `0x60069e11` | function | Single source |
+| [Create a timer](em5-iii-1700.timer-create.md) | `0x6006be97` | function | Camera-confirmed |
+| [Flash write guard](em5-iii-1700.flash-write-guard.md) | `0x600c4680` | function | Single source |
+| [Gap before section 1](em5-iii-1700.gap-before-section-1.md) | `0x600d0800` | free space | Single source |
+| [Simulated key press](em5-iii-1700.simulated-key.md) | `0x60120327` | function | Single source |
+| [User shell command table](em5-iii-1700.user-shell-table.md) | `0x601fbe38` | table | Camera-confirmed |
+| [Sensor mode request sender](em5-iii-1700.sensor-request.md) | `0x601fce30` | function | Camera-confirmed |
+| [Image-engine job setter table](em5-iii-1700.engine-setter-table.md) | `0x60257b88` | table | Camera-confirmed |
+| [Shooting-state event dispatcher](em5-iii-1700.state-dispatcher.md) | `0x602a0f90` | function | Camera-confirmed |
+| [No-op state event handler](em5-iii-1700.state-noop-handler.md) | `0x602a14bb` | function | Camera-confirmed |
+| [Setting getter](em5-iii-1700.setting-getter.md) | `0x602e69f9` | function | Single source |
+| [Submit an image-engine job](em5-iii-1700.engine-job-submit.md) | `0x603185eb` | function | Camera-confirmed |
+| [Shooting state table](em5-iii-1700.state-table.md) | `0x6044f9e4` | table | Camera-confirmed |
+| [fopen (card file)](em5-iii-1700.fopen.md) | `0x60631f63` | function | Single source |
+| [fclose (card file)](em5-iii-1700.fclose.md) | `0x60631f6c` | function | Single source |
+| [fwrite (card file)](em5-iii-1700.fwrite.md) | `0x60631fe8` | function | Camera-confirmed |
+| [fread (card file)](em5-iii-1700.fread.md) | `0x606320f2` | function | Camera-confirmed |
+| [Focus stacking per-lens flag branch](em5-iii-1700.focus-stacking-lens-check.md) | `0x6065e5ec` | hook site | Camera-confirmed |
+| [Section 4 slack](em5-iii-1700.section-4-slack.md) | `0x6079d800` | free space | Camera-confirmed |
+| [Start the debug Wi-Fi network](em5-iii-1700.debug-wifi-start.md) | `0x6122e9f6` | function | Camera-confirmed |
+| [Space after section 10](em5-iii-1700.after-section-10.md) | `0x61478000` | free space | Camera-confirmed |
+| [Section ready bits](em5-iii-1700.section-ready-bits.md) | `0xa26565c0` | data | Camera-confirmed |
 
 ## Olympus PEN E-P7, ep7 firmware 1.1, build 1100
 

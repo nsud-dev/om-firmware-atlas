@@ -8,9 +8,9 @@ Exact-build facts only: never apply an address to another build or body. Status:
 
 | Rule | Status | Detail |
 |---|---|---|
-| Never write to the logical flash range | single-source | [d1] |
+| Never write to the logical flash range | corroborated | [d1] |
 | Never CPU-read an image buffer through its raw descriptor address | camera-confirmed | [d1] |
-| Only call code in a section that has already loaded | corroborated | [d1] |
+| Only call code in a section that has already loaded | camera-confirmed | [d1] |
 | Keep patch state out of the loaded firmware image | camera-confirmed | [d2] |
 
 ## firmware.ep7-1100

@@ -1,0 +1,254 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.em5-iii-1700.engine-job-submit
+  title: Submit an image-engine job
+  summary: Queues a job program on the image engine for a prepared record.
+  source_refs:
+  - source.em5n.image-engine
+  - source.em5n.live-nd
+  topics:
+  - capture
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: &id001
+  - camera.em5-iii
+  firmware_ids: &id002
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x603185eb'
+  note: 'Arguments: job number, 1, packet, 16. The worker then marks the packet done (2) or failed (3). A bridge
+    checks every record first.'
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.image-engine
+    project_id: project.em5-iii-notes
+    summary: Arguments and completion codes read from the submit path.
+  - method: physical-camera
+    source_ref: source.em5n.live-nd
+    project_id: project.em5-iii-notes
+    summary: OM-5 jobs 11 and 12 submitted this way run on the E-M5 III and give correct results.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/image-engine.md#submitting-a-job-safely-learned-on-the-camera
+- type: reference
+  id: reference.em5-iii-1700.engine-setter-table
+  title: Image-engine job setter table
+  summary: Per-job setter functions that write a job's parameter words, indexed by job number.
+  source_refs:
+  - source.em5n.image-engine
+  - source.em5n.live-nd
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60257b88'
+  note: Setters write into the parameter window from 0x9d000000 and set the job's program address. The OM-5 1.2
+    table is at 0x6025f8e8.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.image-engine
+    project_id: project.em5-iii-notes
+    summary: Table and window use read from the setters.
+  - method: physical-camera
+    source_ref: source.em5n.live-nd
+    project_id: project.em5-iii-notes
+    summary: Patching in the OM-5 job 12 setter made job 12 give verified output on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/image-engine.md#the-parameter-window-at-0x9d000000
+- type: reference
+  id: reference.em5-iii-1700.sensor-request
+  title: Sensor mode request sender
+  summary: Sends the type-7 sensor mode request (exposure block and mode block).
+  source_refs:
+  - source.em5n.sensor
+  - source.em5n.sequencer
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x601fce30'
+  note: Live view is mode 9 at 120 fps, half press mode 0 at 60, shutter mode 14. It has 11 callers in section 1,
+    so hooks here need a boot guard.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.sequencer
+    project_id: project.em5-iii-notes
+    summary: Request layout and callers read from the code.
+  - method: physical-camera
+    source_ref: source.em5n.sensor
+    project_id: project.em5-iii-notes
+    summary: Changing the request made burst frames follow the set shutter time (125 ms apart at 1/8 s).
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/sensor.md#sensor-mode-requests
+- type: reference
+  id: reference.em5-iii-1700.state-table
+  title: Shooting state table
+  summary: 'Stock shooting-sequencer state table: 34 entries of 20 bytes, states 0 to 33.'
+  source_refs:
+  - source.em5n.sequencer
+  topics:
+  - capture
+  - patching
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x6044f9e4'
+  note: Each entry is id, name, handler and two event tables. To add states, copy the table, repoint its two loads
+    and raise the range check at 0x602a1347.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.sequencer
+    project_id: project.em5-iii-notes
+    summary: Layout, loads and range check read from the dispatcher.
+  - method: physical-camera
+    source_ref: source.em5n.sequencer
+    project_id: project.em5-iii-notes
+    summary: A relocated table with extra states runs on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/shooting-sequencer.md#the-state-table
+- type: reference
+  id: reference.em5-iii-1700.state-dispatcher
+  title: Shooting-state event dispatcher
+  summary: Walks the current state's event table and calls the matching handler.
+  source_refs:
+  - source.em5n.port-layers
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x602a0f90'
+  note: An event with no entry in the state's table makes it print a history dump, which takes time in the sequencer
+    task.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.port-layers
+    project_id: project.em5-iii-notes
+    summary: Table walk and fallback read from the dispatcher.
+  - method: physical-camera
+    source_ref: source.em5n.port-layers
+    project_id: project.em5-iii-notes
+    summary: Live sequencer traces over the debug shell showed the history dump on unhandled events.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/live-nd-port-layers.md#join-points-found-on-the-camera-2026-11-12
+- type: reference
+  id: reference.em5-iii-1700.state-noop-handler
+  title: No-op state event handler
+  summary: Stock handler that does nothing and reports the event handled.
+  source_refs:
+  - source.em5n.port-layers
+  topics:
+  - capture
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x602a14bb'
+  note: Point unwanted events of an added state here instead of leaving them out of its table.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.port-layers
+    project_id: project.em5-iii-notes
+    summary: Release events routed here stopped frame loss in fast Live ND series.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/live-nd-port-layers.md#join-points-found-on-the-camera-2026-11-12
+- type: reference
+  id: reference.em5-iii-1700.debug-wifi-start
+  title: Start the debug Wi-Fi network
+  summary: Fills the Wi-Fi request block and starts the open debug network and user shell.
+  source_refs:
+  - source.em5n.wifi-shell
+  topics:
+  - tooling
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x6122e9f6'
+  note: Reached from the card settings file (property 0xF971) after startup, a method documented for the PEN-F by
+    Olympus firmware research (oly_fw_analysis). The network has no password.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.wifi-shell
+    project_id: project.em5-iii-notes
+    summary: E-M5 III 1.7 addresses of the card-file path traced, following the PEN-F analysis in oly_fw_analysis.
+  - method: physical-camera
+    source_ref: source.em5n.wifi-shell
+    project_id: project.em5-iii-notes
+    summary: A card file on stock E-M5 III 1.7 started the network and the shell answered on port 23.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/wifi-debug-shell.md#how-it-works-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.user-shell-table
+  title: User shell command table
+  summary: The 58-command table of the stock user shell (Tsk_USHL).
+  source_refs:
+  - source.em5n.wifi-shell
+  topics:
+  - tooling
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x601fbe38'
+  note: 'Commands include take, iseq, fcs, dbg, ui and wifi. Some write flash or settings: never run flash or prm
+    writes.'
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.wifi-shell
+    project_id: project.em5-iii-notes
+    summary: Table read from the firmware.
+  - method: physical-camera
+    source_ref: source.em5n.wifi-shell
+    project_id: project.em5-iii-notes
+    summary: help over the debug shell listed exactly these 58 commands.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/wifi-debug-shell.md#first-camera-test-2026-11-12-shell-works
+- type: reference
+  id: reference.em5-iii-1700.simulated-key
+  title: Simulated key press
+  summary: Sets or clears a key-matrix bit so the UI task handles it as a real press.
+  source_refs:
+  - source.em5n.wifi-shell
+  topics:
+  - tooling
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60120327'
+  note: 'Arguments: key code and state (1 = pressed). The shell''s ui key skey command reaches it.'
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.wifi-shell
+    project_id: project.em5-iii-notes
+    summary: Path from the shell command to the key image read from the code.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/wifi-debug-shell.md#simulated-button-presses

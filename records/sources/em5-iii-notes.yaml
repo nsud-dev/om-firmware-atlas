@@ -1,0 +1,306 @@
+schema_version: 1
+records:
+- type: source
+  id: source.em5n.readme
+  title: E-M5 III notes overview
+  summary: Scope, tag meanings, address convention, tools.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/README.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: README.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.overview
+  title: What the E-M5 III project has looked into
+  summary: Tour of every area studied with a tagged result per feature.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/overview.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/overview.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.container
+  title: E-M5 III container format
+  summary: Update-file layout, obfuscation and checksum.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/container-format.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/firmware/container-format.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.focus-patch
+  title: Focus stacking lens check patch
+  summary: Function, patched bytes and camera result.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/patches/focus-stacking-any-lens.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/patches/focus-stacking-any-lens.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.live-nd
+  title: Live ND on the E-M5 III
+  summary: OM-5 Live ND port, stage results and open problems.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-nd.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/features/live-nd.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.gmn103.readme
+  title: Ghidra MN103 module README
+  summary: Supported CPUs, decompiler features, install and tested Ghidra versions.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/ghidra-mn103/blob/01fc3928802d227b2d5f06b83f40543ecbe92f40/README.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/ghidra-mn103
+  revision: 01fc3928802d227b2d5f06b83f40543ecbe92f40
+  locator: README.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the module's author; GPL-3.0 per the repo licence.
+- type: source
+  id: source.em5n.boot
+  title: E-M5 III boot and section loading
+  summary: Load base, always-ready range, section order, ready bits and boot guards.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/boot-and-sections.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/firmware/boot-and-sections.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.memory-map
+  title: E-M5 III memory map
+  summary: RAM per body, flash layout, frame pools and spare space used by patches.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/memory-map.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/hardware/memory-map.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.recovery
+  title: E-M5 III recovery
+  summary: Power-on checks, flash map, write guard, card updater and recoverable failures.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/recovery.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/firmware/recovery.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.image-engine
+  title: E-M5 III image engine
+  summary: Where job programs live, jobs per body, the parameter window, job records and safe submission.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/image-engine.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/hardware/image-engine.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.sensor
+  title: E-M5 III sensor
+  summary: Raw frame layout, calibration entries and sensor mode requests.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/sensor.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/hardware/sensor.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.sequencer
+  title: E-M5 III shooting sequencer
+  summary: State table, path choice, burst streaming, exposure record and sensor requests.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/shooting-sequencer.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/firmware/shooting-sequencer.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.mn103
+  title: MN103 CPU on the E-M5 III
+  summary: Call frames, compiler, instruction limits and a table of useful routines.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/hardware/mn103-cpu.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.port-layers
+  title: Live ND port layers
+  summary: Layers of the Live ND port and where ported and native code join.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/live-nd-port-layers.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/firmware/live-nd-port-layers.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.wifi-shell
+  title: Stock Wi-Fi debug shell
+  summary: Card file that starts the debug network and user shell; camera test and trace use.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/wifi-debug-shell.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/features/wifi-debug-shell.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.webcam
+  title: USB webcam
+  summary: UVC webcam port attempt, with what passed and what failed on the camera.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/webcam.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/features/webcam.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.gotchas
+  title: Gotchas
+  summary: Mistakes that hung, reset or delayed work on the camera, and the rule since.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/reference/gotchas.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/reference/gotchas.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.patching
+  title: Patching techniques
+  summary: Patch methods proven on the camera and the rules behind them.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/patching-techniques.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/firmware/patching-techniques.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.focus-stacking
+  title: Focus stacking
+  summary: Lens check patch background and the shot-count setting.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/focus-stacking.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/features/focus-stacking.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.

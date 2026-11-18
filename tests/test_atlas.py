@@ -230,7 +230,9 @@ class AtlasTests(unittest.TestCase):
     def test_reference_status_is_derived_from_observations(self):
         records = self.catalogue.records
         hazard = records["reference.hazard.section-load-order"]
-        self.assertEqual(reference_status(records, hazard), "corroborated")
+        self.assertEqual(reference_status(records, hazard), "camera-confirmed")
+        self.assertEqual(reference_status(records, records["reference.hazard.logical-flash-writes"]), "corroborated")
+        self.assertEqual(reference_status(records, records["reference.em5-iii-1700.section-ready-test"]), "single-source")
         self.assertEqual(reference_status(records, self.reference()), "camera-confirmed")
         hazard["conflicts"] = [{"source_ref": "source.om3.devnotes", "summary": "A different load order."}]
         self.assertEqual(reference_status(records, hazard), "disputed")

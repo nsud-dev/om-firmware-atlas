@@ -1,0 +1,18 @@
+schema_version: 1
+records:
+- type: firmware
+  id: firmware.em5-iii-1700
+  title: E-M5 Mark III firmware 1.7, build 1700
+  summary: Stock update file OLY_E_137_1700_0000_0000.BIN; the notes' addresses refer to its MN103 main program.
+  source_refs:
+  - source.em5n.container
+  - source.em5n.readme
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  version: '1.7'
+  internal_build: '1700'
+  container_sha256: 939260fc22b4217fce64274eb5a6707d307a499804d8a316b6b39019c4afded2
+  identity_note: SHA-256 of the stock update file as downloaded from OM System. Addresses for this build are in the
+    technical reference (main CPU base and section entries).

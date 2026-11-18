@@ -4,19 +4,21 @@
 
 Sections load one after another; a hook calling a later section can run before its target exists.
 
-**Category:** hazard · <span class="pill pill-beta">Corroborated</span>
+**Category:** hazard · <span class="pill pill-released">Camera-confirmed</span>
 { .facts }
 
-**Build:** [ep7 firmware 1.1, build 1100](../firmware/ep7-1100.md), [om3 firmware 1.1, build 1100](../firmware/om3-1100.md) · **Cameras:** [Olympus PEN E-P7](../cameras/ep7.md), [OM SYSTEM OM-3](../cameras/om3.md)
+**Build:** [ep7 firmware 1.1, build 1100](../firmware/ep7-1100.md), [om3 firmware 1.1, build 1100](../firmware/om3-1100.md), [E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md) · **Cameras:** [Olympus PEN E-P7](../cameras/ep7.md), [OM SYSTEM OM-3](../cameras/om3.md), [Olympus OM-D E-M5 Mark III](../cameras/em5-iii.md)
 
-Put code a hook calls in the hook's own section or one loaded earlier. Load order differs by body: the E-P7 guide gives 1, 7, 2, 3, 4, 5, 6, 8, 9; the OM-3 notes give 1 to 10 in order.
+Put code a hook calls in the hook's own section or one loaded earlier, or guard the jump with the section's ready bit. Load order differs by body: the E-P7 guide gives 1, 7, 2, 3, 4, 5, 6, 8, 9; the OM-3 notes give 1 to 10 in order; the E-M5 III notes give 1, 7, 2, 3, 4, 5, 6, 8, 9, 10.
 
-> **What happens:** A bootloop reported once on the OM-3 port.
+> **What happens:** A bootloop reported once on the OM-3 port; intermittent dead-at-power-on and reset loops on E-M5 III test builds.
 
 ## Observations
 
 - **Static analysis** ([Caduceus for E-P7](../projects/caduceus-ep7.md)): Load order verified from the boot code; the guide reports the OM-3 port bootlooped once on this mistake. Source: [E-P7 firmware guide](../sources/ep7.guide.md).
 - **Static analysis** ([Caduceus for OM-3](../projects/caduceus-om3.md)): The OM-3 notes record sections loading 1 to 10 in order. Source: [Caduceus OM-3 developer notes](../sources/om3.devnotes.md).
+- **Static analysis** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): E-M5 III 1.7 load order and per-section ready bits read from the loader; stock code never jumps forward into a section without waiting. Source: [E-M5 III boot and section loading](../sources/em5n.boot.md).
+- **Physical camera** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): E-M5 III test builds with an early hook into a later section failed to boot intermittently; guarding the jump on the ready bit gave 10 good boots out of 10. Source: [E-M5 III boot and section loading](../sources/em5n.boot.md).
 
 **[Full detail upstream](https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md)**
 
@@ -24,5 +26,6 @@ Put code a hook calls in the hook's own section or one loaded earlier. Load orde
 
 - [E-P7 firmware guide](../sources/ep7.guide.md)
 - [Caduceus OM-3 developer notes](../sources/om3.devnotes.md)
+- [E-M5 III boot and section loading](../sources/em5n.boot.md)
 
 [Canonical record](../../records/reference/hazards.yaml) · Substantively reviewed: 2026-11-18.

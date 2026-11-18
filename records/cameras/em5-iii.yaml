@@ -1,0 +1,26 @@
+schema_version: 1
+records:
+- type: camera
+  id: camera.em5-iii
+  title: Olympus OM-D E-M5 Mark III
+  summary: 'E137: firmware 1.7 studied in depth; focus stacking with any lens, a Live ND port and the card-file debug shell tested on one camera.'
+  source_refs:
+  - source.em5n.overview
+  topics:
+  - platform
+  - patching
+  - capture
+  last_reviewed: '2026-11-18'
+  aliases:
+  - E-M5 III
+  - E-M5 Mark III
+  - EM5III
+  - EM5 Mk3
+  - E137
+  model_codes:
+  - E137
+  project_ids:
+  - project.em5-iii-notes
+  - project.ghidra-mn103
+  - project.oly-fw-analysis
+  coverage: initial-review

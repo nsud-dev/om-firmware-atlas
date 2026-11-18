@@ -70,6 +70,20 @@ E140: port/signature research and emulator coverage; no physical feature report 
 
 </div>
 
+<div class="camera-card" markdown="1">
+
+[OM-D E-M5 Mark III](em5-iii.md){ .card-title }
+
+E137
+{ .model-code }
+
+E137: firmware 1.7 studied in depth; focus stacking with any lens, a Live ND port and the card-file debug shell tested on one camera.
+
+3 projects · 5 features catalogued
+{ .card-meta }
+
+</div>
+
 </div>
 
 ## Olympus PEN

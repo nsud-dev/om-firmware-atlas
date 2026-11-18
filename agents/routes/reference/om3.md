@@ -8,7 +8,7 @@ Exact-build facts only: never apply an address to another build or body. Status:
 
 | Rule | Status | Detail |
 |---|---|---|
-| Only call code in a section that has already loaded | corroborated | [d1] |
+| Only call code in a section that has already loaded | camera-confirmed | [d1] |
 
 ## firmware.om3-1100
 

@@ -9,6 +9,24 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [r/M43 community page](community.m43.md) | Public photography venue; Caduceus relevance supplied by the Atlas maintainer. |
 | [db firmware v0.4.1 release](db.release041.md) | Release-centred feature claims and named limitations, not an independent camera audit. |
 | [db firmware releases](db.releases.md) | Beta release notes from v0.2.20 to v0.4.1, in Korean and English. |
+| [E-M5 III boot and section loading](em5n.boot.md) | Load base, always-ready range, section order, ready bits and boot guards. |
+| [E-M5 III container format](em5n.container.md) | Update-file layout, obfuscation and checksum. |
+| [Focus stacking lens check patch](em5n.focus-patch.md) | Function, patched bytes and camera result. |
+| [Focus stacking](em5n.focus-stacking.md) | Lens check patch background and the shot-count setting. |
+| [Gotchas](em5n.gotchas.md) | Mistakes that hung, reset or delayed work on the camera, and the rule since. |
+| [E-M5 III image engine](em5n.image-engine.md) | Where job programs live, jobs per body, the parameter window, job records and safe submission. |
+| [Live ND on the E-M5 III](em5n.live-nd.md) | OM-5 Live ND port, stage results and open problems. |
+| [E-M5 III memory map](em5n.memory-map.md) | RAM per body, flash layout, frame pools and spare space used by patches. |
+| [MN103 CPU on the E-M5 III](em5n.mn103.md) | Call frames, compiler, instruction limits and a table of useful routines. |
+| [What the E-M5 III project has looked into](em5n.overview.md) | Tour of every area studied with a tagged result per feature. |
+| [Patching techniques](em5n.patching.md) | Patch methods proven on the camera and the rules behind them. |
+| [Live ND port layers](em5n.port-layers.md) | Layers of the Live ND port and where ported and native code join. |
+| [E-M5 III notes overview](em5n.readme.md) | Scope, tag meanings, address convention, tools. |
+| [E-M5 III recovery](em5n.recovery.md) | Power-on checks, flash map, write guard, card updater and recoverable failures. |
+| [E-M5 III sensor](em5n.sensor.md) | Raw frame layout, calibration entries and sensor mode requests. |
+| [E-M5 III shooting sequencer](em5n.sequencer.md) | State table, path choice, burst streaming, exposure record and sensor requests. |
+| [USB webcam](em5n.webcam.md) | UVC webcam port attempt, with what passed and what failed on the camera. |
+| [Stock Wi-Fi debug shell](em5n.wifi-shell.md) | Card file that starts the debug network and user shell; camera test and trace use. |
 | [OM-Emu architecture](emu.architecture.md) | Harness-driven startup, model translation and verification. |
 | [Acquisition and containers](emu.container.md) | Vendor API acquisition and address notation. |
 | [OM-1 processor roles](emu.cores.md) | Scoped static analysis of several cores and external processors. |
@@ -28,6 +46,7 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [Research reproduction](fishcu.reproduce.md) | Exact PEN-F input identity and bounded native probes. |
 | [Validation reference](fishcu.validation.md) | Scoped checks and alignment blind spots. |
 | [OM-3 downstream experiment](fork.readme.md) | Experimental changes intended to contribute upstream. |
+| [Ghidra MN103 module README](gmn103.readme.md) | Supported CPUs, decompiler features, install and tested Ghidra versions. |
 | [Historical manual updates](manual.readme.md) | SD update research and explicitly obsolete static download links. |
 | [Caduceus OM-3 developer notes](om3.devnotes.md) | Addresses, hooks and test history for the OM-3 1.1 port, with camera-proven sites marked. |
 | [OM-3 card formats](om3.formats.md) | OM3P layout and release-dependent field semantics. |

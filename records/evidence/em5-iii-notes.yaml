@@ -1,0 +1,191 @@
+schema_version: 1
+records:
+- type: evidence
+  id: evidence.em5-iii-focus-stacking-camera
+  title: 'E-M5 III 1.7: focus stacking with a non-listed lens'
+  summary: The notes' author flashed the lens-check patch and reports focus stacking working.
+  source_refs:
+  - source.em5n.focus-patch
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: focus-stacking lens check patch
+  method: physical-camera
+  provenance: firsthand-tester-report
+  identity_level: not-applicable
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: reported-pass
+  quality: partial
+  reported_on: '2026-10-19'
+  tested_on: '2026-10-19'
+  procedure: Patched 0x6065e5ec c9 04 -> cb cb, fixed checksums, flashed from the SD card, used focus stacking with
+    a lens the stock list excludes.
+  coverage:
+  - Focus stacking runs with the patch on one E-M5 III.
+  limitations:
+  - One camera, one owner report; the lens list tried is not recorded in the notes.
+  - The flashed package digest is not published.
+  assumptions: []
+- type: evidence
+  id: evidence.em5-iii-live-nd-photo
+  title: 'E-M5 III 1.7: Live ND photos from test builds'
+  summary: Merged Live ND photos at ND2 to ND16, measured on the camera.
+  source_refs:
+  - source.em5n.live-nd
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: unpublished test builds (to 2026-11-17)
+  method: physical-camera
+  provenance: firsthand-tester-report
+  identity_level: not-applicable
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: reported-pass
+  quality: partial
+  reported_on: '2026-11-17'
+  tested_on: null
+  procedure: Test builds flashed from the SD card; Live ND shots in S/M at 1/8 s and 1/125 s, several presses in
+    a row; brightness and file sizes compared with single shots.
+  coverage:
+  - ND2, ND4, ND8 and ND16 merged into one photo from one press.
+  - Frames follow the set shutter time (125 ms apart at 1/8 s).
+  - A tripod ND8 matches a single 1/8 s shot within 0.03 EV.
+  - 16 frames at 1/125 s arrive without loss; job 11 takes about 142 ms for 16 frames.
+  limitations:
+  - Test builds are not published.
+  - One camera, one owner; full Live ND shots since 2026-11-12.
+  assumptions: []
+- type: evidence
+  id: evidence.em5-iii-live-nd-preview
+  title: 'E-M5 III 1.7: Live ND live-view preview from test builds'
+  summary: Live-view averaging with job 12 checked step by step on the camera.
+  source_refs:
+  - source.em5n.live-nd
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: unpublished test builds (to 2026-11-17)
+  method: physical-camera
+  provenance: firsthand-tester-report
+  identity_level: not-applicable
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: reported-pass
+  quality: partial
+  reported_on: '2026-11-17'
+  tested_on: null
+  procedure: Test builds flashed from the SD card, each adding one step of the OM-5 live-view preview; results recorded
+    per step.
+  coverage:
+  - Job 12 reset, add, slide and average steps give correct results on E-M5 III frames.
+  - The window follows the dial up to 240 frames at 30 fps with LV Simulation on (2026-11-12).
+  - Borrowed frames go back before a photo and the preview returns after it (2026-11-15).
+  - The blur restarts on shutter changes; a gyro-based movement restart felt right in a first test (2026-11-17).
+  limitations:
+  - Test builds are not published.
+  - Movement restart is still being tuned.
+  assumptions: []
+- type: evidence
+  id: evidence.em5-iii-wifi-shell-camera
+  title: 'E-M5 III 1.7: card-file debug shell tested'
+  summary: The E-M5 III firmware notes report the method working on a stock E-M5 III, with a live sequencer trace.
+  source_refs:
+  - source.em5n.wifi-shell
+  topics:
+  - tooling
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.oly-fw-analysis
+  mod_build: stock 1.7 with a card settings file
+  method: physical-camera
+  provenance: firsthand-tester-report
+  identity_level: not-applicable
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: pass
+  quality: partial
+  reported_on: '2026-11-12'
+  tested_on: '2026-11-12'
+  procedure: Card file PARAMDT/CP000001.CSV with one line setting 0xF971 to 1; laptop joined the open network and
+    connected to port 23 with CRLF line endings.
+  coverage:
+  - The laptop got an address by DHCP and the shell prompt appeared.
+  - help listed the 58 user commands.
+  - take dbgmode 1 streamed the shooting-sequencer trace live; the body shutter worked normally.
+  limitations:
+  - LF-only line endings get no answer.
+  - A second connection after closing the first gets no answer until a power cycle.
+  - The undo check (file removed, network gone) was not reported yet.
+  assumptions: []
+- type: evidence
+  id: evidence.em5-iii-uvc-enumerate-stream
+  title: 'E-M5 III 1.7: UVC webcam enumerates and streams'
+  summary: Test builds enumerate as UVC and stream the camera's own picture.
+  source_refs:
+  - source.em5n.webcam
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: unpublished webcam test builds
+  method: physical-camera
+  provenance: firsthand-tester-report
+  identity_level: not-applicable
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: reported-pass
+  quality: partial
+  reported_on: '2026-10-20'
+  tested_on: null
+  procedure: Test builds flashed from the SD card, camera connected to a Mac by USB.
+  coverage:
+  - The Mac lists a UVC camera.
+  - A camera-generated 160x120 JPEG picture streams over UVC and survives a replug.
+  - Timer pacing reached 21.6 fps.
+  limitations:
+  - Test builds are not published.
+  - The picture is generated, not live view.
+  assumptions: []
+- type: evidence
+  id: evidence.em5-iii-uvc-live-view-fail
+  title: 'E-M5 III 1.7: live view over UVC failed'
+  summary: Streaming the native movie output over UVC failed.
+  source_refs:
+  - source.em5n.webcam
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: unpublished webcam test builds
+  method: physical-camera
+  provenance: firsthand-tester-report
+  identity_level: not-applicable
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: reported-fail
+  quality: partial
+  reported_on: '2026-10-20'
+  tested_on: null
+  procedure: Test build streaming the native movie USB output at 320x240.
+  coverage:
+  - 'The host app froze and the camera showed One moment...: the USB-connected state turns the shooting pipeline
+    off.'
+  limitations:
+  - Test builds are not published.
+  assumptions: []
