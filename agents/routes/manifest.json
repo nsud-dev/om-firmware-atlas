@@ -46,8 +46,8 @@
       "method": "ceil(utf8-bytes/4)"
     },
     "records/cameras/ep7.yaml": {
-      "approx_tokens": 115,
-      "bytes": 457,
+      "approx_tokens": 121,
+      "bytes": 482,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/cameras/om3.yaml": {
@@ -56,18 +56,18 @@
       "method": "ceil(utf8-bytes/4)"
     },
     "records/cameras/om5-ii.yaml": {
-      "approx_tokens": 121,
-      "bytes": 481,
+      "approx_tokens": 127,
+      "bytes": 506,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/cameras/om5.yaml": {
-      "approx_tokens": 131,
-      "bytes": 524,
+      "approx_tokens": 138,
+      "bytes": 549,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/cameras/pen-f.yaml": {
-      "approx_tokens": 107,
-      "bytes": 428,
+      "approx_tokens": 114,
+      "bytes": 453,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/capabilities/em5-iii/em5-iii-features.yaml": {
@@ -196,8 +196,8 @@
       "method": "ceil(utf8-bytes/4)"
     },
     "records/projects/ghidra-mn103.yaml": {
-      "approx_tokens": 410,
-      "bytes": 1639,
+      "approx_tokens": 475,
+      "bytes": 1897,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/projects/manual-update.yaml": {

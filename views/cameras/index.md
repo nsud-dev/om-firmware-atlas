@@ -31,7 +31,7 @@ E144
 
 Original E144: several projects have distinct experiments. Mark II results do not apply.
 
-5 projects · 3 features catalogued
+6 projects · 3 features catalogued
 { .card-meta }
 
 </div>
@@ -45,7 +45,7 @@ E148
 
 E148: alpha12 has an incomplete positive owner report; original OM-5 work is separate.
 
-3 projects · 3 features catalogued
+4 projects · 3 features catalogued
 { .card-meta }
 
 </div>
@@ -99,7 +99,7 @@ E142
 
 E142: original Caduceus project and a documented Ghidra/REA setup.
 
-4 projects · 1 feature catalogued
+5 projects · 1 feature catalogued
 { .card-meta }
 
 </div>
@@ -113,7 +113,7 @@ E122
 
 E122: foundational HSL research; exact internal build identity matters.
 
-3 projects · 1 feature catalogued
+4 projects · 1 feature catalogued
 { .card-meta }
 
 </div>

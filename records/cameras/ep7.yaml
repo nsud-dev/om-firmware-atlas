@@ -20,4 +20,5 @@ records:
   - project.db-firmware
   - project.oly-fw-analysis
   - project.om-emu
+  - project.ghidra-mn103
   coverage: initial-review

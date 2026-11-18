@@ -20,4 +20,5 @@ records:
   - project.caduceus-om5
   - project.db-firmware
   - project.om-emu
+  - project.ghidra-mn103
   coverage: initial-review

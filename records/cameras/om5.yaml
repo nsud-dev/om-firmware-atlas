@@ -21,4 +21,5 @@ records:
   - project.oly-fw-analysis
   - project.om-emu
   - project.manual-update
+  - project.ghidra-mn103
   coverage: initial-review

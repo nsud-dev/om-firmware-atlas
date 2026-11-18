@@ -8,7 +8,7 @@ Exact ID: `camera.pen-f`. Codes: E122. [Human status view](../../../views/camera
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [pen-f.yaml](../../../records/cameras/pen-f.yaml) | Identity and aliases | 428 | ~107 |
+| [pen-f.yaml](../../../records/cameras/pen-f.yaml) | Identity and aliases | 453 | ~114 |
 | [pen-f-3101.yaml](../../../records/firmware/pen-f/pen-f-3101.yaml) | pen-f firmware 3.1, build 3101 | 531 | ~133 |
 
 ## Existing project homes
@@ -16,6 +16,7 @@ Exact ID: `camera.pen-f`. Codes: E122. [Human status view](../../../views/camera
 - [Olympus firmware research](../projects/oly-fw-analysis.md): Foundational firmware work with deep PEN-F coverage.
 - [db firmware / om-c-firmware](../projects/db-firmware.md): Release-centred controls, localisation and other modifications.
 - [OM-Emu](../projects/om-emu.md): Firmware lab, model ports, traces and patch overlays.
+- [Ghidra MN103 processor module](../projects/ghidra-mn103.md): Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|

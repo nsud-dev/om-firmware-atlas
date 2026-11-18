@@ -4,11 +4,12 @@
 
 Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2.
 
-[Contribution home](https://github.com/nsud-dev/ghidra-mn103/issues). Built and checked against E-M5 III 1.7 block 0; nothing in the module is camera-specific.
+[Contribution home](https://github.com/nsud-dev/ghidra-mn103/issues). Built and checked against E-M5 III 1.7 block 0. Nothing in the module is camera-specific; it applies to any body whose main CPU is MN103 (AM33-2).
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [ghidra-mn103.yaml](../../../records/projects/ghidra-mn103.yaml) | Project scope, related work and contribution destination | 1,639 | ~410 |
+| [ghidra-mn103.yaml](../../../records/projects/ghidra-mn103.yaml) | Project scope, related work and contribution destination | 1,897 | ~475 |
 | [em5-iii-notes.yaml](../../../records/sources/em5-iii-notes.yaml) | Find the relevant source/observation ID; use bounded reads | 16,047 | ~4,012 |
+| [ep7.yaml](../../../records/sources/ep7.yaml) | Find the relevant source/observation ID; use bounded reads | 4,410 | ~1,103 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.
