@@ -8,10 +8,10 @@ Release notes from v0.29.1 to the v0.30.4-alpha test version.
 
 **Kind:** github release. **Locator:** Releases page, newest ten entries.
 
-**Revision / release:** `v0.30.4-alpha`. **Retrieved:** 2026-11-17. **Last source check:** 2026-11-17.
+**Revision / release:** `v0.40-alpha`. **Retrieved:** 2026-11-17. **Last source check:** 2026-11-18.
 
 **Publication:** public. Attributed summary of mutable release notes; no code, firmware or executables imported.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/om3.yaml) · Substantively reviewed: 2026-11-17.
+[Canonical record](../../records/sources/om3.yaml) · Substantively reviewed: 2026-11-18.

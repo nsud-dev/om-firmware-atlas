@@ -97,3 +97,67 @@ records:
   published_on: '2026-10-18'
   publication: public
   reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.
+- type: source
+  id: source.fishcu.code-space
+  title: Finding space for added code
+  summary: How to qualify free code space; PEN-F section 3 and OM-3 1100 section tails.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/CODE_SPACE.md
+  source_kind: github-file
+  upstream_repo: fishcu/oly_fw_analysis
+  revision: d565cb664d3bc37f883f844a3a0c9620efe018e4
+  locator: docs/safety/CODE_SPACE.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fishcu.pen-f-spaces
+  title: PEN-F address spaces and loaded sections
+  summary: PEN-F 3101 bases, section 3 descriptor and load callback.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/format/pen-f/ADDRESS_SPACES.md
+  source_kind: github-file
+  upstream_repo: fishcu/oly_fw_analysis
+  revision: d565cb664d3bc37f883f844a3a0c9620efe018e4
+  locator: docs/format/pen-f/ADDRESS_SPACES.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fishcu.pen-f-functions
+  title: PEN-F startup function and service map
+  summary: PEN-F 3101 startup tasks, section loading and kernel services, with evidence per row.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/boot/pen-f/FUNCTION_MAP.md
+  source_kind: github-file
+  upstream_repo: fishcu/oly_fw_analysis
+  revision: d565cb664d3bc37f883f844a3a0c9620efe018e4
+  locator: docs/boot/pen-f/FUNCTION_MAP.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fishcu.pen-f-hsl-tables
+  title: PEN-F HSL tables
+  summary: PEN-F 3101 COLOR table layout, sector order and the HSL extension point.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/color/pen-f/HSL_TABLES.md
+  source_kind: github-file
+  upstream_repo: fishcu/oly_fw_analysis
+  revision: d565cb664d3bc37f883f844a3a0c9620efe018e4
+  locator: docs/color/pen-f/HSL_TABLES.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.

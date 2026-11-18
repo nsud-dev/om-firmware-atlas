@@ -8,8 +8,37 @@ Exact-build facts only: never apply an address to another build or body. Status:
 
 | Rule | Status | Detail |
 |---|---|---|
-| Align structures with 32-bit fields to four bytes | camera-confirmed | [d1] |
+| Take section bounds from the loader, not from 0xFF runs | camera-confirmed | [d1] |
+| Align structures with 32-bit fields to four bytes | camera-confirmed | [d2] |
 
-[d1]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/VALIDATION.md#alignment-is-a-real-emulator-blind-spot
+## firmware.pen-f-3101: platform and built-in features
 
-Records: [hazards.yaml](../../../records/reference/hazards.yaml).
+| Fact | Value | Status | Detail |
+|---|---|---|---|
+| Main CPU | MN103, cores CPU0 to CPU2 | single-source | [d3] |
+| Firmware blocks | 4 | camera-confirmed | [d4] |
+
+## firmware.pen-f-3101
+
+| Name | Space | Address | Kind | Status | Detail |
+|---|---|---|---|---|---|
+| Main container address | container | `0x403a0020` | layout | single-source | [d5] |
+| Main CPU base | runtime-cached | `0x60021020` | layout | single-source | [d5] |
+| Section 3 descriptor | runtime-cached | `0x60026d94` | table | single-source | [d5] |
+| Section load request | runtime-cached | `0x60042063` | function | single-source | [d6] |
+| Queued section loader | runtime-cached | `0x600421e1` | function | single-source | [d6] |
+| Start a task | runtime-cached | `0x600697ff` | function | single-source | [d3] |
+| COLOR builder call site | runtime-cached | `0x604f7506` | hook-site | single-source | [d7] |
+| COLOR table | runtime-cached | `0x60622d74` | table | camera-confirmed | [d7] |
+| Section 3 free tail | runtime-cached | `0x6069b26c..0x6069b800` | free-space | single-source | [d8] |
+
+[d1]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/CODE_SPACE.md#om-3-v22-precedent
+[d2]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/VALIDATION.md#alignment-is-a-real-emulator-blind-spot
+[d3]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/boot/pen-f/FUNCTION_MAP.md#entry-kernel-and-task-foundations
+[d4]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/format/CONTAINERS.md#partial-component-update-files
+[d5]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/format/pen-f/ADDRESS_SPACES.md#pen-f-3101-mapping
+[d6]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/boot/pen-f/FUNCTION_MAP.md#section-loading-and-cross-core-transport
+[d7]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/color/pen-f/HSL_TABLES.md
+[d8]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/CODE_SPACE.md#qualifying-a-candidate
+
+Records: [hazards-sections.yaml](../../../records/reference/hazards-sections.yaml), [hazards.yaml](../../../records/reference/hazards.yaml), [pen-f-3101.yaml](../../../records/reference/pen-f-3101.yaml).

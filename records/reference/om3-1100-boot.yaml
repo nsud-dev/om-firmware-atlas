@@ -1,0 +1,191 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.om3-1100.section-table
+  title: Section descriptor table
+  summary: 'Ten 12-byte rows: run-time start, flash source and a flag for sections 1 to 10.'
+  source_refs:
+  - source.fishcu.code-space
+  - source.emu.caduceus-om3
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x60029b28'
+  note: 'The end of each section is not in the row: it is the operand of one mov in the end selector at 0x60045e6c.
+    The flag is 1 for sections 6 and 7.'
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: Ten 12-byte entries; the end selector is independent of the next descriptor.
+  - method: static-analysis
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: Rows read from the block and tabulated with each loader end and the gap after it.
+  conflicts: []
+  upstream_detail: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md#21-the-section-table-and-the-loaders-end-words
+- type: reference
+  id: reference.om3-1100.section-loader
+  title: Section loader
+  summary: Copies section n from flash to its run-time range and then sets its bit in the copied mask.
+  source_refs:
+  - source.fishcu.code-space
+  - source.emu.caduceus-om3
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x60045ed5'
+  note: Reads the end through 0x60045e6c, copies end minus start bytes through the flash driver to an uncached alias,
+    and sets bit n-1 at 0xa32de590 whatever the copy returned.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: Converts the destination to an uncached alias, reads end-start bytes and sets a loaded bit.
+  - method: static-analysis
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: Disassembled; it logs a non-zero copy result but sets the bit regardless.
+  conflicts: []
+  upstream_detail: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md#22-the-copied-mask-and-its-single-writer
+- type: reference
+  id: reference.om3-1100.copied-mask
+  title: Section copied mask
+  summary: One bit per section, set when its copy returns; not proof its constructors have run.
+  source_refs:
+  - source.fishcu.code-space
+  - source.emu.caduceus-om3
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: data
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-uncached
+    value: '0xa32de590'
+  note: 'The loader is its only writer and stock code never reads it. Constructors finish later: their bits are
+    in the phase mask at 0xa32de58c, set after each section''s static constructors.'
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: The loader sets a loaded bit here.
+  - method: emulator
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: A scan finds only the loader's two references; with the loader modelled it reads 0x3ff at open.
+  conflicts: []
+  upstream_detail: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md#22-the-copied-mask-and-its-single-writer
+- type: reference
+  id: reference.om3-1100.section-4-tail
+  title: Section 4 free tail
+  summary: Unused 0xFF bytes inside the end of section 4's load.
+  source_refs:
+  - source.fishcu.code-space
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: free-space
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x60a8f088'
+    end: '0x60a8f800'
+  note: A zero-byte initialisation count points at this suffix; a non-zero count faults. The V22 tethering patch
+    places code from 0x60a8f100. Check other projects' use before claiming bytes.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: FF suffix 0x60a8f088..0x60a8f800 lies inside the loaded range 0x60828000..0x60a8f800.
+  - method: emulator
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: Native load and reload tests keep added bytes here under modelled storage.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/CODE_SPACE.md#om-3-v22-precedent
+- type: reference
+  id: reference.om3-1100.section-9-tail
+  title: Section 9 free tail
+  summary: Unused 0xFF bytes inside the end of section 9's load; 404 bytes.
+  source_refs:
+  - source.fishcu.code-space
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: free-space
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x619a966c'
+    end: '0x619a9800'
+  note: A zero-byte initialisation count points at this suffix. The V22 tethering patch places code from 0x619a9680.
+    Section 9 loads late, so code here is not callable early in boot.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: FF suffix 0x619a966c..0x619a9800 lies inside the loaded range 0x61809000..0x619a9800.
+  - method: emulator
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: Native load and reload tests keep added bytes here under modelled storage.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/CODE_SPACE.md#om-3-v22-precedent
+- type: reference
+  id: reference.om3-1100.interrupt-lock
+  title: Lock (masks interrupts)
+  summary: Firmware lock; with d0 = 0 it sets the PSW interrupt mask to 0 until the unlock.
+  source_refs:
+  - source.om3.notes
+  - source.emu.caduceus-om3
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x60075f73'
+  note: The unlock is at 0x60075fbc. Work done between lock and unlock runs with interrupts masked; see the hazard
+    on keeping that window short.
+  observations:
+  - method: static-analysis
+    source_ref: source.om3.notes
+    project_id: project.caduceus-om3
+    summary: LOCK with d0 = 0 sets the PSW interrupt mask to 0.
+  - method: emulator
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: Runs as stock in the lab; only its interrupt-mask half takes effect there.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#per-film-r--g--b-tone-curves-build-2026-11-15-featurergb-curves-emulator-only

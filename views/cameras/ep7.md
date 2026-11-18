@@ -309,6 +309,16 @@ Results belong to the named project and package. Emulator output does not establ
 
 [Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
 
+## Platform and built-in features (ep7 firmware 1.1, build 1100)
+
+What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
+
+| | Value | Status |
+|---|---|---|
+| [Main CPU](../reference/ep7-1100.main-cpu.md) | MN103/AM33-2, several cores | Single source |
+| [Update file magic](../reference/ep7-1100.container-magic.md) | OE 14 20 | Single source |
+| [Firmware blocks](../reference/ep7-1100.firmware-blocks.md) | 5 | Camera-confirmed |
+
 ## Firmware
 
 [ep7 firmware 1.1, build 1100](../firmware/ep7-1100.md).

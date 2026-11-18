@@ -1,0 +1,306 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.pen-f-3101.main-base
+  title: Main CPU base
+  summary: Decoded main offset 0 runs at 0x60021020.
+  source_refs:
+  - source.fishcu.pen-f-spaces
+  - source.fishcu.pen-f-functions
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: layout
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  address:
+    space: runtime-cached
+    value: '0x60021020'
+  note: Runtime addresses are decoded main plus 0x60021020. Some code and data are copied again at startup, so the
+    flat image is not always what runs.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.pen-f-spaces
+    project_id: project.oly-fw-analysis
+    summary: The decoded main uses analysis base 0x60021020.
+  - method: emulator
+    source_ref: source.fishcu.pen-f-functions
+    project_id: project.oly-fw-analysis
+    summary: Connected replay enters the main at 0x60021020.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/format/pen-f/ADDRESS_SPACES.md#pen-f-3101-mapping
+- type: reference
+  id: reference.pen-f-3101.main-container
+  title: Main container address
+  summary: Container payload address of the main component; not a disassembler base.
+  source_refs:
+  - source.fishcu.pen-f-spaces
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: layout
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  address:
+    space: container
+    value: '0x403a0020'
+  note: Use it only to translate container addresses, never as the load address.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.pen-f-spaces
+    project_id: project.oly-fw-analysis
+    summary: Container payload address 0x403a0020.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/format/pen-f/ADDRESS_SPACES.md#pen-f-3101-mapping
+- type: reference
+  id: reference.pen-f-3101.section-3-descriptor
+  title: Section 3 descriptor
+  summary: Descriptor for section 3, which holds the COLOR builder and coefficient tables.
+  source_refs:
+  - source.fishcu.pen-f-spaces
+  topics:
+  - patching
+  - colour
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  address:
+    space: runtime-cached
+    value: '0x60026d94'
+  note: Section 3 loads from logical flash 0x407b1800 to 0x60432800..0x6069b800 (2,527,232 bytes).
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.pen-f-spaces
+    project_id: project.oly-fw-analysis
+    summary: Descriptor, source, destination and exclusive end tabulated.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/format/pen-f/ADDRESS_SPACES.md#pen-f-3101-mapping
+- type: reference
+  id: reference.pen-f-3101.section-load-request
+  title: Section load request
+  summary: Requests a section load; USTART1 calls it for section 3, which then crosses to CPU1.
+  source_refs:
+  - source.fishcu.pen-f-functions
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  address:
+    space: runtime-cached
+    value: '0x60042063'
+  note: The request goes to CPU1, whose dispatch task runs the queued loader 0x600421e1. Completion means bytes
+    arrived, not that section initialisers ran.
+  observations:
+  - method: emulator
+    source_ref: source.fishcu.pen-f-functions
+    project_id: project.oly-fw-analysis
+    summary: Reached in a connected replay from main.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/boot/pen-f/FUNCTION_MAP.md#section-loading-and-cross-core-transport
+- type: reference
+  id: reference.pen-f-3101.queued-loader
+  title: Queued section loader
+  summary: Native load callback that copies a section through the flash wrapper.
+  source_refs:
+  - source.fishcu.pen-f-functions
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  address:
+    space: runtime-cached
+    value: '0x600421e1'
+  note: Reads through the flash wrapper 0x600720e1 to an uncached destination alias. Waiter 0x60042123 later runs
+    the initialiser dispatcher and sets the loaded-mask bit.
+  observations:
+  - method: emulator
+    source_ref: source.fishcu.pen-f-functions
+    project_id: project.oly-fw-analysis
+    summary: Original instructions executed in a bounded native contract; all bytes verified.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/boot/pen-f/FUNCTION_MAP.md#section-loading-and-cross-core-transport
+- type: reference
+  id: reference.pen-f-3101.section-3-tail
+  title: Section 3 free tail
+  summary: Unused 0xFF bytes inside the end of section 3's load.
+  source_refs:
+  - source.fishcu.code-space
+  - source.fishcu.pen-f-spaces
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: free-space
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  address:
+    space: runtime-cached
+    value: '0x6069b26c'
+    end: '0x6069b800'
+  note: All eleven section-3 initialisers and reviewed neighbours run without touching it. Nearby branch-like bytes
+    include encoded CMIO and image data. A bounded placement claim, not proof against every later access.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: FF suffix from 0x6069b26c lies inside the load 0x60432800..0x6069b800.
+  - method: emulator
+    source_ref: source.fishcu.pen-f-spaces
+    project_id: project.oly-fw-analysis
+    summary: Changed padding survives native load and reload.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/CODE_SPACE.md#qualifying-a-candidate
+- type: reference
+  id: reference.pen-f-3101.color-table
+  title: COLOR table
+  summary: '3,028 bytes: 12 records of 28 bytes, four u32 LUTs, six u16 LUTs and a trailer.'
+  source_refs:
+  - source.fishcu.pen-f-hsl-tables
+  topics:
+  - colour
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  address:
+    space: runtime-cached
+    value: '0x60622d74'
+  note: OES arrays and the camera wheel share one twelve-sector order; physical coefficient records use another.
+    Saturation is stored as a gain, not the slider value.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.pen-f-hsl-tables
+    project_id: project.oly-fw-analysis
+    summary: Layout read; a byte-identical table is in the Workspace OlyAcacia library.
+  - method: physical-camera
+    source_ref: source.fishcu.pen-f-hsl-tables
+    project_id: project.oly-fw-analysis
+    summary: A yellow-lightness edit changed COLOR output on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/color/pen-f/HSL_TABLES.md
+- type: reference
+  id: reference.pen-f-3101.color-builder-call
+  title: COLOR builder call site
+  summary: The HSL extension applies hue and lightness after this call and rejoins at 0x604f750b.
+  source_refs:
+  - source.fishcu.pen-f-hsl-tables
+  topics:
+  - colour
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hook-site
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  address:
+    space: runtime-cached
+    value: '0x604f7506'
+  note: Hooking after the stock builder keeps its saturation handling and the common LUTs. Bounds-check before indexing
+    the fifteen-entry conversion tables.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.pen-f-hsl-tables
+    project_id: project.oly-fw-analysis
+    summary: The PEN-F HSL extension point.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/color/pen-f/HSL_TABLES.md
+- type: reference
+  id: reference.pen-f-3101.task-start
+  title: Start a task
+  summary: Ordinary task-start wrapper over the local kernel start API 0x600307dd.
+  source_refs:
+  - source.fishcu.pen-f-functions
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  address:
+    space: runtime-cached
+    value: '0x600697ff'
+  note: The static descriptor sets hold 140 CPU0, 49 CPU1 and 21 CPU2 tasks; only the first initial task starts
+    automatically.
+  observations:
+  - method: emulator
+    source_ref: source.fishcu.pen-f-functions
+    project_id: project.oly-fw-analysis
+    summary: Executed natively and reached in the connected replay.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/boot/pen-f/FUNCTION_MAP.md#entry-kernel-and-task-foundations
+- type: reference
+  id: reference.pen-f-3101.firmware-blocks
+  title: Firmware blocks, PEN-F 3.1
+  summary: 'Firmware blocks for PEN-F 3.1: 4.'
+  source_refs:
+  - source.fishcu.containers
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  trait: trait.firmware-blocks
+  value: '4'
+  note: The updater accepts a main-only package; an OSD bitmap edit needs its resource component too.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.containers
+    project_id: project.oly-fw-analysis
+    summary: PEN-F 3101 contains four components.
+  - method: physical-camera
+    source_ref: source.fishcu.containers
+    project_id: project.oly-fw-analysis
+    summary: Component-selective HSL updates and stock restores ran on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/format/CONTAINERS.md#partial-component-update-files
+- type: reference
+  id: reference.pen-f-3101.main-cpu
+  title: Main CPU, PEN-F 3.1
+  summary: 'Main CPU for PEN-F 3.1: MN103, cores CPU0 to CPU2.'
+  source_refs:
+  - source.fishcu.pen-f-functions
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  trait: trait.main-cpu
+  value: MN103, cores CPU0 to CPU2
+  note: CPU0 publishes the CPU1 and CPU2 entries; a shared kernel-ready barrier waits for all three.
+  observations:
+  - method: emulator
+    source_ref: source.fishcu.pen-f-functions
+    project_id: project.oly-fw-analysis
+    summary: CPU0, CPU1 and CPU2 kernel initialisation reached in the connected replay.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/boot/pen-f/FUNCTION_MAP.md#entry-kernel-and-task-foundations

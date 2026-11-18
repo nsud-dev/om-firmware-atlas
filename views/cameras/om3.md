@@ -195,6 +195,30 @@ The aperture ring on Panasonic lenses that have one sets the aperture.
 
 <div class="feature-card" markdown="1">
 
+**Crop modes** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+XPan, 21:9 and 5:4 Image Aspect choices; JPEGs are saved at that shape and RAW keeps the whole sensor with the crop marked. Photos only.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.40-alpha
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**White border and own film grain** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+A white Border per film (0 to 5, JPEG only), and the project's own colour grain with strength 1 to 5 and a Grain Size row.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.40-alpha
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
 **Korean menus** <span class="pill pill-beta">Beta</span>
 { .feature-head }
 

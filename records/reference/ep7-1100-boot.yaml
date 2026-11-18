@@ -1,0 +1,196 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.ep7-1100.section-table
+  title: Section descriptor table
+  summary: 'Nine 12-byte entries: start, logical source, destination.'
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x60027068'
+  note: Ends come from the jump-table getter 0x60045786. Load order is 1, 7, 2, 3, 4, 5, 6, 8, 9; section 8 is empty.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Table, end getter and load order read from code.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#2-the-main-program
+- type: reference
+  id: reference.ep7-1100.section-loader
+  title: Section loader
+  summary: Copies each section and sets bit (id-1) in the loaded mask.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x600457e7'
+  note: Boot then waits on each section in turn (USRSTART2).
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Read from code.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#2-the-main-program
+- type: reference
+  id: reference.ep7-1100.loaded-mask
+  title: Section loaded mask
+  summary: Bit (id-1) set by the loader per section.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: data
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-uncached
+    value: '0xa272e420'
+  note: Set by the copy loop; check what it proves about initialisers before gating on it.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Written by the loader.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#2-the-main-program
+- type: reference
+  id: reference.ep7-1100.section-1-tail
+  title: Section 1 free tail
+  summary: Unused 0xFF bytes inside section 1's load; section 1 loads first.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: free-space
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x602108ec'
+    end: '0x60211000'
+  note: Most Caduceus code lives in section 1. The guide lists FF tails for every section, about 8.8 KB in all;
+    claims are registered in its CODE_SPACE_MAP.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Static scans found no references into the tails.
+  - method: physical-camera
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Caduceus code placed in section 1 runs on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#2-the-main-program
+- type: reference
+  id: reference.ep7-1100.evf-gamma-tables
+  title: Dead EVF gamma tables
+  summary: EVF gamma tables in section 1 that the E-P7, which has no EVF, never programs.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: free-space
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x601de13c'
+    end: '0x601e3b3c'
+  note: Only the EVF device path reaches them. Do not reuse this range on a body with an EVF. Step-table words at
+    0x601e3b40..0x601e3d68 point into it.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: One step-table word points to each 256-byte table; the programmer runs only for the EVF.
+  - method: physical-camera
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Code placed in these tables has run on the camera since test 11.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#2-the-main-program
+- type: reference
+  id: reference.ep7-1100.firmup-cli
+  title: Card updater task
+  summary: 'Task 88 FIRMUP_CLI: picks the DCOLYMP E142????.BIN with the largest suffix above 0.'
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x60c95bab'
+  note: E1429999.BIN is chosen and E1420000.BIN never is. FIRMUP_SRV starts only after section 2 has loaded, so
+    an early boot fault could make the updater unreachable.
+  observations:
+  - method: emulator
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: File selection verified in the emulator.
+  - method: physical-camera
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Recovered the E-P7 once from a boot loop.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#1-the-firmware-package
+- type: reference
+  id: reference.ep7-1100.update-validator
+  title: Update file validator
+  summary: Checks header shape, model 0x1420 and every component's checksum before the first write.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x60c964c1'
+  note: It does not read the version field, so same-version and downgrade files are accepted.
+  observations:
+  - method: emulator
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Behaviour verified in the emulator.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#1-the-firmware-package

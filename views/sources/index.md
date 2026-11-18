@@ -33,6 +33,7 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [USB webcam](em5n.webcam.md) | UVC webcam port attempt, with what passed and what failed on the camera. |
 | [Stock Wi-Fi debug shell](em5n.wifi-shell.md) | Card file that starts the debug network and user shell; camera test and trace use. |
 | [OM-Emu architecture](emu.architecture.md) | Harness-driven startup, model translation and verification. |
+| [OM-Emu study of Caduceus OM-3](emu.caduceus-om3.md) | OM-Emu's checks of Caduceus OM-3's E147 claims against its own image and lab. |
 | [Acquisition and containers](emu.container.md) | Vendor API acquisition and address notation. |
 | [OM-1 processor roles](emu.cores.md) | Scoped static analysis of several cores and external processors. |
 | [OM-Emu scope](emu.readme.md) | Model ports, patch overlays and named stand-ins. |
@@ -44,8 +45,12 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [E-P7 Ghidra/REA profile](ep7.rea.md) | A specific locally patched setup and decompiler limitations. |
 | [Caduceus E-P7 overview](ep7.readme.md) | Advertised modifications and feature-specific limitations. |
 | [Caduceus E-P7 releases](ep7.releases.md) | Beta release notes from v0.31b to v0.34a. |
+| [Finding space for added code](fishcu.code-space.md) | How to qualify free code space; PEN-F section 3 and OM-3 1100 section tails. |
 | [OE container reference](fishcu.containers.md) | Component wrappers, transform and checksum scope. |
 | [IDA 4.9 profile](fishcu.ida.md) | The specific optional tested IDA/MN103 combination. |
+| [PEN-F startup function and service map](fishcu.pen-f-functions.md) | PEN-F 3101 startup tasks, section loading and kernel services, with evidence per row. |
+| [PEN-F HSL tables](fishcu.pen-f-hsl-tables.md) | PEN-F 3101 COLOR table layout, sector order and the HSL extension point. |
+| [PEN-F address spaces and loaded sections](fishcu.pen-f-spaces.md) | PEN-F 3101 bases, section 3 descriptor and load callback. |
 | [Olympus research overview](fishcu.readme.md) | PEN-F depth, cross-model work and hardware-report policy. |
 | [PEN-F HSL releases](fishcu.releases.md) | The two PEN-F HSL alpha releases and their stated limits. |
 | [Research reproduction](fishcu.reproduce.md) | Exact PEN-F input identity and bounded native probes. |
@@ -56,11 +61,14 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [Caduceus OM-3 developer notes](om3.devnotes.md) | Addresses, hooks and test history for the OM-3 1.1 port, with camera-proven sites marked. |
 | [OM-3 card formats](om3.formats.md) | OM3P layout and release-dependent field semantics. |
 | [OM-3 LookLab](om3.looklab.md) | OM-3-only editor, sharing schema and export targets. |
+| [OM-3 research notebook](om3.notes.md) | Caduceus OM-3 lab notebook: camera, emulator and static findings per issue. |
 | [Caduceus OM-3 overview](om3.readme.md) | Features and maintainer-reported camera results at the reviewed revision. |
 | [Caduceus OM-3 releases](om3.releases.md) | Release notes from v0.29.1 to the v0.30.4-alpha test version. |
 | [OM-3 research index](om3.research.md) | Scoped entry points into the notebook, tools and tests. |
 | [Caduceus OM-3 roadmap](om3.roadmap.md) | Planned, testing, parked and fixed work as the owner describes it. |
+| [OM-3 v0.40-alpha release notes](om3.v040.md) | Release notes for the v0.40-alpha test version, read at its tag. |
 | [Mark II alpha12 report](om5.alpha12.md) | Expected digest and an explicitly incomplete owner report. |
+| [OM-5 Mark II brick-risk review](om5.brick-risk.md) | E148 1.1 recovery route, hook map and incident record for the HSL/WB build. |
 | [OM-5 strict builder](om5.builder.md) | Declarative patch scope, bounds and recorded hashes. |
 | [OM-5 Mark II card format](om5.formats.md) | OM5F wrapper, names and supported record fields. |
 | [Image-store fault investigation](om5.image-store.md) | Offline observations, emulator revision and remaining physical uncertainty. |
@@ -68,3 +76,5 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [Caduceus OM-5 overview](om5.readme.md) | Separate model status, features and project lineage. |
 | [Caduceus OM-5 releases](om5.releases.md) | The single published pre-release for the OM-5 Mark II. |
 | [Caduceus OM-5 roadmap](om5.roadmap.md) | Implemented, planned and open work for the OM-5 Mark II and original OM-5. |
+| [OM-5 Mark II stock section 7](om5.section7.md) | E148 1.1 compressed sections 6 and 7 and where the card updater lives. |
+| [OM-5 Mark II startup readiness correction](om5.startup-fix.md) | E148 section-ready words, the section 5 loaded extent and an overlay defect. |

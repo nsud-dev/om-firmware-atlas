@@ -114,3 +114,51 @@ records:
   published_on: null
   publication: public
   reuse_note: Attributed summary; statuses are the owner's own.
+- type: source
+  id: source.om5.startup-fix
+  title: OM-5 Mark II startup readiness correction
+  summary: E148 section-ready words, the section 5 loaded extent and an overlay defect.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STARTUP-FIX-2026-11-06.md
+  source_kind: github-file
+  upstream_repo: xulfr/caduceus-om5
+  revision: a72851a4ada5eab8eed02f7a06afd7f9297bbe81
+  locator: research/OM5II-STARTUP-FIX-2026-11-06.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.om5.brick-risk
+  title: OM-5 Mark II brick-risk review
+  summary: E148 1.1 recovery route, hook map and incident record for the HSL/WB build.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-BRICK-RISK.md
+  source_kind: github-file
+  upstream_repo: xulfr/caduceus-om5
+  revision: a72851a4ada5eab8eed02f7a06afd7f9297bbe81
+  locator: research/OM5II-BRICK-RISK.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.om5.section7
+  title: OM-5 Mark II stock section 7
+  summary: E148 1.1 compressed sections 6 and 7 and where the card updater lives.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STOCK-SECTION7.md
+  source_kind: github-file
+  upstream_repo: xulfr/caduceus-om5
+  revision: a72851a4ada5eab8eed02f7a06afd7f9297bbe81
+  locator: research/OM5II-STOCK-SECTION7.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
