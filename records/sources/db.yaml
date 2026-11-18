@@ -18,3 +18,20 @@ records:
   publication: public
   reuse_note: Attributed synthesis of mutable release notes; no code or executables imported.
   content_sha256: 9ac1dce7bf99fd8176acff95fc93dc2aa075296227d09b947d1b2797f395cf27
+- type: source
+  id: source.db.releases
+  title: db firmware releases
+  summary: Beta release notes from v0.2.20 to v0.4.1, in Korean and English.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-17'
+  url: https://github.com/azqeurio/om-c-firmware/releases
+  source_kind: github-release
+  upstream_repo: azqeurio/om-c-firmware
+  revision: dbv0.4.1
+  locator: Releases page, page 1; Korean notes summarised in translation
+  retrieved_on: '2026-11-17'
+  last_checked: '2026-11-17'
+  published_on: '2026-11-16'
+  publication: public
+  reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.

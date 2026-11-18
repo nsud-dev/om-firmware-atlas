@@ -15,7 +15,10 @@ E122: foundational HSL research; exact internal build identity matters.
 
 [Olympus firmware research](../projects/oly-fw-analysis.md){ .card-title }
 
-Foundational firmware work with deep PEN-F coverage.
+The research base: PEN-F HSL, firmware formats and tools for many bodies.
+
+Latest: alpha-20261017, 18 Oct 2026
+{ .card-meta }
 
 [Project home](https://github.com/fishcu/oly_fw_analysis) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues)
 { .card-links }
@@ -26,7 +29,10 @@ Foundational firmware work with deep PEN-F coverage.
 
 [db firmware / om-c-firmware](../projects/db-firmware.md){ .card-title }
 
-Release-centred controls, localisation and other modifications.
+Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
+
+Latest: dbv0.4.1, 16 Nov 2026
+{ .card-meta }
 
 [Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
 { .card-links }
@@ -37,7 +43,10 @@ Release-centred controls, localisation and other modifications.
 
 [OM-Emu](../projects/om-emu.md){ .card-title }
 
-Firmware lab, model ports, traces and patch overlays.
+Run OM SYSTEM and Olympus camera firmware in your browser.
+
+Emulator
+{ .card-meta }
 
 [Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
 { .card-links }
@@ -46,9 +55,9 @@ Firmware lab, model ports, traces and patch overlays.
 
 </div>
 
-Install and support instructions belong to each project. Follow its documentation for this exact camera.
+Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
 
-## Features and observations
+## Claims and test evidence
 
 | Scoped assertion | Project / build | Availability | Evidence |
 |---|---|---|---|

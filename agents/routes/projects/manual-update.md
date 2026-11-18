@@ -8,7 +8,7 @@ Historical SD update procedure and model naming.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [manual-update.yaml](../../../records/projects/manual-update.yaml) | Project scope, related work and contribution destination | 640 | ~160 |
+| [manual-update.yaml](../../../records/projects/manual-update.yaml) | Project scope, related work and contribution destination | 1,518 | ~380 |
 | [manual.yaml](../../../records/sources/manual.yaml) | Find the relevant source/observation ID; use bounded reads | 677 | ~170 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

@@ -2,15 +2,164 @@
 
 # db firmware / om-c-firmware
 
-Release-centred controls, localisation and other modifications.
+Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
 
-**[Upstream project](https://github.com/azqeurio/om-c-firmware)** · **[Contribution / support destination](https://github.com/azqeurio/om-c-firmware/issues)**
+<div class="cta-row" markdown="1">
 
-**Kind:** mod.
+[Project home](https://github.com/azqeurio/om-c-firmware){ .btn .btn-primary }
+[Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues){ .btn .btn-ghost }
+[Releases](https://github.com/azqeurio/om-c-firmware/releases){ .btn .btn-ghost }
 
-Reviewed v0.4.1 has substantial release claims despite a minimal main README. Individual test reports are not yet catalogued.
+</div>
 
-## Catalogued cameras
+**Type:** mod · **Latest release:** [dbv0.4.1](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.1), 16 Nov 2026 · **Maintained by** [azqeurio](https://github.com/azqeurio)
+{ .facts }
+
+## About
+
+db firmware (om-c-firmware) by azqeurio publishes beta firmware patches for a wide range of bodies, including the OM-1, OM-1 Mark II, OM-3, OM-5, OM-5 Mark II, E-M1 Mark III, E-M5 Mark III and PEN-F. The repository's README is minimal; the release notes, partly in Korean, describe each version.
+
+Recent releases list aperture-ring support for Panasonic lenses, extra burst rates on the OM-1, a 5 GHz hotspot, the electronic shutter sound through the speaker, Korean menus and, in v0.4.1, a Quasi-LUT feature with transfer to the camera through DBLink.
+
+The author owns only some of the supported bodies and says the patch can't be guaranteed to work on every model. v0.4.1 lists known issues for the OM-5 build.
+
+> **Before you install:** Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
+
+## Features
+
+As the project describes them. Status is the project's own; linked evidence is the Atlas's record of what was reported or observed.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**Panasonic aperture rings** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+The aperture ring on Panasonic lenses that have one controls the aperture.
+
+[OM-5](../cameras/om5.md) · [Evidence](../capabilities/om5-db-aperture.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Korean menus** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+Korean language support on several bodies.
+
+[OM-3](../cameras/om3.md), [OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Quasi-LUT and DBLink** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+A Quasi-LUT feature, with transfer to the camera through DBLink.
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**OM-1 Mark II features on the OM-1** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+A port of OM-1 Mark II firmware to the OM-1, without ND128 or the larger buffer.
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**12.5 and 16.7 fps bursts** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+Extra burst rates on the OM-1 with the SH2 shutter mode.
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**5 GHz hotspot and shutter sound** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+A 5 GHz Wi-Fi hotspot, and the electronic shutter sound through the speaker.
+
+</div>
+
+</div>
+
+## Releases
+
+<div class="release-item" markdown="1">
+
+**[db firmware v0.4.1 beta](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.1)** · 16 Nov 2026
+{ .release-head }
+
+- Korean support and a Quasi-LUT feature with DBLink transfer.
+- An OM-1 Mark II firmware port for the OM-1.
+- Fixes overexposure in 14-bit High Res on the OM-1 port.
+
+Known issues on the OM-5 build: battery drain, Fn buttons, Wi-Fi and gyroscope. The author can't guarantee it works on every model.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[db firmware v0.4.0 beta](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.0)** · 11 Nov 2026
+{ .release-head }
+
+- Aperture-ring patch for Panasonic lenses, 5 GHz hotspot and E-P7 features.
+
+Two added features reset the camera's settings; save your menus first.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[db firmware v0.3.2 beta](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2)** · 31 Oct 2026
+{ .release-head }
+
+- Adds the OM-5 Mark II, with Korean menus.
+- Electronic shutter sound through the speaker.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[db firmware v0.3.1.b beta](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.1.b)** · 30 Oct 2026
+{ .release-head }
+
+- Adds the OM-5 Mark II to the tested list.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[db firmware v0.3.1 beta](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.1beta)** · 28 Oct 2026
+{ .release-head }
+
+- Korean menus on several bodies, aperture-ring patch and extra burst rates.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[db firmware v0.3 beta](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.0)** · 26 Oct 2026
+{ .release-head }
+
+- Fixes shutter-sound settings and the macOS build.
+
+</div>
+
+
+## Cameras
 
 [OM SYSTEM OM-5](../cameras/om5.md), [OM SYSTEM OM-5 Mark II](../cameras/om5-ii.md), [OM SYSTEM OM-3](../cameras/om3.md), [Olympus PEN E-P7](../cameras/ep7.md), [Olympus PEN-F](../cameras/pen-f.md).
 
@@ -18,8 +167,13 @@ Reviewed v0.4.1 has substantial release claims despite a minimal main README. In
 
 None catalogued. These links do not assign ownership or imply identical implementations.
 
+## Research notes
+
+Reviewed v0.4.1 has substantial release claims despite a minimal main README. Individual test reports are not yet catalogued.
+
 ## Sources and record
 
 - [db firmware v0.4.1 release](../sources/db.release041.md)
+- [db firmware releases](../sources/db.releases.md)
 
 [Canonical record](../../records/projects/db-firmware.yaml) · Substantively reviewed: 2026-11-17.

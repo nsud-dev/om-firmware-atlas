@@ -12,5 +12,5 @@ Original Atlas contributions use the repository's [Apache-2.0 licence](../LICENS
 
 - [Reading the evidence](evidence.md): what a release, an emulator run and a camera report each establish.
 - [How it works](how-it-works.md): records, checks, review and publication.
-- [Get involved](contribute.md): talk, report a result or add a source.
+- [Community](community.md): talk, report a result or add a source.
 - [Source repository](https://github.com/xulfr/om-firmware-atlas)

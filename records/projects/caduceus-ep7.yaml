@@ -8,6 +8,7 @@ records:
   - source.ep7.readme
   - source.ep7.bodies
   - source.ep7.panel
+  - source.ep7.releases
   topics:
   - colour
   - interfaces
@@ -30,3 +31,264 @@ records:
     state: needs-evidence
     url: https://github.com/cakelesscoder/caduceus-ep7/issues/21
     owner: null
+  tagline: 'The original Caduceus: HSLFX colour editing and 29 film looks for the PEN E-P7.'
+  description:
+  - 'Caduceus is where the family started: open-source firmware patches for the Olympus PEN E-P7 on firmware
+    1.1. Its heart is HSLFX, which gives every Colour Profile hue, saturation and lightness per colour,
+    plus effects such as film grain, tinted halation, bloom and clarity, all edited on the camera''s own
+    colour wheel.'
+  - Beyond colour it adds 29 film simulations and black-and-white presets, true log video, XPan 65:24
+    and 21:9 stills, Live ND, a minimum shutter speed and longer video recording. The Caduceus Control
+    Panel, a browser tool, makes looks, shares them as short codes, and exports them as RapidRAW presets
+    for any camera's raw files.
+  - 'The author calls it beta and experimental: flashing modified firmware can crash or brick the camera.
+    Every patch is checked in an emulator first, and the restore path has been proven on a real E-P7.'
+  goals:
+  - More film looks, and an Art Effect preview in live view.
+  - One-press Live ND, faster grain saves, clean HDMI output and ISO Auto in movie M.
+  - 'Ports to other bodies: an E-M10 Mark IV port needs a volunteer tester, and an E-M5 Mark III port
+    needs a camera owner.'
+  maintainers:
+  - label: cakelesscoder
+    url: https://github.com/cakelesscoder
+  links:
+  - label: Install guide
+    url: https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md
+  - label: Control Panel
+    url: https://cakelesscoder.github.io/caduceus-ep7/
+  - label: Changelog
+    url: https://github.com/cakelesscoder/caduceus-ep7/blob/main/CHANGELOG.md
+  - label: Ports to other bodies
+    url: https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/BODIES.md
+  features:
+  - name: On-camera look editor (HSLFX)
+    summary: Film, Saturation, Hue, Light and Effects pages on the camera's own colour wheel; changed
+      looks are marked with *.
+    camera_ids: &id001
+    - camera.ep7
+    status: released
+    since: null
+    source_ref: source.ep7.readme
+    capability_id: capability.ep7-hsl
+  - name: 29 film simulations
+    summary: Velvia, Classic Chrome, Kodachrome, Portra, Ektar, CineStill, Vision3, Polaroid, Cross Process
+      and more, one per Colour Profile slot.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.ep7.readme
+  - name: Colour mix and base curve
+    summary: A per-look 3×3 colour matrix applied by the camera's image hardware, plus a choice of the
+      camera's base tone curves.
+    camera_ids: *id001
+    status: released
+    since: v0.34
+    source_ref: source.ep7.readme
+  - name: Split toning
+    summary: Tint shadows and highlights separately in 12 colours, in live view and photos.
+    camera_ids: *id001
+    status: released
+    since: v0.32
+    source_ref: source.ep7.readme
+  - name: Film grain
+    summary: Film-like grain on colour photos, Off to High per profile.
+    camera_ids: *id001
+    status: released
+    since: v0.27
+    source_ref: source.ep7.readme
+  - name: Tinted halation
+    summary: A red-orange glow around bright lights, as on CineStill film.
+    camera_ids: *id001
+    status: released
+    since: v0.31
+    source_ref: source.ep7.readme
+  - name: Tone per look
+    summary: Each look carries its own tone curve, with new Blacks and Whites controls.
+    camera_ids: *id001
+    status: released
+    since: v0.20
+    source_ref: source.ep7.readme
+  - name: Mono film presets
+    summary: Pan F, Acros, T-Max, Tri-X, HP5, Delta 3200, sepia, selenium and cyanotype for the Monochrome
+      Profiles.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.ep7.readme
+  - name: True log video
+    summary: A log curve hidden in the firmware, switched on with the Muted movie picture mode.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.ep7.readme
+  - name: XPan 65:24 and 21:9 stills
+    summary: Panorama and Wide aspect ratios with matching live view, playback and frame lines.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.ep7.readme
+  - name: Live ND
+    summary: 'ND3 and ND4 in Multiple Exposure: frames averaged at normal brightness.'
+    camera_ids: *id001
+    status: alpha
+    since: null
+    source_ref: source.ep7.readme
+  - name: More button functions
+    summary: More choices for REC and Fn, and the right and down arrow keys in Button Function.
+    camera_ids: *id001
+    status: released
+    since: v0.29
+    source_ref: source.ep7.readme
+  - name: Longer video recording
+    summary: The 29-minute and 2-hour caps raised to 9 hours; file and heat limits still apply.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.ep7.readme
+  - name: Selectable 4K bitrate
+    summary: 150, 100 or 60 Mbit/s for 4K movie slots.
+    camera_ids: *id001
+    status: released
+    since: v0.34
+    source_ref: source.ep7.readme
+  - name: Japanese and Chinese labels
+    summary: Caduceus's own labels in Japanese or Simplified Chinese when the camera uses that language.
+    camera_ids: *id001
+    status: released
+    since: v0.32
+    source_ref: source.ep7.readme
+  - name: Lens vignette correction off per look
+    summary: Natural corners per look. The firmware setting is confirmed; its effect on photos is not
+      yet, and reports are wanted.
+    camera_ids: *id001
+    status: testing
+    since: v0.25
+    source_ref: source.ep7.readme
+  - name: Caduceus Control Panel
+    summary: Make, preview and share looks in your browser, and export them for the camera or as RapidRAW
+      presets.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.ep7.readme
+  releases:
+  - tag: v0.34a
+    title: Caduceus v0.34a (beta)
+    date: '2026-11-15'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Halation now applies in brighter scenes.
+    - Japanese labels when the camera is set to Japanese.
+    warning: Beta. The author warns that flashing modified firmware can crash or brick the camera; never
+      flash an E-P7 build on another body.
+    source_ref: source.ep7.releases
+  - tag: v0.34
+    title: Caduceus v0.34 (beta)
+    date: '2026-11-15'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - A per-look colour matrix and base tone curve.
+    - A Colour & Light editor on the camera and the Standard 1.2 looks.
+    - Selectable 4K bitrate.
+    warning: Beta. The author warns that flashing modified firmware can crash or brick the camera; never
+      flash an E-P7 build on another body.
+    source_ref: source.ep7.releases
+  - tag: v0.33a
+    title: Caduceus v0.33a (beta)
+    date: '2026-11-15'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.33a
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Fixes a crash on the Colour Profile page; adds a crash report file.
+    warning: Beta. The author warns that flashing modified firmware can crash or brick the camera; never
+      flash an E-P7 build on another body.
+    source_ref: source.ep7.releases
+  - tag: v0.33
+    title: Caduceus v0.33 (beta)
+    date: '2026-11-14'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.33
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Grain about 1.85 times faster; halation needs half the work.
+    - Clean start after a crash.
+    warning: Beta. The author warns that flashing modified firmware can crash or brick the camera; never
+      flash an E-P7 build on another body.
+    source_ref: source.ep7.releases
+  - tag: v0.32b
+    title: Caduceus v0.32b (beta)
+    date: '2026-11-14'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.32b
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Grain rewritten to be faster; Chinese labels reviewed.
+    warning: Beta. v0.33 reports a faint repeating grain pattern in this version; update if you installed
+      it.
+    source_ref: source.ep7.releases
+  - tag: v0.32
+    title: Caduceus v0.32 (beta)
+    date: '2026-11-13'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.32
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Split toning on any COLOR profile and two Extras pages.
+    - The Standard 1.1 look pack, framing lines and Chinese labels.
+    warning: Beta. The author warns that flashing modified firmware can crash or brick the camera; never
+      flash an E-P7 build on another body.
+    source_ref: source.ep7.releases
+  - tag: v0.32a
+    title: Caduceus v0.32a (beta)
+    date: '2026-11-13'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.32a
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Fewer freezes with grain.
+    warning: Beta. Heavy effect stacks can still very occasionally stall the camera.
+    source_ref: source.ep7.releases
+  - tag: v0.31d
+    title: Caduceus v0.31d (beta)
+    date: '2026-11-11'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.31d
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - The look's name is written into the JPEG's EXIF.
+    warning: Beta. The author warns that flashing modified firmware can crash or brick the camera; never
+      flash an E-P7 build on another body.
+    source_ref: source.ep7.releases
+  - tag: v0.31c
+    title: Caduceus v0.31c (beta)
+    date: '2026-11-10'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.31c
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Effects locked to stills on the Movie and AP colour wheels; Muted reads 8-BIT LOG.
+    warning: Beta. The author warns that flashing modified firmware can crash or brick the camera; never
+      flash an E-P7 build on another body.
+    source_ref: source.ep7.releases
+  - tag: v0.31b
+    title: Caduceus v0.31b (beta)
+    date: '2026-11-10'
+    url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.31b
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Fixes a crash on bright scenes with grain and halation.
+    warning: Beta. The author warns that flashing modified firmware can crash or brick the camera; never
+      flash an E-P7 build on another body.
+    source_ref: source.ep7.releases
+  images:
+  - path: assets/projects/caduceus-ep7/film-looks.jpg
+    alt: Eight film looks shown on four sample scenes
+    caption: Eight Standard 1.2 looks, rendered by the Control Panel's preview. The preview approximates
+      the camera; grain and halation are not drawn.
+    credit: Caduceus for E-P7; CC0 sample photos

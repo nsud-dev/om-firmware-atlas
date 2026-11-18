@@ -7,6 +7,206 @@ E147: advanced Caduceus work, other modifications and an established research no
 **Model code:** E147 · **Also known as:** OM-3, OM3 · **Catalogue depth:** initial review
 { .facts }
 
+## What you can do with this camera
+
+Features as each project describes them, with their status. Follow a project's own guide before installing anything.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**Your films in Picture Mode** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+FILM 1–20 appear after COLOR 1–4, with their names on the title, quick menu, shooting screen and viewfinder.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.24.1
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**20 film simulations** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Looks inspired by Portra, Gold, Ektar, Ektachrome, Kodachrome, CineStill 800T, Velvia, Provia, Superia and more, made only from the camera's own settings.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Colour editor on the camera** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Hue and luminance for each of 12 colours next to the camera's saturation, with Color Mix and RGB curves since v0.30.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.11
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Split toning** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Tint shadows and highlights separately in 12 colours, with a Tone Balance row. Shows in live view.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.26
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Film grain** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Colour grain made by the camera's image processor, as fast as a photo without grain.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.25
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Glow, clarity and halation** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+A Glow / Clarity row, and halation: a red glow around bright lights, strength 0–5.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.28
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Changes kept per film** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Edits stay with each film over power off. A * marks what changed; hold OK to reset.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.25
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Films stored in the camera** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Films, your changes and the Extras settings live in the camera's memory, so any card works, or none.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.29
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**White balance per film** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Each film and COLOR remembers its white balance mode and Kelvin.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.28
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Buttons and Creative Dial** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+All four arrow keys in Button Function; each Creative Dial position set to CRT, ART, COLOR or MONO, with its own film.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.27
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Film recipe in every photo** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Each JPEG records its film and recipe in EXIF, so LookLab can open the film from a photo.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.27
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**LookLab** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Make and change films in your browser with a preview on sample photos or your own, starting from 62 looks. Nothing is uploaded.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Films from your LUTs and Lightroom presets** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+LookLab finds the camera settings closest to a .cube LUT or a Lightroom preset, with a match score.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Focus stacking with any lens** <span class="pill pill-planned">Planned</span>
+{ .feature-head }
+
+The camera's focus stacking and bracketing with any autofocus lens, not only OM's listed ones.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Panasonic aperture rings** <span class="pill pill-planned">Planned</span>
+{ .feature-head }
+
+The aperture ring on Panasonic lenses that have one sets the aperture.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Korean menus** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+Korean language support on several bodies.
+
+[db firmware / om-c-firmware](../projects/db-firmware.md)
+{ .card-meta }
+
+</div>
+
+</div>
+
 ## Projects for this camera
 
 <div class="project-grid" markdown="1">
@@ -15,7 +215,10 @@ E147: advanced Caduceus work, other modifications and an established research no
 
 [Caduceus for OM-3](../projects/caduceus-om3.md){ .card-title }
 
-OM-3 looks, colour editing, persistence and research.
+Film looks and a full colour editor, built into the OM SYSTEM OM-3.
+
+Latest: v0.30.3, 16 Nov 2026
+{ .card-meta }
 
 [Project home](https://github.com/androidfanman/caduceus-om3) · [Ask or report issues](https://github.com/androidfanman/caduceus-om3/issues)
 { .card-links }
@@ -26,7 +229,10 @@ OM-3 looks, colour editing, persistence and research.
 
 [db firmware / om-c-firmware](../projects/db-firmware.md){ .card-title }
 
-Release-centred controls, localisation and other modifications.
+Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
+
+Latest: dbv0.4.1, 16 Nov 2026
+{ .card-meta }
 
 [Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
 { .card-links }
@@ -37,7 +243,10 @@ Release-centred controls, localisation and other modifications.
 
 [Olympus firmware research](../projects/oly-fw-analysis.md){ .card-title }
 
-Foundational firmware work with deep PEN-F coverage.
+The research base: PEN-F HSL, firmware formats and tools for many bodies.
+
+Latest: alpha-20261017, 18 Oct 2026
+{ .card-meta }
 
 [Project home](https://github.com/fishcu/oly_fw_analysis) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues)
 { .card-links }
@@ -48,7 +257,10 @@ Foundational firmware work with deep PEN-F coverage.
 
 [OM-Emu](../projects/om-emu.md){ .card-title }
 
-Firmware lab, model ports, traces and patch overlays.
+Run OM SYSTEM and Olympus camera firmware in your browser.
+
+Emulator
+{ .card-meta }
 
 [Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
 { .card-links }
@@ -59,7 +271,10 @@ Firmware lab, model ports, traces and patch overlays.
 
 [OM-3 downstream experiments](../projects/camera-stuff.md){ .card-title }
 
-Downstream experiments intended to send fixes upstream.
+A downstream OM-3 fork for trying fixes before sending them upstream.
+
+Experimental fork
+{ .card-meta }
 
 [Project home](https://github.com/fernandezk26/camera-stuff) · [Ask or report issues](https://github.com/fernandezk26/camera-stuff/issues)
 { .card-links }
@@ -70,7 +285,10 @@ Downstream experiments intended to send fixes upstream.
 
 [Historical manual update research](../projects/manual-update.md){ .card-title }
 
-Historical SD update procedure and model naming.
+How to install official OM SYSTEM firmware from an SD card.
+
+Reference
+{ .card-meta }
 
 [Project home](https://github.com/iKenndac/om-1-manual-firmware-install) · [Ask or report issues](https://github.com/iKenndac/om-1-manual-firmware-install/issues)
 { .card-links }
@@ -79,9 +297,9 @@ Historical SD update procedure and model naming.
 
 </div>
 
-Install and support instructions belong to each project. Follow its documentation for this exact camera.
+Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
 
-## Features and observations
+## Claims and test evidence
 
 | Scoped assertion | Project / build | Availability | Evidence |
 |---|---|---|---|

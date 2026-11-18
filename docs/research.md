@@ -1,6 +1,6 @@
 # Research
 
-Start with the work that already exists. The Atlas maps who is working on what, what has been found, and where each kind of change belongs. Detailed notebooks and tools stay with their projects.
+For people building new work: guides to the firmware, the evidence catalogue, and how to choose where a change belongs. Looking for what you can install today? See [Cameras](../views/cameras/index.md) and [Projects](../views/projects/index.md).
 
 ## Check what exists first
 
@@ -22,9 +22,8 @@ Choose the [exact camera and generation](../views/cameras/index.md). Check the f
 
 <div class="explore-grid" markdown="1">
 
-[**Projects** <span>Independent projects, their homes and support routes</span>](../views/projects/index.md)
 [**Firmware** <span>Stock versions that work starts from</span>](../views/firmware/index.md)
-[**Features** <span>Scoped feature claims per camera, project and build</span>](../views/capabilities/index.md)
+[**Feature claims** <span>Scoped claims per camera, project and build, with their evidence</span>](../views/capabilities/index.md)
 [**Observations** <span>Camera, emulator and code findings, with their gaps</span>](../views/evidence/index.md)
 [**Sources** <span>Everything cited, with revisions and check dates</span>](../views/sources/index.md)
 

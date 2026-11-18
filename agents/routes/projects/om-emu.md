@@ -8,7 +8,7 @@ Firmware lab, model ports, traces and patch overlays.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [om-emu.yaml](../../../records/projects/om-emu.yaml) | Project scope, related work and contribution destination | 710 | ~178 |
-| [emu.yaml](../../../records/sources/emu.yaml) | Find the relevant source/observation ID; use bounded reads | 2,467 | ~617 |
+| [om-emu.yaml](../../../records/projects/om-emu.yaml) | Project scope, related work and contribution destination | 2,910 | ~728 |
+| [emu.yaml](../../../records/sources/emu.yaml) | Find the relevant source/observation ID; use bounded reads | 3,138 | ~785 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

@@ -5,7 +5,7 @@ Preconditions: Atlas checkout, applicable entry contract, documentation dependen
 1. Resolve the source and its revision/release/comment identity. For a repo inspect the relevant README/index, releases, branches, reports and open PRs. Fetch bounded sections. Do not execute its tools.
 2. Use project/camera/topic routes and search the affected record shards. Check whether this source or change already has an open PR.
 3. Extract useful deltas. Separate observations, inference and proposals. Match exact target/build; retain limitations, negative outcomes, report-date versus test-date and expected versus reported/observed hashes.
-4. Add sources and update existing records/topics. Schema examples: [record format](../../maintenance/record-format.md), [templates](../../templates/README.md). Only create new IDs/topics when needed. Community listings are separate from technical evidence.
+4. Add sources and update existing records/topics. Schema examples: [record format](../../maintenance/record-format.md), [templates](../../templates/README.md). Only create new IDs/topics when needed. For a project or release, also update the project's showcase fields (description, features, releases; see the record format). Community listings are separate from technical evidence.
 5. Run generate, check, tests and build as listed in AGENTS.md. Inspect the affected human pages. Keep generated outputs in the diff.
 6. Raise a PR with sources/revisions, changed claims, missing evidence/conflicts, affected pages and validation. If access is missing, preserve the concrete diff and state the unfinished step. Do not claim a PR exists until creation succeeds. Do not approve or merge.
 

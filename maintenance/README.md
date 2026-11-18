@@ -15,13 +15,13 @@ python scripts/atlas.py route --job research --camera om5-ii --topic emulation
 python scripts/atlas.py freshness --fetch
 ```
 
-`check` validates schemas, identity/reference semantics, dependencies, local links, generated drift and fixed routing cases. `build` validates and builds MkDocs strictly from an ignored staging tree; it also fills the camera and guide lists in the site navigation from records ([decision 0004](decisions/0004-journey-navigation.md)). `generate` writes only Atlas-owned `views/` and `agents/routes/`; do not edit those files manually. Costs are UTF-8 bytes and `ceil(bytes / 4)` approximate tokens, not measured model usage.
+`check` validates schemas, identity/reference semantics, dependencies, local links, generated drift and fixed routing cases. `build` validates and builds MkDocs strictly from an ignored staging tree; it also fills the camera, project and guide lists in the site navigation, the home showcase and the maintainer list from records ([decisions 0004](decisions/0004-journey-navigation.md) and [0005](decisions/0005-community-showcase.md)). `generate` writes only Atlas-owned `views/` and `agents/routes/`; do not edit those files manually. Costs are UTF-8 bytes and `ceil(bytes / 4)` approximate tokens, not measured model usage.
 
 Read [record format](record-format.md) for canonical data and [the implementation plan](plan.md) for scope and remaining improvements. [Decisions](decisions/0001-foundation.md) record why the library is built this way.
 
 ## Publication and review
 
-PR checks use read-only repository access. The main workflow validates, tests, builds and publishes GitHub Pages using the `github-pages` environment. The site displays its source commit and publication time. Only `main` and manual runs on `main` can publish. Scheduled freshness checks create a report artifact and rebuild the main site so age notices advance; they never change factual records.
+PR checks use read-only repository access. The main workflow validates, tests, builds and publishes GitHub Pages using the `github-pages` environment. The site displays its source commit and publication time. Only `main` and manual runs on `main` can publish. Scheduled freshness checks create a report and update-queue artifact, open or refresh one `atlas-update-queue` issue (the job's only write permission), and rebuild the main site so age notices advance; they never change factual records.
 
 The initial setup was explicitly authorised to push to main. Normal agent contributions raise PRs; humans review and merge. Agents never approve or merge. Main requires a PR, passing **Atlas validation**, an up-to-date branch and resolved conversations, including for administrators. Another person's approval is not required, so maintainers can merge their own PRs after reviewing them. Force pushes and branch deletion are blocked. CODEOWNERS provides ownership and review routing without mandatory code-owner approval. Branch protection is a repository setting, not something AGENTS.md can enforce. [How the Atlas works](../docs/how-it-works.md) explains this for contributors.
 

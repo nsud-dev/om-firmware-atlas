@@ -2,15 +2,135 @@
 
 # Projects
 
-Independent projects, each with its own home, maintainers and support route. A listing does not imply endorsement or that a project works on every camera it mentions.
+Independent projects by members of the community, each with its own home, maintainers and support route. Features are described as each project describes them. A listing does not imply endorsement.
 
-| Entry | What you will find |
-|---|---|
-| [Caduceus for E-P7](caduceus-ep7.md) | E-P7 modifications and shared-panel/port research. |
-| [Caduceus for OM-3](caduceus-om3.md) | OM-3 looks, colour editing, persistence and research. |
-| [Caduceus for OM-5](caduceus-om5.md) | Separate original OM-5 and Mark II work, strict builders and failures. |
-| [OM-3 downstream experiments](camera-stuff.md) | Downstream experiments intended to send fixes upstream. |
-| [db firmware / om-c-firmware](db-firmware.md) | Release-centred controls, localisation and other modifications. |
-| [Historical manual update research](manual-update.md) | Historical SD update procedure and model naming. |
-| [Olympus firmware research](oly-fw-analysis.md) | Foundational firmware work with deep PEN-F coverage. |
-| [OM-Emu](om-emu.md) | Firmware lab, model ports, traces and patch overlays. |
+## Camera modifications
+
+<div class="project-grid" markdown="1">
+
+<div class="project-card" markdown="1">
+
+![The OM-5 Mark II Picture Mode screen showing Color Profile 2 with the look Portra 160](../../docs/assets/projects/caduceus-om5/picture-mode-look.png)
+{ .card-image }
+
+[Caduceus for OM-5](caduceus-om5.md){ .card-title }
+
+Looks and a full colour editor for the OM-5 Mark II. Experimental.
+
+Color Profiles 1–3 and Monochrome Profiles 1–3 · Custom looks · Colour editor
+{ .card-features }
+
+Latest: v0.1.0-alpha12, 16 Nov 2026
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+![A Paris street scene at night with warm, soft colour](../../docs/assets/projects/caduceus-om3/film-portra-400.jpg)
+{ .card-image }
+
+[Caduceus for OM-3](caduceus-om3.md){ .card-title }
+
+Film looks and a full colour editor, built into the OM SYSTEM OM-3.
+
+Your films in Picture Mode · 20 film simulations · Colour editor on the camera
+{ .card-features }
+
+Latest: v0.30.3, 16 Nov 2026
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+![Eight film looks shown on four sample scenes](../../docs/assets/projects/caduceus-ep7/film-looks.jpg)
+{ .card-image }
+
+[Caduceus for E-P7](caduceus-ep7.md){ .card-title }
+
+The original Caduceus: HSLFX colour editing and 29 film looks for the PEN E-P7.
+
+On-camera look editor (HSLFX) · 29 film simulations · Colour mix and base curve
+{ .card-features }
+
+Latest: v0.34a, 15 Nov 2026
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[db firmware / om-c-firmware](db-firmware.md){ .card-title }
+
+Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
+
+Panasonic aperture rings · Korean menus · Quasi-LUT and DBLink
+{ .card-features }
+
+Latest: dbv0.4.1, 16 Nov 2026
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[OM-3 downstream experiments](camera-stuff.md){ .card-title }
+
+A downstream OM-3 fork for trying fixes before sending them upstream.
+
+Experimental fork
+{ .card-meta }
+
+</div>
+
+</div>
+
+## Research and tools
+
+<div class="project-grid" markdown="1">
+
+<div class="project-card" markdown="1">
+
+[Olympus firmware research](oly-fw-analysis.md){ .card-title }
+
+The research base: PEN-F HSL, firmware formats and tools for many bodies.
+
+PEN-F HSL · Firmware toolkit · Findings by topic
+{ .card-features }
+
+Latest: alpha-20261017, 18 Oct 2026
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[OM-Emu](om-emu.md){ .card-title }
+
+Run OM SYSTEM and Olympus camera firmware in your browser.
+
+Browser player · Patch overlays · Caduceus release checks
+{ .card-features }
+
+Emulator
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[Historical manual update research](manual-update.md){ .card-title }
+
+How to install official OM SYSTEM firmware from an SD card.
+
+SD card firmware update
+{ .card-features }
+
+Reference
+{ .card-meta }
+
+</div>
+
+</div>
+

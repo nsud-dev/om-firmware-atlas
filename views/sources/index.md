@@ -8,19 +8,23 @@ Every source the Atlas cites, with its revision and when it was last checked.
 |---|---|
 | [r/M43 community page](community.m43.md) | Public photography venue; Caduceus relevance supplied by the Atlas maintainer. |
 | [db firmware v0.4.1 release](db.release041.md) | Release-centred feature claims and named limitations, not an independent camera audit. |
+| [db firmware releases](db.releases.md) | Beta release notes from v0.2.20 to v0.4.1, in Korean and English. |
 | [OM-Emu architecture](emu.architecture.md) | Harness-driven startup, model translation and verification. |
 | [Acquisition and containers](emu.container.md) | Vendor API acquisition and address notation. |
 | [OM-1 processor roles](emu.cores.md) | Scoped static analysis of several cores and external processors. |
 | [OM-Emu scope](emu.readme.md) | Model ports, patch overlays and named stand-ins. |
+| [OM-Emu overview (current)](emu.readme-current.md) | What the browser player runs today, Caduceus checks and the body ports. |
 | [Caduceus body survey](ep7.bodies.md) | Related projects and method-specific signature comparisons. |
 | [E-P7 firmware guide](ep7.guide.md) | Containers, mapping, loaders and patching lessons. |
 | [E-P7 look-format additions](ep7.look-v4.md) | Curve/matrix fields and older-consumer behaviour. |
 | [Shared Control Panel direction](ep7.panel.md) | Maintainer proposal for common settings and camera exporters. |
 | [E-P7 Ghidra/REA profile](ep7.rea.md) | A specific locally patched setup and decompiler limitations. |
 | [Caduceus E-P7 overview](ep7.readme.md) | Advertised modifications and feature-specific limitations. |
+| [Caduceus E-P7 releases](ep7.releases.md) | Beta release notes from v0.31b to v0.34a. |
 | [OE container reference](fishcu.containers.md) | Component wrappers, transform and checksum scope. |
 | [IDA 4.9 profile](fishcu.ida.md) | The specific optional tested IDA/MN103 combination. |
 | [Olympus research overview](fishcu.readme.md) | PEN-F depth, cross-model work and hardware-report policy. |
+| [PEN-F HSL releases](fishcu.releases.md) | The two PEN-F HSL alpha releases and their stated limits. |
 | [Research reproduction](fishcu.reproduce.md) | Exact PEN-F input identity and bounded native probes. |
 | [Validation reference](fishcu.validation.md) | Scoped checks and alignment blind spots. |
 | [OM-3 downstream experiment](fork.readme.md) | Experimental changes intended to contribute upstream. |
@@ -28,10 +32,14 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [OM-3 card formats](om3.formats.md) | OM3P layout and release-dependent field semantics. |
 | [OM-3 LookLab](om3.looklab.md) | OM-3-only editor, sharing schema and export targets. |
 | [Caduceus OM-3 overview](om3.readme.md) | Features and maintainer-reported camera results at the reviewed revision. |
+| [Caduceus OM-3 releases](om3.releases.md) | Release notes from v0.29.1 to the v0.30.4-alpha test version. |
 | [OM-3 research index](om3.research.md) | Scoped entry points into the notebook, tools and tests. |
+| [Caduceus OM-3 roadmap](om3.roadmap.md) | Planned, testing, parked and fixed work as the owner describes it. |
 | [Mark II alpha12 report](om5.alpha12.md) | Expected digest and an explicitly incomplete owner report. |
 | [OM-5 strict builder](om5.builder.md) | Declarative patch scope, bounds and recorded hashes. |
 | [OM-5 Mark II card format](om5.formats.md) | OM5F wrapper, names and supported record fields. |
 | [Image-store fault investigation](om5.image-store.md) | Offline observations, emulator revision and remaining physical uncertainty. |
 | [Original OM-5 tester comment](om5.prealpha1.md) | One named-package startup failure and restoration report. |
 | [Caduceus OM-5 overview](om5.readme.md) | Separate model status, features and project lineage. |
+| [Caduceus OM-5 releases](om5.releases.md) | The single published pre-release for the OM-5 Mark II. |
+| [Caduceus OM-5 roadmap](om5.roadmap.md) | Implemented, planned and open work for the OM-5 Mark II and original OM-5. |

@@ -8,7 +8,7 @@ Release-centred controls, localisation and other modifications.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [db-firmware.yaml](../../../records/projects/db-firmware.yaml) | Project scope, related work and contribution destination | 693 | ~174 |
-| [db.yaml](../../../records/sources/db.yaml) | Find the relevant source/observation ID; use bounded reads | 797 | ~200 |
+| [db-firmware.yaml](../../../records/projects/db-firmware.yaml) | Project scope, related work and contribution destination | 5,716 | ~1,429 |
+| [db.yaml](../../../records/sources/db.yaml) | Find the relevant source/observation ID; use bounded reads | 1,438 | ~360 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

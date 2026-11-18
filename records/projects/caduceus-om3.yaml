@@ -8,6 +8,8 @@ records:
   - source.om3.readme
   - source.om3.looklab
   - source.om3.research
+  - source.om3.roadmap
+  - source.om3.releases
   topics:
   - colour
   - interfaces
@@ -24,3 +26,255 @@ records:
   related_projects:
   - project.caduceus-ep7
   - project.om-emu
+  tagline: Film looks and a full colour editor, built into the OM SYSTEM OM-3.
+  description:
+  - 'Caduceus for OM-3 adds 20 film simulations and a colour editor to the OM-3''s own Picture Mode. The
+    films appear as FILM 1–20 after COLOR 1–4, each with its name on screen, and you can fine-tune any
+    of them on the camera: hue, saturation and brightness for 12 colours, split toning, curves, grain,
+    glow and halation.'
+  - Looks are made and shared in LookLab, a browser tool that previews a film on sample photos or your
+    own and saves one file for the card. Since v0.29 the films and your changes live in the camera's own
+    memory, so any card works, or none at all.
+  - 'It is open source, for the OM-3 on firmware 1.1 only, and grew out of Caduceus for the E-P7. The
+    project calls it experimental: it can crash or freeze the camera, and the launcher keeps a restore
+    file so you can go back to OM''s firmware.'
+  goals:
+  - Make Color Profile mode the best JPEG maker of any camera. With v0.28 the owner considers the colour
+    profiles complete for now.
+  - Video comes next in the owner's order of work.
+  - 'Lens and focus requests are planned: focus stacking with any autofocus lens, and aperture rings on
+    Panasonic lenses.'
+  maintainers:
+  - label: androidfanman
+    url: https://github.com/androidfanman
+  links:
+  - label: Tour
+    url: https://androidfanman.github.io/caduceus-om3/
+  - label: Install guide
+    url: https://androidfanman.github.io/caduceus-om3/pages/install/
+  - label: Using it
+    url: https://androidfanman.github.io/caduceus-om3/pages/using/
+  - label: LookLab
+    url: https://androidfanman.github.io/caduceus-om3/looklab/
+  - label: Roadmap
+    url: https://androidfanman.github.io/caduceus-om3/pages/roadmap/
+  features:
+  - name: Your films in Picture Mode
+    summary: FILM 1–20 appear after COLOR 1–4, with their names on the title, quick menu, shooting screen
+      and viewfinder.
+    camera_ids: &id001
+    - camera.om3
+    status: released
+    since: v0.24.1
+    source_ref: source.om3.readme
+  - name: 20 film simulations
+    summary: Looks inspired by Portra, Gold, Ektar, Ektachrome, Kodachrome, CineStill 800T, Velvia, Provia,
+      Superia and more, made only from the camera's own settings.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.om3.readme
+  - name: Colour editor on the camera
+    summary: Hue and luminance for each of 12 colours next to the camera's saturation, with Color Mix
+      and RGB curves since v0.30.
+    camera_ids: *id001
+    status: released
+    since: v0.11
+    source_ref: source.om3.readme
+    capability_id: capability.om3-hsl
+  - name: Split toning
+    summary: Tint shadows and highlights separately in 12 colours, with a Tone Balance row. Shows in live
+      view.
+    camera_ids: *id001
+    status: released
+    since: v0.26
+    source_ref: source.om3.readme
+  - name: Film grain
+    summary: Colour grain made by the camera's image processor, as fast as a photo without grain.
+    camera_ids: *id001
+    status: released
+    since: v0.25
+    source_ref: source.om3.readme
+  - name: Glow, clarity and halation
+    summary: 'A Glow / Clarity row, and halation: a red glow around bright lights, strength 0–5.'
+    camera_ids: *id001
+    status: released
+    since: v0.28
+    source_ref: source.om3.readme
+  - name: Changes kept per film
+    summary: Edits stay with each film over power off. A * marks what changed; hold OK to reset.
+    camera_ids: *id001
+    status: released
+    since: v0.25
+    source_ref: source.om3.readme
+  - name: Films stored in the camera
+    summary: Films, your changes and the Extras settings live in the camera's memory, so any card works,
+      or none.
+    camera_ids: *id001
+    status: released
+    since: v0.29
+    source_ref: source.om3.readme
+  - name: White balance per film
+    summary: Each film and COLOR remembers its white balance mode and Kelvin.
+    camera_ids: *id001
+    status: released
+    since: v0.28
+    source_ref: source.om3.readme
+  - name: Buttons and Creative Dial
+    summary: All four arrow keys in Button Function; each Creative Dial position set to CRT, ART, COLOR
+      or MONO, with its own film.
+    camera_ids: *id001
+    status: released
+    since: v0.27
+    source_ref: source.om3.readme
+  - name: Film recipe in every photo
+    summary: Each JPEG records its film and recipe in EXIF, so LookLab can open the film from a photo.
+    camera_ids: *id001
+    status: released
+    since: v0.27
+    source_ref: source.om3.readme
+  - name: LookLab
+    summary: Make and change films in your browser with a preview on sample photos or your own, starting
+      from 62 looks. Nothing is uploaded.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.om3.readme
+  - name: Films from your LUTs and Lightroom presets
+    summary: LookLab finds the camera settings closest to a .cube LUT or a Lightroom preset, with a match
+      score.
+    camera_ids: *id001
+    status: testing
+    since: null
+    source_ref: source.om3.roadmap
+  - name: Focus stacking with any lens
+    summary: The camera's focus stacking and bracketing with any autofocus lens, not only OM's listed
+      ones.
+    camera_ids: *id001
+    status: planned
+    since: null
+    source_ref: source.om3.roadmap
+  - name: Panasonic aperture rings
+    summary: The aperture ring on Panasonic lenses that have one sets the aperture.
+    camera_ids: *id001
+    status: planned
+    since: null
+    source_ref: source.om3.roadmap
+  releases:
+  - tag: v0.30.4-alpha
+    title: Caduceus for OM-3 v0.30.4-alpha (test version)
+    date: '2026-11-17'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.30.4-alpha
+    prerelease: true
+    camera_ids: *id001
+    highlights:
+    - Fixes a camera restart when switching films quickly.
+    - Colour wheel labels read Sat, Hue, Lum or Tint.
+    - Looks such as split toning, curves and Glow are now photo-only, not applied to video.
+    warning: A test version; the project says v0.30.3 stays the current version.
+    source_ref: source.om3.releases
+  - tag: v0.30.3
+    title: Caduceus for OM-3 v0.30.3
+    date: '2026-11-16'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.30.3
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Halation photos save about twice as fast, with a smoother halo fade.
+    - RGB and Mix pages move one step per dial click; curves redraw about three times faster.
+    - Fixes a late shutter and runaway bursts with the debug log on.
+    source_ref: source.om3.releases
+  - tag: v0.30.2
+    title: Caduceus for OM-3 v0.30.2
+    date: '2026-11-16'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.30.2
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Fixes a black review picture and a frozen live view with Glow, Clarity or Halation.
+    source_ref: source.om3.releases
+  - tag: v0.30.1
+    title: Caduceus for OM-3 v0.30.1
+    date: '2026-11-16'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.30.1
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Fixes a one-frame menu flash in Picture Mode.
+    source_ref: source.om3.releases
+  - tag: v0.30
+    title: Caduceus for OM-3 v0.30
+    date: '2026-11-16'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.30
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - 'New: Color Mix and RGB curves on the camera, with the 20 films regraded to use them.'
+    - New Picture Mode row order.
+    - Fixes for mode-dial changes, a video freeze and the Noise Filter marker.
+    source_ref: source.om3.releases
+  - tag: v0.29.5
+    title: Caduceus for OM-3 v0.29.5
+    date: '2026-11-15'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.29.5
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Custom modes keep their own copy of your films and changes.
+    - Fixes a lost Contrast change made in P.
+    warning: After updating, assign your custom modes once.
+    source_ref: source.om3.releases
+  - tag: v0.29.4
+    title: Caduceus for OM-3 v0.29.4
+    date: '2026-11-15'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.29.4
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Fixes the * markers in Picture Mode and keeps changes when switching off straight after.
+    - Display fixes and a Custom WB fix for films.
+    source_ref: source.om3.releases
+  - tag: v0.29.3
+    title: Caduceus for OM-3 v0.29.3
+    date: '2026-11-14'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.29.3
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - The Delete button can take a shooting function.
+    source_ref: source.om3.releases
+  - tag: v0.29.2
+    title: Caduceus for OM-3 v0.29.2
+    date: '2026-11-14'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.29.2
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Custom modes C1–C5 no longer change your films; each brings back the films it was assigned with.
+    source_ref: source.om3.releases
+  - tag: v0.29.1
+    title: Caduceus for OM-3 v0.29.1
+    date: '2026-11-13'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.29.1
+    prerelease: false
+    camera_ids: *id001
+    highlights:
+    - Films load with no card in the camera.
+    source_ref: source.om3.releases
+  images:
+  - path: assets/projects/caduceus-om3/film-portra-400.jpg
+    alt: A Paris street scene at night with warm, soft colour
+    caption: FILM 1, Portra 400, on a sample photo from the project's tour.
+    credit: Caduceus for OM-3 tour; photo by Pierre Blaché, public domain
+  - path: assets/projects/caduceus-om3/picture-mode-film.png
+    alt: The OM-3 Picture Mode screen showing FILM 1, Portra 400, after COLOR 1–4
+    caption: The films sit in Picture Mode after COLOR 1–4.
+    credit: Caduceus for OM-3 tour
+  - path: assets/projects/caduceus-om3/colour-wheel.png
+    alt: The colour wheel editor with per-colour saturation
+    caption: Per-colour editing on the camera's colour wheel.
+    credit: Caduceus for OM-3 tour
+  - path: assets/projects/caduceus-om3/halation.jpg
+    alt: A neon motel sign at dusk with a red glow around the lights
+    caption: Halation at strength 5 on a sample photo.
+    credit: Caduceus for OM-3 tour; photo by Blervis, CC0

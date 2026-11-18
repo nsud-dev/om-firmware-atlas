@@ -7,6 +7,38 @@ Original E144: several projects have distinct experiments. Mark II results do no
 **Model code:** E144 · **Also known as:** Original OM-5, OM5 · **Catalogue depth:** initial review
 { .facts }
 
+## What you can do with this camera
+
+Features as each project describes them, with their status. Follow a project's own guide before installing anything.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**Panasonic aperture rings** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+The aperture ring on Panasonic lenses that have one controls the aperture.
+
+[db firmware / om-c-firmware](../projects/db-firmware.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Korean menus** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+Korean language support on several bodies.
+
+[db firmware / om-c-firmware](../projects/db-firmware.md)
+{ .card-meta }
+
+</div>
+
+</div>
+
 ## Projects for this camera
 
 <div class="project-grid" markdown="1">
@@ -15,7 +47,10 @@ Original E144: several projects have distinct experiments. Mark II results do no
 
 [Caduceus for OM-5](../projects/caduceus-om5.md){ .card-title }
 
-Separate original OM-5 and Mark II work, strict builders and failures.
+Looks and a full colour editor for the OM-5 Mark II. Experimental.
+
+Latest: v0.1.0-alpha12, 16 Nov 2026
+{ .card-meta }
 
 [Project home](https://github.com/xulfr/caduceus-om5) · [Ask or report issues](https://github.com/xulfr/caduceus-om5/issues)
 { .card-links }
@@ -26,7 +61,10 @@ Separate original OM-5 and Mark II work, strict builders and failures.
 
 [db firmware / om-c-firmware](../projects/db-firmware.md){ .card-title }
 
-Release-centred controls, localisation and other modifications.
+Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
+
+Latest: dbv0.4.1, 16 Nov 2026
+{ .card-meta }
 
 [Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
 { .card-links }
@@ -37,7 +75,10 @@ Release-centred controls, localisation and other modifications.
 
 [Olympus firmware research](../projects/oly-fw-analysis.md){ .card-title }
 
-Foundational firmware work with deep PEN-F coverage.
+The research base: PEN-F HSL, firmware formats and tools for many bodies.
+
+Latest: alpha-20261017, 18 Oct 2026
+{ .card-meta }
 
 [Project home](https://github.com/fishcu/oly_fw_analysis) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues)
 { .card-links }
@@ -48,7 +89,10 @@ Foundational firmware work with deep PEN-F coverage.
 
 [OM-Emu](../projects/om-emu.md){ .card-title }
 
-Firmware lab, model ports, traces and patch overlays.
+Run OM SYSTEM and Olympus camera firmware in your browser.
+
+Emulator
+{ .card-meta }
 
 [Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
 { .card-links }
@@ -59,7 +103,10 @@ Firmware lab, model ports, traces and patch overlays.
 
 [Historical manual update research](../projects/manual-update.md){ .card-title }
 
-Historical SD update procedure and model naming.
+How to install official OM SYSTEM firmware from an SD card.
+
+Reference
+{ .card-meta }
 
 [Project home](https://github.com/iKenndac/om-1-manual-firmware-install) · [Ask or report issues](https://github.com/iKenndac/om-1-manual-firmware-install/issues)
 { .card-links }
@@ -68,9 +115,9 @@ Historical SD update procedure and model naming.
 
 </div>
 
-Install and support instructions belong to each project. Follow its documentation for this exact camera.
+Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
 
-## Features and observations
+## Claims and test evidence
 
 | Scoped assertion | Project / build | Availability | Evidence |
 |---|---|---|---|

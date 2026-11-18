@@ -2,15 +2,78 @@
 
 # OM-Emu
 
-Firmware lab, model ports, traces and patch overlays.
+Run OM SYSTEM and Olympus camera firmware in your browser.
 
-**[Upstream project](https://github.com/flatpanda/om-emu)** · **[Contribution / support destination](https://github.com/flatpanda/om-emu/issues)**
+<div class="cta-row" markdown="1">
 
-**Kind:** emulator.
+[Project home](https://github.com/flatpanda/om-emu){ .btn .btn-primary }
+[Ask or report issues](https://github.com/flatpanda/om-emu/issues){ .btn .btn-ghost }
+[Try it in your browser](https://flatpanda.github.io/om-emu/){ .btn .btn-ghost }
 
-These cameras are only the Atlas subset. Named stand-ins and harness-driven startup limit what results establish.
+</div>
 
-## Catalogued cameras
+**Type:** emulator · **Maintained by** [flatpanda](https://github.com/flatpanda)
+{ .facts }
+
+## About
+
+OM-Emu is a lab that runs Olympus and OM SYSTEM camera firmware outside the camera. It emulates the camera's processor and the devices its screens depend on, then runs the firmware's own menus and camera application. You can try it in your browser: you supply the official firmware file, and nothing is uploaded.
+
+Its reference body is the OM-1. Ports bring up the start screen, half-press, shutter and playback on many other bodies, including the OM-3, OM-5, OM-5 Mark II, E-M10 Mark IV, E-P7 and PEN-F. Firmware patches can be overlaid in memory, and Caduceus releases are checked in the lab before they go on a camera.
+
+It is not a whole camera: the image sensor, autofocus and recording hardware are replaced by named stand-ins, so a result in the lab is not a result on a real camera.
+
+## Features
+
+As the project describes them. Status is the project's own; linked evidence is the Atlas's record of what was reported or observed.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**Browser player** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Start-up to the shooting screen, menus, Super Control Panel, shutter and playback, from the official firmware file.
+
+[OM-3](../cameras/om3.md), [OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [PEN E-P7](../cameras/ep7.md), [PEN-F](../cameras/pen-f.md), [OM-D E-M10 Mark IV](../cameras/em10-iv.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Patch overlays** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Run firmware with byte patches applied in memory and checked against the stock blocks.
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Caduceus release checks** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Caduceus releases run in the lab against pinned observations before they go on a camera.
+
+[OM-3](../cameras/om3.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Scripted sessions and debug API** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Headless sessions, traces, breakpoints and calls into firmware functions for research.
+
+</div>
+
+</div>
+
+## Cameras
 
 [OM SYSTEM OM-5](../cameras/om5.md), [OM SYSTEM OM-5 Mark II](../cameras/om5-ii.md), [OM SYSTEM OM-3](../cameras/om3.md), [Olympus PEN E-P7](../cameras/ep7.md), [Olympus PEN-F](../cameras/pen-f.md), [Olympus OM-D E-M10 Mark IV](../cameras/em10-iv.md).
 
@@ -18,9 +81,14 @@ These cameras are only the Atlas subset. Named stand-ins and harness-driven star
 
 [Olympus firmware research](oly-fw-analysis.md). These links do not assign ownership or imply identical implementations.
 
+## Research notes
+
+These cameras are only the Atlas subset. Named stand-ins and harness-driven startup limit what results establish.
+
 ## Sources and record
 
 - [OM-Emu scope](../sources/emu.readme.md)
 - [OM-Emu architecture](../sources/emu.architecture.md)
+- [OM-Emu overview (current)](../sources/emu.readme-current.md)
 
 [Canonical record](../../records/projects/om-emu.yaml) · Substantively reviewed: 2026-11-17.

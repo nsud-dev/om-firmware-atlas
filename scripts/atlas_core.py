@@ -168,6 +168,33 @@ class Catalogue:
                 revision = row.get("revision") or ""
                 if not re.fullmatch(r"[0-9a-f]{40}", revision) or f"/blob/{revision}/" not in row.get("url", ""):
                     errors.append(f"{node_id}: pin github-file URL and revision to the same full 40-character commit.")
+            if row["type"] == "project":
+                for feature in row.get("features", []):
+                    label = f"feature '{feature['name']}'"
+                    check_ref(node_id, f"{label} source_ref", feature["source_ref"], "source")
+                    for camera in feature["camera_ids"]:
+                        if camera not in row["camera_ids"]:
+                            errors.append(f"{node_id}: {label} names {camera}, which is not in the project's camera_ids; add the camera or narrow the feature.")
+                    if feature.get("capability_id"):
+                        capability = self.ref(feature["capability_id"], "capability")
+                        if not capability:
+                            check_ref(node_id, f"{label} capability_id", feature["capability_id"], "capability")
+                        elif capability["project_id"] != node_id:
+                            errors.append(f"{node_id}: {label} links {capability['id']}, which belongs to another project.")
+                dates = [release["date"] for release in row.get("releases", [])]
+                if dates != sorted(dates, reverse=True):
+                    errors.append(f"{node_id}: list releases newest first.")
+                tags = [release["tag"] for release in row.get("releases", [])]
+                if len(tags) != len(set(tags)):
+                    errors.append(f"{node_id}: duplicate release tag; keep one entry per release.")
+                for release in row.get("releases", []):
+                    check_ref(node_id, f"release {release['tag']} source_ref", release["source_ref"], "source")
+                    for camera in release["camera_ids"]:
+                        if camera not in row["camera_ids"]:
+                            errors.append(f"{node_id}: release {release['tag']} names {camera}, which is not in the project's camera_ids.")
+                for image in row.get("images", []):
+                    if not (self.root / "docs" / image["path"]).is_file():
+                        errors.append(f"{node_id}: image docs/{image['path']} does not exist.")
             if row["type"] == "capability":
                 if row.get("feature_id") not in self.taxonomy["features"]:
                     errors.append(f"{node_id}: add feature_id to taxonomy/features or select an existing feature.")

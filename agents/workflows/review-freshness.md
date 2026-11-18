@@ -1,6 +1,8 @@
 # Review freshness
 
-Run `python scripts/atlas.py freshness --fetch` to produce an ignored report in `.build/`; network access is required. It compares pinned GitHub revisions/releases and checks other URLs without running source code. Without `--fetch`, it reports dated review needs offline.
+Start from the open `atlas-update-queue` issue, or run `python scripts/atlas.py freshness --fetch` then `queue` for `.build/update-queue.md`; network access is required. It compares pinned GitHub revisions/releases, each project's newest release and other URLs without running source code.
+
+For a new release, read its notes and add it to the project's `releases` (newest first) and `features` where it adds or changes one, citing a release source. Keep the project's own status words and warnings; test claims stay attributed.
 
 Read only changed/overdue source shards. A changed upstream revision queues review; it does not alter a capability. A failed fetch retains the source record and is reported as a failed check. Follow the ingestion workflow for a substantive update.
 

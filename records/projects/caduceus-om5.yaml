@@ -7,6 +7,8 @@ records:
   source_refs:
   - source.om5.readme
   - source.om5.alpha12
+  - source.om5.roadmap
+  - source.om5.releases
   topics:
   - platform
   - patching
@@ -26,3 +28,109 @@ records:
   - project.caduceus-ep7
   - project.oly-fw-analysis
   - project.om-emu
+  tagline: Looks and a full colour editor for the OM-5 Mark II. Experimental.
+  description:
+  - Caduceus for OM-5 brings back the three Color Profile and three Monochrome Profile slots that the
+    OM-5 Mark II's firmware hides, and gives them custom looks and a colour editor in the style of the
+    other Caduceus projects.
+  - Looks are made in a browser LookLab and copied to the card as one file. In Picture Mode the trash
+    button steps through them, and the chosen look is then kept in the camera. Each Color Profile gets
+    hue, saturation and lightness for 12 colours, a tone curve and its own white balance. Live ND32 and
+    ND64 join the camera's Live ND settings.
+  - This is the most experimental project here. Alpha12 runs on the owner's camera, with a partial owner
+    report; five earlier builds failed on that camera and were restored. There is no working version for
+    the original OM-5. Read the project's safety page before anything else.
+  goals:
+  - A documented camera check of every feature on the OM-5 Mark II, including per-profile white balance,
+    persistence and recovery.
+  - Colour grain for Color Profiles, then Glow and Halation.
+  - A second stage for the original OM-5, which has no working build yet.
+  maintainers:
+  - label: xulfr
+    url: https://github.com/xulfr
+  links:
+  - label: Website
+    url: https://xulfr.github.io/caduceus-om5/
+  - label: Safety
+    url: https://github.com/xulfr/caduceus-om5/blob/main/docs/SAFETY.md
+  - label: Install guide
+    url: https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md
+  - label: LookLab
+    url: https://xulfr.github.io/caduceus-om5/looklab/
+  features:
+  - name: Color Profiles 1–3 and Monochrome Profiles 1–3
+    summary: Six hidden Picture Mode slots restored after Color Creator.
+    camera_ids:
+    - camera.om5-ii
+    status: alpha
+    since: null
+    source_ref: source.om5.readme
+  - name: Custom looks
+    summary: Up to ten looks from LookLab in one LOOKS.BIN; the trash button steps through them and the
+      look's name is shown.
+    camera_ids:
+    - camera.om5-ii
+    status: alpha
+    since: null
+    source_ref: source.om5.readme
+  - name: Colour editor
+    summary: Hue, saturation and lightness for 12 colours, with a tone curve, Sharpness, Contrast and
+      Shading.
+    camera_ids:
+    - camera.om5-ii
+    status: alpha
+    since: null
+    source_ref: source.om5.readme
+    capability_id: capability.om5-ii-alpha12-hsl
+  - name: White balance per profile
+    summary: The mode, Kelvin and shift are kept for each Color Profile. Not yet checked on a camera.
+    camera_ids:
+    - camera.om5-ii
+    status: testing
+    since: null
+    source_ref: source.om5.readme
+  - name: Monochrome Profiles
+    summary: Colour filter, toning, grain and tone, with the filter graphic restored in alpha12.
+    camera_ids:
+    - camera.om5-ii
+    status: alpha
+    since: null
+    source_ref: source.om5.readme
+  - name: Live ND32 and ND64
+    summary: Two stronger Live ND settings after ND16.
+    camera_ids:
+    - camera.om5-ii
+    status: alpha
+    since: null
+    source_ref: source.om5.readme
+    capability_id: capability.om5-ii-alpha12-nd
+  - name: Colour grain for Color Profiles
+    summary: Off to High grain for colour looks, then Glow and Halation.
+    camera_ids:
+    - camera.om5-ii
+    status: planned
+    since: null
+    source_ref: source.om5.roadmap
+  releases:
+  - tag: v0.1.0-alpha12
+    title: Caduceus OM-5 Mark II v0.1.0-alpha12
+    date: '2026-11-16'
+    url: https://github.com/xulfr/caduceus-om5/releases/tag/v0.1.0-alpha12
+    prerelease: true
+    camera_ids:
+    - camera.om5-ii
+    highlights:
+    - Restores the Monochrome Color Filter graphic.
+    - The owner reports that the alpha12 checks were completed, without a step-by-step record.
+    warning: Experimental. The installer keeps its experimental-build acknowledgement; installing can
+      leave a camera unable to start.
+    source_ref: source.om5.releases
+  images:
+  - path: assets/projects/caduceus-om5/picture-mode-look.png
+    alt: The OM-5 Mark II Picture Mode screen showing Color Profile 2 with the look Portra 160
+    caption: A look's name on the Picture Mode screen.
+    credit: Caduceus for OM-5 website
+  - path: assets/projects/caduceus-om5/colour-wheel.png
+    alt: The hue page of the colour wheel editor
+    caption: The hue page of the colour editor.
+    credit: Caduceus for OM-5 website

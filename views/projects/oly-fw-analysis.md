@@ -2,15 +2,96 @@
 
 # Olympus firmware research
 
-Foundational firmware work with deep PEN-F coverage.
+The research base: PEN-F HSL, firmware formats and tools for many bodies.
 
-**[Upstream project](https://github.com/fishcu/oly_fw_analysis)** · **[Contribution / support destination](https://github.com/fishcu/oly_fw_analysis/issues)**
+<div class="cta-row" markdown="1">
 
-**Kind:** research.
+[Project home](https://github.com/fishcu/oly_fw_analysis){ .btn .btn-primary }
+[Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues){ .btn .btn-ghost }
+[Findings by topic](https://github.com/fishcu/oly_fw_analysis/blob/main/docs/README.md){ .btn .btn-ghost }
+[Build the PEN-F HSL patch](https://github.com/fishcu/oly_fw_analysis/blob/main/patches/hsl/pen-f/README.md){ .btn .btn-ghost }
 
-Existing topic-based references and PEN-F HSL releases are useful upstream homes; coverage varies by model.
+</div>
 
-## Catalogued cameras
+**Type:** research · **Latest release:** [alpha-20261017](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017), 18 Oct 2026 · **Maintained by** [fishcu](https://github.com/fishcu)
+{ .facts }
+
+## About
+
+fishcu's Olympus firmware research is a shared notebook and toolkit for studying and modifying Olympus and OM SYSTEM firmware: update files, start-up, settings, image processing and camera interfaces. The PEN-F has the deepest coverage, with comparisons across E-M1, E-M5, E-M10, E-P7, OM-3 and OM-5 models.
+
+It publishes a PEN-F HSL patch as alpha releases: hue and lightness added to the camera's 12-colour saturation editor in COLOR1–3.
+
+The project asks for a firsthand hardware report before any flashable patch is merged or published; emulator and static checks alone are not enough.
+
+## Features
+
+As the project describes them. Status is the project's own; linked evidence is the Atlas's record of what was reported or observed.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**PEN-F HSL** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Hue and lightness added to the 12-colour saturation editor in COLOR1–3, from −7 to +7 since the 17 October alpha.
+
+[PEN-F](../cameras/pen-f.md) · [Evidence](../capabilities/pen-f-hsl.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Firmware toolkit** <span class="pill pill-research">Research</span>
+{ .feature-head }
+
+A component decoder, checksum checks, disassembly helpers and an MN103 instruction emulator.
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Findings by topic** <span class="pill pill-research">Research</span>
+{ .feature-head }
+
+Notes on update files, start-up, settings and image processing, each tied to a model and firmware build.
+
+</div>
+
+</div>
+
+## Releases
+
+<div class="release-item" markdown="1">
+
+**[PEN-F HSL alpha — 17 October 2026](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017)** <span class="pill pill-alpha">Pre-release</span> · 18 Oct 2026
+{ .release-head }
+
+- Hue, saturation and lightness now span −7 to +7.
+- Includes the patched firmware, a stock restore, instructions and checksums.
+
+Experimental; recovery from every failure is not guaranteed. Bring saturation values within −5 to +5 before downgrading.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[PEN-F HSL alpha-20261013](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261013)** <span class="pill pill-alpha">Pre-release</span> · 18 Oct 2026
+{ .release-head }
+
+- Adds hue and lightness to the 12-colour saturation editor, −5 to +5.
+- New raw files carry the HSL look.
+
+An early alpha for voluntary testing, with owner-reported checks only.
+{ .release-warning }
+
+</div>
+
+
+## Cameras
 
 [Olympus PEN-F](../cameras/pen-f.md), [OM SYSTEM OM-5](../cameras/om5.md), [Olympus PEN E-P7](../cameras/ep7.md), [OM SYSTEM OM-3](../cameras/om3.md).
 
@@ -18,10 +99,15 @@ Existing topic-based references and PEN-F HSL releases are useful upstream homes
 
 [OM-Emu](om-emu.md). These links do not assign ownership or imply identical implementations.
 
+## Research notes
+
+Existing topic-based references and PEN-F HSL releases are useful upstream homes; coverage varies by model.
+
 ## Sources and record
 
 - [Olympus research overview](../sources/fishcu.readme.md)
 - [Research reproduction](../sources/fishcu.reproduce.md)
 - [Validation reference](../sources/fishcu.validation.md)
+- [PEN-F HSL releases](../sources/fishcu.releases.md)
 
 [Canonical record](../../records/projects/oly-fw-analysis.yaml) · Substantively reviewed: 2026-11-17.

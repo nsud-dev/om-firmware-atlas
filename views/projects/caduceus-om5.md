@@ -2,29 +2,188 @@
 
 # Caduceus for OM-5
 
-Separate original OM-5 and Mark II work, strict builders and failures.
+Looks and a full colour editor for the OM-5 Mark II. Experimental.
 
-**[Upstream project](https://github.com/xulfr/caduceus-om5)** · **[Contribution / support destination](https://github.com/xulfr/caduceus-om5/issues)**
+<div class="cta-row" markdown="1">
 
-**Kind:** mod.
+[Project home](https://github.com/xulfr/caduceus-om5){ .btn .btn-primary }
+[Ask or report issues](https://github.com/xulfr/caduceus-om5/issues){ .btn .btn-ghost }
+[Website](https://xulfr.github.io/caduceus-om5/){ .btn .btn-ghost }
+[Safety](https://github.com/xulfr/caduceus-om5/blob/main/docs/SAFETY.md){ .btn .btn-ghost }
+[Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md){ .btn .btn-ghost }
+[LookLab](https://xulfr.github.io/caduceus-om5/looklab/){ .btn .btn-ghost }
 
-The reviewed revision has Mark II alpha12 and a separate original-body experiment. Results are package-specific.
+</div>
 
-## Catalogued cameras
+**Type:** mod · **Latest release:** [v0.1.0-alpha12](https://github.com/xulfr/caduceus-om5/releases/tag/v0.1.0-alpha12), 16 Nov 2026 · **Maintained by** [xulfr](https://github.com/xulfr)
+{ .facts }
+
+![The OM-5 Mark II Picture Mode screen showing Color Profile 2 with the look Portra 160](../../docs/assets/projects/caduceus-om5/picture-mode-look.png)
+{ .hero-image }
+
+A look's name on the Picture Mode screen. *Caduceus for OM-5 website.*
+{ .image-caption }
+
+## About
+
+Caduceus for OM-5 brings back the three Color Profile and three Monochrome Profile slots that the OM-5 Mark II's firmware hides, and gives them custom looks and a colour editor in the style of the other Caduceus projects.
+
+Looks are made in a browser LookLab and copied to the card as one file. In Picture Mode the trash button steps through them, and the chosen look is then kept in the camera. Each Color Profile gets hue, saturation and lightness for 12 colours, a tone curve and its own white balance. Live ND32 and ND64 join the camera's Live ND settings.
+
+This is the most experimental project here. Alpha12 runs on the owner's camera, with a partial owner report; five earlier builds failed on that camera and were restored. There is no working version for the original OM-5. Read the project's safety page before anything else.
+
+### What it's working towards
+
+- A documented camera check of every feature on the OM-5 Mark II, including per-profile white balance, persistence and recovery.
+- Colour grain for Color Profiles, then Glow and Halation.
+- A second stage for the original OM-5, which has no working build yet.
+
+> **Before you install:** Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
+
+## Features
+
+As the project describes them. Status is the project's own; linked evidence is the Atlas's record of what was reported or observed.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**Color Profiles 1–3 and Monochrome Profiles 1–3** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Six hidden Picture Mode slots restored after Color Creator.
+
+[OM-5 Mark II](../cameras/om5-ii.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Custom looks** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Up to ten looks from LookLab in one LOOKS.BIN; the trash button steps through them and the look's name is shown.
+
+[OM-5 Mark II](../cameras/om5-ii.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Colour editor** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Hue, saturation and lightness for 12 colours, with a tone curve, Sharpness, Contrast and Shading.
+
+[OM-5 Mark II](../cameras/om5-ii.md) · [Evidence](../capabilities/om5-ii-alpha12-hsl.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**White balance per profile** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+The mode, Kelvin and shift are kept for each Color Profile. Not yet checked on a camera.
+
+[OM-5 Mark II](../cameras/om5-ii.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Monochrome Profiles** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Colour filter, toning, grain and tone, with the filter graphic restored in alpha12.
+
+[OM-5 Mark II](../cameras/om5-ii.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Live ND32 and ND64** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Two stronger Live ND settings after ND16.
+
+[OM-5 Mark II](../cameras/om5-ii.md) · [Evidence](../capabilities/om5-ii-alpha12-nd.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Colour grain for Color Profiles** <span class="pill pill-planned">Planned</span>
+{ .feature-head }
+
+Off to High grain for colour looks, then Glow and Halation.
+
+[OM-5 Mark II](../cameras/om5-ii.md)
+{ .card-meta }
+
+</div>
+
+</div>
+
+## Gallery
+
+<div class="gallery" markdown="1">
+
+<div class="gallery-item" markdown="1">
+
+![The hue page of the colour wheel editor](../../docs/assets/projects/caduceus-om5/colour-wheel.png)
+
+The hue page of the colour editor. *Caduceus for OM-5 website.*
+{ .image-caption }
+
+</div>
+
+</div>
+
+## Releases
+
+<div class="release-item" markdown="1">
+
+**[Caduceus OM-5 Mark II v0.1.0-alpha12](https://github.com/xulfr/caduceus-om5/releases/tag/v0.1.0-alpha12)** <span class="pill pill-alpha">Pre-release</span> · 16 Nov 2026
+{ .release-head }
+
+- Restores the Monochrome Color Filter graphic.
+- The owner reports that the alpha12 checks were completed, without a step-by-step record.
+
+Experimental. The installer keeps its experimental-build acknowledgement; installing can leave a camera unable to start.
+{ .release-warning }
+
+</div>
+
+
+## Cameras
 
 [OM SYSTEM OM-5](../cameras/om5.md), [OM SYSTEM OM-5 Mark II](../cameras/om5-ii.md).
+
+## Where to talk
+
+[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's issue tracker.
 
 ## Related work
 
 [Caduceus for OM-3](caduceus-om3.md), [Caduceus for E-P7](caduceus-ep7.md), [Olympus firmware research](oly-fw-analysis.md), [OM-Emu](om-emu.md). These links do not assign ownership or imply identical implementations.
 
-## Discussion
+## Research notes
 
-[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md).
+The reviewed revision has Mark II alpha12 and a separate original-body experiment. Results are package-specific.
 
 ## Sources and record
 
 - [Caduceus OM-5 overview](../sources/om5.readme.md)
 - [Mark II alpha12 report](../sources/om5.alpha12.md)
+- [Caduceus OM-5 roadmap](../sources/om5.roadmap.md)
+- [Caduceus OM-5 releases](../sources/om5.releases.md)
 
 [Canonical record](../../records/projects/caduceus-om5.yaml) · Substantively reviewed: 2026-11-17.

@@ -2,34 +2,407 @@
 
 # Caduceus for E-P7
 
-E-P7 modifications and shared-panel/port research.
+The original Caduceus: HSLFX colour editing and 29 film looks for the PEN E-P7.
 
-**[Upstream project](https://github.com/cakelesscoder/caduceus-ep7)** · **[Contribution / support destination](https://github.com/cakelesscoder/caduceus-ep7/issues)**
+<div class="cta-row" markdown="1">
 
-**Kind:** mod.
+[Project home](https://github.com/cakelesscoder/caduceus-ep7){ .btn .btn-primary }
+[Ask or report issues](https://github.com/cakelesscoder/caduceus-ep7/issues){ .btn .btn-ghost }
+[Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md){ .btn .btn-ghost }
+[Control Panel](https://cakelesscoder.github.io/caduceus-ep7/){ .btn .btn-ghost }
+[Changelog](https://github.com/cakelesscoder/caduceus-ep7/blob/main/CHANGELOG.md){ .btn .btn-ghost }
+[Ports to other bodies](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/BODIES.md){ .btn .btn-ghost }
 
-The reviewed documentation names v0.34a. E-M10 IV is a research target seeking physical testing, not a released port.
+</div>
 
-## Catalogued cameras
+**Type:** mod · **Latest release:** [v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a), 15 Nov 2026 · **Maintained by** [cakelesscoder](https://github.com/cakelesscoder)
+{ .facts }
+
+![Eight film looks shown on four sample scenes](../../docs/assets/projects/caduceus-ep7/film-looks.jpg)
+{ .hero-image }
+
+Eight Standard 1.2 looks, rendered by the Control Panel's preview. The preview approximates the camera; grain and halation are not drawn. *Caduceus for E-P7; CC0 sample photos.*
+{ .image-caption }
+
+## About
+
+Caduceus is where the family started: open-source firmware patches for the Olympus PEN E-P7 on firmware 1.1. Its heart is HSLFX, which gives every Colour Profile hue, saturation and lightness per colour, plus effects such as film grain, tinted halation, bloom and clarity, all edited on the camera's own colour wheel.
+
+Beyond colour it adds 29 film simulations and black-and-white presets, true log video, XPan 65:24 and 21:9 stills, Live ND, a minimum shutter speed and longer video recording. The Caduceus Control Panel, a browser tool, makes looks, shares them as short codes, and exports them as RapidRAW presets for any camera's raw files.
+
+The author calls it beta and experimental: flashing modified firmware can crash or brick the camera. Every patch is checked in an emulator first, and the restore path has been proven on a real E-P7.
+
+### What it's working towards
+
+- More film looks, and an Art Effect preview in live view.
+- One-press Live ND, faster grain saves, clean HDMI output and ISO Auto in movie M.
+- Ports to other bodies: an E-M10 Mark IV port needs a volunteer tester, and an E-M5 Mark III port needs a camera owner.
+
+> **Before you install:** Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
+
+## Features
+
+As the project describes them. Status is the project's own; linked evidence is the Atlas's record of what was reported or observed.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**On-camera look editor (HSLFX)** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Film, Saturation, Hue, Light and Effects pages on the camera's own colour wheel; changed looks are marked with *.
+
+[PEN E-P7](../cameras/ep7.md) · [Evidence](../capabilities/ep7-hsl.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**29 film simulations** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Velvia, Classic Chrome, Kodachrome, Portra, Ektar, CineStill, Vision3, Polaroid, Cross Process and more, one per Colour Profile slot.
+
+[PEN E-P7](../cameras/ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Colour mix and base curve** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+A per-look 3×3 colour matrix applied by the camera's image hardware, plus a choice of the camera's base tone curves.
+
+[PEN E-P7](../cameras/ep7.md) · since v0.34
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Split toning** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Tint shadows and highlights separately in 12 colours, in live view and photos.
+
+[PEN E-P7](../cameras/ep7.md) · since v0.32
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Film grain** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Film-like grain on colour photos, Off to High per profile.
+
+[PEN E-P7](../cameras/ep7.md) · since v0.27
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Tinted halation** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+A red-orange glow around bright lights, as on CineStill film.
+
+[PEN E-P7](../cameras/ep7.md) · since v0.31
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Tone per look** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Each look carries its own tone curve, with new Blacks and Whites controls.
+
+[PEN E-P7](../cameras/ep7.md) · since v0.20
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Mono film presets** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Pan F, Acros, T-Max, Tri-X, HP5, Delta 3200, sepia, selenium and cyanotype for the Monochrome Profiles.
+
+[PEN E-P7](../cameras/ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**True log video** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+A log curve hidden in the firmware, switched on with the Muted movie picture mode.
+
+[PEN E-P7](../cameras/ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**XPan 65:24 and 21:9 stills** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Panorama and Wide aspect ratios with matching live view, playback and frame lines.
+
+[PEN E-P7](../cameras/ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Live ND** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+ND3 and ND4 in Multiple Exposure: frames averaged at normal brightness.
+
+[PEN E-P7](../cameras/ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**More button functions** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+More choices for REC and Fn, and the right and down arrow keys in Button Function.
+
+[PEN E-P7](../cameras/ep7.md) · since v0.29
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Longer video recording** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+The 29-minute and 2-hour caps raised to 9 hours; file and heat limits still apply.
+
+[PEN E-P7](../cameras/ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Selectable 4K bitrate** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+150, 100 or 60 Mbit/s for 4K movie slots.
+
+[PEN E-P7](../cameras/ep7.md) · since v0.34
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Japanese and Chinese labels** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Caduceus's own labels in Japanese or Simplified Chinese when the camera uses that language.
+
+[PEN E-P7](../cameras/ep7.md) · since v0.32
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Lens vignette correction off per look** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+Natural corners per look. The firmware setting is confirmed; its effect on photos is not yet, and reports are wanted.
+
+[PEN E-P7](../cameras/ep7.md) · since v0.25
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Caduceus Control Panel** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Make, preview and share looks in your browser, and export them for the camera or as RapidRAW presets.
+
+[PEN E-P7](../cameras/ep7.md)
+{ .card-meta }
+
+</div>
+
+</div>
+
+## Releases
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.34a (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a)** · 15 Nov 2026
+{ .release-head }
+
+- Halation now applies in brighter scenes.
+- Japanese labels when the camera is set to Japanese.
+
+Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.34 (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34)** · 15 Nov 2026
+{ .release-head }
+
+- A per-look colour matrix and base tone curve.
+- A Colour & Light editor on the camera and the Standard 1.2 looks.
+- Selectable 4K bitrate.
+
+Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.33a (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.33a)** · 15 Nov 2026
+{ .release-head }
+
+- Fixes a crash on the Colour Profile page; adds a crash report file.
+
+Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.33 (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.33)** · 14 Nov 2026
+{ .release-head }
+
+- Grain about 1.85 times faster; halation needs half the work.
+- Clean start after a crash.
+
+Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.32b (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.32b)** · 14 Nov 2026
+{ .release-head }
+
+- Grain rewritten to be faster; Chinese labels reviewed.
+
+Beta. v0.33 reports a faint repeating grain pattern in this version; update if you installed it.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.32 (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.32)** · 13 Nov 2026
+{ .release-head }
+
+- Split toning on any COLOR profile and two Extras pages.
+- The Standard 1.1 look pack, framing lines and Chinese labels.
+
+Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.32a (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.32a)** · 13 Nov 2026
+{ .release-head }
+
+- Fewer freezes with grain.
+
+Beta. Heavy effect stacks can still very occasionally stall the camera.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.31d (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.31d)** · 11 Nov 2026
+{ .release-head }
+
+- The look's name is written into the JPEG's EXIF.
+
+Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.31c (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.31c)** · 10 Nov 2026
+{ .release-head }
+
+- Effects locked to stills on the Movie and AP colour wheels; Muted reads 8-BIT LOG.
+
+Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus v0.31b (beta)](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.31b)** · 10 Nov 2026
+{ .release-head }
+
+- Fixes a crash on bright scenes with grain and halation.
+
+Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
+{ .release-warning }
+
+</div>
+
+
+## Cameras
 
 [Olympus PEN E-P7](../cameras/ep7.md), [Olympus OM-D E-M10 Mark IV](../cameras/em10-iv.md).
+
+## Where to talk
+
+[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's issue tracker.
 
 ## Related work
 
 [Caduceus for OM-3](caduceus-om3.md), [Olympus firmware research](oly-fw-analysis.md). These links do not assign ownership or imply identical implementations.
 
-## Useful work
+## Research notes
+
+The reviewed documentation names v0.34a. E-M10 IV is a research target seeking physical testing, not a released port.
 
 - [E-M10 IV target needs physical-camera evidence](https://github.com/cakelesscoder/caduceus-ep7/issues/21) — needs evidence; owner: not assigned here.
-
-## Discussion
-
-[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md).
 
 ## Sources and record
 
 - [Caduceus E-P7 overview](../sources/ep7.readme.md)
 - [Caduceus body survey](../sources/ep7.bodies.md)
 - [Shared Control Panel direction](../sources/ep7.panel.md)
+- [Caduceus E-P7 releases](../sources/ep7.releases.md)
 
 [Canonical record](../../records/projects/caduceus-ep7.yaml) · Substantively reviewed: 2026-11-17.

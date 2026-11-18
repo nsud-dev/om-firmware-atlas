@@ -2,21 +2,55 @@
 
 # Historical manual update research
 
-Historical SD update procedure and model naming.
+How to install official OM SYSTEM firmware from an SD card.
 
-**[Upstream project](https://github.com/iKenndac/om-1-manual-firmware-install)** · **[Contribution / support destination](https://github.com/iKenndac/om-1-manual-firmware-install/issues)**
+<div class="cta-row" markdown="1">
 
-**Kind:** reference.
+[Project home](https://github.com/iKenndac/om-1-manual-firmware-install){ .btn .btn-primary }
+[Ask or report issues](https://github.com/iKenndac/om-1-manual-firmware-install/issues){ .btn .btn-ghost }
 
-The source says static firmware links stopped working in late 2025. Use current acquisition references.
+</div>
 
-## Catalogued cameras
+**Type:** reference · **Maintained by** [iKenndac](https://github.com/iKenndac)
+{ .facts }
+
+## About
+
+iKenndac's guide explains how to download an official update for the OM-1, OM-1 Mark II, OM-3 or OM-5 from OM SYSTEM's server and install it from an SD card, without OM Workspace or the mobile app.
+
+It is unofficial: the author offers no support beyond the instructions, and settings are not backed up for you. The same hold-OK card update is how several Caduceus projects install, and how they go back to OM's firmware.
+
+## Features
+
+As the project describes them. Status is the project's own; linked evidence is the Atlas's record of what was reported or observed.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**SD card firmware update** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+File names and steps for installing an official update with the camera's hold-OK card update.
+
+[OM-3](../cameras/om3.md), [OM-5](../cameras/om5.md)
+{ .card-meta }
+
+</div>
+
+</div>
+
+## Cameras
 
 [OM SYSTEM OM-5](../cameras/om5.md), [OM SYSTEM OM-3](../cameras/om3.md).
 
 ## Related work
 
 None catalogued. These links do not assign ownership or imply identical implementations.
+
+## Research notes
+
+The source says static firmware links stopped working in late 2025. Use current acquisition references.
 
 ## Sources and record
 

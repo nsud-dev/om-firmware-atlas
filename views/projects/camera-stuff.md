@@ -2,21 +2,37 @@
 
 # OM-3 downstream experiments
 
-Downstream experiments intended to send fixes upstream.
+A downstream OM-3 fork for trying fixes before sending them upstream.
 
-**[Upstream project](https://github.com/fernandezk26/camera-stuff)** · **[Contribution / support destination](https://github.com/fernandezk26/camera-stuff/issues)**
+<div class="cta-row" markdown="1">
 
-**Kind:** experimental fork.
+[Project home](https://github.com/fernandezk26/camera-stuff){ .btn .btn-primary }
+[Ask or report issues](https://github.com/fernandezk26/camera-stuff/issues){ .btn .btn-ghost }
 
-The fork note distinguishes its experimental branch from upstream main; it is not a replacement implementation home.
+</div>
 
-## Catalogued cameras
+**Type:** experimental fork · **Maintained by** [fernandezk26](https://github.com/fernandezk26)
+{ .facts }
+
+## About
+
+fernandezk26's fork of Caduceus for OM-3 is where changes are tried on an OM-3 before being offered back as pull requests. Its v0.25.1 branch added a white-balance grid restart fix and automatic SD loading.
+
+Caduceus for OM-3 credits this fork for its fix for bad bytes in EDITS.BIN, and for loading the films at power-on in v0.26.2 to v0.27. The fork publishes no releases of its own.
+
+> **Before you install:** Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
+
+## Cameras
 
 [OM SYSTEM OM-3](../cameras/om3.md).
 
 ## Related work
 
 [Caduceus for OM-3](caduceus-om3.md). These links do not assign ownership or imply identical implementations.
+
+## Research notes
+
+The fork note distinguishes its experimental branch from upstream main; it is not a replacement implementation home.
 
 ## Sources and record
 

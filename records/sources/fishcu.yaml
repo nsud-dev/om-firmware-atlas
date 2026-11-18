@@ -80,3 +80,20 @@ records:
   last_checked: '2026-11-17'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fishcu.releases
+  title: PEN-F HSL releases
+  summary: The two PEN-F HSL alpha releases and their stated limits.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-17'
+  url: https://github.com/fishcu/oly_fw_analysis/releases
+  source_kind: github-release
+  upstream_repo: fishcu/oly_fw_analysis
+  revision: alpha-20261017
+  locator: Releases page; alpha-20261013 and alpha-20261017
+  retrieved_on: '2026-11-17'
+  last_checked: '2026-11-17'
+  published_on: '2026-10-18'
+  publication: public
+  reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.
