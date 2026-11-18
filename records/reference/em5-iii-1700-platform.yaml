@@ -1,0 +1,370 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.em5-iii-1700.image-processor
+  title: Image processor generation, E-M5 III 1.7
+  summary: 'Image processor generation for E-M5 III 1.7: TruePic VIII.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  trait: trait.image-processor
+  value: TruePic VIII
+  note: TruePic is the name for the whole SoC, not only the image engine.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for E-M5 III 1.7.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.em5-iii-1700.main-cpu
+  title: Main CPU, E-M5 III 1.7
+  summary: 'Main CPU for E-M5 III 1.7: MN103/AM33-2, cores CPU0 to CPU2.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  trait: trait.main-cpu
+  value: MN103/AM33-2, cores CPU0 to CPU2
+  note: Cores counted from the per-core code paths seen in the main program.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for E-M5 III 1.7.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.em5-iii-1700.arm-coprocessor
+  title: ARM co-processor, E-M5 III 1.7
+  summary: 'ARM co-processor for E-M5 III 1.7: Cortex-A9, Linux 4.4.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  trait: trait.arm-coprocessor
+  value: Cortex-A9, Linux 4.4
+  note: Runs Wi-Fi, Bluetooth and helpers; the kernel version is read from its image.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for E-M5 III 1.7.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.em5-iii-1700.memory-class
+  title: Image memory class, E-M5 III 1.7
+  summary: 'Image memory class for E-M5 III 1.7: 1 GB (image buffer map 924 MB).'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  trait: trait.memory-class
+  value: 1 GB (image buffer map 924 MB)
+  note: Inferred from the fixed image buffer map in the main program; no teardown.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for E-M5 III 1.7.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.em5-iii-1700.container-magic
+  title: Update file magic, E-M5 III 1.7
+  summary: 'Update file magic for E-M5 III 1.7: OE 13 70.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  trait: trait.container-magic
+  value: OE 13 70
+  note: The first header bytes of the update file; identify the body before trusting any address.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for E-M5 III 1.7.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.em5-iii-1700.firmware-blocks
+  title: Firmware blocks, E-M5 III 1.7
+  summary: 'Firmware blocks for E-M5 III 1.7: 5.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  trait: trait.firmware-blocks
+  value: '5'
+  note: Components packed in the update file.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for E-M5 III 1.7.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.em5-iii-1700.main-compression
+  title: Main program compression, E-M5 III 1.7
+  summary: 'Main program compression for E-M5 III 1.7: None.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  trait: trait.main-compression
+  value: None
+  note: Whether the main program (block 0) contains compressed sections that must be expanded before analysis.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for E-M5 III 1.7.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.em5-iii-1700.wifi-chip
+  title: Wi-Fi chip, E-M5 III 1.7
+  summary: 'Wi-Fi chip for E-M5 III 1.7: CYW43455.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  trait: trait.wifi-chip
+  value: CYW43455
+  note: Read from the ARM side's firmware and driver names.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for E-M5 III 1.7.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.em5-iii-1700.native-nd
+  title: Live ND in stock E-M5 III 1.7
+  summary: Live ND is partly present in stock E-M5 III 1.7. Plumbing compiled in but off; no DSP jobs or states.
+  source_refs:
+  - source.em5n.comparison
+  - source.em5n.live-nd
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  feature_id: feature.capture.nd
+  presence: partial
+  value: Plumbing compiled in but off; no DSP jobs or states
+  note: Describes the stock firmware only, before any project changes it.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.live-nd
+    project_id: project.em5-iii-notes
+    summary: 'Live ND on E-M5 III 1.7: partly present (Plumbing compiled in but off; no DSP jobs or states).'
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Listed in the body comparison table.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-nd.md#what-the-e-m5-iii-already-has
+- type: reference
+  id: reference.em5-iii-1700.native-live-gnd
+  title: Live GND in stock E-M5 III 1.7
+  summary: Live GND is absent in stock E-M5 III 1.7.
+  source_refs:
+  - source.em5n.comparison
+  - source.em5n.live-gnd
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  feature_id: feature.capture.live-gnd
+  presence: absent
+  note: Describes the stock firmware only, before any project changes it. Absent means searched for and not found
+    (strings, settings and code).
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.live-gnd
+    project_id: project.em5-iii-notes
+    summary: 'Live GND on E-M5 III 1.7: absent.'
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Listed in the body comparison table.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-gnd.md#who-has-it
+- type: reference
+  id: reference.em5-iii-1700.native-hhhr
+  title: Handheld High Res Shot in stock E-M5 III 1.7
+  summary: Handheld High Res Shot is partly present in stock E-M5 III 1.7. Tripod High Res only; ARM hhhr helper
+    present.
+  source_refs:
+  - source.em5n.comparison
+  - source.em5n.hhhr
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  feature_id: feature.capture.hhhr
+  presence: partial
+  value: Tripod High Res only; ARM hhhr helper present
+  note: Describes the stock firmware only, before any project changes it.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.hhhr
+    project_id: project.em5-iii-notes
+    summary: 'Handheld High Res Shot on E-M5 III 1.7: partly present (Tripod High Res only; ARM hhhr helper present).'
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Listed in the body comparison table.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/hhhr.md#what-the-e-m5-iii-already-has
+- type: reference
+  id: reference.em5-iii-1700.native-starry-sky-af
+  title: Starry Sky AF in stock E-M5 III 1.7
+  summary: Starry Sky AF is absent in stock E-M5 III 1.7.
+  source_refs:
+  - source.em5n.comparison
+  - source.em5n.starry-af
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  feature_id: feature.capture.starry-sky-af
+  presence: absent
+  note: Describes the stock firmware only, before any project changes it. Absent means searched for and not found
+    (strings, settings and code).
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.starry-af
+    project_id: project.em5-iii-notes
+    summary: 'Starry Sky AF on E-M5 III 1.7: absent.'
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Listed in the body comparison table.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/starry-sky-af.md#what-the-feature-is
+- type: reference
+  id: reference.em5-iii-1700.native-subject-detect
+  title: AI subject detection AF in stock E-M5 III 1.7
+  summary: AI subject detection AF is absent in stock E-M5 III 1.7.
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  feature_id: feature.capture.subject-detect
+  presence: absent
+  note: Describes the stock firmware only, before any project changes it. Absent means searched for and not found
+    (strings, settings and code).
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: 'AI subject detection AF on E-M5 III 1.7: absent.'
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.em5-iii-1700.native-uvc-webcam
+  title: USB webcam (UVC) in stock E-M5 III 1.7
+  summary: USB webcam (UVC) is absent in stock E-M5 III 1.7.
+  source_refs:
+  - source.em5n.comparison
+  - source.em5n.webcam
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  feature_id: feature.connectivity.uvc-webcam
+  presence: absent
+  note: Describes the stock firmware only, before any project changes it. Absent means searched for and not found
+    (strings, settings and code).
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.webcam
+    project_id: project.em5-iii-notes
+    summary: 'USB webcam (UVC) on E-M5 III 1.7: absent.'
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Listed in the body comparison table.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/webcam.md

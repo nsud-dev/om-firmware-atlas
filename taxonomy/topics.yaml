@@ -35,3 +35,16 @@ features:
   feature.connectivity.uvc-webcam: {title: USB webcam (UVC), topic: capture}
   feature.tooling.debug-shell: {title: Debug shell and network, topic: tooling}
   feature.controls.aperture-ring: {title: Panasonic lens aperture ring, topic: capture}
+  feature.capture.live-gnd: {title: Live GND, topic: capture}
+  feature.capture.hhhr: {title: Handheld High Res Shot, topic: capture}
+  feature.capture.starry-sky-af: {title: Starry Sky AF, topic: capture}
+  feature.capture.subject-detect: {title: AI subject detection AF, topic: capture}
+traits:
+  trait.image-processor: {title: Image processor generation, topic: platform}
+  trait.main-cpu: {title: Main CPU, topic: platform}
+  trait.arm-coprocessor: {title: ARM co-processor, topic: platform}
+  trait.memory-class: {title: Image memory class, topic: platform}
+  trait.container-magic: {title: Update file magic, topic: platform}
+  trait.firmware-blocks: {title: Firmware blocks, topic: platform}
+  trait.main-compression: {title: Main program compression, topic: platform}
+  trait.wifi-chip: {title: Wi-Fi chip, topic: platform}

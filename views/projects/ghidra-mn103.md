@@ -34,13 +34,16 @@ As the project describes them. Status is the project's own; linked evidence is t
 
 SLEIGH module with call-frame, loop and calling-convention support, plus helper scripts.
 
+[OM-D E-M5 Mark III](../cameras/em5-iii.md), [OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [PEN-F](../cameras/pen-f.md), [PEN E-P7](../cameras/ep7.md)
+{ .card-meta }
+
 </div>
 
 </div>
 
 ## Cameras
 
-[Olympus OM-D E-M5 Mark III](../cameras/em5-iii.md).
+[Olympus OM-D E-M5 Mark III](../cameras/em5-iii.md), [OM SYSTEM OM-5](../cameras/om5.md), [OM SYSTEM OM-5 Mark II](../cameras/om5-ii.md), [Olympus PEN-F](../cameras/pen-f.md), [Olympus PEN E-P7](../cameras/ep7.md).
 
 ## Related work
 
@@ -48,10 +51,12 @@ SLEIGH module with call-frame, loop and calling-convention support, plus helper 
 
 ## Research notes
 
-Built and checked against E-M5 III 1.7 block 0; nothing in the module is camera-specific.
+Built and checked against E-M5 III 1.7 block 0. Nothing in the module is camera-specific; it applies to any body whose main CPU is MN103 (AM33-2).
 
 ## Sources and record
 
 - [Ghidra MN103 module README](../sources/gmn103.readme.md)
+- [MN103 CPU on the E-M5 III](../sources/em5n.mn103.md)
+- [E-P7 Ghidra/REA profile](../sources/ep7.rea.md)
 
 [Canonical record](../../records/projects/ghidra-mn103.yaml) · Substantively reviewed: 2026-11-18.

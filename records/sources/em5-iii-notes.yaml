@@ -304,3 +304,83 @@ records:
   last_checked: '2026-11-18'
   publication: public
   reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.comparison
+  title: Body comparison
+  summary: Chip generation, memory, blocks and built-in features of seven bodies side by side.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/bodies/comparison.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.hhhr
+  title: Handheld High Res Shot
+  summary: How the OM-5 does HHHR and what the E-M5 III already has.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/hhhr.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/features/hhhr.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.live-gnd
+  title: Live GND
+  summary: Which bodies have a real Live GND and which only carry its UI.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-gnd.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/features/live-gnd.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.starry-af
+  title: Starry Sky AF
+  summary: Starry Sky AF on the OM-5 and E-M1 III; absent on the E-M5 III.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/starry-sky-af.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/features/starry-sky-af.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.em5n.af-detect
+  title: AF subject, face and eye detection
+  summary: Subject detection across bodies and why it needs OM-1-class hardware.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/af-detect.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: 3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22
+  locator: docs/features/af-detect.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.

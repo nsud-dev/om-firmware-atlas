@@ -2,7 +2,7 @@
 
 # Technical reference
 
-Compact, sourced facts that projects and agents reuse: named addresses for one exact firmware build, and known trouble spots. Each entry links the upstream section that holds the full explanation; derivations, disassembly and code stay there. Status is worked out from the observations: single source, corroborated by independent projects, camera-confirmed, or disputed.
+Compact, sourced facts that projects and agents reuse: named addresses for one exact firmware build, platform facts and built-in features per build, and known trouble spots. Each entry links the upstream section that holds the full explanation; derivations, disassembly and code stay there. Status is worked out from the observations: single source, corroborated by independent projects, camera-confirmed, or disputed.
 
 ## Trouble spots
 
@@ -19,6 +19,34 @@ Compact, sourced facts that projects and agents reuse: named addresses for one e
 | [A hung task does not trigger the watchdog](hazard.task-hang-no-reset.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Give added shooting states a handler for every event they can receive](hazard.unhandled-state-event.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Align structures with 32-bit fields to four bytes](hazard.word-alignment.md) | PEN-F | Camera-confirmed |
+
+## Built-in features by build
+
+What each stock firmware contains, before any project changes it. Absent means checked and not found; a blank cell means nobody has recorded it.
+
+| | OM-D E-M5 Mark III 1.7 | OM-5 1.2 | OM-5 Mark II 1.1 |
+|---|---|---|---|
+| Live ND | [Partial: Plumbing compiled in but off; no DSP jobs or states](em5-iii-1700.native-nd.md) | [Native: ND2 to ND16](om5-1200.native-nd.md) | [Native: ND2 to ND16; ND32 to ND128 strings are shared UI only](om5-ii-1100.native-nd.md) |
+| USB webcam (UVC) | [Absent](em5-iii-1700.native-uvc-webcam.md) | [Native](om5-1200.native-uvc-webcam.md) | [Native](om5-ii-1100.native-uvc-webcam.md) |
+| Live GND | [Absent](em5-iii-1700.native-live-gnd.md) | [Absent](om5-1200.native-live-gnd.md) | [Partial: Settings and UI only; the shooting API methods are empty stubs](om5-ii-1100.native-live-gnd.md) |
+| Handheld High Res Shot | [Partial: Tripod High Res only; ARM hhhr helper present](em5-iii-1700.native-hhhr.md) | [Native: 50 MP handheld](om5-1200.native-hhhr.md) | [Native: Jobs 14 and 15 changed from the OM-5](om5-ii-1100.native-hhhr.md) |
+| Starry Sky AF | [Absent](em5-iii-1700.native-starry-sky-af.md) | [Native](om5-1200.native-starry-sky-af.md) | [Native: Adds start triggers](om5-ii-1100.native-starry-sky-af.md) |
+| AI subject detection AF | [Absent](em5-iii-1700.native-subject-detect.md) | [Dormant code: Code present, not reachable](om5-1200.native-subject-detect.md) | [Dormant code: Code and menu present, not reachable](om5-ii-1100.native-subject-detect.md) |
+
+## Platform by build
+
+Hardware and layout facts per stock firmware build.
+
+| | OM-D E-M5 Mark III 1.7 | OM-5 1.2 | OM-5 Mark II 1.1 |
+|---|---|---|---|
+| Image processor generation | [TruePic VIII](em5-iii-1700.image-processor.md) | [TruePic IX](om5-1200.image-processor.md) | [TruePic IX](om5-ii-1100.image-processor.md) |
+| Main CPU | [MN103/AM33-2, cores CPU0 to CPU2](em5-iii-1700.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-1200.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-ii-1100.main-cpu.md) |
+| ARM co-processor | [Cortex-A9, Linux 4.4](em5-iii-1700.arm-coprocessor.md) | [Cortex-A9, Linux 4.4](om5-1200.arm-coprocessor.md) | [Cortex-A9, Linux 5.10](om5-ii-1100.arm-coprocessor.md) |
+| Image memory class | [1 GB (image buffer map 924 MB)](em5-iii-1700.memory-class.md) | [1 GB (same buffer map span as the E-M5 III)](om5-1200.memory-class.md) | [1 GB (same layout as the OM-5)](om5-ii-1100.memory-class.md) |
+| Update file magic | [OE 13 70](em5-iii-1700.container-magic.md) | [OE 14 40](om5-1200.container-magic.md) | [OE 14 80](om5-ii-1100.container-magic.md) |
+| Firmware blocks | [5](em5-iii-1700.firmware-blocks.md) | [5](om5-1200.firmware-blocks.md) | [5](om5-ii-1100.firmware-blocks.md) |
+| Main program compression | [None](em5-iii-1700.main-compression.md) | [Two LZ4 sections](om5-1200.main-compression.md) | [Two LZ4 sections](om5-ii-1100.main-compression.md) |
+| Wi-Fi chip | [CYW43455](em5-iii-1700.wifi-chip.md) | [CYW43455](om5-1200.wifi-chip.md) | [CYW43439](om5-ii-1100.wifi-chip.md) |
 
 ## Olympus OM-D E-M5 Mark III, E-M5 Mark III firmware 1.7, build 1700
 

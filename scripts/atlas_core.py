@@ -16,6 +16,8 @@ KINDS = {"camera": "cameras", "firmware": "firmware", "project": "projects",
          "community": "community", "reference": "reference"}
 TECHNICAL_TOPICS = ("platform", "patching", "tooling", "emulation", "colour", "capture", "interfaces")
 ADDRESS_CATEGORIES = ("function", "hook-site", "data", "table", "free-space", "layout")
+TRAIT_CATEGORIES = ("platform", "native-feature")  # one fact about one build, keyed by trait or feature, no address
+TRAIT_FIELDS = ("trait", "feature_id", "presence", "value")
 REFERENCE_FILE_BUDGET = 16000  # bytes per records/reference file: split by build or topic beyond this
 # Detail that belongs upstream, not in a reference entry (see maintenance/reference-policy.md).
 UPSTREAM_ONLY = (
@@ -249,6 +251,11 @@ class Catalogue:
                 if key in seen:
                     errors.append(f"{row['id']}: same build and address as {seen[key]}; merge them and add an observation instead.")
                 seen[key] = row["id"]
+            if row["category"] in TRAIT_CATEGORIES and row["firmware_ids"]:
+                key = (row["firmware_ids"][0], row["category"], row.get("trait") or row.get("feature_id"))
+                if key in seen:
+                    errors.append(f"{row['id']}: same build and {row['category']} fact as {seen[key]}; merge them and add an observation instead.")
+                seen[key] = row["id"]
         for node_id, article in self.articles.items():
             for field, kind in lists.items():
                 for target in article.get(field, []):
@@ -295,11 +302,32 @@ class Catalogue:
                 errors.append(f"{node_id}: an address belongs to exactly one firmware build; make one entry per build.")
             if row["category"] == "free-space" and "end" not in row.get("address", {}):
                 errors.append(f"{node_id}: free space needs an end address.")
+        elif row["category"] in TRAIT_CATEGORIES:
+            if "address" in row:
+                errors.append(f"{node_id}: a {row['category']} entry describes a build; put addresses in their own entries.")
+            if len(row["firmware_ids"]) != 1:
+                errors.append(f"{node_id}: a {row['category']} entry describes exactly one firmware build; make one entry per build.")
+            if row["category"] == "platform":
+                if row.get("trait") not in self.taxonomy.get("traits", {}):
+                    errors.append(f"{node_id}: choose a trait from taxonomy/topics.yaml traits.")
+                if not row.get("value"):
+                    errors.append(f"{node_id}: a platform entry needs a value.")
+                if row.get("feature_id") or row.get("presence"):
+                    errors.append(f"{node_id}: a platform entry takes trait and value, not feature_id or presence.")
+            else:
+                if row.get("feature_id") not in self.taxonomy["features"]:
+                    errors.append(f"{node_id}: choose a feature_id from taxonomy/topics.yaml features.")
+                if not row.get("presence"):
+                    errors.append(f"{node_id}: a native-feature entry needs a presence.")
+                if row.get("trait"):
+                    errors.append(f"{node_id}: a native-feature entry takes feature_id and presence, not trait.")
         else:
             if "address" in row:
                 errors.append(f"{node_id}: a hazard states a rule; put addresses in their own per-build entries.")
             if not row.get("consequence"):
                 errors.append(f"{node_id}: a hazard needs its observed or expected consequence.")
+        if row["category"] not in TRAIT_CATEGORIES and any(field in row for field in TRAIT_FIELDS):
+            errors.append(f"{node_id}: trait, feature_id, presence and value belong to platform and native-feature entries.")
         repos = set()
         for item in row["observations"] + row["conflicts"]:
             source = self.ref(item["source_ref"], "source")
@@ -314,7 +342,7 @@ class Catalogue:
                     errors.append(f"{node_id}: {item['source_ref']} is not pinned; cite a revision or a content digest for technical reference.")
         if not any(repo and row["upstream_detail"].startswith(f"https://github.com/{repo}/") for repo in repos):
             errors.append(f"{node_id}: upstream_detail must link the detailed section in a cited source's repository.")
-        texts = [row["title"], row["summary"], row["note"], row.get("consequence", "")]
+        texts = [row["title"], row["summary"], row["note"], row.get("consequence", ""), row.get("value", "")]
         texts += [item["summary"] for item in row["observations"] + row["conflicts"]]
         for pattern, kind in UPSTREAM_ONLY:
             if any(pattern.search(text) for text in texts):

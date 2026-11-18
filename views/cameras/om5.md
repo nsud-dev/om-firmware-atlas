@@ -113,6 +113,20 @@ Reference
 
 </div>
 
+<div class="project-card" markdown="1">
+
+[Ghidra MN103 processor module](../projects/ghidra-mn103.md){ .card-title }
+
+Read MN103 camera firmware in Ghidra, with the decompiler.
+
+Tool
+{ .card-meta }
+
+[Project home](https://github.com/nsud-dev/ghidra-mn103) · [Ask or report issues](https://github.com/nsud-dev/ghidra-mn103/issues)
+{ .card-links }
+
+</div>
+
 </div>
 
 Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
@@ -130,6 +144,27 @@ Results belong to the named project and package. Emulator output does not establ
 ## Where to talk
 
 [Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
+
+## Platform and built-in features (om5 firmware 1.2, build 1200)
+
+What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
+
+| | Value | Status |
+|---|---|---|
+| [Image processor generation](../reference/om5-1200.image-processor.md) | TruePic IX | Single source |
+| [Main CPU](../reference/om5-1200.main-cpu.md) | MN103/AM33-2, cores CPU0 to CPU2 | Single source |
+| [ARM co-processor](../reference/om5-1200.arm-coprocessor.md) | Cortex-A9, Linux 4.4 | Single source |
+| [Image memory class](../reference/om5-1200.memory-class.md) | 1 GB (same buffer map span as the E-M5 III) | Single source |
+| [Update file magic](../reference/om5-1200.container-magic.md) | OE 14 40 | Single source |
+| [Firmware blocks](../reference/om5-1200.firmware-blocks.md) | 5 | Single source |
+| [Main program compression](../reference/om5-1200.main-compression.md) | Two LZ4 sections | Single source |
+| [Wi-Fi chip](../reference/om5-1200.wifi-chip.md) | CYW43455 | Single source |
+| [Live ND](../reference/om5-1200.native-nd.md) | Native: ND2 to ND16 | Single source |
+| [USB webcam (UVC)](../reference/om5-1200.native-uvc-webcam.md) | Native | Single source |
+| [Live GND](../reference/om5-1200.native-live-gnd.md) | Absent | Single source |
+| [Handheld High Res Shot](../reference/om5-1200.native-hhhr.md) | Native: 50 MP handheld | Single source |
+| [Starry Sky AF](../reference/om5-1200.native-starry-sky-af.md) | Native | Single source |
+| [AI subject detection AF](../reference/om5-1200.native-subject-detect.md) | Dormant code: Code present, not reachable | Single source |
 
 ## Firmware
 

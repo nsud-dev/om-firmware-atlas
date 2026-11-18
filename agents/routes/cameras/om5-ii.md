@@ -8,7 +8,7 @@ Exact ID: `camera.om5-ii`. Codes: E148. [Human status view](../../../views/camer
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [om5-ii.yaml](../../../records/cameras/om5-ii.yaml) | Identity and aliases | 481 | ~121 |
+| [om5-ii.yaml](../../../records/cameras/om5-ii.yaml) | Identity and aliases | 506 | ~127 |
 | [om5-ii-1100.yaml](../../../records/firmware/om5-ii/om5-ii-1100.yaml) | om5-ii firmware 1.1, build 1100 | 489 | ~123 |
 
 ## Existing project homes
@@ -16,6 +16,7 @@ Exact ID: `camera.om5-ii`. Codes: E148. [Human status view](../../../views/camer
 - [Caduceus for OM-5](../projects/caduceus-om5.md): Separate original OM-5 and Mark II work, strict builders and failures.
 - [db firmware / om-c-firmware](../projects/db-firmware.md): Release-centred controls, localisation and other modifications.
 - [OM-Emu](../projects/om-emu.md): Firmware lab, model ports, traces and patch overlays.
+- [Ghidra MN103 processor module](../projects/ghidra-mn103.md): Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|

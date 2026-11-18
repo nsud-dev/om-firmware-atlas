@@ -6,6 +6,8 @@ records:
   summary: Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2.
   source_refs:
   - source.gmn103.readme
+  - source.em5n.mn103
+  - source.ep7.rea
   topics:
   - tooling
   last_reviewed: '2026-11-18'
@@ -13,8 +15,13 @@ records:
   kind: tool
   camera_ids:
   - camera.em5-iii
+  - camera.om5
+  - camera.om5-ii
+  - camera.pen-f
+  - camera.ep7
   contribution_home: https://github.com/nsud-dev/ghidra-mn103/issues
-  status_summary: Built and checked against E-M5 III 1.7 block 0; nothing in the module is camera-specific.
+  status_summary: Built and checked against E-M5 III 1.7 block 0. Nothing in the module is camera-specific; it applies
+    to any body whose main CPU is MN103 (AM33-2).
   related_projects:
   - project.em5-iii-notes
   tagline: Read MN103 camera firmware in Ghidra, with the decompiler.
@@ -34,7 +41,12 @@ records:
   features:
   - name: MN103 disassembly and decompiler
     summary: SLEIGH module with call-frame, loop and calling-convention support, plus helper scripts.
-    camera_ids: []
+    camera_ids:
+    - camera.em5-iii
+    - camera.om5
+    - camera.om5-ii
+    - camera.pen-f
+    - camera.ep7
     status: released
     since: null
     source_ref: source.gmn103.readme

@@ -279,6 +279,20 @@ Emulator
 
 </div>
 
+<div class="project-card" markdown="1">
+
+[Ghidra MN103 processor module](../projects/ghidra-mn103.md){ .card-title }
+
+Read MN103 camera firmware in Ghidra, with the decompiler.
+
+Tool
+{ .card-meta }
+
+[Project home](https://github.com/nsud-dev/ghidra-mn103) · [Ask or report issues](https://github.com/nsud-dev/ghidra-mn103/issues)
+{ .card-links }
+
+</div>
+
 </div>
 
 Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.

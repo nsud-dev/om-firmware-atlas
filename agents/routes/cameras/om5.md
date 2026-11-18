@@ -8,7 +8,7 @@ Exact ID: `camera.om5`. Codes: E144. [Human status view](../../../views/cameras/
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [om5.yaml](../../../records/cameras/om5.yaml) | Identity and aliases | 524 | ~131 |
+| [om5.yaml](../../../records/cameras/om5.yaml) | Identity and aliases | 549 | ~138 |
 | [om5-1200.yaml](../../../records/firmware/om5/om5-1200.yaml) | om5 firmware 1.2, build 1200 | 459 | ~115 |
 
 ## Existing project homes
@@ -18,11 +18,14 @@ Exact ID: `camera.om5`. Codes: E144. [Human status view](../../../views/cameras/
 - [Olympus firmware research](../projects/oly-fw-analysis.md): Foundational firmware work with deep PEN-F coverage.
 - [OM-Emu](../projects/om-emu.md): Firmware lab, model ports, traces and patch overlays.
 - [Historical manual update research](../projects/manual-update.md): Historical SD update procedure and model naming.
+- [Ghidra MN103 processor module](../projects/ghidra-mn103.md): Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
 | [om5-db-aperture.yaml](../../../records/capabilities/om5/om5-db-aperture.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 802 | ~201 |
 | [om5-prealpha1-recovery.yaml](../../../records/capabilities/om5/om5-prealpha1-recovery.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 750 | ~188 |
 | [om5-prealpha1-start.yaml](../../../records/capabilities/om5/om5-prealpha1-start.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 743 | ~186 |
+
+Compact technical reference for this camera: [reference shard](../reference/om5.md).
 
 Then choose the [task topic](../topics/index.md). Read exact upstream sections only as needed. Do not transfer test results between models or packages.

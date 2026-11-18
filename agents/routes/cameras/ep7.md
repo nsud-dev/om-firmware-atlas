@@ -8,7 +8,7 @@ Exact ID: `camera.ep7`. Codes: E142. [Human status view](../../../views/cameras/
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [ep7.yaml](../../../records/cameras/ep7.yaml) | Identity and aliases | 457 | ~115 |
+| [ep7.yaml](../../../records/cameras/ep7.yaml) | Identity and aliases | 482 | ~121 |
 | [ep7-1100.yaml](../../../records/firmware/ep7/ep7-1100.yaml) | ep7 firmware 1.1, build 1100 | 476 | ~119 |
 
 ## Existing project homes
@@ -17,6 +17,7 @@ Exact ID: `camera.ep7`. Codes: E142. [Human status view](../../../views/cameras/
 - [db firmware / om-c-firmware](../projects/db-firmware.md): Release-centred controls, localisation and other modifications.
 - [Olympus firmware research](../projects/oly-fw-analysis.md): Foundational firmware work with deep PEN-F coverage.
 - [OM-Emu](../projects/om-emu.md): Firmware lab, model ports, traces and patch overlays.
+- [Ghidra MN103 processor module](../projects/ghidra-mn103.md): Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|

@@ -69,6 +69,27 @@ Installing modified firmware is at your own risk. Follow the project's own guide
 
 Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
 
+## Platform and built-in features (E-M5 Mark III firmware 1.7, build 1700)
+
+What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
+
+| | Value | Status |
+|---|---|---|
+| [Image processor generation](../reference/em5-iii-1700.image-processor.md) | TruePic VIII | Single source |
+| [Main CPU](../reference/em5-iii-1700.main-cpu.md) | MN103/AM33-2, cores CPU0 to CPU2 | Single source |
+| [ARM co-processor](../reference/em5-iii-1700.arm-coprocessor.md) | Cortex-A9, Linux 4.4 | Single source |
+| [Image memory class](../reference/em5-iii-1700.memory-class.md) | 1 GB (image buffer map 924 MB) | Single source |
+| [Update file magic](../reference/em5-iii-1700.container-magic.md) | OE 13 70 | Single source |
+| [Firmware blocks](../reference/em5-iii-1700.firmware-blocks.md) | 5 | Single source |
+| [Main program compression](../reference/em5-iii-1700.main-compression.md) | None | Single source |
+| [Wi-Fi chip](../reference/em5-iii-1700.wifi-chip.md) | CYW43455 | Single source |
+| [Live ND](../reference/em5-iii-1700.native-nd.md) | Partial: Plumbing compiled in but off; no DSP jobs or states | Single source |
+| [USB webcam (UVC)](../reference/em5-iii-1700.native-uvc-webcam.md) | Absent | Single source |
+| [Live GND](../reference/em5-iii-1700.native-live-gnd.md) | Absent | Single source |
+| [Handheld High Res Shot](../reference/em5-iii-1700.native-hhhr.md) | Partial: Tripod High Res only; ARM hhhr helper present | Single source |
+| [Starry Sky AF](../reference/em5-iii-1700.native-starry-sky-af.md) | Absent | Single source |
+| [AI subject detection AF](../reference/em5-iii-1700.native-subject-detect.md) | Absent | Single source |
+
 ## Firmware
 
 [E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md).
