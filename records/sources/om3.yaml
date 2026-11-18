@@ -98,3 +98,20 @@ records:
   published_on: '2026-11-17'
   publication: public
   reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.
+- type: source
+  id: source.om3.devnotes
+  title: Caduceus OM-3 developer notes
+  summary: Addresses, hooks and test history for the OM-3 1.1 port, with camera-proven sites marked.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md
+  source_kind: github-file
+  upstream_repo: androidfanman/caduceus-om3
+  revision: 78a809e163d96f468d796c7f5b42a9846e43b19b
+  locator: 'docs/DEVELOPER_NOTES.md: Proven on the camera'
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  published_on: null
+  publication: public
+  reuse_note: Named addresses and short attributed notes only; derivations and code stay upstream.

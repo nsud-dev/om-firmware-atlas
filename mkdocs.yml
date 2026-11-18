@@ -23,6 +23,7 @@ nav:
       - Add or correct: add.md
   - Research:
       - Start here: research.md
+      - Technical reference: views/reference/index.md
       - Guides: knowledge/README.md
       - Catalogue:
           - Firmware: views/firmware/index.md

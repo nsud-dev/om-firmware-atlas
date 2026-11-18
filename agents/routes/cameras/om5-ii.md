@@ -23,4 +23,6 @@ Exact ID: `camera.om5-ii`. Codes: E148. [Human status view](../../../views/camer
 | [om5-ii-alpha12-nd.yaml](../../../records/capabilities/om5-ii/om5-ii-alpha12-nd.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 655 | ~164 |
 | [om5-ii-alpha12-overall.yaml](../../../records/capabilities/om5-ii/om5-ii-alpha12-overall.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 747 | ~187 |
 
+Compact technical reference for this camera: [reference shard](../reference/om5-ii.md).
+
 Then choose the [task topic](../topics/index.md). Read exact upstream sections only as needed. Do not transfer test results between models or packages.

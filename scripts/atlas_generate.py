@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from atlas_core import GENERATED, KINDS, cost, link, slug
+from atlas_core import GENERATED, KINDS, cost, link, reference_status, slug
 
 
 def view_path(row):
@@ -20,9 +20,14 @@ def cell(value):
 
 
 CAMERA_LINES = ("OM SYSTEM", "Olympus OM-D", "Olympus PEN", "Other")
-INDEX_TITLES = {"camera": "Cameras", "firmware": "Firmware", "project": "Projects", "capability": "Feature claims",
+REFERENCE_STATUS = {"camera-confirmed": ("Camera-confirmed", "released"), "corroborated": ("Corroborated", "beta"),
+                    "single-source": ("Single source", "planned"), "disputed": ("Disputed", "alpha")}
+INDEX_TITLES = {"reference": "Technical reference", "camera": "Cameras", "firmware": "Firmware", "project": "Projects", "capability": "Feature claims",
                 "evidence": "Observations", "source": "Sources", "community": "Find the community"}
 INDEX_INTROS = {
+    "reference": ("Compact, sourced facts that projects and agents reuse: named addresses for one exact firmware build, and known trouble spots. "
+                  "Each entry links the upstream section that holds the full explanation; derivations, disassembly and code stay there. "
+                  "Status is worked out from the observations: single source, corroborated by independent projects, camera-confirmed, or disputed."),
     "camera": "Choose your exact model and generation. A listing is a research starting point, not a compatibility claim. The catalogue is not exhaustive.",
     "project": "Independent projects by members of the community, each with its own home, maintainers and support route. Features are described as each project describes them. A listing does not imply endorsement.",
     "firmware": "Stock firmware versions that catalogued work starts from. A version number alone is not byte-exact identity.",
@@ -227,10 +232,9 @@ def render(catalogue):
             text += f"\n**Camera:** {ref(path, row['camera_id'])}. **Advertised version:** {row['version']}. **Internal build:** {label(row['internal_build'])}.\n"
             text += f"\n**Container SHA-256:** `{row['container_sha256']}`\n" if row["container_sha256"] else "\n**Container SHA-256:** not recorded in this entry.\n"
             text += f"\n{row['identity_note']}\n"
-            if row.get("addresses"):
-                text += "\n| Address / region | Space | Value | Source |\n|---|---|---|---|\n"
-                for address in row["addresses"]:
-                    text += f"| {cell(address['name'])} | {address['space']} | `{address['value']}` | {ref(path, address['source_ref'])} |\n"
+            entries = [r for r in catalogue.of_type("reference") if row["id"] in r["firmware_ids"]]
+            if entries:
+                text += "\n## Technical reference\n\n" + "\n".join(f"- {ref(path, r['id'])}: {r['summary']}" for r in entries) + "\n"
         elif kind == "project":
             text = GENERATED + f"# {row['title']}\n\n{row.get('tagline', row['summary'])}\n\n"
             buttons = [f"[Project home]({row['url']}){{ .btn .btn-primary }}", f"[Ask or report issues]({row['contribution_home']}){{ .btn .btn-ghost }}"]
@@ -322,6 +326,25 @@ def render(catalogue):
             text += f"\n**[Open original source]({row['url']})**\n\n**Kind:** {label(row['source_kind'])}. **Locator:** {row['locator']}.\n"
             text += f"\n**Revision / release:** `{row['revision'] or 'Mutable page; no pinned revision'}`. **Retrieved:** {row['retrieved_on']}. **Last source check:** {row['last_checked']}.\n"
             text += f"\n**Publication:** {label(row['publication'])}. {row['reuse_note']}\n"
+        elif kind == "reference":
+            status, tone = REFERENCE_STATUS[reference_status(records, row)]
+            facts = [f"**Category:** {label(row['category'])}", f'<span class="pill pill-{tone}">{status}</span>']
+            if row.get("address"):
+                address = row["address"]
+                span = f"`{address['value']}`" + (f" to `{address['end']}`" if address.get("end") else "")
+                facts.insert(1, f"**Address:** {span} ({label(address['space'])})")
+            text += "\n" + " · ".join(facts) + "\n{ .facts }\n"
+            text += f"\n**Build:** {refs(path, row['firmware_ids'])} · **Cameras:** {refs(path, row['camera_ids'])}\n"
+            text += f"\n{row['note']}\n"
+            if row.get("consequence"):
+                text += f"\n> **What happens:** {row['consequence']}\n"
+            text += "\n## Observations\n\n"
+            for item in row["observations"]:
+                who = f" ({ref(path, item['project_id'])})" if item.get("project_id") else ""
+                text += f"- **{label(item['method']).capitalize()}**{who}: {item['summary']} Source: {ref(path, item['source_ref'])}.\n"
+            if row["conflicts"]:
+                text += "\n## Conflicting reports\n\n" + "".join(f"- {c['summary']} Source: {ref(path, c['source_ref'])}.\n" for c in row["conflicts"])
+            text += f"\n**[Full detail upstream]({row['upstream_detail']})**\n"
         elif kind == "community":
             text += f"\n**[Visit {row['title']}]({row['url']})**\n\n{row['scope']}\n"
             text += f"\n**Platform:** {label(row['platform'])}. **Access:** {label(row['access'])}. **Listing basis:** {label(row['listing_basis'])}.\n"
@@ -349,6 +372,24 @@ def render(catalogue):
                     text += f"{', '.join(row['model_codes'])}\n{{ .model-code }}\n\n{row['summary']}\n\n"
                     text += " · ".join(meta) + "\n{ .card-meta }\n\n</div>\n\n"
                 text += "</div>\n\n"
+            outputs[path] = text
+            continue
+        if kind == "reference":
+            rows = catalogue.of_type("reference")
+            hazards = [r for r in rows if r["category"] == "hazard"]
+            if hazards:
+                text += "## Trouble spots\n\n| Rule | Cameras | Status |\n|---|---|---|\n"
+                for row in hazards:
+                    text += f"| {ref(path, row['id'])} | {', '.join(short_name(records[c]['title']) for c in row['camera_ids'])} | {REFERENCE_STATUS[reference_status(records, row)][0]} |\n"
+                text += "\n"
+            for firmware in catalogue.of_type("firmware"):
+                entries = sorted((r for r in rows if r.get("address") and r["firmware_ids"] == [firmware["id"]]), key=lambda r: (r["address"]["space"], int(r["address"]["value"], 16)))
+                if entries:
+                    text += f"## {records[firmware['camera_id']]['title']}, {firmware['title']}\n\n| Name | Address | Category | Status |\n|---|---|---|---|\n"
+                    for row in entries:
+                        text += f"| {ref(path, row['id'])} | `{row['address']['value']}` | {label(row['category'])} | {REFERENCE_STATUS[reference_status(records, row)][0]} |\n"
+                    text += "\n"
+            text += "What belongs here, and what stays upstream: [the reference policy](../../maintenance/reference-policy.md). For detailed research, start with [Olympus firmware research](../projects/oly-fw-analysis.md).\n"
             outputs[path] = text
             continue
         if kind == "project":
@@ -395,7 +436,39 @@ def render(catalogue):
             text += "\n" + route_table()
             for file in files:
                 text += reading_row(path, file, "Build-scoped capability assertions; follow evidence IDs only as needed")
+        if any(camera["id"] in r["camera_ids"] for r in catalogue.of_type("reference")):
+            text += f"\nCompact technical reference for this camera: [reference shard](../reference/{slug(camera['id'])}.md).\n"
         text += "\nThen choose the [task topic](../topics/index.md). Read exact upstream sections only as needed. Do not transfer test results between models or packages.\n"
+        outputs[path] = text
+
+    for camera in catalogue.of_type("camera"):
+        entries = [r for r in catalogue.of_type("reference") if camera["id"] in r["camera_ids"]]
+        if not entries:
+            continue
+        path = f"agents/routes/reference/{slug(camera['id'])}.md"
+        text = GENERATED + f"# Technical reference: {camera['title']}\n\n"
+        text += "Exact-build facts only: never apply an address to another build or body. Status: camera-confirmed > corroborated > single source; disputed entries list their conflict. Follow Detail for the explanation.\n\n"
+        details = []
+
+        def detail(url):
+            if url not in details:
+                details.append(url)
+            return f"[d{details.index(url) + 1}]"
+
+        hazards = [r for r in entries if r["category"] == "hazard"]
+        if hazards:
+            text += "## Trouble spots\n\n| Rule | Status | Detail |\n|---|---|---|\n"
+            text += "".join(f"| {cell(r['title'])} | {reference_status(records, r)} | {detail(r['upstream_detail'])} |\n" for r in hazards) + "\n"
+        for firmware in catalogue.of_type("firmware"):
+            rows = sorted((r for r in entries if r.get("address") and r["firmware_ids"] == [firmware["id"]]), key=lambda r: int(r["address"]["value"], 16))
+            if rows:
+                text += f"## {firmware['id']}\n\n| Name | Space | Address | Kind | Status | Detail |\n|---|---|---|---|---|---|\n"
+                for r in rows:
+                    span = r["address"]["value"] + (f"..{r['address']['end']}" if r["address"].get("end") else "")
+                    text += f"| {cell(r['title'])} | {r['address']['space']} | `{span}` | {r['category']} | {reference_status(records, r)} | {detail(r['upstream_detail'])} |\n"
+                text += "\n"
+        text += "".join(f"[d{i + 1}]: {url}\n" for i, url in enumerate(details)) + "\n"
+        text += f"Records: {', '.join(sorted({f'[{Path(catalogue.paths[r["id"]]).name}]({link(path, catalogue.paths[r["id"]])})' for r in entries}))}.\n"
         outputs[path] = text
 
     for project in catalogue.of_type("project"):

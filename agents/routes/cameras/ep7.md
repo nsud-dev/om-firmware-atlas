@@ -9,7 +9,7 @@ Exact ID: `camera.ep7`. Codes: E142. [Human status view](../../../views/cameras/
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
 | [ep7.yaml](../../../records/cameras/ep7.yaml) | Identity and aliases | 457 | ~115 |
-| [ep7-1100.yaml](../../../records/firmware/ep7/ep7-1100.yaml) | ep7 firmware 1.1, build 1100 | 715 | ~179 |
+| [ep7-1100.yaml](../../../records/firmware/ep7/ep7-1100.yaml) | ep7 firmware 1.1, build 1100 | 476 | ~119 |
 
 ## Existing project homes
 
@@ -21,5 +21,7 @@ Exact ID: `camera.ep7`. Codes: E142. [Human status view](../../../views/cameras/
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
 | [ep7-hsl.yaml](../../../records/capabilities/ep7/ep7-hsl.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 673 | ~169 |
+
+Compact technical reference for this camera: [reference shard](../reference/ep7.md).
 
 Then choose the [task topic](../topics/index.md). Read exact upstream sections only as needed. Do not transfer test results between models or packages.

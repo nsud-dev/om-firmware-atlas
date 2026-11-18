@@ -46,12 +46,7 @@
           "type": {"const": "firmware"}, "id": {"pattern": "^firmware\\."},
           "camera_id": {"$ref": "#/$defs/text"}, "version": {"$ref": "#/$defs/text"},
           "internal_build": {"type": ["string", "null"]}, "container_sha256": {"$ref": "#/$defs/hash"},
-          "identity_note": {"$ref": "#/$defs/text"},
-          "addresses": {"type": "array", "items": {"type": "object", "additionalProperties": false,
-            "required": ["name", "space", "value", "source_ref"], "properties": {
-              "name": {"$ref": "#/$defs/text"}, "space": {"enum": ["container", "decoded-offset", "expanded-offset", "runtime-cached", "runtime-uncached", "disassembly"]},
-              "value": {"type": "string", "pattern": "^0x[0-9a-fA-F]+$"}, "source_ref": {"$ref": "#/$defs/text"}
-            }}}
+          "identity_note": {"$ref": "#/$defs/text"}
         }}
       ], "unevaluatedProperties": false
     },
@@ -162,9 +157,41 @@
         }}
       ], "unevaluatedProperties": false
     },
+    "reference": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {"required": ["category", "camera_ids", "firmware_ids", "note", "observations", "conflicts", "upstream_detail"], "properties": {
+          "type": {"const": "reference"}, "id": {"pattern": "^reference\\."},
+          "title": {"type": "string", "minLength": 1, "maxLength": 90},
+          "summary": {"type": "string", "minLength": 1, "maxLength": 200},
+          "category": {"enum": ["function", "hook-site", "data", "table", "free-space", "layout", "hazard"]},
+          "camera_ids": {"allOf": [{"$ref": "#/$defs/ids"}], "minItems": 1},
+          "firmware_ids": {"allOf": [{"$ref": "#/$defs/ids"}], "minItems": 1},
+          "address": {"type": "object", "additionalProperties": false, "required": ["space", "value"], "properties": {
+            "space": {"enum": ["container", "decoded-offset", "expanded-offset", "runtime-cached", "runtime-uncached"]},
+            "value": {"type": "string", "pattern": "^0x[0-9a-f]+$"},
+            "end": {"type": "string", "pattern": "^0x[0-9a-f]+$"}
+          }},
+          "note": {"type": "string", "minLength": 1, "maxLength": 600},
+          "consequence": {"type": "string", "minLength": 1, "maxLength": 300},
+          "observations": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false,
+            "required": ["method", "source_ref", "summary"], "properties": {
+              "method": {"enum": ["static-analysis", "emulator", "physical-camera"]},
+              "source_ref": {"type": "string"}, "project_id": {"type": ["string", "null"]},
+              "summary": {"type": "string", "minLength": 1, "maxLength": 300}
+            }}},
+          "conflicts": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+            "required": ["source_ref", "summary"], "properties": {
+              "source_ref": {"type": "string"}, "summary": {"type": "string", "minLength": 1, "maxLength": 300}
+            }}},
+          "upstream_detail": {"type": "string", "format": "uri", "pattern": "^https://"}
+        }}
+      ], "unevaluatedProperties": false
+    },
     "record": {"oneOf": [
       {"$ref": "#/$defs/camera"}, {"$ref": "#/$defs/firmware"}, {"$ref": "#/$defs/project"},
-      {"$ref": "#/$defs/capability"}, {"$ref": "#/$defs/evidence"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/community"}
+      {"$ref": "#/$defs/capability"}, {"$ref": "#/$defs/evidence"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/community"},
+      {"$ref": "#/$defs/reference"}
     ]}
   }
 }

@@ -17,7 +17,7 @@ This page explains that route for contributors. If you only want to add somethin
 
 | Folder or file | What it holds | Notes |
 |---|---|---|
-| `records/` | **Canonical records**: the facts, in structured YAML. Cameras, firmware, projects, capabilities, evidence, sources and community venues. | Edit these to change a fact |
+| `records/` | **Canonical records**: the facts, in structured YAML. Cameras, firmware, projects, capabilities, evidence, sources, community venues and the technical reference. | Edit these to change a fact |
 | `knowledge/` | Explanations of shared research topics, such as firmware identity or emulation. | Edit freely, with sources |
 | `docs/` | Site pages like this one: the home page, the evidence guide and contribution help. | Edit freely |
 | `views/` | **Generated pages**: the camera, project, firmware, evidence and source pages you browse on this site. | Never edit by hand |
@@ -92,6 +92,7 @@ Sometimes the right outcome is no content change, because the source only repeat
 - **Links:** local Markdown links must point to real files.
 - **Routing:** fixed test cases in [maintenance/routing-cases](https://github.com/xulfr/om-firmware-atlas/blob/main/maintenance/routing-cases/cases.yaml) must produce the expected reading lists. Each list must stay under a token budget and must not pull in bulk or unrelated files.
 - **No binaries:** firmware images, archives and research databases are refused in `records/` and `knowledge/`.
+- **Technical reference limits:** one entry per build and address, pinned sources, an upstream detail link, short text, and no disassembly, byte dumps or code. See [the reference policy](https://github.com/xulfr/om-firmware-atlas/blob/main/maintenance/reference-policy.md).
 
 `python scripts/atlas.py build` repeats the checks and then builds the site in strict mode, which also fails on broken site structure.
 

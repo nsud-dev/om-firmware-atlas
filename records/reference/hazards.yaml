@@ -1,0 +1,152 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.hazard.state-in-loaded-image
+  title: Keep patch state out of the loaded firmware image
+  summary: Stores into the loaded program image have restarted cameras; stock firmware does not make them.
+  source_refs:
+  - source.ep7.guide
+  - source.om5.image-store
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids:
+  - camera.ep7
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.ep7-1100
+  - firmware.om5-ii-1100
+  note: Keep runtime state in heap or .bss, not in the loaded program image. On the E-P7 a sweep of every
+    absolute store found none into the image.
+  consequence: Camera restart on first use; one OM-5 Mark II build then looped on every start until restored.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: A sweep of 32,217 absolute stores found none into the loaded image.
+  - method: physical-camera
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: The one E-P7 build that stored into the image crashed; moving the state fixed it.
+  - method: static-analysis
+    source_ref: source.om5.image-store
+    project_id: project.caduceus-om5
+    summary: An OM-5 Mark II build that froze and looped kept state in the image; stock E148 makes no
+      such absolute store.
+  - method: emulator
+    source_ref: source.om5.image-store
+    project_id: project.caduceus-om5
+    summary: After moving the state, emulator sessions showed no store into the image from patch code.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-IMAGE-STORE-FAULT-2026-11-11.md
+- type: reference
+  id: reference.hazard.word-alignment
+  title: Align structures with 32-bit fields to four bytes
+  summary: Misaligned word access restarted a PEN-F that the emulator had accepted.
+  source_refs:
+  - source.fishcu.validation
+  topics:
+  - patching
+  - emulation
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids:
+  - camera.pen-f
+  firmware_ids:
+  - firmware.pen-f-3101
+  note: 'MN103 needs natural alignment for word and halfword access. Strings may need two-byte alignment;
+    structures with u32 fields need four. Check linked addresses explicitly: emulators may not.'
+  consequence: Camera restart on entering COLOR, while the emulator of the time accepted the reads.
+  observations:
+  - method: physical-camera
+    source_ref: source.fishcu.validation
+    project_id: project.oly-fw-analysis
+    summary: A two-byte-aligned UI style restarted the camera on entering COLOR; four-byte alignment fixed
+      it.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/VALIDATION.md#alignment-is-a-real-emulator-blind-spot
+- type: reference
+  id: reference.hazard.section-load-order
+  title: Only call code in a section that has already loaded
+  summary: Sections load one after another; a hook calling a later section can run before its target exists.
+  source_refs:
+  - source.ep7.guide
+  - source.om3.devnotes
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids:
+  - camera.ep7
+  - camera.om3
+  firmware_ids:
+  - firmware.ep7-1100
+  - firmware.om3-1100
+  note: 'Put code a hook calls in the hook''s own section or one loaded earlier. Load order differs by
+    body: the E-P7 guide gives 1, 7, 2, 3, 4, 5, 6, 8, 9; the OM-3 notes give 1 to 10 in order.'
+  consequence: A bootloop reported once on the OM-3 port.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Load order verified from the boot code; the guide reports the OM-3 port bootlooped once on
+      this mistake.
+  - method: static-analysis
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: The OM-3 notes record sections loading 1 to 10 in order.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md
+- type: reference
+  id: reference.hazard.raw-image-buffer-read
+  title: Never CPU-read an image buffer through its raw descriptor address
+  summary: Image buffers must be read through the bus window mapper, row by row.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - capture
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  note: Large buffers can cross a window boundary, so map each piece and restore the previous window mode
+    before unlocking.
+  consequence: Camera crash about one second after the shot.
+  observations:
+  - method: physical-camera
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Reading a buffer directly through its descriptor address crashed the camera about a second
+      after the shot.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md
+- type: reference
+  id: reference.hazard.logical-flash-writes
+  title: Never write to the logical flash range
+  summary: Addresses from 0x40000000 up are the logical flash range.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  note: Patch code should never write into the logical flash range. This is an inference from the memory
+    map, not an observed failure.
+  consequence: Expected risk of bricking the camera; not observed.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Marked as an inference with brick risk in the E-P7 firmware guide.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md

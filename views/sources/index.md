@@ -29,6 +29,7 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [Validation reference](fishcu.validation.md) | Scoped checks and alignment blind spots. |
 | [OM-3 downstream experiment](fork.readme.md) | Experimental changes intended to contribute upstream. |
 | [Historical manual updates](manual.readme.md) | SD update research and explicitly obsolete static download links. |
+| [Caduceus OM-3 developer notes](om3.devnotes.md) | Addresses, hooks and test history for the OM-3 1.1 port, with camera-proven sites marked. |
 | [OM-3 card formats](om3.formats.md) | OM3P layout and release-dependent field semantics. |
 | [OM-3 LookLab](om3.looklab.md) | OM-3-only editor, sharing schema and export targets. |
 | [Caduceus OM-3 overview](om3.readme.md) | Features and maintainer-reported camera results at the reviewed revision. |

@@ -24,4 +24,6 @@ Exact ID: `camera.om3`. Codes: E147. [Human status view](../../../views/cameras/
 |---|---|---:|---:|
 | [om3-hsl.yaml](../../../records/capabilities/om3/om3-hsl.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 736 | ~184 |
 
+Compact technical reference for this camera: [reference shard](../reference/om3.md).
+
 Then choose the [task topic](../topics/index.md). Read exact upstream sections only as needed. Do not transfer test results between models or packages.

@@ -1,0 +1,220 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.om3-1100.hue-lightness-call
+  title: Hue/lightness builder call site
+  summary: Where the colour stage calls the hue/lightness builder; Caduceus hooks here.
+  source_refs:
+  - source.om3.devnotes
+  topics:
+  - colour
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hook-site
+  camera_ids: &id001
+  - camera.om3
+  firmware_ids: &id002
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x60518615'
+  note: A single call into the builder at 0x60518381; execution resumes at 0x6051861a. Runtime addresses
+    are the decoded main plus 0x60021020.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: Listed under Proven on the camera in the OM-3 developer notes.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+- type: reference
+  id: reference.om3-1100.half-press-hook
+  title: Half-press hook
+  summary: A shutter half-press path used to run code once the card is ready.
+  source_refs:
+  - source.om3.devnotes
+  topics:
+  - patching
+  - capture
+  last_reviewed: '2026-11-18'
+  category: hook-site
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60415216'
+  note: Resumes at 0x6041521b. Caduceus loads its films at the first half-press after switching on.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: Listed under Proven on the camera in the OM-3 developer notes.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+- type: reference
+  id: reference.om3-1100.profile-getter
+  title: Settings getter (active profile)
+  summary: Stock settings getter; with setting 63153 it returns the active colour profile.
+  source_refs:
+  - source.om3.devnotes
+  topics:
+  - colour
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60063380'
+  note: With setting id 63153 it returns 1 to 4 for COLOR1 to COLOR4. The same getter reads the white-balance
+    shift keys.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: Listed under Proven on the camera in the OM-3 developer notes.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+- type: reference
+  id: reference.om3-1100.malloc
+  title: malloc
+  summary: Stock heap allocator, class 1 pool.
+  source_refs:
+  - source.om3.devnotes
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60024068'
+  note: Allocates from the class 1 pool at 0xa2852000 to 0xa285d280. Pair with free at 0x6002409a.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: Used by the camera-proven card probe in the OM-3 developer notes.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+- type: reference
+  id: reference.om3-1100.free
+  title: free
+  summary: Stock heap free, the counterpart of malloc.
+  source_refs:
+  - source.om3.devnotes
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x6002409a'
+  note: Releases memory from malloc at 0x60024068.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: Used by the camera-proven card probe in the OM-3 developer notes.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+- type: reference
+  id: reference.om3-1100.fopen
+  title: fopen
+  summary: Stock file open on the memory card.
+  source_refs:
+  - source.om3.devnotes
+  topics:
+  - platform
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x608d4d22'
+  note: 'Opens card paths such as C:\OM3MOD\BUNDLES.BIN. Related: fread 0x608d4eb7, fclose 0x608d4d2b.'
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: Used by the camera-proven card probe in the OM-3 developer notes.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+- type: reference
+  id: reference.om3-1100.fread
+  title: fread
+  summary: Stock file read from the memory card.
+  source_refs:
+  - source.om3.devnotes
+  topics:
+  - platform
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x608d4eb7'
+  note: Used with fopen 0x608d4d22 and fseek 0x608d4fb1.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: Used by the camera-proven card probe in the OM-3 developer notes.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+- type: reference
+  id: reference.om3-1100.fclose
+  title: fclose
+  summary: Stock file close on the memory card.
+  source_refs:
+  - source.om3.devnotes
+  topics:
+  - platform
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x608d4d2b'
+  note: Closes a file opened with fopen 0x608d4d22.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: Used by the camera-proven card probe in the OM-3 developer notes.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+- type: reference
+  id: reference.om3-1100.section-1-tail
+  title: Section 1 free tail
+  summary: Unused 0xFF bytes at the end of section 1, which loads first.
+  source_refs:
+  - source.om3.devnotes
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: free-space
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x6031e910'
+    end: '0x6031f000'
+  note: Caduceus uses 0x6031e920 to 0x6031ebf0. Other projects should check its code-space use before
+    claiming bytes here.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.devnotes
+    project_id: project.caduceus-om3
+    summary: Caduceus code in this range runs on the camera, per the OM-3 developer notes.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera

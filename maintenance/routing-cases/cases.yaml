@@ -55,3 +55,10 @@ cases:
     prompt: What should I install on my OM5?
     request: {job: research, camera: OM5}
     expect_error: ambiguous
+  - id: om3-hook-reference-v1
+    prompt: Which OM-3 1.1 hook sites are known to work on a real camera?
+    request: {job: research, camera: om3, topic: patching}
+    required: [agents/routes/cameras/om3.md, agents/routes/reference/om3.md]
+    forbidden: [records/reference/, research/NOTES.md, agents/routes/reference/ep7.md]
+    ordered: [[agents/routes/cameras/om3.md, agents/routes/reference/om3.md]]
+    max_routing_tokens: 3000

@@ -21,4 +21,6 @@ Exact ID: `camera.pen-f`. Codes: E122. [Human status view](../../../views/camera
 |---|---|---:|---:|
 | [pen-f-hsl.yaml](../../../records/capabilities/pen-f/pen-f-hsl.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 699 | ~175 |
 
+Compact technical reference for this camera: [reference shard](../reference/pen-f.md).
+
 Then choose the [task topic](../topics/index.md). Read exact upstream sections only as needed. Do not transfer test results between models or packages.

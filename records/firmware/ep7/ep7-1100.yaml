@@ -14,12 +14,3 @@ records:
   internal_build: '1100'
   container_sha256: null
   identity_note: The guide separates container and runtime mappings; full digest is not imported.
-  addresses:
-  - name: Main-program CPU base
-    space: runtime-cached
-    value: '0x60020020'
-    source_ref: source.ep7.guide
-  - name: Main container address
-    space: container
-    value: '0x406a0020'
-    source_ref: source.ep7.guide
