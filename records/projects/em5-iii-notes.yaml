@@ -1,0 +1,91 @@
+schema_version: 1
+records:
+- type: project
+  id: project.em5-iii-notes
+  title: Olympus firmware notes (E-M5 Mark III)
+  summary: Tagged technical notes on E-M5 III 1.7 firmware and hardware, with OM-5 donor feature ports.
+  source_refs:
+  - source.em5n.readme
+  - source.em5n.overview
+  - source.em5n.live-nd
+  - source.em5n.focus-patch
+  - source.em5n.webcam
+  topics:
+  - platform
+  - patching
+  - tooling
+  - capture
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/olympus-firmware-notes
+  kind: research
+  camera_ids:
+  - camera.em5-iii
+  contribution_home: https://github.com/nsud-dev/olympus-firmware-notes/issues
+  status_summary: Notes and tools only; no firmware or builds are published. Every claim is tagged [camera], [code]
+    or [inferred]. Camera results come from one E-M5 III.
+  related_projects:
+  - project.ghidra-mn103
+  - project.oly-fw-analysis
+  - project.om-emu
+  tagline: How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
+  description:
+  - 'A study of the Olympus OM-D E-M5 Mark III firmware 1.7: container format, boot and section loading, recovery,
+    the MN103 CPU, memory map, image engine, ARM co-processor, display, stabiliser, shooting sequencer, settings and
+    menus, with comparisons against the OM-5, OM-5 II, E-M1 III, OM-1 and PEN-F.'
+  - The aim is to run features of newer bodies on the E-M5 III, mainly Live ND and Handheld High Res from the OM-5.
+    Each page tags claims as seen on the camera, read in the code, or inferred, and gives dates.
+  - 'Tools: olyfw.py unpacks and repacks E-M5 III update files and fixes their checksums; ptpinfo.py reads PTP device
+    info. No firmware images, disassembly or patched builds are included.'
+  maintainers:
+  - label: nsud-dev
+    url: https://github.com/nsud-dev
+  links:
+  - label: Overview of everything studied
+    url: https://github.com/nsud-dev/olympus-firmware-notes/blob/main/docs/overview.md
+  - label: Gotchas
+    url: https://github.com/nsud-dev/olympus-firmware-notes/blob/main/docs/reference/gotchas.md
+  features:
+  - name: Focus stacking with any lens
+    summary: A two-byte change to the lens check lets any lens that passes the lens-type check use in-camera focus
+      stacking.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.focus-patch
+    capability_id: capability.em5-iii-focus-stacking-any-lens
+  - name: Live ND (port from the OM-5)
+    summary: A full Live ND shot from one press, ND2 to ND16, merged by the OM-5's image-engine job 11, in test builds
+      on one camera. Builds are not published.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.live-nd
+    capability_id: capability.em5-iii-live-nd
+  - name: Live ND live-view simulation (port from the OM-5)
+    summary: Live view shows the Live ND blur, averaged over up to 240 frames by the OM-5's job 12, with restarts on
+      shutter changes and movement, in test builds.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.live-nd
+    capability_id: capability.em5-iii-live-nd-preview
+  - name: USB webcam (parked)
+    summary: Test builds enumerate as a UVC webcam and stream a generated picture; live view over USB failed, so the
+      work is parked.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.webcam
+    capability_id: capability.em5-iii-uvc-webcam
+  - name: Firmware and hardware notes
+    summary: Tagged, dated pages on the container, boot, recovery, CPU, memory map, image engine, ARM side, display,
+      stabiliser, settings and menus.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.overview

@@ -106,6 +106,20 @@ Latest: alpha-20261017, 18 Oct 2026
 
 <div class="project-card" markdown="1">
 
+[Olympus firmware notes (E-M5 Mark III)](em5-iii-notes.md){ .card-title }
+
+How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
+
+Focus stacking with any lens · Live ND (port from the OM-5) · Live ND live-view simulation (port from the OM-5)
+{ .card-features }
+
+Research
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
 [OM-Emu](om-emu.md){ .card-title }
 
 Run OM SYSTEM and Olympus camera firmware in your browser.
@@ -128,6 +142,20 @@ SD card firmware update
 { .card-features }
 
 Reference
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[Ghidra MN103 processor module](ghidra-mn103.md){ .card-title }
+
+Read MN103 camera firmware in Ghidra, with the decompiler.
+
+MN103 disassembly and decompiler
+{ .card-features }
+
+Tool
 { .card-meta }
 
 </div>

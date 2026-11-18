@@ -1,0 +1,316 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.em5-iii-1700.tick-counter
+  title: Hardware tick counter
+  summary: Free-running counter at 1 microsecond per count.
+  source_refs:
+  - source.em5n.mn103
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: &id001
+  - camera.em5-iii
+  firmware_ids: &id002
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x60022e5c'
+  note: Useful for timing patch code and frame spacing.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Rate confirmed at 1 microsecond per count on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.sleep-ms
+  title: Sleep (milliseconds)
+  summary: Task sleep in milliseconds.
+  source_refs:
+  - source.em5n.mn103
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60036eeb'
+  note: Task context only.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Listed among routines called by the notes' own code.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.timer-create
+  title: Create a timer
+  summary: 'Stock timer service: one-shot or periodic callback after a number of milliseconds.'
+  source_refs:
+  - source.em5n.mn103
+  - source.em5n.webcam
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x6006be97'
+  note: 'Arguments: mode, milliseconds, callback, argument. Modes 0 and 128 (periodic) use 12 hardware channels;
+    a null callback is fatal.'
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Modes, slot pools and limits read from the timer code.
+  - method: physical-camera
+    source_ref: source.em5n.webcam
+    project_id: project.em5-iii-notes
+    summary: A periodic 34 ms timer paced a USB test stream at 21.6 fps.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.in-interrupt
+  title: Interrupt-context test
+  summary: Returns 0 in task context and non-zero in an interrupt handler.
+  source_refs:
+  - source.em5n.mn103
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x600386ae'
+  note: Lets a shared hook skip file I/O, locks and sleeps when it runs from an interrupt.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Read from the routine.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.task-id
+  title: Current task id
+  summary: Returns the id of the running task.
+  source_refs:
+  - source.em5n.mn103
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x600317b4'
+  note: Useful to tell which task (and CPU) a hook runs in.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Read from the routine.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.critical-enter
+  title: Enter a critical section
+  summary: Returns a token; leave with the matching routine at 0x60069e5a.
+  source_refs:
+  - source.em5n.mn103
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60069e11'
+  note: Pair every enter with a leave that passes the token back.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Read from the routine pair.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.lock-take
+  title: Take a lock with timeout
+  summary: Stock lock take; give back with the routine at 0x6005174e.
+  source_refs:
+  - source.em5n.mn103
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60051679'
+  note: Never from an interrupt handler.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Read from the routine pair.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.fopen
+  title: fopen (card file)
+  summary: Opens a file on the card.
+  source_refs:
+  - source.em5n.mn103
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60631f63'
+  note: Blocking; task context only. Use 8.3 file names.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Frame layout read from the routine.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.fclose
+  title: fclose (card file)
+  summary: Closes a card file.
+  source_refs:
+  - source.em5n.mn103
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60631f6c'
+  note: Blocking; task context only.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Frame layout read from the routine.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.fwrite
+  title: fwrite (card file)
+  summary: Writes to an open card file.
+  source_refs:
+  - source.em5n.gotchas
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x60631fe8'
+  note: Write from a cached heap buffer; logs written from an uncached buffer came out empty.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.gotchas
+    project_id: project.em5-iii-notes
+    summary: Card logs written with it are read back correctly.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.fread
+  title: fread (card file)
+  summary: Reads from an open card file.
+  source_refs:
+  - source.em5n.gotchas
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x606320f2'
+  note: Easily confused with fwrite next to it; a logger that called this by mistake wrote nothing.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.gotchas
+    project_id: project.em5-iii-notes
+    summary: Request files read with it on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.engine-address
+  title: Convert an address for the image engine
+  summary: Masks a CPU address into the image engine's address space.
+  source_refs:
+  - source.em5n.mn103
+  topics:
+  - platform
+  - capture
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x600590c9'
+  note: Use before putting a buffer address into an image-engine record.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.mn103
+    project_id: project.em5-iii-notes
+    summary: Read from the routine.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md#useful-firmware-routines-e-m5-iii-17
+- type: reference
+  id: reference.em5-iii-1700.setting-getter
+  title: Setting getter
+  summary: Stock getter for camera settings by setting id.
+  source_refs:
+  - source.em5n.focus-stacking
+  topics:
+  - platform
+  - colour
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: runtime-cached
+    value: '0x602e69f9'
+  note: Reads such as the focus-stacking shot count (setting 1448) go through it.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.focus-stacking
+    project_id: project.em5-iii-notes
+    summary: Used to find every read of a setting for the shot-count work.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/focus-stacking.md#test-build-shot-count-3-8-2026-11-05-not-flashed

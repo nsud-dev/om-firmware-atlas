@@ -1,0 +1,40 @@
+schema_version: 1
+records:
+- type: project
+  id: project.ghidra-mn103
+  title: Ghidra MN103 processor module
+  summary: Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2.
+  source_refs:
+  - source.gmn103.readme
+  topics:
+  - tooling
+  last_reviewed: '2026-11-18'
+  url: https://github.com/nsud-dev/ghidra-mn103
+  kind: tool
+  camera_ids:
+  - camera.em5-iii
+  contribution_home: https://github.com/nsud-dev/ghidra-mn103/issues
+  status_summary: Built and checked against E-M5 III 1.7 block 0; nothing in the module is camera-specific.
+  related_projects:
+  - project.em5-iii-notes
+  tagline: Read MN103 camera firmware in Ghidra, with the decompiler.
+  description:
+  - A Ghidra processor module for the Panasonic MN103 family (MN10300, AM33, AM33-2), language ID MN103:LE:32:AM33-2.
+    Disassembly matches GNU objdump instruction for instruction; the SLEIGH spec is generated from the binutils
+    opcode table.
+  - The decompiler handles the MN103's caller-built call frames, hardware loops and calling convention. Scripts load
+    symbols, fix call frames, recover switch tables and batch-decompile. Tested with Ghidra 11.4.2 on Java 21; CI also
+    builds on the newest Ghidra release.
+  maintainers:
+  - label: nsud-dev
+    url: https://github.com/nsud-dev
+  links:
+  - label: Install and use
+    url: https://github.com/nsud-dev/ghidra-mn103/blob/main/README.md
+  features:
+  - name: MN103 disassembly and decompiler
+    summary: SLEIGH module with call-frame, loop and calling-convention support, plus helper scripts.
+    camera_ids: []
+    status: released
+    since: null
+    source_ref: source.gmn103.readme

@@ -6,6 +6,11 @@ Scoped feature claims: one camera, firmware, project and build each. Availabilit
 
 | Entry | What you will find |
 |---|---|
+| [E-M5 III 1.7 focus stacking with any lens](em5-iii-focus-stacking-any-lens.md) | A published two-byte patch removes the per-lens focus-stacking flag check. |
+| [E-M5 III 1.7 Live ND photo (OM-5 port)](em5-iii-live-nd.md) | Test builds take a full Live ND shot from one press; not released. |
+| [E-M5 III 1.7 Live ND live-view simulation (OM-5 port)](em5-iii-live-nd-preview.md) | Test builds show the Live ND blur in live view, averaged by image-engine job 12. |
+| [E-M5 III 1.7 USB webcam (partial port)](em5-iii-uvc-webcam.md) | Test builds enumerate as a UVC webcam and stream a picture; live view over USB does not work. |
+| [Card-file debug Wi-Fi shell on stock E-M5 III 1.7](em5-iii-wifi-debug-shell.md) | The card-file debug shell documented by Olympus firmware research also works on a stock E-M5 III. |
 | [E-P7 HSLFX](ep7-hsl.md) | The README describes HSLFX with feature-specific states and caveats. |
 | [OM-3 HSL editor](om3-hsl.md) | The README describes a full on-camera colour editor and reports camera-tested feature history. |
 | [db firmware OM-5 aperture-ring claim](om5-db-aperture.md) | The release advertises Panasonic lens aperture-ring support among its modifications. |

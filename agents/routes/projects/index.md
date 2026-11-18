@@ -11,6 +11,8 @@ Open only the matching route.
 | [Caduceus for OM-5](caduceus-om5.md) | Separate original OM-5 and Mark II work, strict builders and failures. |
 | [OM-3 downstream experiments](camera-stuff.md) | Downstream experiments intended to send fixes upstream. |
 | [db firmware / om-c-firmware](db-firmware.md) | Release-centred controls, localisation and other modifications. |
+| [Olympus firmware notes (E-M5 Mark III)](em5-iii-notes.md) | Tagged technical notes on E-M5 III 1.7 firmware and hardware, with OM-5 donor feature ports. |
+| [Ghidra MN103 processor module](ghidra-mn103.md) | Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2. |
 | [Historical manual update research](manual-update.md) | Historical SD update procedure and model naming. |
 | [Olympus firmware research](oly-fw-analysis.md) | Foundational firmware work with deep PEN-F coverage. |
 | [OM-Emu](om-emu.md) | Firmware lab, model ports, traces and patch overlays. |

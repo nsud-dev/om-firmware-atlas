@@ -6,6 +6,7 @@ Stock firmware versions that catalogued work starts from. A version number alone
 
 | Entry | What you will find |
 |---|---|
+| [E-M5 Mark III firmware 1.7, build 1700](em5-iii-1700.md) | Stock update file OLY_E_137_1700_0000_0000.BIN; the notes' addresses refer to its MN103 main program. |
 | [ep7 firmware 1.1, build 1100](ep7-1100.md) | The guide separates container and runtime mappings; full digest is not imported. |
 | [om3 firmware 1.1, build 1100](om3-1100.md) | Several official filenames appear upstream; advertised version alone is not byte identity. |
 | [om5 firmware 1.2, build 1200](om5-1200.md) | Version/build scope only; exact stock-container digest is not imported. |

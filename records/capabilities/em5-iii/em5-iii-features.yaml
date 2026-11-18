@@ -1,0 +1,127 @@
+schema_version: 1
+records:
+- type: capability
+  id: capability.em5-iii-focus-stacking-any-lens
+  title: E-M5 III 1.7 focus stacking with any lens
+  summary: A published two-byte patch removes the per-lens focus-stacking flag check.
+  source_refs:
+  - source.em5n.focus-patch
+  topics:
+  - patching
+  - capture
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: focus-stacking lens check patch
+  feature_id: feature.capture.focus-stacking-any-lens
+  assertion: Changing 0x6065e5ec from c9 04 to cb cb lets any lens that passes the lens-type check use in-camera
+    focus stacking.
+  availability: research
+  implementation: inspected
+  evidence_refs:
+  - evidence.em5-iii-focus-stacking-camera
+  contradicting_refs: []
+  limitations:
+  - Byte description only; no patched firmware is published, and the user must rebuild and re-checksum it.
+  - Lenses that fail the first lens-type check stay blocked.
+- type: capability
+  id: capability.em5-iii-live-nd
+  title: E-M5 III 1.7 Live ND photo (OM-5 port)
+  summary: Test builds take a full Live ND shot from one press; not released.
+  source_refs:
+  - source.em5n.live-nd
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: unpublished test builds (to 2026-11-17)
+  feature_id: feature.capture.nd
+  assertion: A port of the OM-5 1.2 Live ND shooting states and image-engine job 11 merges N frames at the set shutter
+    speed into one photo, ND2 to ND16, from one press.
+  availability: experimental-branch
+  implementation: reported
+  evidence_refs:
+  - evidence.em5-iii-live-nd-photo
+  contradicting_refs: []
+  limitations:
+  - Test builds only; none is published.
+  - 'No dark-frame pass yet: keep Noise Reduction off.'
+  - No menu yet; set through a hidden settings page or a request file.
+- type: capability
+  id: capability.em5-iii-live-nd-preview
+  title: E-M5 III 1.7 Live ND live-view simulation (OM-5 port)
+  summary: Test builds show the Live ND blur in live view, averaged by image-engine job 12.
+  source_refs:
+  - source.em5n.live-nd
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: unpublished test builds (to 2026-11-17)
+  feature_id: feature.capture.nd-preview
+  assertion: With LV Simulation on, live view averages up to 240 recent frames with the OM-5's job 12, as on the
+    OM-5, and restarts on shutter changes and camera movement.
+  availability: experimental-branch
+  implementation: reported
+  evidence_refs:
+  - evidence.em5-iii-live-nd-preview
+  contradicting_refs: []
+  limitations:
+  - Test builds only; none is published.
+  - Movement restart thresholds are still being tuned.
+- type: capability
+  id: capability.em5-iii-wifi-debug-shell
+  title: Card-file debug Wi-Fi shell on stock E-M5 III 1.7
+  summary: The card-file debug shell documented by Olympus firmware research also works on a stock E-M5 III.
+  source_refs:
+  - source.em5n.wifi-shell
+  topics:
+  - tooling
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.oly-fw-analysis
+  mod_build: stock 1.7 with a card settings file
+  feature_id: feature.tooling.debug-shell
+  assertion: The card-file method from Olympus firmware research (documented for the PEN-F) starts the stock debug
+    network and user shell on stock E-M5 III 1.7; nothing is flashed.
+  availability: research
+  implementation: reported
+  evidence_refs:
+  - evidence.em5-iii-wifi-shell-camera
+  contradicting_refs: []
+  limitations:
+  - 'Method and discovery: Olympus firmware research (oly_fw_analysis); a forum user first reported it on the E-M5
+    III.'
+  - The E-M5 III camera report comes from the E-M5 III firmware notes.
+  - The network has no password; one shell connection per power-on.
+- type: capability
+  id: capability.em5-iii-uvc-webcam
+  title: E-M5 III 1.7 USB webcam (partial port)
+  summary: Test builds enumerate as a UVC webcam and stream a picture; live view over USB does not work.
+  source_refs:
+  - source.em5n.webcam
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: unpublished webcam test builds
+  feature_id: feature.connectivity.uvc-webcam
+  assertion: Test builds make the camera enumerate as a UVC webcam and stream a camera-generated picture over bulk
+    transfers; streaming real live view failed, so the work is parked.
+  availability: research
+  implementation: reported
+  evidence_refs:
+  - evidence.em5-iii-uvc-enumerate-stream
+  - evidence.em5-iii-uvc-live-view-fail
+  contradicting_refs: []
+  limitations:
+  - Parked since 2026-10-20.
+  - Fixing live view needs the camera to stay in shooting mode while USB is connected.

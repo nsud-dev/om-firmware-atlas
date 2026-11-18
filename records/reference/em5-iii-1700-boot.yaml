@@ -1,0 +1,260 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.em5-iii-1700.main-cpu-base
+  title: Main CPU base
+  summary: Runtime address of block 0 (MN103 main program) offset 0.
+  source_refs:
+  - source.em5n.boot
+  - source.em5n.focus-patch
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: layout
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x60021020'
+  note: Runtime address = 0x60021020 + offset in the decoded block 0 payload. The boot stub runs first at flash
+    0x40780020.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: Load base and boot stub address read from the boot code.
+  - method: physical-camera
+    source_ref: source.em5n.focus-patch
+    project_id: project.em5-iii-notes
+    summary: Patches placed with this base, such as the focus-stacking change, work on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/boot-and-sections.md#addresses
+- type: reference
+  id: reference.em5-iii-1700.always-ready-range
+  title: Always-ready range copied by the boot stub
+  summary: Ready before any section loads; boot guards and small stubs can live here.
+  source_refs:
+  - source.em5n.boot
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: layout
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x60030000'
+    end: '0x600d0800'
+  note: The end comes from one immediate at 0x600211af. Everything else in block 0 loads later in ten sections.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: Copy range and its end immediate read from the boot stub.
+  - method: physical-camera
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: Boot guards placed in this range fixed intermittent boot failures (10 of 10 boots).
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/boot-and-sections.md#sections-load-in-the-background
+- type: reference
+  id: reference.em5-iii-1700.section-ready-bits
+  title: Section ready bits
+  summary: Bit n-1 is set once section n is loaded and initialised.
+  source_refs:
+  - source.em5n.boot
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: data
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-uncached
+    value: '0xa26565c0'
+  note: Loaded bits are at 0xa26565c4. Section 4 is bit 3, section 9 is 0x100, section 10 is 0x200. Boot guards
+    test these bits.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: Bit layout read from the section waiter and the ready test.
+  - method: physical-camera
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: Guards that test the bit before jumping into a later section boot reliably.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/boot-and-sections.md#sections-load-in-the-background
+- type: reference
+  id: reference.em5-iii-1700.section-ready-test
+  title: Section ready test
+  summary: Stock function that returns 1 when section n is ready.
+  source_refs:
+  - source.em5n.boot
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x60045d92'
+  note: Takes the section number. The waiter that sets the bit is at 0x60045eb3.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: Read from the section loader.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/boot-and-sections.md#sections-load-in-the-background
+- type: reference
+  id: reference.em5-iii-1700.flash-write-guard
+  title: Flash write guard
+  summary: Resets the camera on a flash write outside the allowed data windows.
+  source_refs:
+  - source.em5n.recovery
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x600c4680'
+  note: Normal operation may write only to three data windows; block 0, the boot area and the other components are
+    written by updates.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.recovery
+    project_id: project.em5-iii-notes
+    summary: Allowed windows and the reset path read from the flash writer.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/recovery.md#flash-map-and-what-an-update-writes
+- type: reference
+  id: reference.em5-iii-1700.section-4-slack
+  title: Section 4 slack
+  summary: About 100 KB of 0xFF after section 4, usable once the section end is raised.
+  source_refs:
+  - source.em5n.memory-map
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: free-space
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x6079d800'
+    end: '0x607b6800'
+  note: Raise the section 4 end constant in the loader switch at 0x60045deb. Hooks inside section 4 that jump here
+    need no boot guard.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.memory-map
+    project_id: project.em5-iii-notes
+    summary: Used for test-build code since an early cave test; loads and runs on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/memory-map.md#spare-space-for-our-code
+- type: reference
+  id: reference.em5-iii-1700.after-section-10
+  title: Space after section 10
+  summary: 32 KB of 0xFF after section 10, loaded once the section 10 end is raised.
+  source_refs:
+  - source.em5n.boot
+  - source.em5n.memory-map
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: free-space
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x61478000'
+    end: '0x61480000'
+  note: The section 10 end immediate is at 0x60045e24. Nothing references the range in stock.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: All 0xFF in stock with no references.
+  - method: physical-camera
+    source_ref: source.em5n.memory-map
+    project_id: project.em5-iii-notes
+    summary: Raising the section 10 end and running code here worked on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/memory-map.md#spare-space-for-our-code
+- type: reference
+  id: reference.em5-iii-1700.gap-before-section-1
+  title: Gap before section 1
+  summary: 54 KB of 0xFF, never copied; always ready if the boot copy end is raised.
+  source_refs:
+  - source.em5n.boot
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: free-space
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x600d0800'
+    end: '0x600de000'
+  note: Becomes always ready if the boot-copy end immediate at 0x600211af is raised to 0x600de000. Not tried on
+    a camera.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: All 0xFF in the image, not copied, no code references.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/boot-and-sections.md#sections-load-in-the-background
+- type: reference
+  id: reference.em5-iii-1700.focus-stacking-lens-check
+  title: Focus stacking per-lens flag branch
+  summary: The branch that rejects lenses without the stacking flag; patching it out allows any lens.
+  source_refs:
+  - source.em5n.focus-patch
+  topics:
+  - patching
+  - capture
+  last_reviewed: '2026-11-18'
+  category: hook-site
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x6065e5ec'
+  note: Inside fcs_check_focus_stacking_enable (0x6065e5d6). The earlier lens-type check is shared with eight other
+    callers and is left alone.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.focus-patch
+    project_id: project.em5-iii-notes
+    summary: With the branch replaced by two no-ops, focus stacking runs with lenses outside the stock list.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/patches/focus-stacking-any-lens.md#the-patch

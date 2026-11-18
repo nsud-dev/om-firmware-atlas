@@ -1,0 +1,144 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.hazard.engine-record-refused
+  title: Check image-engine records against the bridge's limits
+  summary: A record the bridge refuses parks the worker; the next image-engine use hangs.
+  source_refs:
+  - source.em5n.image-engine
+  topics:
+  - capture
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids: &id001
+  - camera.em5-iii
+  firmware_ids: &id002
+  - firmware.em5-iii-1700
+  note: Read the bridge checks (capacity, frame counts) for every change made to a job record before submitting
+    it.
+  consequence: Camera hang the next time anything uses the image processor, until the battery is pulled.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.image-engine
+    project_id: project.em5-iii-notes
+    summary: A record over the bridge's capacity hung an E-M5 III until a battery pull.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/image-engine.md#submitting-a-job-safely-learned-on-the-camera
+- type: reference
+  id: reference.hazard.unhandled-state-event
+  title: Give added shooting states a handler for every event they can receive
+  summary: An unhandled event prints a history dump in the sequencer task and stalls it.
+  source_refs:
+  - source.em5n.port-layers
+  topics:
+  - capture
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids: *id001
+  firmware_ids: *id002
+  note: Route events an added state does not need to a stock no-op handler.
+  consequence: Lost frames in fast series and a white photo at fast shutter speeds; slow series hid the problem.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.port-layers
+    project_id: project.em5-iii-notes
+    summary: On the E-M5 III, release events without a handler in a ported Live ND state lost frames at 1/125 s;
+      no-op handlers fixed it.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/live-nd-port-layers.md#join-points-found-on-the-camera-2026-11-12
+- type: reference
+  id: reference.hazard.arm-power-mid-shot
+  title: Start or stop the ARM co-processor only between shots
+  summary: Powering the ARM side on or off during a shot reset the camera.
+  source_refs:
+  - source.em5n.gotchas
+  topics:
+  - platform
+  - capture
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids: *id001
+  firmware_ids: *id002
+  note: Change ARM power only at an Idle or Standby state change. Keep image buffers out of ARM Linux RAM, which
+    is reloaded at every start.
+  consequence: Camera reset.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.gotchas
+    project_id: project.em5-iii-notes
+    summary: On the E-M5 III both a start in a shooting state and a stop in a shot hook reset the camera; start
+      and stop at Idle were safe.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/reference/gotchas.md#wrong-beliefs-we-corrected
+- type: reference
+  id: reference.hazard.cpu-read-high-ram
+  title: Keep CPU reads of image memory below 0xc0000000
+  summary: CPU reads of the 0xc4000000 frame block rebooted the camera.
+  source_refs:
+  - source.em5n.gotchas
+  topics:
+  - platform
+  - capture
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids: *id001
+  firmware_ids: *id002
+  note: 0xc0000000 to 0xc2aa0000 is ARM Linux RAM. Read frames above it through the image engine, not the CPU.
+  consequence: Camera reboot.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.gotchas
+    project_id: project.em5-iii-notes
+    summary: An E-M5 III build that read the 0xc4000000 block with the CPU rebooted.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/reference/gotchas.md#things-that-hung-reset-or-bricked-for-a-while-the-camera
+- type: reference
+  id: reference.hazard.card-file-names
+  title: Write card files with 8.3 names from cached heap buffers
+  summary: Long names and uncached source buffers produced empty files.
+  source_refs:
+  - source.em5n.gotchas
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids: *id001
+  firmware_ids: *id002
+  note: Firmware paths are 8.3 only. Write from a cached heap buffer, and only from task context.
+  consequence: Empty (0-byte) log files.
+  observations:
+  - method: physical-camera
+    source_ref: source.em5n.gotchas
+    project_id: project.em5-iii-notes
+    summary: Early E-M5 III card logs came out empty until names were 8.3 and the buffer was cached heap memory.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/reference/gotchas.md#things-that-hung-reset-or-bricked-for-a-while-the-camera
+- type: reference
+  id: reference.hazard.task-hang-no-reset
+  title: A hung task does not trigger the watchdog
+  summary: The watchdog is fed by its own task, so a hang in another task leaves the camera frozen.
+  source_refs:
+  - source.em5n.boot
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids: *id001
+  firmware_ids: *id002
+  note: Faults reset the camera in about a second, but a task waiting forever does not. Plan for a battery pull
+    in any test that could block a task.
+  consequence: Frozen camera that needs a battery pull.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: Watchdog kick task and reset path read from the code.
+  - method: physical-camera
+    source_ref: source.em5n.boot
+    project_id: project.em5-iii-notes
+    summary: One E-M5 III test build hung without resetting and needed a battery pull.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/boot-and-sections.md#boot-order-and-why-hooks-need-a-guard
