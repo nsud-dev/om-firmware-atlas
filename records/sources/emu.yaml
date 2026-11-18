@@ -81,3 +81,19 @@ records:
   published_on: null
   publication: public
   reuse_note: Attributed summary; no firmware or code imported.
+- type: source
+  id: source.emu.caduceus-om3
+  title: OM-Emu study of Caduceus OM-3
+  summary: OM-Emu's checks of Caduceus OM-3's E147 claims against its own image and lab.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-18'
+  url: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md
+  source_kind: github-file
+  upstream_repo: flatpanda/om-emu
+  revision: 750ad39fec02157897c09e1c520f042d95fdae4e
+  locator: analysis/caduceus-om3/README.md
+  retrieved_on: '2026-11-18'
+  last_checked: '2026-11-18'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.

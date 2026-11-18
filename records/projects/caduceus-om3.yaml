@@ -10,6 +10,7 @@ records:
   - source.om3.research
   - source.om3.roadmap
   - source.om3.releases
+  - source.om3.v040
   topics:
   - colour
   - interfaces
@@ -160,7 +161,33 @@ records:
     status: planned
     since: null
     source_ref: source.om3.roadmap
+  - name: Crop modes
+    summary: XPan, 21:9 and 5:4 Image Aspect choices; JPEGs are saved at that shape and RAW keeps the
+      whole sensor with the crop marked. Photos only.
+    camera_ids: *id001
+    status: testing
+    since: v0.40-alpha
+    source_ref: source.om3.v040
+  - name: White border and own film grain
+    summary: A white Border per film (0 to 5, JPEG only), and the project's own colour grain with
+      strength 1 to 5 and a Grain Size row.
+    camera_ids: *id001
+    status: testing
+    since: v0.40-alpha
+    source_ref: source.om3.v040
   releases:
+  - tag: v0.40-alpha
+    title: Caduceus for OM-3 v0.40-alpha (test version)
+    date: '2026-11-18'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40-alpha
+    prerelease: true
+    camera_ids: *id001
+    highlights:
+    - Crop modes XPan, 21:9 and 5:4 for JPEGs; RAW keeps the whole sensor with the crop marked.
+    - A white border per film, and the project's own film grain with strength and size.
+    - Picture Mode stays open 30 s; start-up waits for the camera's ready signal before running patch code.
+    warning: A test version; the project says v0.30.3 stays the current version. LookLab does not know the new settings yet.
+    source_ref: source.om3.v040
   - tag: v0.30.4-alpha
     title: Caduceus for OM-3 v0.30.4-alpha (test version)
     date: '2026-11-17'

@@ -8,31 +8,52 @@ Exact-build facts only: never apply an address to another build or body. Status:
 
 | Rule | Status | Detail |
 |---|---|---|
-| Keep patch state out of the loaded firmware image | camera-confirmed | [d1] |
+| Take section bounds from the loader, not from 0xFF runs | camera-confirmed | [d1] |
+| Gate on section initialisation, not on the load request | corroborated | [d2] |
+| Keep patch state out of the loaded firmware image | camera-confirmed | [d3] |
+| Leave the compressed section holding the card updater stock | single-source | [d4] |
 
 ## firmware.om5-ii-1100: platform and built-in features
 
 | Fact | Value | Status | Detail |
 |---|---|---|---|
-| Image processor generation | TruePic IX | single-source | [d2] |
-| Main CPU | MN103/AM33-2, cores CPU0 to CPU2 | single-source | [d2] |
-| ARM co-processor | Cortex-A9, Linux 5.10 | single-source | [d2] |
-| Image memory class | 1 GB (same layout as the OM-5) | single-source | [d2] |
-| Update file magic | OE 14 80 | single-source | [d2] |
-| Firmware blocks | 5 | single-source | [d2] |
-| Main program compression | Two LZ4 sections | single-source | [d2] |
-| Wi-Fi chip | CYW43439 | single-source | [d2] |
-| Live ND | Native: ND2 to ND16; ND32 to ND128 strings are shared UI only | single-source | [d3] |
-| USB webcam (UVC) | Native | single-source | [d2] |
-| Live GND | Partial: Settings and UI only; the shooting API methods are empty stubs | single-source | [d4] |
-| Handheld High Res Shot | Native: Jobs 14 and 15 changed from the OM-5 | single-source | [d2] |
-| Starry Sky AF | Native: Adds start triggers | single-source | [d2] |
-| AI subject detection AF | Dormant code: Code and menu present, not reachable | single-source | [d5] |
+| Image processor generation | TruePic IX | single-source | [d5] |
+| Main CPU | MN103/AM33-2, cores CPU0 to CPU2 | single-source | [d5] |
+| ARM co-processor | Cortex-A9, Linux 5.10 | single-source | [d5] |
+| Image memory class | 1 GB (same layout as the OM-5) | single-source | [d5] |
+| Update file magic | OE 14 80 | single-source | [d5] |
+| Firmware blocks | 5 | single-source | [d5] |
+| Main program compression | Two LZ4 sections | single-source | [d5] |
+| Wi-Fi chip | CYW43439 | single-source | [d5] |
+| Live ND | Native: ND2 to ND16; ND32 to ND128 strings are shared UI only | single-source | [d6] |
+| USB webcam (UVC) | Native | single-source | [d5] |
+| Live GND | Partial: Settings and UI only; the shooting API methods are empty stubs | single-source | [d7] |
+| Handheld High Res Shot | Native: Jobs 14 and 15 changed from the OM-5 | single-source | [d5] |
+| Starry Sky AF | Native: Adds start triggers | single-source | [d5] |
+| AI subject detection AF | Dormant code: Code and menu present, not reachable | single-source | [d8] |
 
-[d1]: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-IMAGE-STORE-FAULT-2026-11-11.md
-[d2]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
-[d3]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-nd.md#how-olympus-does-it-om-5-12-our-donor
-[d4]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-gnd.md#who-has-it
-[d5]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/af-detect.md
+## firmware.om5-ii-1100
 
-Records: [hazards.yaml](../../../records/reference/hazards.yaml), [om5-ii-1100-platform.yaml](../../../records/reference/om5-ii-1100-platform.yaml).
+| Name | Space | Address | Kind | Status | Detail |
+|---|---|---|---|---|---|
+| Section descriptor table | runtime-cached | `0x600284fc` | table | single-source | [d2] |
+| White balance commit | runtime-cached | `0x602d19b6` | hook-site | single-source | [d9] |
+| Section 5 loaded range | runtime-cached | `0x60843000..0x60846000` | layout | single-source | [d2] |
+| Picture editor setting read | runtime-cached | `0x6091c66d` | hook-site | single-source | [d9] |
+| Section 7 loaded range | runtime-cached | `0x60cbe800..0x61343800` | layout | single-source | [d4] |
+| Update component kind dispatch | runtime-cached | `0x60ce6aa5` | function | single-source | [d10] |
+| Section ready bits | runtime-uncached | `0xa26e2694` | data | single-source | [d2] |
+| Section requested bits | runtime-uncached | `0xa26e2698` | data | single-source | [d2] |
+
+[d1]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/CODE_SPACE.md#om-3-v22-precedent
+[d2]: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STARTUP-FIX-2026-11-06.md
+[d3]: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-IMAGE-STORE-FAULT-2026-11-11.md
+[d4]: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STOCK-SECTION7.md#build-boundary
+[d5]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+[d6]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-nd.md#how-olympus-does-it-om-5-12-our-donor
+[d7]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-gnd.md#who-has-it
+[d8]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/af-detect.md
+[d9]: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-BRICK-RISK.md#hook-and-edit-map
+[d10]: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-BRICK-RISK.md#risk-register
+
+Records: [hazards-sections.yaml](../../../records/reference/hazards-sections.yaml), [hazards.yaml](../../../records/reference/hazards.yaml), [om5-ii-1100-platform.yaml](../../../records/reference/om5-ii-1100-platform.yaml), [om5-ii-1100.yaml](../../../records/reference/om5-ii-1100.yaml).

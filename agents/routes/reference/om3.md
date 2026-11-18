@@ -8,23 +8,48 @@ Exact-build facts only: never apply an address to another build or body. Status:
 
 | Rule | Status | Detail |
 |---|---|---|
-| Only call code in a section that has already loaded | camera-confirmed | [d1] |
+| Take section bounds from the loader, not from 0xFF runs | camera-confirmed | [d1] |
+| Point OSD picture descriptors into the heap | camera-confirmed | [d2] |
+| Gate on section initialisation, not on the load request | corroborated | [d3] |
+| Only call code in a section that has already loaded | camera-confirmed | [d4] |
+| Keep work done with interrupts masked short | corroborated | [d5] |
 
 ## firmware.om3-1100
 
 | Name | Space | Address | Kind | Status | Detail |
 |---|---|---|---|---|---|
-| malloc | runtime-cached | `0x60024068` | function | camera-confirmed | [d2] |
-| free | runtime-cached | `0x6002409a` | function | camera-confirmed | [d2] |
-| Settings getter (active profile) | runtime-cached | `0x60063380` | function | camera-confirmed | [d2] |
-| Section 1 free tail | runtime-cached | `0x6031e910..0x6031f000` | free-space | camera-confirmed | [d2] |
-| Half-press hook | runtime-cached | `0x60415216` | hook-site | camera-confirmed | [d2] |
-| Hue/lightness builder call site | runtime-cached | `0x60518615` | hook-site | camera-confirmed | [d2] |
-| fopen | runtime-cached | `0x608d4d22` | function | camera-confirmed | [d2] |
-| fclose | runtime-cached | `0x608d4d2b` | function | camera-confirmed | [d2] |
-| fread | runtime-cached | `0x608d4eb7` | function | camera-confirmed | [d2] |
+| malloc | runtime-cached | `0x60024068` | function | camera-confirmed | [d6] |
+| free | runtime-cached | `0x6002409a` | function | camera-confirmed | [d6] |
+| Section descriptor table | runtime-cached | `0x60029b28` | table | corroborated | [d7] |
+| Section loader | runtime-cached | `0x60045ed5` | function | corroborated | [d8] |
+| Settings getter (active profile) | runtime-cached | `0x60063380` | function | camera-confirmed | [d6] |
+| Lock (masks interrupts) | runtime-cached | `0x60075f73` | function | corroborated | [d5] |
+| Section 1 free tail | runtime-cached | `0x6031e910..0x6031f000` | free-space | camera-confirmed | [d6] |
+| Software timer table | runtime-cached | `0x6036f984` | data | single-source | [d9] |
+| GUI state word pointer | runtime-cached | `0x603713a4` | data | camera-confirmed | [d10] |
+| Setting getter by id | runtime-cached | `0x603f0111` | function | single-source | [d11] |
+| Half-press hook | runtime-cached | `0x60415216` | hook-site | camera-confirmed | [d6] |
+| Hue/lightness builder call site | runtime-cached | `0x60518615` | hook-site | camera-confirmed | [d6] |
+| fopen | runtime-cached | `0x608d4d22` | function | camera-confirmed | [d6] |
+| fclose | runtime-cached | `0x608d4d2b` | function | camera-confirmed | [d6] |
+| fread | runtime-cached | `0x608d4eb7` | function | camera-confirmed | [d6] |
+| Section 4 free tail | runtime-cached | `0x60a8f088..0x60a8f800` | free-space | single-source | [d1] |
+| Start a software timer | runtime-cached | `0x612970e8` | function | camera-confirmed | [d9] |
+| Touch timer re-arm | runtime-cached | `0x612a8db3` | hook-site | camera-confirmed | [d9] |
+| Screen factory table | runtime-cached | `0x615025d8` | table | single-source | [d9] |
+| Section 9 free tail | runtime-cached | `0x619a966c..0x619a9800` | free-space | single-source | [d1] |
+| Section copied mask | runtime-uncached | `0xa32de590` | data | corroborated | [d8] |
 
-[d1]: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md
-[d2]: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+[d1]: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/CODE_SPACE.md#om-3-v22-precedent
+[d2]: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#issue-64-the-wheels-dial-label-names-the-page-2026-11-16-featuredial-label-per-page-camera-tested
+[d3]: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STARTUP-FIX-2026-11-06.md
+[d4]: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md
+[d5]: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#per-film-r--g--b-tone-curves-build-2026-11-15-featurergb-curves-emulator-only
+[d6]: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
+[d7]: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md#21-the-section-table-and-the-loaders-end-words
+[d8]: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md#22-the-copied-mask-and-its-single-writer
+[d9]: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#75-picture-mode-closes-after-30-s-idle-not-8-s-2026-11-17-experimentfilm-page-timeout-fix-camera-tested
+[d10]: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md#83-what-in-their-recent-work-is-useful-to-om-emu
+[d11]: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md#27-the-creative-dial-and-the-settings-getters
 
-Records: [hazards.yaml](../../../records/reference/hazards.yaml), [om3-1100.yaml](../../../records/reference/om3-1100.yaml).
+Records: [hazards-om3.yaml](../../../records/reference/hazards-om3.yaml), [hazards-sections.yaml](../../../records/reference/hazards-sections.yaml), [hazards.yaml](../../../records/reference/hazards.yaml), [om3-1100-boot.yaml](../../../records/reference/om3-1100-boot.yaml), [om3-1100-gui.yaml](../../../records/reference/om3-1100-gui.yaml), [om3-1100.yaml](../../../records/reference/om3-1100.yaml).

@@ -1,0 +1,204 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.ep7-1100.malloc
+  title: malloc
+  summary: Fixed-block pools of up to 128, 2048 and 16384 bytes; logs an error above 16 KB.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x60022782'
+  note: Returns uncached addresses, so all cores see the same bytes. Class 1 (up to 2048) is 0xa1f8d800..0xa1f98540.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Read from code; [] ,4 frame.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#2-the-main-program
+- type: reference
+  id: reference.ep7-1100.free
+  title: free
+  summary: Frees a block from malloc 0x60022782.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x600227b4'
+  note: 'Large image buffers come from the job buffer pool instead: 0x60350560, freed by 0x60350843.'
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Read from code.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#2-the-main-program
+- type: reference
+  id: reference.ep7-1100.property-getter
+  title: Property getter
+  summary: Reads a setting by property key (d0) and index (d1) from a RAM registry.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x6005e971'
+  note: Settings have no fixed RAM address. The getter by settings id is 0x602cbc0a.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Read from code.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#3-the-settings-system
+- type: reference
+  id: reference.ep7-1100.sid-table
+  title: Settings id table
+  summary: Maps settings ids 0..1768 to a property key and index.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x604d6c14'
+  note: The key is id << 4 | type; the type gives width and signedness.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Read from code.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#3-the-settings-system
+- type: reference
+  id: reference.ep7-1100.settings-facade
+  title: Settings facade vtable
+  summary: Vtable of the GUI settings facade the editor uses for every read and write.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x60acb0dc'
+  note: Slot +0 SetValue, +8 GetValue, +152 GetDefault. The singleton is at 0x607f9062.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Read from code.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#3-the-settings-system
+- type: reference
+  id: reference.ep7-1100.firmware-blocks
+  title: Firmware blocks, E-P7 1.1
+  summary: 'Firmware blocks for E-P7 1.1: 5.'
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  trait: trait.firmware-blocks
+  value: '5'
+  note: Main 0x100, OSD 0x101, common resources 0x106, sub-CPU 0x10e and pictures 0x102. Any non-empty subset installs;
+    main must come first.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Component table read from the official file.
+  - method: physical-camera
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Main-only and OSD-only packages worked on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#1-the-firmware-package
+- type: reference
+  id: reference.ep7-1100.container-magic
+  title: Update file magic, E-P7 1.1
+  summary: 'Update file magic for E-P7 1.1: OE 14 20.'
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  trait: trait.container-magic
+  value: OE 14 20
+  note: Bytes 0-1 OE, bytes 2-3 the model. Every byte is inverted and 16-byte groups permuted.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Header layout read and round-tripped.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#1-the-firmware-package
+- type: reference
+  id: reference.ep7-1100.main-cpu
+  title: Main CPU, E-P7 1.1
+  summary: 'Main CPU for E-P7 1.1: MN103/AM33-2, several cores.'
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.ep7
+  firmware_ids:
+  - firmware.ep7-1100
+  trait: trait.main-cpu
+  value: MN103/AM33-2, several cores
+  note: Some tasks run on another core; (0x8050) holds the CPU id. The core count is not given.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Disassembled as am33-2.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#2-the-main-program

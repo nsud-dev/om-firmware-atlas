@@ -227,6 +227,30 @@ The aperture ring on Panasonic lenses that have one sets the aperture.
 
 </div>
 
+<div class="feature-card" markdown="1">
+
+**Crop modes** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+XPan, 21:9 and 5:4 Image Aspect choices; JPEGs are saved at that shape and RAW keeps the whole sensor with the crop marked. Photos only.
+
+[OM-3](../cameras/om3.md) · since v0.40-alpha
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**White border and own film grain** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+A white Border per film (0 to 5, JPEG only), and the project's own colour grain with strength 1 to 5 and a Grain Size row.
+
+[OM-3](../cameras/om3.md) · since v0.40-alpha
+{ .card-meta }
+
+</div>
+
 </div>
 
 ## Gallery
@@ -263,6 +287,20 @@ Halation at strength 5 on a sample photo. *Caduceus for OM-3 tour; photo by Bler
 </div>
 
 ## Releases
+
+<div class="release-item" markdown="1">
+
+**[Caduceus for OM-3 v0.40-alpha (test version)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40-alpha)** <span class="pill pill-alpha">Pre-release</span> · 18 Nov 2026
+{ .release-head }
+
+- Crop modes XPan, 21:9 and 5:4 for JPEGs; RAW keeps the whole sensor with the crop marked.
+- A white border per film, and the project's own film grain with strength and size.
+- Picture Mode stays open 30 s; start-up waits for the camera's ready signal before running patch code.
+
+A test version; the project says v0.30.3 stays the current version. LookLab does not know the new settings yet.
+{ .release-warning }
+
+</div>
 
 <div class="release-item" markdown="1">
 
@@ -392,5 +430,6 @@ The reviewed README names v0.30.3. Camera-test descriptions remain attributed; t
 - [OM-3 research index](../sources/om3.research.md)
 - [Caduceus OM-3 roadmap](../sources/om3.roadmap.md)
 - [Caduceus OM-3 releases](../sources/om3.releases.md)
+- [OM-3 v0.40-alpha release notes](../sources/om3.v040.md)
 
 [Canonical record](../../records/projects/caduceus-om3.yaml) · Substantively reviewed: 2026-11-17.

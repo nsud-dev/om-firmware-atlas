@@ -79,6 +79,15 @@ Installing modified firmware is at your own risk. Follow the project's own guide
 
 Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
 
+## Platform and built-in features (pen-f firmware 3.1, build 3101)
+
+What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
+
+| | Value | Status |
+|---|---|---|
+| [Main CPU](../reference/pen-f-3101.main-cpu.md) | MN103, cores CPU0 to CPU2 | Single source |
+| [Firmware blocks](../reference/pen-f-3101.firmware-blocks.md) | 4 | Camera-confirmed |
+
 ## Firmware
 
 [pen-f firmware 3.1, build 3101](../firmware/pen-f-3101.md).

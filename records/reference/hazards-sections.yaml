@@ -1,0 +1,95 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.hazard.ready-not-requested
+  title: Gate on section initialisation, not on the load request
+  summary: A section's copy or load-request bit can be set before its constructors run.
+  source_refs:
+  - source.om5.startup-fix
+  - source.emu.caduceus-om3
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids:
+  - camera.om5-ii
+  - camera.om3
+  firmware_ids:
+  - firmware.om5-ii-1100
+  - firmware.om3-1100
+  note: 'Test the word the firmware''s own wait uses: OM-5 Mark II 0xa26e2694, not 0xa26e2698; OM-3 0xa32de58c,
+    not 0xa32de590, which the loader sets whatever the copy returned.'
+  consequence: Hooks reached early in boot may call code or data that is not initialised yet.
+  observations:
+  - method: static-analysis
+    source_ref: source.om5.startup-fix
+    project_id: project.caduceus-om5
+    summary: E148 guards tested decoder submission; corrected to completed initialisation.
+  - method: static-analysis
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: OM-3 sets 0xa32de590 regardless of the copy result; 0xa32de58c is set after constructors.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STARTUP-FIX-2026-11-06.md
+- type: reference
+  id: reference.hazard.ff-is-not-free
+  title: Take section bounds from the loader, not from 0xFF runs
+  summary: An 0xFF run in the file can lie outside the section load, so code placed there is never loaded.
+  source_refs:
+  - source.fishcu.code-space
+  - source.om5.startup-fix
+  - source.emu.caduceus-om3
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids:
+  - camera.om3
+  - camera.om5-ii
+  - camera.pen-f
+  firmware_ids:
+  - firmware.om3-1100
+  - firmware.om5-ii-1100
+  - firmware.pen-f-3101
+  note: Use the descriptor table and end selector, then check references, initialiser counts and runtime ownership.
+    Emulators that map the whole file can hide the error.
+  consequence: Calls into unloaded bytes run leftover RAM.
+  observations:
+  - method: static-analysis
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: Large FF runs in OM-3 1100 are mostly outside the loads.
+  - method: static-analysis
+    source_ref: source.om5.startup-fix
+    project_id: project.caduceus-om5
+    summary: An OM-5 II overlay ran 3,036 bytes past section 5; a direct-memory emulator fixture hid it.
+  - method: physical-camera
+    source_ref: source.emu.caduceus-om3
+    project_id: project.caduceus-om3
+    summary: Caduceus gap probes on the OM-3 found leftover RAM, not 0xFF, between sections.
+  conflicts: []
+  upstream_detail: https://github.com/fishcu/oly_fw_analysis/blob/d565cb664d3bc37f883f844a3a0c9620efe018e4/docs/safety/CODE_SPACE.md#om-3-v22-precedent
+- type: reference
+  id: reference.hazard.updater-section-stock
+  title: Leave the compressed section holding the card updater stock
+  summary: On the OM-5 Mark II the card updater is in compressed section 7; repacking it puts recovery at risk.
+  source_refs:
+  - source.om5.section7
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  note: 'Preserve the stored span at main-payload offset 0xc9d7e0, and preferably section 6 too. This is the project''s
+    inference: no failure has been traced to it.'
+  consequence: If section 7 fails to load, the card updater may not run to restore stock.
+  observations:
+  - method: static-analysis
+    source_ref: source.om5.section7
+    project_id: project.caduceus-om5
+    summary: FIRMUP_CLI is inside section 7; the builder can preserve the stored spans.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STOCK-SECTION7.md#build-boundary

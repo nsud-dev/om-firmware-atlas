@@ -1,0 +1,170 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.om3-1100.timer-table
+  title: Software timer table
+  summary: 'Ten 28-byte software timers: active, start time, event id and duration in ms.'
+  source_refs:
+  - source.om3.notes
+  topics:
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: data
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x6036f984'
+  note: 'Offsets: +0 active, +4 start time, +20 event id, +24 duration. Menus share event id 500 at 8000 ms; the
+    super control panel uses 510.'
+  observations:
+  - method: static-analysis
+    source_ref: source.om3.notes
+    project_id: project.caduceus-om3
+    summary: 'Read for issue #75; the Picture Mode timeout fix built on it passed on the camera.'
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#75-picture-mode-closes-after-30-s-idle-not-8-s-2026-11-17-experimentfilm-page-timeout-fix-camera-tested
+- type: reference
+  id: reference.om3-1100.timer-start
+  title: Start a software timer
+  summary: 'Arms a software timer: d0 = event id, d1 = duration in ms.'
+  source_refs:
+  - source.om3.notes
+  topics:
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x612970e8'
+  note: Menus arm event id 500 from 89 sites, each passing 8000 ms. The value is a signed 16-bit immediate, so a
+    byte patch reaches 32767 ms at most.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.notes
+    project_id: project.caduceus-om3
+    summary: Picture Mode stayed open 30 s after its arms were changed; other screens kept 8 s.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#75-picture-mode-closes-after-30-s-idle-not-8-s-2026-11-17-experimentfilm-page-timeout-fix-camera-tested
+- type: reference
+  id: reference.om3-1100.touch-timer-rearm
+  title: Touch timer re-arm
+  summary: Shared touch code re-arms event 500 at 8000 ms here after a tap.
+  source_refs:
+  - source.om3.notes
+  topics:
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: hook-site
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x612a8db3'
+  note: Takes id and time from a record filled by 0x612ae7a1, in touch layout 28 (vtable 0x61639130). Caduceus hooks
+    this call to give Picture Mode 30 s on a tap and leaves other screens unchanged.
+  observations:
+  - method: emulator
+    source_ref: source.om3.notes
+    project_id: project.caduceus-om3
+    summary: A tap on a COLOR tab reaches this re-arm; of 35 touch layouts only layout 28 re-arms id 500.
+  - method: physical-camera
+    source_ref: source.om3.notes
+    project_id: project.caduceus-om3
+    summary: With the hook, a tap gives Picture Mode 30 s; other touch menus close after 8 s.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#75-picture-mode-closes-after-30-s-idle-not-8-s-2026-11-17-experimentfilm-page-timeout-fix-camera-tested
+- type: reference
+  id: reference.om3-1100.screen-factory
+  title: Screen factory table
+  summary: Pairs GUI screen classes with screen ids.
+  source_refs:
+  - source.om3.notes
+  topics:
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x615025d8'
+  note: Picture Mode (id 0x3d) is built at 0x611c20ad; the white balance screen ID_ST_DIRECT_WB (id 0x3c) at 0x611c3cc2.
+  observations:
+  - method: emulator
+    source_ref: source.om3.notes
+    project_id: project.caduceus-om3
+    summary: 'Used to tell which code builds which screen while fixing issue #75.'
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#75-picture-mode-closes-after-30-s-idle-not-8-s-2026-11-17-experimentfilm-page-timeout-fix-camera-tested
+- type: reference
+  id: reference.om3-1100.gui-state-pointer
+  title: GUI state word pointer
+  summary: 'Holds the address of the GUI state word: u16, child << 8 | parent.'
+  source_refs:
+  - source.om3.notes
+  - source.emu.caduceus-om3
+  topics:
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: data
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x603713a4'
+  note: Parents include 1 common, 2 shooting, 4 live-view menu (child 0x18 is Picture Mode) and 5 to 7 playback.
+    Picture Mode reads 0x0418.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.notes
+    project_id: project.caduceus-om3
+    summary: The camera-tested touch hook reads the state through this pointer.
+  - method: static-analysis
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: The firmware loads the word's address once and keeps it here; the state codes are Caduceus' reading.
+  conflicts: []
+  upstream_detail: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md#83-what-in-their-recent-work-is-useful-to-om-emu
+- type: reference
+  id: reference.om3-1100.setting-getter
+  title: Setting getter by id
+  summary: Returns a setting by setting id; the debug getter Caduceus and OM-Emu call.
+  source_refs:
+  - source.emu.caduceus-om3
+  topics:
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.om3
+  firmware_ids:
+  - firmware.om3-1100
+  address:
+    space: runtime-cached
+    value: '0x603f0111'
+  note: Distinct from the capture-safe getter at 0x60063380. Caduceus reports that calling another getter, 0x603f039d,
+    during a capture rebooted the camera. Setting names are in container block 2 per body.
+  observations:
+  - method: static-analysis
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: Paired with the E-M1 II getter by OM-Emu's port table.
+  - method: emulator
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: Called in the lab for ids 111, 901, 1578, 6, 1632, 1699 and 4000; each returned at once.
+  conflicts: []
+  upstream_detail: https://github.com/flatpanda/om-emu/blob/750ad39fec02157897c09e1c520f042d95fdae4e/analysis/caduceus-om3/README.md#27-the-creative-dial-and-the-settings-getters

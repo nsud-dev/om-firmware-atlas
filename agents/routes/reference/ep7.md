@@ -13,14 +13,37 @@ Exact-build facts only: never apply an address to another build or body. Status:
 | Only call code in a section that has already loaded | camera-confirmed | [d1] |
 | Keep patch state out of the loaded firmware image | camera-confirmed | [d2] |
 
+## firmware.ep7-1100: platform and built-in features
+
+| Fact | Value | Status | Detail |
+|---|---|---|---|
+| Main CPU | MN103/AM33-2, several cores | single-source | [d3] |
+| Update file magic | OE 14 20 | single-source | [d4] |
+| Firmware blocks | 5 | camera-confirmed | [d4] |
+
 ## firmware.ep7-1100
 
 | Name | Space | Address | Kind | Status | Detail |
 |---|---|---|---|---|---|
 | Main container address | container | `0x406a0020` | layout | single-source | [d1] |
 | Main program CPU base | runtime-cached | `0x60020020` | layout | single-source | [d1] |
+| malloc | runtime-cached | `0x60022782` | function | single-source | [d3] |
+| free | runtime-cached | `0x600227b4` | function | single-source | [d3] |
+| Section descriptor table | runtime-cached | `0x60027068` | table | single-source | [d3] |
+| Section loader | runtime-cached | `0x600457e7` | function | single-source | [d3] |
+| Property getter | runtime-cached | `0x6005e971` | function | single-source | [d5] |
+| Dead EVF gamma tables | runtime-cached | `0x601de13c..0x601e3b3c` | free-space | camera-confirmed | [d3] |
+| Section 1 free tail | runtime-cached | `0x602108ec..0x60211000` | free-space | camera-confirmed | [d3] |
+| Settings id table | runtime-cached | `0x604d6c14` | table | single-source | [d5] |
+| Settings facade vtable | runtime-cached | `0x60acb0dc` | table | single-source | [d5] |
+| Card updater task | runtime-cached | `0x60c95bab` | function | camera-confirmed | [d4] |
+| Update file validator | runtime-cached | `0x60c964c1` | function | single-source | [d4] |
+| Section loaded mask | runtime-uncached | `0xa272e420` | data | single-source | [d3] |
 
 [d1]: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md
 [d2]: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-IMAGE-STORE-FAULT-2026-11-11.md
+[d3]: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#2-the-main-program
+[d4]: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#1-the-firmware-package
+[d5]: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md#3-the-settings-system
 
-Records: [ep7-1100.yaml](../../../records/reference/ep7-1100.yaml), [hazards.yaml](../../../records/reference/hazards.yaml).
+Records: [ep7-1100-boot.yaml](../../../records/reference/ep7-1100-boot.yaml), [ep7-1100-routines.yaml](../../../records/reference/ep7-1100-routines.yaml), [ep7-1100.yaml](../../../records/reference/ep7-1100.yaml), [hazards.yaml](../../../records/reference/hazards.yaml).

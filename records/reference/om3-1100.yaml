@@ -6,6 +6,7 @@ records:
   summary: Where the colour stage calls the hue/lightness builder; Caduceus hooks here.
   source_refs:
   - source.om3.devnotes
+  - source.emu.caduceus-om3
   topics:
   - colour
   - patching
@@ -25,6 +26,10 @@ records:
     source_ref: source.om3.devnotes
     project_id: project.caduceus-om3
     summary: Listed under Proven on the camera in the OM-3 developer notes.
+  - method: static-analysis
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: "Disassembled as the COLOR stage's call of the HSL builder 0x60518381."
   conflicts: []
   upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
 - type: reference
@@ -33,6 +38,7 @@ records:
   summary: A shutter half-press path used to run code once the card is ready.
   source_refs:
   - source.om3.devnotes
+  - source.emu.caduceus-om3
   topics:
   - patching
   - capture
@@ -49,6 +55,10 @@ records:
     source_ref: source.om3.devnotes
     project_id: project.caduceus-om3
     summary: Listed under Proven on the camera in the OM-3 developer notes.
+  - method: emulator
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: 'The call site ran at each shutter event in a lab session.'
   conflicts: []
   upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
 - type: reference
@@ -57,6 +67,7 @@ records:
   summary: Stock settings getter; with setting 63153 it returns the active colour profile.
   source_refs:
   - source.om3.devnotes
+  - source.emu.caduceus-om3
   topics:
   - colour
   last_reviewed: '2026-11-18'
@@ -73,6 +84,10 @@ records:
     source_ref: source.om3.devnotes
     project_id: project.caduceus-om3
     summary: Listed under Proven on the camera in the OM-3 developer notes.
+  - method: static-analysis
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: "Matched to the E-M1 II camera-state read by OM-Emu's port table; called capture-safe there."
   conflicts: []
   upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
 - type: reference
@@ -81,6 +96,7 @@ records:
   summary: Stock heap allocator, class 1 pool.
   source_refs:
   - source.om3.devnotes
+  - source.emu.caduceus-om3
   topics:
   - platform
   last_reviewed: '2026-11-18'
@@ -96,6 +112,10 @@ records:
     source_ref: source.om3.devnotes
     project_id: project.caduceus-om3
     summary: Used by the camera-proven card probe in the OM-3 developer notes.
+  - method: emulator
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: 'Runs as stock in the lab as the allocator for the uncached pools.'
   conflicts: []
   upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
 - type: reference
@@ -104,6 +124,7 @@ records:
   summary: Stock heap free, the counterpart of malloc.
   source_refs:
   - source.om3.devnotes
+  - source.emu.caduceus-om3
   topics:
   - platform
   last_reviewed: '2026-11-18'
@@ -119,6 +140,10 @@ records:
     source_ref: source.om3.devnotes
     project_id: project.caduceus-om3
     summary: Used by the camera-proven card probe in the OM-3 developer notes.
+  - method: emulator
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: 'Runs as stock in the lab, freeing blocks from that allocator.'
   conflicts: []
   upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera
 - type: reference
@@ -199,6 +224,7 @@ records:
   summary: Unused 0xFF bytes at the end of section 1, which loads first.
   source_refs:
   - source.om3.devnotes
+  - source.fishcu.code-space
   topics:
   - patching
   last_reviewed: '2026-11-18'
@@ -216,5 +242,13 @@ records:
     source_ref: source.om3.devnotes
     project_id: project.caduceus-om3
     summary: Caduceus code in this range runs on the camera, per the OM-3 developer notes.
+  - method: static-analysis
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: 'FF suffix 0x6031e910..0x6031f000 lies inside the loaded range 0x60134000..0x6031f000.'
+  - method: emulator
+    source_ref: source.fishcu.code-space
+    project_id: project.oly-fw-analysis
+    summary: 'Native load and reload tests keep added bytes here under modelled storage.'
   conflicts: []
   upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/docs/DEVELOPER_NOTES.md#proven-on-the-camera

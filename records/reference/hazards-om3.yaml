@@ -1,0 +1,54 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.hazard.short-masked-windows
+  title: Keep work done with interrupts masked short
+  summary: Long work between the firmware lock and unlock runs with interrupts off.
+  source_refs:
+  - source.om3.notes
+  - source.emu.caduceus-om3
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids: &id001
+  - camera.om3
+  firmware_ids: &id002
+  - firmware.om3-1100
+  note: Pack and checksum into a buffer before the lock and only copy inside it. That a missed interrupt froze the
+    camera is the project's inference.
+  consequence: A rare, timing-dependent freeze; one test build failed once on the camera.
+  observations:
+  - method: emulator
+    source_ref: source.om3.notes
+    project_id: project.caduceus-om3
+    summary: OM-Emu counted 212,851 instructions masked per save; packing first cut it to 10,062.
+  - method: emulator
+    source_ref: source.emu.caduceus-om3
+    project_id: project.om-emu
+    summary: Recorded the count and that the camera test passed after the change; proposes per-step masked counts.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#per-film-r--g--b-tone-curves-build-2026-11-15-featurergb-curves-emulator-only
+- type: reference
+  id: reference.hazard.osd-pictures-in-heap
+  title: Point OSD picture descriptors into the heap
+  summary: A picture descriptor pointing into a patch code tail blanked the rest of the OM-3 menu.
+  source_refs:
+  - source.om3.notes
+  topics:
+  - interfaces
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hazard
+  camera_ids: *id001
+  firmware_ids: *id002
+  note: Every picture the camera has shown points into the heap (0xa2...). OM-Emu draws from either address, so
+    no emulator test catches this.
+  consequence: The rest of the camera menu is blank.
+  observations:
+  - method: physical-camera
+    source_ref: source.om3.notes
+    project_id: project.caduceus-om3
+    summary: A test build with a descriptor at 0x60f9... blanked the menu; heap descriptors work.
+  conflicts: []
+  upstream_detail: https://github.com/androidfanman/caduceus-om3/blob/e32363a01aef5f0119e750f35bc96644e6d9b4eb/research/NOTES.md#issue-64-the-wheels-dial-label-names-the-page-2026-11-16-featuredial-label-per-page-camera-tested

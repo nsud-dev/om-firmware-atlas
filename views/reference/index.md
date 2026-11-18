@@ -12,12 +12,17 @@ Compact, sourced facts that projects and agents reuse: named addresses for one e
 | [Write card files with 8.3 names from cached heap buffers](hazard.card-file-names.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Keep CPU reads of image memory below 0xc0000000](hazard.cpu-read-high-ram.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Check image-engine records against the bridge's limits](hazard.engine-record-refused.md) | OM-D E-M5 Mark III | Camera-confirmed |
+| [Take section bounds from the loader, not from 0xFF runs](hazard.ff-is-not-free.md) | OM-3, OM-5 Mark II, PEN-F | Camera-confirmed |
 | [Never write to the logical flash range](hazard.logical-flash-writes.md) | PEN E-P7, OM-D E-M5 Mark III | Corroborated |
+| [Point OSD picture descriptors into the heap](hazard.osd-pictures-in-heap.md) | OM-3 | Camera-confirmed |
 | [Never CPU-read an image buffer through its raw descriptor address](hazard.raw-image-buffer-read.md) | PEN E-P7 | Camera-confirmed |
+| [Gate on section initialisation, not on the load request](hazard.ready-not-requested.md) | OM-5 Mark II, OM-3 | Corroborated |
 | [Only call code in a section that has already loaded](hazard.section-load-order.md) | PEN E-P7, OM-3, OM-D E-M5 Mark III | Camera-confirmed |
+| [Keep work done with interrupts masked short](hazard.short-masked-windows.md) | OM-3 | Corroborated |
 | [Keep patch state out of the loaded firmware image](hazard.state-in-loaded-image.md) | PEN E-P7, OM-5 Mark II | Camera-confirmed |
 | [A hung task does not trigger the watchdog](hazard.task-hang-no-reset.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Give added shooting states a handler for every event they can receive](hazard.unhandled-state-event.md) | OM-D E-M5 Mark III | Camera-confirmed |
+| [Leave the compressed section holding the card updater stock](hazard.updater-section-stock.md) | OM-5 Mark II | Single source |
 | [Align structures with 32-bit fields to four bytes](hazard.word-alignment.md) | PEN-F | Camera-confirmed |
 
 ## Built-in features by build
@@ -37,16 +42,16 @@ What each stock firmware contains, before any project changes it. Absent means c
 
 Hardware and layout facts per stock firmware build.
 
-| | OM-D E-M5 Mark III 1.7 | OM-5 1.2 | OM-5 Mark II 1.1 |
-|---|---|---|---|
-| Image processor generation | [TruePic VIII](em5-iii-1700.image-processor.md) | [TruePic IX](om5-1200.image-processor.md) | [TruePic IX](om5-ii-1100.image-processor.md) |
-| Main CPU | [MN103/AM33-2, cores CPU0 to CPU2](em5-iii-1700.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-1200.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-ii-1100.main-cpu.md) |
-| ARM co-processor | [Cortex-A9, Linux 4.4](em5-iii-1700.arm-coprocessor.md) | [Cortex-A9, Linux 4.4](om5-1200.arm-coprocessor.md) | [Cortex-A9, Linux 5.10](om5-ii-1100.arm-coprocessor.md) |
-| Image memory class | [1 GB (image buffer map 924 MB)](em5-iii-1700.memory-class.md) | [1 GB (same buffer map span as the E-M5 III)](om5-1200.memory-class.md) | [1 GB (same layout as the OM-5)](om5-ii-1100.memory-class.md) |
-| Update file magic | [OE 13 70](em5-iii-1700.container-magic.md) | [OE 14 40](om5-1200.container-magic.md) | [OE 14 80](om5-ii-1100.container-magic.md) |
-| Firmware blocks | [5](em5-iii-1700.firmware-blocks.md) | [5](om5-1200.firmware-blocks.md) | [5](om5-ii-1100.firmware-blocks.md) |
-| Main program compression | [None](em5-iii-1700.main-compression.md) | [Two LZ4 sections](om5-1200.main-compression.md) | [Two LZ4 sections](om5-ii-1100.main-compression.md) |
-| Wi-Fi chip | [CYW43455](em5-iii-1700.wifi-chip.md) | [CYW43455](om5-1200.wifi-chip.md) | [CYW43439](om5-ii-1100.wifi-chip.md) |
+| | OM-D E-M5 Mark III 1.7 | PEN E-P7 1.1 | OM-5 1.2 | OM-5 Mark II 1.1 | PEN-F 3.1 |
+|---|---|---|---|---|---|
+| Image processor generation | [TruePic VIII](em5-iii-1700.image-processor.md) |  | [TruePic IX](om5-1200.image-processor.md) | [TruePic IX](om5-ii-1100.image-processor.md) |  |
+| Main CPU | [MN103/AM33-2, cores CPU0 to CPU2](em5-iii-1700.main-cpu.md) | [MN103/AM33-2, several cores](ep7-1100.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-1200.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-ii-1100.main-cpu.md) | [MN103, cores CPU0 to CPU2](pen-f-3101.main-cpu.md) |
+| ARM co-processor | [Cortex-A9, Linux 4.4](em5-iii-1700.arm-coprocessor.md) |  | [Cortex-A9, Linux 4.4](om5-1200.arm-coprocessor.md) | [Cortex-A9, Linux 5.10](om5-ii-1100.arm-coprocessor.md) |  |
+| Image memory class | [1 GB (image buffer map 924 MB)](em5-iii-1700.memory-class.md) |  | [1 GB (same buffer map span as the E-M5 III)](om5-1200.memory-class.md) | [1 GB (same layout as the OM-5)](om5-ii-1100.memory-class.md) |  |
+| Update file magic | [OE 13 70](em5-iii-1700.container-magic.md) | [OE 14 20](ep7-1100.container-magic.md) | [OE 14 40](om5-1200.container-magic.md) | [OE 14 80](om5-ii-1100.container-magic.md) |  |
+| Firmware blocks | [5](em5-iii-1700.firmware-blocks.md) | [5](ep7-1100.firmware-blocks.md) | [5](om5-1200.firmware-blocks.md) | [5](om5-ii-1100.firmware-blocks.md) | [4](pen-f-3101.firmware-blocks.md) |
+| Main program compression | [None](em5-iii-1700.main-compression.md) |  | [Two LZ4 sections](om5-1200.main-compression.md) | [Two LZ4 sections](om5-ii-1100.main-compression.md) |  |
+| Wi-Fi chip | [CYW43455](em5-iii-1700.wifi-chip.md) |  | [CYW43455](om5-1200.wifi-chip.md) | [CYW43439](om5-ii-1100.wifi-chip.md) |  |
 
 ## Olympus OM-D E-M5 Mark III, E-M5 Mark III firmware 1.7, build 1700
 
@@ -90,6 +95,18 @@ Hardware and layout facts per stock firmware build.
 |---|---|---|---|
 | [Main container address](ep7-1100.main-container.md) | `0x406a0020` | layout | Single source |
 | [Main program CPU base](ep7-1100.main-cpu-base.md) | `0x60020020` | layout | Single source |
+| [malloc](ep7-1100.malloc.md) | `0x60022782` | function | Single source |
+| [free](ep7-1100.free.md) | `0x600227b4` | function | Single source |
+| [Section descriptor table](ep7-1100.section-table.md) | `0x60027068` | table | Single source |
+| [Section loader](ep7-1100.section-loader.md) | `0x600457e7` | function | Single source |
+| [Property getter](ep7-1100.property-getter.md) | `0x6005e971` | function | Single source |
+| [Dead EVF gamma tables](ep7-1100.evf-gamma-tables.md) | `0x601de13c` | free space | Camera-confirmed |
+| [Section 1 free tail](ep7-1100.section-1-tail.md) | `0x602108ec` | free space | Camera-confirmed |
+| [Settings id table](ep7-1100.sid-table.md) | `0x604d6c14` | table | Single source |
+| [Settings facade vtable](ep7-1100.settings-facade.md) | `0x60acb0dc` | table | Single source |
+| [Card updater task](ep7-1100.firmup-cli.md) | `0x60c95bab` | function | Camera-confirmed |
+| [Update file validator](ep7-1100.update-validator.md) | `0x60c964c1` | function | Single source |
+| [Section loaded mask](ep7-1100.loaded-mask.md) | `0xa272e420` | data | Single source |
 
 ## OM SYSTEM OM-3, om3 firmware 1.1, build 1100
 
@@ -97,12 +114,51 @@ Hardware and layout facts per stock firmware build.
 |---|---|---|---|
 | [malloc](om3-1100.malloc.md) | `0x60024068` | function | Camera-confirmed |
 | [free](om3-1100.free.md) | `0x6002409a` | function | Camera-confirmed |
+| [Section descriptor table](om3-1100.section-table.md) | `0x60029b28` | table | Corroborated |
+| [Section loader](om3-1100.section-loader.md) | `0x60045ed5` | function | Corroborated |
 | [Settings getter (active profile)](om3-1100.profile-getter.md) | `0x60063380` | function | Camera-confirmed |
+| [Lock (masks interrupts)](om3-1100.interrupt-lock.md) | `0x60075f73` | function | Corroborated |
 | [Section 1 free tail](om3-1100.section-1-tail.md) | `0x6031e910` | free space | Camera-confirmed |
+| [Software timer table](om3-1100.timer-table.md) | `0x6036f984` | data | Single source |
+| [GUI state word pointer](om3-1100.gui-state-pointer.md) | `0x603713a4` | data | Camera-confirmed |
+| [Setting getter by id](om3-1100.setting-getter.md) | `0x603f0111` | function | Single source |
 | [Half-press hook](om3-1100.half-press-hook.md) | `0x60415216` | hook site | Camera-confirmed |
 | [Hue/lightness builder call site](om3-1100.hue-lightness-call.md) | `0x60518615` | hook site | Camera-confirmed |
 | [fopen](om3-1100.fopen.md) | `0x608d4d22` | function | Camera-confirmed |
 | [fclose](om3-1100.fclose.md) | `0x608d4d2b` | function | Camera-confirmed |
 | [fread](om3-1100.fread.md) | `0x608d4eb7` | function | Camera-confirmed |
+| [Section 4 free tail](om3-1100.section-4-tail.md) | `0x60a8f088` | free space | Single source |
+| [Start a software timer](om3-1100.timer-start.md) | `0x612970e8` | function | Camera-confirmed |
+| [Touch timer re-arm](om3-1100.touch-timer-rearm.md) | `0x612a8db3` | hook site | Camera-confirmed |
+| [Screen factory table](om3-1100.screen-factory.md) | `0x615025d8` | table | Single source |
+| [Section 9 free tail](om3-1100.section-9-tail.md) | `0x619a966c` | free space | Single source |
+| [Section copied mask](om3-1100.copied-mask.md) | `0xa32de590` | data | Corroborated |
+
+## OM SYSTEM OM-5 Mark II, om5-ii firmware 1.1, build 1100
+
+| Name | Address | Category | Status |
+|---|---|---|---|
+| [Section descriptor table](om5-ii-1100.section-table.md) | `0x600284fc` | table | Single source |
+| [White balance commit](om5-ii-1100.wb-commit.md) | `0x602d19b6` | hook site | Single source |
+| [Section 5 loaded range](om5-ii-1100.section-5.md) | `0x60843000` | layout | Single source |
+| [Picture editor setting read](om5-ii-1100.editor-read.md) | `0x6091c66d` | hook site | Single source |
+| [Section 7 loaded range](om5-ii-1100.section-7.md) | `0x60cbe800` | layout | Single source |
+| [Update component kind dispatch](om5-ii-1100.update-dispatch.md) | `0x60ce6aa5` | function | Single source |
+| [Section ready bits](om5-ii-1100.ready-bits.md) | `0xa26e2694` | data | Single source |
+| [Section requested bits](om5-ii-1100.requested-bits.md) | `0xa26e2698` | data | Single source |
+
+## Olympus PEN-F, pen-f firmware 3.1, build 3101
+
+| Name | Address | Category | Status |
+|---|---|---|---|
+| [Main container address](pen-f-3101.main-container.md) | `0x403a0020` | layout | Single source |
+| [Main CPU base](pen-f-3101.main-base.md) | `0x60021020` | layout | Single source |
+| [Section 3 descriptor](pen-f-3101.section-3-descriptor.md) | `0x60026d94` | table | Single source |
+| [Section load request](pen-f-3101.section-load-request.md) | `0x60042063` | function | Single source |
+| [Queued section loader](pen-f-3101.queued-loader.md) | `0x600421e1` | function | Single source |
+| [Start a task](pen-f-3101.task-start.md) | `0x600697ff` | function | Single source |
+| [COLOR builder call site](pen-f-3101.color-builder-call.md) | `0x604f7506` | hook site | Single source |
+| [COLOR table](pen-f-3101.color-table.md) | `0x60622d74` | table | Camera-confirmed |
+| [Section 3 free tail](pen-f-3101.section-3-tail.md) | `0x6069b26c` | free space | Single source |
 
 What belongs here, and what stays upstream: [the reference policy](../../maintenance/reference-policy.md). For detailed research, start with [Olympus firmware research](../projects/oly-fw-analysis.md).

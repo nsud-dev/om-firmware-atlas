@@ -1,0 +1,209 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.om5-ii-1100.section-table
+  title: Section descriptor table
+  summary: Native descriptor table; with the end selector at 0x600463af it fixes each section's loaded range.
+  source_refs:
+  - source.om5.startup-fix
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-18'
+  category: table
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  address:
+    space: runtime-cached
+    value: '0x600284fc'
+  note: 'Use these bounds, not 0xFF runs, to place code: section 5 ends 4 KiB before section 6 starts.'
+  observations:
+  - method: static-analysis
+    source_ref: source.om5.startup-fix
+    project_id: project.caduceus-om5
+    summary: Read with the end selector to give section 5 as 0x60843000..0x60846000.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STARTUP-FIX-2026-11-06.md
+- type: reference
+  id: reference.om5-ii-1100.section-5
+  title: Section 5 loaded range
+  summary: Section 5 loads 0x60843000..0x60846000; the 4 KiB before section 6 is not loaded.
+  source_refs:
+  - source.om5.startup-fix
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: layout
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  address:
+    space: runtime-cached
+    value: '0x60843000'
+    end: '0x60846000'
+  note: A failed overlay build used 0x60847000 as its end and ran 3,036 bytes past the load. A direct-memory emulator
+    fixture hid the error.
+  observations:
+  - method: static-analysis
+    source_ref: source.om5.startup-fix
+    project_id: project.caduceus-om5
+    summary: Bounds from the native descriptor table and end selector.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STARTUP-FIX-2026-11-06.md
+- type: reference
+  id: reference.om5-ii-1100.section-7
+  title: Section 7 loaded range
+  summary: Section 7, compressed in the update file, holds the card updater FIRMUP_CLI.
+  source_refs:
+  - source.om5.section7
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: layout
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  address:
+    space: runtime-cached
+    value: '0x60cbe800'
+    end: '0x61343800'
+  note: Stored at main-payload offset 0xc9d7e0; 6,836,224 bytes. Section 6 is the other compressed span, 0x60847000..0x60cbe800.
+  observations:
+  - method: static-analysis
+    source_ref: source.om5.section7
+    project_id: project.caduceus-om5
+    summary: Both olycompress spans tabulated with their loaded ranges.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STOCK-SECTION7.md#build-boundary
+- type: reference
+  id: reference.om5-ii-1100.requested-bits
+  title: Section requested bits
+  summary: Set when a section load request returns; for sections 6 and 7 only once the decoder has the job.
+  source_refs:
+  - source.om5.startup-fix
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: data
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  address:
+    space: runtime-uncached
+    value: '0xa26e2698'
+  note: Not a readiness test. Code that must run after a section is usable should test the ready bits at 0xa26e2694.
+  observations:
+  - method: static-analysis
+    source_ref: source.om5.startup-fix
+    project_id: project.caduceus-om5
+    summary: Written at 0x600464bf..0x600464c7 after the request returns.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STARTUP-FIX-2026-11-06.md
+- type: reference
+  id: reference.om5-ii-1100.ready-bits
+  title: Section ready bits
+  summary: Set after the decoder completes and the section's constructors run; what native section_wait reads.
+  source_refs:
+  - source.om5.startup-fix
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: data
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  address:
+    space: runtime-uncached
+    value: '0xa26e2694'
+  note: The finaliser 0x600464d0 sets these; 0x6004637c, called by section_wait, reads them.
+  observations:
+  - method: static-analysis
+    source_ref: source.om5.startup-fix
+    project_id: project.caduceus-om5
+    summary: Written at 0x600465be..0x600465c6 after the completion wait and constructors.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-STARTUP-FIX-2026-11-06.md
+- type: reference
+  id: reference.om5-ii-1100.update-dispatch
+  title: Update component kind dispatch
+  summary: The card updater's dispatch on component kind.
+  source_refs:
+  - source.om5.brick-risk
+  topics:
+  - patching
+  last_reviewed: '2026-11-18'
+  category: function
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  address:
+    space: runtime-cached
+    value: '0x60ce6aa5'
+  note: The official 1.1 file has USR 0x100, OSD 0x101, RESCOM 0x106, LUKE 0x10e and PIC 0x102; no BOOT or sub-CPU
+    kind, so it does not rewrite boot code. No version gate was found.
+  observations:
+  - method: static-analysis
+    source_ref: source.om5.brick-risk
+    project_id: project.caduceus-om5
+    summary: Kind dispatch and component list read from the official BIN.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-BRICK-RISK.md#risk-register
+- type: reference
+  id: reference.om5-ii-1100.wb-commit
+  title: White balance commit
+  summary: Setting-commit path for white balance; hooked by the per-profile WB work.
+  source_refs:
+  - source.om5.brick-risk
+  topics:
+  - colour
+  - patching
+  last_reviewed: '2026-11-18'
+  category: hook-site
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  address:
+    space: runtime-cached
+    value: '0x602d19b6'
+  note: Reached at boot on the stock path. A hook here must guard on section 6 being ready.
+  observations:
+  - method: emulator
+    source_ref: source.om5.brick-risk
+    project_id: project.caduceus-om5
+    summary: Stock path observed during a forced-guard emulator boot.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-BRICK-RISK.md#hook-and-edit-map
+- type: reference
+  id: reference.om5-ii-1100.editor-read
+  title: Picture editor setting read
+  summary: Setting read used by the picture-mode editor.
+  source_refs:
+  - source.om5.brick-risk
+  topics:
+  - colour
+  - interfaces
+  last_reviewed: '2026-11-18'
+  category: hook-site
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  address:
+    space: runtime-cached
+    value: '0x6091c66d'
+  note: The write path is at 0x6091c6bd. Both are reached at boot on the stock path.
+  observations:
+  - method: emulator
+    source_ref: source.om5.brick-risk
+    project_id: project.caduceus-om5
+    summary: Stock path observed during a forced-guard emulator boot.
+  conflicts: []
+  upstream_detail: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/research/OM5II-BRICK-RISK.md#hook-and-edit-map
