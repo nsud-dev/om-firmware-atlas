@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from atlas_core import Catalogue
 from atlas_generate import generated_diff, render
 from atlas import expand_nav, freshness, inspect_remote, review_notice, update_queue
-from atlas_core import read_yaml
+from atlas_core import read_yaml, reference_status
 
 
 class AtlasTests(unittest.TestCase):
@@ -199,6 +199,41 @@ class AtlasTests(unittest.TestCase):
         self.assertIn("As the project describes them", output)
         self.assertIn("Before you install", output)
         self.assertIn("v0.30.3", output)
+
+    def reference(self, node_id="reference.om3-1100.half-press-hook"):
+        return self.catalogue.records[node_id]
+
+    def test_reference_rejects_duplicate_address(self):
+        twin = copy.deepcopy(self.reference())
+        twin["id"] = "reference.om3-1100.half-press-twin"
+        self.catalogue.records[twin["id"]] = twin
+        self.assertTrue(any("merge them and add an observation" in e for e in self.catalogue.validate()))
+
+    def test_reference_rejects_disassembly_and_byte_dumps(self):
+        self.reference()["note"] = "Hook: call 0x60415343,[d2,d3,a2,a3],36 then resume."
+        self.assertTrue(any("contains disassembly" in e for e in self.catalogue.validate()))
+        self.reference()["note"] = "Stock bytes f1 ec cd cb f7 f0 38 00 11 at the site."
+        self.assertTrue(any("contains byte dumps" in e for e in self.catalogue.validate()))
+
+    def test_reference_address_belongs_to_one_build(self):
+        self.reference()["firmware_ids"].append("firmware.ep7-1100")
+        self.reference()["camera_ids"].append("camera.ep7")
+        self.assertTrue(any("exactly one firmware build" in e for e in self.catalogue.validate()))
+
+    def test_reference_requires_pinned_source_and_upstream_link(self):
+        self.catalogue.records["source.om3.devnotes"]["revision"] = None
+        self.reference()["upstream_detail"] = "https://example.com/notes"
+        errors = self.catalogue.validate()
+        self.assertTrue(any("is not pinned" in e for e in errors))
+        self.assertTrue(any("upstream_detail must link" in e for e in errors))
+
+    def test_reference_status_is_derived_from_observations(self):
+        records = self.catalogue.records
+        hazard = records["reference.hazard.section-load-order"]
+        self.assertEqual(reference_status(records, hazard), "corroborated")
+        self.assertEqual(reference_status(records, self.reference()), "camera-confirmed")
+        hazard["conflicts"] = [{"source_ref": "source.om3.devnotes", "summary": "A different load order."}]
+        self.assertEqual(reference_status(records, hazard), "disputed")
 
 
 if __name__ == "__main__":

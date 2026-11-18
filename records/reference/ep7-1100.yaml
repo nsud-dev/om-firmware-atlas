@@ -1,0 +1,50 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.ep7-1100.main-cpu-base
+  title: Main program CPU base
+  summary: Runtime base of the decoded main program.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: layout
+  camera_ids: &id001
+  - camera.ep7
+  firmware_ids: &id002
+  - firmware.ep7-1100
+  address:
+    space: runtime-cached
+    value: '0x60020020'
+  note: The decoded main program runs from this address; the guide separates container and runtime mappings.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Stated in the E-P7 firmware guide.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md
+- type: reference
+  id: reference.ep7-1100.main-container
+  title: Main container address
+  summary: Where the main program sits in the update container.
+  source_refs:
+  - source.ep7.guide
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: layout
+  camera_ids: *id001
+  firmware_ids: *id002
+  address:
+    space: container
+    value: '0x406a0020'
+  note: Container-space address of the main block, distinct from its runtime base 0x60020020.
+  observations:
+  - method: static-analysis
+    source_ref: source.ep7.guide
+    project_id: project.caduceus-ep7
+    summary: Stated in the E-P7 firmware guide.
+  conflicts: []
+  upstream_detail: https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md
