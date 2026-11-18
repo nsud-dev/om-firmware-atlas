@@ -1,0 +1,361 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.om5-ii-1100.image-processor
+  title: Image processor generation, OM-5 Mark II 1.1
+  summary: 'Image processor generation for OM-5 Mark II 1.1: TruePic IX.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  trait: trait.image-processor
+  value: TruePic IX
+  note: TruePic is the name for the whole SoC, not only the image engine.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for OM-5 Mark II 1.1.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.main-cpu
+  title: Main CPU, OM-5 Mark II 1.1
+  summary: 'Main CPU for OM-5 Mark II 1.1: MN103/AM33-2, cores CPU0 to CPU2.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  trait: trait.main-cpu
+  value: MN103/AM33-2, cores CPU0 to CPU2
+  note: Cores counted from the per-core code paths seen in the main program.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for OM-5 Mark II 1.1.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.arm-coprocessor
+  title: ARM co-processor, OM-5 Mark II 1.1
+  summary: 'ARM co-processor for OM-5 Mark II 1.1: Cortex-A9, Linux 5.10.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  trait: trait.arm-coprocessor
+  value: Cortex-A9, Linux 5.10
+  note: Runs Wi-Fi, Bluetooth and helpers; the kernel version is read from its image.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for OM-5 Mark II 1.1.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.memory-class
+  title: Image memory class, OM-5 Mark II 1.1
+  summary: 'Image memory class for OM-5 Mark II 1.1: 1 GB (same layout as the OM-5).'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  trait: trait.memory-class
+  value: 1 GB (same layout as the OM-5)
+  note: Inferred from the fixed image buffer map in the main program; no teardown.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for OM-5 Mark II 1.1.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.container-magic
+  title: Update file magic, OM-5 Mark II 1.1
+  summary: 'Update file magic for OM-5 Mark II 1.1: OE 14 80.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  trait: trait.container-magic
+  value: OE 14 80
+  note: The first header bytes of the update file; identify the body before trusting any address.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for OM-5 Mark II 1.1.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.firmware-blocks
+  title: Firmware blocks, OM-5 Mark II 1.1
+  summary: 'Firmware blocks for OM-5 Mark II 1.1: 5.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  trait: trait.firmware-blocks
+  value: '5'
+  note: Components packed in the update file.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for OM-5 Mark II 1.1.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.main-compression
+  title: Main program compression, OM-5 Mark II 1.1
+  summary: 'Main program compression for OM-5 Mark II 1.1: Two LZ4 sections.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  trait: trait.main-compression
+  value: Two LZ4 sections
+  note: Whether the main program (block 0) contains compressed sections that must be expanded before analysis.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for OM-5 Mark II 1.1.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.wifi-chip
+  title: Wi-Fi chip, OM-5 Mark II 1.1
+  summary: 'Wi-Fi chip for OM-5 Mark II 1.1: CYW43439.'
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - platform
+  last_reviewed: '2026-11-18'
+  category: platform
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  trait: trait.wifi-chip
+  value: CYW43439
+  note: Read from the ARM side's firmware and driver names.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Recorded in the body comparison for OM-5 Mark II 1.1.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.native-nd
+  title: Live ND in stock OM-5 Mark II 1.1
+  summary: Live ND is built in in stock OM-5 Mark II 1.1. ND2 to ND16; ND32 to ND128 strings are shared UI only.
+  source_refs:
+  - source.em5n.comparison
+  - source.em5n.live-nd
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  feature_id: feature.capture.nd
+  presence: native
+  value: ND2 to ND16; ND32 to ND128 strings are shared UI only
+  note: Describes the stock firmware only, before any project changes it.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.live-nd
+    project_id: project.em5-iii-notes
+    summary: 'Live ND on OM-5 Mark II 1.1: built in (ND2 to ND16; ND32 to ND128 strings are shared UI only).'
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Listed in the body comparison table.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-nd.md#how-olympus-does-it-om-5-12-our-donor
+- type: reference
+  id: reference.om5-ii-1100.native-live-gnd
+  title: Live GND in stock OM-5 Mark II 1.1
+  summary: Live GND is partly present in stock OM-5 Mark II 1.1. Settings and UI only; the shooting API methods
+    are empty stubs.
+  source_refs:
+  - source.em5n.comparison
+  - source.em5n.live-gnd
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  feature_id: feature.capture.live-gnd
+  presence: partial
+  value: Settings and UI only; the shooting API methods are empty stubs
+  note: Describes the stock firmware only, before any project changes it.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.live-gnd
+    project_id: project.em5-iii-notes
+    summary: 'Live GND on OM-5 Mark II 1.1: partly present (Settings and UI only; the shooting API methods are empty
+      stubs).'
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Listed in the body comparison table.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/live-gnd.md#who-has-it
+- type: reference
+  id: reference.om5-ii-1100.native-hhhr
+  title: Handheld High Res Shot in stock OM-5 Mark II 1.1
+  summary: Handheld High Res Shot is built in in stock OM-5 Mark II 1.1. Jobs 14 and 15 changed from the OM-5.
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  feature_id: feature.capture.hhhr
+  presence: native
+  value: Jobs 14 and 15 changed from the OM-5
+  note: Describes the stock firmware only, before any project changes it.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: 'Handheld High Res Shot on OM-5 Mark II 1.1: built in (Jobs 14 and 15 changed from the OM-5).'
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.native-starry-sky-af
+  title: Starry Sky AF in stock OM-5 Mark II 1.1
+  summary: Starry Sky AF is built in in stock OM-5 Mark II 1.1. Adds start triggers.
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  feature_id: feature.capture.starry-sky-af
+  presence: native
+  value: Adds start triggers
+  note: Describes the stock firmware only, before any project changes it.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: 'Starry Sky AF on OM-5 Mark II 1.1: built in (Adds start triggers).'
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md
+- type: reference
+  id: reference.om5-ii-1100.native-subject-detect
+  title: AI subject detection AF in stock OM-5 Mark II 1.1
+  summary: AI subject detection AF is present as dormant code in stock OM-5 Mark II 1.1. Code and menu present,
+    not reachable.
+  source_refs:
+  - source.em5n.af-detect
+  - source.em5n.comparison
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  feature_id: feature.capture.subject-detect
+  presence: dormant
+  value: Code and menu present, not reachable
+  note: Describes the stock firmware only, before any project changes it.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.af-detect
+    project_id: project.em5-iii-notes
+    summary: 'AI subject detection AF on OM-5 Mark II 1.1: present as dormant code (Code and menu present, not reachable).'
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: Listed in the body comparison table.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/af-detect.md
+- type: reference
+  id: reference.om5-ii-1100.native-uvc-webcam
+  title: USB webcam (UVC) in stock OM-5 Mark II 1.1
+  summary: USB webcam (UVC) is built in in stock OM-5 Mark II 1.1.
+  source_refs:
+  - source.em5n.comparison
+  topics:
+  - capture
+  last_reviewed: '2026-11-18'
+  category: native-feature
+  camera_ids:
+  - camera.om5-ii
+  firmware_ids:
+  - firmware.om5-ii-1100
+  feature_id: feature.connectivity.uvc-webcam
+  presence: native
+  note: Describes the stock firmware only, before any project changes it.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.comparison
+    project_id: project.em5-iii-notes
+    summary: 'USB webcam (UVC) on OM-5 Mark II 1.1: built in.'
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/bodies/comparison.md

@@ -9,12 +9,16 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [r/M43 community page](community.m43.md) | Public photography venue; Caduceus relevance supplied by the Atlas maintainer. |
 | [db firmware v0.4.1 release](db.release041.md) | Release-centred feature claims and named limitations, not an independent camera audit. |
 | [db firmware releases](db.releases.md) | Beta release notes from v0.2.20 to v0.4.1, in Korean and English. |
+| [AF subject, face and eye detection](em5n.af-detect.md) | Subject detection across bodies and why it needs OM-1-class hardware. |
 | [E-M5 III boot and section loading](em5n.boot.md) | Load base, always-ready range, section order, ready bits and boot guards. |
+| [Body comparison](em5n.comparison.md) | Chip generation, memory, blocks and built-in features of seven bodies side by side. |
 | [E-M5 III container format](em5n.container.md) | Update-file layout, obfuscation and checksum. |
 | [Focus stacking lens check patch](em5n.focus-patch.md) | Function, patched bytes and camera result. |
 | [Focus stacking](em5n.focus-stacking.md) | Lens check patch background and the shot-count setting. |
 | [Gotchas](em5n.gotchas.md) | Mistakes that hung, reset or delayed work on the camera, and the rule since. |
+| [Handheld High Res Shot](em5n.hhhr.md) | How the OM-5 does HHHR and what the E-M5 III already has. |
 | [E-M5 III image engine](em5n.image-engine.md) | Where job programs live, jobs per body, the parameter window, job records and safe submission. |
+| [Live GND](em5n.live-gnd.md) | Which bodies have a real Live GND and which only carry its UI. |
 | [Live ND on the E-M5 III](em5n.live-nd.md) | OM-5 Live ND port, stage results and open problems. |
 | [E-M5 III memory map](em5n.memory-map.md) | RAM per body, flash layout, frame pools and spare space used by patches. |
 | [MN103 CPU on the E-M5 III](em5n.mn103.md) | Call frames, compiler, instruction limits and a table of useful routines. |
@@ -25,6 +29,7 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [E-M5 III recovery](em5n.recovery.md) | Power-on checks, flash map, write guard, card updater and recoverable failures. |
 | [E-M5 III sensor](em5n.sensor.md) | Raw frame layout, calibration entries and sensor mode requests. |
 | [E-M5 III shooting sequencer](em5n.sequencer.md) | State table, path choice, burst streaming, exposure record and sensor requests. |
+| [Starry Sky AF](em5n.starry-af.md) | Starry Sky AF on the OM-5 and E-M1 III; absent on the E-M5 III. |
 | [USB webcam](em5n.webcam.md) | UVC webcam port attempt, with what passed and what failed on the camera. |
 | [Stock Wi-Fi debug shell](em5n.wifi-shell.md) | Card file that starts the debug network and user shell; camera test and trace use. |
 | [OM-Emu architecture](emu.architecture.md) | Harness-driven startup, model translation and verification. |

@@ -221,8 +221,8 @@
       "method": "ceil(utf8-bytes/4)"
     },
     "records/sources/em5-iii-notes.yaml": {
-      "approx_tokens": 3183,
-      "bytes": 12732,
+      "approx_tokens": 4012,
+      "bytes": 16047,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/sources/emu.yaml": {

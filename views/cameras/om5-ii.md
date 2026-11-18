@@ -175,6 +175,27 @@ Results belong to the named project and package. Emulator output does not establ
 
 [Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
 
+## Platform and built-in features (om5-ii firmware 1.1, build 1100)
+
+What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
+
+| | Value | Status |
+|---|---|---|
+| [Image processor generation](../reference/om5-ii-1100.image-processor.md) | TruePic IX | Single source |
+| [Main CPU](../reference/om5-ii-1100.main-cpu.md) | MN103/AM33-2, cores CPU0 to CPU2 | Single source |
+| [ARM co-processor](../reference/om5-ii-1100.arm-coprocessor.md) | Cortex-A9, Linux 5.10 | Single source |
+| [Image memory class](../reference/om5-ii-1100.memory-class.md) | 1 GB (same layout as the OM-5) | Single source |
+| [Update file magic](../reference/om5-ii-1100.container-magic.md) | OE 14 80 | Single source |
+| [Firmware blocks](../reference/om5-ii-1100.firmware-blocks.md) | 5 | Single source |
+| [Main program compression](../reference/om5-ii-1100.main-compression.md) | Two LZ4 sections | Single source |
+| [Wi-Fi chip](../reference/om5-ii-1100.wifi-chip.md) | CYW43439 | Single source |
+| [Live ND](../reference/om5-ii-1100.native-nd.md) | Native: ND2 to ND16; ND32 to ND128 strings are shared UI only | Single source |
+| [USB webcam (UVC)](../reference/om5-ii-1100.native-uvc-webcam.md) | Native | Single source |
+| [Live GND](../reference/om5-ii-1100.native-live-gnd.md) | Partial: Settings and UI only; the shooting API methods are empty stubs | Single source |
+| [Handheld High Res Shot](../reference/om5-ii-1100.native-hhhr.md) | Native: Jobs 14 and 15 changed from the OM-5 | Single source |
+| [Starry Sky AF](../reference/om5-ii-1100.native-starry-sky-af.md) | Native: Adds start triggers | Single source |
+| [AI subject detection AF](../reference/om5-ii-1100.native-subject-detect.md) | Dormant code: Code and menu present, not reachable | Single source |
+
 ## Firmware
 
 [om5-ii firmware 1.1, build 1100](../firmware/om5-ii-1100.md).

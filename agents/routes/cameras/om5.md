@@ -25,4 +25,6 @@ Exact ID: `camera.om5`. Codes: E144. [Human status view](../../../views/cameras/
 | [om5-prealpha1-recovery.yaml](../../../records/capabilities/om5/om5-prealpha1-recovery.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 750 | ~188 |
 | [om5-prealpha1-start.yaml](../../../records/capabilities/om5/om5-prealpha1-start.yaml) | Build-scoped capability assertions; follow evidence IDs only as needed | 743 | ~186 |
 
+Compact technical reference for this camera: [reference shard](../reference/om5.md).
+
 Then choose the [task topic](../topics/index.md). Read exact upstream sections only as needed. Do not transfer test results between models or packages.

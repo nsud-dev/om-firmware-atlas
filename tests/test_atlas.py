@@ -237,6 +237,51 @@ class AtlasTests(unittest.TestCase):
         hazard["conflicts"] = [{"source_ref": "source.om3.devnotes", "summary": "A different load order."}]
         self.assertEqual(reference_status(records, hazard), "disputed")
 
+    def test_platform_entry_needs_known_trait_and_value(self):
+        row = self.reference("reference.em5-iii-1700.main-cpu")
+        row["trait"] = "trait.not-in-taxonomy"
+        del row["value"]
+        errors = self.catalogue.validate()
+        self.assertTrue(any("choose a trait" in e for e in errors))
+        self.assertTrue(any("needs a value" in e for e in errors))
+
+    def test_native_feature_needs_presence_and_known_feature(self):
+        row = self.reference("reference.om5-1200.native-nd")
+        del row["presence"]
+        row["feature_id"] = "feature.not-in-taxonomy"
+        errors = self.catalogue.validate()
+        self.assertTrue(any("needs a presence" in e for e in errors))
+        self.assertTrue(any("choose a feature_id" in e for e in errors))
+
+    def test_build_facts_belong_to_one_build_without_address(self):
+        row = self.reference("reference.om5-1200.native-nd")
+        row["firmware_ids"].append("firmware.om5-ii-1100")
+        row["camera_ids"].append("camera.om5-ii")
+        row["address"] = {"space": "runtime-cached", "value": "0x60021020"}
+        errors = self.catalogue.validate()
+        self.assertTrue(any("describes exactly one firmware build" in e for e in errors))
+        self.assertTrue(any("put addresses in their own entries" in e for e in errors))
+
+    def test_build_fact_fields_rejected_on_other_categories(self):
+        self.reference()["presence"] = "native"
+        self.assertTrue(any("belong to platform and native-feature entries" in e for e in self.catalogue.validate()))
+
+    def test_duplicate_build_fact_rejected(self):
+        twin = copy.deepcopy(self.reference("reference.om5-1200.native-nd"))
+        twin["id"] = "reference.om5-1200.native-nd-twin"
+        self.catalogue.records[twin["id"]] = twin
+        self.assertTrue(any("same build and native-feature fact" in e for e in self.catalogue.validate()))
+
+    def test_feature_matrix_and_platform_tables_are_generated(self):
+        outputs = render(self.catalogue)
+        index = outputs["views/reference/index.md"]
+        self.assertIn("## Built-in features by build", index)
+        self.assertIn("## Platform by build", index)
+        self.assertIn("Native: ND2 to ND16", index)
+        self.assertIn("## Platform and built-in features", outputs["views/cameras/em5-iii.md"])
+        self.assertIn("## Built-in features", outputs["views/firmware/om5-1200.md"])
+        self.assertIn("platform and built-in features", outputs["agents/routes/reference/om5.md"])
+
 
 if __name__ == "__main__":
     unittest.main()

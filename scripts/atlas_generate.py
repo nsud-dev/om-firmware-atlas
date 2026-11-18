@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from atlas_core import GENERATED, KINDS, cost, link, reference_status, slug
+from atlas_core import GENERATED, KINDS, TRAIT_CATEGORIES, cost, link, reference_status, slug
 
 
 def view_path(row):
@@ -20,12 +20,13 @@ def cell(value):
 
 
 CAMERA_LINES = ("OM SYSTEM", "Olympus OM-D", "Olympus PEN", "Other")
+PRESENCE = {"native": "Native", "dormant": "Dormant code", "partial": "Partial", "strings-only": "Strings only", "absent": "Absent"}
 REFERENCE_STATUS = {"camera-confirmed": ("Camera-confirmed", "released"), "corroborated": ("Corroborated", "beta"),
                     "single-source": ("Single source", "planned"), "disputed": ("Disputed", "alpha")}
 INDEX_TITLES = {"reference": "Technical reference", "camera": "Cameras", "firmware": "Firmware", "project": "Projects", "capability": "Feature claims",
                 "evidence": "Observations", "source": "Sources", "community": "Find the community"}
 INDEX_INTROS = {
-    "reference": ("Compact, sourced facts that projects and agents reuse: named addresses for one exact firmware build, and known trouble spots. "
+    "reference": ("Compact, sourced facts that projects and agents reuse: named addresses for one exact firmware build, platform facts and built-in features per build, and known trouble spots. "
                   "Each entry links the upstream section that holds the full explanation; derivations, disassembly and code stay there. "
                   "Status is worked out from the observations: single source, corroborated by independent projects, camera-confirmed, or disputed."),
     "camera": "Choose your exact model and generation. A listing is a research starting point, not a compatibility claim. The catalogue is not exhaustive.",
@@ -162,6 +163,26 @@ def evidence_label(row):
     return f"{label(row['method'])}; {label(row['outcome'])}; {row['quality']} report; {label(row['identity_level'])}"
 
 
+def trait_title(catalogue, row):
+    """Display name of a platform trait or native feature."""
+    if row["category"] == "platform":
+        return catalogue.taxonomy.get("traits", {}).get(row["trait"], {}).get("title", row["trait"])
+    return catalogue.taxonomy["features"].get(row["feature_id"], {}).get("title", row["feature_id"])
+
+
+def trait_value(row):
+    if row["category"] == "platform":
+        return row["value"]
+    return PRESENCE[row["presence"]] + (f": {row['value']}" if row.get("value") else "")
+
+
+def trait_rows(catalogue, category, firmware_ids):
+    rows = [r for r in catalogue.of_type("reference") if r["category"] == category and r["firmware_ids"][0] in firmware_ids]
+    order = list(catalogue.taxonomy.get("traits", {}) if category == "platform" else catalogue.taxonomy["features"])
+    key = (lambda r: r["trait"]) if category == "platform" else (lambda r: r["feature_id"])
+    return sorted(rows, key=lambda r: (order.index(key(r)) if key(r) in order else len(order), r["id"]))
+
+
 def render(catalogue):
     outputs = {}
     records = catalogue.records
@@ -227,12 +248,27 @@ def render(catalogue):
             if venues:
                 text += "\n## Where to talk\n\n" + refs(path, venues) + ". For a reproducible bug, use the project's own issue tracker.\n"
             firmwares = [r for r in catalogue.of_type("firmware") if r["camera_id"] == row["id"]]
+            for firmware in firmwares:
+                platform = trait_rows(catalogue, "platform", [firmware["id"]])
+                native = trait_rows(catalogue, "native-feature", [firmware["id"]])
+                if platform or native:
+                    text += f"\n## Platform and built-in features ({cell(firmware['title'])})\n\n"
+                    text += "What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.\n\n"
+                    text += "| | Value | Status |\n|---|---|---|\n"
+                    for r in platform + native:
+                        text += f"| [{cell(trait_title(catalogue, r))}]({link(path, view_path(r))}) | {cell(trait_value(r))} | {REFERENCE_STATUS[reference_status(records, r)][0]} |\n"
             text += "\n## Firmware\n\n" + refs(path, [r["id"] for r in firmwares]) + ".\n"
         elif kind == "firmware":
             text += f"\n**Camera:** {ref(path, row['camera_id'])}. **Advertised version:** {row['version']}. **Internal build:** {label(row['internal_build'])}.\n"
             text += f"\n**Container SHA-256:** `{row['container_sha256']}`\n" if row["container_sha256"] else "\n**Container SHA-256:** not recorded in this entry.\n"
             text += f"\n{row['identity_note']}\n"
             entries = [r for r in catalogue.of_type("reference") if row["id"] in r["firmware_ids"]]
+            for category, heading in (("platform", "Platform"), ("native-feature", "Built-in features")):
+                rows = trait_rows(catalogue, category, [row["id"]])
+                if rows:
+                    text += f"\n## {heading}\n\n| | Value | Status |\n|---|---|---|\n"
+                    text += "".join(f"| {ref(path, r['id'])} | {cell(trait_value(r))} | {REFERENCE_STATUS[reference_status(records, r)][0]} |\n" for r in rows)
+            entries = [r for r in entries if r["category"] not in TRAIT_CATEGORIES]
             if entries:
                 text += "\n## Technical reference\n\n" + "\n".join(f"- {ref(path, r['id'])}: {r['summary']}" for r in entries) + "\n"
         elif kind == "project":
@@ -333,6 +369,8 @@ def render(catalogue):
                 address = row["address"]
                 span = f"`{address['value']}`" + (f" to `{address['end']}`" if address.get("end") else "")
                 facts.insert(1, f"**Address:** {span} ({label(address['space'])})")
+            if row["category"] in TRAIT_CATEGORIES:
+                facts.insert(1, f"**{cell(trait_title(catalogue, row))}:** {cell(trait_value(row))}")
             text += "\n" + " · ".join(facts) + "\n{ .facts }\n"
             text += f"\n**Build:** {refs(path, row['firmware_ids'])} · **Cameras:** {refs(path, row['camera_ids'])}\n"
             text += f"\n{row['note']}\n"
@@ -381,6 +419,24 @@ def render(catalogue):
                 text += "## Trouble spots\n\n| Rule | Cameras | Status |\n|---|---|---|\n"
                 for row in hazards:
                     text += f"| {ref(path, row['id'])} | {', '.join(short_name(records[c]['title']) for c in row['camera_ids'])} | {REFERENCE_STATUS[reference_status(records, row)][0]} |\n"
+                text += "\n"
+            for category, heading, intro in (
+                    ("native-feature", "Built-in features by build", "What each stock firmware contains, before any project changes it. Absent means checked and not found; a blank cell means nobody has recorded it."),
+                    ("platform", "Platform by build", "Hardware and layout facts per stock firmware build.")):
+                cat_rows = [r for r in rows if r["category"] == category]
+                builds = [f for f in catalogue.of_type("firmware") if any(r["firmware_ids"][0] == f["id"] for r in cat_rows)]
+                if not builds:
+                    continue
+                keys = list(dict.fromkeys(r.get("trait") or r["feature_id"] for r in trait_rows(catalogue, category, [f["id"] for f in builds])))
+                text += f"## {heading}\n\n{intro}\n\n| | " + " | ".join(cell(f"{short_name(records[f['camera_id']]['title'])} {f['version']}") for f in builds) + " |\n"
+                text += "|---|" + "---|" * len(builds) + "\n"
+                for key in keys:
+                    cells = []
+                    for firmware in builds:
+                        match = [r for r in cat_rows if (r.get("trait") or r["feature_id"]) == key and r["firmware_ids"][0] == firmware["id"]]
+                        cells.append(f"[{cell(trait_value(match[0]))}]({link(path, view_path(match[0]))})" if match else "")
+                    title = trait_title(catalogue, {"category": category, "trait": key, "feature_id": key})
+                    text += f"| {cell(title)} | " + " | ".join(cells) + " |\n"
                 text += "\n"
             for firmware in catalogue.of_type("firmware"):
                 entries = sorted((r for r in rows if r.get("address") and r["firmware_ids"] == [firmware["id"]]), key=lambda r: (r["address"]["space"], int(r["address"]["value"], 16)))
@@ -460,6 +516,11 @@ def render(catalogue):
             text += "## Trouble spots\n\n| Rule | Status | Detail |\n|---|---|---|\n"
             text += "".join(f"| {cell(r['title'])} | {reference_status(records, r)} | {detail(r['upstream_detail'])} |\n" for r in hazards) + "\n"
         for firmware in catalogue.of_type("firmware"):
+            traits = trait_rows(catalogue, "platform", [firmware["id"]]) + trait_rows(catalogue, "native-feature", [firmware["id"]])
+            traits = [r for r in traits if r in entries]
+            if traits:
+                text += f"## {firmware['id']}: platform and built-in features\n\n| Fact | Value | Status | Detail |\n|---|---|---|---|\n"
+                text += "".join(f"| {cell(trait_title(catalogue, r))} | {cell(trait_value(r))} | {reference_status(records, r)} | {detail(r['upstream_detail'])} |\n" for r in traits) + "\n"
             rows = sorted((r for r in entries if r.get("address") and r["firmware_ids"] == [firmware["id"]]), key=lambda r: int(r["address"]["value"], 16))
             if rows:
                 text += f"## {firmware['id']}\n\n| Name | Space | Address | Kind | Status | Detail |\n|---|---|---|---|---|---|\n"
