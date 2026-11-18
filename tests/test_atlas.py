@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from atlas_core import Catalogue
 from atlas_generate import generated_diff, render
-from atlas import expand_nav, freshness, inspect_remote, review_notice
+from atlas import expand_nav, freshness, inspect_remote, review_notice, update_queue
 from atlas_core import read_yaml
 
 
@@ -168,9 +168,37 @@ class AtlasTests(unittest.TestCase):
     def test_camera_page_leads_with_projects_and_support(self):
         output = render(self.catalogue)["views/cameras/om5-ii.md"]
         project = self.catalogue.records["project.caduceus-om5"]
-        self.assertLess(output.index("## Projects for this camera"), output.index("## Features and observations"))
+        self.assertLess(output.index("## What you can do with this camera"), output.index("## Projects for this camera"))
+        self.assertLess(output.index("## Projects for this camera"), output.index("## Claims and test evidence"))
         self.assertIn(f"[Ask or report issues]({project['contribution_home']})", output)
         self.assertIn("partial report", output)
+
+    def test_new_upstream_release_is_queued_not_applied(self):
+        before = copy.deepcopy(self.catalogue.records)
+
+        def newer(*args, **kwargs):
+            return [{"tag_name": "v9.9", "html_url": "https://github.com/example/r/releases/tag/v9.9",
+                     "published_at": "2026-12-01T00:00:00Z", "prerelease": False}]
+
+        report = freshness(self.catalogue, fetch=True, today=dt.date(2026, 12, 2), fetcher=newer)
+        om3 = next(p for p in report["projects"] if p["id"] == "project.caduceus-om3")
+        self.assertEqual(om3["state"], "release-not-catalogued")
+        self.assertIn("v9.9", update_queue(report))
+        self.assertEqual(before, self.catalogue.records)
+
+    def test_showcase_feature_cannot_claim_uncatalogued_camera(self):
+        self.catalogue.records["project.caduceus-om3"]["features"][0]["camera_ids"] = ["camera.pen-f"]
+        self.assertTrue(any("not in the project's camera_ids" in e for e in self.catalogue.validate()))
+
+    def test_releases_must_be_listed_newest_first(self):
+        self.catalogue.records["project.caduceus-om3"]["releases"].reverse()
+        self.assertIn("project.caduceus-om3: list releases newest first.", self.catalogue.validate())
+
+    def test_project_page_attributes_features_and_warns_before_install(self):
+        output = render(self.catalogue)["views/projects/caduceus-om3.md"]
+        self.assertIn("As the project describes them", output)
+        self.assertIn("Before you install", output)
+        self.assertIn("v0.30.3", output)
 
 
 if __name__ == "__main__":

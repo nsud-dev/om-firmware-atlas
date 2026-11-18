@@ -80,3 +80,37 @@ records:
   last_checked: '2026-11-17'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.om5.releases
+  title: Caduceus OM-5 releases
+  summary: The single published pre-release for the OM-5 Mark II.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-17'
+  url: https://github.com/xulfr/caduceus-om5/releases
+  source_kind: github-release
+  upstream_repo: xulfr/caduceus-om5
+  revision: v0.1.0-alpha12
+  locator: Releases page; release v0.1.0-alpha12
+  retrieved_on: '2026-11-17'
+  last_checked: '2026-11-17'
+  published_on: '2026-11-16'
+  publication: public
+  reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.
+- type: source
+  id: source.om5.roadmap
+  title: Caduceus OM-5 roadmap
+  summary: Implemented, planned and open work for the OM-5 Mark II and original OM-5.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-17'
+  url: https://github.com/xulfr/caduceus-om5/blob/a72851a4ada5eab8eed02f7a06afd7f9297bbe81/ROADMAP.md
+  source_kind: github-file
+  upstream_repo: xulfr/caduceus-om5
+  revision: a72851a4ada5eab8eed02f7a06afd7f9297bbe81
+  locator: 'ROADMAP.md: first priority and second stage'
+  retrieved_on: '2026-11-17'
+  last_checked: '2026-11-17'
+  published_on: null
+  publication: public
+  reuse_note: Attributed summary; statuses are the owner's own.

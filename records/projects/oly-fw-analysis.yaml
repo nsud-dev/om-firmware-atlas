@@ -8,6 +8,7 @@ records:
   - source.fishcu.readme
   - source.fishcu.reproduce
   - source.fishcu.validation
+  - source.fishcu.releases
   topics:
   - platform
   - patching
@@ -26,3 +27,70 @@ records:
     varies by model.
   related_projects:
   - project.om-emu
+  tagline: 'The research base: PEN-F HSL, firmware formats and tools for many bodies.'
+  description:
+  - 'fishcu''s Olympus firmware research is a shared notebook and toolkit for studying and modifying Olympus
+    and OM SYSTEM firmware: update files, start-up, settings, image processing and camera interfaces.
+    The PEN-F has the deepest coverage, with comparisons across E-M1, E-M5, E-M10, E-P7, OM-3 and OM-5
+    models.'
+  - 'It publishes a PEN-F HSL patch as alpha releases: hue and lightness added to the camera''s 12-colour
+    saturation editor in COLOR1–3.'
+  - The project asks for a firsthand hardware report before any flashable patch is merged or published;
+    emulator and static checks alone are not enough.
+  maintainers:
+  - label: fishcu
+    url: https://github.com/fishcu
+  links:
+  - label: Findings by topic
+    url: https://github.com/fishcu/oly_fw_analysis/blob/main/docs/README.md
+  - label: Build the PEN-F HSL patch
+    url: https://github.com/fishcu/oly_fw_analysis/blob/main/patches/hsl/pen-f/README.md
+  features:
+  - name: PEN-F HSL
+    summary: Hue and lightness added to the 12-colour saturation editor in COLOR1–3, from −7 to +7 since
+      the 17 October alpha.
+    camera_ids:
+    - camera.pen-f
+    status: alpha
+    since: null
+    source_ref: source.fishcu.releases
+    capability_id: capability.pen-f-hsl
+  - name: Firmware toolkit
+    summary: A component decoder, checksum checks, disassembly helpers and an MN103 instruction emulator.
+    camera_ids: []
+    status: research
+    since: null
+    source_ref: source.fishcu.readme
+  - name: Findings by topic
+    summary: Notes on update files, start-up, settings and image processing, each tied to a model and
+      firmware build.
+    camera_ids: []
+    status: research
+    since: null
+    source_ref: source.fishcu.readme
+  releases:
+  - tag: alpha-20261017
+    title: PEN-F HSL alpha — 17 October 2026
+    date: '2026-10-18'
+    url: https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017
+    prerelease: true
+    camera_ids:
+    - camera.pen-f
+    highlights:
+    - Hue, saturation and lightness now span −7 to +7.
+    - Includes the patched firmware, a stock restore, instructions and checksums.
+    warning: Experimental; recovery from every failure is not guaranteed. Bring saturation values within
+      −5 to +5 before downgrading.
+    source_ref: source.fishcu.releases
+  - tag: alpha-20261013
+    title: PEN-F HSL alpha-20261013
+    date: '2026-10-18'
+    url: https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261013
+    prerelease: true
+    camera_ids:
+    - camera.pen-f
+    highlights:
+    - Adds hue and lightness to the 12-colour saturation editor, −5 to +5.
+    - New raw files carry the HSL look.
+    warning: An early alpha for voluntary testing, with owner-reported checks only.
+    source_ref: source.fishcu.releases

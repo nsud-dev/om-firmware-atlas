@@ -7,6 +7,218 @@ E142: original Caduceus project and a documented Ghidra/REA setup.
 **Model code:** E142 · **Also known as:** E-P7, EP7, PEN E-P7 · **Catalogue depth:** initial review
 { .facts }
 
+## What you can do with this camera
+
+Features as each project describes them, with their status. Follow a project's own guide before installing anything.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**On-camera look editor (HSLFX)** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Film, Saturation, Hue, Light and Effects pages on the camera's own colour wheel; changed looks are marked with *.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**29 film simulations** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Velvia, Classic Chrome, Kodachrome, Portra, Ektar, CineStill, Vision3, Polaroid, Cross Process and more, one per Colour Profile slot.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Colour mix and base curve** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+A per-look 3×3 colour matrix applied by the camera's image hardware, plus a choice of the camera's base tone curves.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md) · since v0.34
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Split toning** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Tint shadows and highlights separately in 12 colours, in live view and photos.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md) · since v0.32
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Film grain** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Film-like grain on colour photos, Off to High per profile.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md) · since v0.27
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Tinted halation** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+A red-orange glow around bright lights, as on CineStill film.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md) · since v0.31
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Tone per look** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Each look carries its own tone curve, with new Blacks and Whites controls.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md) · since v0.20
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Mono film presets** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Pan F, Acros, T-Max, Tri-X, HP5, Delta 3200, sepia, selenium and cyanotype for the Monochrome Profiles.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**True log video** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+A log curve hidden in the firmware, switched on with the Muted movie picture mode.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**XPan 65:24 and 21:9 stills** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Panorama and Wide aspect ratios with matching live view, playback and frame lines.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Live ND** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+ND3 and ND4 in Multiple Exposure: frames averaged at normal brightness.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**More button functions** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+More choices for REC and Fn, and the right and down arrow keys in Button Function.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md) · since v0.29
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Longer video recording** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+The 29-minute and 2-hour caps raised to 9 hours; file and heat limits still apply.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Selectable 4K bitrate** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+150, 100 or 60 Mbit/s for 4K movie slots.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md) · since v0.34
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Japanese and Chinese labels** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Caduceus's own labels in Japanese or Simplified Chinese when the camera uses that language.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md) · since v0.32
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Lens vignette correction off per look** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+Natural corners per look. The firmware setting is confirmed; its effect on photos is not yet, and reports are wanted.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md) · since v0.25
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Caduceus Control Panel** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Make, preview and share looks in your browser, and export them for the camera or as RapidRAW presets.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md)
+{ .card-meta }
+
+</div>
+
+</div>
+
 ## Projects for this camera
 
 <div class="project-grid" markdown="1">
@@ -15,7 +227,10 @@ E142: original Caduceus project and a documented Ghidra/REA setup.
 
 [Caduceus for E-P7](../projects/caduceus-ep7.md){ .card-title }
 
-E-P7 modifications and shared-panel/port research.
+The original Caduceus: HSLFX colour editing and 29 film looks for the PEN E-P7.
+
+Latest: v0.34a, 15 Nov 2026
+{ .card-meta }
 
 [Project home](https://github.com/cakelesscoder/caduceus-ep7) · [Ask or report issues](https://github.com/cakelesscoder/caduceus-ep7/issues)
 { .card-links }
@@ -26,7 +241,10 @@ E-P7 modifications and shared-panel/port research.
 
 [db firmware / om-c-firmware](../projects/db-firmware.md){ .card-title }
 
-Release-centred controls, localisation and other modifications.
+Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
+
+Latest: dbv0.4.1, 16 Nov 2026
+{ .card-meta }
 
 [Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
 { .card-links }
@@ -37,7 +255,10 @@ Release-centred controls, localisation and other modifications.
 
 [Olympus firmware research](../projects/oly-fw-analysis.md){ .card-title }
 
-Foundational firmware work with deep PEN-F coverage.
+The research base: PEN-F HSL, firmware formats and tools for many bodies.
+
+Latest: alpha-20261017, 18 Oct 2026
+{ .card-meta }
 
 [Project home](https://github.com/fishcu/oly_fw_analysis) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues)
 { .card-links }
@@ -48,7 +269,10 @@ Foundational firmware work with deep PEN-F coverage.
 
 [OM-Emu](../projects/om-emu.md){ .card-title }
 
-Firmware lab, model ports, traces and patch overlays.
+Run OM SYSTEM and Olympus camera firmware in your browser.
+
+Emulator
+{ .card-meta }
 
 [Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
 { .card-links }
@@ -57,9 +281,9 @@ Firmware lab, model ports, traces and patch overlays.
 
 </div>
 
-Install and support instructions belong to each project. Follow its documentation for this exact camera.
+Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
 
-## Features and observations
+## Claims and test evidence
 
 | Scoped assertion | Project / build | Availability | Evidence |
 |---|---|---|---|

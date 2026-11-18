@@ -96,3 +96,20 @@ records:
   last_checked: '2026-11-17'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.ep7.releases
+  title: Caduceus E-P7 releases
+  summary: Beta release notes from v0.31b to v0.34a.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-17'
+  url: https://github.com/cakelesscoder/caduceus-ep7/releases
+  source_kind: github-release
+  upstream_repo: cakelesscoder/caduceus-ep7
+  revision: v0.34a
+  locator: Releases page, newest ten entries
+  retrieved_on: '2026-11-17'
+  last_checked: '2026-11-17'
+  published_on: '2026-11-15'
+  publication: public
+  reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.

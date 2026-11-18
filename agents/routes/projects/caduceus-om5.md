@@ -8,8 +8,8 @@ Separate original OM-5 and Mark II work, strict builders and failures.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [caduceus-om5.yaml](../../../records/projects/caduceus-om5.yaml) | Project scope, related work and contribution destination | 753 | ~189 |
-| [om5.yaml](../../../records/sources/om5.yaml) | Find the relevant source/observation ID; use bounded reads | 3,185 | ~797 |
+| [caduceus-om5.yaml](../../../records/projects/caduceus-om5.yaml) | Project scope, related work and contribution destination | 5,213 | ~1,304 |
+| [om5.yaml](../../../records/sources/om5.yaml) | Find the relevant source/observation ID; use bounded reads | 4,450 | ~1,113 |
 | [caduceus-om5.yaml](../../../records/evidence/caduceus-om5.yaml) | Find the relevant source/observation ID; use bounded reads | 4,373 | ~1,094 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

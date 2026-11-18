@@ -7,6 +7,7 @@ records:
   source_refs:
   - source.emu.readme
   - source.emu.architecture
+  - source.emu.readme-current
   topics:
   - emulation
   - platform
@@ -26,3 +27,54 @@ records:
     limit what results establish.
   related_projects:
   - project.oly-fw-analysis
+  tagline: Run OM SYSTEM and Olympus camera firmware in your browser.
+  description:
+  - 'OM-Emu is a lab that runs Olympus and OM SYSTEM camera firmware outside the camera. It emulates the
+    camera''s processor and the devices its screens depend on, then runs the firmware''s own menus and
+    camera application. You can try it in your browser: you supply the official firmware file, and nothing
+    is uploaded.'
+  - Its reference body is the OM-1. Ports bring up the start screen, half-press, shutter and playback
+    on many other bodies, including the OM-3, OM-5, OM-5 Mark II, E-M10 Mark IV, E-P7 and PEN-F. Firmware
+    patches can be overlaid in memory, and Caduceus releases are checked in the lab before they go on
+    a camera.
+  - 'It is not a whole camera: the image sensor, autofocus and recording hardware are replaced by named
+    stand-ins, so a result in the lab is not a result on a real camera.'
+  maintainers:
+  - label: flatpanda
+    url: https://github.com/flatpanda
+  links:
+  - label: Try it in your browser
+    url: https://flatpanda.github.io/om-emu/
+  features:
+  - name: Browser player
+    summary: Start-up to the shooting screen, menus, Super Control Panel, shutter and playback, from the
+      official firmware file.
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.om5-ii
+    - camera.ep7
+    - camera.pen-f
+    - camera.em10-iv
+    status: released
+    since: null
+    source_ref: source.emu.readme-current
+  - name: Patch overlays
+    summary: Run firmware with byte patches applied in memory and checked against the stock blocks.
+    camera_ids: []
+    status: released
+    since: null
+    source_ref: source.emu.readme-current
+  - name: Caduceus release checks
+    summary: Caduceus releases run in the lab against pinned observations before they go on a camera.
+    camera_ids:
+    - camera.om3
+    status: released
+    since: null
+    source_ref: source.emu.readme-current
+  - name: Scripted sessions and debug API
+    summary: Headless sessions, traces, breakpoints and calls into firmware functions for research.
+    camera_ids: []
+    status: released
+    since: null
+    source_ref: source.emu.readme-current

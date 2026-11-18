@@ -20,11 +20,11 @@ def cell(value):
 
 
 CAMERA_LINES = ("OM SYSTEM", "Olympus OM-D", "Olympus PEN", "Other")
-INDEX_TITLES = {"camera": "Cameras", "firmware": "Firmware", "project": "Projects", "capability": "Features",
+INDEX_TITLES = {"camera": "Cameras", "firmware": "Firmware", "project": "Projects", "capability": "Feature claims",
                 "evidence": "Observations", "source": "Sources", "community": "Find the community"}
 INDEX_INTROS = {
     "camera": "Choose your exact model and generation. A listing is a research starting point, not a compatibility claim. The catalogue is not exhaustive.",
-    "project": "Independent projects, each with its own home, maintainers and support route. A listing does not imply endorsement or that a project works on every camera it mentions.",
+    "project": "Independent projects by members of the community, each with its own home, maintainers and support route. Features are described as each project describes them. A listing does not imply endorsement.",
     "firmware": "Stock firmware versions that catalogued work starts from. A version number alone is not byte-exact identity.",
     "capability": "Scoped feature claims: one camera, firmware, project and build each. Availability and test evidence are listed separately.",
     "evidence": "Individual observations from physical cameras, emulators and code inspection, with their missing details kept visible.",
@@ -53,6 +53,104 @@ def short_name(title):
 
 def plural(count, word):
     return f"{count} {word}{'' if count == 1 else 's'}"
+
+
+PROJECT_GROUPS = (("Camera modifications", ("mod", "experimental-fork")),
+                  ("Research and tools", ("research", "emulator", "tool", "reference")))
+STATUS_LABELS = {"released": "Available", "beta": "Beta", "alpha": "Alpha", "testing": "Testing",
+                 "in-development": "In development", "planned": "Planned", "research": "Research"}
+RISK_NOTE = ("Installing modified firmware is at your own risk. Follow the project's own guide for your exact "
+             "camera and firmware, and read its safety notes first.")
+
+
+def project_group(row):
+    return next(title for title, kinds in PROJECT_GROUPS if row["kind"] in kinds)
+
+
+def nice_date(value):
+    import datetime as dt
+    day = dt.date.fromisoformat(value)
+    return f"{day.day} {day.strftime('%b %Y')}"
+
+
+def pill(status):
+    return f'<span class="pill pill-{status}">{STATUS_LABELS[status]}</span>'
+
+
+def latest_release(row):
+    releases = row.get("releases", [])
+    stable = [r for r in releases if not r["prerelease"]]
+    return (stable or releases or [None])[0]
+
+
+def all_releases(catalogue):
+    rows = [(release, project) for project in catalogue.of_type("project") for release in project.get("releases", [])]
+    return sorted(rows, key=lambda pair: (pair[0]["date"], pair[1]["title"], pair[0]["tag"]), reverse=True)
+
+
+def asset_link(origin, path):
+    return link(origin, "docs/" + path)
+
+
+def release_line(origin, release, project=None):
+    who = f"[{cell(project['title'])}]({link(origin, view_path(project))}) · " if project else ""
+    badge = ' <span class="pill pill-alpha">Pre-release</span>' if release["prerelease"] else ""
+    return f"{who}[{cell(release['tag'])}]({release['url']}) · {nice_date(release['date'])}{badge}"
+
+
+def project_card(catalogue, origin, row, image=False, features=0, links=False):
+    """A showcase card for a project: tagline, latest release and optional headline features."""
+    text = '<div class="project-card" markdown="1">\n\n'
+    if image and row.get("images"):
+        picture = row["images"][0]
+        text += f"![{cell(picture['alt'])}]({asset_link(origin, picture['path'])})\n{{ .card-image }}\n\n"
+    text += f"[{cell(row['title'])}]({link(origin, view_path(row))}){{ .card-title }}\n\n"
+    text += f"{row.get('tagline', row['summary'])}\n\n"
+    if features and row.get("features"):
+        names = [f["name"] for f in row["features"] if f["status"] != "planned"][:features]
+        text += " · ".join(names) + "\n{ .card-features }\n\n"
+    release = latest_release(row)
+    meta = f"Latest: {release['tag']}, {nice_date(release['date'])}" if release else label(row["kind"]).capitalize()
+    text += meta + "\n{ .card-meta }\n\n"
+    if links:
+        text += f"[Project home]({row['url']}) · [Ask or report issues]({row['contribution_home']})\n{{ .card-links }}\n\n"
+    return text + "</div>\n\n"
+
+
+def showcase_markdown(catalogue, origin):
+    """Home-page showcase: featured projects and the latest releases, derived from project records."""
+    projects = [r for r in catalogue.of_type("project") if r.get("images")]
+    projects.sort(key=lambda r: (latest_release(r) or {}).get("date", ""), reverse=True)
+    text = '<section class="showcase" markdown="1">\n\n<p class="eyebrow">Featured projects</p>\n\n'
+    text += "## What the community has built.\n\n"
+    text += '<div class="project-grid featured" markdown="1">\n\n'
+    text += "".join(project_card(catalogue, origin, row, image=True, features=4) for row in projects)
+    text += f"</div>\n\n[See every project]({link(origin, 'views/projects/index.md')}){{ .btn .btn-ghost }}\n\n</section>\n\n"
+    releases = all_releases(catalogue)[:6]
+    if releases:
+        text += '<section class="releases-strip" markdown="1">\n\n<p class="eyebrow">Latest releases</p>\n\n'
+        text += "## Fresh from the projects.\n\n"
+        text += '<div class="release-list" markdown="1">\n\n'
+        for release, project in releases:
+            text += '<div class="release-item" markdown="1">\n\n'
+            text += release_line(origin, release, project) + "\n{ .release-head }\n\n"
+            text += release["highlights"][0] + "\n\n</div>\n\n"
+        text += "</div>\n\n</section>\n"
+    return text
+
+
+def people_markdown(catalogue, origin):
+    """Maintainers and the projects they run, derived from project records."""
+    people = {}
+    for project in catalogue.of_type("project"):
+        for person in project.get("maintainers", []):
+            people.setdefault((person["label"], person["url"]), []).append(project)
+    text = '<div class="people-grid" markdown="1">\n\n'
+    for (name, url), projects in sorted(people.items(), key=lambda item: item[0][0].lower()):
+        text += '<div class="person-card" markdown="1">\n\n'
+        text += f"[{cell(name)}]({url}){{ .card-title }}\n\n"
+        text += ", ".join(f"[{cell(p['title'])}]({link(origin, view_path(p))})" for p in projects) + "\n{ .card-meta }\n\n</div>\n\n"
+    return text + "</div>\n"
 
 
 def evidence_label(row):
@@ -90,19 +188,27 @@ def render(catalogue):
                 facts.append("**Also known as:** " + ", ".join(aliases))
             facts.append(f"**Catalogue depth:** {label(row['coverage'])}")
             text += "\n" + " · ".join(facts) + "\n{ .facts }\n"
+            projects = [records[p] for p in row["project_ids"]]
+            mods = [p for p in projects if p["kind"] in ("mod", "experimental-fork")]
+            offered = [(f, p) for p in mods for f in p.get("features", []) if row["id"] in f["camera_ids"]]
+            if offered:
+                text += "\n## What you can do with this camera\n\n"
+                text += "Features as each project describes them, with their status. Follow a project's own guide before installing anything.\n\n"
+                text += '<div class="feature-grid" markdown="1">\n\n'
+                for feature, project in offered:
+                    text += '<div class="feature-card" markdown="1">\n\n'
+                    text += f"**{cell(feature['name'])}** {pill(feature['status'])}\n{{ .feature-head }}\n\n{feature['summary']}\n\n"
+                    text += f"[{cell(project['title'])}]({link(path, view_path(project))})" + (f" · since {feature['since']}" if feature.get("since") else "") + "\n{ .card-meta }\n\n</div>\n\n"
+                text += "</div>\n"
             text += "\n## Projects for this camera\n\n"
-            if row["project_ids"]:
+            if projects:
                 text += '<div class="project-grid" markdown="1">\n\n'
-                for project_id in row["project_ids"]:
-                    project = records[project_id]
-                    text += '<div class="project-card" markdown="1">\n\n'
-                    text += f"[{cell(project['title'])}]({link(path, view_path(project))}){{ .card-title }}\n\n{project['summary']}\n\n"
-                    text += f"[Project home]({project['url']}) · [Ask or report issues]({project['contribution_home']})\n{{ .card-links }}\n\n</div>\n\n"
-                text += "</div>\n\nInstall and support instructions belong to each project. Follow its documentation for this exact camera.\n"
+                text += "".join(project_card(catalogue, path, project, links=True) for project in projects)
+                text += "</div>\n\n" + RISK_NOTE + "\n"
             else:
                 text += "No project is catalogued for this camera yet. This is a coverage gap, not a finding that nobody is working on it.\n"
             caps = [r for r in catalogue.of_type("capability") if r["camera_id"] == row["id"]]
-            text += "\n## Features and observations\n\n"
+            text += "\n## Claims and test evidence\n\n"
             if caps:
                 text += "| Scoped assertion | Project / build | Availability | Evidence |\n|---|---|---|---|\n"
                 for cap in caps:
@@ -126,17 +232,65 @@ def render(catalogue):
                 for address in row["addresses"]:
                     text += f"| {cell(address['name'])} | {address['space']} | `{address['value']}` | {ref(path, address['source_ref'])} |\n"
         elif kind == "project":
-            text += f"\n**[Upstream project]({row['url']})** · **[Contribution / support destination]({row['contribution_home']})**\n"
-            text += f"\n**Kind:** {label(row['kind'])}.\n\n{row['status_summary']}\n"
-            text += "\n## Catalogued cameras\n\n" + refs(path, row["camera_ids"]) + ".\n"
-            text += "\n## Related work\n\n" + refs(path, row["related_projects"]) + ". These links do not assign ownership or imply identical implementations.\n"
-            if row.get("work_items"):
-                text += "\n## Useful work\n\n"
-                for item in row["work_items"]:
-                    text += f"- [{item['summary']}]({item['url']}) — {label(item['state'])}; owner: {item.get('owner') or 'not assigned here'}.\n"
+            text = GENERATED + f"# {row['title']}\n\n{row.get('tagline', row['summary'])}\n\n"
+            buttons = [f"[Project home]({row['url']}){{ .btn .btn-primary }}", f"[Ask or report issues]({row['contribution_home']}){{ .btn .btn-ghost }}"]
+            buttons += [f"[{cell(l['label'])}]({l['url']}){{ .btn .btn-ghost }}" for l in row.get("links", [])]
+            text += '<div class="cta-row" markdown="1">\n\n' + "\n".join(buttons) + "\n\n</div>\n"
+            facts = [f"**Type:** {label(row['kind'])}"]
+            release = latest_release(row)
+            if release:
+                facts.append(f"**Latest release:** [{cell(release['tag'])}]({release['url']}), {nice_date(release['date'])}")
+            if row.get("maintainers"):
+                facts.append("**Maintained by** " + ", ".join(f"[{cell(m['label'])}]({m['url']})" for m in row["maintainers"]))
+            text += "\n" + " · ".join(facts) + "\n{ .facts }\n"
+            images = row.get("images", [])
+            if images:
+                picture = images[0]
+                text += f"\n![{cell(picture['alt'])}]({asset_link(path, picture['path'])})\n{{ .hero-image }}\n\n{picture['caption']} *{picture['credit']}.*\n{{ .image-caption }}\n"
+            text += "\n## About\n\n" + "\n\n".join(row.get("description", [row["status_summary"]])) + "\n"
+            if row.get("goals"):
+                text += "\n### What it's working towards\n\n" + "\n".join(f"- {g}" for g in row["goals"]) + "\n"
+            if row["kind"] in ("mod", "experimental-fork"):
+                text += "\n> **Before you install:** " + RISK_NOTE + "\n"
+            if row.get("features"):
+                text += "\n## Features\n\nAs the project describes them. Status is the project's own; linked evidence is the Atlas's record of what was reported or observed.\n\n"
+                text += '<div class="feature-grid" markdown="1">\n\n'
+                for feature in row["features"]:
+                    text += '<div class="feature-card" markdown="1">\n\n'
+                    text += f"**{cell(feature['name'])}** {pill(feature['status'])}\n{{ .feature-head }}\n\n{feature['summary']}\n\n"
+                    meta = []
+                    if feature["camera_ids"]:
+                        meta.append(", ".join(f"[{cell(short_name(records[c]['title']))}]({link(path, view_path(records[c]))})" for c in feature["camera_ids"]))
+                    if feature.get("since"):
+                        meta.append(f"since {feature['since']}")
+                    if feature.get("capability_id"):
+                        meta.append(f"[Evidence]({link(path, view_path(records[feature['capability_id']]))})")
+                    if meta:
+                        text += " · ".join(meta) + "\n{ .card-meta }\n\n"
+                    text += "</div>\n\n"
+                text += "</div>\n"
+            if len(images) > 1:
+                text += "\n## Gallery\n\n" + '<div class="gallery" markdown="1">\n\n'
+                for picture in images[1:]:
+                    text += f'<div class="gallery-item" markdown="1">\n\n![{cell(picture["alt"])}]({asset_link(path, picture["path"])})\n\n{picture["caption"]} *{picture["credit"]}.*\n{{ .image-caption }}\n\n</div>\n\n'
+                text += "</div>\n"
+            if row.get("releases"):
+                text += "\n## Releases\n\n"
+                for release in row["releases"]:
+                    text += '<div class="release-item" markdown="1">\n\n'
+                    text += f"**[{cell(release['title'])}]({release['url']})**" + (' <span class="pill pill-alpha">Pre-release</span>' if release["prerelease"] else "") + f" · {nice_date(release['date'])}\n{{ .release-head }}\n\n"
+                    text += "\n".join(f"- {h}" for h in release["highlights"]) + "\n\n"
+                    if release.get("warning"):
+                        text += f"{release['warning']}\n{{ .release-warning }}\n\n"
+                    text += "</div>\n\n"
+            text += "\n## Cameras\n\n" + refs(path, row["camera_ids"]) + ".\n"
             communities = [r["id"] for r in catalogue.of_type("community") if row["id"] in r["project_ids"]]
             if communities:
-                text += "\n## Discussion\n\n" + refs(path, communities) + ".\n"
+                text += "\n## Where to talk\n\n" + refs(path, communities) + ". For a reproducible bug, use the project's issue tracker.\n"
+            text += "\n## Related work\n\n" + refs(path, row["related_projects"]) + ". These links do not assign ownership or imply identical implementations.\n"
+            text += f"\n## Research notes\n\n{row['status_summary']}\n"
+            if row.get("work_items"):
+                text += "\n" + "".join(f"- [{item['summary']}]({item['url']}) — {label(item['state'])}; owner: {item.get('owner') or 'not assigned here'}.\n" for item in row["work_items"])
         elif kind == "capability":
             text += f"\n**Camera:** {ref(path, row['camera_id'])} · **Project:** {ref(path, row['project_id'])}\n"
             text += f"\n**Firmware:** {ref(path, row['firmware_id']) if row['firmware_id'] else 'Unknown / unspecified'} · **Mod build:** {row['mod_build'] or 'unspecified'}\n"
@@ -195,6 +349,15 @@ def render(catalogue):
                     text += f"{', '.join(row['model_codes'])}\n{{ .model-code }}\n\n{row['summary']}\n\n"
                     text += " · ".join(meta) + "\n{ .card-meta }\n\n</div>\n\n"
                 text += "</div>\n\n"
+            outputs[path] = text
+            continue
+        if kind == "project":
+            for title, kinds in PROJECT_GROUPS:
+                members = [r for r in catalogue.of_type("project") if r["kind"] in kinds]
+                members.sort(key=lambda r: (bool(r.get("images")), (latest_release(r) or {}).get("date", ""), r["title"]), reverse=True)
+                if members:
+                    text += f"## {title}\n\n" + '<div class="project-grid" markdown="1">\n\n'
+                    text += "".join(project_card(catalogue, path, r, image=True, features=3) for r in members) + "</div>\n\n"
             outputs[path] = text
             continue
         text += "| Entry | What you will find | Visit |\n|---|---|---|\n" if kind == "community" else "| Entry | What you will find |\n|---|---|\n"

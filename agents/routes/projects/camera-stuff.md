@@ -8,7 +8,7 @@ Downstream experiments intended to send fixes upstream.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [camera-stuff.yaml](../../../records/projects/camera-stuff.yaml) | Project scope, related work and contribution destination | 644 | ~161 |
+| [camera-stuff.yaml](../../../records/projects/camera-stuff.yaml) | Project scope, related work and contribution destination | 1,225 | ~307 |
 | [fork.yaml](../../../records/sources/fork.yaml) | Find the relevant source/observation ID; use bounded reads | 636 | ~159 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

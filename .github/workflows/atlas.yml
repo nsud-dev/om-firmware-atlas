@@ -45,6 +45,9 @@ jobs:
     name: Source review queue
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
@@ -55,11 +58,27 @@ jobs:
       - run: python scripts/atlas.py freshness --fetch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: python scripts/atlas.py queue
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: source-review-${{ github.run_id }}
-          path: .build/freshness.json
+          path: |
+            .build/freshness.json
+            .build/update-queue.md
           retention-days: 30
+      - name: Open or refresh the update-queue issue
+        # One open issue lists new releases, changed sources and due reviews, with a prompt for an agent.
+        # It changes no records; an agent or person turns it into a reviewed PR.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create atlas-update-queue --color F08A3C --description "Weekly source and release check" --force
+          number=$(gh issue list --label atlas-update-queue --state open --json number --jq '.[0].number')
+          if [ -n "$number" ]; then
+            gh issue edit "$number" --body-file .build/update-queue.md
+          else
+            gh issue create --title "Atlas update queue" --label atlas-update-queue --body-file .build/update-queue.md
+          fi
 
   deploy:
     name: Publish GitHub Pages

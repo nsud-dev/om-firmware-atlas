@@ -12,6 +12,7 @@
     "ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
     "text": {"type": "string", "minLength": 1},
     "date": {"type": "string", "format": "date"},
+    "link": {"type": "object", "additionalProperties": false, "required": ["label", "url"], "properties": {"label": {"$ref": "#/$defs/text"}, "url": {"type": "string", "format": "uri"}}},
     "hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
     "base": {
       "type": "object",
@@ -68,6 +69,30 @@
             "required": ["summary", "state", "url"], "properties": {
               "summary": {"$ref": "#/$defs/text"}, "state": {"enum": ["proposed", "open", "paused", "needs-evidence"]},
               "url": {"type": "string", "format": "uri"}, "owner": {"type": ["string", "null"]}
+            }}},
+          "tagline": {"$ref": "#/$defs/text"},
+          "description": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+          "goals": {"type": "array", "items": {"$ref": "#/$defs/text"}},
+          "maintainers": {"type": "array", "items": {"$ref": "#/$defs/link"}},
+          "links": {"type": "array", "items": {"$ref": "#/$defs/link"}},
+          "features": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+            "required": ["name", "summary", "camera_ids", "status", "source_ref"], "properties": {
+              "name": {"$ref": "#/$defs/text"}, "summary": {"$ref": "#/$defs/text"}, "camera_ids": {"$ref": "#/$defs/ids"},
+              "status": {"enum": ["released", "beta", "alpha", "testing", "in-development", "planned", "research"]},
+              "since": {"type": ["string", "null"]}, "source_ref": {"type": "string"},
+              "capability_id": {"type": ["string", "null"]}
+            }}},
+          "releases": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+            "required": ["tag", "title", "date", "url", "prerelease", "camera_ids", "highlights", "source_ref"], "properties": {
+              "tag": {"$ref": "#/$defs/text"}, "title": {"$ref": "#/$defs/text"}, "date": {"$ref": "#/$defs/date"},
+              "url": {"type": "string", "format": "uri"}, "prerelease": {"type": "boolean"},
+              "camera_ids": {"$ref": "#/$defs/ids"}, "highlights": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+              "warning": {"$ref": "#/$defs/text"}, "source_ref": {"type": "string"}
+            }}},
+          "images": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+            "required": ["path", "alt", "caption", "credit"], "properties": {
+              "path": {"type": "string", "pattern": "^assets/projects/[a-z0-9-]+/[a-z0-9-]+\\.(jpg|png|webp)$"},
+              "alt": {"$ref": "#/$defs/text"}, "caption": {"$ref": "#/$defs/text"}, "credit": {"$ref": "#/$defs/text"}
             }}}
         }}
       ], "unevaluatedProperties": false

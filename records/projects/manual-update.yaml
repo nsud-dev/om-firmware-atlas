@@ -19,3 +19,22 @@ records:
   status_summary: The source says static firmware links stopped working in late 2025. Use current acquisition
     references.
   related_projects: []
+  tagline: How to install official OM SYSTEM firmware from an SD card.
+  description:
+  - iKenndac's guide explains how to download an official update for the OM-1, OM-1 Mark II, OM-3 or OM-5
+    from OM SYSTEM's server and install it from an SD card, without OM Workspace or the mobile app.
+  - 'It is unofficial: the author offers no support beyond the instructions, and settings are not backed
+    up for you. The same hold-OK card update is how several Caduceus projects install, and how they go
+    back to OM''s firmware.'
+  maintainers:
+  - label: iKenndac
+    url: https://github.com/iKenndac
+  features:
+  - name: SD card firmware update
+    summary: File names and steps for installing an official update with the camera's hold-OK card update.
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    status: released
+    since: null
+    source_ref: source.manual.readme

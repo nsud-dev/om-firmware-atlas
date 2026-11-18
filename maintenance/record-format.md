@@ -6,7 +6,7 @@ Collections in `records/<type>/` contain `schema_version: 1` and a non-empty `re
 |---|---|
 | camera | Aliases, model codes, project IDs and catalogue depth |
 | firmware | Camera, advertised/internal version, full hash or explicit null, identity limitations |
-| project | URL/kind, catalogued cameras, contribution destination, attributed state and related work |
+| project | URL/kind, catalogued cameras, contribution destination, attributed state and related work. Optional showcase: tagline, description, goals, maintainers, links, features, releases, images |
 | capability | Camera, firmware/project/build, feature ID, availability, implementation basis, evidence/contradiction refs and limits |
 | evidence | Target/build, method/provenance, identity strength, separate expected and reported/observed hashes, result, procedure/coverage, dates, completeness and assumptions |
 | source | URL, source kind, repository/revision where relevant, locator, retrieval/check date, publication scope and reuse note |
@@ -17,6 +17,10 @@ Use `null` for an unknown nullable field, not an invented value. A null firmware
 Physical evidence marked `complete` requires target/build, package hash from the report or observation, steps and explicit test date. `quality: partial` preserves a useful but incomplete account. `identity_level: release-label-only` cannot carry a reported package digest. Keep a manifest's expected digest in `expected_package_sha256`.
 
 Repository file sources use the same full commit in `revision` and `/blob/<commit>/` URL. Release descriptions and comments are mutable; a reviewed body digest can provide a baseline for future checks. The freshness checker reports missing baselines rather than claiming unchanged content.
+
+## Project showcase fields
+
+Project pages, the projects directory, camera pages and the home page are built from these optional fields. `description` is a list of plain paragraphs written from the project's own documentation. Each `features` entry has `name`, `summary`, `camera_ids` (a subset of the project's), `status` (`released`, `beta`, `alpha`, `testing`, `in-development`, `planned` or `research`, in the project's own terms), optional `since` and `capability_id`, and a `source_ref`. Each `releases` entry has `tag`, `title`, `date`, `url`, `prerelease`, `camera_ids`, `highlights`, an optional `warning` and a `source_ref`; list them newest first. `images` live under `docs/assets/projects/<project>/` with `alt`, `caption` and `credit`, and need the maintainers' agreement. Feature status is the project's claim, not Atlas evidence; link a capability for the evidence.
 
 ## Guides and dependencies
 

@@ -17,7 +17,8 @@ from pathlib import Path
 import yaml
 
 from atlas_core import Catalogue, LINK_RE, REPO, cost, markdown_links, read_yaml, routing_checks
-from atlas_generate import CAMERA_LINES, camera_line, generated_diff, render, short_name, view_path, write_generated
+from atlas_generate import (CAMERA_LINES, PROJECT_GROUPS, camera_line, generated_diff, render, short_name,
+                            people_markdown, showcase_markdown, view_path, write_generated)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -74,6 +75,11 @@ def expand_nav(nav, catalogue):
                 if members:
                     groups.append({line: [{short_name(r["title"]): view_path(r)} for r in members]})
             return {title: [{"All cameras": value}] + groups}
+        if value == "views/projects/index.md":
+            projects = catalogue.of_type("project")
+            groups = [{group: [{r["title"]: view_path(r)} for r in sorted(projects, key=lambda r: r["title"]) if r["kind"] in kinds]}
+                      for group, kinds in PROJECT_GROUPS if any(r["kind"] in kinds for r in projects)]
+            return {title: [{"All projects": value}] + groups}
         if value == "knowledge/README.md":
             return {title: [{text: path} for text, path in guides]}
         if isinstance(value, list):
@@ -109,6 +115,11 @@ def stage_site(catalogue, revision=None, timestamp=None):
         record = record_pages.get(source.relative_to(root).as_posix())
         if record:
             text += review_notice(catalogue, record, publication_day)
+        if "<!-- atlas:showcase -->" in text:
+            # Build-time showcase from project records; not committed, like review notices.
+            text = text.replace("<!-- atlas:showcase -->", showcase_markdown(catalogue, source.relative_to(root).as_posix()))
+        if "<!-- atlas:people -->" in text:
+            text = text.replace("<!-- atlas:people -->", people_markdown(catalogue, source.relative_to(root).as_posix()))
 
         def rewrite(match):
             target = match.group(1)
@@ -175,7 +186,11 @@ def inspect_remote(source, fetcher=get_remote, cache=None):
             return dict(state="revision-match" if head == source["revision"] else "upstream-advanced", observed_revision=head,
                         note="Repository-head comparison only; inspect the scoped file before changing assertions.")
         if kind == "github-release":
-            data = fetch(f"https://api.github.com/repos/{repo}/releases/latest")
+            # Newest release including pre-releases, so test versions are noticed too.
+            listing = fetch(f"https://api.github.com/repos/{repo}/releases?per_page=1")
+            if not listing:
+                return dict(state="no-releases", note="The repository lists no releases.")
+            data = listing[0]
             digest = hashlib.sha256((data.get("body") or "").encode()).hexdigest()
             changed = data["tag_name"] != source["revision"]
             state = "new-release" if changed else ("text-changed" if source.get("content_sha256") and digest != source["content_sha256"] else "tag-match-text-untracked" if not source.get("content_sha256") else "unchanged")
@@ -189,8 +204,36 @@ def inspect_remote(source, fetcher=get_remote, cache=None):
             return dict(state=state, content_sha256=digest, note="Comment text may change; record a reviewed baseline to compare it.")
         status = fetch(source["url"], False)
         return dict(state="reachable", http_status=status, note="Reachability only; activity and content were not validated.")
-    except (urllib.error.URLError, TimeoutError, OSError, ValueError, KeyError, IndexError) as exc:
+    except (urllib.error.URLError, TimeoutError, OSError, ValueError, KeyError, IndexError, AttributeError, TypeError) as exc:
         return dict(state="check-failed", note=f"{type(exc).__name__}: {exc}. Previous evidence and dates remain unchanged.")
+
+
+def github_repo(url):
+    match = re.match(r"https://github\.com/([^/]+/[^/#?]+)", url or "")
+    return match.group(1).removesuffix(".git") if match else None
+
+
+def project_releases(project, fetcher, cache):
+    """Compare a project's newest upstream release with the newest one recorded in its showcase."""
+    repo = github_repo(project["url"])
+    recorded = [r["tag"] for r in project.get("releases", [])]
+    row = dict(id=project["id"], title=project["title"], recorded_latest=recorded[0] if recorded else None)
+    if not repo:
+        return dict(row, state="not-github")
+    url = f"https://api.github.com/repos/{repo}/releases?per_page=1"
+    try:
+        if url not in cache:
+            cache[url] = fetcher(url, json_response=True)
+        listing = cache[url]
+    except (urllib.error.URLError, TimeoutError, OSError, ValueError) as exc:
+        return dict(row, state="check-failed", note=f"{type(exc).__name__}: {exc}")
+    if not listing:
+        return dict(row, state="no-releases-upstream")
+    newest = listing[0]
+    row.update(upstream_latest=newest.get("tag_name"), upstream_url=newest.get("html_url"),
+               upstream_published=(newest.get("published_at") or "")[:10], upstream_prerelease=bool(newest.get("prerelease")))
+    row["state"] = "releases-current" if newest.get("tag_name") in recorded else "release-not-catalogued"
+    return row
 
 
 def freshness(catalogue, fetch=False, today=None, fetcher=get_remote):
@@ -204,12 +247,45 @@ def freshness(catalogue, fetch=False, today=None, fetcher=get_remote):
         if fetch:
             row.update(inspect_remote(source, fetcher, cache))
         rows.append(row)
-    return dict(checked_on=today.isoformat(), network_used=fetch, sources=rows)
+    projects = [project_releases(p, fetcher, cache) if fetch else dict(id=p["id"], title=p["title"], state="not-fetched")
+                for p in catalogue.of_type("project")]
+    return dict(checked_on=today.isoformat(), network_used=fetch, sources=rows, projects=projects)
+
+
+QUEUE_PROMPT = """Read AGENTS.md and follow agents/start.md in xulfr/om-firmware-atlas, using the freshness job.
+Work through this update queue: for each new release, read its notes and add it to the project's releases
+(and features, if it adds or changes one); for each changed source, review it and update the records it supports.
+Keep claims attributed and scoped, regenerate, run the checks, tests and build, and open one focused PR.
+Do not approve or merge it."""
+
+
+def update_queue(report):
+    """Markdown for the weekly update-queue issue. It lists work; it changes nothing."""
+    lines = [f"Weekly source and release check, {report['checked_on']}. Generated by `python scripts/atlas.py queue`; "
+             "nothing in the Atlas has been changed.", ""]
+    releases = [p for p in report.get("projects", []) if p["state"] == "release-not-catalogued"]
+    changed = [s for s in report["sources"] if s["state"] in ("upstream-advanced", "new-release", "text-changed")]
+    failed = [s for s in report["sources"] if s["state"] == "check-failed"] + \
+             [p for p in report.get("projects", []) if p["state"] == "check-failed"]
+    due = [s for s in report["sources"] if s.get("review_due")]
+    lines += ["## New releases to add", ""]
+    lines += [f"- [ ] **{p['title']}**: [{p['upstream_latest']}]({p['upstream_url']})"
+              f"{' (pre-release)' if p.get('upstream_prerelease') else ''}, published {p['upstream_published']}. "
+              f"Newest recorded: {p['recorded_latest'] or 'none'}." for p in releases] or ["None."]
+    lines += ["", "## Changed sources to review", ""]
+    lines += [f"- [ ] `{s['id']}` ({s['state']}): {s['url']}" for s in changed] or ["None."]
+    lines += ["", "## Reviews due (last checked more than 30 days ago)", ""]
+    lines += [f"- [ ] `{s['id']}`, last checked {s['last_checked']}" for s in due] or ["None."]
+    if failed:
+        lines += ["", "## Checks that failed", ""]
+        lines += [f"- `{row['id']}`: {row.get('note', 'see the report artifact')}" for row in failed]
+    lines += ["", "## Hand this to an agent", "", "```text", QUEUE_PROMPT, "```", ""]
+    return "\n".join(lines)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["validate", "generate", "check", "build", "route", "freshness"])
+    parser.add_argument("command", choices=["validate", "generate", "check", "build", "route", "freshness", "queue"])
     parser.add_argument("--job", default="research")
     parser.add_argument("--camera")
     parser.add_argument("--topic")
@@ -245,6 +321,14 @@ def main():
             size, tokens = cost(ROOT / path)
             print(f"{path} | {size} bytes | ~{tokens} tokens")
         print("Approximate cost uses ceil(UTF-8 bytes / 4); read only what the route requires.")
+    elif args.command == "queue":
+        report_path = ROOT / ".build/freshness.json"
+        if not report_path.exists():
+            print("Run python scripts/atlas.py freshness --fetch first.", file=sys.stderr)
+            return 1
+        queue_path = ROOT / ".build/update-queue.md"
+        queue_path.write_text(update_queue(json.loads(report_path.read_text(encoding="utf-8"))), encoding="utf-8")
+        print(f"Wrote {queue_path.relative_to(ROOT)}.")
     else:
         report = freshness(catalogue, fetch=args.fetch)
         path = ROOT / ".build/freshness.json"

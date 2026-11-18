@@ -6,6 +6,7 @@ records:
   summary: Release-centred controls, localisation and other modifications.
   source_refs:
   - source.db.release041
+  - source.db.releases
   topics:
   - capture
   - colour
@@ -23,3 +24,145 @@ records:
   status_summary: Reviewed v0.4.1 has substantial release claims despite a minimal main README. Individual
     test reports are not yet catalogued.
   related_projects: []
+  tagline: Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst
+    rates.
+  description:
+  - db firmware (om-c-firmware) by azqeurio publishes beta firmware patches for a wide range of bodies,
+    including the OM-1, OM-1 Mark II, OM-3, OM-5, OM-5 Mark II, E-M1 Mark III, E-M5 Mark III and PEN-F.
+    The repository's README is minimal; the release notes, partly in Korean, describe each version.
+  - Recent releases list aperture-ring support for Panasonic lenses, extra burst rates on the OM-1, a
+    5 GHz hotspot, the electronic shutter sound through the speaker, Korean menus and, in v0.4.1, a Quasi-LUT
+    feature with transfer to the camera through DBLink.
+  - The author owns only some of the supported bodies and says the patch can't be guaranteed to work on
+    every model. v0.4.1 lists known issues for the OM-5 build.
+  maintainers:
+  - label: azqeurio
+    url: https://github.com/azqeurio
+  links:
+  - label: Releases
+    url: https://github.com/azqeurio/om-c-firmware/releases
+  features:
+  - name: Panasonic aperture rings
+    summary: The aperture ring on Panasonic lenses that have one controls the aperture.
+    camera_ids:
+    - camera.om5
+    status: beta
+    since: null
+    source_ref: source.db.release041
+    capability_id: capability.om5-db-aperture
+  - name: Korean menus
+    summary: Korean language support on several bodies.
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.om5-ii
+    status: beta
+    since: null
+    source_ref: source.db.releases
+  - name: Quasi-LUT and DBLink
+    summary: A Quasi-LUT feature, with transfer to the camera through DBLink.
+    camera_ids: []
+    status: beta
+    since: null
+    source_ref: source.db.release041
+  - name: OM-1 Mark II features on the OM-1
+    summary: A port of OM-1 Mark II firmware to the OM-1, without ND128 or the larger buffer.
+    camera_ids: []
+    status: beta
+    since: null
+    source_ref: source.db.release041
+  - name: 12.5 and 16.7 fps bursts
+    summary: Extra burst rates on the OM-1 with the SH2 shutter mode.
+    camera_ids: []
+    status: beta
+    since: null
+    source_ref: source.db.releases
+  - name: 5 GHz hotspot and shutter sound
+    summary: A 5 GHz Wi-Fi hotspot, and the electronic shutter sound through the speaker.
+    camera_ids: []
+    status: beta
+    since: null
+    source_ref: source.db.releases
+  releases:
+  - tag: dbv0.4.1
+    title: db firmware v0.4.1 beta
+    date: '2026-11-16'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.1
+    prerelease: false
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.om5-ii
+    - camera.ep7
+    highlights:
+    - Korean support and a Quasi-LUT feature with DBLink transfer.
+    - An OM-1 Mark II firmware port for the OM-1.
+    - Fixes overexposure in 14-bit High Res on the OM-1 port.
+    warning: 'Known issues on the OM-5 build: battery drain, Fn buttons, Wi-Fi and gyroscope. The author
+      can''t guarantee it works on every model.'
+    source_ref: source.db.release041
+  - tag: dbv0.4.0
+    title: db firmware v0.4.0 beta
+    date: '2026-11-11'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.0
+    prerelease: false
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.om5-ii
+    - camera.ep7
+    highlights:
+    - Aperture-ring patch for Panasonic lenses, 5 GHz hotspot and E-P7 features.
+    warning: Two added features reset the camera's settings; save your menus first.
+    source_ref: source.db.releases
+  - tag: dbv0.3.2
+    title: db firmware v0.3.2 beta
+    date: '2026-10-31'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2
+    prerelease: false
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.om5-ii
+    - camera.pen-f
+    highlights:
+    - Adds the OM-5 Mark II, with Korean menus.
+    - Electronic shutter sound through the speaker.
+    source_ref: source.db.releases
+  - tag: dbv0.3.1.b
+    title: db firmware v0.3.1.b beta
+    date: '2026-10-30'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.1.b
+    prerelease: false
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.om5-ii
+    - camera.pen-f
+    highlights:
+    - Adds the OM-5 Mark II to the tested list.
+    source_ref: source.db.releases
+  - tag: dbv0.3.1beta
+    title: db firmware v0.3.1 beta
+    date: '2026-10-28'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.1beta
+    prerelease: false
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.pen-f
+    highlights:
+    - Korean menus on several bodies, aperture-ring patch and extra burst rates.
+    source_ref: source.db.releases
+  - tag: dbv0.3.0
+    title: db firmware v0.3 beta
+    date: '2026-10-26'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.0
+    prerelease: false
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.pen-f
+    highlights:
+    - Fixes shutter-sound settings and the macOS build.
+    source_ref: source.db.releases

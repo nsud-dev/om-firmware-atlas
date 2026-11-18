@@ -19,3 +19,13 @@ records:
     replacement implementation home.
   related_projects:
   - project.caduceus-om3
+  tagline: A downstream OM-3 fork for trying fixes before sending them upstream.
+  description:
+  - fernandezk26's fork of Caduceus for OM-3 is where changes are tried on an OM-3 before being offered
+    back as pull requests. Its v0.25.1 branch added a white-balance grid restart fix and automatic SD
+    loading.
+  - Caduceus for OM-3 credits this fork for its fix for bad bytes in EDITS.BIN, and for loading the films
+    at power-on in v0.26.2 to v0.27. The fork publishes no releases of its own.
+  maintainers:
+  - label: fernandezk26
+    url: https://github.com/fernandezk26

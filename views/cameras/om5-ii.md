@@ -7,6 +7,110 @@ E148: alpha12 has an incomplete positive owner report; original OM-5 work is sep
 **Model code:** E148 · **Also known as:** OM-5 II, OM5, OM5II · **Catalogue depth:** initial review
 { .facts }
 
+## What you can do with this camera
+
+Features as each project describes them, with their status. Follow a project's own guide before installing anything.
+
+<div class="feature-grid" markdown="1">
+
+<div class="feature-card" markdown="1">
+
+**Color Profiles 1–3 and Monochrome Profiles 1–3** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Six hidden Picture Mode slots restored after Color Creator.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Custom looks** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Up to ten looks from LookLab in one LOOKS.BIN; the trash button steps through them and the look's name is shown.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Colour editor** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Hue, saturation and lightness for 12 colours, with a tone curve, Sharpness, Contrast and Shading.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**White balance per profile** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+The mode, Kelvin and shift are kept for each Color Profile. Not yet checked on a camera.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Monochrome Profiles** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Colour filter, toning, grain and tone, with the filter graphic restored in alpha12.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Live ND32 and ND64** <span class="pill pill-alpha">Alpha</span>
+{ .feature-head }
+
+Two stronger Live ND settings after ND16.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Colour grain for Color Profiles** <span class="pill pill-planned">Planned</span>
+{ .feature-head }
+
+Off to High grain for colour looks, then Glow and Halation.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Korean menus** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+Korean language support on several bodies.
+
+[db firmware / om-c-firmware](../projects/db-firmware.md)
+{ .card-meta }
+
+</div>
+
+</div>
+
 ## Projects for this camera
 
 <div class="project-grid" markdown="1">
@@ -15,7 +119,10 @@ E148: alpha12 has an incomplete positive owner report; original OM-5 work is sep
 
 [Caduceus for OM-5](../projects/caduceus-om5.md){ .card-title }
 
-Separate original OM-5 and Mark II work, strict builders and failures.
+Looks and a full colour editor for the OM-5 Mark II. Experimental.
+
+Latest: v0.1.0-alpha12, 16 Nov 2026
+{ .card-meta }
 
 [Project home](https://github.com/xulfr/caduceus-om5) · [Ask or report issues](https://github.com/xulfr/caduceus-om5/issues)
 { .card-links }
@@ -26,7 +133,10 @@ Separate original OM-5 and Mark II work, strict builders and failures.
 
 [db firmware / om-c-firmware](../projects/db-firmware.md){ .card-title }
 
-Release-centred controls, localisation and other modifications.
+Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
+
+Latest: dbv0.4.1, 16 Nov 2026
+{ .card-meta }
 
 [Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
 { .card-links }
@@ -37,7 +147,10 @@ Release-centred controls, localisation and other modifications.
 
 [OM-Emu](../projects/om-emu.md){ .card-title }
 
-Firmware lab, model ports, traces and patch overlays.
+Run OM SYSTEM and Olympus camera firmware in your browser.
+
+Emulator
+{ .card-meta }
 
 [Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
 { .card-links }
@@ -46,9 +159,9 @@ Firmware lab, model ports, traces and patch overlays.
 
 </div>
 
-Install and support instructions belong to each project. Follow its documentation for this exact camera.
+Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
 
-## Features and observations
+## Claims and test evidence
 
 | Scoped assertion | Project / build | Availability | Evidence |
 |---|---|---|---|

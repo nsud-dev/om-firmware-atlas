@@ -64,3 +64,20 @@ records:
   last_checked: '2026-11-17'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.emu.readme-current
+  title: OM-Emu overview (current)
+  summary: What the browser player runs today, Caduceus checks and the body ports.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-17'
+  url: https://github.com/flatpanda/om-emu/blob/0fb011e43e1407355653505a1a463432c2c4376c/README.md
+  source_kind: github-file
+  upstream_repo: flatpanda/om-emu
+  revision: 0fb011e43e1407355653505a1a463432c2c4376c
+  locator: 'README.md: introduction, What works today, body table'
+  retrieved_on: '2026-11-17'
+  last_checked: '2026-11-17'
+  published_on: null
+  publication: public
+  reuse_note: Attributed summary; no firmware or code imported.

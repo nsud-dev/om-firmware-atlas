@@ -3,11 +3,10 @@
     Navigation: four journey sections from mkdocs.yml (expanded at build time by scripts/atlas.py expand_nav).
     Generated record pages outside the nav join a section, and highlight their directory, through their URL. -#}
 {%- set homes = {
-  'views/cameras/': ['Cameras', 'views/cameras/'],
-  'views/projects/': ['Research', 'views/projects/'], 'views/firmware/': ['Research', 'views/firmware/'],
-  'views/capabilities/': ['Research', 'views/capabilities/'], 'views/evidence/': ['Research', 'views/evidence/'],
-  'views/sources/': ['Research', 'views/sources/'], 'knowledge/': ['Research', none],
-  'views/community/': ['Get involved', 'views/community/']
+  'views/cameras/': ['Cameras', 'views/cameras/'], 'views/projects/': ['Projects', 'views/projects/'],
+  'views/firmware/': ['Research', 'views/firmware/'], 'views/capabilities/': ['Research', 'views/capabilities/'],
+  'views/evidence/': ['Research', 'views/evidence/'], 'views/sources/': ['Research', 'views/sources/'],
+  'knowledge/': ['Research', none], 'views/community/': ['Community', 'views/community/']
 } -%}
 {%- set ns = namespace(section=none, parent=none, parent_title=none, item=none, top=none) -%}
 {%- for item in nav -%}
@@ -201,6 +200,7 @@
       </div>
       <nav class="footer-links" aria-label="Footer">
         {%- for item in nav %}{% if not item.is_homepage %}<a href="{{ first_url(item)|trim|url }}">{{ item.title }}</a>{% endif %}{% endfor %}
+        <a href="{{ 'about/'|url }}">About</a>
         {%- if config.repo_url %}<a href="{{ config.repo_url }}">{{ config.repo_name }}</a>{% endif %}
       </nav>
       {%- block footer %}{% include "footer.html" %}{% endblock %}

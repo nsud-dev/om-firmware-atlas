@@ -2,7 +2,7 @@
 
 The Atlas is a set of files in a GitHub repository, plus a few Python scripts that check those files and turn them into this website. Anyone can propose a change. People and AI agents follow the same route: change the source files, let the checks run, open a pull request and wait for a human to merge it.
 
-This page explains that route for contributors. If you only want to add something, [Get involved](contribute.md) is shorter.
+This page explains that route for contributors. If you only want to add something, [Community](community.md) is shorter.
 
 **A few terms used below**
 
@@ -123,6 +123,19 @@ The camera, project, firmware, capability, evidence, source and community pages 
 - `check` re-renders everything in memory and compares it with the committed files. Any difference, including a hand edit or a forgotten `generate`, is reported as **drift** and fails CI.
 - Generated changes are committed in the same PR as the record change, so reviewers can see both the data and its effect on the pages.
 - At build time, the site builder adds a "Source review due" notice to record pages whose oldest linked source was last checked more than 30 days before publication. This notice exists only in the built site, not in the committed files.
+- The home page's featured projects and latest releases, the Community page's list of maintainers, and the camera and project lists in the navigation are also filled in at build time from the records.
+
+### Project showcase pages
+
+Each project page is built from its project record. Besides the research fields, a record can carry:
+
+- a one-line **tagline** and a few paragraphs of **description**, written from the project's own documentation;
+- **goals**, **maintainers** and useful **links** such as an install guide or web tool;
+- **features**, each with the cameras it covers, a status (available, beta, alpha, testing, in development, planned or research) and, where the Atlas holds one, a link to its scoped evidence;
+- **releases**, newest first, with highlights and any warning from the release notes;
+- **images**, with a caption and credit. Only use images the project's maintainers have agreed to share.
+
+Every feature and release cites a source record. Features are described as the project describes them; the Atlas's own evidence stays separate. The checks reject a feature or release that names a camera the project doesn't cover, releases out of date order, and missing images. Camera pages gather the features of every modification that covers that camera.
 
 ## The weekly freshness check
 
@@ -132,16 +145,19 @@ Every Monday at 06:17 UTC, GitHub runs the Atlas workflow on a schedule.
 
 - Runs `python scripts/atlas.py freshness --fetch`, which compares each source with its current upstream state without running any upstream code. It reports one of several states for each source, for example:
     - `upstream-advanced`: a repository has new commits
-    - `new-release`: a project has a newer release
+    - `new-release`: a project has a newer release, including test versions
     - `text-changed`: a release note or comment differs from its recorded fingerprint
     - `reachable`: a non-GitHub link answered
     - `check-failed`: the check could not complete
-- Saves the result as a `source-review` artifact, kept for 30 days.
+- Compares each project's newest GitHub release with the releases on its showcase page, and flags any that aren't listed yet.
+- Writes an **update queue** (`python scripts/atlas.py queue`): new releases to add, changed sources to review and reviews that are due, with a ready-made prompt for an agent.
+- Opens a GitHub issue labelled `atlas-update-queue`, or refreshes the one already open, with that queue.
+- Saves the report and the queue as a `source-review` artifact, kept for 30 days.
 - Revalidates and republishes the current `main` site, so "Source review due" notices reflect the new publication date.
 
-**What it never does:** change records, update review dates, open PRs, call an AI model or contact anyone. A changed upstream repository puts a source in the queue for review. It does not change what the Atlas says about it.
+**What it never does:** change records, update review dates, open PRs, call an AI model or contact anyone. A new release puts a project in the queue; it does not appear on the site until someone has read its notes and a PR has been merged.
 
-**What needs an agent or a person:** reading the report, deciding which changes matter, following the [freshness workflow](../agents/workflows/review-freshness.md) and ingestion workflow, updating records and their `last_reviewed` dates after actually reviewing the facts, and opening a PR. A successful link check alone does not renew a review date.
+**What needs an agent or a person:** working through the queue issue. Hand its prompt to an agent, or follow the [freshness workflow](../agents/workflows/review-freshness.md) yourself: read each new release's notes, add it to the project's releases and features, review changed sources, update `last_reviewed` dates only after reviewing the facts, and open a PR. A successful link check alone does not renew a review date.
 
 ## Branch rules and review
 
@@ -212,11 +228,11 @@ The built site is in `site/`. The [contribution steps](https://github.com/xulfr/
 
 ## Implemented now, and planned
 
-**Implemented now:** structured records with schemas and scope checks, generated pages and agent routes, drift detection, fixed routing tests, strict site builds, PR previews, the weekly source report, and publication from `main`.
+**Implemented now:** structured records with schemas and scope checks, generated camera and project showcase pages and agent routes, drift detection, fixed routing tests, strict site builds, PR previews, the weekly source and release check with its update-queue issue, and publication from `main`.
 
 **Planned or possible later** (from the [implementation plan](https://github.com/xulfr/om-firmware-atlas/blob/main/maintenance/plan.md); none of these exist yet):
 
 - Deeper feature-level evidence for the OM-3 and E-P7.
 - Exact input hashes for firmware entries that currently record only a version.
 - More camera bodies and community venues, added through ordinary source PRs.
-- Optionally handing freshness queue items to an agent automatically. Today a maintainer does this by hand.
+- Optionally starting an agent automatically from the weekly update-queue issue. Today a maintainer hands the issue's prompt to an agent, or works through it by hand.
