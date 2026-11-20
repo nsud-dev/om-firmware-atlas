@@ -114,7 +114,7 @@ Films, your changes and the Extras settings live in the camera's memory, so any 
 **White balance per film** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-Each film and COLOR remembers its white balance mode and Kelvin.
+Each film and COLOR remembers its white balance mode and Kelvin. From v0.40.1, film compensation shows in the Super Control Panel and edits there are saved with the film.
 
 [Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.28
 { .card-meta }
@@ -171,12 +171,12 @@ LookLab finds the camera settings closest to a .cube LUT or a Lightroom preset, 
 
 <div class="feature-card" markdown="1">
 
-**Focus stacking with any lens** <span class="pill pill-planned">Planned</span>
+**Focus stacking with more lenses** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-The camera's focus stacking and bracketing with any autofocus lens, not only OM's listed ones.
+Extends in-camera focus stacking to more lenses, including the M.Zuiko 17mm F1.8 II.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md)
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.40
 { .card-meta }
 
 </div>
@@ -195,10 +195,10 @@ The aperture ring on Panasonic lenses that have one sets the aperture.
 
 <div class="feature-card" markdown="1">
 
-**Crop modes** <span class="pill pill-testing">Testing</span>
+**Crop modes** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-XPan, 21:9 and 5:4 Image Aspect choices; JPEGs are saved at that shape and RAW keeps the whole sensor with the crop marked. Photos only.
+XPan, 21:9 and 5:4 for JPEGs. RAW retains the full sensor with crop metadata.
 
 [Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.40-alpha
 { .card-meta }
@@ -207,12 +207,24 @@ XPan, 21:9 and 5:4 Image Aspect choices; JPEGs are saved at that shape and RAW k
 
 <div class="feature-card" markdown="1">
 
-**White border and own film grain** <span class="pill pill-testing">Testing</span>
+**Photo borders and film grain** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-A white Border per film (0 to 5, JPEG only), and the project's own colour grain with strength 1 to 5 and a Grain Size row.
+Black or white JPEG borders and adjustable film grain with Fine, Medium and Coarse sizes. v0.40.2 reduces colour banding and red–green speckle.
 
 [Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.40-alpha
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Shooting screen information** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Choose which of 17 items appear on the rear screen in Information 1, 2 and 3.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · since v0.40
 { .card-meta }
 
 </div>
@@ -229,6 +241,18 @@ Korean language support on several bodies.
 
 </div>
 
+<div class="feature-card" markdown="1">
+
+**Hybrid Shutter** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+The release notes describe automatic switching to the electronic shutter when overexposure occurs in P or A mode.
+
+[db firmware / om-c-firmware](../projects/db-firmware.md) · since dbv0.4.2
+{ .card-meta }
+
+</div>
+
 </div>
 
 ## Projects for this camera
@@ -241,7 +265,7 @@ Korean language support on several bodies.
 
 Film looks and a full colour editor, built into the OM SYSTEM OM-3.
 
-Latest: v0.30.3, 16 Nov 2026
+Latest: v0.40.2, 20 Nov 2026
 { .card-meta }
 
 [Project home](https://github.com/androidfanman/caduceus-om3) · [Ask or report issues](https://github.com/androidfanman/caduceus-om3/issues)
@@ -255,7 +279,7 @@ Latest: v0.30.3, 16 Nov 2026
 
 Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
 
-Latest: dbv0.4.1, 16 Nov 2026
+Latest: dbv0.4.2, 20 Nov 2026
 { .card-meta }
 
 [Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)

@@ -31,7 +31,7 @@ Latest: alpha-20261017, 18 Oct 2026
 
 Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
 
-Latest: dbv0.4.1, 16 Nov 2026
+Latest: dbv0.4.2, 20 Nov 2026
 { .card-meta }
 
 [Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)

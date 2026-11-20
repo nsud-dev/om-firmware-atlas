@@ -162,3 +162,20 @@ records:
   last_checked: '2026-11-18'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.om5.v020-dev
+  title: OM-5 Mark II v0.2.0 development handover
+  summary: Emulator regressions and pending camera checks for grain, Black/White and split tone.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/xulfr/caduceus-om5/blob/be8f6ce3ecc3c7e6aa4d97cca36d1457a6418a0c/HANDOVER.md
+  source_kind: github-file
+  upstream_repo: xulfr/caduceus-om5
+  revision: be8f6ce3ecc3c7e6aa4d97cca36d1457a6418a0c
+  locator: HANDOVER.md
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: null
+  publication: public
+  reuse_note: Attributed synthesis of upstream documentation.

@@ -8,6 +8,7 @@ How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
 
 [Project home](https://github.com/nsud-dev/olympus-firmware-notes){ .btn .btn-primary }
 [Ask or report issues](https://github.com/nsud-dev/olympus-firmware-notes/issues){ .btn .btn-ghost }
+[Firmware guides](https://github.com/nsud-dev/olympus-firmware-notes/blob/a67ab954757f3aa7439bab887f0e8690bf33ee7a/docs/guides/README.md){ .btn .btn-ghost }
 [Overview of everything studied](https://github.com/nsud-dev/olympus-firmware-notes/blob/main/docs/overview.md){ .btn .btn-ghost }
 [Gotchas](https://github.com/nsud-dev/olympus-firmware-notes/blob/main/docs/reference/gotchas.md){ .btn .btn-ghost }
 
@@ -90,6 +91,18 @@ Tagged, dated pages on the container, boot, recovery, CPU, memory map, image eng
 
 </div>
 
+<div class="feature-card" markdown="1">
+
+**Firmware process guides** <span class="pill pill-research">Research</span>
+{ .feature-head }
+
+Walk through E-M5 III 1.7 boot, button input, shooting, live view, updates and frame pools, with links into the reference notes.
+
+[OM-D E-M5 Mark III](../cameras/em5-iii.md)
+{ .card-meta }
+
+</div>
+
 </div>
 
 ## Cameras
@@ -111,5 +124,6 @@ Notes and tools only; no firmware or builds are published. Every claim is tagged
 - [Live ND on the E-M5 III](../sources/em5n.live-nd.md)
 - [Focus stacking lens check patch](../sources/em5n.focus-patch.md)
 - [USB webcam](../sources/em5n.webcam.md)
+- [E-M5 Mark III firmware guides](../sources/em5n.guides.md)
 
-[Canonical record](../../records/projects/em5-iii-notes.yaml) · Substantively reviewed: 2026-11-18.
+[Canonical record](../../records/projects/em5-iii-notes.yaml) · Substantively reviewed: 2026-11-20.

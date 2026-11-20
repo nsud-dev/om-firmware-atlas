@@ -16,7 +16,7 @@ Film looks and a full colour editor, built into the OM SYSTEM OM-3.
 
 </div>
 
-**Type:** mod · **Latest release:** [v0.30.3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.30.3), 16 Nov 2026 · **Maintained by** [androidfanman](https://github.com/androidfanman)
+**Type:** mod · **Latest release:** [v0.40.2](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.2), 20 Nov 2026 · **Maintained by** [androidfanman](https://github.com/androidfanman)
 { .facts }
 
 ![A Paris street scene at night with warm, soft colour](../../docs/assets/projects/caduceus-om3/film-portra-400.jpg)
@@ -37,7 +37,7 @@ It is open source, for the OM-3 on firmware 1.1 only, and grew out of Caduceus f
 
 - Make Color Profile mode the best JPEG maker of any camera. With v0.28 the owner considers the colour profiles complete for now.
 - Video comes next in the owner's order of work.
-- Lens and focus requests are planned: focus stacking with any autofocus lens, and aperture rings on Panasonic lenses.
+- Panasonic aperture-ring support remains planned.
 
 > **Before you install:** Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
 
@@ -148,7 +148,7 @@ Films, your changes and the Extras settings live in the camera's memory, so any 
 **White balance per film** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-Each film and COLOR remembers its white balance mode and Kelvin.
+Each film and COLOR remembers its white balance mode and Kelvin. From v0.40.1, film compensation shows in the Super Control Panel and edits there are saved with the film.
 
 [OM-3](../cameras/om3.md) · since v0.28
 { .card-meta }
@@ -205,12 +205,12 @@ LookLab finds the camera settings closest to a .cube LUT or a Lightroom preset, 
 
 <div class="feature-card" markdown="1">
 
-**Focus stacking with any lens** <span class="pill pill-planned">Planned</span>
+**Focus stacking with more lenses** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-The camera's focus stacking and bracketing with any autofocus lens, not only OM's listed ones.
+Extends in-camera focus stacking to more lenses, including the M.Zuiko 17mm F1.8 II.
 
-[OM-3](../cameras/om3.md)
+[OM-3](../cameras/om3.md) · since v0.40
 { .card-meta }
 
 </div>
@@ -229,10 +229,10 @@ The aperture ring on Panasonic lenses that have one sets the aperture.
 
 <div class="feature-card" markdown="1">
 
-**Crop modes** <span class="pill pill-testing">Testing</span>
+**Crop modes** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-XPan, 21:9 and 5:4 Image Aspect choices; JPEGs are saved at that shape and RAW keeps the whole sensor with the crop marked. Photos only.
+XPan, 21:9 and 5:4 for JPEGs. RAW retains the full sensor with crop metadata.
 
 [OM-3](../cameras/om3.md) · since v0.40-alpha
 { .card-meta }
@@ -241,12 +241,24 @@ XPan, 21:9 and 5:4 Image Aspect choices; JPEGs are saved at that shape and RAW k
 
 <div class="feature-card" markdown="1">
 
-**White border and own film grain** <span class="pill pill-testing">Testing</span>
+**Photo borders and film grain** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-A white Border per film (0 to 5, JPEG only), and the project's own colour grain with strength 1 to 5 and a Grain Size row.
+Black or white JPEG borders and adjustable film grain with Fine, Medium and Coarse sizes. v0.40.2 reduces colour banding and red–green speckle.
 
 [OM-3](../cameras/om3.md) · since v0.40-alpha
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Shooting screen information** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Choose which of 17 items appear on the rear screen in Information 1, 2 and 3.
+
+[OM-3](../cameras/om3.md) · since v0.40
 { .card-meta }
 
 </div>
@@ -290,6 +302,82 @@ Halation at strength 5 on a sample photo. *Caduceus for OM-3 tour; photo by Bler
 
 <div class="release-item" markdown="1">
 
+**[Caduceus for OM-3 v0.40.2](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.2)** · 20 Nov 2026
+{ .release-head }
+
+- Produces colour grain on every row to remove faint banding and reduces red–green speckling.
+- The maintainer reports a successful long burst on the test build later published as v0.40.2. An earlier test build rebooted during a burst.
+- LookLab previews the updated colour grain.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus for OM-3 v0.40.1](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.1)** · 19 Nov 2026
+{ .release-head }
+
+- Medium and Coarse grain use rounder clumps with fewer repeated patterns.
+- A film’s white-balance compensation appears in the Super Control Panel. Edits there are saved with the film.
+- A new look set applies its white balance immediately to the current film.
+
+Stock picture modes retain the last film’s compensation for that white-balance mode, according to the release notes.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus for OM-3 v0.40](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40)** · 19 Nov 2026
+{ .release-head }
+
+- Releases XPan, 21:9 and 5:4 crops, black and white JPEG borders, and adjustable film grain.
+- Shows split tone, RGB curves and black-and-white changes live. Adds 17 rear-screen information toggles and extends focus stacking to more lenses.
+- Includes the beta3 fixes for quick shots and new film sets in custom modes. LookLab adds previews of the new settings.
+
+Atlas issue #10 reports a crash at shutter release with Film Grain enabled on v0.40. The report gives no package hash and does not cover later releases.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus for OM-3 v0.40-beta3 (test version)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40-beta3)** <span class="pill pill-alpha">Pre-release</span> · 19 Nov 2026
+{ .release-head }
+
+- Fixes missed quick single shots with debug logging, speeds up Halation and fixes new film sets in custom modes.
+
+Test release. v0.30.3 was the recommended release at publication.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus for OM-3 v0.40-beta2 (test version)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40-beta2)** <span class="pill pill-alpha">Pre-release</span> · 19 Nov 2026
+{ .release-head }
+
+- Adds separate rear-screen toggles for subject detection, the exposure level meter and image aspect.
+
+Test release. v0.30.3 was the recommended release at publication.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[Caduceus for OM-3 v0.40-beta (test version)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40-beta)** <span class="pill pill-alpha">Pre-release</span> · 19 Nov 2026
+{ .release-head }
+
+- Restores crop at startup, draws crop-edge framelines and adds black JPEG borders.
+- Adds rear-screen information toggles and shows selected colour edits as they are adjusted.
+
+Test release. v0.30.3 was the recommended release at publication.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
 **[Caduceus for OM-3 v0.40-alpha (test version)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40-alpha)** <span class="pill pill-alpha">Pre-release</span> · 18 Nov 2026
 { .release-head }
 
@@ -297,7 +385,7 @@ Halation at strength 5 on a sample photo. *Caduceus for OM-3 tour; photo by Bler
 - A white border per film, and the project's own film grain with strength and size.
 - Picture Mode stays open 30 s; start-up waits for the camera's ready signal before running patch code.
 
-A test version; the project says v0.30.3 stays the current version. LookLab does not know the new settings yet.
+Test release. v0.30.3 was the recommended release at publication. At publication LookLab did not preview the new settings.
 { .release-warning }
 
 </div>
@@ -311,7 +399,7 @@ A test version; the project says v0.30.3 stays the current version. LookLab does
 - Colour wheel labels read Sat, Hue, Lum or Tint.
 - Looks such as split toning, curves and Glow are now photo-only, not applied to video.
 
-A test version; the project says v0.30.3 stays the current version.
+Test release. v0.30.3 was the recommended release at publication.
 { .release-warning }
 
 </div>
@@ -421,7 +509,7 @@ After updating, assign your custom modes once.
 
 ## Research notes
 
-The reviewed README names v0.30.3. Camera-test descriptions remain attributed; this catalogue has not reproduced them.
+The newest reviewed release is v0.40.2 for the OM-3 on stock firmware 1.1. The maintainer reports camera checks on the build later published as v0.40.2.
 
 ## Sources and record
 
@@ -431,5 +519,12 @@ The reviewed README names v0.30.3. Camera-test descriptions remain attributed; t
 - [Caduceus OM-3 roadmap](../sources/om3.roadmap.md)
 - [Caduceus OM-3 releases](../sources/om3.releases.md)
 - [OM-3 v0.40-alpha release notes](../sources/om3.v040.md)
+- [Caduceus for OM-3 v0.40.2](../sources/om3.v0402.md)
+- [Caduceus for OM-3 v0.40.1](../sources/om3.v0401.md)
+- [Caduceus for OM-3 v0.40](../sources/om3.v040-release.md)
+- [Caduceus for OM-3 v0.40-beta3 (test version)](../sources/om3.v040-beta3.md)
+- [Caduceus for OM-3 v0.40-beta2 (test version)](../sources/om3.v040-beta2.md)
+- [Caduceus for OM-3 v0.40-beta (test version)](../sources/om3.v040-beta.md)
+- [OM-3 v0.40 grain crash report](../sources/om3.atlas-grain-report.md)
 
-[Canonical record](../../records/projects/caduceus-om3.yaml) · Substantively reviewed: 2026-11-17.
+[Canonical record](../../records/projects/caduceus-om3.yaml) · Substantively reviewed: 2026-11-20.

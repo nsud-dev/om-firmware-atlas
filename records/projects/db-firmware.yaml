@@ -7,11 +7,12 @@ records:
   source_refs:
   - source.db.release041
   - source.db.releases
+  - source.db.release042
   topics:
   - capture
   - colour
   - patching
-  last_reviewed: '2026-11-17'
+  last_reviewed: '2026-11-20'
   url: https://github.com/azqeurio/om-c-firmware
   kind: mod
   camera_ids:
@@ -21,8 +22,8 @@ records:
   - camera.ep7
   - camera.pen-f
   contribution_home: https://github.com/azqeurio/om-c-firmware/issues
-  status_summary: Reviewed v0.4.1 has substantial release claims despite a minimal main README. Individual
-    test reports are not yet catalogued.
+  status_summary: The latest reviewed release is v0.4.2 beta. Its feature and fix claims are attributed
+    to the maintainer.
   related_projects: []
   tagline: Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst
     rates.
@@ -35,6 +36,8 @@ records:
     feature with transfer to the camera through DBLink.
   - The author owns only some of the supported bodies and says the patch can't be guaranteed to work on
     every model. v0.4.1 lists known issues for the OM-5 build.
+  - The v0.4.2 beta notes list Hybrid Shutter for the OM-3 and OM-5 Mark II, and changes to the separate
+    OM-5 build based on Mark II firmware.
   maintainers:
   - label: azqeurio
     url: https://github.com/azqeurio
@@ -83,7 +86,33 @@ records:
     status: beta
     since: null
     source_ref: source.db.releases
+  - name: Hybrid Shutter
+    summary: The release notes describe automatic switching to the electronic shutter when overexposure
+      occurs in P or A mode.
+    camera_ids:
+    - camera.om3
+    - camera.om5-ii
+    status: beta
+    since: dbv0.4.2
+    source_ref: source.db.release042
   releases:
+  - tag: dbv0.4.2
+    title: db firmware v0.4.2 beta
+    date: '2026-11-20'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.2
+    prerelease: false
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.om5-ii
+    highlights:
+    - Adds Hybrid Shutter on supported bodies, including the OM-3 and OM-5 Mark II.
+    - The maintainer reports fixes for OM-5 Fn buttons, Wi-Fi, USB, vertical grip support and board-revision
+      compatibility.
+    - Adds 10 fps mechanical burst and S-OVF to the OM-5 build based on Mark II firmware.
+    warning: The maintainer calls this a beta. The release notes give no test procedure or results for
+      these changes.
+    source_ref: source.db.release042
   - tag: dbv0.4.1
     title: db firmware v0.4.1 beta
     date: '2026-11-16'

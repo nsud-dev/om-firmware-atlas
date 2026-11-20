@@ -9,20 +9,21 @@ records:
   - source.om5.alpha12
   - source.om5.roadmap
   - source.om5.releases
+  - source.om5.v020-dev
   topics:
   - platform
   - patching
   - colour
   - interfaces
-  last_reviewed: '2026-11-17'
+  last_reviewed: '2026-11-20'
   url: https://github.com/xulfr/caduceus-om5
   kind: mod
   camera_ids:
   - camera.om5
   - camera.om5-ii
   contribution_home: https://github.com/xulfr/caduceus-om5/issues
-  status_summary: The reviewed revision has Mark II alpha12 and a separate original-body experiment. Results
-    are package-specific.
+  status_summary: Alpha12 remains the published Mark II build. The project reports emulator checks for
+    the unreleased v0.2.0-dev build.
   related_projects:
   - project.caduceus-om3
   - project.caduceus-ep7
@@ -43,7 +44,7 @@ records:
   goals:
   - A documented camera check of every feature on the OM-5 Mark II, including per-profile white balance,
     persistence and recovery.
-  - Colour grain for Color Profiles, then Glow and Halation.
+  - Check colour grain and tone controls on a Mark II camera, then continue Glow and Halation work.
   - A second stage for the original OM-5, which has no working build yet.
   maintainers:
   - label: xulfr
@@ -104,13 +105,28 @@ records:
     since: null
     source_ref: source.om5.readme
     capability_id: capability.om5-ii-alpha12-nd
-  - name: Colour grain for Color Profiles
-    summary: Off to High grain for colour looks, then Glow and Halation.
-    camera_ids:
+  - name: Film Grain for Color Profiles
+    summary: Off, Low, Std and High on Color Profiles 1–3. The project checked the controls in the emulator.
+      Grain in a camera JPEG still needs testing.
+    camera_ids: &id001
     - camera.om5-ii
-    status: planned
-    since: null
-    source_ref: source.om5.roadmap
+    status: testing
+    since: v0.2.0-dev
+    source_ref: source.om5.v020-dev
+  - name: Black and White tone controls
+    summary: Per-profile Black and White adjustments on the tone-curve page. Checked in the emulator.
+      Camera JPEG output is unverified.
+    camera_ids: *id001
+    status: testing
+    since: v0.2.0-dev
+    source_ref: source.om5.v020-dev
+  - name: Split toning on the colour wheel
+    summary: Shadow, midtone and highlight tint controls for Color Profiles 1–3. Checked in the emulator.
+      Camera output is unverified.
+    camera_ids: *id001
+    status: testing
+    since: v0.2.0-dev
+    source_ref: source.om5.v020-dev
   releases:
   - tag: v0.1.0-alpha12
     title: Caduceus OM-5 Mark II v0.1.0-alpha12

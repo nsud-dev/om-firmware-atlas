@@ -87,12 +87,36 @@ Two stronger Live ND settings after ND16.
 
 <div class="feature-card" markdown="1">
 
-**Colour grain for Color Profiles** <span class="pill pill-planned">Planned</span>
+**Film Grain for Color Profiles** <span class="pill pill-testing">Testing</span>
 { .feature-head }
 
-Off to High grain for colour looks, then Glow and Halation.
+Off, Low, Std and High on Color Profiles 1–3. The project checked the controls in the emulator. Grain in a camera JPEG still needs testing.
 
-[Caduceus for OM-5](../projects/caduceus-om5.md)
+[Caduceus for OM-5](../projects/caduceus-om5.md) · since v0.2.0-dev
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Black and White tone controls** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+Per-profile Black and White adjustments on the tone-curve page. Checked in the emulator. Camera JPEG output is unverified.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md) · since v0.2.0-dev
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Split toning on the colour wheel** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+Shadow, midtone and highlight tint controls for Color Profiles 1–3. Checked in the emulator. Camera output is unverified.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md) · since v0.2.0-dev
 { .card-meta }
 
 </div>
@@ -105,6 +129,18 @@ Off to High grain for colour looks, then Glow and Halation.
 Korean language support on several bodies.
 
 [db firmware / om-c-firmware](../projects/db-firmware.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Hybrid Shutter** <span class="pill pill-beta">Beta</span>
+{ .feature-head }
+
+The release notes describe automatic switching to the electronic shutter when overexposure occurs in P or A mode.
+
+[db firmware / om-c-firmware](../projects/db-firmware.md) · since dbv0.4.2
 { .card-meta }
 
 </div>
@@ -135,7 +171,7 @@ Latest: v0.1.0-alpha12, 16 Nov 2026
 
 Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
 
-Latest: dbv0.4.1, 16 Nov 2026
+Latest: dbv0.4.2, 20 Nov 2026
 { .card-meta }
 
 [Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)

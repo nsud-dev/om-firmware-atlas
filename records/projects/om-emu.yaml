@@ -8,14 +8,15 @@ records:
   - source.emu.readme
   - source.emu.architecture
   - source.emu.readme-current
+  - source.emu.modelcheck-nov19
   topics:
   - emulation
   - platform
   - tooling
-  last_reviewed: '2026-11-17'
+  last_reviewed: '2026-11-20'
   url: https://github.com/flatpanda/om-emu
   kind: emulator
-  camera_ids:
+  camera_ids: &id001
   - camera.om5
   - camera.om5-ii
   - camera.om3
@@ -33,10 +34,9 @@ records:
     camera''s processor and the devices its screens depend on, then runs the firmware''s own menus and
     camera application. You can try it in your browser: you supply the official firmware file, and nothing
     is uploaded.'
-  - Its reference body is the OM-1. Ports bring up the start screen, half-press, shutter and playback
-    on many other bodies, including the OM-3, OM-5, OM-5 Mark II, E-M10 Mark IV, E-P7 and PEN-F. Firmware
-    patches can be overlaid in memory, and Caduceus releases are checked in the lab before they go on
-    a camera.
+  - Upstream reports passing model checks and native card file-system paths across 18 ports as of 19 November
+    2026. Menus and playback work on the rear screen of the OM-3. The OM-3’s EVF uses a plane level
+    the emulator does not draw yet.
   - 'It is not a whole camera: the image sensor, autofocus and recording hardware are replaced by named
     stand-ins, so a result in the lab is not a result on a real camera.'
   maintainers:
@@ -58,7 +58,7 @@ records:
     - camera.em10-iv
     status: released
     since: null
-    source_ref: source.emu.readme-current
+    source_ref: source.emu.modelcheck-nov19
   - name: Patch overlays
     summary: Run firmware with byte patches applied in memory and checked against the stock blocks.
     camera_ids: []
@@ -78,3 +78,10 @@ records:
     status: released
     since: null
     source_ref: source.emu.readme-current
+  - name: Native card file system
+    summary: The upstream model check covers mounting and formatting the card, remaining-shot counts,
+      and the firmware’s own file-writing task.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.emu.modelcheck-nov19

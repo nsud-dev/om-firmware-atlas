@@ -35,7 +35,7 @@ This is the most experimental project here. Alpha12 runs on the owner's camera, 
 ### What it's working towards
 
 - A documented camera check of every feature on the OM-5 Mark II, including per-profile white balance, persistence and recovery.
-- Colour grain for Color Profiles, then Glow and Halation.
+- Check colour grain and tone controls on a Mark II camera, then continue Glow and Halation work.
 - A second stage for the original OM-5, which has no working build yet.
 
 > **Before you install:** Installing modified firmware is at your own risk. Follow the project's own guide for your exact camera and firmware, and read its safety notes first.
@@ -120,12 +120,36 @@ Two stronger Live ND settings after ND16.
 
 <div class="feature-card" markdown="1">
 
-**Colour grain for Color Profiles** <span class="pill pill-planned">Planned</span>
+**Film Grain for Color Profiles** <span class="pill pill-testing">Testing</span>
 { .feature-head }
 
-Off to High grain for colour looks, then Glow and Halation.
+Off, Low, Std and High on Color Profiles 1–3. The project checked the controls in the emulator. Grain in a camera JPEG still needs testing.
 
-[OM-5 Mark II](../cameras/om5-ii.md)
+[OM-5 Mark II](../cameras/om5-ii.md) · since v0.2.0-dev
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Black and White tone controls** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+Per-profile Black and White adjustments on the tone-curve page. Checked in the emulator. Camera JPEG output is unverified.
+
+[OM-5 Mark II](../cameras/om5-ii.md) · since v0.2.0-dev
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Split toning on the colour wheel** <span class="pill pill-testing">Testing</span>
+{ .feature-head }
+
+Shadow, midtone and highlight tint controls for Color Profiles 1–3. Checked in the emulator. Camera output is unverified.
+
+[OM-5 Mark II](../cameras/om5-ii.md) · since v0.2.0-dev
 { .card-meta }
 
 </div>
@@ -177,7 +201,7 @@ Experimental. The installer keeps its experimental-build acknowledgement; instal
 
 ## Research notes
 
-The reviewed revision has Mark II alpha12 and a separate original-body experiment. Results are package-specific.
+Alpha12 remains the published Mark II build. The project reports emulator checks for the unreleased v0.2.0-dev build.
 
 ## Sources and record
 
@@ -185,5 +209,6 @@ The reviewed revision has Mark II alpha12 and a separate original-body experimen
 - [Mark II alpha12 report](../sources/om5.alpha12.md)
 - [Caduceus OM-5 roadmap](../sources/om5.roadmap.md)
 - [Caduceus OM-5 releases](../sources/om5.releases.md)
+- [OM-5 Mark II v0.2.0 development handover](../sources/om5.v020-dev.md)
 
-[Canonical record](../../records/projects/caduceus-om5.yaml) · Substantively reviewed: 2026-11-17.
+[Canonical record](../../records/projects/caduceus-om5.yaml) · Substantively reviewed: 2026-11-20.

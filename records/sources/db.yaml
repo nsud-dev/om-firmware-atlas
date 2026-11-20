@@ -21,17 +21,36 @@ records:
 - type: source
   id: source.db.releases
   title: db firmware releases
-  summary: Beta release notes from v0.2.20 to v0.4.1, in Korean and English.
+  summary: Beta release notes through v0.4.2, in Korean and English.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-17'
+  last_reviewed: '2026-11-20'
   url: https://github.com/azqeurio/om-c-firmware/releases
   source_kind: github-release
   upstream_repo: azqeurio/om-c-firmware
-  revision: dbv0.4.1
+  revision: dbv0.4.2
   locator: Releases page, page 1; Korean notes summarised in translation
-  retrieved_on: '2026-11-17'
-  last_checked: '2026-11-17'
-  published_on: '2026-11-16'
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-20'
   publication: public
   reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.
+  content_sha256: 0cb9357aa3b51c278caffb1a13ed11c0f14f08f167614846c1f2ea17ade17816
+- type: source
+  id: source.db.release042
+  title: db firmware v0.4.2 beta
+  summary: Hybrid Shutter and OM-5 port changes reported by the maintainer.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.2
+  source_kind: github-release
+  upstream_repo: azqeurio/om-c-firmware
+  revision: dbv0.4.2
+  locator: GitHub release 452333982
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-20'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 0cb9357aa3b51c278caffb1a13ed11c0f14f08f167614846c1f2ea17ade17816

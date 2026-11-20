@@ -19,7 +19,7 @@ Run OM SYSTEM and Olympus camera firmware in your browser.
 
 OM-Emu is a lab that runs Olympus and OM SYSTEM camera firmware outside the camera. It emulates the camera's processor and the devices its screens depend on, then runs the firmware's own menus and camera application. You can try it in your browser: you supply the official firmware file, and nothing is uploaded.
 
-Its reference body is the OM-1. Ports bring up the start screen, half-press, shutter and playback on many other bodies, including the OM-3, OM-5, OM-5 Mark II, E-M10 Mark IV, E-P7 and PEN-F. Firmware patches can be overlaid in memory, and Caduceus releases are checked in the lab before they go on a camera.
+Upstream reports passing model checks and native card file-system paths across 18 ports as of 19 November 2026. Menus and playback work on the rear screen of the OM-3. The OM-3’s EVF uses a plane level the emulator does not draw yet.
 
 It is not a whole camera: the image sensor, autofocus and recording hardware are replaced by named stand-ins, so a result in the lab is not a result on a real camera.
 
@@ -71,6 +71,18 @@ Headless sessions, traces, breakpoints and calls into firmware functions for res
 
 </div>
 
+<div class="feature-card" markdown="1">
+
+**Native card file system** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+The upstream model check covers mounting and formatting the card, remaining-shot counts, and the firmware’s own file-writing task.
+
+[OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [OM-3](../cameras/om3.md), [PEN E-P7](../cameras/ep7.md), [PEN-F](../cameras/pen-f.md), [OM-D E-M10 Mark IV](../cameras/em10-iv.md)
+{ .card-meta }
+
+</div>
+
 </div>
 
 ## Cameras
@@ -90,5 +102,6 @@ These cameras are only the Atlas subset. Named stand-ins and harness-driven star
 - [OM-Emu scope](../sources/emu.readme.md)
 - [OM-Emu architecture](../sources/emu.architecture.md)
 - [OM-Emu overview (current)](../sources/emu.readme-current.md)
+- [OM-Emu model check on 19 November](../sources/emu.modelcheck-nov19.md)
 
-[Canonical record](../../records/projects/om-emu.yaml) · Substantively reviewed: 2026-11-17.
+[Canonical record](../../records/projects/om-emu.yaml) · Substantively reviewed: 2026-11-20.
