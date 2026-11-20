@@ -8,8 +8,8 @@ Tagged technical notes on E-M5 III 1.7 firmware and hardware, with OM-5 donor fe
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [em5-iii-notes.yaml](../../../records/projects/em5-iii-notes.yaml) | Project scope, related work and contribution destination | 3,790 | ~948 |
-| [em5-iii-notes.yaml](../../../records/sources/em5-iii-notes.yaml) | Find the relevant source/observation ID; use bounded reads | 16,047 | ~4,012 |
+| [em5-iii-notes.yaml](../../../records/projects/em5-iii-notes.yaml) | Project scope, related work and contribution destination | 4,259 | ~1,065 |
+| [em5-iii-notes.yaml](../../../records/sources/em5-iii-notes.yaml) | Find the relevant source/observation ID; use bounded reads | 17,384 | ~4,346 |
 | [em5-iii-notes.yaml](../../../records/evidence/em5-iii-notes.yaml) | Find the relevant source/observation ID; use bounded reads | 7,008 | ~1,752 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

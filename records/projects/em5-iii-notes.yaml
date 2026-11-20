@@ -10,12 +10,13 @@ records:
   - source.em5n.live-nd
   - source.em5n.focus-patch
   - source.em5n.webcam
+  - source.em5n.guides
   topics:
   - platform
   - patching
   - tooling
   - capture
-  last_reviewed: '2026-11-18'
+  last_reviewed: '2026-11-20'
   url: https://github.com/nsud-dev/olympus-firmware-notes
   kind: research
   camera_ids:
@@ -40,6 +41,8 @@ records:
   - label: nsud-dev
     url: https://github.com/nsud-dev
   links:
+  - label: Firmware guides
+    url: https://github.com/nsud-dev/olympus-firmware-notes/blob/a67ab954757f3aa7439bab887f0e8690bf33ee7a/docs/guides/README.md
   - label: Overview of everything studied
     url: https://github.com/nsud-dev/olympus-firmware-notes/blob/main/docs/overview.md
   - label: Gotchas
@@ -89,3 +92,11 @@ records:
     status: research
     since: null
     source_ref: source.em5n.overview
+  - name: Firmware process guides
+    summary: Walk through E-M5 III 1.7 boot, button input, shooting, live view, updates and frame pools,
+      with links into the reference notes.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.guides

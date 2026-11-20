@@ -10,6 +10,23 @@ Independent projects by members of the community, each with its own home, mainta
 
 <div class="project-card" markdown="1">
 
+![A Paris street scene at night with warm, soft colour](../../docs/assets/projects/caduceus-om3/film-portra-400.jpg)
+{ .card-image }
+
+[Caduceus for OM-3](caduceus-om3.md){ .card-title }
+
+Film looks and a full colour editor, built into the OM SYSTEM OM-3.
+
+Your films in Picture Mode · 20 film simulations · Colour editor on the camera
+{ .card-features }
+
+Latest: v0.40.2, 20 Nov 2026
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
 ![The OM-5 Mark II Picture Mode screen showing Color Profile 2 with the look Portra 160](../../docs/assets/projects/caduceus-om5/picture-mode-look.png)
 { .card-image }
 
@@ -21,23 +38,6 @@ Color Profiles 1–3 and Monochrome Profiles 1–3 · Custom looks · Colour edi
 { .card-features }
 
 Latest: v0.1.0-alpha12, 16 Nov 2026
-{ .card-meta }
-
-</div>
-
-<div class="project-card" markdown="1">
-
-![A Paris street scene at night with warm, soft colour](../../docs/assets/projects/caduceus-om3/film-portra-400.jpg)
-{ .card-image }
-
-[Caduceus for OM-3](caduceus-om3.md){ .card-title }
-
-Film looks and a full colour editor, built into the OM SYSTEM OM-3.
-
-Your films in Picture Mode · 20 film simulations · Colour editor on the camera
-{ .card-features }
-
-Latest: v0.30.3, 16 Nov 2026
 { .card-meta }
 
 </div>
@@ -68,7 +68,7 @@ Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to
 Panasonic aperture rings · Korean menus · Quasi-LUT and DBLink
 { .card-features }
 
-Latest: dbv0.4.1, 16 Nov 2026
+Latest: dbv0.4.2, 20 Nov 2026
 { .card-meta }
 
 </div>
@@ -152,7 +152,7 @@ Reference
 
 Read MN103 camera firmware in Ghidra, with the decompiler.
 
-MN103 disassembly and decompiler
+MN103 disassembly and decompiler · Pointer-register calling convention
 { .card-features }
 
 Tool

@@ -8,7 +8,8 @@ Every source the Atlas cites, with its revision and when it was last checked.
 |---|---|
 | [r/M43 community page](community.m43.md) | Public photography venue; Caduceus relevance supplied by the Atlas maintainer. |
 | [db firmware v0.4.1 release](db.release041.md) | Release-centred feature claims and named limitations, not an independent camera audit. |
-| [db firmware releases](db.releases.md) | Beta release notes from v0.2.20 to v0.4.1, in Korean and English. |
+| [db firmware v0.4.2 beta](db.release042.md) | Hybrid Shutter and OM-5 port changes reported by the maintainer. |
+| [db firmware releases](db.releases.md) | Beta release notes through v0.4.2, in Korean and English. |
 | [AF subject, face and eye detection](em5n.af-detect.md) | Subject detection across bodies and why it needs OM-1-class hardware. |
 | [E-M5 III boot and section loading](em5n.boot.md) | Load base, always-ready range, section order, ready bits and boot guards. |
 | [Body comparison](em5n.comparison.md) | Chip generation, memory, blocks and built-in features of seven bodies side by side. |
@@ -16,6 +17,7 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [Focus stacking lens check patch](em5n.focus-patch.md) | Function, patched bytes and camera result. |
 | [Focus stacking](em5n.focus-stacking.md) | Lens check patch background and the shot-count setting. |
 | [Gotchas](em5n.gotchas.md) | Mistakes that hung, reset or delayed work on the camera, and the rule since. |
+| [E-M5 Mark III firmware guides](em5n.guides.md) | Process guides for E-M5 Mark III 1.7, including boot, shooting, live view and memory. |
 | [Handheld High Res Shot](em5n.hhhr.md) | How the OM-5 does HHHR and what the E-M5 III already has. |
 | [E-M5 III image engine](em5n.image-engine.md) | Where job programs live, jobs per body, the parameter window, job records and safe submission. |
 | [Live GND](em5n.live-gnd.md) | Which bodies have a real Live GND and which only carry its UI. |
@@ -36,6 +38,7 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [OM-Emu study of Caduceus OM-3](emu.caduceus-om3.md) | OM-Emu's checks of Caduceus OM-3's E147 claims against its own image and lab. |
 | [Acquisition and containers](emu.container.md) | Vendor API acquisition and address notation. |
 | [OM-1 processor roles](emu.cores.md) | Scoped static analysis of several cores and external processors. |
+| [OM-Emu model check on 19 November](emu.modelcheck-nov19.md) | Reported coverage for 18 ports, native card support and EVF display limits. |
 | [OM-Emu scope](emu.readme.md) | Model ports, patch overlays and named stand-ins. |
 | [OM-Emu overview (current)](emu.readme-current.md) | What the browser player runs today, Caduceus checks and the body ports. |
 | [Caduceus body survey](ep7.bodies.md) | Related projects and method-specific signature comparisons. |
@@ -56,17 +59,25 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [Research reproduction](fishcu.reproduce.md) | Exact PEN-F input identity and bounded native probes. |
 | [Validation reference](fishcu.validation.md) | Scoped checks and alignment blind spots. |
 | [OM-3 downstream experiment](fork.readme.md) | Experimental changes intended to contribute upstream. |
+| [Ghidra MN103 pointer-register compiler spec](gmn103.ptrregs.md) | Optional ptrregs spec, expanded validation and supported Ghidra versions. |
 | [Ghidra MN103 module README](gmn103.readme.md) | Supported CPUs, decompiler features, install and tested Ghidra versions. |
 | [Historical manual updates](manual.readme.md) | SD update research and explicitly obsolete static download links. |
+| [OM-3 v0.40 grain crash report](om3.atlas-grain-report.md) | A user reports a crash at shutter release with Film Grain enabled and loss of the last photo. |
 | [Caduceus OM-3 developer notes](om3.devnotes.md) | Addresses, hooks and test history for the OM-3 1.1 port, with camera-proven sites marked. |
 | [OM-3 card formats](om3.formats.md) | OM3P layout and release-dependent field semantics. |
 | [OM-3 LookLab](om3.looklab.md) | OM-3-only editor, sharing schema and export targets. |
 | [OM-3 research notebook](om3.notes.md) | Caduceus OM-3 lab notebook: camera, emulator and static findings per issue. |
 | [Caduceus OM-3 overview](om3.readme.md) | Features and maintainer-reported camera results at the reviewed revision. |
-| [Caduceus OM-3 releases](om3.releases.md) | Release notes from v0.29.1 to the v0.30.4-alpha test version. |
+| [Caduceus OM-3 releases](om3.releases.md) | Published release notes and test releases through v0.40.2. |
 | [OM-3 research index](om3.research.md) | Scoped entry points into the notebook, tools and tests. |
 | [Caduceus OM-3 roadmap](om3.roadmap.md) | Planned, testing, parked and fixed work as the owner describes it. |
 | [OM-3 v0.40-alpha release notes](om3.v040.md) | Release notes for the v0.40-alpha test version, read at its tag. |
+| [Caduceus for OM-3 v0.40-beta (test version)](om3.v040-beta.md) | Restores crop at startup, draws crop-edge framelines and adds black JPEG borders. |
+| [Caduceus for OM-3 v0.40-beta2 (test version)](om3.v040-beta2.md) | Adds separate rear-screen toggles for subject detection, the exposure level meter and image aspect. |
+| [Caduceus for OM-3 v0.40-beta3 (test version)](om3.v040-beta3.md) | Fixes missed quick single shots with debug logging, speeds up Halation and fixes new film sets in custom modes. |
+| [Caduceus for OM-3 v0.40](om3.v040-release.md) | Releases XPan, 21:9 and 5:4 crops, black and white JPEG borders, and adjustable film grain. |
+| [Caduceus for OM-3 v0.40.1](om3.v0401.md) | Medium and Coarse grain use rounder clumps with fewer repeated patterns. |
+| [Caduceus for OM-3 v0.40.2](om3.v0402.md) | Produces colour grain on every row to remove faint banding and reduces red–green speckling. |
 | [Mark II alpha12 report](om5.alpha12.md) | Expected digest and an explicitly incomplete owner report. |
 | [OM-5 Mark II brick-risk review](om5.brick-risk.md) | E148 1.1 recovery route, hook map and incident record for the HSL/WB build. |
 | [OM-5 strict builder](om5.builder.md) | Declarative patch scope, bounds and recorded hashes. |
@@ -78,3 +89,4 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [Caduceus OM-5 roadmap](om5.roadmap.md) | Implemented, planned and open work for the OM-5 Mark II and original OM-5. |
 | [OM-5 Mark II stock section 7](om5.section7.md) | E148 1.1 compressed sections 6 and 7 and where the card updater lives. |
 | [OM-5 Mark II startup readiness correction](om5.startup-fix.md) | E148 section-ready words, the section 5 loaded extent and an overlay defect. |
+| [OM-5 Mark II v0.2.0 development handover](om5.v020-dev.md) | Emulator regressions and pending camera checks for grain, Black/White and split tone. |

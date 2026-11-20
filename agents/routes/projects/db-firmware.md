@@ -4,11 +4,11 @@
 
 Release-centred controls, localisation and other modifications.
 
-[Contribution home](https://github.com/azqeurio/om-c-firmware/issues). Reviewed v0.4.1 has substantial release claims despite a minimal main README. Individual test reports are not yet catalogued.
+[Contribution home](https://github.com/azqeurio/om-c-firmware/issues). The latest reviewed release is v0.4.2 beta. Its feature and fix claims are attributed to the maintainer.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [db-firmware.yaml](../../../records/projects/db-firmware.yaml) | Project scope, related work and contribution destination | 5,716 | ~1,429 |
-| [db.yaml](../../../records/sources/db.yaml) | Find the relevant source/observation ID; use bounded reads | 1,438 | ~360 |
+| [db-firmware.yaml](../../../records/projects/db-firmware.yaml) | Project scope, related work and contribution destination | 6,874 | ~1,719 |
+| [db.yaml](../../../records/sources/db.yaml) | Find the relevant source/observation ID; use bounded reads | 2,185 | ~547 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

@@ -84,20 +84,21 @@ records:
 - type: source
   id: source.om3.releases
   title: Caduceus OM-3 releases
-  summary: Release notes from v0.29.1 to the v0.30.4-alpha test version.
+  summary: Published release notes and test releases through v0.40.2.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-18'
+  last_reviewed: '2026-11-20'
   url: https://github.com/androidfanman/caduceus-om3/releases
   source_kind: github-release
   upstream_repo: androidfanman/caduceus-om3
-  revision: v0.40-alpha
+  revision: v0.40.2
   locator: Releases page, newest ten entries
-  retrieved_on: '2026-11-17'
-  last_checked: '2026-11-18'
-  published_on: '2026-11-17'
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-20'
   publication: public
   reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.
+  content_sha256: 618c8dd63f2e917b99883c264e8123e4a407bde7604385cc0fb9311ca7ed6f7e
 - type: source
   id: source.om3.devnotes
   title: Caduceus OM-3 developer notes
@@ -147,3 +148,130 @@ records:
   last_checked: '2026-11-18'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.om3.v0402
+  title: Caduceus for OM-3 v0.40.2
+  summary: Produces colour grain on every row to remove faint banding and reduces red–green speckling.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.2
+  source_kind: github-release
+  upstream_repo: androidfanman/caduceus-om3
+  revision: v0.40.2
+  locator: GitHub release 452173741
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-20'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 618c8dd63f2e917b99883c264e8123e4a407bde7604385cc0fb9311ca7ed6f7e
+- type: source
+  id: source.om3.v0401
+  title: Caduceus for OM-3 v0.40.1
+  summary: Medium and Coarse grain use rounder clumps with fewer repeated patterns.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.1
+  source_kind: github-release
+  upstream_repo: androidfanman/caduceus-om3
+  revision: v0.40.1
+  locator: GitHub release 452071874
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-19'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 391b99ca70267ff9f323f70b1c9810fb81ef467af0d0e78316c749c6b95a62f2
+- type: source
+  id: source.om3.v040-release
+  title: Caduceus for OM-3 v0.40
+  summary: Releases XPan, 21:9 and 5:4 crops, black and white JPEG borders, and adjustable film grain.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40
+  source_kind: github-release
+  upstream_repo: androidfanman/caduceus-om3
+  revision: v0.40
+  locator: GitHub release 451697042
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-19'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 2e45d25f6716b8efbe548b88852f50750043465ada057838ee540c2048a4b608
+- type: source
+  id: source.om3.v040-beta3
+  title: Caduceus for OM-3 v0.40-beta3 (test version)
+  summary: Fixes missed quick single shots with debug logging, speeds up Halation and fixes new film sets
+    in custom modes.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40-beta3
+  source_kind: github-release
+  upstream_repo: androidfanman/caduceus-om3
+  revision: v0.40-beta3
+  locator: GitHub release 451525944
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-19'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 0eb5eab21d5a1ae8a4100b99a3a62c6d8881b443a453f954a786221e38847b96
+- type: source
+  id: source.om3.v040-beta2
+  title: Caduceus for OM-3 v0.40-beta2 (test version)
+  summary: Adds separate rear-screen toggles for subject detection, the exposure level meter and image
+    aspect.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40-beta2
+  source_kind: github-release
+  upstream_repo: androidfanman/caduceus-om3
+  revision: v0.40-beta2
+  locator: GitHub release 450903040
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-19'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: dd5049edeea5ca196fa0064208f87857b4349c727b68442107e794957606f041
+- type: source
+  id: source.om3.v040-beta
+  title: Caduceus for OM-3 v0.40-beta (test version)
+  summary: Restores crop at startup, draws crop-edge framelines and adds black JPEG borders.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40-beta
+  source_kind: github-release
+  upstream_repo: androidfanman/caduceus-om3
+  revision: v0.40-beta
+  locator: GitHub release 450743221
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-19'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 96907b5c837914693fdc7afbdacb81e37d051d83ba87604dcc7804a0bb06af10
+- type: source
+  id: source.om3.atlas-grain-report
+  title: OM-3 v0.40 grain crash report
+  summary: A user reports a crash at shutter release with Film Grain enabled and loss of the last photo.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/xulfr/om-firmware-atlas/issues/10
+  source_kind: web-page
+  upstream_repo: null
+  revision: null
+  locator: Atlas issue 10, original report
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: '2026-11-19'
+  publication: public
+  reuse_note: Attributed user report. The issue gives a version label and no package hash.

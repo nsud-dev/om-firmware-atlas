@@ -19,7 +19,7 @@ Read MN103 camera firmware in Ghidra, with the decompiler.
 
 A Ghidra processor module for the Panasonic MN103 family (MN10300, AM33, AM33-2), language ID MN103:LE:32:AM33-2. Disassembly matches GNU objdump instruction for instruction; the SLEIGH spec is generated from the binutils opcode table.
 
-The decompiler handles the MN103's caller-built call frames, hardware loops and calling convention. Scripts load symbols, fix call frames, recover switch tables and batch-decompile. Tested with Ghidra 11.4.2 on Java 21; CI also builds on the newest Ghidra release.
+The decompiler handles caller-built call frames and hardware loops. Its helper scripts load symbols, recover switch tables and batch-decompile. Upstream reports testing with Ghidra 11.4.2 on Java 21 and Ghidra 12.2 on Java 25.
 
 ## Features
 
@@ -33,6 +33,18 @@ As the project describes them. Status is the project's own; linked evidence is t
 { .feature-head }
 
 SLEIGH module with call-frame, loop and calling-convention support, plus helper scripts.
+
+[OM-D E-M5 Mark III](../cameras/em5-iii.md), [OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [PEN-F](../cameras/pen-f.md), [PEN E-P7](../cameras/ep7.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Pointer-register calling convention** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+The optional ptrregs compiler spec places typed pointer arguments in the MN103 address registers. Upstream CI checks argument placement.
 
 [OM-D E-M5 Mark III](../cameras/em5-iii.md), [OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [PEN-F](../cameras/pen-f.md), [PEN E-P7](../cameras/ep7.md)
 { .card-meta }
@@ -58,5 +70,6 @@ Built and checked against E-M5 III 1.7 block 0. Nothing in the module is camera-
 - [Ghidra MN103 module README](../sources/gmn103.readme.md)
 - [MN103 CPU on the E-M5 III](../sources/em5n.mn103.md)
 - [E-P7 Ghidra/REA profile](../sources/ep7.rea.md)
+- [Ghidra MN103 pointer-register compiler spec](../sources/gmn103.ptrregs.md)
 
-[Canonical record](../../records/projects/ghidra-mn103.yaml) · Substantively reviewed: 2026-11-18.
+[Canonical record](../../records/projects/ghidra-mn103.yaml) · Substantively reviewed: 2026-11-20.

@@ -4,12 +4,12 @@
 
 Separate original OM-5 and Mark II work, strict builders and failures.
 
-[Contribution home](https://github.com/xulfr/caduceus-om5/issues). The reviewed revision has Mark II alpha12 and a separate original-body experiment. Results are package-specific.
+[Contribution home](https://github.com/xulfr/caduceus-om5/issues). Alpha12 remains the published Mark II build. The project reports emulator checks for the unreleased v0.2.0-dev build.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [caduceus-om5.yaml](../../../records/projects/caduceus-om5.yaml) | Project scope, related work and contribution destination | 5,213 | ~1,304 |
-| [om5.yaml](../../../records/sources/om5.yaml) | Find the relevant source/observation ID; use bounded reads | 6,484 | ~1,621 |
+| [caduceus-om5.yaml](../../../records/projects/caduceus-om5.yaml) | Project scope, related work and contribution destination | 5,951 | ~1,488 |
+| [om5.yaml](../../../records/sources/om5.yaml) | Find the relevant source/observation ID; use bounded reads | 7,138 | ~1,785 |
 | [caduceus-om5.yaml](../../../records/evidence/caduceus-om5.yaml) | Find the relevant source/observation ID; use bounded reads | 4,373 | ~1,094 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

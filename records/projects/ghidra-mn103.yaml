@@ -8,30 +8,31 @@ records:
   - source.gmn103.readme
   - source.em5n.mn103
   - source.ep7.rea
+  - source.gmn103.ptrregs
   topics:
   - tooling
-  last_reviewed: '2026-11-18'
+  last_reviewed: '2026-11-20'
   url: https://github.com/nsud-dev/ghidra-mn103
   kind: tool
-  camera_ids:
+  camera_ids: &id001
   - camera.em5-iii
   - camera.om5
   - camera.om5-ii
   - camera.pen-f
   - camera.ep7
   contribution_home: https://github.com/nsud-dev/ghidra-mn103/issues
-  status_summary: Built and checked against E-M5 III 1.7 block 0. Nothing in the module is camera-specific; it applies
-    to any body whose main CPU is MN103 (AM33-2).
+  status_summary: Built and checked against E-M5 III 1.7 block 0. Nothing in the module is camera-specific;
+    it applies to any body whose main CPU is MN103 (AM33-2).
   related_projects:
   - project.em5-iii-notes
   tagline: Read MN103 camera firmware in Ghidra, with the decompiler.
   description:
   - A Ghidra processor module for the Panasonic MN103 family (MN10300, AM33, AM33-2), language ID MN103:LE:32:AM33-2.
-    Disassembly matches GNU objdump instruction for instruction; the SLEIGH spec is generated from the binutils
-    opcode table.
-  - The decompiler handles the MN103's caller-built call frames, hardware loops and calling convention. Scripts load
-    symbols, fix call frames, recover switch tables and batch-decompile. Tested with Ghidra 11.4.2 on Java 21; CI also
-    builds on the newest Ghidra release.
+    Disassembly matches GNU objdump instruction for instruction; the SLEIGH spec is generated from the
+    binutils opcode table.
+  - The decompiler handles caller-built call frames and hardware loops. Its helper scripts load symbols,
+    recover switch tables and batch-decompile. Upstream reports testing with Ghidra 11.4.2 on Java 21
+    and Ghidra 12.2 on Java 25.
   maintainers:
   - label: nsud-dev
     url: https://github.com/nsud-dev
@@ -50,3 +51,10 @@ records:
     status: released
     since: null
     source_ref: source.gmn103.readme
+  - name: Pointer-register calling convention
+    summary: The optional ptrregs compiler spec places typed pointer arguments in the MN103 address registers.
+      Upstream CI checks argument placement.
+    camera_ids: *id001
+    status: released
+    since: null
+    source_ref: source.gmn103.ptrregs

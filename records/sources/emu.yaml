@@ -97,3 +97,20 @@ records:
   last_checked: '2026-11-18'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.emu.modelcheck-nov19
+  title: OM-Emu model check on 19 November
+  summary: Reported coverage for 18 ports, native card support and EVF display limits.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/flatpanda/om-emu/blob/ccfe2e0b39b90c0880f85f1ff2b3781663154dbb/README.md
+  source_kind: github-file
+  upstream_repo: flatpanda/om-emu
+  revision: ccfe2e0b39b90c0880f85f1ff2b3781663154dbb
+  locator: README.md
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: null
+  publication: public
+  reuse_note: Attributed synthesis of upstream documentation.

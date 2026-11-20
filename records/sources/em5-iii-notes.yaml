@@ -384,3 +384,37 @@ records:
   last_checked: '2026-11-18'
   publication: public
   reuse_note: Written by the notes' author; CC BY 4.0 per the repo licence.
+- type: source
+  id: source.gmn103.ptrregs
+  title: Ghidra MN103 pointer-register compiler spec
+  summary: Optional ptrregs spec, expanded validation and supported Ghidra versions.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/nsud-dev/ghidra-mn103/blob/4290b76b8f5730c8cc10cd06582a0e4550662314/README.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/ghidra-mn103
+  revision: 4290b76b8f5730c8cc10cd06582a0e4550662314
+  locator: README.md
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: null
+  publication: public
+  reuse_note: Attributed synthesis of upstream documentation.
+- type: source
+  id: source.em5n.guides
+  title: E-M5 Mark III firmware guides
+  summary: Process guides for E-M5 Mark III 1.7, including boot, shooting, live view and memory.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-20'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/a67ab954757f3aa7439bab887f0e8690bf33ee7a/docs/guides/README.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: a67ab954757f3aa7439bab887f0e8690bf33ee7a
+  locator: docs/guides/README.md
+  retrieved_on: '2026-11-20'
+  last_checked: '2026-11-20'
+  published_on: null
+  publication: public
+  reuse_note: Attributed synthesis of upstream documentation.
