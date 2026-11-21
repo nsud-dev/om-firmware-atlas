@@ -16,8 +16,8 @@
       "method": "ceil(utf8-bytes/4)"
     },
     "knowledge/methods/patching.md": {
-      "approx_tokens": 852,
-      "bytes": 3406,
+      "approx_tokens": 951,
+      "bytes": 3804,
       "method": "ceil(utf8-bytes/4)"
     },
     "knowledge/platform/identity.md": {
@@ -38,6 +38,11 @@
     "records/cameras/em1-iii.yaml": {
       "approx_tokens": 114,
       "bytes": 453,
+      "method": "ceil(utf8-bytes/4)"
+    },
+    "records/cameras/em10-ii.yaml": {
+      "approx_tokens": 130,
+      "bytes": 518,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/cameras/em10-iv.yaml": {
@@ -83,6 +88,11 @@
     "records/cameras/pen-f.yaml": {
       "approx_tokens": 114,
       "bytes": 453,
+      "method": "ceil(utf8-bytes/4)"
+    },
+    "records/capabilities/em10-ii/em10-ii-fenykl.yaml": {
+      "approx_tokens": 768,
+      "bytes": 3072,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/capabilities/em10/em10-v56-hsl.yaml": {
@@ -215,6 +225,11 @@
       "bytes": 3689,
       "method": "ceil(utf8-bytes/4)"
     },
+    "records/evidence/fenykl.yaml": {
+      "approx_tokens": 825,
+      "bytes": 3299,
+      "method": "ceil(utf8-bytes/4)"
+    },
     "records/evidence/om10mi-mods.yaml": {
       "approx_tokens": 1902,
       "bytes": 7605,
@@ -228,6 +243,11 @@
     "records/firmware/em1-iii/em1-iii-1600.yaml": {
       "approx_tokens": 160,
       "bytes": 640,
+      "method": "ceil(utf8-bytes/4)"
+    },
+    "records/firmware/em10-ii/em10-ii-1400.yaml": {
+      "approx_tokens": 179,
+      "bytes": 716,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/firmware/em10/em10-1400.yaml": {
@@ -315,6 +335,11 @@
       "bytes": 5878,
       "method": "ceil(utf8-bytes/4)"
     },
+    "records/projects/fenykl.yaml": {
+      "approx_tokens": 1275,
+      "bytes": 5098,
+      "method": "ceil(utf8-bytes/4)"
+    },
     "records/projects/ghidra-mn103.yaml": {
       "approx_tokens": 548,
       "bytes": 2192,
@@ -373,6 +398,11 @@
     "records/sources/epm2mod.yaml": {
       "approx_tokens": 1540,
       "bytes": 6159,
+      "method": "ceil(utf8-bytes/4)"
+    },
+    "records/sources/fenykl.yaml": {
+      "approx_tokens": 2403,
+      "bytes": 9611,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/sources/fishcu.yaml": {

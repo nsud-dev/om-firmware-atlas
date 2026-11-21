@@ -1,0 +1,19 @@
+schema_version: 1
+records:
+- type: firmware
+  id: firmware.em10-ii-1400
+  title: E-M10 Mark II firmware 1.4, build 1400
+  summary: Stock update file OLY_E_120_1400_0000_0000.BIN, 69,599,232 bytes; the only input fenykl's loader patch applies to.
+  source_refs:
+  - source.fenykl.firmware
+  - source.fenykl.target
+  - source.fenykl.readme
+  topics:
+  - platform
+  last_reviewed: '2026-11-21'
+  camera_id: camera.em10-ii
+  version: '1.4'
+  internal_build: '1400'
+  container_sha256: ff9d302318ecf6e06c0b31c181fc6a185e93623e819749db31cec7977fa92052
+  identity_note: SHA-256 and size as published by fenykl, whose patch tool checks them before patching. fenykl does not
+    distribute the file. Not hashed by the Atlas.

@@ -1,0 +1,22 @@
+schema_version: 1
+records:
+- type: camera
+  id: camera.em10-ii
+  title: Olympus OM-D E-M10 Mark II
+  summary: 'E120: one card-loaded plugin project for firmware 1.4, tested by its maintainer on one body; distinct from the E-M10 Mark I and Mark IV.'
+  source_refs:
+  - source.fenykl.readme
+  - source.fenykl.firmware
+  topics: []
+  last_reviewed: '2026-11-21'
+  aliases:
+  - E-M10 II
+  - E-M10 Mark II
+  - E-M10II
+  - EM10II
+  - E120
+  model_codes:
+  - E120
+  project_ids:
+  - project.fenykl
+  coverage: initial-review

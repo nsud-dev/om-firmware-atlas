@@ -1,0 +1,344 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.em10-ii-1400.main-cpu
+  title: Main CPU, E-M10 Mark II 1.4
+  summary: 'Main CPU for E-M10 Mark II 1.4: MN103 base ISA without AM33, cores CPU0 to CPU2.'
+  source_refs:
+  - source.fenykl.target
+  - source.fenykl.fwapi
+  topics:
+  - platform
+  last_reviewed: '2026-11-21'
+  category: platform
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  trait: trait.main-cpu
+  value: MN103 base ISA (no AM33 or AM33-2), cores CPU0 to CPU2
+  note: Unlike the AM33-2 bodies in the Atlas, the main code uses no AM33 instructions; fenykl rejects them in plugin
+    code. The core id register reads 0, 1 or 2.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.target
+    project_id: project.fenykl
+    summary: The target description states the core is MN103 base ISA and runs an ISA check that rejects AM33
+      instructions in plugin builds.
+  - method: static-analysis
+    source_ref: source.fenykl.fwapi
+    project_id: project.fenykl
+    summary: The symbol table states three cores (core id 0, 1, 2) and classifies functions by the cores that call them.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/target.toml
+- type: reference
+  id: reference.em10-ii-1400.container-magic
+  title: Update file magic, E-M10 Mark II 1.4
+  summary: 'Update file magic for E-M10 Mark II 1.4: OE 12 00.'
+  source_refs:
+  - source.fenykl.container-code
+  topics:
+  - platform
+  last_reviewed: '2026-11-21'
+  category: platform
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  trait: trait.container-magic
+  value: 'OE 12 00'
+  note: Block type signature OE and model signature 12 00 at the start of each block header; bodies are scrambled, not encrypted.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.container-code
+    project_id: project.fenykl
+    summary: Header layout, the E-M10 II model signature and the scrambling read from fenykl's container code.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/py/fenykl/firmware.py
+- type: reference
+  id: reference.em10-ii-1400.firmware-blocks
+  title: Firmware blocks, E-M10 Mark II 1.4
+  summary: 'Firmware blocks for E-M10 Mark II 1.4: 3.'
+  source_refs:
+  - source.fenykl.container-tests
+  topics:
+  - platform
+  last_reviewed: '2026-11-21'
+  category: platform
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  trait: trait.firmware-blocks
+  value: '3'
+  note: main-code-01, main-lang and main-b106. There is no image-stabiliser block.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.container-tests
+    project_id: project.fenykl
+    summary: The unpack test pins the three blocks of the stock file with their sizes and digests.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/tests/test_firmware.py
+- type: reference
+  id: reference.em10-ii-1400.main-code-base
+  title: main-code-01 run address
+  summary: Offset 0 of the main-code-01 block runs at 0x60021020; boot0 and boot1 load at reset, the other sections later.
+  source_refs:
+  - source.fenykl.target
+  - source.fenykl.fwapi
+  - source.fenykl.sdk
+  topics:
+  - platform
+  last_reviewed: '2026-11-21'
+  category: layout
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  address:
+    space: runtime-cached
+    value: '0x60021020'
+  note: The block header's load address is not the run address. boot0 (to 0x60030000) and boot1 (to
+    0x60128800) are loaded at reset; sec1 to sec6 load later, from the startup stages. The block head is copied to
+    0x60021000 in front of boot0.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.fwapi
+    project_id: project.fenykl
+    summary: Section bounds and their loading stages are listed in the symbol table; every function address there is a
+      run address on this base.
+  - method: physical-camera
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: Plugins calling firmware functions at these run addresses work on the maintainer's camera.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/firmware.toml
+- type: reference
+  id: reference.em10-ii-1400.uncached-alias
+  title: Uncached DRAM alias rule
+  summary: Cached DRAM 0x60000000 to 0x7fffffff; the uncached alias of a is (a & 0x3fffffff) | 0x80000000.
+  source_refs:
+  - source.fenykl.fwapi
+  - source.fenykl.sdk
+  topics:
+  - platform
+  last_reviewed: '2026-11-21'
+  category: layout
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  address:
+    space: runtime-uncached
+    value: '0xa0000000'
+    end: '0xc0000000'
+  note: The firmware's own helpers convert both ways. Large firmware buffers sit at 0xa2000000 to 0xbfffffff and are
+    used uncached; the installed DRAM size is not established. Buffers handed to file or DMA code are given as
+    uncached addresses.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.fwapi
+    project_id: project.fenykl
+    summary: Rule read from the firmware's to_uncached and to_cached helpers.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/README.md#payload-rules
+- type: reference
+  id: reference.em10-ii-1400.usr3-end
+  title: End of startup stage Usr3
+  summary: The call that ends the startup task Usr3; fenykl's loader patch replaces it with a call to its stub.
+  source_refs:
+  - source.fenykl.loader-patch
+  - source.fenykl.loader-source
+  - source.fenykl.sdk
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  category: hook-site
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  address:
+    space: runtime-cached
+    value: '0x6018d73a'
+  note: Runs once per boot on CPU0, after Usr3 decided whether to post the card mount. The OK-held card update does
+    not reach this point, so a loader here cannot block reflashing. The stub starts the loader task and then ends Usr3
+    as the stock call did.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.loader-patch
+    project_id: project.fenykl
+    summary: The 7-byte edit and the digest of the stock bytes it replaces are pinned in the patch.
+  - method: static-analysis
+    source_ref: source.fenykl.loader-source
+    project_id: project.fenykl
+    summary: Usr3 lowers itself to priority 65, so it reaches this call only after Usr1 has ended; an OK-held update
+      boot never reaches the end of Usr1.
+  - method: physical-camera
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: The patched firmware runs the main plugin on the maintainer's camera.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/loader/loader.S
+- type: reference
+  id: reference.em10-ii-1400.boot1-padding
+  title: boot1 padding
+  summary: 0xff padding inside the boot1 load, loaded at reset and unreferenced; fenykl's loader stub sits at 0x6005e000.
+  source_refs:
+  - source.fenykl.loader-patch
+  - source.fenykl.sdk
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  category: free-space
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  address:
+    space: runtime-cached
+    value: '0x6005b7c0'
+    end: '0x60060000'
+  note: boot1 is read by the startup code before any task runs, so code placed here is present on every boot that
+    reaches the main code. fenykl uses part of it; check its patch before claiming more.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.loader-patch
+    project_id: project.fenykl
+    summary: The patch names the range as loaded, unreferenced 0xff padding and places its stub in it.
+  - method: physical-camera
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: The stub runs and starts the loader task on the maintainer's camera.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/loader/patch.toml
+- type: reference
+  id: reference.em10-ii-1400.payload-gap
+  title: Never-loaded gap between sec4 and sec5
+  summary: 428 KiB of the image that no section load covers; fenykl reads FENYKL.BIN here and puts the loader stack after it.
+  source_refs:
+  - source.fenykl.target
+  - source.fenykl.loader-source
+  - source.fenykl.sdk
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  category: free-space
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  address:
+    space: runtime-cached
+    value: '0x60da5000'
+    end: '0x60e10000'
+  note: Free RAM, not free file space; bytes put here in the update file are never loaded. fenykl uses 0x60da5000 to
+    0x60e0c000 for the payload (at most 0x67000 bytes with its header) and 0x60e0c000 to 0x60e10000 for the loader
+    task's stack. The section-load guard covers it until section_wait has run for sec4 and sec5.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.target
+    project_id: project.fenykl
+    summary: Described as the never-loaded gap between sec4 and sec5, with the payload load address and size limit.
+  - method: static-analysis
+    source_ref: source.fenykl.loader-source
+    project_id: project.fenykl
+    summary: The loader waits for the sec4 and sec5 loaded bits, after which the load guard starts at 0x61010000 and no
+      longer covers this range.
+  - method: physical-camera
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: Plugins loaded and run from this range work on the maintainer's camera.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/README.md#payload-rules
+- type: reference
+  id: reference.em10-ii-1400.sec5-sec6-gap
+  title: Never-loaded gap between sec5 and sec6
+  summary: 534 KiB of the image outside every section load, usable once sec5 has loaded; fenykl's dev monitor runs test programs here.
+  source_refs:
+  - source.fenykl.target
+  - source.fenykl.sdk
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  category: free-space
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  address:
+    space: runtime-cached
+    value: '0x60f8a800'
+    end: '0x61010000'
+  note: Free RAM, not free file space. fenykl's dev monitor claims the whole range for 16 test-program slots of 32 KiB
+    and its job buffer, so another user on the same camera must coordinate with it.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.target
+    project_id: project.fenykl
+    summary: Described as a never-loaded hole, valid once section 5 is loaded and unused by the firmware.
+  - method: physical-camera
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: A dev-monitor test program ran from this range on the maintainer's camera (2026-11-17).
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/target.toml
+- type: reference
+  id: reference.em10-ii-1400.power-on-factor
+  title: Power-on factor word
+  summary: 'u32 boot reason: 12 power switch, 0x1000001 battery connected, 0x400 USB cable, 0x1506 card inserted.'
+  source_refs:
+  - source.fenykl.sdk
+  - source.fenykl.readme
+  topics:
+  - platform
+  last_reviewed: '2026-11-21'
+  category: data
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  address:
+    space: runtime-uncached
+    value: '0xa1c17c14'
+  note: 0x1000001 covers a battery connected with the switch On and one inserted with the switch Off; fenykl tells
+    them apart by the switch input. 0x1000002 is expected after a watchdog reset.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: Values and their boots as fenykl's loader gate reads them.
+  - method: physical-camera
+    source_ref: source.fenykl.readme
+    project_id: project.fenykl
+    summary: The loader's gate on 12 (power switch) and 0x1000001 (battery connected with the switch On) runs payloads
+      on the maintainer's camera.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/README.md#e-m10-ii-loader-which-boots-which-file
+- type: reference
+  id: reference.em10-ii-1400.mount-gate
+  title: Usr3 card-mount flag
+  summary: u16 set to 1 only when Usr3 posted the card mount, on a power-switch boot; 0 on the other boots.
+  source_refs:
+  - source.fenykl.sdk
+  topics:
+  - platform
+  - patching
+  last_reviewed: '2026-11-21'
+  category: data
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  address:
+    space: runtime-cached
+    value: '0x61843f64'
+  note: On a battery-connect boot the flag is 0 and the application mounts the card instead, so its power-off sends no
+    Usr3 unmount. The mount runs asynchronously; wait for the media status before opening files.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: fenykl's loader gates power-switch boots on this flag.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/README.md#e-m10-ii-loader-which-boots-which-file

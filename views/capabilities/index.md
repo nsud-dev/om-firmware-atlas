@@ -6,6 +6,8 @@ Scoped feature claims: one camera, firmware, project and build each. Availabilit
 
 | Entry | What you will find |
 |---|---|
+| [E-M10 Mark II code loaded from the card, fenykl loader](em10-ii-fenykl-loader.md) | After one flash, the loader runs FENYKL.BIN, or a FENYKL.TST once, from the card on power-switch and battery-connect boots. |
+| [E-M10 Mark II native settings tab with saved values, fenykl main plugin](em10-ii-fenykl-settings-tab.md) | A twelfth Custom menu tab, L. Fenykl, drawn and edited by the stock menu code; values persist on the card across boots. |
 | [E-M10 per-sector Hue/Saturation/Lightness, version 56](em10-v56-hsl.md) | The owner reports the 12-sector colour editor visible and effective in photos on their E-M10 Mark I. |
 | [E-M10 colour wheel in Color Creator, version 87](em10-v87-colour-wheel.md) | The owner reports a 12-sector Hue/Saturation/Lightness wheel in Color Creator at the ART dial working on their E-M10 Mark I. |
 | [E-M5 III 1.7 focus stacking with any lens](em5-iii-focus-stacking-any-lens.md) | A published two-byte patch removes the per-lens focus-stacking flag check. |

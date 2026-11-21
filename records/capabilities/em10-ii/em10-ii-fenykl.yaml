@@ -1,0 +1,58 @@
+schema_version: 1
+records:
+- type: capability
+  id: capability.em10-ii-fenykl-loader
+  title: E-M10 Mark II code loaded from the card, fenykl loader
+  summary: After one flash, the loader runs FENYKL.BIN, or a FENYKL.TST once, from the card on power-switch and battery-connect boots.
+  source_refs:
+  - source.fenykl.readme
+  - source.fenykl.sdk
+  - source.fenykl.loader-source
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  camera_id: camera.em10-ii
+  firmware_id: firmware.em10-ii-1400
+  project_id: project.fenykl
+  mod_build: fenykl-loader with FENYKL.TST and battery-connect boots
+  feature_id: feature.loader.card
+  assertion: With the fenykl loader on firmware 1.4, a power-switch boot, or a battery connected with the switch On,
+    reads C:\FENYKL.TST once (deleting it first) or C:\FENYKL.BIN, checks its header, checksum and model and runs it
+    as a CPU0 task; after fault resets the camera boots without the payload.
+  availability: experimental-branch
+  implementation: reported
+  evidence_refs:
+  - evidence.em10-ii-fenykl-loader-current
+  contradicting_refs: []
+  limitations:
+  - No release; users build the patched update file from the repository and a stock file they supply.
+  - Reported on the maintainer's camera; the hash of the flashed loader is not recorded, and refused invalid images are simulator-tested only.
+  - Cable, card-insertion and switch-Off boots run no payload by design, per the loader source; those boots are not covered by the linked report.
+  - A payload runs with full firmware rights and is not isolated; removing the card undoes nothing a payload saved to flash, EEPROM or settings.
+  - The OK-held card update runs before the loader, so reflashing stock from the card stays available; a PC update with the payload on the card must be avoided.
+- type: capability
+  id: capability.em10-ii-fenykl-settings-tab
+  title: E-M10 Mark II native settings tab with saved values, fenykl main plugin
+  summary: A twelfth Custom menu tab, L. Fenykl, drawn and edited by the stock menu code; values persist on the card across boots.
+  source_refs:
+  - source.fenykl.ui
+  - source.fenykl.readme
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  camera_id: camera.em10-ii
+  firmware_id: firmware.em10-ii-1400
+  project_id: project.fenykl
+  mod_build: main plugin (2026-11-20 builds)
+  feature_id: feature.settings.native-rows-saved
+  assertion: The main plugin adds Custom menu tab L by data writes into the menu's tables, with one native row per
+    setting and borrowed stock pickers; a value set there is saved to the card and read back after a reboot.
+  availability: experimental-branch
+  implementation: reported
+  evidence_refs:
+  - evidence.em10-ii-fenykl-settings-tab
+  contradicting_refs: []
+  limitations:
+  - The values live in files on the card, not in the camera's own settings store; without the plugin the tab is absent.
+  - On, Off and lists of names only; numeric settings are refused.
+  - One camera; the larger configurations (40 rows, lists of 26 names) were run with a separate RAM table on the same day.

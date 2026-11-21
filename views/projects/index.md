@@ -70,6 +70,26 @@ Latest: v0.34a, 15 Nov 2026
 
 <div class="project-card" markdown="1">
 
+![The E-M10 Mark II live-view INFO screen with labelled additions, battery 86 %, focus meter bar, PRE tag, focus distance 27.0 cm and depth of field 6 mm, on a photo with red and blue swapped](../../docs/assets/projects/fenykl/main-info-screen.jpg)
+{ .card-image }
+
+[fenykl](fenykl.md){ .card-title }
+
+A loader flashed once, then plugins written in C from the SD card. E-M10 Mark II.
+
+Card-loaded plugins · Settings tab L in the Custom menu · Pre-capture
+{ .card-features }
+
+For: OM-D E-M10 Mark II
+{ .card-cameras }
+
+Mod
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
 [om10mi-mods](om10mi-mods.md){ .card-title }
 
 Film looks, a colour wheel, colour editors and a longer video limit for the original OM-D E-M10.

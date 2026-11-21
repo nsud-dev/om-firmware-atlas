@@ -1,0 +1,107 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.hazard.usb-update-with-card-payload
+  title: Remove a card-loaded payload before a PC firmware update
+  summary: A PC/USB update runs inside the running application, so the loader and its payload are active while flash is written.
+  source_refs:
+  - source.fenykl.readme
+  - source.fenykl.sdk
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  category: hazard
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  note: On the E-M10 Mark II the OK-held card update starts before the loader and is not affected; the PC update is
+    driven by the booted camera. Take FENYKL.BIN and FENYKL.TST off the card first. Other card loaders have their own
+    rules for update cards.
+  consequence: Plugin code runs while the body firmware is written; the effect has not been characterised.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: The SDK forbids a USB/PC update with FENYKL.BIN on the card because the payload would run while flash is
+      written.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/README.md#how-to-install-on-the-e-m10-mark-ii
+- type: reference
+  id: reference.hazard.card-writes-under-usb-storage
+  title: Stop card writes once a USB cable has been seen
+  summary: In USB storage mode the PC's sector writes go through the camera's file task while its FAT stays mounted.
+  source_refs:
+  - source.fenykl.sdk
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  category: hazard
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  note: Plugging the cable into a running E-M10 Mark II switches it to USB in place, without a reboot, so a payload
+    keeps running. Check for the cable before each write batch, keep no file open, and stay off the card until
+    power-off even after the cable is pulled, because the camera keeps its FAT state from before the session.
+  consequence: Two FAT writers on one card; fenykl reports a plugin that overwrote its own log this way.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: The PC's requests share the file server task with plugin file calls and no camera-side unmount was found;
+      the gate itself has not yet run on the camera.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/README.md#cable-at-run-time-the-card-gate
+- type: reference
+  id: reference.hazard.spin-starves-watchdog
+  title: Block, never spin, at or above the watchdog task's priority
+  summary: The watchdog is kicked by one ordinary CPU0 task; a busy loop that outranks it lets the watchdog reset the camera.
+  source_refs:
+  - source.fenykl.sdk
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-21'
+  category: hazard
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  note: On the E-M10 Mark II the kicker PER_WDT runs at priority 55, the level fenykl's loader task also uses. Wait
+    with a task sleep or a queue, semaphore or flag wait in every task a payload creates.
+  consequence: A watchdog reset; with a card payload that crashes at start, possibly on every boot.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: The payload rules name PER_WDT and its priority and forbid busy loops in tasks that outrank it.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/README.md#payload-rules
+- type: reference
+  id: reference.hazard.stale-icache-other-cores
+  title: A code patch refreshes only the patching core's I-cache
+  summary: The firmware has no cross-core way to publish code changes; other cores can keep running stale cached lines.
+  source_refs:
+  - source.fenykl.sdk
+  - source.fenykl.fwapi
+  topics:
+  - patching
+  - platform
+  last_reviewed: '2026-11-21'
+  category: hazard
+  camera_ids:
+  - camera.em10-ii
+  firmware_ids:
+  - firmware.em10-ii-1400
+  note: After a write through the uncached alias, write the D-cache back and invalidate the I-cache of the core that
+    patched. For an entry another core may run, keep the patched bytes in one aligned 8-byte line, patch while no
+    other core can be inside it, and pass that core's calls through.
+  consequence: A core with a stale line runs old code, or a half-written jump if the patched bytes span two lines.
+  observations:
+  - method: static-analysis
+    source_ref: source.fenykl.sdk
+    project_id: project.fenykl
+    summary: No cross-core publication protocol found in the E-M10 Mark II 1.4 firmware; the hook rules follow from it.
+  conflicts: []
+  upstream_detail: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/README.md#hooks

@@ -1,0 +1,71 @@
+schema_version: 1
+records:
+- type: evidence
+  id: evidence.em10-ii-fenykl-loader-current
+  title: 'E-M10 Mark II fenykl loader: maintainer''s camera'
+  summary: The maintainer reports plugins running from the card through the loader, including on a battery-connect boot, and fault resets booting without the payload.
+  source_refs:
+  - source.fenykl.sdk
+  - source.fenykl.readme
+  - source.fenykl.devmon
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  camera_id: camera.em10-ii
+  firmware_id: firmware.em10-ii-1400
+  project_id: project.fenykl
+  mod_build: fenykl-loader with FENYKL.TST and battery-connect boots
+  method: physical-camera
+  provenance: maintainer-summary
+  identity_level: release-label-only
+  package_sha256: null
+  expected_package_sha256: 0c42be0e6d151e2d28c5a377574ccd182e3de4178d6e5cd8229a2f4d43859b02
+  outcome: reported-pass
+  quality: partial
+  reported_on: '2026-11-20'
+  tested_on: '2026-11-17'
+  procedure: null
+  coverage:
+  - The main plugin runs from the card through the loader.
+  - The dev-monitor plugin loaded and ran on a boot started by connecting the battery with the switch On (2026-11-17).
+  - The dev-monitor documentation states that a crash or hang of CPU0 ends in a watchdog reset, which is a stock boot without the payload.
+  limitations:
+  - No steps, boot counts or flashed-file hash are published; the expected digest is the README's build output at fenykl dd8dde0.
+  - The README and SDK at dd8dde0 still list watchdog-reset boots as not measured on the camera, while the dev-monitor documentation states the outcome.
+  - The other rows of the README's boot table and the one-time FENYKL.TST run are not reported here as camera runs.
+  - One camera.
+  assumptions:
+  - tested_on is the dated dev-monitor run in the SDK status table; reported_on is the date of the pinned commit.
+- type: evidence
+  id: evidence.em10-ii-fenykl-settings-tab
+  title: 'E-M10 Mark II fenykl settings tab: maintainer''s camera'
+  summary: The settings tab ran with the main plugin's options, saving values over a reboot, and with a 40-option table, with no error logged.
+  source_refs:
+  - source.fenykl.ui
+  topics:
+  - patching
+  last_reviewed: '2026-11-21'
+  camera_id: camera.em10-ii
+  firmware_id: firmware.em10-ii-1400
+  project_id: project.fenykl
+  mod_build: main plugin (2026-11-20 builds)
+  method: physical-camera
+  provenance: maintainer-summary
+  identity_level: release-label-only
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: reported-pass
+  quality: partial
+  reported_on: '2026-11-20'
+  tested_on: '2026-11-20'
+  procedure: null
+  coverage:
+  - Values set through the tab's pickers were saved and kept over a reboot.
+  - A 40-option table gave 41 rows on 6 pages with the stock scroll bar, and lists of 5, 12 and 26 names.
+  - Removing the tab restored the stock menu tables; the borrowed picker's own setting, Warning Level, was never written.
+  - With the menu left inside tab L, a boot without the plugin opened MENU on Shooting Menu 1 with no error, and the next boot with it reopened tab L.
+  - The tab's own icon showed bright when open and dim otherwise.
+  limitations:
+  - No package digest or step list is published; the 40-option run used a test table, not the main plugin's options.
+  - One camera.
+  assumptions: []

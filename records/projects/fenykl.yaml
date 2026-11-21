@@ -1,0 +1,110 @@
+schema_version: 1
+records:
+- type: project
+  id: project.fenykl
+  title: fenykl
+  summary: Loader flashed once, then C plugins from the SD card hook the firmware. E-M10 Mark II 1.4.
+  source_refs:
+  - source.fenykl.readme
+  - source.fenykl.firmware
+  - source.fenykl.sdk
+  - source.fenykl.target
+  - source.fenykl.loader-patch
+  - source.fenykl.fwapi
+  - source.fenykl.ui
+  - source.fenykl.precap
+  - source.fenykl.afc
+  - source.fenykl.fnfunc
+  - source.fenykl.devmon
+  topics:
+  - patching
+  - platform
+  - capture
+  - tooling
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl
+  kind: mod
+  camera_ids:
+  - camera.em10-ii
+  contribution_home: https://github.com/atx/fenykl/issues
+  related_projects: []
+  status_summary: No release; the README calls it an early-stage experimental project, not ready for care-free users.
+    The maintainer runs the loader and the main plugin on one E-M10 Mark II on firmware 1.4; the SDK's status table
+    dates each camera run and names the parts that ran only in its simulator.
+  tagline: A loader flashed once, then plugins written in C from the SD card. E-M10 Mark II.
+  description:
+  - fenykl is a firmware mod infrastructure for the Olympus OM-D E-M10 Mark II on body firmware 1.4. The camera is
+    flashed once with a small loader patch; from then on the loader runs FENYKL.BIN from the SD card at boot, and
+    without the file the camera behaves as stock.
+  - Plugins are written in C against an SDK that calls and hooks firmware functions. The main plugin adds focus
+    distance, depth of field, a focus meter and a battery percentage to the live-view INFO screens, an R/B swap,
+    pre-capture and a screenshot button, with its settings in a native Custom menu tab.
+  maintainers:
+  - label: atx
+    url: https://github.com/atx
+  links:
+  - label: Install and features
+    url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/README.md
+  - label: Plugin SDK and camera status
+    url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/README.md
+  - label: Firmware symbol table, 1.4
+    url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/firmware.toml
+  features:
+  - name: Card-loaded plugins
+    summary: A one-time loader patch runs FENYKL.BIN from the card on power-switch and battery-connect boots. Without a
+      valid file the camera runs as stock; OK held at power-on runs no payload.
+    camera_ids: &id001
+    - camera.em10-ii
+    status: testing
+    source_ref: source.fenykl.sdk
+    capability_id: capability.em10-ii-fenykl-loader
+  - name: Settings tab L in the Custom menu
+    summary: A native twelfth Custom menu tab, drawn and edited by the stock menu code; values are saved to the card
+      two seconds after a change.
+    camera_ids: *id001
+    status: testing
+    source_ref: source.fenykl.ui
+    capability_id: capability.em10-ii-fenykl-settings-tab
+  - name: Pre-capture
+    summary: A half press in silent sequential H starts the burst and keeps the latest 6 frames; the full press
+      records them. Needs flash off, long-exposure NR off and S-AF or MF.
+    camera_ids: *id001
+    status: testing
+    source_ref: source.fenykl.precap
+  - name: Focus distance, depth of field and focus meter
+    summary: The focus distance and depth of field the camera writes to EXIF, and a contrast bar, on the live-view
+      INFO screens, also in MF.
+    camera_ids: *id001
+    status: testing
+    source_ref: source.fenykl.afc
+  - name: Battery percentage
+    summary: An estimated percentage replaces the stock battery icon on the INFO screens.
+    camera_ids: *id001
+    status: testing
+    source_ref: source.fenykl.readme
+  - name: R/B swap
+    summary: Swaps the red and blue channels, for infrared photography.
+    camera_ids: *id001
+    status: testing
+    source_ref: source.fenykl.readme
+  - name: Screenshot button
+    summary: A Button Function entry for Fn1, Fn2, Fn3, REC or L-Fn that saves the live view as SHOTnnnn.PPM to the
+      card root.
+    camera_ids: *id001
+    status: testing
+    source_ref: source.fenykl.fnfunc
+  - name: Wi-Fi dev monitor
+    summary: An opt-in plugin that opens the camera's access point for memory reads and writes, small test programs,
+      card files and screen capture from a PC.
+    camera_ids: *id001
+    status: testing
+    source_ref: source.fenykl.devmon
+  images:
+  - path: assets/projects/fenykl/main-info-screen.jpg
+    alt: The E-M10 Mark II live-view INFO screen with labelled additions, battery 86 %, focus meter bar, PRE tag, focus distance 27.0 cm and depth of field 6 mm, on a photo with red and blue swapped
+    caption: The main plugin's additions on the live-view INFO screen.
+    credit: fenykl README
+  - path: assets/projects/fenykl/settings-tab.png
+    alt: Custom menu tab L. Fenykl with the rows Fenykl Loaded, Wi-Fi monitor, Power-off test, Battery %, Depth of field, Focus meter and Focus distance, and an Off/On picker open
+    caption: Settings tab L in the Custom menu, drawn by the camera's own menu code.
+    credit: fenykl README

@@ -10,6 +10,7 @@ Compact, sourced facts that projects and agents reuse: named addresses for one e
 |---|---|---|
 | [Start or stop the ARM co-processor only between shots](hazard.arm-power-mid-shot.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Write card files with 8.3 names from cached heap buffers](hazard.card-file-names.md) | OM-D E-M5 Mark III | Camera-confirmed |
+| [Stop card writes once a USB cable has been seen](hazard.card-writes-under-usb-storage.md) | OM-D E-M10 Mark II | Single source |
 | [Keep CPU reads of image memory below 0xc0000000](hazard.cpu-read-high-ram.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Check image-engine records against the bridge's limits](hazard.engine-record-refused.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Take section bounds from the loader, not from 0xFF runs](hazard.ff-is-not-free.md) | OM-3, OM-5 Mark II, PEN-F | Camera-confirmed |
@@ -17,12 +18,15 @@ Compact, sourced facts that projects and agents reuse: named addresses for one e
 | [Point OSD picture descriptors into the heap](hazard.osd-pictures-in-heap.md) | OM-3 | Camera-confirmed |
 | [Never CPU-read an image buffer through its raw descriptor address](hazard.raw-image-buffer-read.md) | PEN E-P7 | Camera-confirmed |
 | [Gate on section initialisation, not on the load request](hazard.ready-not-requested.md) | OM-5 Mark II, OM-3 | Disputed |
-| [Only call code in a section that has already loaded](hazard.section-load-order.md) | PEN E-P7, OM-3, OM-D E-M5 Mark III | Camera-confirmed |
+| [Only call code in a section that has already loaded](hazard.section-load-order.md) | PEN E-P7, OM-3, OM-D E-M5 Mark III, OM-D E-M10 Mark II | Camera-confirmed |
 | [Keep work done with interrupts masked short](hazard.short-masked-windows.md) | OM-3 | Corroborated |
+| [Block, never spin, at or above the watchdog task's priority](hazard.spin-starves-watchdog.md) | OM-D E-M10 Mark II | Single source |
+| [A code patch refreshes only the patching core's I-cache](hazard.stale-icache-other-cores.md) | OM-D E-M10 Mark II | Single source |
 | [Keep patch state out of the loaded firmware image](hazard.state-in-loaded-image.md) | PEN E-P7, OM-5 Mark II | Camera-confirmed |
 | [A hung task does not trigger the watchdog](hazard.task-hang-no-reset.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Give added shooting states a handler for every event they can receive](hazard.unhandled-state-event.md) | OM-D E-M5 Mark III | Camera-confirmed |
 | [Leave the compressed section holding the card updater stock](hazard.updater-section-stock.md) | OM-5 Mark II | Single source |
+| [Remove a card-loaded payload before a PC firmware update](hazard.usb-update-with-card-payload.md) | OM-D E-M10 Mark II | Single source |
 | [Align structures with 32-bit fields to four bytes](hazard.word-alignment.md) | PEN-F | Camera-confirmed |
 
 ## Built-in features by build
@@ -42,16 +46,29 @@ What each stock firmware contains, before any project changes it. Absent means c
 
 Hardware and layout facts per stock firmware build.
 
-| | OM-D E-M5 Mark III 1.7 | PEN E-P7 1.1 | PEN E-PM2 1.6 | OM-5 1.2 | OM-5 Mark II 1.1 | PEN-F 3.1 |
-|---|---|---|---|---|---|---|
-| Image processor generation | [TruePic VIII](em5-iii-1700.image-processor.md) |  | [TruePic VI](epm2-1600.image-processor.md) | [TruePic IX](om5-1200.image-processor.md) | [TruePic IX](om5-ii-1100.image-processor.md) |  |
-| Main CPU | [MN103/AM33-2, cores CPU0 to CPU2](em5-iii-1700.main-cpu.md) | [MN103/AM33-2, several cores](ep7-1100.main-cpu.md) | [MN103, two cores, uITRON](epm2-1600.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-1200.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-ii-1100.main-cpu.md) | [MN103, cores CPU0 to CPU2](pen-f-3101.main-cpu.md) |
-| ARM co-processor | [Cortex-A9, Linux 4.4](em5-iii-1700.arm-coprocessor.md) |  | [None](epm2-1600.arm-coprocessor.md) | [Cortex-A9, Linux 4.4](om5-1200.arm-coprocessor.md) | [Cortex-A9, Linux 5.10](om5-ii-1100.arm-coprocessor.md) |  |
-| Image memory class | [1 GB (image buffer map 924 MB)](em5-iii-1700.memory-class.md) |  |  | [1 GB (same buffer map span as the E-M5 III)](om5-1200.memory-class.md) | [1 GB (same layout as the OM-5)](om5-ii-1100.memory-class.md) |  |
-| Update file magic | [OE 13 70](em5-iii-1700.container-magic.md) | [OE 14 20](ep7-1100.container-magic.md) | [OE 10 10](epm2-1600.container-magic.md) | [OE 14 40](om5-1200.container-magic.md) | [OE 14 80](om5-ii-1100.container-magic.md) |  |
-| Firmware blocks | [5](em5-iii-1700.firmware-blocks.md) | [5](ep7-1100.firmware-blocks.md) | [4, plus an image-stabiliser tail](epm2-1600.firmware-blocks.md) | [5](om5-1200.firmware-blocks.md) | [5](om5-ii-1100.firmware-blocks.md) | [4](pen-f-3101.firmware-blocks.md) |
-| Main program compression | [None](em5-iii-1700.main-compression.md) |  | [None](epm2-1600.main-compression.md) | [Two LZ4 sections](om5-1200.main-compression.md) | [Two LZ4 sections](om5-ii-1100.main-compression.md) |  |
-| Wi-Fi chip | [CYW43455](em5-iii-1700.wifi-chip.md) |  |  | [CYW43455](om5-1200.wifi-chip.md) | [CYW43439](om5-ii-1100.wifi-chip.md) |  |
+| | OM-D E-M10 Mark II 1.4 | OM-D E-M5 Mark III 1.7 | PEN E-P7 1.1 | PEN E-PM2 1.6 | OM-5 1.2 | OM-5 Mark II 1.1 | PEN-F 3.1 |
+|---|---|---|---|---|---|---|---|
+| Image processor generation |  | [TruePic VIII](em5-iii-1700.image-processor.md) |  | [TruePic VI](epm2-1600.image-processor.md) | [TruePic IX](om5-1200.image-processor.md) | [TruePic IX](om5-ii-1100.image-processor.md) |  |
+| Main CPU | [MN103 base ISA (no AM33 or AM33-2), cores CPU0 to CPU2](em10-ii-1400.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](em5-iii-1700.main-cpu.md) | [MN103/AM33-2, several cores](ep7-1100.main-cpu.md) | [MN103, two cores, uITRON](epm2-1600.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-1200.main-cpu.md) | [MN103/AM33-2, cores CPU0 to CPU2](om5-ii-1100.main-cpu.md) | [MN103, cores CPU0 to CPU2](pen-f-3101.main-cpu.md) |
+| ARM co-processor |  | [Cortex-A9, Linux 4.4](em5-iii-1700.arm-coprocessor.md) |  | [None](epm2-1600.arm-coprocessor.md) | [Cortex-A9, Linux 4.4](om5-1200.arm-coprocessor.md) | [Cortex-A9, Linux 5.10](om5-ii-1100.arm-coprocessor.md) |  |
+| Image memory class |  | [1 GB (image buffer map 924 MB)](em5-iii-1700.memory-class.md) |  |  | [1 GB (same buffer map span as the E-M5 III)](om5-1200.memory-class.md) | [1 GB (same layout as the OM-5)](om5-ii-1100.memory-class.md) |  |
+| Update file magic | [OE 12 00](em10-ii-1400.container-magic.md) | [OE 13 70](em5-iii-1700.container-magic.md) | [OE 14 20](ep7-1100.container-magic.md) | [OE 10 10](epm2-1600.container-magic.md) | [OE 14 40](om5-1200.container-magic.md) | [OE 14 80](om5-ii-1100.container-magic.md) |  |
+| Firmware blocks | [3](em10-ii-1400.firmware-blocks.md) | [5](em5-iii-1700.firmware-blocks.md) | [5](ep7-1100.firmware-blocks.md) | [4, plus an image-stabiliser tail](epm2-1600.firmware-blocks.md) | [5](om5-1200.firmware-blocks.md) | [5](om5-ii-1100.firmware-blocks.md) | [4](pen-f-3101.firmware-blocks.md) |
+| Main program compression |  | [None](em5-iii-1700.main-compression.md) |  | [None](epm2-1600.main-compression.md) | [Two LZ4 sections](om5-1200.main-compression.md) | [Two LZ4 sections](om5-ii-1100.main-compression.md) |  |
+| Wi-Fi chip |  | [CYW43455](em5-iii-1700.wifi-chip.md) |  |  | [CYW43455](om5-1200.wifi-chip.md) | [CYW43439](om5-ii-1100.wifi-chip.md) |  |
+
+## Olympus OM-D E-M10 Mark II, E-M10 Mark II firmware 1.4, build 1400
+
+| Name | Address | Category | Status |
+|---|---|---|---|
+| [main-code-01 run address](em10-ii-1400.main-code-base.md) | `0x60021020` | layout | Camera-confirmed |
+| [boot1 padding](em10-ii-1400.boot1-padding.md) | `0x6005b7c0` | free space | Camera-confirmed |
+| [End of startup stage Usr3](em10-ii-1400.usr3-end.md) | `0x6018d73a` | hook site | Camera-confirmed |
+| [Never-loaded gap between sec4 and sec5](em10-ii-1400.payload-gap.md) | `0x60da5000` | free space | Camera-confirmed |
+| [Never-loaded gap between sec5 and sec6](em10-ii-1400.sec5-sec6-gap.md) | `0x60f8a800` | free space | Camera-confirmed |
+| [Usr3 card-mount flag](em10-ii-1400.mount-gate.md) | `0x61843f64` | data | Single source |
+| [Uncached DRAM alias rule](em10-ii-1400.uncached-alias.md) | `0xa0000000` | layout | Single source |
+| [Power-on factor word](em10-ii-1400.power-on-factor.md) | `0xa1c17c14` | data | Camera-confirmed |
 
 ## Olympus OM-D E-M5 Mark III, E-M5 Mark III firmware 1.7, build 1700
 

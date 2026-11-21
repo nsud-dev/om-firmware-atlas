@@ -7,6 +7,8 @@ Individual observations from physical cameras, emulators and code inspection, wi
 | Entry | What you will find |
 |---|---|
 | [E-M10 om10mi-mods: freeze and reboot with filters (user report)](em10-filters-reboot.md) | A user reports three random freezes and reboots in about 40 to 50 shots with filters enabled; body, build and filter not stated. |
+| [E-M10 Mark II fenykl loader: maintainer's camera](em10-ii-fenykl-loader-current.md) | The maintainer reports plugins running from the card through the loader, including on a battery-connect boot, and fault resets booting without the payload. |
+| [E-M10 Mark II fenykl settings tab: maintainer's camera](em10-ii-fenykl-settings-tab.md) | The settings tab ran with the main plugin's options, saving values over a reboot, and with a 40-option table, with no error logged. |
 | [E-M10 om10mi-mods: RAW white balance in Lightroom Classic (user report)](em10-raw-wb-lightroom.md) | A user reports RAWs opening about 300 K lower in Lightroom Classic than set in camera; not linked to the mod. |
 | [E-M10 version 56: owner field test](em10-v56-owner.md) | The owner reports version 56 working well on their camera after two independent audits; no test date or steps beyond the published test list. |
 | [E-M10 version 87: owner field test](em10-v87-owner.md) | The owner reports version 87 field-tested on their E-M10 Mark I after PC emulation and independent review; no test date, steps or results per feature. |

@@ -69,6 +69,20 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [Olympus generations for modding](epm2.model-matrix.md) | Generations, firmware codes, layouts and processors across 32 surveyed update files, with labelled certainty. |
 | [EPM2Mod overview](epm2.readme.md) | Features, install routes, the landscape of other projects and the AI-assistance note. |
 | [EPM2Mod releases](epm2.releases.md) | Seven installer pre-releases from 18 to 20 November 2026; v2026.11.20-rc.1 is the newest. |
+| [fenykl contrast client](fenykl.afc.md) | The own contrast-AF client of the focus meter: what it reads, its state machine and the camera run. |
+| [fenykl update-file container code](fenykl.container-code.md) | Block header layout, type and model signatures, scrambling and the checksum rule of Olympus .BIN files. |
+| [fenykl stock-image unpack tests](fenykl.container-tests.md) | Pins the unpacked blocks of the stock E-M10 Mark II 1.4 file: names, sizes and digests. |
+| [fenykl dev monitor](fenykl.devmon.md) | A Wi-Fi access point and protocol for memory reads and writes, test programs, card files and screen capture on the running camera. |
+| [fenykl stock firmware identity](fenykl.firmware.md) | File name, size and SHA-256 of the stock E-M10 Mark II 1.4 update file the loader patch applies to. |
+| [fenykl Button Function entries](fenykl.fnfunc.md) | A plugin function in the stock Button Function pickers of Fn1, Fn2, Fn3, REC and L-Fn, and what a press does without the plugin. |
+| [fenykl firmware symbol table for E-M10 Mark II 1.4](fenykl.fwapi.md) | Firmware functions and data a plugin may use, with call frames, sections, core scope and the evidence for each. |
+| [fenykl loader patch for E-M10 Mark II 1.4](fenykl.loader-patch.md) | The two edits of the loader patch: the end of startup stage Usr3 and the stub in the boot1 padding, with digests of the stock bytes. |
+| [fenykl loader source for E-M10 Mark II 1.4](fenykl.loader-source.md) | Why the hook ends Usr3, which boots run a payload, the section wait before the payload area is used, and the FENYKL.TST and FENYKL.BIN steps. |
+| [fenykl pre-capture library](fenykl.precap.md) | Pre-capture in silent sequential H: start, hold, commit, cancel, the settings gate, fail-safes and the camera runs. |
+| [fenykl overview and install](fenykl.readme.md) | Features, supported body and firmware, flashing the loader from the card, the main plugin, the boots that run a payload, going back to stock. |
+| [fenykl plugin SDK](fenykl.sdk.md) | Status table with camera dates, startup and USB boots, the card gate, ABI and payload rules, the FENYKL.BIN header and which boots load which file. |
+| [fenykl E-M10 Mark II target description](fenykl.target.md) | Payload load address and size, the dev monitor region, the stock file identity, the block load address and GUI asset locations for 1.4. |
+| [fenykl settings tab library](fenykl.ui.md) | The native Custom menu tab L: limits, persistence and the E-M10 Mark II install, with its camera runs. |
 | [Finding space for added code](fishcu.code-space.md) | How to qualify free code space; PEN-F section 3 and OM-3 1100 section tails. |
 | [OE container reference](fishcu.containers.md) | Component wrappers, transform and checksum scope. |
 | [IDA 4.9 profile](fishcu.ida.md) | The specific optional tested IDA/MN103 combination. |

@@ -18,6 +18,8 @@ Choose your exact model and generation. A listing is a research starting point, 
 
 [OM-D E-M10 (Mark I) · E113](em10.md){ data-names="Olympus OM-D E-M10 (Mark I)|E-M10|E-M10 Mark I|E-M10 I|EM10|E113|E113" }
 
+[OM-D E-M10 Mark II · E120](em10-ii.md){ data-names="Olympus OM-D E-M10 Mark II|E-M10 II|E-M10 Mark II|E-M10II|EM10II|E120|E120" }
+
 [OM-D E-M10 Mark IV · E140](em10-iv.md){ data-names="Olympus OM-D E-M10 Mark IV|E-M10 IV|E-M10 Mark IV|EM10IV|E140|E140" }
 
 [OM-D E-M5 Mark III · E137](em5-iii.md){ data-names="Olympus OM-D E-M5 Mark III|E-M5 III|E-M5 Mark III|EM5III|EM5 Mk3|E137|E137" }
@@ -114,6 +116,20 @@ E113
 E113 (2014): one mod built for firmware 1.4 and field-tested on one owner body; distinct from the E-M10 Mark II and Mark IV.
 
 1 mod or port, 1 with a release
+{ .card-meta }
+
+</div>
+
+<div class="camera-card" markdown="1">
+
+[OM-D E-M10 Mark II](em10-ii.md){ .card-title }
+
+E120
+{ .model-code }
+
+E120: one card-loaded plugin project for firmware 1.4, tested by its maintainer on one body; distinct from the E-M10 Mark I and Mark IV.
+
+1 mod or port, none released yet
 { .card-meta }
 
 </div>

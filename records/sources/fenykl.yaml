@@ -1,0 +1,226 @@
+schema_version: 1
+records:
+- type: source
+  id: source.fenykl.readme
+  title: 'fenykl overview and install'
+  summary: 'Features, supported body and firmware, flashing the loader from the card, the main plugin, the boots that run a payload, going back to stock.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/README.md
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: README.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.firmware
+  title: 'fenykl stock firmware identity'
+  summary: 'File name, size and SHA-256 of the stock E-M10 Mark II 1.4 update file the loader patch applies to.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/firmware/README.md
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: firmware/README.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.sdk
+  title: 'fenykl plugin SDK'
+  summary: 'Status table with camera dates, startup and USB boots, the card gate, ABI and payload rules, the FENYKL.BIN header and which boots load which file.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/README.md
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/README.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.target
+  title: 'fenykl E-M10 Mark II target description'
+  summary: 'Payload load address and size, the dev monitor region, the stock file identity, the block load address and GUI asset locations for 1.4.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/target.toml
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/arch/em10ii/target.toml
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.loader-patch
+  title: 'fenykl loader patch for E-M10 Mark II 1.4'
+  summary: 'The two edits of the loader patch: the end of startup stage Usr3 and the stub in the boot1 padding, with digests of the stock bytes.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/loader/patch.toml
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/arch/em10ii/loader/patch.toml
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.fwapi
+  title: 'fenykl firmware symbol table for E-M10 Mark II 1.4'
+  summary: 'Firmware functions and data a plugin may use, with call frames, sections, core scope and the evidence for each.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/firmware.toml
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/arch/em10ii/firmware.toml
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.ui
+  title: 'fenykl settings tab library'
+  summary: 'The native Custom menu tab L: limits, persistence and the E-M10 Mark II install, with its camera runs.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/docs/ui.md
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/docs/ui.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.precap
+  title: 'fenykl pre-capture library'
+  summary: 'Pre-capture in silent sequential H: start, hold, commit, cancel, the settings gate, fail-safes and the camera runs.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/docs/precap.md
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/docs/precap.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.devmon
+  title: 'fenykl dev monitor'
+  summary: 'A Wi-Fi access point and protocol for memory reads and writes, test programs, card files and screen capture on the running camera.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/docs/devmon.md
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/docs/devmon.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.afc
+  title: 'fenykl contrast client'
+  summary: 'The own contrast-AF client of the focus meter: what it reads, its state machine and the camera run.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/docs/afc.md
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/docs/afc.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.fnfunc
+  title: 'fenykl Button Function entries'
+  summary: 'A plugin function in the stock Button Function pickers of Fn1, Fn2, Fn3, REC and L-Fn, and what a press does without the plugin.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/docs/fnfunc.md
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/docs/fnfunc.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.loader-source
+  title: 'fenykl loader source for E-M10 Mark II 1.4'
+  summary: 'Why the hook ends Usr3, which boots run a payload, the section wait before the payload area is used, and the FENYKL.TST and FENYKL.BIN steps.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/loader/loader.S
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: sdk/arch/em10ii/loader/loader.S
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.container-code
+  title: 'fenykl update-file container code'
+  summary: 'Block header layout, type and model signatures, scrambling and the checksum rule of Olympus .BIN files.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/py/fenykl/firmware.py
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: py/fenykl/firmware.py
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.fenykl.container-tests
+  title: 'fenykl stock-image unpack tests'
+  summary: 'Pins the unpacked blocks of the stock E-M10 Mark II 1.4 file: names, sizes and digests.'
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/tests/test_firmware.py
+  source_kind: github-file
+  upstream_repo: atx/fenykl
+  revision: dd8dde0ead63bfc2a722f65a7b86e19577ad9778
+  locator: tests/test_firmware.py
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
