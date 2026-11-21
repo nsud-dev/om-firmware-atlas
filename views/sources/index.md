@@ -114,6 +114,7 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [Caduceus for OM-3 v0.40.2](om3.v0402.md) | Produces colour grain on every row to remove faint banding and reduces red–green speckling. |
 | [Caduceus for OM-3 v0.40.3-beta notes](om3.v0403-beta.md) | Test version adding Halation Radius, faster Halation, a burst pause cap and the playback film-name fix (#93); camera-tested as build r5; #91 listed as a known issue. |
 | [Caduceus for OM-3 v0.40.3-beta2 notes](om3.v0403-beta2.md) | Test version on top of v0.40.3-beta fixing #91, #97 and #99; camera-tested on an OM-3 on 2026-11-20 as build fixes2; v0.40.2 stays current. |
+| [Caduceus for OM-3 v0.40.3-beta3 notes](om3.v0403-beta3.md) | Test version on top of v0.40.3-beta fixing #91, #97, #99 and #101 (Delete); replaces the withdrawn beta2 (boot loop on some start-ups); camera-tested on an OM-3 on 2026-11-21 as test build f9; v0.40.2 stays current. |
 | [Mark II alpha12 report](om5.alpha12.md) | Expected digest and an explicitly incomplete owner report. |
 | [OM-5 Mark II brick-risk review](om5.brick-risk.md) | E148 1.1 recovery route, hook map and incident record for the HSL/WB build. |
 | [OM-5 strict builder](om5.builder.md) | Declarative patch scope, bounds and recorded hashes. |

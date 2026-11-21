@@ -20,7 +20,7 @@ Film looks and a full colour editor, built into the OM SYSTEM OM-3.
 
 </div>
 
-**Type:** mod · **Camera details:** [OM-3](#for-om3) · **Latest release:** [v0.40.3-beta2 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta2), 20 Nov 2026 · **Maintained by** [androidfanman](https://github.com/androidfanman)
+**Type:** mod · **Camera details:** [OM-3](#for-om3) · **Latest release:** [v0.40.3-beta3 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3), 21 Nov 2026 · **Maintained by** [androidfanman](https://github.com/androidfanman)
 { .facts }
 
 ## Cameras
@@ -34,7 +34,7 @@ Film looks and a full colour editor, built into the OM SYSTEM OM-3.
 **For this camera:** 18 features, including Your films in Picture Mode, 20 film simulations and Colour editor on the camera.
 { .card-for }
 
-**Get it:** [v0.40.3-beta2 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta2), 20 Nov 2026 · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+**Get it:** [v0.40.3-beta3 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3), 21 Nov 2026 · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
 { .card-get }
 
 [Camera overview and test results](../cameras/om3.md)
@@ -323,6 +323,23 @@ Halation at strength 5 on a sample photo. *Caduceus for OM-3 tour; photo by Bler
 
 <div class="release-item" markdown="1">
 
+**[Caduceus for OM-3 v0.40.3-beta3 (test version)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3)** <span class="pill pill-alpha">Pre-release</span> · 21 Nov 2026
+{ .release-head }
+
+- Replaces the withdrawn v0.40.3-beta2, with the same #91, #97 and #99 fixes and without its boot loop on some start-ups or its restart on a film change after the Creative Dial's centre.
+- No shut-down with Film Grain, Sequential drive and JPEG only when Low ISO Processing is Drive Priority (#91): grain photos now take the Detail processing.
+- Magnify and MF Assist work in 5:4, XPan and 21:9, and the Image Aspect screen shows the crops' names and sizes (#97).
+- The camera's own picture modes keep their own WB compensation, switched at the first half-press after a dial turn (#99).
+- A function on the Delete button now acts on a long press as on AF-ON (#101); the arrow keys still report no long press.
+- The maintainer reports the build camera-tested on an OM-3 on 2026-11-21 as test build f9.
+
+Test release; v0.40.2 stays the current version. The first time after updating, the camera's own modes may start with no WB compensation.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
 **[Caduceus for OM-3 v0.40.3-beta2 (test version)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta2)** <span class="pill pill-alpha">Pre-release</span> · 20 Nov 2026
 { .release-head }
 
@@ -331,7 +348,7 @@ Halation at strength 5 on a sample photo. *Caduceus for OM-3 tour; photo by Bler
 - The camera's own picture modes keep their own WB compensation again, per WB mode and custom mode (#99).
 - The maintainer reports the build camera-tested on an OM-3 on 2026-11-20 as fixes2.
 
-Test release; v0.40.2 stays the current version. The first time after updating, the camera's own modes may start with no WB compensation.
+Withdrawn: the maintainer reports that some start-ups could get stuck restarting (a boot loop) and that a film change after the Creative Dial's centre could restart the camera. Its GitHub release is unpublished; use v0.40.3-beta3 instead.
 { .release-warning }
 
 </div>
@@ -560,7 +577,7 @@ After updating, assign your custom modes once.
 
 ## Research notes
 
-The newest stable release is v0.40.2 for the OM-3 on stock firmware 1.1. Two test versions followed on 2026-11-20, v0.40.3-beta (Halation Radius, faster Halation) and v0.40.3-beta2 (fixes for a shut-down with Film Grain on Drive Priority, Magnify in the crop modes, and stock modes' WB compensation); the maintainer reports each camera-tested on an OM-3 as its test build.
+The newest stable release is v0.40.2 for the OM-3 on stock firmware 1.1. Test versions followed, v0.40.3-beta (Halation Radius, faster Halation) on 2026-11-20 and v0.40.3-beta3 on 2026-11-21 (fixes for a shut-down with Film Grain on Drive Priority, Magnify in the crop modes, stock modes' WB compensation and Delete's long press). v0.40.3-beta2 was withdrawn for a boot loop on some start-ups and is replaced by beta3; the maintainer reports beta3 camera-tested on an OM-3 as its test build.
 
 ## Sources and record
 
@@ -570,6 +587,7 @@ The newest stable release is v0.40.2 for the OM-3 on stock firmware 1.1. Two tes
 - [Caduceus OM-3 roadmap](../sources/om3.roadmap.md)
 - [Caduceus OM-3 releases](../sources/om3.releases.md)
 - [OM-3 v0.40-alpha release notes](../sources/om3.v040.md)
+- [Caduceus for OM-3 v0.40.3-beta3 notes](../sources/om3.v0403-beta3.md)
 - [Caduceus for OM-3 v0.40.3-beta2 notes](../sources/om3.v0403-beta2.md)
 - [Caduceus for OM-3 v0.40.3-beta notes](../sources/om3.v0403-beta.md)
 - [Caduceus for OM-3 v0.40.2](../sources/om3.v0402.md)

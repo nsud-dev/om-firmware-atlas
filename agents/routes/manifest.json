@@ -276,8 +276,8 @@
       "method": "ceil(utf8-bytes/4)"
     },
     "records/projects/caduceus-om3.yaml": {
-      "approx_tokens": 4685,
-      "bytes": 18737,
+      "approx_tokens": 5076,
+      "bytes": 20301,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/projects/caduceus-om5-tadejs.yaml": {
@@ -396,8 +396,8 @@
       "method": "ceil(utf8-bytes/4)"
     },
     "records/sources/om3.yaml": {
-      "approx_tokens": 3121,
-      "bytes": 12483,
+      "approx_tokens": 3336,
+      "bytes": 13343,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/sources/om5.yaml": {
