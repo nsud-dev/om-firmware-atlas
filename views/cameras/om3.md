@@ -9,7 +9,7 @@ E147: advanced Caduceus work, other modifications and an established research no
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** [Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) (v0.40.3-beta2 (pre-release)), [db firmware / om-c-firmware](../projects/db-firmware.md#for-om3) (dbv0.4.3).
+**Releases for this camera:** [Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) (v0.40.3-beta3 (pre-release)), [db firmware / om-c-firmware](../projects/db-firmware.md#for-om3) (dbv0.4.3).
 
 **No release for this camera yet:** [OM-3 downstream experiments](../projects/camera-stuff.md#for-om3).
 
@@ -287,7 +287,7 @@ Film looks and a full colour editor, built into the OM SYSTEM OM-3.
 **For this camera:** 18 features, including Your films in Picture Mode, 20 film simulations and Colour editor on the camera.
 { .card-for }
 
-**Get it:** [v0.40.3-beta2 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta2), 20 Nov 2026 · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+**Get it:** [v0.40.3-beta3 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3), 21 Nov 2026 · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
 { .card-get }
 
 Mod
