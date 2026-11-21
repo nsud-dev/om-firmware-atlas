@@ -21,7 +21,7 @@ Pick firmware mods for the E-M1 Mark III and build your own update file.
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for E-M1 Mark III Mod Builder on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/em1-iii-mod-builder.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for E-M1 Mark III Mod Builder (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/em1-iii-mod-builder.md) to investigate [my question] on [my exact camera and firmware].
 ```
 
 </details>

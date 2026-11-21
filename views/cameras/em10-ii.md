@@ -25,7 +25,7 @@ E120: one card-loaded plugin project for firmware 1.4, tested by its maintainer 
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for Olympus OM-D E-M10 Mark II (E120) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em10-ii.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for Olympus OM-D E-M10 Mark II (E120) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em10-ii.md) to investigate [my question] on [my stock firmware version].
 ```
 
 </details>

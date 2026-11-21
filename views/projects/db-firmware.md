@@ -21,7 +21,7 @@ Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for db firmware / om-c-firmware on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/db-firmware.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/db-firmware.md) to investigate [my question] on [my exact camera and firmware].
 ```
 
 </details>

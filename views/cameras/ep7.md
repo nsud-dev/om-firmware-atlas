@@ -26,7 +26,7 @@ E142: original Caduceus project and a documented Ghidra/REA setup.
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for Olympus PEN E-P7 (E142) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/ep7.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for Olympus PEN E-P7 (E142) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/ep7.md) to investigate [my question] on [my stock firmware version].
 ```
 
 </details>

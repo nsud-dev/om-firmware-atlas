@@ -639,7 +639,15 @@ kbd {
   background: var(--accent-soft);
 }
 
-.hero-copy .research-intro { margin: .5rem 0 1.25rem; color: var(--ink-2); }
+/* Keep each audience's starting point together as the cards stack on phones. */
+.home-start { padding: clamp(1.5rem, 5vw, 4rem) 0 1rem; }
+.home-start h1 { max-width: 24ch; margin: 0 0 1.4rem; font-size: clamp(2rem, 4.6vw, 4.1rem); line-height: 1.05; }
+.journey-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; }
+.journey { padding: clamp(1rem, 2.5vw, 2rem); border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.prose .journey h2 { margin: 0; }
+.prose .journey p { margin: .8rem 0; }
+.journey .camera-finder { padding: 0; background: transparent; border: 0; box-shadow: none; }
+.prose .journey > :last-child { margin-bottom: 0; }
 .prose pre:has(code.language-text) { white-space: pre-wrap; overflow-wrap: anywhere; }
 .prose pre code.language-text { white-space: inherit; }
 

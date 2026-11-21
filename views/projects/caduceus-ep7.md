@@ -24,7 +24,7 @@ The original Caduceus: HSLFX colour editing and 29 film looks for the PEN E-P7.
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for Caduceus for E-P7 on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-ep7.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for Caduceus for E-P7 (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-ep7.md) to investigate [my question] on [my exact camera and firmware].
 ```
 
 </details>

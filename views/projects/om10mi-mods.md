@@ -25,7 +25,7 @@ Film looks, a colour wheel, colour editors and a longer video limit for the orig
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for om10mi-mods on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/om10mi-mods.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for om10mi-mods (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/om10mi-mods.md) to investigate [my question] on [my exact camera and firmware].
 ```
 
 </details>

@@ -2,7 +2,7 @@
 
 [Research with your AI](research-with-ai.md){ .btn .btn-primary }
 
-Give Claude Code or another agent your camera and question. Get a sourced starting point, then contribute your findings back to the Atlas.
+Give your coding agent your camera and question. Get a sourced starting point, then contribute your findings back to the Atlas.
 
 Choose the [exact camera and generation](../views/cameras/index.md) and identify its starting firmware. If you are deciding whether to install a mod, start with [the owner's guide to risk and recovery](before-you-install.md).
 

@@ -17,7 +17,7 @@ Read MN103 camera firmware in Ghidra, with the decompiler.
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for Ghidra MN103 processor module on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/ghidra-mn103.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for Ghidra MN103 processor module (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/ghidra-mn103.md) to investigate [my question] on [my exact camera and firmware].
 ```
 
 </details>

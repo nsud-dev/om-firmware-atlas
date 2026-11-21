@@ -1,31 +1,37 @@
-<section class="hero" markdown="1">
+<section class="home-start" markdown="1">
 
-<div class="hero-copy" markdown="1">
+# Community firmware for Olympus and OM SYSTEM cameras
 
-# Community firmware <span class="accent">for your camera.</span>
+<div class="journey-grid" markdown="1">
 
-<p class="lede">Find mods and camera tests, or use the community’s findings to plan your own firmware research.</p>
+<section class="journey" markdown="1">
 
-[Research with your AI](research-with-ai.md){ .btn .btn-primary }
+## For camera owners
 
-Find earlier attempts and known pitfalls, then share what you learn.
-{ .research-intro }
+Find mods for your model, see what people have tested and get the project’s install guide.
 
 <!-- atlas:camera-finder -->
 
-[Browse all cameras](../views/cameras/index.md) · [Explore projects](../views/projects/index.md)
+[Browse all cameras](../views/cameras/index.md) · [Report a camera result](report.md)
 
-**[Before you install](before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](before-you-install.md)** · Unofficial firmware can stop your camera starting. Recovery from a memory card is not guaranteed.
 { .install-note }
 
-</div>
+</section>
 
-<div class="hero-visual" markdown="1">
+<section class="journey" markdown="1">
 
-![A Paris street at night in warm, soft film colour](assets/projects/caduceus-om3/film-portra-400.jpg)
+## For developers
 
-[Caduceus for OM-3](../views/projects/caduceus-om3.md): FILM 1, Portra 400, one of 20 built-in film looks.
-{ .hero-visual-caption }
+Use earlier research, failed attempts and known pitfalls to investigate a question in your own project.
+
+[Use the Atlas with your AI](research-with-ai.md){ .btn .btn-primary }
+
+[Browse the research](research.md) · [Explore projects](../views/projects/index.md)
+
+Have a finding to add? [Share your research](research-with-ai.md#share-what-you-find) or [submit a source](add.md).
+
+</section>
 
 </div>
 
@@ -33,7 +39,7 @@ Find earlier attempts and known pitfalls, then share what you learn.
 
 <!-- atlas:updates -->
 
-[Join the community](community.md) · [Report a camera result](report.md) · [Contribute to the Atlas](add.md) · [Explore the research](research.md)
+[Join the community](community.md)
 
 <!-- atlas:showcase -->
 
@@ -78,9 +84,3 @@ What a reporter says happened on the identified camera and package.
 { .feature-foot }
 
 </section>
-
-<aside class="agent-band" markdown="1">
-
-**Kept current by the community and AI agents.** Give an agent a link and it [updates the Atlas through a reviewed pull request](how-it-works.md).
-
-</aside>

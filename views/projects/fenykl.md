@@ -23,7 +23,7 @@ A loader flashed once, then plugins written in C from the SD card. E-M10 Mark II
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for fenykl on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/fenykl.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for fenykl (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/fenykl.md) to investigate [my question] on [my exact camera and firmware].
 ```
 
 </details>

@@ -201,8 +201,7 @@ def research_actions(origin, row):
     guide = link(origin, "docs/research-with-ai.md")
     return (f'\n<details class="research-action" markdown="1"><summary>Research this {kind} with AI</summary>\n\n'
             f'Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI]({guide}).\n\n'
-            f'```text\nUse the OM Firmware Atlas to investigate [my question] for {identity} on {scope}. Start at {target} and follow AGENTS.md and agents/start.md in the Atlas repository. '
-            'Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.\n```\n\n</details>\n\n'
+            f'```text\nUse the Atlas entry for {identity} ({target}) to investigate [my question] on {scope}.\n```\n\n</details>\n\n'
             f'[Share a research finding]({guide}#share-what-you-find)\n')
 
 

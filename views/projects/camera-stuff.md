@@ -20,7 +20,7 @@ A downstream OM-3 fork for trying fixes before sending them upstream.
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for OM-3 downstream experiments on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/camera-stuff.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for OM-3 downstream experiments (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/camera-stuff.md) to investigate [my question] on [my exact camera and firmware].
 ```
 
 </details>

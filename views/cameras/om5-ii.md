@@ -30,7 +30,7 @@ E148: v0.2.0-alpha1 has an overall positive owner report; original OM-5 work is 
 Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
 
 ```text
-Use the OM Firmware Atlas to investigate [my question] for OM SYSTEM OM-5 Mark II (E148) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om5-ii.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+Use the Atlas entry for OM SYSTEM OM-5 Mark II (E148) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om5-ii.md) to investigate [my question] on [my stock firmware version].
 ```
 
 </details>
