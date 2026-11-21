@@ -22,7 +22,8 @@ nav:
       - Report a result: report.md
       - Add or correct: add.md
   - Research:
-      - Start here: research.md
+      - Use the Atlas with your AI: research-with-ai.md
+      - Firmware research index: research.md
       - Technical reference: views/reference/index.md
       - Guides: knowledge/README.md
       - Catalogue:

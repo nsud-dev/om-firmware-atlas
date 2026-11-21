@@ -4,7 +4,12 @@
 
 # Community firmware <span class="accent">for your camera.</span>
 
-<p class="lede">Find mods for your Olympus or OM SYSTEM camera, see what owners have tested and follow the project's installation guide.</p>
+<p class="lede">Find mods and camera tests, or use the community’s findings to plan your own firmware research.</p>
+
+[Research with your AI](research-with-ai.md){ .btn .btn-primary }
+
+Find earlier attempts and known pitfalls, then share what you learn.
+{ .research-intro }
 
 <!-- atlas:camera-finder -->
 
