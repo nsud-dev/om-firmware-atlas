@@ -11,4 +11,5 @@
 | [Colour and settings](colour.md) | HSL, profiles, image effects and persistence research. |
 | [Looks and interoperability](interfaces.md) | Card wrappers, shared settings, exporters and sharing formats. |
 | [Capture, controls and connectivity](capture.md) | ND, recording, lens controls, localisation and network features. |
+| [Display and drawing](display.md) | GUI layers, the vector GPU, overlays and what reaches the screen. |
 | [Find the community](community.md) | Public discussion venues and how to turn a message into a source. |

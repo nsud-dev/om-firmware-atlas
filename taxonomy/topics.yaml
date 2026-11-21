@@ -21,6 +21,9 @@ topics:
   capture:
     title: Capture, controls and connectivity
     summary: ND, recording, lens controls, localisation and network features.
+  display:
+    title: Display and drawing
+    summary: GUI layers, the vector GPU, overlays and what reaches the screen.
   community:
     title: Find the community
     summary: Public discussion venues and how to turn a message into a source.

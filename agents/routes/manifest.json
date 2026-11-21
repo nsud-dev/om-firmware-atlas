@@ -30,6 +30,11 @@
       "bytes": 3003,
       "method": "ceil(utf8-bytes/4)"
     },
+    "knowledge/subsystems/display.md": {
+      "approx_tokens": 1118,
+      "bytes": 4471,
+      "method": "ceil(utf8-bytes/4)"
+    },
     "knowledge/tooling/analysis.md": {
       "approx_tokens": 392,
       "bytes": 1566,
