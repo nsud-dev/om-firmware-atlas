@@ -10,6 +10,10 @@ The owner reports the new pinned build booting, loading the default film file an
 
 **Firmware:** [E-PM2 firmware 1.6, build 1600](../firmware/epm2-1600.md) · **Mod build:** films-twelve-off
 
+[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+films-twelve-off)
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Provenance:** maintainer summary. **Reported:** 2026-11-21. **Test date:** 2026-11-21.
 
 **Reported/observed package SHA-256:** `600041b3d24c67116004f7869d001a9b342599f0c081cf444afc572fcfac09ec`

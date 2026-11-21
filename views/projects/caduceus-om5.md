@@ -19,6 +19,18 @@ Looks and a full colour editor for the OM-5 Mark II. Experimental.
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for Caduceus for OM-5 on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-om5.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** mod · **Camera details:** [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii) · **Latest release:** [v0.2.0-alpha1 (pre-release)](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1), 20 Nov 2026 · **Maintained by** [xulfr](https://github.com/xulfr)
 { .facts }
 
@@ -217,6 +229,8 @@ The hue page of the colour editor. *Caduceus for OM-5 website.*
 - Picture Mode stays open 30 seconds; startup guard on the gamma hook after an intermittent boot loop on a development build.
 - The owner reports that the candidate works perfectly; start counts and the on-card checksum were not reported.
 
+OM-5 Mark II · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-5+%C2%B7+v0.2.0-alpha1)
+
 For E148 firmware 1.1. Verify the file on the card against the checksum in the release notes.
 { .release-warning }
 
@@ -229,6 +243,8 @@ For E148 firmware 1.1. Verify the file on the card against the checksum in the r
 
 - Restores the Monochrome Color Filter graphic.
 - The owner reports that the alpha12 checks were completed, without a step-by-step record.
+
+OM-5 Mark II · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-5+%C2%B7+v0.1.0-alpha12)
 
 Experimental. The installer keeps its experimental-build acknowledgement; installing can leave a camera unable to start.
 { .release-warning }

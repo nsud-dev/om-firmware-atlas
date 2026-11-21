@@ -10,6 +10,10 @@ The owner reports the pinned build working, with film output matching the fitted
 
 **Firmware:** [E-PM2 firmware 1.6, build 1600](../firmware/epm2-1600.md) · **Mod build:** films-look-exif
 
+[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+films-look-exif)
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Provenance:** maintainer summary. **Reported:** 2026-11-20. **Test date:** 2026-11-20.
 
 **Reported/observed package SHA-256:** `af4bcb38df908c3d29b3ef028059a3142cbecc4b66737f7bb2cc2848d6a4bcf4`

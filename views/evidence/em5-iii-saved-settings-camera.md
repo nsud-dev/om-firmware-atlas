@@ -10,6 +10,10 @@ The rows appear in place, the page opens, and set values are still there after a
 
 **Firmware:** [E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md) · **Mod build:** unpublished test build (2026-11-19)
 
+[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M5+Mark+III+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+notes+%28E-M5+Mark+III%29+%C2%B7+unpublished+test+build+%282026-11-19%29)
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Provenance:** firsthand tester report. **Reported:** 2026-11-19. **Test date:** 2026-11-19.
 
 **Reported/observed package SHA-256:** not recorded.

@@ -20,6 +20,18 @@ Film looks, a colour wheel, colour editors and a longer video limit for the orig
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for om10mi-mods on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/om10mi-mods.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** mod · **Camera details:** [OM-D E-M10 (Mark I)](#for-em10) · **Latest release:** [v87](https://github.com/Meghnus/om10mi-mods/releases/tag/v87), 21 Nov 2026 · **Maintained by** [Meghnus](https://github.com/Meghnus)
 { .facts }
 
@@ -149,6 +161,8 @@ A PC tool fits a LUT, .cube or .xmp file to a look slot as an approximate colour
 - Contrast/Gradation code on looks made safe when two images are processed at once (related to issue 4).
 - Pop-up message frames use the correct graphic again; the builder makes version 87 only.
 
+OM-D E-M10 (Mark I) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M10+%28Mark+I%29+%C2%B7+stock+firmware%3A+&package=om10mi-mods+%C2%B7+v87)
+
 Unofficial, for the E-M10 Mark I on firmware 1.4 only; tested on one body. No warranty; installing custom firmware is risky. The ART dial no longer reaches the stock art filters.
 { .release-warning }
 
@@ -161,6 +175,8 @@ Unofficial, for the E-M10 Mark I on firmware 1.4 only; tested on one body. No wa
 
 - Four new looks (Portra 400, Kodachrome 64, Ektar 100, Gold 200) and per-bank editing rows in RAW Data Edit.
 - Builder for Windows (exe, no Python) or any system (zip, Python 3.10+); downloads and checks the stock file.
+
+OM-D E-M10 (Mark I) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M10+%28Mark+I%29+%C2%B7+stock+firmware%3A+&package=om10mi-mods+%C2%B7+v56)
 
 Unofficial, for the E-M10 Mark I on firmware 1.4 only; tested on one body. Do not flash on any other model. Installing is at your own risk.
 { .release-warning }

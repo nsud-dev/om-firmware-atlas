@@ -9,7 +9,9 @@ E139: one mod builder for firmware 1.6; owner camera reports per mod, no Atlas e
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** [E-M1 Mark III Mod Builder](../projects/em1-iii-mod-builder.md#for-em1-iii) (mod-builder-1.18).
+**Releases for this camera:**
+
+- [E-M1 Mark III Mod Builder](../projects/em1-iii-mod-builder.md#for-em1-iii) · mod-builder-1.18 · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M1+Mark+III+%C2%B7+stock+firmware%3A+&package=E-M1+Mark+III+Mod+Builder+%C2%B7+mod-builder-1.18)
 
 **Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence)
 
@@ -17,6 +19,18 @@ E139: one mod builder for firmware 1.6; owner camera reports per mod, no Atlas e
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for Olympus OM-D E-M1 Mark III (E139) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em1-iii.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## What you can do with this camera { #features }
 

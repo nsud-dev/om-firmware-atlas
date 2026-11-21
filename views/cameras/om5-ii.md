@@ -9,7 +9,14 @@ E148: v0.2.0-alpha1 has an overall positive owner report; original OM-5 work is 
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** [Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) (v0.2.0-alpha1 (pre-release)), [OMKit](../projects/omkit.md#for-om5-ii) (v0.1.0), [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5-ii) (dbv0.4.3) — **The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
+**Releases for this camera:**
+
+- [Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · v0.2.0-alpha1 (pre-release) · [Camera test · reported working](../evidence/om5-ii-v020-alpha1-owner.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-5+%C2%B7+v0.2.0-alpha1)
+- [OMKit](../projects/omkit.md#for-om5-ii) · v0.1.0 · The latest camera report gives its build as [loader fw1100 (OMKit 0.1.0)](../evidence/om5-ii-omkit-loader.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=OMKit+%C2%B7+v0.1.0)
+
+**Reported not working on this model:**
+
+- [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5-ii) · dbv0.4.3 · The project reports that this build does not work on this camera. [Project’s release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3)
 
 **Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Platform](#platform)
 
@@ -17,6 +24,18 @@ E148: v0.2.0-alpha1 has an overall positive owner report; original OM-5 work is 
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for OM SYSTEM OM-5 Mark II (E148) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om5-ii.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## What you can do with this camera { #features }
 

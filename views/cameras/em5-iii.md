@@ -9,7 +9,7 @@ E137: firmware 1.7 studied in depth; focus stacking with any lens, a Live ND por
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** none recorded yet.
+**Releases for this camera:** none listed here.
 
 **Jump to:** [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform)
 
@@ -17,6 +17,18 @@ E137: firmware 1.7 studied in depth; focus stacking with any lens, a Live ND por
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for Olympus OM-D E-M5 Mark III (E137) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em5-iii.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Projects for this camera { #projects }
 

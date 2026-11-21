@@ -9,7 +9,11 @@ Original E144: several projects have distinct experiments. Mark II results do no
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5) (dbv0.4.3) — **The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
+**Releases for this camera:** none listed here.
+
+**Reported not working on this model:**
+
+- [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5) · dbv0.4.3 · The project reports that this build does not work on this camera. [Project’s release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3)
 
 **No release for this camera yet:** [Caduceus port for the original OM-5 (tadejs)](../projects/caduceus-om5-tadejs.md#for-om5), [Caduceus for OM-5](../projects/caduceus-om5.md#for-om5).
 
@@ -19,6 +23,18 @@ Original E144: several projects have distinct experiments. Mark II results do no
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for OM SYSTEM OM-5 (E144) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om5.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## What you can do with this camera { #features }
 

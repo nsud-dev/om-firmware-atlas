@@ -4,6 +4,7 @@ from __future__ import annotations
 from html import escape
 import json
 from pathlib import Path
+from urllib.parse import urlencode
 
 from atlas_core import GENERATED, KINDS, TRAIT_CATEGORIES, cost, link, reference_status, slug
 
@@ -183,32 +184,61 @@ GLANCE_SECTIONS = (("features", "What you can do"), ("projects", "Projects"), ("
                    ("talk", "Where to talk"), ("platform", "Platform"))
 
 
+def report_link(camera, project, build):
+    fields = urlencode({"template": "camera-report.yml",
+                        "target": camera["title"] + " · stock firmware: ",
+                        "package": project["title"] + " · " + (build or "build: ")})
+    return f"[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?{fields})"
+
+
+def research_actions(origin, row):
+    kind = row["type"]
+    identity = row["title"]
+    if row.get("model_codes"):
+        identity += " (" + ", ".join(row["model_codes"]) + ")"
+    target = f"https://github.com/xulfr/om-firmware-atlas/blob/main/{view_path(row)}"
+    scope = "[my stock firmware version]" if kind == "camera" else "[my exact camera and firmware]"
+    guide = link(origin, "docs/research-with-ai.md")
+    return (f'\n<details class="research-action" markdown="1"><summary>Research this {kind} with AI</summary>\n\n'
+            f'Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI]({guide}).\n\n'
+            f'```text\nUse the OM Firmware Atlas to investigate [my question] for {identity} on {scope}. Start at {target} and follow AGENTS.md and agents/start.md in the Atlas repository. '
+            'Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.\n```\n\n</details>\n\n'
+            f'[Share a research finding]({guide}#share-what-you-find)\n')
+
+
 def glance(origin, camera, mods, records, page):
     """A short summary at the top of a camera page: releases, work in progress and jump links."""
-    released, waiting = [], []
+    released, failed, waiting = [], [], []
     for project in mods:
         release = latest_release(project, camera["id"])
         name = f"[{cell(project['title'])}]({project_target(origin, project, camera['id'])})"
-        noted = any(n["camera_id"] == camera["id"] for n in project.get("camera_notes", []))
-        if release:
-            limit = release_limit(release, camera["id"])
-            if limit:
-                released.append(f"{name} ({release_name(release)}) — **{limit}** [Read release notes]({release['url']})")
-                continue
-            tag = release_name(release)
-            released.append(f"{name} ({tag}" + ("; see its card below)" if noted else ")"))
-        else:
+        if not release:
             waiting.append(name)
-    lines = []
-    if released:
-        lines.append("**Releases for this camera:** " + ", ".join(released) + ".")
-    else:
-        lines.append("**Releases for this camera:** none recorded yet.")
+            continue
+        entry = f"{name} · {release_name(release)}"
+        limit = release_limit(release, camera["id"])
+        if release.get("camera_limits", {}).get(camera["id"]) == "reported-not-working":
+            failed.append(f"{entry} · {limit} [Project’s release notes]({release['url']})")
+            continue
+        reports = [ev for ev in records.values() if ev["type"] == "evidence" and ev["method"] == "physical-camera"
+                   and ev["project_id"] == project["id"] and ev["camera_id"] == camera["id"]]
+        exact = [ev for ev in reports if ev["mod_build"] == release["tag"]]
+        evidence = ", ".join(f"[{observation_heading(ev)}]({link(origin, view_path(ev))})" for ev in exact)
+        if not exact and reports:
+            other = max(reports, key=lambda ev: (ev["reported_on"], ev["id"]))
+            evidence = (f"The latest camera report gives its build as [{cell(other['mod_build'] or 'an unspecified build')}]"
+                        f"({link(origin, view_path(other))})")
+        if limit:
+            entry += f" · {limit} [Release notes]({release['url']})"
+        released.append(f"{entry} · {evidence or 'No camera test recorded here for this project on this model'} · {report_link(camera, project, release['tag'])}")
+    lines = ["**Releases for this camera:**" + ("\n\n- " + "\n- ".join(released) if released else " none listed here.")]
+    if failed:
+        lines.append("**Reported not working on this model:**\n\n- " + "\n- ".join(failed))
     if waiting:
         lines.append("**No release for this camera yet:** " + ", ".join(waiting) + ".")
     jumps = [f"[{title}](#{anchor})" for anchor, title in GLANCE_SECTIONS if "{ #" + anchor + " }" in page]
     lines.append("**Jump to:** " + " · ".join(jumps))
-    return '\n<div class="glance" markdown="1">\n\n' + "\n\n".join(lines) + "\n\n</div>\n" + risk_note(origin)
+    return '\n<div class="glance" markdown="1">\n\n' + "\n\n".join(lines) + "\n\n</div>\n" + risk_note(origin) + research_actions(origin, camera)
 
 
 def installs(records, project, camera_id):
@@ -500,7 +530,7 @@ def render(catalogue):
             text = GENERATED + f"# {row['title']}\n\n{row.get('tagline', row['summary'])}\n\n"
             if any(installs(records, row, camera_id) for camera_id in row["camera_ids"]):
                 text += risk_note(path) + "\n"
-            text += project_actions(row, records)
+            text += project_actions(row, records) + research_actions(path, row)
             facts = [f"**Type:** {label(row['kind'])}"]
             if row["camera_ids"]:
                 facts.append("**Camera details:** " + ", ".join(
@@ -575,6 +605,9 @@ def render(catalogue):
                     text += f"**[{cell(release['title'])}]({release['url']})**" + (' <span class="pill pill-alpha">Pre-release</span>' if release["prerelease"] else "") + f" · {nice_date(release['date'])}\n{{ .release-head }}\n\n"
                     text += "\n".join(f"- {h}" for h in release["highlights"]) + "\n\n"
                     text += release_notices(release, records)
+                    for camera_id in release["camera_ids"]:
+                        camera = records[camera_id]
+                        text += f"{cell(short_name(camera['title']))} · {report_link(camera, row, release['tag'])}\n\n"
                     if release.get("warning"):
                         text += f"{release['warning']}\n{{ .release-warning }}\n\n"
                     text += "</div>\n\n"
@@ -604,6 +637,9 @@ def render(catalogue):
             text += f"\n**{evidence_label(row)}.**\n"
             text += f"\n**Camera:** {ref(path, row['camera_id']) if row['camera_id'] else 'Not camera-specific'} · **Project:** {ref(path, row['project_id'])}\n"
             text += f"\n**Firmware:** {ref(path, row['firmware_id']) if row['firmware_id'] else 'Not recorded'} · **Mod build:** {row['mod_build'] or 'Not specified'}\n"
+            if row["camera_id"]:
+                text += "\n" + report_link(records[row["camera_id"]], records[row["project_id"]], row["mod_build"]) + "\n"
+            text += f"\n[Share a research finding]({link(path, 'docs/research-with-ai.md')}#share-what-you-find)\n"
             text += f"\n**Provenance:** {label(row['provenance'])}. **Reported:** {row['reported_on']}. **Test date:** {row['tested_on'] or 'Not explicitly recorded'}.\n"
             text += f"\n**Reported/observed package SHA-256:** `{row['package_sha256']}`\n" if row["package_sha256"] else "\n**Reported/observed package SHA-256:** not recorded.\n"
             if row["expected_package_sha256"]:

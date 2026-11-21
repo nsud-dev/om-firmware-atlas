@@ -10,6 +10,10 @@ A user reports three random freezes and reboots in about 40 to 50 shots with fil
 
 **Firmware:** Not recorded · **Mod build:** Not specified
 
+[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M10+%28Mark+I%29+%C2%B7+stock+firmware%3A+&package=om10mi-mods+%C2%B7+build%3A+)
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Provenance:** firsthand tester report. **Reported:** 2026-11-21. **Test date:** Not explicitly recorded.
 
 **Reported/observed package SHA-256:** not recorded.

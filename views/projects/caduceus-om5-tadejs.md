@@ -17,6 +17,18 @@ Groundwork for bringing Caduceus to the original OM-5. Not released.
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for Caduceus port for the original OM-5 (tadejs) on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-om5-tadejs.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** experimental fork · **Camera details:** [OM-5](#for-om5) · **Maintained by** [tadejs](https://github.com/tadejs)
 { .facts }
 

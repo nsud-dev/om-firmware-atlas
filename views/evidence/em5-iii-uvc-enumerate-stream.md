@@ -10,6 +10,10 @@ Test builds enumerate as UVC and stream the camera's own picture.
 
 **Firmware:** [E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md) · **Mod build:** unpublished webcam test builds
 
+[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M5+Mark+III+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+notes+%28E-M5+Mark+III%29+%C2%B7+unpublished+webcam+test+builds)
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Provenance:** firsthand tester report. **Reported:** 2026-10-20. **Test date:** Not explicitly recorded.
 
 **Reported/observed package SHA-256:** not recorded.

@@ -9,7 +9,10 @@ E147: advanced Caduceus work, other modifications and an established research no
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** [Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) (v0.40.3-beta3 (pre-release)), [db firmware / om-c-firmware](../projects/db-firmware.md#for-om3) (dbv0.4.3).
+**Releases for this camera:**
+
+- [Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · v0.40.3-beta3 (pre-release) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.3-beta3)
+- [db firmware / om-c-firmware](../projects/db-firmware.md#for-om3) · dbv0.4.3 · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.3)
 
 **No release for this camera yet:** [OM-3 downstream experiments](../projects/camera-stuff.md#for-om3).
 
@@ -19,6 +22,18 @@ E147: advanced Caduceus work, other modifications and an established research no
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for OM SYSTEM OM-3 (E147) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om3.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## What you can do with this camera { #features }
 

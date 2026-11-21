@@ -12,6 +12,18 @@ Read MN103 camera firmware in Ghidra, with the decompiler.
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for Ghidra MN103 processor module on [my exact camera and firmware]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/ghidra-mn103.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** tool · **Camera details:** [OM-D E-M5 Mark III](#for-em5-iii), [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii), [PEN-F](#for-pen-f), [PEN E-P7](#for-ep7) · **Maintained by** [nsud-dev](https://github.com/nsud-dev)
 { .facts }
 

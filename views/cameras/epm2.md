@@ -9,7 +9,9 @@ E101, TruePic VI (2012): one camera-tested mod; its addresses and edits do not c
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** [EPM2Mod](../projects/epm2mod.md#for-epm2) (v2026.11.20-rc.1 (pre-release)).
+**Releases for this camera:**
+
+- [EPM2Mod](../projects/epm2mod.md#for-epm2) · v2026.11.20-rc.1 (pre-release) · The latest camera report gives its build as [films-twelve-off](../evidence/epm2-films-twelve-off.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.1)
 
 **Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform)
 
@@ -17,6 +19,18 @@ E101, TruePic VI (2012): one camera-tested mod; its addresses and edits do not c
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for Olympus PEN E-PM2 (E101) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/epm2.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## What you can do with this camera { #features }
 

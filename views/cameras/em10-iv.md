@@ -9,7 +9,7 @@ E140: port/signature research and emulator coverage; no physical feature report 
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** none recorded yet.
+**Releases for this camera:** none listed here.
 
 **No release for this camera yet:** [Caduceus for E-P7](../projects/caduceus-ep7.md#for-em10-iv).
 
@@ -19,6 +19,18 @@ E140: port/signature research and emulator coverage; no physical feature report 
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the OM Firmware Atlas to investigate [my question] for Olympus OM-D E-M10 Mark IV (E140) on [my stock firmware version]. Start at https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em10-iv.md and follow AGENTS.md and agents/start.md in the Atlas repository. Summarise relevant attempts and pitfalls, link the original sources, distinguish camera tests from other evidence, and identify what remains unknown.
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Projects for this camera { #projects }
 
