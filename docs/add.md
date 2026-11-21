@@ -8,13 +8,7 @@ Bring a repository, release, research note, forum post, community venue or a cor
 2. **Ask an AI agent.** Give an agent with repository access the [source prompt](how-it-works.md#copyable-prompts). It will update the records and open a pull request for review.
 3. **Make the change yourself.** Follow the [contribution steps](https://github.com/xulfr/om-firmware-atlas/blob/main/CONTRIBUTING.md) and the [record format](https://github.com/xulfr/om-firmware-atlas/blob/main/maintenance/record-format.md).
 
-For an agent with access to your project and the Atlas, copy this and replace the project URL.
-
-```text
-Update https://github.com/xulfr/om-firmware-atlas with my work from <project URL>.
-Start with AGENTS.md and agents/start.md. Cite the builds and camera reports you find,
-keep unknowns visible, run the checks and open a PR for human review.
-```
+Already used the Atlas for an investigation? Give your agent the public source and the [prompt to share what you found](research-with-ai.md#share-what-you-find).
 
 [How the Atlas works](how-it-works.md) follows a source from its URL to the published site.
 

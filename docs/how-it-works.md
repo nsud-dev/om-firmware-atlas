@@ -203,15 +203,7 @@ Regenerate, run the checks, tests and build, inspect the affected pages, and ope
 Do not approve or merge it.
 ```
 
-**Research with the Atlas**
-
-```text
-Read AGENTS.md and follow agents/start.md in xulfr/om-firmware-atlas, using the research job.
-My camera is EXACT MODEL AND GENERATION on firmware VERSION. My question is: QUESTION.
-Read only the routes and guides the plan selects.
-Answer with the relevant projects, firmware, evidence and gaps, and say for each point whether it comes from a release, code inspection, emulation or a physical-camera report.
-Do not treat other models or packages as evidence for mine, and do not change the repository.
-```
+[Use the Atlas with your AI](research-with-ai.md) has a research prompt, a worked example and a follow-up prompt for contributing your findings.
 
 ## Contributing locally
 

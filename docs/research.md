@@ -1,5 +1,9 @@
 # Firmware research
 
+[Research with your AI](research-with-ai.md){ .btn .btn-primary }
+
+Give Claude Code or another agent your camera and question. Get a sourced starting point, then contribute your findings back to the Atlas.
+
 Choose the [exact camera and generation](../views/cameras/index.md) and identify its starting firmware. If you are deciding whether to install a mod, start with [the owner's guide to risk and recovery](before-you-install.md).
 
 ## From update file to working camera
@@ -67,4 +71,4 @@ For an existing mod, use its repository and contribution process. For an emulato
 
 Use the Atlas for cross-project explanations, source records and scoped evidence. Before recommending a new repository, inspect existing branches, issues and related attempts and explain why those homes do not fit. The [project directory](../views/projects/index.md) gives starting destinations, not an ownership ruling.
 
-Working with an AI agent? Use the [research prompt](how-it-works.md#copyable-prompts). These routes can be read without installing a firmware toolchain.
+Working with an AI agent? Use the [research and contribution prompts](research-with-ai.md). These routes can be read without installing a firmware toolchain.
