@@ -12,12 +12,17 @@ records:
   - source.em5n.webcam
   - source.em5n.guides
   - source.em5n.guide-drawing
+  - source.em5n.guide-own-graphics
+  - source.em5n.guide-vector-gpu
+  - source.em5n.tool-osdlab
+  - source.em5n.tool-c3d-vg
+  - source.em5n.tool-omemu-c3d
   topics:
   - platform
   - patching
   - tooling
   - capture
-  last_reviewed: '2026-11-20'
+  last_reviewed: '2026-11-21'
   url: https://github.com/nsud-dev/olympus-firmware-notes
   kind: research
   camera_ids:
@@ -32,7 +37,7 @@ records:
   tagline: How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
   camera_notes:
   - camera_id: camera.em5-iii
-    note: "Notes and tools only; no builds are published. The author's own test builds on one E-M5 III cover focus stacking with any lens, Live ND and its live-view preview ported from the OM-5, a Color / Monochrome Profile editor, and a parked USB webcam."
+    note: "Notes and tools only; no builds are published. The author's own test builds on one E-M5 III cover focus stacking with any lens, Live ND and its live-view preview ported from the OM-5, a Color / Monochrome Profile editor, and a parked USB webcam. Drawing your own screens and GPU graphics is so far shown in the om-emu emulator only."
   description:
   - 'A study of the Olympus OM-D E-M5 Mark III firmware 1.7: container format, boot and section loading, recovery,
     the MN103 CPU, memory map, image engine, ARM co-processor, display, stabiliser, shooting sequencer, settings and
@@ -40,13 +45,14 @@ records:
   - The aim is to run features of newer bodies on the E-M5 III, mainly Live ND and Handheld High Res from the OM-5.
     Each page tags claims as seen on the camera, read in the code, or inferred, and gives dates.
   - 'Tools: olyfw.py unpacks and repacks E-M5 III update files and fixes their checksums; ptpinfo.py reads PTP device
-    info. No firmware images, disassembly or patched builds are included.'
+    info; osdlab, c3d_vg and a set of om-emu patches (with om-emu''s MIT notice) draw on the GUI layers and the
+    vector GPU in the om-emu emulator. No firmware images, disassembly or patched builds are included.'
   maintainers:
   - label: nsud-dev
     url: https://github.com/nsud-dev
   links:
   - label: Firmware guides
-    url: https://github.com/nsud-dev/olympus-firmware-notes/blob/b6823403a48709da06a6a7d5ef7510be3d8143f8/docs/guides/README.md
+    url: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/guides/README.md
   - label: Overview of everything studied
     url: https://github.com/nsud-dev/olympus-firmware-notes/blob/main/docs/overview.md
   - label: Gotchas
@@ -80,14 +86,31 @@ records:
     source_ref: source.em5n.live-nd
     capability_id: capability.em5-iii-live-nd-preview
   - name: Color / Monochrome Profile editor
-    summary: The hidden Color and Monochrome Profile modes made selectable, with an on-camera wheel editor (E-M1 III
-      wheel routines relocated) whose edits show in live view and photos, in test builds.
+    summary: The hidden Color and Monochrome Profile modes made selectable, with an on-camera editor (E-M1 III
+      wheel routines relocated, a side bar of rows, a per-profile tone curve with the live histogram) whose edits
+      show in live view and photos, in test builds.
     camera_ids:
     - camera.em5-iii
     status: research
     since: null
     source_ref: source.em5n.profiles
     capability_id: capability.em5-iii-profile-editor
+  - name: Drawing your own graphics (GUI layers)
+    summary: How to draw boxes, curves, pictures, camera-font text, see-through palettes and animation on the GUI
+      layers with the camera's own calls; checked in the om-emu emulator, with the osdlab script.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.guide-own-graphics
+  - name: Drawing with the vector GPU (c3d / OpenVG)
+    summary: The camera's OpenVG library and c3d driver mapped; own renderers written in C run in om-emu, which
+      now shows the GPU layer through our patches and a JavaScript OpenVG stand-in. Not run on a camera yet.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.guide-vector-gpu
   - name: USB webcam (parked)
     summary: Test builds enumerate as a UVC webcam and stream a generated picture; live view over USB failed, so the
       work is parked.
@@ -106,7 +129,7 @@ records:
     since: null
     source_ref: source.em5n.overview
   - name: Firmware modification techniques
-    summary: Twenty techniques from the E-M5 III 1.7 work, each with its method, pitfalls and a per-camera
+    summary: Twenty-one techniques from the E-M5 III 1.7 work, each with its method, pitfalls and a per-camera
       checked-on table that credits other projects' results.
     camera_ids:
     - camera.em5-iii
@@ -121,3 +144,23 @@ records:
     status: research
     since: null
     source_ref: source.em5n.guides
+  images:
+  - path: assets/projects/em5-iii-notes/profile-wheel-adjust.webp
+    alt: The Color Profile wheel over a generated lake scene, stepping through colours as each one's saturation is changed,
+      with a small hue, saturation and lightness strip along the bottom
+    caption: Editing a colour profile on the wheel, in the om-emu emulator with our c3d patches. The bottom hue,
+      saturation and lightness strip is our own test addition. Emulator only, not yet run on a camera.
+    credit: olympus-firmware-notes; om-emu by its contributors (MIT); generated backdrop, no photo
+  - path: assets/projects/em5-iii-notes/own-2d-overlay.webp
+    alt: The E-M5 III shooting screen with an extra overlay of boxes, a curve and text drawn on the GUI layers
+    caption: An overlay drawn with the GUI's own calls over the shooting screen, in the om-emu emulator.
+    credit: olympus-firmware-notes; om-emu by its contributors (MIT)
+  - path: assets/projects/em5-iii-notes/colour-wheel-in-emulator.webp
+    alt: The stock Color Creator colour wheel over a generated lake scene
+    caption: The stock Color Creator wheel, drawn by the camera's own c3d code in om-emu once the GPU layer is shown.
+    credit: olympus-firmware-notes; om-emu by its contributors (MIT)
+  - path: assets/projects/em5-iii-notes/own-gpu-renderer.webp
+    alt: A coloured aperture iris inside a dial, drawn by our own vector-GPU renderer and turning in steps over a generated lake scene
+    caption: Our own renderer on the camera's vector GPU, running in the om-emu emulator with our c3d patches. Emulator
+      only, not yet run on a camera.
+    credit: olympus-firmware-notes; om-emu by its contributors (MIT); generated backdrop, no photo

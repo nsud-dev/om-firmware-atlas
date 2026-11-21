@@ -6,6 +6,7 @@ These guides connect local conventions and findings to their detailed upstream h
 - [Patching and scoped validation](methods/patching.md)
 - [Analysis tool profiles](tooling/analysis.md)
 - [Emulation coverage](emulation/coverage.md)
+- [Display and drawing](subsystems/display.md)
 - [Colour and settings research](subsystems/colour.md)
 - [Looks and interfaces](interfaces/looks.md)
 - [Cross-model reasoning](comparisons/models.md)

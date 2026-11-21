@@ -9,7 +9,7 @@ records:
   - source.om5.readme
   topics:
   - colour
-  last_reviewed: '2026-11-20'
+  last_reviewed: '2026-11-21'
   camera_id: camera.em5-iii
   firmware_id: firmware.em5-iii-1700
   project_id: project.em5-iii-notes
@@ -18,7 +18,8 @@ records:
   assertion: Color Profile and Monochrome Profile (three slots each) are entries in the Picture Mode carousel; INFO
     opens an editor with the colour or mono wheel (the E-M1 III 1.6 wheel routines, relocated) and a side bar with
     dial-set rows; colour (12 hue sectors) and mono (filter, level) edits apply to live view and photos, and per-slot
-    sharpness and contrast are set from the Super Control Panel.
+    sharpness and contrast are set from the Super Control Panel. A side bar of rows edits each profile's own tone
+    curve (Highlight & Shadow, Midtone) with the live histogram behind it.
   availability: experimental-branch
   implementation: reported
   evidence_refs:

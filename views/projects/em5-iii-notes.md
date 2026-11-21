@@ -8,7 +8,7 @@ How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
 
 [Project home](https://github.com/nsud-dev/olympus-firmware-notes){ .btn .btn-primary }
 [Ask or report issues](https://github.com/nsud-dev/olympus-firmware-notes/issues){ .btn .btn-ghost }
-[Firmware guides](https://github.com/nsud-dev/olympus-firmware-notes/blob/b6823403a48709da06a6a7d5ef7510be3d8143f8/docs/guides/README.md){ .btn .btn-ghost }
+[Firmware guides](https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/guides/README.md){ .btn .btn-ghost }
 [Overview of everything studied](https://github.com/nsud-dev/olympus-firmware-notes/blob/main/docs/overview.md){ .btn .btn-ghost }
 [Gotchas](https://github.com/nsud-dev/olympus-firmware-notes/blob/main/docs/reference/gotchas.md){ .btn .btn-ghost }
 
@@ -23,10 +23,10 @@ How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
 
 ### OM-D E-M5 Mark III { #for-em5-iii }
 
-**For this camera:** Notes and tools only; no builds are published. The author's own test builds on one E-M5 III cover focus stacking with any lens, Live ND and its live-view preview ported from the OM-5, a Color / Monochrome Profile editor, and a parked USB webcam.
+**For this camera:** Notes and tools only; no builds are published. The author's own test builds on one E-M5 III cover focus stacking with any lens, Live ND and its live-view preview ported from the OM-5, a Color / Monochrome Profile editor, and a parked USB webcam. Drawing your own screens and GPU graphics is so far shown in the om-emu emulator only.
 { .card-for }
 
-**Get it:** [Firmware guides](https://github.com/nsud-dev/olympus-firmware-notes/blob/b6823403a48709da06a6a7d5ef7510be3d8143f8/docs/guides/README.md)
+**Get it:** [Firmware guides](https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/guides/README.md)
 { .card-get }
 
 [Camera overview and test results](../cameras/em5-iii.md)
@@ -34,13 +34,19 @@ How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
 </div>
 
 
+![The Color Profile wheel over a generated lake scene, stepping through colours as each one's saturation is changed, with a small hue, saturation and lightness strip along the bottom](../../docs/assets/projects/em5-iii-notes/profile-wheel-adjust.webp)
+{ .hero-image }
+
+Editing a colour profile on the wheel, in the om-emu emulator with our c3d patches. The bottom hue, saturation and lightness strip is our own test addition. Emulator only, not yet run on a camera. *olympus-firmware-notes; om-emu by its contributors (MIT); generated backdrop, no photo.*
+{ .image-caption }
+
 ## About
 
 A study of the Olympus OM-D E-M5 Mark III firmware 1.7: container format, boot and section loading, recovery, the MN103 CPU, memory map, image engine, ARM co-processor, display, stabiliser, shooting sequencer, settings and menus, with comparisons against the OM-5, OM-5 II, E-M1 III, OM-1 and PEN-F.
 
 The aim is to run features of newer bodies on the E-M5 III, mainly Live ND and Handheld High Res from the OM-5. Each page tags claims as seen on the camera, read in the code, or inferred, and gives dates.
 
-Tools: olyfw.py unpacks and repacks E-M5 III update files and fixes their checksums; ptpinfo.py reads PTP device info. No firmware images, disassembly or patched builds are included.
+Tools: olyfw.py unpacks and repacks E-M5 III update files and fixes their checksums; ptpinfo.py reads PTP device info; osdlab, c3d_vg and a set of om-emu patches (with om-emu's MIT notice) draw on the GUI layers and the vector GPU in the om-emu emulator. No firmware images, disassembly or patched builds are included.
 
 ## Features
 
@@ -89,9 +95,33 @@ Live view shows the Live ND blur, averaged over up to 240 frames by the OM-5's j
 **Color / Monochrome Profile editor** <span class="pill pill-research">Research</span>
 { .feature-head }
 
-The hidden Color and Monochrome Profile modes made selectable, with an on-camera wheel editor (E-M1 III wheel routines relocated) whose edits show in live view and photos, in test builds.
+The hidden Color and Monochrome Profile modes made selectable, with an on-camera editor (E-M1 III wheel routines relocated, a side bar of rows, a per-profile tone curve with the live histogram) whose edits show in live view and photos, in test builds.
 
 [OM-D E-M5 Mark III](../cameras/em5-iii.md) · [Evidence](../capabilities/em5-iii-profile-editor.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Drawing your own graphics (GUI layers)** <span class="pill pill-research">Research</span>
+{ .feature-head }
+
+How to draw boxes, curves, pictures, camera-font text, see-through palettes and animation on the GUI layers with the camera's own calls; checked in the om-emu emulator, with the osdlab script.
+
+[OM-D E-M5 Mark III](../cameras/em5-iii.md)
+{ .card-meta }
+
+</div>
+
+<div class="feature-card" markdown="1">
+
+**Drawing with the vector GPU (c3d / OpenVG)** <span class="pill pill-research">Research</span>
+{ .feature-head }
+
+The camera's OpenVG library and c3d driver mapped; own renderers written in C run in om-emu, which now shows the GPU layer through our patches and a JavaScript OpenVG stand-in. Not run on a camera yet.
+
+[OM-D E-M5 Mark III](../cameras/em5-iii.md)
 { .card-meta }
 
 </div>
@@ -125,7 +155,7 @@ Tagged, dated pages on the container, boot, recovery, CPU, memory map, image eng
 **Firmware modification techniques** <span class="pill pill-research">Research</span>
 { .feature-head }
 
-Twenty techniques from the E-M5 III 1.7 work, each with its method, pitfalls and a per-camera checked-on table that credits other projects' results.
+Twenty-one techniques from the E-M5 III 1.7 work, each with its method, pitfalls and a per-camera checked-on table that credits other projects' results.
 
 [OM-D E-M5 Mark III](../cameras/em5-iii.md)
 { .card-meta }
@@ -141,6 +171,39 @@ Walk through E-M5 III 1.7 boot, button input, shooting, live view, updates and f
 
 [OM-D E-M5 Mark III](../cameras/em5-iii.md)
 { .card-meta }
+
+</div>
+
+</div>
+
+## Gallery
+
+<div class="gallery" markdown="1">
+
+<div class="gallery-item" markdown="1">
+
+![The E-M5 III shooting screen with an extra overlay of boxes, a curve and text drawn on the GUI layers](../../docs/assets/projects/em5-iii-notes/own-2d-overlay.webp)
+
+An overlay drawn with the GUI's own calls over the shooting screen, in the om-emu emulator. *olympus-firmware-notes; om-emu by its contributors (MIT).*
+{ .image-caption }
+
+</div>
+
+<div class="gallery-item" markdown="1">
+
+![The stock Color Creator colour wheel over a generated lake scene](../../docs/assets/projects/em5-iii-notes/colour-wheel-in-emulator.webp)
+
+The stock Color Creator wheel, drawn by the camera's own c3d code in om-emu once the GPU layer is shown. *olympus-firmware-notes; om-emu by its contributors (MIT).*
+{ .image-caption }
+
+</div>
+
+<div class="gallery-item" markdown="1">
+
+![A coloured aperture iris inside a dial, drawn by our own vector-GPU renderer and turning in steps over a generated lake scene](../../docs/assets/projects/em5-iii-notes/own-gpu-renderer.webp)
+
+Our own renderer on the camera's vector GPU, running in the om-emu emulator with our c3d patches. Emulator only, not yet run on a camera. *olympus-firmware-notes; om-emu by its contributors (MIT); generated backdrop, no photo.*
+{ .image-caption }
 
 </div>
 
@@ -163,5 +226,10 @@ Notes and tools only; no firmware or builds are published. Every claim is tagged
 - [USB webcam](../sources/em5n.webcam.md)
 - [E-M5 Mark III firmware guides](../sources/em5n.guides.md)
 - [E-M5 III drawing to the screen guide](../sources/em5n.guide-drawing.md)
+- [E-M5 III guide: drawing your own graphics](../sources/em5n.guide-own-graphics.md)
+- [E-M5 III guide: drawing with the vector GPU](../sources/em5n.guide-vector-gpu.md)
+- [osdlab: drawing on the GUI layers in om-emu](../sources/em5n.tool-osdlab.md)
+- [c3d_vg: own renderers for the vector GPU](../sources/em5n.tool-c3d-vg.md)
+- [om-emu c3d patches and runner](../sources/em5n.tool-omemu-c3d.md)
 
-[Canonical record](../../records/projects/em5-iii-notes.yaml) · Substantively reviewed: 2026-11-20.
+[Canonical record](../../records/projects/em5-iii-notes.yaml) · Substantively reviewed: 2026-11-21.

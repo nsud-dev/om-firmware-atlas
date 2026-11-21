@@ -4,14 +4,14 @@
 
 Call frames, compiler, instruction limits and a table of useful routines.
 
-**[Open original source](https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/mn103-cpu.md)**
+**[Open original source](https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/hardware/mn103-cpu.md)**
 
 **Kind:** github file. **Locator:** docs/hardware/mn103-cpu.md.
 
-**Revision / release:** `3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22`. **Retrieved:** 2026-11-18. **Last source check:** 2026-11-18.
+**Revision / release:** `c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a`. **Retrieved:** 2026-11-21. **Last source check:** 2026-11-21.
 
 **Publication:** public. Written by the notes' author; CC BY 4.0 per the repo licence.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/em5-iii-notes.yaml) · Substantively reviewed: 2026-11-18.
+[Canonical record](../../records/sources/em5-iii-notes.yaml) · Substantively reviewed: 2026-11-21.

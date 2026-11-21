@@ -8,7 +8,7 @@ Test builds make the hidden Color and Monochrome Profile modes selectable and ed
 
 **Firmware:** [E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md) · **Mod build:** unpublished test builds (2026-11-19 to 2026-11-20)
 
-Color Profile and Monochrome Profile (three slots each) are entries in the Picture Mode carousel; INFO opens an editor with the colour or mono wheel (the E-M1 III 1.6 wheel routines, relocated) and a side bar with dial-set rows; colour (12 hue sectors) and mono (filter, level) edits apply to live view and photos, and per-slot sharpness and contrast are set from the Super Control Panel.
+Color Profile and Monochrome Profile (three slots each) are entries in the Picture Mode carousel; INFO opens an editor with the colour or mono wheel (the E-M1 III 1.6 wheel routines, relocated) and a side bar with dial-set rows; colour (12 hue sectors) and mono (filter, level) edits apply to live view and photos, and per-slot sharpness and contrast are set from the Super Control Panel. A side bar of rows edits each profile's own tone curve (Highlight & Shadow, Midtone) with the live histogram behind it.
 
 **Availability:** experimental branch. **Implementation basis:** reported.
 
@@ -28,4 +28,4 @@ Color Profile and Monochrome Profile (three slots each) are entries in the Pictu
 - [Color and Monochrome Profile on the E-M5 III](../sources/em5n.profiles.md)
 - [Caduceus OM-5 overview](../sources/om5.readme.md)
 
-[Canonical record](../../records/capabilities/em5-iii/em5-iii-profile-editor.yaml) · Substantively reviewed: 2026-11-20.
+[Canonical record](../../records/capabilities/em5-iii/em5-iii-profile-editor.yaml) · Substantively reviewed: 2026-11-21.

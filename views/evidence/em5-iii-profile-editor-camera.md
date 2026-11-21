@@ -10,7 +10,7 @@ Modes selectable, wheels drawn, edits seen in live view and photos, over a serie
 
 **Firmware:** [E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md) · **Mod build:** unpublished test builds (2026-11-19 to 2026-11-20)
 
-**Provenance:** firsthand tester report. **Reported:** 2026-11-20. **Test date:** 2026-11-20.
+**Provenance:** firsthand tester report. **Reported:** 2026-11-21. **Test date:** 2026-11-20.
 
 **Reported/observed package SHA-256:** not recorded.
 
@@ -22,14 +22,15 @@ Test builds flashed from the SD card, one change at a time; each run checked the
 - Colour and mono wheels drawn; labels, hold-OK reset and the colour box follow the edits.
 - Colour and mono edits seen in live view and in photos.
 - Per-slot sharpness and contrast from the Super Control Panel; side-bar rows and sliders work.
+- Highlight & Shadow and Midtone edit each profile's own tone curve (PEN-F style); live view and photos follow it, and the curve rows show the live histogram.
 
 ## Limits and assumptions
 
 - One camera, one owner; a series of test builds, not one package.
-- The last builds of the series were still being run when this was written.
+- Playback RAW edit still uses the shared curve for profile shots.
 
 ## Sources and record
 
 - [Color and Monochrome Profile on the E-M5 III](../sources/em5n.profiles.md)
 
-[Canonical record](../../records/evidence/em5-iii-profile-editor.yaml) · Substantively reviewed: 2026-11-20.
+[Canonical record](../../records/evidence/em5-iii-profile-editor.yaml) · Substantively reviewed: 2026-11-21.

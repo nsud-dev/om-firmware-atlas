@@ -12,6 +12,9 @@ Individual observations from physical cameras, emulators and code inspection, wi
 | [E-M10 om10mi-mods: RAW white balance in Lightroom Classic (user report)](em10-raw-wb-lightroom.md) | A user reports RAWs opening about 300 K lower in Lightroom Classic than set in camera; not linked to the mod. |
 | [E-M10 version 56: owner field test](em10-v56-owner.md) | The owner reports version 56 working well on their camera after two independent audits; no test date or steps beyond the published test list. |
 | [E-M10 version 87: owner field test](em10-v87-owner.md) | The owner reports version 87 field-tested on their E-M10 Mark I after PC emulation and independent review; no test date, steps or results per feature. |
+| [E-M5 III 1.7 in om-emu: stock c3d screens drawn](em5-iii-emu-c3d-stock.md) | With the notes' patches, om-emu shows the vector-GPU layer and the camera's own c3d code draws the stock Color Creator, ART carousel and Part Color screens. |
+| [E-M5 III 1.7 in om-emu: own 2D overlay](em5-iii-emu-own-overlay.md) | Boxes, a curve, pictures and camera-font text drawn on the GUI layers with the camera's own calls, over the shooting screen. |
+| [E-M5 III 1.7 in om-emu: own vector-GPU renderer](em5-iii-emu-own-renderer.md) | A renderer written in C, loaded in place of a stock c3d draw kind, draws and animates an aperture-ring style dial. |
 | [E-M5 III 1.7: focus stacking with a non-listed lens](em5-iii-focus-stacking-camera.md) | The notes' author flashed the lens-check patch and reports focus stacking working. |
 | [E-M5 III 1.7: Live ND photos from test builds](em5-iii-live-nd-photo.md) | Merged Live ND photos at ND2 to ND16, measured on the camera. |
 | [E-M5 III 1.7: Live ND live-view preview from test builds](em5-iii-live-nd-preview.md) | Live-view averaging with job 12 checked step by step on the camera. |

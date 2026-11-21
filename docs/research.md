@@ -41,6 +41,7 @@ An overlap suggests a comparison to try. **Addresses and results never transfer 
 | Identify or unpack firmware | [Firmware identity and address spaces](../knowledge/platform/identity.md) |
 | Understand patch construction | [Patching and scoped validation](../knowledge/methods/patching.md) |
 | Learn how one camera's firmware works, step by step | [E-M5 III firmware guides](../views/sources/em5n.guides.md) |
+| Draw your own screens or graphics | [Display and drawing](../knowledge/subsystems/display.md) · [Drawing your own graphics](../views/sources/em5n.guide-own-graphics.md) · [Drawing with the vector GPU](../views/sources/em5n.guide-vector-gpu.md) |
 | Trace or decompile code | [Analysis tool profiles](../knowledge/tooling/analysis.md) |
 | Exercise firmware outside a camera | [Emulation coverage](../knowledge/emulation/coverage.md) |
 | Work on colour, profiles or settings | [Colour and settings research](../knowledge/subsystems/colour.md) |

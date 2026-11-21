@@ -217,22 +217,8 @@ Experimental fork
 
 <div class="project-card" markdown="1">
 
-[Olympus firmware research](oly-fw-analysis.md){ .card-title }
-
-The research base: PEN-F HSL, firmware formats and tools for many bodies.
-
-PEN-F HSL · Firmware toolkit · Findings by topic
-{ .card-features }
-
-For: PEN-F
-{ .card-cameras }
-
-Latest: alpha-20261017 (pre-release), 18 Oct 2026
-{ .card-meta }
-
-</div>
-
-<div class="project-card" markdown="1">
+![The Color Profile wheel over a generated lake scene, stepping through colours as each one's saturation is changed, with a small hue, saturation and lightness strip along the bottom](../../docs/assets/projects/em5-iii-notes/profile-wheel-adjust.webp)
+{ .card-image }
 
 [Olympus firmware notes (E-M5 Mark III)](em5-iii-notes.md){ .card-title }
 
@@ -245,6 +231,23 @@ For: OM-D E-M5 Mark III
 { .card-cameras }
 
 Research
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[Olympus firmware research](oly-fw-analysis.md){ .card-title }
+
+The research base: PEN-F HSL, firmware formats and tools for many bodies.
+
+PEN-F HSL · Firmware toolkit · Findings by topic
+{ .card-features }
+
+For: PEN-F
+{ .card-cameras }
+
+Latest: alpha-20261017 (pre-release), 18 Oct 2026
 { .card-meta }
 
 </div>

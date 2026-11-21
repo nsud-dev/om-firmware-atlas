@@ -35,10 +35,10 @@ These do not change the camera. They help people study firmware, build or check 
 
 How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
 
-**For this camera:** Notes and tools only; no builds are published. The author's own test builds on one E-M5 III cover focus stacking with any lens, Live ND and its live-view preview ported from the OM-5, a Color / Monochrome Profile editor, and a parked USB webcam.
+**For this camera:** Notes and tools only; no builds are published. The author's own test builds on one E-M5 III cover focus stacking with any lens, Live ND and its live-view preview ported from the OM-5, a Color / Monochrome Profile editor, and a parked USB webcam. Drawing your own screens and GPU graphics is so far shown in the om-emu emulator only.
 { .card-for }
 
-**Get it:** [Firmware guides](https://github.com/nsud-dev/olympus-firmware-notes/blob/b6823403a48709da06a6a7d5ef7510be3d8143f8/docs/guides/README.md)
+**Get it:** [Firmware guides](https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/guides/README.md)
 { .card-get }
 
 Research
