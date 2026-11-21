@@ -1,0 +1,114 @@
+schema_version: 1
+records:
+- type: source
+  id: source.em5n.guide-own-graphics
+  title: 'E-M5 III guide: drawing your own graphics'
+  summary: "How to draw boxes, curves, pictures, camera-font text, see-through palettes and animation on the GUI layers with the camera's own calls; emulator-verified."
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/guides/drawing-your-own.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a
+  locator: docs/guides/drawing-your-own.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Written by the notes' author; docs CC BY 4.0, tools MIT per the repo licences.
+- type: source
+  id: source.em5n.guide-vector-gpu
+  title: 'E-M5 III guide: drawing with the vector GPU'
+  summary: "The DMP OpenVG library, the c3d driver and its draw kinds, own C renderers, and the decoded GPU command lists."
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/guides/vector-gpu.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a
+  locator: docs/guides/vector-gpu.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Written by the notes' author; docs CC BY 4.0, tools MIT per the repo licences.
+- type: source
+  id: source.em5n.osd-drawing
+  title: E-M5 III 2D GUI drawing reference
+  summary: "Reference for the GUI layers: draw commands, palettes, pictures, text and the display update."
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/hardware/osd-drawing.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a
+  locator: docs/hardware/osd-drawing.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Written by the notes' author; docs CC BY 4.0, tools MIT per the repo licences.
+- type: source
+  id: source.em5n.c3d-gpu
+  title: E-M5 III vector GPU (c3d) reference
+  summary: "Reference for the c3d task, the OpenVG/EGL library, draw kinds, renderer interface and command lists."
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/hardware/c3d-gpu.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a
+  locator: docs/hardware/c3d-gpu.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Written by the notes' author; docs CC BY 4.0, tools MIT per the repo licences.
+- type: source
+  id: source.em5n.tool-osdlab
+  title: 'osdlab: drawing on the GUI layers in om-emu'
+  summary: "The notes' script for drawing with the GUI's own calls in om-emu (demos and the showcase overlay)."
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/tools/osdlab/README.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a
+  locator: tools/osdlab/README.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Written by the notes' author; docs CC BY 4.0, tools MIT per the repo licences.
+- type: source
+  id: source.em5n.tool-c3d-vg
+  title: 'c3d_vg: own renderers for the vector GPU'
+  summary: "Header, two example renderers and a GPU command-list decoder for writing c3d renderers in C."
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/tools/c3d_vg/README.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a
+  locator: tools/c3d_vg/README.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Written by the notes' author; docs CC BY 4.0, tools MIT per the repo licences.
+- type: source
+  id: source.em5n.tool-omemu-c3d
+  title: om-emu c3d patches and runner
+  summary: "Patches to om-emu (keeping its MIT notice) that composite the GPU layer and run c3d renderers with a JavaScript OpenVG stand-in."
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-21'
+  url: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/tools/om-emu-c3d/c3d/README.md
+  source_kind: github-file
+  upstream_repo: nsud-dev/olympus-firmware-notes
+  revision: c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a
+  locator: tools/om-emu-c3d/c3d/README.md
+  retrieved_on: '2026-11-21'
+  last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Written by the notes' author; docs CC BY 4.0, tools MIT per the repo licences.

@@ -1,0 +1,32 @@
+schema_version: 1
+records:
+- type: reference
+  id: reference.em5-iii-1700.gpi-update-display
+  title: Show the drawn GUI layers (gpiUpdateDisplay)
+  summary: Commits all three GUI layers and their palettes to the display controller; the flip for double-buffered drawing.
+  source_refs:
+  - source.em5n.osd-drawing
+  topics:
+  - platform
+  last_reviewed: '2026-11-21'
+  category: function
+  camera_ids:
+  - camera.em5-iii
+  firmware_ids:
+  - firmware.em5-iii-1700
+  address:
+    space: runtime-cached
+    value: '0x60c9588b'
+  note: d0 = 0 shows the buffer index held at 0x61ea1ecc, any other value the other buffer (index xor 2). Palette
+    changes reach the controller only through this call.
+  observations:
+  - method: static-analysis
+    source_ref: source.em5n.osd-drawing
+    project_id: project.em5-iii-notes
+    summary: Read in the code; called by the stock GUI after each redraw.
+  - method: emulator
+    source_ref: source.em5n.osd-drawing
+    project_id: project.em5-iii-notes
+    summary: A 12-frame moving box on layer 2 ran with this call in om-emu.
+  conflicts: []
+  upstream_detail: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/hardware/osd-drawing.md#3-the-draw-calls

@@ -1,0 +1,117 @@
+schema_version: 1
+records:
+- type: evidence
+  id: evidence.em5-iii-emu-c3d-stock
+  title: 'E-M5 III 1.7 in om-emu: stock c3d screens drawn'
+  summary: "With the notes' patches, om-emu shows the vector-GPU layer and the camera's own c3d code draws the stock Color Creator, ART carousel and Part Color screens."
+  source_refs:
+  - source.em5n.c3d-gpu
+  - source.em5n.tool-omemu-c3d
+  topics:
+  - emulation
+  last_reviewed: '2026-11-21'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: notes' om-emu patch set (2026-11-21)
+  method: emulator
+  provenance: maintainer-summary
+  identity_level: not-applicable
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: reported-pass
+  quality: partial
+  reported_on: '2026-11-21'
+  tested_on: '2026-11-21'
+  procedure: "om-emu E137 with the notes' patches applied; the stock screens opened from the emulated menus and turned with the emulated dials; frames captured from the composited display."
+  coverage:
+  - "Stock Color Creator wheel drawn and redrawn as it turns."
+  - "ART carousel and Part Color ring drawn by the camera's own c3d code."
+  limitations:
+  - "Emulator only; om-emu does not model the GPU, so drawing goes through a JavaScript OpenVG stand-in."
+  - "The ART band height differs from the camera (about 80 px in om-emu, about 120 px on the camera, from an owner photo)."
+  - "Not a camera test."
+  assumptions: []
+  emulator:
+    url: https://github.com/flatpanda/om-emu
+    revision: ccfe2e0
+    model: E137
+    stand_ins:
+    - The notes' om-emu patches (IMG plane compositing, generated live-view backdrop)
+    - A JavaScript OpenVG stand-in for the camera's GPU library (c3d runner)
+- type: evidence
+  id: evidence.em5-iii-emu-own-overlay
+  title: 'E-M5 III 1.7 in om-emu: own 2D overlay'
+  summary: "Boxes, a curve, pictures and camera-font text drawn on the GUI layers with the camera's own calls, over the shooting screen."
+  source_refs:
+  - source.em5n.guide-own-graphics
+  - source.em5n.tool-omemu-c3d
+  topics:
+  - emulation
+  last_reviewed: '2026-11-21'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: notes' om-emu patch set (2026-11-21)
+  method: emulator
+  provenance: maintainer-summary
+  identity_level: not-applicable
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: reported-pass
+  quality: partial
+  reported_on: '2026-11-21'
+  tested_on: '2026-11-21'
+  procedure: "osdlab script calls the GUI's own drawing functions in an om-emu E137 session at the shooting screen; screen captured."
+  coverage:
+  - "Own boxes, curves, pictures and text on the GUI layers, with see-through palette entries."
+  - "The stock shooting screen keeps drawing around the overlay."
+  limitations:
+  - "Emulator only; not run on a camera."
+  - "om-emu does not run live view on the E-M5 III; the picture behind is a generated backdrop."
+  assumptions: []
+  emulator:
+    url: https://github.com/flatpanda/om-emu
+    revision: ccfe2e0
+    model: E137
+    stand_ins:
+    - The notes' om-emu patches (IMG plane compositing, generated live-view backdrop)
+    - A JavaScript OpenVG stand-in for the camera's GPU library (c3d runner)
+- type: evidence
+  id: evidence.em5-iii-emu-own-renderer
+  title: 'E-M5 III 1.7 in om-emu: own vector-GPU renderer'
+  summary: "A renderer written in C, loaded in place of a stock c3d draw kind, draws and animates an aperture-ring style dial."
+  source_refs:
+  - source.em5n.guide-vector-gpu
+  - source.em5n.tool-omemu-c3d
+  topics:
+  - emulation
+  last_reviewed: '2026-11-21'
+  camera_id: camera.em5-iii
+  firmware_id: firmware.em5-iii-1700
+  project_id: project.em5-iii-notes
+  mod_build: notes' om-emu patch set (2026-11-21)
+  method: emulator
+  provenance: maintainer-summary
+  identity_level: not-applicable
+  package_sha256: null
+  expected_package_sha256: null
+  outcome: reported-pass
+  quality: partial
+  reported_on: '2026-11-21'
+  tested_on: '2026-11-21'
+  procedure: "An own renderer compiled for MN103 and loaded on the TG draw kind in om-emu E137 with the notes' patches; ten UPDATE frames captured."
+  coverage:
+  - "Own renderer called through the stock c3d START/UPDATE path and drawn on the GPU layer."
+  - "Ten UPDATE steps draw the dial at 30 degree steps."
+  limitations:
+  - "Emulator only, through the JavaScript OpenVG stand-in; not run on the camera's GPU."
+  - "The GPU's own registers are not modelled; raw command lists were decoded separately."
+  assumptions: []
+  emulator:
+    url: https://github.com/flatpanda/om-emu
+    revision: ccfe2e0
+    model: E137
+    stand_ins:
+    - The notes' om-emu patches (IMG plane compositing, generated live-view backdrop)
+    - A JavaScript OpenVG stand-in for the camera's GPU library (c3d runner)

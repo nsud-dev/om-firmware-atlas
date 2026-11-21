@@ -72,7 +72,8 @@ Exact-build facts only: never apply an address to another build or body. Status:
 | Focus stacking per-lens flag branch | runtime-cached | `0x6065e5ec` | hook-site | camera-confirmed | [d26] |
 | Section 4 slack | runtime-cached | `0x6079d800..0x607b6800` | free-space | camera-confirmed | [d27] |
 | GUI string lookup | runtime-cached | `0x60c9350c` | hook-site | camera-confirmed | [d23] |
-| Start the debug Wi-Fi network | runtime-cached | `0x6122e9f6` | function | camera-confirmed | [d28] |
+| Show the drawn GUI layers (gpiUpdateDisplay) | runtime-cached | `0x60c9588b` | function | single-source | [d28] |
+| Start the debug Wi-Fi network | runtime-cached | `0x6122e9f6` | function | camera-confirmed | [d29] |
 | Space after section 10 | runtime-cached | `0x61478000..0x61480000` | free-space | camera-confirmed | [d27] |
 | User settings image (store 50) | runtime-cached | `0x623d1000..0x62411000` | data | camera-confirmed | [d16] |
 | Section ready bits | runtime-uncached | `0xa26565c0` | data | camera-confirmed | [d15] |
@@ -104,6 +105,7 @@ Exact-build facts only: never apply an address to another build or body. Status:
 [d25]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbb287c7e5f39f9e8d3b382eede5951d7ecb00/docs/features/saved-settings-and-menu-rows.md#where-the-code-goes-the-boot-lesson
 [d26]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/patches/focus-stacking-any-lens.md#the-patch
 [d27]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/memory-map.md#spare-space-for-our-code
-[d28]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/wifi-debug-shell.md#how-it-works-e-m5-iii-17
+[d28]: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/hardware/osd-drawing.md#3-the-draw-calls
+[d29]: https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/features/wifi-debug-shell.md#how-it-works-e-m5-iii-17
 
-Records: [em5-iii-1700-boot.yaml](../../../records/reference/em5-iii-1700-boot.yaml), [em5-iii-1700-capture.yaml](../../../records/reference/em5-iii-1700-capture.yaml), [em5-iii-1700-platform.yaml](../../../records/reference/em5-iii-1700-platform.yaml), [em5-iii-1700-routines.yaml](../../../records/reference/em5-iii-1700-routines.yaml), [em5-iii-1700-settings.yaml](../../../records/reference/em5-iii-1700-settings.yaml), [hazards-em5-iii.yaml](../../../records/reference/hazards-em5-iii.yaml), [hazards.yaml](../../../records/reference/hazards.yaml).
+Records: [em5-iii-1700-boot.yaml](../../../records/reference/em5-iii-1700-boot.yaml), [em5-iii-1700-capture.yaml](../../../records/reference/em5-iii-1700-capture.yaml), [em5-iii-1700-drawing.yaml](../../../records/reference/em5-iii-1700-drawing.yaml), [em5-iii-1700-platform.yaml](../../../records/reference/em5-iii-1700-platform.yaml), [em5-iii-1700-routines.yaml](../../../records/reference/em5-iii-1700-routines.yaml), [em5-iii-1700-settings.yaml](../../../records/reference/em5-iii-1700-settings.yaml), [hazards-em5-iii.yaml](../../../records/reference/hazards-em5-iii.yaml), [hazards.yaml](../../../records/reference/hazards.yaml).

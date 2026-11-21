@@ -89,6 +89,7 @@ Hardware and layout facts per stock firmware build.
 | [Focus stacking per-lens flag branch](em5-iii-1700.focus-stacking-lens-check.md) | `0x6065e5ec` | hook site | Camera-confirmed |
 | [Section 4 slack](em5-iii-1700.section-4-slack.md) | `0x6079d800` | free space | Camera-confirmed |
 | [GUI string lookup](em5-iii-1700.menu-string-lookup.md) | `0x60c9350c` | hook site | Camera-confirmed |
+| [Show the drawn GUI layers (gpiUpdateDisplay)](em5-iii-1700.gpi-update-display.md) | `0x60c9588b` | function | Single source |
 | [Start the debug Wi-Fi network](em5-iii-1700.debug-wifi-start.md) | `0x6122e9f6` | function | Camera-confirmed |
 | [Space after section 10](em5-iii-1700.after-section-10.md) | `0x61478000` | free space | Camera-confirmed |
 | [User settings image (store 50)](em5-iii-1700.settings-image.md) | `0x623d1000` | data | Camera-confirmed |
