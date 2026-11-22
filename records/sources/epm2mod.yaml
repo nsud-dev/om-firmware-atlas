@@ -115,20 +115,21 @@ records:
 - type: source
   id: source.epm2.releases
   title: EPM2Mod releases
-  summary: Seven installer pre-releases from 18 to 20 November 2026; v2026.11.20-rc.1 is the newest.
+  summary: Installer release candidates through v2026.11.20-rc.5.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-20'
+  last_reviewed: '2026-11-22'
   url: https://github.com/cfu288/EPM2Mod/releases
   source_kind: github-release
   upstream_repo: cfu288/EPM2Mod
-  revision: v2026.11.20-rc.1
-  locator: Releases page; release v2026.11.20-rc.1
-  retrieved_on: '2026-11-20'
-  last_checked: '2026-11-21'
-  published_on: '2026-11-20'
+  revision: v2026.11.20-rc.5
+  locator: Release listing through v2026.11.20-rc.5
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-22'
   publication: public
   reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.
+  content_sha256: 0a48040460005306596ac48215055f7704a573b417a71229cc94e17a42311bed
 - type: source
   id: source.epm2.camera-log-twelve-off
   title: 'films-twelve-off camera log'
@@ -143,5 +144,127 @@ records:
   locator: docs/camera-log/2026-11-21-films-twelve-off.md
   retrieved_on: '2026-11-21'
   last_checked: '2026-11-21'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.epm2.rc2
+  title: EPM2Mod 2026.11.20-rc.2
+  summary: Ships films-twelve-off and adds a film-file-only choice to the installer.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.2
+  source_kind: github-release
+  upstream_repo: cfu288/EPM2Mod
+  revision: v2026.11.20-rc.2
+  locator: GitHub release notes for v2026.11.20-rc.2
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-21'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 822e8cdf0ab6ea975edeca8144fcbe70de09e21ae0f9409ed80e3f1987ef726a
+- type: source
+  id: source.epm2.rc3
+  title: EPM2Mod 2026.11.20-rc.3
+  summary: Ships continuous focus peaking in MF and applies stored looks before the first shot.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.3
+  source_kind: github-release
+  upstream_repo: cfu288/EPM2Mod
+  revision: v2026.11.20-rc.3
+  locator: GitHub release notes for v2026.11.20-rc.3
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-22'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 0554ce704c08d0c6ad65b094bae613172fa45cb3ce0aa6b08843c5dad9fcc1b1
+- type: source
+  id: source.epm2.rc4
+  title: EPM2Mod 2026.11.20-rc.4
+  summary: Adds a signed and notarised macOS installer and resets settings on stock restore.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.4
+  source_kind: github-release
+  upstream_repo: cfu288/EPM2Mod
+  revision: v2026.11.20-rc.4
+  locator: GitHub release notes for v2026.11.20-rc.4
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-22'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 7df2918a704ba65413069ee2aa98daf79cd2df7824086f4552c30e21e52dc091
+- type: source
+  id: source.epm2.rc5
+  title: EPM2Mod 2026.11.20-rc.5
+  summary: Corrects the dark Tri-X look and expands the online film comparison.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5
+  source_kind: github-release
+  upstream_repo: cfu288/EPM2Mod
+  revision: v2026.11.20-rc.5
+  locator: GitHub release notes for v2026.11.20-rc.5
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-22'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 0a48040460005306596ac48215055f7704a573b417a71229cc94e17a42311bed
+- type: source
+  id: source.epm2.pana-ring-probe
+  title: EPM2Mod 2026.11.20-pana-ring-probe.1
+  summary: Developer debug build for the Panasonic aperture-ring investigation.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-pana-ring-probe.1
+  source_kind: github-release
+  upstream_repo: cfu288/EPM2Mod
+  revision: v2026.11.20-pana-ring-probe.1
+  locator: GitHub release notes for v2026.11.20-pana-ring-probe.1
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-22'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 1f66f5c7c66a89ea6f6b603d9d037e48624aa829a8d77048dae60c6fc59eea38
+- type: source
+  id: source.epm2.install-peaking-mf
+  title: EPM2Mod install and restore for peaking-mf
+  summary: Pinned peaking-mf firmware identity, startup look loading, focus peaking and the stock restore reset.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/cfu288/EPM2Mod/blob/475486f4d581d090162ea9f733fb31e05bc6e08a/docs/user/install.md
+  source_kind: github-file
+  upstream_repo: cfu288/EPM2Mod
+  revision: 475486f4d581d090162ea9f733fb31e05bc6e08a
+  locator: docs/user/install.md
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  publication: public
+  reuse_note: Linked and synthesised; upstream material retains its own terms.
+- type: source
+  id: source.epm2.camera-log-peaking-mf
+  title: E-PM2 peaking-mf camera log
+  summary: Owner test of the first peaking-mf candidate and the rebuilt, pinned firmware on 21 November.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/cfu288/EPM2Mod/blob/475486f4d581d090162ea9f733fb31e05bc6e08a/docs/camera-log/2026-11-21-peaking-mf.md
+  source_kind: github-file
+  upstream_repo: cfu288/EPM2Mod
+  revision: 475486f4d581d090162ea9f733fb31e05bc6e08a
+  locator: docs/camera-log/2026-11-21-peaking-mf.md
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.

@@ -18,8 +18,8 @@ E147: advanced Caduceus work, other modifications and an established research no
 
 **Releases for this camera:**
 
-- [Caduceus for OM-3](../showcases/om3.md#caduceus-om3) · v0.40.3-beta3 (pre-release) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.3-beta3)
-- [db firmware / om-c-firmware](../showcases/om3.md#db-firmware) · dbv0.4.3 · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.3)
+- [Caduceus for OM-3](../showcases/om3.md#caduceus-om3) · v0.40.3-beta4 (pre-release) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.3-beta4)
+- [db firmware / om-c-firmware](../showcases/om3.md#db-firmware) · dbv0.4.4b · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
 
 **No release for this camera yet:** [OM-3 downstream experiments](../showcases/om3.md#camera-stuff).
 

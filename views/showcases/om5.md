@@ -10,6 +10,27 @@
 
 <section class="model-panel" markdown="1">
 
+## db firmware / om-c-firmware { #db-firmware }
+
+**For this camera:** Beta patches include Panasonic aperture rings, Korean menus and Hybrid Shutter. The Mark II-based port’s boot fix has only simulator and emulator results in the release notes.
+{ .card-for }
+
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
+{ .card-get }
+
+Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
+{ .release-warning }
+
+- **Panasonic aperture rings** · Beta. The aperture ring on Panasonic lenses that have one controls the aperture.
+- **Korean menus** · Beta. Korean language support on several bodies.
+- **Hybrid Shutter** · Beta. Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
+
+[Full project details](../projects/db-firmware.md#for-om5) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
+
+</section>
+
+<section class="model-panel" markdown="1">
+
 ## Caduceus for OM-5 { #caduceus-om5 }
 
 **For this camera:** No working build for this camera. One test build (pre-alpha 1) failed to start on an owner's original OM-5, and OM's firmware was put back from the card. The releases are for the OM-5 Mark II only, and Mark II results do not apply here. Current original OM-5 work is the tadejs port.
@@ -33,22 +54,5 @@
 { .card-get }
 
 [Full project details](../projects/caduceus-om5-tadejs.md#for-om5) · [Ask or report issues](https://github.com/tadejs/caduceus-om5/pull/1)
-
-</section>
-
-<section class="model-panel" markdown="1">
-
-## db firmware / om-c-firmware { #db-firmware }
-
-**For this camera:** Panasonic aperture rings, Korean menus and Hybrid Shutter, all beta.
-{ .card-for }
-
-**dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
-{ .release-warning }
-
-The maintainer calls this a beta. No test procedure, results or hashes are given.
-{ .release-warning }
-
-[Full project details](../projects/db-firmware.md#for-om5) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
 
 </section>

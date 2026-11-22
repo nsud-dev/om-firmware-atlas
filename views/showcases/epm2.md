@@ -12,16 +12,16 @@
 
 ## EPM2Mod { #epm2mod }
 
-**Get it:** [v2026.11.20-rc.1 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1), 20 Nov 2026 · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
+**Get it:** [v2026.11.20-rc.5 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5), 22 Nov 2026 · [Install guide](https://github.com/cfu288/EPM2Mod/blob/475486f4d581d090162ea9f733fb31e05bc6e08a/docs/user/install.md)
 { .card-get }
 
-Unofficial and for the E-PM2 only; installing is at your own risk. Charge the battery fully first.
+Unofficial pre-release for the Olympus PEN E-PM2.
 { .release-warning }
 
 - **Film simulations** · Beta. Up to 12 of 32 film simulations in the ART entries, loaded from a card file with Load Looks; kept after power-off. For photos and live view; the photo records the film's name.
 - **Interval shooting** · Beta. Time Lapse Settings with up to 240 frames.
 - **Level gauge** · Beta. The firmware's own gauge as an LV-Info view, with calibration and the histogram screen's shooting information. Three data edits, no new code.
 
-[Full project details](../projects/epm2mod.md#for-epm2) · [Ask or report issues](https://github.com/cfu288/EPM2Mod/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.1)
+[Full project details](../projects/epm2mod.md#for-epm2) · [Ask or report issues](https://github.com/cfu288/EPM2Mod/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.5)
 
 </section>

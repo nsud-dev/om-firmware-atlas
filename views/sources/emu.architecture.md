@@ -2,16 +2,16 @@
 
 # OM-Emu architecture
 
-Harness-driven startup, model translation and verification.
+Harness-driven startup, model translation and verification, including structured comparison results.
 
-**[Open original source](https://github.com/flatpanda/om-emu/blob/0819080133f6ca7edd455dfdfa209bd9eed291cc/emu/ARCHITECTURE.md)**
+**[Open original source](https://github.com/flatpanda/om-emu/blob/ccfe2e0b39b90c0880f85f1ff2b3781663154dbb/emu/ARCHITECTURE.md)**
 
 **Kind:** github file. **Locator:** emu/ARCHITECTURE.md.
 
-**Revision / release:** `0819080133f6ca7edd455dfdfa209bd9eed291cc`. **Retrieved:** 2026-11-17. **Last source check:** 2026-11-17.
+**Revision / release:** `ccfe2e0b39b90c0880f85f1ff2b3781663154dbb`. **Retrieved:** 2026-11-22. **Last source check:** 2026-11-22.
 
 **Publication:** public. Linked and synthesised; upstream material retains its own terms.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/emu.yaml) · Substantively reviewed: 2026-11-17.
+[Canonical record](../../records/sources/emu.yaml) · Substantively reviewed: 2026-11-22.

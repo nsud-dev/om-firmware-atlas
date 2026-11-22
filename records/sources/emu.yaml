@@ -35,17 +35,17 @@ records:
 - type: source
   id: source.emu.architecture
   title: OM-Emu architecture
-  summary: Harness-driven startup, model translation and verification.
+  summary: Harness-driven startup, model translation and verification, including structured comparison results.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-17'
-  url: https://github.com/flatpanda/om-emu/blob/0819080133f6ca7edd455dfdfa209bd9eed291cc/emu/ARCHITECTURE.md
+  last_reviewed: '2026-11-22'
+  url: https://github.com/flatpanda/om-emu/blob/ccfe2e0b39b90c0880f85f1ff2b3781663154dbb/emu/ARCHITECTURE.md
   source_kind: github-file
   upstream_repo: flatpanda/om-emu
-  revision: 0819080133f6ca7edd455dfdfa209bd9eed291cc
+  revision: ccfe2e0b39b90c0880f85f1ff2b3781663154dbb
   locator: emu/ARCHITECTURE.md
-  retrieved_on: '2026-11-17'
-  last_checked: '2026-11-17'
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
 - type: source
@@ -67,17 +67,18 @@ records:
 - type: source
   id: source.emu.readme-current
   title: OM-Emu overview (current)
-  summary: What the browser player runs today, Caduceus checks and the body ports.
+  summary: Current browser player, 18-port model-check coverage, native card file systems and per-model display
+    limits.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-17'
-  url: https://github.com/flatpanda/om-emu/blob/0fb011e43e1407355653505a1a463432c2c4376c/README.md
+  last_reviewed: '2026-11-22'
+  url: https://github.com/flatpanda/om-emu/blob/ccfe2e0b39b90c0880f85f1ff2b3781663154dbb/README.md
   source_kind: github-file
   upstream_repo: flatpanda/om-emu
-  revision: 0fb011e43e1407355653505a1a463432c2c4376c
+  revision: ccfe2e0b39b90c0880f85f1ff2b3781663154dbb
   locator: 'README.md: introduction, What works today, body table'
-  retrieved_on: '2026-11-17'
-  last_checked: '2026-11-17'
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
   published_on: null
   publication: public
   reuse_note: Attributed summary; no firmware or code imported.

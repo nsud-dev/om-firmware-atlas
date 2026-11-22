@@ -2,16 +2,16 @@
 
 # db firmware releases
 
-Beta release notes through v0.4.2, in Korean and English.
+Beta release notes through v0.4.4b, in Korean and English.
 
 **[Open original source](https://github.com/azqeurio/om-c-firmware/releases)**
 
-**Kind:** github release. **Locator:** Releases page, page 1; Korean notes summarised in translation.
+**Kind:** github release. **Locator:** Release listing through dbv0.4.4b.
 
-**Revision / release:** `dbv0.4.2`. **Retrieved:** 2026-11-20. **Last source check:** 2026-11-20.
+**Revision / release:** `dbv0.4.4b`. **Retrieved:** 2026-11-22. **Last source check:** 2026-11-22.
 
 **Publication:** public. Attributed summary of mutable release notes; no code, firmware or executables imported.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/db.yaml) · Substantively reviewed: 2026-11-20.
+[Canonical record](../../records/sources/db.yaml) · Substantively reviewed: 2026-11-22.

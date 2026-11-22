@@ -23,7 +23,7 @@ Your films in Picture Mode · 20 film simulations · Colour editor on the camera
 For: OM-3
 { .card-cameras }
 
-Latest: v0.40.3-beta3 (pre-release), 21 Nov 2026
+Latest: v0.40.3-beta4 (pre-release), 21 Nov 2026
 { .card-meta }
 
 </div>
@@ -90,6 +90,57 @@ Mod
 
 <div class="project-card" markdown="1">
 
+[db firmware / om-c-firmware](db-firmware.md){ .card-title }
+
+Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
+
+Panasonic aperture rings · Korean menus · Quasi-LUT and DBLink
+{ .card-features }
+
+For: OM-5, OM-5 Mark II, OM-3, PEN E-P7, PEN-F
+{ .card-cameras }
+
+Latest: dbv0.4.4b, 22 Nov 2026
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[EPM2Mod](epm2mod.md){ .card-title }
+
+Film simulations, interval shooting, focus peaking and a level gauge for the PEN E-PM2.
+
+Film simulations · Interval shooting · Level gauge
+{ .card-features }
+
+For: PEN E-PM2
+{ .card-cameras }
+
+Latest: v2026.11.20-rc.5 (pre-release), 22 Nov 2026
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
+[E-M1 Mark III Mod Builder](em1-iii-mod-builder.md){ .card-title }
+
+Pick firmware mods for the E-M1 Mark III and build your own update file.
+
+Panorama 65:24 · Multiple Exposure with 3 and 4 frames · Focus stacking with any lens
+{ .card-features }
+
+For: OM-D E-M1 Mark III
+{ .card-cameras }
+
+Latest: mod-builder-1.19, 22 Nov 2026
+{ .card-meta }
+
+</div>
+
+<div class="project-card" markdown="1">
+
 [om10mi-mods](om10mi-mods.md){ .card-title }
 
 Film looks, a colour wheel, colour editors and a longer video limit for the original OM-D E-M10.
@@ -107,45 +158,6 @@ Latest: v87, 21 Nov 2026
 
 <div class="project-card" markdown="1">
 
-[db firmware / om-c-firmware](db-firmware.md){ .card-title }
-
-Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
-
-Panasonic aperture rings · Korean menus · Quasi-LUT and DBLink
-{ .card-features }
-
-For: OM-5, OM-5 Mark II, OM-3, PEN E-P7, PEN-F
-{ .card-cameras }
-
-Latest: dbv0.4.3, 21 Nov 2026
-{ .card-meta }
-
-
-
-**OM-5:** The project reports that this build does not work on this camera. **OM-5 Mark II:** The project reports that this build does not work on this camera. [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
-{ .release-warning }
-
-</div>
-
-<div class="project-card" markdown="1">
-
-[E-M1 Mark III Mod Builder](em1-iii-mod-builder.md){ .card-title }
-
-Pick firmware mods for the E-M1 Mark III and build your own update file.
-
-Panorama 65:24 · Multiple Exposure with 3 and 4 frames · Focus stacking with any lens
-{ .card-features }
-
-For: OM-D E-M1 Mark III
-{ .card-cameras }
-
-Latest: mod-builder-1.18, 21 Nov 2026
-{ .card-meta }
-
-</div>
-
-<div class="project-card" markdown="1">
-
 [OMKit](omkit.md){ .card-title }
 
 A loader flashed once, then core, modules and settings from the SD card. OM-5 Mark II.
@@ -157,23 +169,6 @@ For: OM-5 Mark II
 { .card-cameras }
 
 Latest: v0.1.0, 20 Nov 2026
-{ .card-meta }
-
-</div>
-
-<div class="project-card" markdown="1">
-
-[EPM2Mod](epm2mod.md){ .card-title }
-
-Film simulations, interval shooting, focus peaking and a level gauge for the PEN E-PM2.
-
-Film simulations · Interval shooting · Level gauge
-{ .card-features }
-
-For: PEN E-PM2
-{ .card-cameras }
-
-Latest: v2026.11.20-rc.1 (pre-release), 20 Nov 2026
 { .card-meta }
 
 </div>
@@ -261,7 +256,7 @@ Run OM SYSTEM and Olympus camera firmware in your browser.
 Browser player · Patch overlays · Caduceus release checks
 { .card-features }
 
-For: OM-5, OM-5 Mark II, OM-3, PEN E-P7, PEN-F, OM-D E-M10 Mark IV
+For: OM-5, OM-5 Mark II, OM-3, PEN E-P7, PEN-F, OM-D E-M10 Mark IV, OM-D E-M10 Mark II, OM-D E-M1 Mark III, OM-D E-M5 Mark III
 { .card-cameras }
 
 Emulator

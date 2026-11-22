@@ -11,7 +11,7 @@ records:
   - source.gmn103.ptrregs
   topics:
   - tooling
-  last_reviewed: '2026-11-20'
+  last_reviewed: '2026-11-22'
   url: https://github.com/nsud-dev/ghidra-mn103
   kind: tool
   camera_ids: &id001
@@ -53,7 +53,8 @@ records:
     source_ref: source.gmn103.readme
   - name: Pointer-register calling convention
     summary: The optional ptrregs compiler spec places typed pointer arguments in the MN103 address registers.
-      Upstream CI checks argument placement.
+      Upstream CI checks argument placement. The maintainer reports the same final decompilation check counts
+      with Ghidra 11.4.2 and 12.2.
     camera_ids: *id001
     status: released
     since: null

@@ -23,6 +23,7 @@ Use the Atlas entry for Olympus OM-D E-M5 Mark III (E137) (https://github.com/xu
 - [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) · [Repository or project home](https://github.com/nsud-dev/olympus-firmware-notes)
 - [Ghidra MN103 processor module](../projects/ghidra-mn103.md#for-em5-iii) · [Repository or project home](https://github.com/nsud-dev/ghidra-mn103)
 - [Olympus firmware research](../projects/oly-fw-analysis.md#for-em5-iii) · [Repository or project home](https://github.com/fishcu/oly_fw_analysis)
+- [OM-Emu](../projects/om-emu.md#for-em5-iii) · [Repository or project home](https://github.com/flatpanda/om-emu)
 
 ## Claims and test evidence { #evidence }
 

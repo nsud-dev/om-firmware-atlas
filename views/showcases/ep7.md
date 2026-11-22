@@ -36,14 +36,14 @@ Eight Standard 1.2 looks, rendered by the Control Panel's preview. The preview a
 
 ## db firmware / om-c-firmware { #db-firmware }
 
-**Get it:** [dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3), 21 Nov 2026. Check the release notes for files and instructions for this model.
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
 { .card-get }
 
-The maintainer calls this a beta. No test procedure, results or hashes are given.
+Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
 { .release-warning }
 
-- **Hybrid Shutter** · Beta. Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. v0.4.3 lists nine bodies, including the OM-3, OM-5, OM-5 Mark II and E-P7; its OM-5 and OM-5 Mark II builds are listed as not working.
+- **Hybrid Shutter** · Beta. Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
 
-[Full project details](../projects/db-firmware.md#for-ep7) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.3)
+[Full project details](../projects/db-firmware.md#for-ep7) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
 
 </section>

@@ -2,16 +2,16 @@
 
 # OM-3 research index
 
-Scoped entry points into the notebook, tools and tests.
+Research entry points, release tests and the shooting-screen investigation.
 
-**[Open original source](https://github.com/androidfanman/caduceus-om3/blob/78a809e163d96f468d796c7f5b42a9846e43b19b/research/README.md)**
+**[Open original source](https://github.com/androidfanman/caduceus-om3/blob/f3b84dca32cf0e60b442a5d2271bcf6dc58ecdc5/research/README.md)**
 
 **Kind:** github file. **Locator:** research/README.md.
 
-**Revision / release:** `78a809e163d96f468d796c7f5b42a9846e43b19b`. **Retrieved:** 2026-11-17. **Last source check:** 2026-11-17.
+**Revision / release:** `f3b84dca32cf0e60b442a5d2271bcf6dc58ecdc5`. **Retrieved:** 2026-11-22. **Last source check:** 2026-11-22.
 
 **Publication:** public. Linked and synthesised; upstream material retains its own terms.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/om3.yaml) · Substantively reviewed: 2026-11-17.
+[Canonical record](../../records/sources/om3.yaml) · Substantively reviewed: 2026-11-22.

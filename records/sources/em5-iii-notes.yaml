@@ -83,17 +83,17 @@ records:
 - type: source
   id: source.gmn103.readme
   title: Ghidra MN103 module README
-  summary: Supported CPUs, decompiler features, install and tested Ghidra versions.
+  summary: Installation, decompiler checks against E-M5 III 1.7, and pointer-register calling convention validation.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-18'
-  url: https://github.com/nsud-dev/ghidra-mn103/blob/01fc3928802d227b2d5f06b83f40543ecbe92f40/README.md
+  last_reviewed: '2026-11-22'
+  url: https://github.com/nsud-dev/ghidra-mn103/blob/4290b76b8f5730c8cc10cd06582a0e4550662314/README.md
   source_kind: github-file
   upstream_repo: nsud-dev/ghidra-mn103
-  revision: 01fc3928802d227b2d5f06b83f40543ecbe92f40
+  revision: 4290b76b8f5730c8cc10cd06582a0e4550662314
   locator: README.md
-  retrieved_on: '2026-11-18'
-  last_checked: '2026-11-18'
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
   publication: public
   reuse_note: Written by the module's author; GPL-3.0 per the repo licence.
 - type: source

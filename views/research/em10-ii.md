@@ -21,6 +21,7 @@ Use the Atlas entry for Olympus OM-D E-M10 Mark II (E120) (https://github.com/xu
 ## Projects and repositories
 
 - [fenykl](../projects/fenykl.md#for-em10-ii) · [Repository or project home](https://github.com/atx/fenykl)
+- [OM-Emu](../projects/om-emu.md#for-em10-ii) · [Repository or project home](https://github.com/flatpanda/om-emu)
 
 ## Claims and test evidence { #evidence }
 

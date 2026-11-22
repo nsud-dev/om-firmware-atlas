@@ -16,11 +16,9 @@ Original E144: several projects have distinct experiments. Mark II results do no
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** none listed here.
+**Releases for this camera:**
 
-**Reported not working on this model:**
-
-- [db firmware / om-c-firmware](../showcases/om5.md#db-firmware) · dbv0.4.3 · The project reports that this build does not work on this camera. [Project’s release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3)
+- [db firmware / om-c-firmware](../showcases/om5.md#db-firmware) · dbv0.4.4b · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
 
 **No release for this camera yet:** [Caduceus for OM-5](../showcases/om5.md#caduceus-om5), [Caduceus port for the original OM-5 (tadejs)](../showcases/om5.md#caduceus-om5-tadejs).
 

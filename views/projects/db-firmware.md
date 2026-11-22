@@ -28,13 +28,8 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 
 [Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
-**Type:** mod · **Camera details:** [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii), [OM-3](#for-om3), [PEN E-P7](#for-ep7), [PEN-F](#for-pen-f) · **Latest release:** [dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3), 21 Nov 2026 · **Maintained by** [azqeurio](https://github.com/azqeurio)
+**Type:** mod · **Camera details:** [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii), [OM-3](#for-om3), [PEN E-P7](#for-ep7), [PEN-F](#for-pen-f) · **Latest release:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026 · **Maintained by** [azqeurio](https://github.com/azqeurio)
 { .facts }
-
-
-**OM-5:** The project reports that this build does not work on this camera. **OM-5 Mark II:** The project reports that this build does not work on this camera. [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
-{ .release-warning }
-
 
 ## Cameras
 
@@ -42,11 +37,13 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 
 ### Original OM-5 { #for-om5 }
 
-**For this camera:** Panasonic aperture rings, Korean menus and Hybrid Shutter, all beta.
+[Before you install: risks and recovery](../../docs/before-you-install.md)
+
+**For this camera:** Beta patches include Panasonic aperture rings, Korean menus and Hybrid Shutter. The Mark II-based port’s boot fix has only simulator and emulator results in the release notes.
 { .card-for }
 
-**dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
-{ .release-warning }
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
+{ .card-get }
 
 [Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
@@ -56,11 +53,13 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 
 ### OM-5 Mark II { #for-om5-ii }
 
+[Before you install: risks and recovery](../../docs/before-you-install.md)
+
 **For this camera:** Korean menus and Hybrid Shutter, both beta.
 { .card-for }
 
-**dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
-{ .release-warning }
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
+{ .card-get }
 
 [Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
@@ -72,10 +71,10 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 
 [Before you install: risks and recovery](../../docs/before-you-install.md)
 
-**For this camera:** Listed for this camera: Korean menus (beta), Hybrid Shutter (beta).
+**For this camera:** Listed for this camera: Korean menus (beta), Quasi-LUT and DBLink (beta), Hybrid Shutter (beta).
 { .card-for }
 
-**Get it:** [dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3), 21 Nov 2026. Check the release notes for files and instructions for this model.
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
 { .card-get }
 
 [Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
@@ -91,7 +90,7 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **For this camera:** Listed for this camera: Hybrid Shutter (beta).
 { .card-for }
 
-**Get it:** [dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3), 21 Nov 2026. Check the release notes for files and instructions for this model.
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
 { .card-get }
 
 [Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
@@ -122,6 +121,8 @@ Recent releases list aperture-ring support for Panasonic lenses, extra burst rat
 The author owns only some of the supported bodies and says the patch can't be guaranteed to work on every model. v0.4.1 lists known issues for the OM-5 build.
 
 The v0.4.2 beta notes list Hybrid Shutter for the OM-3 and OM-5 Mark II, and changes to the separate OM-5 build based on Mark II firmware. v0.4.3 extends Hybrid Shutter to S and M mode and lists it for nine bodies, fixes Quasi-LUT conversion, grain and the OM-3 indicator, and lists the OM-5 and OM-5 Mark II builds as not working.
+
+The maintainer reports power-cycle persistence for Hybrid Shutter and Quasi-LUT in v0.4.3b, then a simulated OM-5 boot fix in v0.4.4 and follow-up fixes in v0.4.4b.
 
 ## Features
 
@@ -158,7 +159,10 @@ Korean language support on several bodies.
 **Quasi-LUT and DBLink** <span class="pill pill-beta">Beta</span>
 { .feature-head }
 
-A Quasi-LUT feature, with transfer to the camera through DBLink.
+Quasi-LUT with DBLink transfer. On OM-3, v0.4.3b adds power-cycle persistence for the on/off state and selected slot.
+
+[OM-3](../cameras/om3.md) · since dbv0.4.1
+{ .card-meta }
 
 </div>
 
@@ -194,7 +198,7 @@ A 5 GHz Wi-Fi hotspot, and the electronic shutter sound through the speaker.
 **Hybrid Shutter** <span class="pill pill-beta">Beta</span>
 { .feature-head }
 
-Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. v0.4.3 lists nine bodies, including the OM-3, OM-5, OM-5 Mark II and E-P7; its OM-5 and OM-5 Mark II builds are listed as not working.
+Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
 
 [OM-3](../cameras/om3.md), [OM-5 Mark II](../cameras/om5-ii.md), [OM-5](../cameras/om5.md), [PEN E-P7](../cameras/ep7.md) · since dbv0.4.2
 { .card-meta }
@@ -204,6 +208,69 @@ Switches to the electronic shutter on overexposure in P or A mode and, since v0.
 </div>
 
 ## Releases
+
+<div class="release-item" markdown="1">
+
+**[db firmware v0.4.4b beta](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b)** · 22 Nov 2026
+{ .release-head }
+
+- Reports a fix for the double restart with Hybrid Shutter on the OM-5, OM-5 Mark II, E-M1 III, E-M1X and E-P7.
+- Reports Super Control Panel drive mode and Wi-Fi fixes for the OM-5 port, and shortcut button, AF Home and Korean font fixes for E-P7 1.1.
+- Reports fixes for Quasi-LUT’s startup menu state, Panasonic aperture rings, electronic shutter sound in MF and Auto ISO minimum shutter speed in P/A.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
+
+OM-5 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
+
+OM-5 Mark II · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
+
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
+
+Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[db firmware v0.4.4 beta](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4)** · 21 Nov 2026
+{ .release-head }
+
+- Reports a fix for the Mark II-based OM-5 port’s black screen at boot.
+- Raises the burst buffer for the OM-1 Mark II port on the original OM-1 from 80 to 85 frames.
+
+OM-5 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4)
+
+The OM-5 boot fix was checked in CPU simulation and an emulator. The maintainer asked testers to keep stock recovery firmware and reported no physical-camera test.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[db firmware v0.4.3b beta](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3b)** · 21 Nov 2026
+{ .release-head }
+
+- The maintainer adds Hybrid Shutter mode persistence on supported bodies and Quasi-LUT persistence on the OM-3 and listed OM-1 variants.
+- The maintainer reports a fix for an OM-3 Quasi-LUT boot loop and adds red/blue channel swap for infrared on a separate set of models.
+
+
+
+**OM-5:** The project reports that this build does not work on this camera. [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3b).
+{ .release-warning }
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.3b)
+
+OM-5 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.3b)
+
+OM-5 Mark II · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.3b)
+
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.3b)
+
+The release still lists the Mark II-based OM-5 port as broken.
+{ .release-warning }
+
+</div>
 
 <div class="release-item" markdown="1">
 
@@ -372,7 +439,7 @@ None catalogued. These links do not assign ownership or imply identical implemen
 
 ## Research notes
 
-The latest reviewed release is v0.4.3 beta (2026-11-21). Its feature and fix claims are attributed to the maintainer, and its notes say the OM-5 and OM-5 Mark II firmware does not work in this version.
+The latest reviewed release is v0.4.4b beta. The maintainer reports fixes for Hybrid Shutter startup, the Mark II-based OM-5 port and E-P7 1.1. The preceding OM-5 boot fix was checked only in simulation and emulation, and these notes add no physical-camera result.
 
 ## Sources and record
 
@@ -380,5 +447,8 @@ The latest reviewed release is v0.4.3 beta (2026-11-21). Its feature and fix cla
 - [db firmware releases](../sources/db.releases.md)
 - [db firmware v0.4.2 beta](../sources/db.release042.md)
 - [db firmware v0.4.3 beta](../sources/db.release043.md)
+- [db firmware v0.4.4b beta](../sources/db.release044b.md)
+- [db firmware v0.4.4 beta](../sources/db.release044.md)
+- [db firmware v0.4.3b beta](../sources/db.release043b.md)
 
-[Canonical record](../../records/projects/db-firmware.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/projects/db-firmware.yaml) · Substantively reviewed: 2026-11-22.

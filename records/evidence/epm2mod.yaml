@@ -41,6 +41,7 @@ records:
   summary: The owner reports the new pinned build booting, loading the default film file and recording the new Portra 400 fit; the RAW Data Edit check was not done.
   source_refs:
   - source.epm2.camera-log-twelve-off
+  - source.epm2.rc2
   - source.epm2.install
   - source.epm2.feasibility
   topics:
@@ -72,5 +73,39 @@ records:
   - The RAW Data Edit colour check was not done on this build; the colour results (all 31 colour films closer to
     target, median natural-colour error 1.19 to 1.04) were measured on films-twelve-off-artbkt, not on this build.
   - One owner and one camera; not reproduced by the Atlas.
-  - Not in a release when read; the newest release, v2026.11.20-rc.1, carries films-look-exif.
+  - This firmware digest subsequently appeared in rc.2. The test predates that release.
+  assumptions: []
+- type: evidence
+  id: evidence.epm2-peaking-mf
+  title: E-PM2 peaking-mf owner camera test
+  summary: The owner reports peaking in normal MF live view and a clean post-shot preview on the rebuilt firmware.
+  source_refs:
+  - source.epm2.camera-log-peaking-mf
+  - source.epm2.install-peaking-mf
+  - source.epm2.rc3
+  topics:
+  - capture
+  last_reviewed: '2026-11-22'
+  camera_id: camera.epm2
+  firmware_id: firmware.epm2-1600
+  project_id: project.epm2mod
+  mod_build: peaking-mf
+  method: physical-camera
+  provenance: maintainer-summary
+  identity_level: reported-hash
+  package_sha256: 6a47806dfafce15d281358eae2beffe397132e5999c50b28c69b2a2467efcf39
+  expected_package_sha256: 6a47806dfafce15d281358eae2beffe397132e5999c50b28c69b2a2467efcf39
+  outcome: reported-pass
+  quality: complete
+  reported_on: '2026-11-21'
+  tested_on: '2026-11-21'
+  procedure: The owner flashed the rebuilt firmware and checked MF peaking during live view, half-press and review.
+    They also checked S-AF, the 2× digital teleconverter and movie mode.
+  coverage:
+  - Peaking stops at half-press, stays out of the post-shot preview and returns afterwards.
+  - Peaking appears with the 2× digital teleconverter. No lines were seen in S-AF or movie mode.
+  limitations:
+  - One owner and one camera. The log identifies the flashed firmware image. The installer archive was not independently
+    checked.
+  - The first candidate showed peaking lines in the post-shot preview. This result is for the rebuilt image.
   assumptions: []

@@ -11,19 +11,21 @@ records:
   - source.em1m3.mods
   - source.em1m3.findings
   - source.em1m3.releases
+  - source.em1m3.release119
+  - source.em1m3.mods119
   topics:
   - patching
   - capture
   - colour
   - tooling
   - interfaces
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-22'
   url: https://github.com/dfeldt91-blip/E-M1-Miii
   kind: mod
   camera_ids:
   - camera.em1-iii
   contribution_home: https://github.com/dfeldt91-blip/E-M1-Miii
-  status_summary: Active again. On 2026-11-20 the author had declared the project ended; on 2026-11-21 the README says it continues and release mod-builder-1.18 adds Fill In next to Manual flash in handheld High Res (test 1.745). A fix for the missing Multiple Exposure overlay after shots 2 and 3 is in test 1.746, awaiting a camera result.
+  status_summary: The latest packaged builder is mod-builder-1.19 for stock firmware 1.6. The project is active again. On 2026-11-20 the author had declared the project ended; on 2026-11-21 the README says it continues and release mod-builder-1.18 adds Fill In next to Manual flash in handheld High Res (test 1.745). A fix for the missing Multiple Exposure overlay after shots 2 and 3 is in test 1.746, awaiting a camera result.
   related_projects:
   - project.caduceus-ep7
   - project.oly-fw-analysis
@@ -37,7 +39,7 @@ records:
   description:
   - The author paused the project on 2026-11-20 and resumed it the next day, now working locally. They report the firmware functional; the one known issue, no Multiple Exposure preview between frames 2–3 and 3–4, has a fix in test. The 3- or 4-frame result itself is correct.
   - The E-M1 III Mod Builder is a small Mac and Windows app. It downloads the official E-M1 Mark III firmware 1.6 from OM Digital Solutions' update server, checks its SHA-256, lets you tick the mods you want and writes an E1399999.BIN for the camera's card updater. The mods are stored as edit lists, so no OM firmware is kept in the app.
-  - The 19 mods cover a 65:24 Panorama aspect, 3- and 4-frame Multiple Exposure, focus stacking with any lens, High Res with flash and art filters, a linear Sharpness scale, Custom Modes in video, ISO-Auto down to 64, a 9-hour recording limit, extra Gradation curves, a plain white Frame effect, and film looks in Custom from Caduceus's recipes. Each mod's camera status is the owner's own; most were tried on the owner's camera in numbered test builds.
+  - The builder's mods cover a 65:24 Panorama aspect, 3- and 4-frame Multiple Exposure, focus stacking with any lens, High Res with flash and art filters, a linear Sharpness scale, Custom Modes in video, ISO-Auto down to 64, a 9-hour recording limit, extra Gradation curves, a plain white Frame effect, and film looks in Custom from Caduceus's recipes. Each mod's camera status is the owner's own; most were tried on the owner's camera in numbered test builds.
   goals:
   - A live Multiple Exposure overlay after every shot but the last (test 1.746).
   - The author's list of unfinished ideas (100 % JPEG quality, 240 fps slow motion, loading looks from the card) is in the repository.
@@ -48,7 +50,7 @@ records:
   - label: Builder guide
     url: https://github.com/dfeldt91-blip/E-M1-Miii/blob/ae16f3d2836e7273164c7cd3497237117c8b9ff9/builder/README.md
   - label: Latest release
-    url: https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.18
+    url: https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19
   features:
   - name: 'Panorama 65:24'
     summary: 'Replaces the 7:6 aspect with 65:24 in the menu, live-view frame, AF areas and raw frame. Worked on the camera (1.5 build).'
@@ -183,7 +185,26 @@ records:
     status: released
     since: null
     source_ref: source.em1m3.mods
+  - name: Monochrome II
+    summary: Replaces i-Finish with a separate monochrome profile. The author reports the profile and labels worked in test 1.7.7.8.
+    camera_ids:
+    - camera.em1-iii
+    status: released
+    since: mod-builder-1.19
+    source_ref: source.em1m3.mods119
   releases:
+  - tag: mod-builder-1.19
+    title: E-M1 III Mod Builder mod-builder-1.19
+    date: '2026-11-22'
+    url: https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19
+    prerelease: false
+    camera_ids:
+    - camera.em1-iii
+    highlights:
+    - Packages the builder for Windows and macOS, including a universal Mac build.
+    - Includes the Monochrome II option. The tagged mod pack says the profile and labels worked in a camera test and the Shade effect change still needs a retest.
+    warning: Unofficial firmware builder. The apps are unsigned.
+    source_ref: source.em1m3.release119
   - tag: mod-builder-1.18
     title: E-M1 III Mod Builder mod-builder-1.18
     date: '2026-11-21'

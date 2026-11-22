@@ -4,6 +4,8 @@
 
 Choose your exact model to see its firmware projects and release status.
 
+[Browse cameras by TruePic generation](../../docs/truepic-generations.md).
+
 <div class="camera-finder" markdown="1" hidden>
 
 <label for="camera-query">Find your camera</label>
@@ -67,7 +69,7 @@ E144
 
 Original E144: several projects have distinct experiments. Mark II results do not apply.
 
-3 mods or ports, 1 with a release · dbv0.4.3: The project reports that this build does not work on this camera.
+3 mods or ports, 1 with a release
 { .card-meta }
 
 </div>
@@ -81,7 +83,7 @@ E148
 
 E148: v0.2.0-alpha1 has an overall positive owner report; original OM-5 work is separate.
 
-3 mods or ports, 3 with a release · dbv0.4.3: The project reports that this build does not work on this camera.
+3 mods or ports, 3 with a release
 { .card-meta }
 
 </div>
@@ -230,6 +232,42 @@ E-M10 IV target needs physical-camera evidence. [View the testing request](https
 
 <div class="release-item" markdown="1">
 
+**OM-3, OM-5, OM-5 Mark II, PEN E-P7**
+{ .release-model }
+
+[db firmware / om-c-firmware](../projects/db-firmware.md) · [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b) · 22 Nov 2026
+{ .release-head }
+
+Reports a fix for the double restart with Hybrid Shutter on the OM-5, OM-5 Mark II, E-M1 III, E-M1X and E-P7.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**PEN E-PM2**
+{ .release-model }
+
+[EPM2Mod](../projects/epm2mod.md) · [v2026.11.20-rc.5](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5) · 22 Nov 2026 <span class="pill pill-alpha">Pre-release</span>
+{ .release-head }
+
+Corrects the Tri-X look pack entry and shows 32 films across nine scenes on the project site.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**OM-D E-M1 Mark III**
+{ .release-model }
+
+[E-M1 Mark III Mod Builder](../projects/em1-iii-mod-builder.md) · [mod-builder-1.19](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19) · 22 Nov 2026
+{ .release-head }
+
+Packages the builder for Windows and macOS, including a universal Mac build.
+
+</div>
+
+<div class="release-item" markdown="1">
+
 **OM-D E-M10 (Mark I)**
 { .release-model }
 
@@ -242,42 +280,13 @@ Colour wheel in Color Creator at the ART dial, with an on-screen key hint and a 
 
 <div class="release-item" markdown="1">
 
-**OM-3, OM-5, OM-5 Mark II, PEN E-P7**
-{ .release-model }
-
-[db firmware / om-c-firmware](../projects/db-firmware.md) · [dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3) · 21 Nov 2026
-{ .release-head }
-
-
-
-**OM-5:** The project reports that this build does not work on this camera. **OM-5 Mark II:** The project reports that this build does not work on this camera. [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
-{ .release-warning }
-
-Hybrid Shutter in S and M mode switches to the electronic shutter below the slowest mechanical speed; P and A switch on overexposure.
-
-</div>
-
-<div class="release-item" markdown="1">
-
-**OM-D E-M1 Mark III**
-{ .release-model }
-
-[E-M1 Mark III Mod Builder](../projects/em1-iii-mod-builder.md) · [mod-builder-1.18](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.18) · 21 Nov 2026
-{ .release-head }
-
-Adds Fill Flash to handheld High Res, so Fill In and Manual flash are both offered (test 1.745).
-
-</div>
-
-<div class="release-item" markdown="1">
-
 **OM-3**
 { .release-model }
 
-[Caduceus for OM-3](../projects/caduceus-om3.md) · [v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · 21 Nov 2026 <span class="pill pill-alpha">Pre-release</span>
+[Caduceus for OM-3](../projects/caduceus-om3.md) · [v0.40.3-beta4](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta4) · 21 Nov 2026 <span class="pill pill-alpha">Pre-release</span>
 { .release-head }
 
-Replaces the withdrawn v0.40.3-beta2, with the same #91, #97 and #99 fixes and without its boot loop on some start-ups or its restart on a film change after the Creative Dial's centre.
+Films and COLOR keep their own white-balance shift in live view and stills. The stock picture modes keep the camera’s own setting.
 
 </div>
 
@@ -290,18 +299,6 @@ Replaces the withdrawn v0.40.3-beta2, with the same #91, #97 and #99 fixes and w
 { .release-head }
 
 First public release, for the OM-5 Mark II on firmware 1.1; core 1.32, CREATPRF 1.5, FILMLOOK 1.12.
-
-</div>
-
-<div class="release-item" markdown="1">
-
-**PEN E-PM2**
-{ .release-model }
-
-[EPM2Mod](../projects/epm2mod.md) · [v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · 20 Nov 2026 <span class="pill pill-alpha">Pre-release</span>
-{ .release-head }
-
-Film simulations use the identity look and record each film's name in the photo's metadata.
 
 </div>
 

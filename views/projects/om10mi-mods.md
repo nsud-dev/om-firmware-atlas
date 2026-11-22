@@ -10,12 +10,12 @@ Film looks, a colour wheel, colour editors and a longer video limit for the orig
 
 <div class="cta-row" markdown="1">
 
-[Read the install guide](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/INSTALL.md){ .btn .btn-primary }
+[Read the install guide](https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/INSTALL.md){ .btn .btn-primary }
 [Project home](https://github.com/Meghnus/om10mi-mods){ .btn .btn-ghost }
 [Ask or report issues](https://github.com/Meghnus/om10mi-mods/issues){ .btn .btn-ghost }
 [Colour wheel guide](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/docs/GUIDE-COLOR-WHEEL.md){ .btn .btn-ghost }
 [Development and testing method](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/docs/DEVELOPMENT.md){ .btn .btn-ghost }
-[Looks and colour editors guide and test list](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/docs/GUIDE-56.md){ .btn .btn-ghost }
+[Looks and colour editors guide and test list](https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/docs/GUIDE-56.md){ .btn .btn-ghost }
 [Look file spec (draft)](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/docs/lookfile/LOOKFILE_SPEC.md){ .btn .btn-ghost }
 
 </div>
@@ -46,7 +46,7 @@ Use the Atlas entry for om10mi-mods (https://github.com/xulfr/om-firmware-atlas/
 **For this camera:** 6 features, including Film looks, Per-sector colour editor and Per-look colour editor.
 { .card-for }
 
-**Get it:** [v87](https://github.com/Meghnus/om10mi-mods/releases/tag/v87), 21 Nov 2026 · [Install guide](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/INSTALL.md)
+**Get it:** [v87](https://github.com/Meghnus/om10mi-mods/releases/tag/v87), 21 Nov 2026 · [Install guide](https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/INSTALL.md)
 { .card-get }
 
 [Camera overview](../cameras/em10.md) · [Test results](../research/em10.md#evidence)
@@ -192,10 +192,9 @@ Unofficial, for the E-M10 Mark I on firmware 1.4 only; tested on one body. Do no
 
 ## Research notes
 
-The owner released version 87 on 2026-11-21, adding a colour wheel, and reports it tested in a PC emulator, independently reviewed and field-tested on one E-M10 Mark I with firmware 1.4. Recording past 30 minutes is not yet confirmed. Two open user reports name no body or build; the maintainer has replied to both, calling the Lightroom white-balance offset stock behaviour and hardening the code suspected in the freeze.
+Version 87 adds a colour wheel for the original E-M10 on firmware 1.4. The owner reports emulator and camera tests; recording past 30 minutes is still unconfirmed. A filter-related reboot report remains open. The reporter closed the Lightroom white-balance display issue after a second look.
 
-- [Intermittent freeze and reboot with filters enabled; body, build and filter not stated. The maintainer asked four questions and hardened the suspected Contrast/Gradation code in 87; untested by the reporter](https://github.com/Meghnus/om10mi-mods/issues/4) — needs evidence; owner: not assigned here.
-- [RAWs open about 300 K lower in Lightroom Classic than set in camera; the maintainer says this is stock behaviour and asked for a comparison on official firmware](https://github.com/Meghnus/om10mi-mods/issues/3) — needs evidence; owner: not assigned here.
+- [The reporter confirmed immediate freeze and automatic restart during single-shot JPEG + RAW while trying looks, with no reset of User Hue. The exact look and build remain unspecified.](https://github.com/Meghnus/om10mi-mods/issues/4) — needs evidence; owner: not assigned here.
 - [E-M10 Mark I export from the Caduceus Control Panel, using the draft look file](https://github.com/Meghnus/om10mi-mods/issues/2) — proposed; owner: not assigned here.
 
 ## Sources and record
@@ -214,4 +213,4 @@ The owner released version 87 on 2026-11-21, adding a colour wheel, and reports 
 - [om10mi-mods colour wheel guide](../sources/om10mi.color-wheel.md)
 - [om10mi-mods development and testing method](../sources/om10mi.development.md)
 
-[Canonical record](../../records/projects/om10mi-mods.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/projects/om10mi-mods.yaml) · Substantively reviewed: 2026-11-22.

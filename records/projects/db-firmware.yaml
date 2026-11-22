@@ -9,11 +9,14 @@ records:
   - source.db.releases
   - source.db.release042
   - source.db.release043
+  - source.db.release044b
+  - source.db.release044
+  - source.db.release043b
   topics:
   - capture
   - colour
   - patching
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-22'
   url: https://github.com/azqeurio/om-c-firmware
   kind: mod
   camera_ids:
@@ -23,15 +26,15 @@ records:
   - camera.ep7
   - camera.pen-f
   contribution_home: https://github.com/azqeurio/om-c-firmware/issues
-  status_summary: The latest reviewed release is v0.4.3 beta (2026-11-21). Its feature and fix claims are
-    attributed to the maintainer, and its notes say the OM-5 and OM-5 Mark II firmware does not work in this
-    version.
+  status_summary: The latest reviewed release is v0.4.4b beta. The maintainer reports fixes for Hybrid Shutter startup,
+    the Mark II-based OM-5 port and E-P7 1.1. The preceding OM-5 boot fix was checked only in simulation and emulation,
+    and these notes add no physical-camera result.
   related_projects: []
   tagline: Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst
     rates.
   camera_notes:
   - camera_id: camera.om5
-    note: "Panasonic aperture rings, Korean menus and Hybrid Shutter, all beta."
+    note: "Beta patches include Panasonic aperture rings, Korean menus and Hybrid Shutter. The Mark II-based port’s boot fix has only simulator and emulator results in the release notes."
   - camera_id: camera.om5-ii
     note: "Korean menus and Hybrid Shutter, both beta."
   - camera_id: camera.pen-f
@@ -49,6 +52,7 @@ records:
     OM-5 build based on Mark II firmware. v0.4.3 extends Hybrid Shutter to S and M mode and lists it for nine
     bodies, fixes Quasi-LUT conversion, grain and the OM-3 indicator, and lists the OM-5 and OM-5 Mark II builds
     as not working.
+  - The maintainer reports power-cycle persistence for Hybrid Shutter and Quasi-LUT in v0.4.3b, then a simulated OM-5 boot fix in v0.4.4 and follow-up fixes in v0.4.4b.
   maintainers:
   - label: azqeurio
     url: https://github.com/azqeurio
@@ -74,11 +78,12 @@ records:
     since: null
     source_ref: source.db.releases
   - name: Quasi-LUT and DBLink
-    summary: A Quasi-LUT feature, with transfer to the camera through DBLink.
-    camera_ids: []
+    summary: Quasi-LUT with DBLink transfer. On OM-3, v0.4.3b adds power-cycle persistence for the on/off state and selected slot.
+    camera_ids:
+    - camera.om3
     status: beta
-    since: null
-    source_ref: source.db.release041
+    since: dbv0.4.1
+    source_ref: source.db.release043b
   - name: OM-1 Mark II features on the OM-1
     summary: A port of OM-1 Mark II firmware to the OM-1, without ND128 or the larger buffer.
     camera_ids: []
@@ -99,8 +104,7 @@ records:
     source_ref: source.db.releases
   - name: Hybrid Shutter
     summary: Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the
-      slowest mechanical speed in S or M mode. v0.4.3 lists nine bodies, including the OM-3, OM-5, OM-5 Mark II
-      and E-P7; its OM-5 and OM-5 Mark II builds are listed as not working.
+      slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
     camera_ids:
     - camera.om3
     - camera.om5-ii
@@ -108,8 +112,58 @@ records:
     - camera.ep7
     status: beta
     since: dbv0.4.2
-    source_ref: source.db.release042
+    source_ref: source.db.release043b
   releases:
+  - tag: dbv0.4.4b
+    title: db firmware v0.4.4b beta
+    date: '2026-11-22'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b
+    prerelease: false
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.om5-ii
+    - camera.ep7
+    highlights:
+    - Reports a fix for the double restart with Hybrid Shutter on the OM-5, OM-5 Mark II, E-M1 III, E-M1X and E-P7.
+    - Reports Super Control Panel drive mode and Wi-Fi fixes for the OM-5 port, and shortcut button, AF Home and Korean
+      font fixes for E-P7 1.1.
+    - Reports fixes for Quasi-LUT’s startup menu state, Panasonic aperture rings, electronic shutter sound in MF and
+      Auto ISO minimum shutter speed in P/A.
+    warning: Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
+    source_ref: source.db.release044b
+  - tag: dbv0.4.4
+    title: db firmware v0.4.4 beta
+    date: '2026-11-21'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4
+    prerelease: false
+    camera_ids:
+    - camera.om5
+    highlights:
+    - Reports a fix for the Mark II-based OM-5 port’s black screen at boot.
+    - Raises the burst buffer for the OM-1 Mark II port on the original OM-1 from 80 to 85 frames.
+    warning: The OM-5 boot fix was checked in CPU simulation and an emulator. The maintainer asked testers to keep
+      stock recovery firmware and reported no physical-camera test.
+    source_ref: source.db.release044
+  - tag: dbv0.4.3b
+    title: db firmware v0.4.3b beta
+    date: '2026-11-21'
+    url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3b
+    prerelease: false
+    camera_ids:
+    - camera.om3
+    - camera.om5
+    - camera.om5-ii
+    - camera.ep7
+    highlights:
+    - The maintainer adds Hybrid Shutter mode persistence on supported bodies and Quasi-LUT persistence on the OM-3
+      and listed OM-1 variants.
+    - The maintainer reports a fix for an OM-3 Quasi-LUT boot loop and adds red/blue channel swap for infrared on
+      a separate set of models.
+    warning: The release still lists the Mark II-based OM-5 port as broken.
+    source_ref: source.db.release043b
+    camera_limits:
+      camera.om5: reported-not-working
   - tag: dbv0.4.3
     title: db firmware v0.4.3 beta
     date: '2026-11-21'

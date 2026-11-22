@@ -714,6 +714,7 @@ def render(catalogue):
         text = GENERATED + f"# {INDEX_TITLES[kind]}\n\n{INDEX_INTROS[kind]}\n\n"
         if kind == "camera":
             rows = catalogue.of_type("camera")
+            text += f"[Browse cameras by TruePic generation]({link(path, 'docs/truepic-generations.md')}).\n\n"
             text += camera_finder(catalogue, path)
             for line in CAMERA_LINES:
                 members = sorted((r for r in rows if camera_line(r["title"]) == line), key=lambda r: r["title"])

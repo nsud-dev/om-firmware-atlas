@@ -202,7 +202,9 @@ class AtlasTests(unittest.TestCase):
         self.assertIn("[Ghidra MN103", research)
         self.assertNotIn("[Ghidra MN103", overview)
         self.assertNotIn("v0.2.0-alpha1", overview)
-        self.assertIn("**Reported not working on this model:**", overview)
+        self.assertIn("**Releases for this camera:**", overview)
+        self.assertIn("dbv0.4.4b", overview)
+        self.assertIn("No camera test recorded here for this project on this model", overview)
         self.assertIn("**No release for this camera yet:**", overview)
         self.assertNotIn("## Claims and test evidence", overview)
 
@@ -216,13 +218,15 @@ class AtlasTests(unittest.TestCase):
     def test_latest_release_is_chronological_and_camera_specific(self):
         project = copy.deepcopy(self.catalogue.records["project.db-firmware"])
         release = latest_release(project)
+        historical = next(r for r in project["releases"] if r["tag"] == "dbv0.4.3")
         for camera in ("camera.om5", "camera.om5-ii"):
-            self.assertIn("does not work", release_limit(release, camera))
-        self.assertIsNone(release_limit(release, "camera.om3"))
+            self.assertIs(latest_release(project, camera), release)
+            self.assertIsNone(release_limit(release, camera))
+            self.assertIn("does not work", release_limit(historical, camera))
+        self.assertIsNone(release_limit(historical, "camera.om3"))
         self.assertEqual(latest_release(project, "camera.pen-f")["tag"], "dbv0.3.2")
         self.assertIn("without saying which features", release_limit(latest_release(project, "camera.pen-f"), "camera.pen-f"))
         newer = dict(release, tag="next-beta", prerelease=True)
-        del newer["camera_limits"]
         project["releases"].insert(0, newer)
         self.assertIs(latest_release(project, "camera.om5"), newer)
         self.assertIsNone(release_limit(newer, "camera.om5"))
@@ -230,6 +234,10 @@ class AtlasTests(unittest.TestCase):
         self.assertTrue(latest_release(self.catalogue.records["project.oly-fw-analysis"], "camera.pen-f")["prerelease"])
 
     def test_failed_build_warning_reaches_install_decisions(self):
+        project = self.catalogue.records["project.db-firmware"]
+        # Recreate the catalogue before the follow-up releases.
+        failed_index = next(i for i, r in enumerate(project["releases"]) if r["tag"] == "dbv0.4.3")
+        project["releases"] = project["releases"][failed_index:]
         pages = render(self.catalogue)
         warning = "The project reports that this build does not work on this camera."
         for camera in ("om5", "om5-ii"):

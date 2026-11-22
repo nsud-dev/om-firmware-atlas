@@ -2,16 +2,16 @@
 
 # RAW white balance in Lightroom Classic (issue 3)
 
-A user reports RAWs opening about 300 K lower in Lightroom Classic than set in camera; the maintainer replies that this is expected stock behaviour and asks for a stock comparison.
+The reporter described a roughly 300 K display offset in Lightroom Classic, then attributed it to Lightroom. No stock comparison result was reported.
 
 **[Open original source](https://github.com/Meghnus/om10mi-mods/issues/3)**
 
-**Kind:** github comment. **Locator:** Issue 3 by rayv3r, opened 2026-11-20; maintainer reply by Meghnus on 2026-11-21; open, no reporter follow-up when read.
+**Kind:** github comment. **Locator:** Issue 3 and replies through 2026-11-22; closed.
 
-**Revision / release:** `Mutable page; no pinned revision`. **Retrieved:** 2026-11-21. **Last source check:** 2026-11-21.
+**Revision / release:** `Mutable page; no pinned revision`. **Retrieved:** 2026-11-22. **Last source check:** 2026-11-22.
 
 **Publication:** public. Public issue paraphrased with attribution; issue text is mutable.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/om10mi-mods.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/sources/om10mi-mods.yaml) · Substantively reviewed: 2026-11-22.

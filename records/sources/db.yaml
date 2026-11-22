@@ -21,21 +21,21 @@ records:
 - type: source
   id: source.db.releases
   title: db firmware releases
-  summary: Beta release notes through v0.4.2, in Korean and English.
+  summary: Beta release notes through v0.4.4b, in Korean and English.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-20'
+  last_reviewed: '2026-11-22'
   url: https://github.com/azqeurio/om-c-firmware/releases
   source_kind: github-release
   upstream_repo: azqeurio/om-c-firmware
-  revision: dbv0.4.2
-  locator: Releases page, page 1; Korean notes summarised in translation
-  retrieved_on: '2026-11-20'
-  last_checked: '2026-11-20'
-  published_on: '2026-11-20'
+  revision: dbv0.4.4b
+  locator: Release listing through dbv0.4.4b
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-22'
   publication: public
   reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.
-  content_sha256: 0cb9357aa3b51c278caffb1a13ed11c0f14f08f167614846c1f2ea17ade17816
+  content_sha256: 6e27cad37d7fad967f0cdb29f27bf4ddf038724472d3a19698d39ecbf8fa5517
 - type: source
   id: source.db.release042
   title: db firmware v0.4.2 beta
@@ -71,3 +71,58 @@ records:
   published_on: '2026-11-21'
   publication: public
   reuse_note: Attributed summary of the maintainer’s release notes.
+- type: source
+  id: source.db.release043b
+  title: db firmware v0.4.3b beta
+  summary: Adds infrared channel swap and power-cycle persistence for Hybrid Shutter and Quasi-LUT on their listed
+    targets.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3b
+  source_kind: github-release
+  upstream_repo: azqeurio/om-c-firmware
+  revision: dbv0.4.3b
+  locator: GitHub release notes for dbv0.4.3b
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-21'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 11aea3209ab96f57b6a3e71a87dc4096124adc8c4c2500862746c90e8df5efca
+- type: source
+  id: source.db.release044
+  title: db firmware v0.4.4 beta
+  summary: The maintainer reports a simulated and emulated fix for the OM-5 port’s black screen on boot.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4
+  source_kind: github-release
+  upstream_repo: azqeurio/om-c-firmware
+  revision: dbv0.4.4
+  locator: GitHub release notes for dbv0.4.4
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-21'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 6c872764fe28bd3d3f39303c2fe9c3e8a1c2e22374baaf9aadbee4050628edf9
+- type: source
+  id: source.db.release044b
+  title: db firmware v0.4.4b beta
+  summary: The maintainer reports Hybrid Shutter startup, OM-5 port, Quasi-LUT and E-P7 1.1 fixes.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b
+  source_kind: github-release
+  upstream_repo: azqeurio/om-c-firmware
+  revision: dbv0.4.4b
+  locator: GitHub release notes for dbv0.4.4b
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-22'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 6e27cad37d7fad967f0cdb29f27bf4ddf038724472d3a19698d39ecbf8fa5517

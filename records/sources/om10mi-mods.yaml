@@ -18,50 +18,50 @@ records:
   reuse_note: Linked and synthesised; upstream material retains its own terms.
 - type: source
   id: source.om10mi.install
-  title: 'om10mi-mods install guide'
-  summary: 'Builder steps for version 87, the stock and result SHA-1 checks, the SD-card update and the route back to stock.'
+  title: om10mi-mods install guide
+  summary: Install and restore instructions for the original E-M10 on 1.4, plus the recommended User Hue reset.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-21'
-  url: https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/INSTALL.md
+  last_reviewed: '2026-11-22'
+  url: https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/INSTALL.md
   source_kind: github-file
   upstream_repo: Meghnus/om10mi-mods
-  revision: 46874155947715e0d54baabe2df5006376c8bbab
+  revision: a73028a8cc38d581e0279c0890811d68e8a8ca0b
   locator: INSTALL.md
-  retrieved_on: '2026-11-21'
-  last_checked: '2026-11-21'
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
 - type: source
   id: source.om10mi.guide
-  title: 'Looks and colour editors guide and test list (since 56)'
-  summary: 'Looks, colour editors and row captions since 56 (current in 87), steps after installing, risks, recovery and the owner''s ten-step test list.'
+  title: Looks and colour editors guide and test list (since 56)
+  summary: Look controls and test list, including the menu location for the recommended User Hue reset.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-21'
-  url: https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/docs/GUIDE-56.md
+  last_reviewed: '2026-11-22'
+  url: https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/docs/GUIDE-56.md
   source_kind: github-file
   upstream_repo: Meghnus/om10mi-mods
-  revision: 46874155947715e0d54baabe2df5006376c8bbab
+  revision: a73028a8cc38d581e0279c0890811d68e8a8ca0b
   locator: docs/GUIDE-56.md
-  retrieved_on: '2026-11-21'
-  last_checked: '2026-11-21'
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
 - type: source
   id: source.om10mi.changelog
-  title: 'om10mi-mods changes'
-  summary: 'Version 87 contents against 56, earlier milestones and the expected result SHA-1s for 87 and 56.'
+  title: om10mi-mods changes
+  summary: Version history through 87 and the updated User Hue reset recommendation.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-21'
-  url: https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/CHANGELOG.md
+  last_reviewed: '2026-11-22'
+  url: https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/CHANGELOG.md
   source_kind: github-file
   upstream_repo: Meghnus/om10mi-mods
-  revision: 46874155947715e0d54baabe2df5006376c8bbab
+  revision: a73028a8cc38d581e0279c0890811d68e8a8ca0b
   locator: CHANGELOG.md
-  retrieved_on: '2026-11-21'
-  last_checked: '2026-11-21'
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
   publication: public
   reuse_note: Linked and synthesised; upstream material retains its own terms.
 - type: source
@@ -149,35 +149,37 @@ records:
   reuse_note: Public issue paraphrased with attribution; issue text is mutable.
 - type: source
   id: source.om10mi.issue-3
-  title: 'RAW white balance in Lightroom Classic (issue 3)'
-  summary: 'A user reports RAWs opening about 300 K lower in Lightroom Classic than set in camera; the maintainer replies that this is expected stock behaviour and asks for a stock comparison.'
+  title: RAW white balance in Lightroom Classic (issue 3)
+  summary: The reporter described a roughly 300 K display offset in Lightroom Classic, then attributed it to Lightroom.
+    No stock comparison result was reported.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-22'
   url: https://github.com/Meghnus/om10mi-mods/issues/3
   source_kind: github-comment
   upstream_repo: Meghnus/om10mi-mods
   revision: null
-  locator: Issue 3 by rayv3r, opened 2026-11-20; maintainer reply by Meghnus on 2026-11-21; open, no reporter follow-up when read
-  retrieved_on: '2026-11-21'
-  last_checked: '2026-11-21'
+  locator: Issue 3 and replies through 2026-11-22; closed
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
   published_on: '2026-11-20'
   publication: public
   reuse_note: Public issue paraphrased with attribution; issue text is mutable.
 - type: source
   id: source.om10mi.issue-4
-  title: 'Freezes and reboots with filters (issue 4)'
-  summary: 'A user reports three freezes and reboots in about 40 to 50 shots with filters enabled; the maintainer asks four questions and suspects the Contrast/Gradation code on looks.'
+  title: Freezes and reboots with filters (issue 4)
+  summary: The reporter describes freezes and automatic restarts while taking single-shot JPEG + RAW with looks.
+    Exact look and build unspecified.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-22'
   url: https://github.com/Meghnus/om10mi-mods/issues/4
   source_kind: github-comment
   upstream_repo: Meghnus/om10mi-mods
   revision: null
-  locator: Issue 4 by kzjken, opened 2026-11-21; maintainer reply by Meghnus on 2026-11-21; open, no reporter follow-up when read
-  retrieved_on: '2026-11-21'
-  last_checked: '2026-11-21'
+  locator: Issue 4 and replies through 2026-11-22; open
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
   published_on: '2026-11-21'
   publication: public
   reuse_note: Public issue paraphrased with attribution; issue text is mutable.

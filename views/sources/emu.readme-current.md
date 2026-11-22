@@ -2,16 +2,16 @@
 
 # OM-Emu overview (current)
 
-What the browser player runs today, Caduceus checks and the body ports.
+Current browser player, 18-port model-check coverage, native card file systems and per-model display limits.
 
-**[Open original source](https://github.com/flatpanda/om-emu/blob/0fb011e43e1407355653505a1a463432c2c4376c/README.md)**
+**[Open original source](https://github.com/flatpanda/om-emu/blob/ccfe2e0b39b90c0880f85f1ff2b3781663154dbb/README.md)**
 
 **Kind:** github file. **Locator:** README.md: introduction, What works today, body table.
 
-**Revision / release:** `0fb011e43e1407355653505a1a463432c2c4376c`. **Retrieved:** 2026-11-17. **Last source check:** 2026-11-17.
+**Revision / release:** `ccfe2e0b39b90c0880f85f1ff2b3781663154dbb`. **Retrieved:** 2026-11-22. **Last source check:** 2026-11-22.
 
 **Publication:** public. Attributed summary; no firmware or code imported.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/emu.yaml) · Substantively reviewed: 2026-11-17.
+[Canonical record](../../records/sources/emu.yaml) · Substantively reviewed: 2026-11-22.

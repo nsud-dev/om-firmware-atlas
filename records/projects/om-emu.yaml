@@ -23,6 +23,9 @@ records:
   - camera.ep7
   - camera.pen-f
   - camera.em10-iv
+  - camera.em10-ii
+  - camera.em1-iii
+  - camera.em5-iii
   contribution_home: https://github.com/flatpanda/om-emu/issues
   status_summary: These cameras are only the Atlas subset. Named stand-ins and harness-driven startup
     limit what results establish.
@@ -56,6 +59,9 @@ records:
     - camera.ep7
     - camera.pen-f
     - camera.em10-iv
+    - camera.em10-ii
+    - camera.em1-iii
+    - camera.em5-iii
     status: released
     since: null
     source_ref: source.emu.modelcheck-nov19

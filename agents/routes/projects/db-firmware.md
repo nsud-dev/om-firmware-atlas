@@ -4,11 +4,11 @@
 
 Release-centred controls, localisation and other modifications.
 
-[Contribution home](https://github.com/azqeurio/om-c-firmware/issues). The latest reviewed release is v0.4.3 beta (2026-11-21). Its feature and fix claims are attributed to the maintainer, and its notes say the OM-5 and OM-5 Mark II firmware does not work in this version.
+[Contribution home](https://github.com/azqeurio/om-c-firmware/issues). The latest reviewed release is v0.4.4b beta. The maintainer reports fixes for Hybrid Shutter startup, the Mark II-based OM-5 port and E-P7 1.1. The preceding OM-5 boot fix was checked only in simulation and emulation, and these notes add no physical-camera result.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [db-firmware.yaml](../../../records/projects/db-firmware.yaml) | Project scope, related work and contribution destination | 8,542 | ~2,136 |
-| [db.yaml](../../../records/sources/db.yaml) | Find the relevant source/observation ID; use bounded reads | 2,885 | ~722 |
+| [db-firmware.yaml](../../../records/projects/db-firmware.yaml) | Project scope, related work and contribution destination | 11,187 | ~2,797 |
+| [db.yaml](../../../records/sources/db.yaml) | Find the relevant source/observation ID; use bounded reads | 5,018 | ~1,255 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

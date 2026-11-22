@@ -129,7 +129,7 @@ SLEIGH module with call-frame, loop and calling-convention support, plus helper 
 **Pointer-register calling convention** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-The optional ptrregs compiler spec places typed pointer arguments in the MN103 address registers. Upstream CI checks argument placement.
+The optional ptrregs compiler spec places typed pointer arguments in the MN103 address registers. Upstream CI checks argument placement. The maintainer reports the same final decompilation check counts with Ghidra 11.4.2 and 12.2.
 
 [OM-D E-M5 Mark III](../cameras/em5-iii.md), [OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [PEN-F](../cameras/pen-f.md), [PEN E-P7](../cameras/ep7.md)
 { .card-meta }
@@ -153,4 +153,4 @@ Built and checked against E-M5 III 1.7 block 0. Nothing in the module is camera-
 - [E-P7 Ghidra/REA profile](../sources/ep7.rea.md)
 - [Ghidra MN103 pointer-register compiler spec](../sources/gmn103.ptrregs.md)
 
-[Canonical record](../../records/projects/ghidra-mn103.yaml) · Substantively reviewed: 2026-11-20.
+[Canonical record](../../records/projects/ghidra-mn103.yaml) · Substantively reviewed: 2026-11-22.

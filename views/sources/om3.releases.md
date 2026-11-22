@@ -2,16 +2,16 @@
 
 # Caduceus OM-3 releases
 
-Published release notes and test releases through v0.40.2.
+Release notes through test version v0.40.3-beta4. The project lists v0.40.2 as the current stable release.
 
 **[Open original source](https://github.com/androidfanman/caduceus-om3/releases)**
 
-**Kind:** github release. **Locator:** Releases page, newest ten entries.
+**Kind:** github release. **Locator:** Release listing through v0.40.3-beta4.
 
-**Revision / release:** `v0.40.2`. **Retrieved:** 2026-11-20. **Last source check:** 2026-11-20.
+**Revision / release:** `v0.40.3-beta4`. **Retrieved:** 2026-11-22. **Last source check:** 2026-11-22.
 
 **Publication:** public. Attributed summary of mutable release notes; no code, firmware or executables imported.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/om3.yaml) · Substantively reviewed: 2026-11-20.
+[Canonical record](../../records/sources/om3.yaml) · Substantively reviewed: 2026-11-22.

@@ -10,10 +10,11 @@ Film simulations, interval shooting, focus peaking and a level gauge for the PEN
 
 <div class="cta-row" markdown="1">
 
-[Read the install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md){ .btn .btn-primary }
+[Read the install guide](https://github.com/cfu288/EPM2Mod/blob/475486f4d581d090162ea9f733fb31e05bc6e08a/docs/user/install.md){ .btn .btn-primary }
 [Project home](https://github.com/cfu288/EPM2Mod){ .btn .btn-ghost }
 [Ask or report issues](https://github.com/cfu288/EPM2Mod/issues){ .btn .btn-ghost }
 [Film simulation comparison](https://cfu288.github.io/EPM2Mod/films){ .btn .btn-ghost }
+[Panasonic aperture-ring debug build](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-pana-ring-probe.1){ .btn .btn-ghost }
 [Feasibility and limits](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/dev/feasibility.md){ .btn .btn-ghost }
 [Landscape of Olympus mods](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/reference/landscape.md){ .btn .btn-ghost }
 
@@ -31,7 +32,7 @@ Use the Atlas entry for EPM2Mod (https://github.com/xulfr/om-firmware-atlas/blob
 
 [Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
-**Type:** mod · **Camera details:** [PEN E-PM2](#for-epm2) · **Latest release:** [v2026.11.20-rc.1 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1), 20 Nov 2026 · **Maintained by** [cfu288](https://github.com/cfu288)
+**Type:** mod · **Camera details:** [PEN E-PM2](#for-epm2) · **Latest release:** [v2026.11.20-rc.5 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5), 22 Nov 2026 · **Maintained by** [cfu288](https://github.com/cfu288)
 { .facts }
 
 ## Cameras
@@ -45,7 +46,7 @@ Use the Atlas entry for EPM2Mod (https://github.com/xulfr/om-firmware-atlas/blob
 **For this camera:** 6 features, including Film simulations, Interval shooting and Level gauge.
 { .card-for }
 
-**Get it:** [v2026.11.20-rc.1 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1), 20 Nov 2026 · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
+**Get it:** [v2026.11.20-rc.5 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5), 22 Nov 2026 · [Install guide](https://github.com/cfu288/EPM2Mod/blob/475486f4d581d090162ea9f733fb31e05bc6e08a/docs/user/install.md)
 { .card-get }
 
 [Camera overview](../cameras/epm2.md) · [Test results](../research/epm2.md#evidence)
@@ -55,7 +56,7 @@ Use the Atlas entry for EPM2Mod (https://github.com/xulfr/om-firmware-atlas/blob
 
 ## About
 
-EPM2Mod is a firmware mod for the Olympus PEN E-PM2 (2012), the oldest body in the Atlas. It loads film simulations such as Portra, Ektachrome and Velvia into the art-filter entries, and adds interval shooting up to 240 frames, a level gauge, focus peaking and a lowest shutter speed for ISO Auto.
+EPM2Mod is a firmware mod for the Olympus PEN E-PM2 (2012). It loads film simulations such as Portra, Ektachrome and Velvia into the art-filter entries, and adds interval shooting up to 240 frames, a level gauge, focus peaking and a lowest shutter speed for ISO Auto.
 
 The E-PM2 is two image-processor generations older than the bodies the Caduceus family patches and has no Color Profiles, so nothing carries over by address. The film simulations are fitted to the camera's own adjustable tone and six-axis colour stages from spektrafilm and Spectral Film LUT renders, and a film file on the card is loaded from a Custom Menu row. The camera keeps them, with their names, after power-off and without the card.
 
@@ -113,9 +114,9 @@ The firmware's own gauge as an LV-Info view, with calibration and the histogram 
 **Focus peaking** <span class="pill pill-beta">Beta</span>
 { .feature-head }
 
-Turning the focus ring with MF Assist zooms in and outlines sharp edges in white, red, yellow or blue; ported from the E-P5.
+From rc.3, focus peaking stays visible in normal live view in MF with any lens. MF Assist also shows peaking when the focus ring turns.
 
-[PEN E-PM2](../cameras/epm2.md)
+[PEN E-PM2](../cameras/epm2.md) · since v2026.11.20-rc.3
 { .card-meta }
 
 </div>
@@ -147,6 +148,66 @@ A Custom Menu J row, Off by default, that writes EPM2LOG.BIN to the card for dev
 </div>
 
 ## Releases
+
+<div class="release-item" markdown="1">
+
+**[EPM2Mod 2026.11.20-rc.5](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5)** <span class="pill pill-alpha">Pre-release</span> · 22 Nov 2026
+{ .release-head }
+
+- Corrects the Tri-X look pack entry and shows 32 films across nine scenes on the project site.
+- Upstream lists the same expected firmware digest for rc.3 through rc.5.
+
+PEN E-PM2 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.5)
+
+Unofficial pre-release for the Olympus PEN E-PM2.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[EPM2Mod 2026.11.20-rc.4](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.4)** <span class="pill pill-alpha">Pre-release</span> · 22 Nov 2026
+{ .release-head }
+
+- Adds a signed and notarised Mac disk image. Windows and Linux continue to use the zip.
+- The project says the restore flow resets the camera’s settings.
+
+PEN E-PM2 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.4)
+
+Unofficial pre-release for the Olympus PEN E-PM2.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[EPM2Mod 2026.11.20-rc.3](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.3)** <span class="pill pill-alpha">Pre-release</span> · 22 Nov 2026
+{ .release-head }
+
+- Adds continuous focus peaking in normal live view in MF with any lens.
+- Applies stored films at startup and shows the added menu text in every language.
+
+PEN E-PM2 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.3)
+
+Unofficial pre-release for the Olympus PEN E-PM2.
+{ .release-warning }
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**[EPM2Mod 2026.11.20-rc.2](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.2)** <span class="pill pill-alpha">Pre-release</span> · 21 Nov 2026
+{ .release-head }
+
+- Ships the refitted films without the stock picture mode’s selective colour adjustments.
+- Adds an installer choice for copying just the look pack to a camera already running EPM2Mod.
+
+PEN E-PM2 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.2)
+
+Unofficial pre-release for the Olympus PEN E-PM2.
+{ .release-warning }
+
+</div>
 
 <div class="release-item" markdown="1">
 
@@ -187,18 +248,24 @@ Unofficial and for the E-PM2 only; installing is at your own risk.
 
 ## Research notes
 
-The owner pinned a new build, films-twelve-off, and reports it tested on a real E-PM2 on 2026-11-21; it gives film simulations no 12-region table and carries refitted films, but is not in a release yet. The newest pre-release, v2026.11.20-rc.1, carries films-look-exif. The project calls the firmware unofficial and at the user's own risk.
+The latest general-use release candidate is v2026.11.20-rc.5. It includes continuous focus peaking in MF and applies saved film simulations on startup. A separate Panasonic aperture-ring probe is a developer debug build. The project calls the firmware unofficial and at the user's own risk.
 
 ## Sources and record
 
 - [EPM2Mod overview](../sources/epm2.readme.md)
 - [E-PM2 feasibility and real limits](../sources/epm2.feasibility.md)
-- [EPM2Mod pinned build](../sources/epm2.install.md)
+- [EPM2Mod install and restore for peaking-mf](../sources/epm2.install-peaking-mf.md)
+- [E-PM2 peaking-mf camera log](../sources/epm2.camera-log-peaking-mf.md)
 - [films-look-exif camera log](../sources/epm2.camera-log.md)
 - [films-twelve-off camera log](../sources/epm2.camera-log-twelve-off.md)
 - [E-PM2 firmware format](../sources/epm2.format.md)
 - [Olympus generations for modding](../sources/epm2.model-matrix.md)
 - [Olympus custom firmware landscape](../sources/epm2.landscape.md)
 - [EPM2Mod releases](../sources/epm2.releases.md)
+- [EPM2Mod 2026.11.20-rc.5](../sources/epm2.rc5.md)
+- [EPM2Mod 2026.11.20-rc.4](../sources/epm2.rc4.md)
+- [EPM2Mod 2026.11.20-rc.3](../sources/epm2.rc3.md)
+- [EPM2Mod 2026.11.20-rc.2](../sources/epm2.rc2.md)
+- [EPM2Mod 2026.11.20-pana-ring-probe.1](../sources/epm2.pana-ring-probe.md)
 
-[Canonical record](../../records/projects/epm2mod.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/projects/epm2mod.yaml) · Substantively reviewed: 2026-11-22.

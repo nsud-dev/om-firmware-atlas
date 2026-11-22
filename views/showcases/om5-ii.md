@@ -57,12 +57,15 @@ Unofficial; only for the OM-5 Mark II on firmware 1.1. Never interrupt the firmw
 **For this camera:** Korean menus and Hybrid Shutter, both beta.
 { .card-for }
 
-**dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
+{ .card-get }
+
+Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
 { .release-warning }
 
-The maintainer calls this a beta. No test procedure, results or hashes are given.
-{ .release-warning }
+- **Korean menus** · Beta. Korean language support on several bodies.
+- **Hybrid Shutter** · Beta. Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
 
-[Full project details](../projects/db-firmware.md#for-om5-ii) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
+[Full project details](../projects/db-firmware.md#for-om5-ii) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
 
 </section>
