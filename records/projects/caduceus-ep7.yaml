@@ -292,6 +292,7 @@ records:
     source_ref: source.ep7.releases
   images:
   - path: assets/projects/caduceus-ep7/film-looks.jpg
+    camera_id: camera.ep7
     alt: Eight film looks shown on four sample scenes
     caption: Eight Standard 1.2 looks, rendered by the Control Panel's preview. The preview approximates
       the camera; grain and halation are not drawn.

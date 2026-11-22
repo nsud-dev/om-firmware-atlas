@@ -4,195 +4,29 @@
 
 E122: foundational HSL research; exact internal build identity matters.
 
-**Model code:** E122 · **Also known as:** PEN-F, PENF · **Catalogue depth:** initial review
+**Model code:** E122 · **Also known as:** PEN-F, PENF · **Stock firmware covered:** 3.1
 { .facts }
+
+[View the showcase](../showcases/pen-f.md){ #features .btn .btn-primary }
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+{ .install-note }
+
+## Firmware projects { #projects }
 
 <div class="glance" markdown="1">
 
 **Releases for this camera:**
 
-- [Olympus firmware research](../projects/oly-fw-analysis.md#for-pen-f) · alpha-20261017 (pre-release) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+research+%C2%B7+alpha-20261017)
-- [db firmware / om-c-firmware](../projects/db-firmware.md#for-pen-f) · dbv0.3.2 · The release names this camera without saying which features it adds. [Release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.3.2)
-
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform) · [Research](#research)
+- [Olympus firmware research](../showcases/pen-f.md#oly-fw-analysis) · alpha-20261017 (pre-release) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+research+%C2%B7+alpha-20261017)
+- [db firmware / om-c-firmware](../showcases/pen-f.md#db-firmware) · dbv0.3.2 · The release names this camera without saying which features it adds. [Release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.3.2)
 
 </div>
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
+[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
 
-## What you can do with this camera { #features }
+## Developer resources { #research }
 
-Features as each project describes them, with their status. Follow a project's own guide before installing anything.
+<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
 
-<div class="feature-grid" markdown="1">
-
-<div class="feature-card" markdown="1">
-
-**PEN-F HSL** <span class="pill pill-alpha">Alpha</span>
-{ .feature-head }
-
-Hue and lightness added to the 12-colour saturation editor in COLOR1–3, from −7 to +7 since the 17 October alpha.
-
-Stock firmware 3.1 · [Evidence and limits for alpha-20261017](../capabilities/pen-f-hsl.md)
-
-[Olympus firmware research](../projects/oly-fw-analysis.md#for-pen-f) · [Latest project release for this model · alpha-20261017](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017)
-{ .feature-actions }
-
-</div>
-
-</div>
-
-## Projects for this camera { #projects }
-
-Each card says what the project has for this camera and where to get it. A project can be listed here for a small part of its work; its own page covers the rest.
-
-### Mods and ports
-
-These change the camera's firmware.
-
-<div class="project-grid" markdown="1">
-
-<div class="project-card" markdown="1">
-
-[Olympus firmware research](../projects/oly-fw-analysis.md#for-pen-f){ .card-title }
-
-The research base: PEN-F HSL, firmware formats and tools for many bodies.
-
-**For this camera:** Publishes the PEN-F HSL patch as alpha releases: hue and lightness added to the 12-colour saturation editor in COLOR1–3. The project asks for a firsthand hardware report before publishing a flashable patch.
-{ .card-for }
-
-**Get it:** [alpha-20261017 (pre-release)](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017), 18 Oct 2026. Check the release notes for files and instructions for this model.
-{ .card-get }
-
-Research
-{ .card-meta }
-
-[Project home](https://github.com/fishcu/oly_fw_analysis) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues)
-{ .card-links }
-
-</div>
-
-<div class="project-card" markdown="1">
-
-[db firmware / om-c-firmware](../projects/db-firmware.md#for-pen-f){ .card-title }
-
-Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
-
-**For this camera:** No PEN-F feature is catalogued.
-{ .card-for }
-
-**dbv0.3.2 · The release names this camera without saying which features it adds.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2).
-{ .release-warning }
-
-Mod
-{ .card-meta }
-
-[Project home](https://github.com/azqeurio/om-c-firmware) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
-{ .card-links }
-
-</div>
-
-</div>
-
-
-### Research, tools and references
-
-These do not change the camera. They help people study firmware, build or check mods, or install official updates.
-
-<div class="project-grid" markdown="1">
-
-<div class="project-card" markdown="1">
-
-[OM-Emu](../projects/om-emu.md#for-pen-f){ .card-title }
-
-Run OM SYSTEM and Olympus camera firmware in your browser.
-
-**For this camera:** An emulator; it does not change the camera. Covers this camera for: Browser player (released), Native card file system (released).
-{ .card-for }
-
-**Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
-{ .card-get }
-
-Emulator
-{ .card-meta }
-
-[Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
-{ .card-links }
-
-</div>
-
-<div class="project-card" markdown="1">
-
-[Ghidra MN103 processor module](../projects/ghidra-mn103.md#for-pen-f){ .card-title }
-
-Read MN103 camera firmware in Ghidra, with the decompiler.
-
-**For this camera:** A tool; it does not change the camera. Covers this camera for: MN103 disassembly and decompiler (released), Pointer-register calling convention (released).
-{ .card-for }
-
-**Get it:** [Install and use](https://github.com/nsud-dev/ghidra-mn103/blob/main/README.md)
-{ .card-get }
-
-Tool
-{ .card-meta }
-
-[Project home](https://github.com/nsud-dev/ghidra-mn103) · [Ask or report issues](https://github.com/nsud-dev/ghidra-mn103/issues)
-{ .card-links }
-
-</div>
-
-</div>
-
-## Claims and test evidence { #evidence }
-
-<div class="evidence-list" markdown="1">
-
-<div class="evidence-entry" markdown="1">
-
-**No camera test recorded**
-
-Claim · [PEN-F HSL release](../capabilities/pen-f-hsl.md)
-
-Project and build · [Olympus firmware research](../projects/oly-fw-analysis.md#for-pen-f) / alpha-20261017
-
-Availability · published release
-
-</div>
-
-</div>
-
-Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
-
-## Platform and built-in features (pen-f firmware 3.1, build 3101) { #platform }
-
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Main CPU](../reference/pen-f-3101.main-cpu.md) | MN103, cores CPU0 to CPU2 | Single source |
-| [Firmware blocks](../reference/pen-f-3101.firmware-blocks.md) | 4 | Camera-confirmed |
-
-## Firmware
-
-[pen-f firmware 3.1, build 3101](../firmware/pen-f-3101.md).
-
-## Research this camera { #research }
-
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus PEN-F (E122) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/pen-f.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
-## Sources and record
-
-- [Olympus research overview](../sources/fishcu.readme.md)
-
-[Canonical record](../../records/cameras/pen-f.yaml) · Substantively reviewed: 2026-11-17.
+[Research for this model](../research/pen-f.md) · [Community](../../docs/community.md)

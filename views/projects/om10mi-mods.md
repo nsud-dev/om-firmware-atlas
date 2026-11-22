@@ -49,7 +49,7 @@ Use the Atlas entry for om10mi-mods (https://github.com/xulfr/om-firmware-atlas/
 **Get it:** [v87](https://github.com/Meghnus/om10mi-mods/releases/tag/v87), 21 Nov 2026 · [Install guide](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/INSTALL.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/em10.md)
+[Camera overview](../cameras/em10.md) · [Test results](../research/em10.md#evidence)
 
 </div>
 

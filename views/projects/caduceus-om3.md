@@ -49,7 +49,7 @@ Use the Atlas entry for Caduceus for OM-3 (https://github.com/xulfr/om-firmware-
 **Get it:** [v0.40.3-beta3 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3), 21 Nov 2026 · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
 { .card-get }
 
-[Camera overview and test results](../cameras/om3.md)
+[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 

@@ -48,7 +48,7 @@ Use the Atlas entry for EPM2Mod (https://github.com/xulfr/om-firmware-atlas/blob
 **Get it:** [v2026.11.20-rc.1 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1), 20 Nov 2026 · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/epm2.md)
+[Camera overview](../cameras/epm2.md) · [Test results](../research/epm2.md#evidence)
 
 </div>
 

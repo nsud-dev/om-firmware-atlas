@@ -11,9 +11,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from atlas_core import Catalogue
-from atlas_generate import generated_diff, home_updates, latest_release, release_limit, render
-from atlas import expand_nav, freshness, inspect_remote, review_notice, update_queue
-from atlas_core import read_yaml, reference_status
+from atlas_generate import generated_diff, camera_updates, latest_release, release_limit, render
+from atlas import freshness, inspect_remote, review_notice, update_queue
+from atlas_core import reference_status
 
 
 class AtlasTests(unittest.TestCase):
@@ -151,29 +151,32 @@ class AtlasTests(unittest.TestCase):
         self.assertIn("https://discord.gg/fKpcKGsNPY", output)
         self.assertIn("https://www.reddit.com/r/M43/", output)
 
-    def test_navigation_lists_every_camera_and_guide(self):
-        nav = expand_nav(read_yaml(ROOT / "mkdocs.yml")["nav"], self.catalogue)
-        paths = []
-
-        def walk(entries):
-            for entry in entries:
-                for value in entry.values():
-                    walk(value) if isinstance(value, list) else paths.append(value)
-
-        walk(nav)
+    def test_each_camera_has_an_overview_showcase_and_research_page(self):
+        pages = render(self.catalogue)
         for row in self.catalogue.of_type("camera"):
-            self.assertIn(f"views/cameras/{row['id'].split('.', 1)[1]}.md", paths)
-        for article in self.catalogue.articles.values():
-            self.assertIn(article["path"], paths)
-        self.assertNotIn("knowledge/README.md", paths)
+            name = row["id"].split(".", 1)[1]
+            with self.subTest(camera=name):
+                overview = pages[f"views/cameras/{name}.md"]
+                self.assertIn(f"]({name}.md)", pages["views/cameras/index.md"])
+                self.assertIn(f"](../showcases/{name}.md)", overview)
+                self.assertIn(f"](../research/{name}.md)", overview)
+                self.assertIn(f"]({name}.md)", pages["views/research/index.md"])
+                self.assertIn(f"](../cameras/{name}.md)", pages[f"views/showcases/{name}.md"])
+                self.assertIn(f"](../cameras/{name}.md)", pages[f"views/research/{name}.md"])
 
-    def test_camera_page_leads_with_projects_and_support(self):
-        output = render(self.catalogue)["views/cameras/om5-ii.md"]
-        project = self.catalogue.records["project.caduceus-om5"]
-        self.assertLess(output.index("## What you can do with this camera"), output.index("## Projects for this camera"))
-        self.assertLess(output.index("## Projects for this camera"), output.index("## Claims and test evidence"))
-        self.assertIn(f"[Ask or report issues]({project['contribution_home']})", output)
-        self.assertIn("partial report", output)
+    def test_mark_ii_showcase_keeps_project_features_and_installs_together(self):
+        pages = render(self.catalogue)
+        showcase = pages["views/showcases/om5-ii.md"]
+        caduceus = showcase.split("{ #caduceus-om5 }")[1].split("</section>")[0]
+        omkit = showcase.split("{ #omkit }")[1].split("</section>")[0]
+        self.assertIn("Colour editor", caduceus)
+        self.assertIn("picture-mode-look.png", caduceus)
+        self.assertIn("/docs/INSTALL.md", caduceus)
+        self.assertIn("Card-loaded core and modules", omkit)
+        self.assertIn("/fw1100/install.md", omkit)
+        self.assertNotIn("Card-loaded core and modules", caduceus)
+        self.assertNotIn("picture-mode-look.png", pages["views/showcases/om5.md"])
+        self.assertIn("partial report", pages["views/research/om5-ii.md"])
 
     def test_new_upstream_release_is_queued_not_applied(self):
         before = copy.deepcopy(self.catalogue.records)
@@ -188,24 +191,24 @@ class AtlasTests(unittest.TestCase):
         self.assertIn("v9.9", update_queue(report))
         self.assertEqual(before, self.catalogue.records)
 
-    def test_camera_page_says_what_each_project_has_for_it(self):
-        output = render(self.catalogue)["views/cameras/om5.md"]
-        mods, others = output.index("### Mods and ports"), output.index("### Research, tools and references")
-        self.assertLess(mods, others)
-        note = next(n["note"] for n in self.catalogue.records["project.caduceus-om5"]["camera_notes"] if n["camera_id"] == "camera.om5")
-        self.assertIn(f"**For this camera:** {note}", output)
-        self.assertGreater(output.index("[Ghidra MN103"), others)
-        self.assertNotIn("Latest: v0.2.0-alpha1", output)
-        glance = output[output.index('class="glance"'):output.index("## What you can do")]
-        self.assertNotIn("db firmware", glance.split("**Reported not working")[0])
-        self.assertIn("**Reported not working on this model:**\n\n- [db firmware", glance)
-        self.assertIn("**No release for this camera yet:**", glance)
-        self.assertIn("[Projects](#projects)", glance)
-        self.assertIn("## Projects for this camera { #projects }", output)
+    def test_original_om5_overview_keeps_research_and_release_scope_clear(self):
+        pages = render(self.catalogue)
+        overview = pages["views/cameras/om5.md"]
+        showcase = pages["views/showcases/om5.md"]
+        research = pages["views/research/om5.md"]
+        note = next(n["note"] for n in self.catalogue.records["project.caduceus-om5"]["camera_notes"]
+                    if n["camera_id"] == "camera.om5")
+        self.assertIn(f"**For this camera:** {note}", showcase)
+        self.assertIn("[Ghidra MN103", research)
+        self.assertNotIn("[Ghidra MN103", overview)
+        self.assertNotIn("v0.2.0-alpha1", overview)
+        self.assertIn("**Reported not working on this model:**", overview)
+        self.assertIn("**No release for this camera yet:**", overview)
+        self.assertNotIn("## Claims and test evidence", overview)
 
     def test_glance_keeps_camera_report_scoped_to_its_release_label(self):
         pages = render(self.catalogue)
-        glance = pages["views/cameras/om5-ii.md"].split("</div>", 1)[0]
+        glance = pages["views/cameras/om5-ii.md"].split('class="glance"')[1].split("</div>", 1)[0]
         self.assertIn("[Camera test · reported working](../evidence/om5-ii-v020-alpha1-owner.md)", glance)
         self.assertIn("[loader fw1100 (OMKit 0.1.0)](../evidence/om5-ii-omkit-loader.md)", glance)
         self.assertNotIn("dbv0.4.3", glance.split("**Reported not working")[0])
@@ -231,35 +234,43 @@ class AtlasTests(unittest.TestCase):
         warning = "The project reports that this build does not work on this camera."
         for camera in ("om5", "om5-ii"):
             page = pages[f"views/cameras/{camera}.md"]
-            self.assertIn(warning, page.split("## What you can do")[0])
+            self.assertIn(warning, page)
+            showcase = pages[f"views/showcases/{camera}.md"].split("{ #db-firmware }")[1].split("</section>")[0]
+            self.assertIn(warning, showcase)
+            self.assertNotIn("**Get it:**", showcase)
             project = pages["views/projects/db-firmware.md"].split("{ #for-" + camera + " }")[1].split("</div>")[0]
             self.assertIn(warning, project)
             self.assertIn("Read release notes", project)
             self.assertNotIn("**Get it:**", project)
-        self.assertIn(warning, home_updates(self.catalogue, "docs/index.md"))
+        self.assertIn(warning, camera_updates(self.catalogue, "views/cameras/index.md"))
         latest_release(self.catalogue.records["project.db-firmware"])["camera_limits"]["camera.pen-f"] = "features-unspecified"
         self.assertTrue(any("limitation outside" in error for error in self.catalogue.validate()))
 
     def test_original_camera_links_to_its_own_project_details(self):
         pages = render(self.catalogue)
-        self.assertIn("../projects/caduceus-om5.md#for-om5)", pages["views/cameras/om5.md"])
+        self.assertIn("../projects/caduceus-om5.md#for-om5)", pages["views/showcases/om5.md"])
         project = pages["views/projects/caduceus-om5.md"]
         original = project.split("{ #for-om5 }")[1].split("{ #for-om5-ii }")[0]
         self.assertIn("No release for this camera yet", original)
         self.assertNotIn("INSTALL.md", original)
         self.assertIn("Read the OM-5 Mark II install guide", project)
 
-    def test_only_explicit_current_tester_requests_appear_on_home_page(self):
+    def test_only_explicit_current_tester_requests_appear_in_camera_directory(self):
         item = self.catalogue.records["project.caduceus-ep7"]["work_items"][0]
-        self.assertIn(item["url"], home_updates(self.catalogue, "docs/index.md"))
+        self.assertIn(item["url"], camera_updates(self.catalogue, "views/cameras/index.md"))
         item["state"] = "paused"
-        self.assertNotIn(item["url"], home_updates(self.catalogue, "docs/index.md"))
+        self.assertNotIn(item["url"], camera_updates(self.catalogue, "views/cameras/index.md"))
         item["tester_camera_id"] = "camera.om5"
         self.assertTrue(any("outside the project" in error for error in self.catalogue.validate()))
 
     def test_camera_note_must_name_a_catalogued_camera(self):
         self.catalogue.records["project.caduceus-om3"]["camera_notes"] = [{"camera_id": "camera.pen-f", "note": "x"}]
         self.assertTrue(any("camera note for camera.pen-f" in e for e in self.catalogue.validate()))
+
+    def test_showcase_image_cannot_claim_uncatalogued_camera(self):
+        self.catalogue.records["project.caduceus-om5"]["images"][0]["camera_id"] = "camera.om3"
+        self.assertTrue(any("image" in error and "camera outside the project" in error
+                            for error in self.catalogue.validate()))
 
     def test_showcase_feature_cannot_claim_uncatalogued_camera(self):
         self.catalogue.records["project.caduceus-om3"]["features"][0]["camera_ids"] = ["camera.pen-f"]
@@ -353,7 +364,7 @@ class AtlasTests(unittest.TestCase):
         self.assertIn("## Built-in features by build", index)
         self.assertIn("## Platform by build", index)
         self.assertIn("Native: ND2 to ND16", index)
-        self.assertIn("## Platform and built-in features", outputs["views/cameras/em5-iii.md"])
+        self.assertIn("## Firmware and technical reference", outputs["views/research/em5-iii.md"])
         self.assertIn("## Built-in features", outputs["views/firmware/om5-1200.md"])
         self.assertIn("platform and built-in features", outputs["agents/routes/reference/om5.md"])
 

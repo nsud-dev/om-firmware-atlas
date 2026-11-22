@@ -42,7 +42,7 @@ Use the Atlas entry for OM-3 downstream experiments (https://github.com/xulfr/om
 **Get it:** No release for this camera yet.
 { .card-get }
 
-[Camera overview and test results](../cameras/om3.md)
+[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 

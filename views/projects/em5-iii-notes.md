@@ -41,7 +41,7 @@ Use the Atlas entry for Olympus firmware notes (E-M5 Mark III) (https://github.c
 **Get it:** [Firmware guides](https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/guides/README.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/em5-iii.md)
+[Camera overview](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
 
 </div>
 

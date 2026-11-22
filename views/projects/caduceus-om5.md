@@ -46,7 +46,7 @@ Use the Atlas entry for Caduceus for OM-5 (https://github.com/xulfr/om-firmware-
 **Get it:** No release for this camera yet.
 { .card-get }
 
-[Camera overview and test results](../cameras/om5.md)
+[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -62,7 +62,7 @@ Use the Atlas entry for Caduceus for OM-5 (https://github.com/xulfr/om-firmware-
 **Get it:** [v0.2.0-alpha1 (pre-release)](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1), 20 Nov 2026 · [Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/om5-ii.md)
+[Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
 </div>
 

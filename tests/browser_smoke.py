@@ -1,7 +1,8 @@
-"""Exercise owner journeys against a built Atlas served over HTTP."""
+"""Exercise owner and developer journeys against a built Atlas served over HTTP."""
 import argparse
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+import re
 from pathlib import Path
 from threading import Thread
 
@@ -20,15 +21,17 @@ def owner_journey(page, base, phone):
     finder.press("Enter")
     expect(page).to_have_url(base + "views/cameras/om5-ii/")
 
-    target = page.locator('.glance a[href$="caduceus-om5/#for-om5-ii"]')
-    destination = target.evaluate("a => a.href")
-    target.click()
-    expect(page).to_have_url(destination)
-    expect(page.locator(".model-panel:has(:target)")).to_contain_text("OM-5 Mark II")
-    page.go_back()
+    page.get_by_role("link", name="View the showcase").click()
+    expect(page).to_have_url(base + "views/showcases/om5-ii/")
+    expect(page.locator("#primary-nav").get_by_text("For camera owners", exact=True)).to_have_attribute(
+        "aria-current", "true")
+    project = page.locator(".model-panel:has(> #caduceus-om5)")
+    expect(project.get_by_role("img")).to_have_attribute("src", re.compile(r"picture-mode-look\.png$"))
+    expect(project.get_by_role("link", name="Full project details")).to_have_attribute(
+        "href", re.compile(r"caduceus-om5/#for-om5-ii$"))
 
     # Click the actual link with pointer hit testing. Do not fetch upstream.
-    guide = page.locator(".project-card").filter(has=page.get_by_role("link", name="Caduceus for OM-5", exact=True)).get_by_role("link", name="Install guide")
+    guide = project.get_by_role("link", name="Install guide")
     destination = guide.evaluate("a => a.href")
     page.route(destination, lambda route: route.fulfill(content_type="text/plain", body="Install guide"))
     guide.click()
@@ -64,13 +67,24 @@ def developer_journey(page, base, phone):
     page.goto(base + "views/evidence/om5-ii-v020-alpha1-owner/")
     if phone:
         page.locator("[data-menu-toggle]").click()
-    page.locator("#primary-nav").get_by_role("link", name="Research & development").click()
+    page.locator("#primary-nav").get_by_role("link", name="For developers").click()
     expect(page).to_have_url(base + "research/")
-    page.locator(".explore-grid").get_by_role("link", name="Start with your AI agent").click()
+    page.locator(".explore-grid").get_by_role("link", name="Cross-body research").click()
+    expect(page).to_have_url(base + "cross-body/")
+    page.get_by_role("link", name="E-M5 Mark III platform").click()
+    expect(page).to_have_url(base + "views/research/em5-iii/#platform")
+    expect(page.get_by_role("heading", name="Claims and test evidence")).to_be_visible()
+    page.goto(base + "research/")
+    page.locator(".explore-grid").get_by_role("link", name="Research by camera").click()
+    page.get_by_role("link", name="OM-5 Mark II", exact=True).click()
+    expect(page).to_have_url(base + "views/research/om5-ii/")
+    page.goto(base + "research/")
+    page.get_by_role("link", name="Use the Atlas with your AI", exact=True).last.click()
     expect(page).to_have_url(base + "research-with-ai/")
     page.go_back()
-    page.locator(".explore-grid").get_by_role("link", name="Share a finding").click()
+    page.get_by_role("link", name="Share a finding").click()
     expect(page).to_have_url(base + "research-with-ai/#share-what-you-find")
+
 
 
 if __name__ == "__main__":

@@ -49,7 +49,7 @@ Use the Atlas entry for OMKit (https://github.com/xulfr/om-firmware-atlas/blob/m
 **Get it:** [v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0), 20 Nov 2026 · [Install guide](https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/fw1100/install.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/om5-ii.md)
+[Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
 </div>
 

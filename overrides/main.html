@@ -1,12 +1,19 @@
 {#- The Atlas page shell. It replaces the stock MkDocs/Bootstrap layout entirely; styles live in docs/assets/atlas.css,
     behaviour in docs/assets/atlas.js. Page content still comes from the staged Markdown.
-    Navigation: audience sections from mkdocs.yml (expanded at build time by scripts/atlas.py expand_nav).
-    Generated record pages outside the nav join a section, and highlight their directory, through their URL. -#}
+    Generated pages outside the nav highlight the hub they belong to. -#}
 {%- set homes = {
-  'views/cameras/': ['Find your camera', 'views/cameras/'], 'views/projects/': ['Research & development', 'views/projects/'],
-  'views/firmware/': ['Research & development', 'views/firmware/'], 'views/capabilities/': ['Research & development', 'views/capabilities/'],
-  'views/evidence/': ['Research & development', 'views/evidence/'], 'views/sources/': ['Research & development', 'views/sources/'], 'views/reference/': ['Research & development', 'views/reference/'],
-  'knowledge/': ['Research & development', none], 'views/community/': ['Research & development', 'views/community/']
+  'views/cameras/': ['For camera owners', 'views/cameras/'],
+  'views/showcases/': ['For camera owners', 'views/cameras/'],
+  'views/research/': ['For developers', 'views/research/'],
+  'views/projects/': ['For developers', 'cross-body/'],
+  'views/firmware/': ['For developers', 'cross-body/'],
+  'views/capabilities/': ['For developers', 'cross-body/'],
+  'views/evidence/': ['For developers', 'cross-body/'],
+  'views/sources/': ['For developers', 'cross-body/'],
+  'views/reference/': ['For developers', 'cross-body/'],
+  'knowledge/': ['For developers', 'cross-body/'],
+  'how-it-works/': ['For developers', 'cross-body/'],
+  'views/community/': ['For developers', 'community/']
 } -%}
 {%- set ns = namespace(section=none, parent=none, parent_title=none, item=none, top=none) -%}
 {%- for item in nav -%}
@@ -133,17 +140,7 @@
         {%- if ns.item %}<a href="{{ first_url(ns.item)|trim|url }}">{{ ns.section }}</a>{% else %}{{ ns.section }}{% endif %}
         {%- if ns.parent_title %}<span aria-hidden="true">/</span><a href="{{ ns.parent|url }}">{{ ns.parent_title }}</a>{% endif %}</p>
       {%- endif %}
-      {%- if page and page.url.startswith('views/cameras/') and page.url != 'views/cameras/' %}
-      <nav class="camera-mobile-nav" aria-label="Camera navigation">
-        <details class="side-mobile">
-          <summary>On this camera page</summary>
-          <ul>{% for heading in page.toc %}{% for section in heading.children %}
-            <li><a href="{{ section.url }}">{{ section.title }}</a></li>
-          {% endfor %}{% endfor %}</ul>
-        </details>
-        <a href="{{ 'views/cameras/'|url }}">Change camera</a>
-      </nav>
-      {%- elif ns.item %}
+      {%- if ns.item %}
       <details class="side-mobile">
         <summary>In {{ ns.item.title }}</summary>
         {{ side_list(ns.item.children, ns.parent) }}
@@ -210,6 +207,7 @@
       </div>
       <nav class="footer-links" aria-label="Footer">
         {%- for item in nav %}{% if not item.is_homepage %}<a href="{{ first_url(item)|trim|url }}">{{ item.title }}</a>{% endif %}{% endfor %}
+        <a href="{{ 'community/'|url }}">Community</a>
         <a href="{{ 'about/'|url }}">About</a>
         {%- if config.repo_url %}<a href="{{ config.repo_url }}">{{ config.repo_name }}</a>{% endif %}
       </nav>

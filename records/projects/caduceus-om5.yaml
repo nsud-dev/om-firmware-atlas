@@ -165,10 +165,12 @@ records:
     source_ref: source.om5.releases
   images:
   - path: assets/projects/caduceus-om5/picture-mode-look.png
+    camera_id: camera.om5-ii
     alt: The OM-5 Mark II Picture Mode screen showing Color Profile 2 with the look Portra 160
     caption: A look's name on the Picture Mode screen.
     credit: Caduceus for OM-5 website
   - path: assets/projects/caduceus-om5/colour-wheel.png
+    camera_id: camera.om5-ii
     alt: The hue page of the colour wheel editor
     caption: The hue page of the colour editor.
     credit: Caduceus for OM-5 website

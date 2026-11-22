@@ -4,112 +4,28 @@
 
 E140: port/signature research and emulator coverage; no physical feature report imported.
 
-**Model code:** E140 · **Also known as:** E-M10 IV, E-M10 Mark IV, EM10IV · **Catalogue depth:** discovery only
+**Model code:** E140 · **Also known as:** E-M10 IV, E-M10 Mark IV, EM10IV
 { .facts }
+
+[View the showcase](../showcases/em10-iv.md){ #features .btn .btn-primary }
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+{ .install-note }
+
+## Firmware projects { #projects }
 
 <div class="glance" markdown="1">
 
 **Releases for this camera:** none listed here.
 
-**No release for this camera yet:** [Caduceus for E-P7](../projects/caduceus-ep7.md#for-em10-iv).
-
-**Jump to:** [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Research](#research)
+**No release for this camera yet:** [Caduceus for E-P7](../showcases/em10-iv.md#caduceus-ep7).
 
 </div>
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
+[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
 
-## Projects for this camera { #projects }
+## Developer resources { #research }
 
-Each card says what the project has for this camera and where to get it. A project can be listed here for a small part of its work; its own page covers the rest.
+<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
 
-### Mods and ports
-
-These change the camera's firmware.
-
-<div class="project-grid" markdown="1">
-
-<div class="project-card" markdown="1">
-
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-em10-iv){ .card-title }
-
-The original Caduceus: HSLFX colour editing and 29 film looks for the PEN E-P7.
-
-**For this camera:** No build for this camera. Caduceus's body survey includes the E-M10 IV in its firmware-signature comparisons for possible ports; nothing has been ported.
-{ .card-for }
-
-**Get it:** No release for this camera yet.
-{ .card-get }
-
-Mod
-{ .card-meta }
-
-[Project home](https://github.com/cakelesscoder/caduceus-ep7) · [Ask or report issues](https://github.com/cakelesscoder/caduceus-ep7/issues)
-{ .card-links }
-
-</div>
-
-</div>
-
-
-### Research, tools and references
-
-These do not change the camera. They help people study firmware, build or check mods, or install official updates.
-
-<div class="project-grid" markdown="1">
-
-<div class="project-card" markdown="1">
-
-[OM-Emu](../projects/om-emu.md#for-em10-iv){ .card-title }
-
-Run OM SYSTEM and Olympus camera firmware in your browser.
-
-**For this camera:** An emulator; it does not change the camera. Covers this camera for: Browser player (released), Native card file system (released).
-{ .card-for }
-
-**Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
-{ .card-get }
-
-Emulator
-{ .card-meta }
-
-[Project home](https://github.com/flatpanda/om-emu) · [Ask or report issues](https://github.com/flatpanda/om-emu/issues)
-{ .card-links }
-
-</div>
-
-</div>
-
-## Claims and test evidence { #evidence }
-
-No feature-level assertion is catalogued yet. This is a coverage gap, not a finding that modifications are impossible.
-
-## Where to talk { #talk }
-
-[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
-
-## Firmware
-
-None catalogued.
-
-## Research this camera { #research }
-
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus OM-D E-M10 Mark IV (E140) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em10-iv.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
-## Sources and record
-
-- [Caduceus body survey](../sources/ep7.bodies.md)
-- [OM-Emu scope](../sources/emu.readme.md)
-
-[Canonical record](../../records/cameras/em10-iv.yaml) · Substantively reviewed: 2026-11-17.
+[Research for this model](../research/em10-iv.md) · [Community](../../docs/community.md)

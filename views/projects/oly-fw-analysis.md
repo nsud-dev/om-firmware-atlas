@@ -46,7 +46,7 @@ Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-f
 **Get it:** [alpha-20261017 (pre-release)](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017), 18 Oct 2026. Check the release notes for files and instructions for this model.
 { .card-get }
 
-[Camera overview and test results](../cameras/pen-f.md)
+[Camera overview](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
 
 </div>
 
@@ -60,7 +60,7 @@ Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-f
 **Get it:** [Project home](https://github.com/fishcu/oly_fw_analysis)
 { .card-get }
 
-[Camera overview and test results](../cameras/om5.md)
+[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -74,7 +74,7 @@ Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-f
 **Get it:** [Project home](https://github.com/fishcu/oly_fw_analysis)
 { .card-get }
 
-[Camera overview and test results](../cameras/ep7.md)
+[Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
 
 </div>
 
@@ -88,7 +88,7 @@ Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-f
 **Get it:** [Project home](https://github.com/fishcu/oly_fw_analysis)
 { .card-get }
 
-[Camera overview and test results](../cameras/om3.md)
+[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 
@@ -100,7 +100,7 @@ The camera page links this project as a research reference.
 
 Recorded findings: [Card-file debug Wi-Fi shell on stock E-M5 III 1.7](../capabilities/em5-iii-wifi-debug-shell.md).
 
-[Camera overview and test results](../cameras/em5-iii.md)
+[Camera overview](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
 
 </div>
 

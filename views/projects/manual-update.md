@@ -38,7 +38,7 @@ Use the Atlas entry for Historical manual update research (https://github.com/xu
 **Get it:** [Project home](https://github.com/iKenndac/om-1-manual-firmware-install)
 { .card-get }
 
-[Camera overview and test results](../cameras/om5.md)
+[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -52,7 +52,7 @@ Use the Atlas entry for Historical manual update research (https://github.com/xu
 **Get it:** [Project home](https://github.com/iKenndac/om-1-manual-firmware-install)
 { .card-get }
 
-[Camera overview and test results](../cameras/om3.md)
+[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 

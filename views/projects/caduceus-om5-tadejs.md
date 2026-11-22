@@ -44,7 +44,7 @@ Use the Atlas entry for Caduceus port for the original OM-5 (tadejs) (https://gi
 **Get it:** No release for this camera yet.
 { .card-get }
 
-[Camera overview and test results](../cameras/om5.md)
+[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 

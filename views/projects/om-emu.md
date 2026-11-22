@@ -39,7 +39,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview and test results](../cameras/om5.md)
+[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -53,7 +53,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview and test results](../cameras/om5-ii.md)
+[Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
 </div>
 
@@ -67,7 +67,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview and test results](../cameras/om3.md)
+[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 
@@ -81,7 +81,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview and test results](../cameras/ep7.md)
+[Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
 
 </div>
 
@@ -95,7 +95,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview and test results](../cameras/pen-f.md)
+[Camera overview](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
 
 </div>
 
@@ -109,7 +109,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview and test results](../cameras/em10-iv.md)
+[Camera overview](../cameras/em10-iv.md) · [Test results](../research/em10-iv.md#evidence)
 
 </div>
 

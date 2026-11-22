@@ -39,7 +39,7 @@ Use the Atlas entry for Ghidra MN103 processor module (https://github.com/xulfr/
 **Get it:** [Install and use](https://github.com/nsud-dev/ghidra-mn103/blob/main/README.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/em5-iii.md)
+[Camera overview](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
 
 </div>
 
@@ -53,7 +53,7 @@ Use the Atlas entry for Ghidra MN103 processor module (https://github.com/xulfr/
 **Get it:** [Install and use](https://github.com/nsud-dev/ghidra-mn103/blob/main/README.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/om5.md)
+[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -67,7 +67,7 @@ Use the Atlas entry for Ghidra MN103 processor module (https://github.com/xulfr/
 **Get it:** [Install and use](https://github.com/nsud-dev/ghidra-mn103/blob/main/README.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/om5-ii.md)
+[Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
 </div>
 
@@ -81,7 +81,7 @@ Use the Atlas entry for Ghidra MN103 processor module (https://github.com/xulfr/
 **Get it:** [Install and use](https://github.com/nsud-dev/ghidra-mn103/blob/main/README.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/pen-f.md)
+[Camera overview](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
 
 </div>
 
@@ -95,7 +95,7 @@ Use the Atlas entry for Ghidra MN103 processor module (https://github.com/xulfr/
 **Get it:** [Install and use](https://github.com/nsud-dev/ghidra-mn103/blob/main/README.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/ep7.md)
+[Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
 
 </div>
 

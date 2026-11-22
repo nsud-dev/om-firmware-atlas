@@ -4,204 +4,28 @@
 
 E101, TruePic VI (2012): one camera-tested mod; its addresses and edits do not carry over to newer bodies.
 
-**Model code:** E101 · **Also known as:** E-PM2, PEN mini E-PM2, EPM2 · **Catalogue depth:** initial review
+**Model code:** E101 · **Also known as:** E-PM2, PEN mini E-PM2, EPM2 · **Stock firmware covered:** 1.6
 { .facts }
+
+[View the showcase](../showcases/epm2.md){ #features .btn .btn-primary }
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+{ .install-note }
+
+## Firmware projects { #projects }
 
 <div class="glance" markdown="1">
 
 **Releases for this camera:**
 
-- [EPM2Mod](../projects/epm2mod.md#for-epm2) · v2026.11.20-rc.1 (pre-release) · The latest camera report gives its build as [films-twelve-off](../evidence/epm2-films-twelve-off.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.1)
-
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform) · [Research](#research)
+- [EPM2Mod](../showcases/epm2.md#epm2mod) · v2026.11.20-rc.1 (pre-release) · The latest camera report gives its build as [films-twelve-off](../evidence/epm2-films-twelve-off.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.1)
 
 </div>
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
+[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
 
-## What you can do with this camera { #features }
+## Developer resources { #research }
 
-Features as each project describes them, with their status. Follow a project's own guide before installing anything.
+<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
 
-<div class="feature-grid" markdown="1">
-
-<div class="feature-card" markdown="1">
-
-**Film simulations** <span class="pill pill-beta">Beta</span>
-{ .feature-head }
-
-Up to 12 of 32 film simulations in the ART entries, loaded from a card file with Load Looks; kept after power-off. For photos and live view; the photo records the film's name.
-
-Stock firmware 1.6 · [Evidence and limits for films-look-exif](../capabilities/epm2-films-look-exif.md)
-
-[EPM2Mod](../projects/epm2mod.md#for-epm2) · since v2026.11.20-rc.1 · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Interval shooting** <span class="pill pill-beta">Beta</span>
-{ .feature-head }
-
-Time Lapse Settings with up to 240 frames.
-
-No separate test record linked to this feature.
-
-[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Level gauge** <span class="pill pill-beta">Beta</span>
-{ .feature-head }
-
-The firmware's own gauge as an LV-Info view, with calibration and the histogram screen's shooting information. Three data edits, no new code.
-
-No separate test record linked to this feature.
-
-[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Focus peaking** <span class="pill pill-beta">Beta</span>
-{ .feature-head }
-
-Turning the focus ring with MF Assist zooms in and outlines sharp edges in white, red, yellow or blue; ported from the E-P5.
-
-No separate test record linked to this feature.
-
-[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Lowest S/S Setting for ISO Auto** <span class="pill pill-beta">Beta</span>
-{ .feature-head }
-
-In P and A, the shutter speed at which ISO Auto starts to rise; a copy of the PEN-F 3.1's logic.
-
-No separate test record linked to this feature.
-
-[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Debug Log** <span class="pill pill-beta">Beta</span>
-{ .feature-head }
-
-A Custom Menu J row, Off by default, that writes EPM2LOG.BIN to the card for developers.
-
-No separate test record linked to this feature.
-
-[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
-{ .feature-actions }
-
-</div>
-
-</div>
-
-## Projects for this camera { #projects }
-
-Each card says what the project has for this camera and where to get it. A project can be listed here for a small part of its work; its own page covers the rest.
-
-### Mods and ports
-
-These change the camera's firmware.
-
-<div class="project-grid" markdown="1">
-
-<div class="project-card" markdown="1">
-
-[EPM2Mod](../projects/epm2mod.md#for-epm2){ .card-title }
-
-Film simulations, interval shooting, focus peaking and a level gauge for the PEN E-PM2.
-
-**For this camera:** 6 features, including Film simulations, Interval shooting and Level gauge.
-{ .card-for }
-
-**Get it:** [v2026.11.20-rc.1 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1), 20 Nov 2026 · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
-{ .card-get }
-
-Mod
-{ .card-meta }
-
-[Project home](https://github.com/cfu288/EPM2Mod) · [Ask or report issues](https://github.com/cfu288/EPM2Mod/issues)
-{ .card-links }
-
-</div>
-
-</div>
-
-
-## Claims and test evidence { #evidence }
-
-<div class="evidence-list" markdown="1">
-
-<div class="evidence-entry" markdown="1">
-
-**Camera test · reported working** · [E-PM2 films-look-exif: owner camera test](../evidence/epm2-films-look-exif.md)
-
-complete report · reported hash
-{ .observation-meta }
-
-Claim · [E-PM2 card-loaded film simulations, films-look-exif](../capabilities/epm2-films-look-exif.md)
-
-Project and build · [EPM2Mod](../projects/epm2mod.md#for-epm2) / films-look-exif
-
-Availability · candidate
-
-</div>
-
-</div>
-
-Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
-
-## Platform and built-in features (E-PM2 firmware 1.6, build 1600) { #platform }
-
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Image processor generation](../reference/epm2-1600.image-processor.md) | TruePic VI | Single source |
-| [Main CPU](../reference/epm2-1600.main-cpu.md) | MN103, two cores, uITRON | Single source |
-| [ARM co-processor](../reference/epm2-1600.arm-coprocessor.md) | None | Single source |
-| [Update file magic](../reference/epm2-1600.container-magic.md) | OE 10 10 | Single source |
-| [Firmware blocks](../reference/epm2-1600.firmware-blocks.md) | 4, plus an image-stabiliser tail | Single source |
-| [Main program compression](../reference/epm2-1600.main-compression.md) | None | Single source |
-
-## Firmware
-
-[E-PM2 firmware 1.6, build 1600](../firmware/epm2-1600.md).
-
-## Research this camera { #research }
-
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus PEN E-PM2 (E101) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/epm2.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
-## Sources and record
-
-- [EPM2Mod overview](../sources/epm2.readme.md)
-- [Olympus generations for modding](../sources/epm2.model-matrix.md)
-
-[Canonical record](../../records/cameras/epm2.yaml) · Substantively reviewed: 2026-11-20.
+[Research for this model](../research/epm2.md) · [Community](../../docs/community.md)

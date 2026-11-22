@@ -48,7 +48,7 @@ Use the Atlas entry for Caduceus for E-P7 (https://github.com/xulfr/om-firmware-
 **Get it:** [v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a), 15 Nov 2026 · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/ep7.md)
+[Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
 
 </div>
 
@@ -64,7 +64,7 @@ Use the Atlas entry for Caduceus for E-P7 (https://github.com/xulfr/om-firmware-
 
 [View the testing request](https://github.com/cakelesscoder/caduceus-ep7/issues/21){ .btn .btn-primary }
 
-[Camera overview and test results](../cameras/em10-iv.md)
+[Camera overview](../cameras/em10-iv.md) · [Test results](../research/em10-iv.md#evidence)
 
 </div>
 
