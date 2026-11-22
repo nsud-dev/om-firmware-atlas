@@ -12,8 +12,6 @@ Native runs in om-emu: each profile supplies its own 12 saturation values; other
 
 [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=Caduceus+port+for+the+original+OM-5+%28tadejs%29+%C2%B7+om5_color_core)
 
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Provenance:** maintainer summary. **Reported:** 2026-11-08. **Test date:** Not explicitly recorded.
 
 **Reported/observed package SHA-256:** not recorded.

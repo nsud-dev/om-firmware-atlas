@@ -2,21 +2,13 @@
 
 # Olympus PEN E-P7 research
 
-E142: original Caduceus project and a documented Ghidra/REA setup.
+E142 · Stock firmware 1.1 · build 1100
+{ .facts }
 
-[Camera overview](../cameras/ep7.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/ep7.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus PEN E-P7 (E142) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/ep7.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -46,23 +38,11 @@ Availability · published release
 
 Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
 
-## Where to talk { #talk }
-
-[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
-
 ## Firmware and technical reference { #platform }
-
-[ep7 firmware 1.1, build 1100](../firmware/ep7-1100.md).
 
 ### ep7 firmware 1.1, build 1100
 
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Main CPU](../reference/ep7-1100.main-cpu.md) | MN103/AM33-2, several cores | Single source |
-| [Update file magic](../reference/ep7-1100.container-magic.md) | OE 14 20 | Single source |
-| [Firmware blocks](../reference/ep7-1100.firmware-blocks.md) | 5 | Camera-confirmed |
+[File identity, platform and stock features](../firmware/ep7-1100.md)
 
 ### Build-specific reference
 
@@ -84,6 +64,8 @@ What the stock firmware itself contains, separate from what projects add. Follow
 - [Never CPU-read an image buffer through its raw descriptor address](../reference/hazard.raw-image-buffer-read.md)
 - [Only call code in a section that has already loaded](../reference/hazard.section-load-order.md)
 - [Keep patch state out of the loaded firmware image](../reference/hazard.state-in-loaded-image.md)
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

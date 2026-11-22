@@ -12,18 +12,6 @@ Run OM SYSTEM and Olympus camera firmware in your browser.
 
 </div>
 
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/om-emu.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Type:** emulator · **Camera details:** [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii), [OM-3](#for-om3), [PEN E-P7](#for-ep7), [PEN-F](#for-pen-f), [OM-D E-M10 Mark IV](#for-em10-iv), [OM-D E-M10 Mark II](#for-em10-ii), [OM-D E-M1 Mark III](#for-em1-iii), [OM-D E-M5 Mark III](#for-em5-iii) · **Maintained by** [flatpanda](https://github.com/flatpanda)
 { .facts }
 
@@ -39,7 +27,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
+[Mods and installation](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -53,7 +41,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
+[Mods and installation](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
 </div>
 
@@ -67,7 +55,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
+[Mods and installation](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 
@@ -81,7 +69,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
+[Mods and installation](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
 
 </div>
 
@@ -95,7 +83,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
+[Mods and installation](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
 
 </div>
 
@@ -109,7 +97,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview](../cameras/em10-iv.md) · [Test results](../research/em10-iv.md#evidence)
+[Mods and installation](../cameras/em10-iv.md) · [Test results](../research/em10-iv.md#evidence)
 
 </div>
 
@@ -123,7 +111,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview](../cameras/em10-ii.md) · [Test results](../research/em10-ii.md#evidence)
+[Mods and installation](../cameras/em10-ii.md) · [Test results](../research/em10-ii.md#evidence)
 
 </div>
 
@@ -137,7 +125,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview](../cameras/em1-iii.md) · [Test results](../research/em1-iii.md#evidence)
+[Mods and installation](../cameras/em1-iii.md) · [Test results](../research/em1-iii.md#evidence)
 
 </div>
 
@@ -151,7 +139,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
 { .card-get }
 
-[Camera overview](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
+[Mods and installation](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
 
 </div>
 

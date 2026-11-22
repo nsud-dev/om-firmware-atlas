@@ -2,21 +2,13 @@
 
 # Olympus OM-D E-M1 Mark III research
 
-E139: one mod builder for firmware 1.6; owner camera reports per mod, no Atlas evidence imported.
+E139 · Stock firmware 1.6 · build 1600
+{ .facts }
 
-[Camera overview](../cameras/em1-iii.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/em1-iii.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus OM-D E-M1 Mark III (E139) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/em1-iii.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -29,7 +21,11 @@ No feature-level assertion is catalogued yet. This is a coverage gap, not a find
 
 ## Firmware and technical reference { #platform }
 
-[E-M1 Mark III firmware 1.6, build 1600](../firmware/em1-iii-1600.md).
+### E-M1 Mark III firmware 1.6, build 1600
+
+[File identity, platform and stock features](../firmware/em1-iii-1600.md)
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

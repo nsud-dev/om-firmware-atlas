@@ -5,7 +5,7 @@
 A loader flashed once, then core, modules and settings from the SD card. OM-5 Mark II.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
@@ -19,18 +19,6 @@ A loader flashed once, then core, modules and settings from the SD card. OM-5 Ma
 [OM-5 Mark II platform notes](https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/README.md){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for OMKit (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/omkit.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** mod · **Camera details:** [OM-5 Mark II](#for-om5-ii) · **Latest release:** [v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0), 20 Nov 2026 · **Maintained by** [necrostaz](https://github.com/necrostaz)
 { .facts }
@@ -49,7 +37,7 @@ Use the Atlas entry for OMKit (https://github.com/xulfr/om-firmware-atlas/blob/m
 **Get it:** [v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0), 20 Nov 2026 · [Install guide](https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/fw1100/install.md)
 { .card-get }
 
-[Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
+[Mods and installation](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
 </div>
 

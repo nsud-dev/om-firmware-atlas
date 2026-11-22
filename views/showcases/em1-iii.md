@@ -2,26 +2,6 @@
 
 # Olympus OM-D E-M1 Mark III showcase
 
-[Camera overview](../cameras/em1-iii.md)
+[Mods and installation](../cameras/em1-iii.md)
 
-
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
-
-<section class="model-panel" markdown="1">
-
-## E-M1 Mark III Mod Builder { #em1-iii-mod-builder }
-
-**Get it:** [mod-builder-1.19](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19), 22 Nov 2026 · [Builder guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ae16f3d2836e7273164c7cd3497237117c8b9ff9/builder/README.md)
-{ .card-get }
-
-Unofficial firmware builder. The apps are unsigned.
-{ .release-warning }
-
-- **Panorama 65:24** · Available. Replaces the 7:6 aspect with 65:24 in the menu, live-view frame, AF areas and raw frame. Worked on the camera (1.5 build).
-- **Multiple Exposure with 3 and 4 frames** · Available. Creates 3- and 4-frame multiple exposures correctly; the live preview is missing between frames 2–3 and 3–4 (fix in test 1.746, awaiting a camera result). Worked on the camera (1.5 build).
-- **Focus stacking with any lens** · Available. Removes the lens check for in-camera focus stacking. Worked on the camera (1.5 build).
-
-[Full project details](../projects/em1-iii-mod-builder.md#for-em1-iii) · [Ask or report issues](https://github.com/dfeldt91-blip/E-M1-Miii) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M1+Mark+III+%C2%B7+stock+firmware%3A+&package=E-M1+Mark+III+Mod+Builder+%C2%B7+mod-builder-1.19)
-
-</section>
+- [E-M1 Mark III Mod Builder](../cameras/em1-iii.md#em1-iii-mod-builder){ #em1-iii-mod-builder }

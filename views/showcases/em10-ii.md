@@ -2,25 +2,6 @@
 
 # Olympus OM-D E-M10 Mark II showcase
 
-[Camera overview](../cameras/em10-ii.md)
+[Mods and installation](../cameras/em10-ii.md)
 
-
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
-
-<section class="model-panel" markdown="1">
-
-## fenykl { #fenykl }
-
-**Get it:** No release for this camera yet.
-{ .card-get }
-
-![The E-M10 Mark II live-view INFO screen with labelled additions, battery 86 %, focus meter bar, PRE tag, focus distance 27.0 cm and depth of field 6 mm, on a photo with red and blue swapped](../../docs/assets/projects/fenykl/main-info-screen.jpg)
-{ .hero-image }
-
-The main plugin's additions on the live-view INFO screen. *fenykl README.*
-{ .image-caption }
-
-[Full project details](../projects/fenykl.md#for-em10-ii) · [Ask or report issues](https://github.com/atx/fenykl/issues)
-
-</section>
+- [fenykl](../cameras/em10-ii.md#fenykl){ #fenykl }

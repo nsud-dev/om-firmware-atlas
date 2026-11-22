@@ -200,6 +200,10 @@ records:
     prerelease: true
     camera_ids:
     - camera.om3
+    installation:
+      camera.om3:
+        firmware_id: firmware.om3-1100
+        url: https://github.com/androidfanman/caduceus-om3/blob/45706369aa922dfeeccf7d60a9721e0b9f3fcc43/releases/v0.40.3-beta4/NOTES.md
     highlights:
     - Films and COLOR keep their own white-balance shift in live view and stills. The stock picture modes keep the
       camera’s own setting.

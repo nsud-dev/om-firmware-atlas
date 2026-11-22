@@ -5,12 +5,12 @@
 Looks and a full colour editor for the OM-5 Mark II. Experimental.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
 
-[Read the OM-5 Mark II install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md){ .btn .btn-primary }
+[Read the OM-5 Mark II install guide](https://github.com/xulfr/caduceus-om5/blob/4c1e0e53ca9bc5ea5005f268d5ba7953dc4a42d1/docs/INSTALL.md){ .btn .btn-primary }
 [Project home](https://github.com/xulfr/caduceus-om5){ .btn .btn-ghost }
 [Ask or report issues](https://github.com/xulfr/caduceus-om5/issues){ .btn .btn-ghost }
 [Website](https://xulfr.github.io/caduceus-om5/){ .btn .btn-ghost }
@@ -18,18 +18,6 @@ Looks and a full colour editor for the OM-5 Mark II. Experimental.
 [LookLab](https://xulfr.github.io/caduceus-om5/looklab/){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Caduceus for OM-5 (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-om5.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** mod · **Camera details:** [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii) · **Latest release:** [v0.2.0-alpha1 (pre-release)](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1), 20 Nov 2026 · **Maintained by** [xulfr](https://github.com/xulfr)
 { .facts }
@@ -46,7 +34,7 @@ Use the Atlas entry for Caduceus for OM-5 (https://github.com/xulfr/om-firmware-
 **Get it:** No release for this camera yet.
 { .card-get }
 
-[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
+[Mods and installation](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -59,10 +47,10 @@ Use the Atlas entry for Caduceus for OM-5 (https://github.com/xulfr/om-firmware-
 **For this camera:** 9 features, including Color Profiles 1–3 and Monochrome Profiles 1–3, Custom looks and Colour editor.
 { .card-for }
 
-**Get it:** [v0.2.0-alpha1 (pre-release)](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1), 20 Nov 2026 · [Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md)
+**Get it:** [v0.2.0-alpha1 (pre-release)](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1), 20 Nov 2026 · [Install guide](https://github.com/xulfr/caduceus-om5/blob/4c1e0e53ca9bc5ea5005f268d5ba7953dc4a42d1/docs/INSTALL.md)
 { .card-get }
 
-[Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
+[Mods and installation](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
 </div>
 

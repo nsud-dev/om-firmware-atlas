@@ -2,7 +2,42 @@
 
 # Research by camera
 
-Choose a model for its firmware builds, projects, technical reference and test results.
+<div class="camera-finder" markdown="1" hidden>
+
+<label for="camera-query">Find your camera</label>
+
+<input id="camera-query" type="search" placeholder="Model name or code, e.g. E148" autocomplete="off">
+
+<p role="status"></p>
+
+<div class="finder-results" markdown="1">
+
+[OM-D E-M1 Mark III · E139](em1-iii.md){ data-names="Olympus OM-D E-M1 Mark III|E-M1 III|E-M1 Mark III|EM1III|E139|E139" }
+
+[OM-D E-M10 (Mark I) · E113](em10.md){ data-names="Olympus OM-D E-M10 (Mark I)|E-M10|E-M10 Mark I|E-M10 I|EM10|E113|E113" }
+
+[OM-D E-M10 Mark II · E120](em10-ii.md){ data-names="Olympus OM-D E-M10 Mark II|E-M10 II|E-M10 Mark II|E-M10II|EM10II|E120|E120" }
+
+[OM-D E-M10 Mark IV · E140](em10-iv.md){ data-names="Olympus OM-D E-M10 Mark IV|E-M10 IV|E-M10 Mark IV|EM10IV|E140|E140" }
+
+[OM-D E-M5 Mark III · E137](em5-iii.md){ data-names="Olympus OM-D E-M5 Mark III|E-M5 III|E-M5 Mark III|EM5III|EM5 Mk3|E137|E137" }
+
+[PEN E-P7 · E142](ep7.md){ data-names="Olympus PEN E-P7|E-P7|EP7|PEN E-P7|E142|E142" }
+
+[PEN E-PM2 · E101](epm2.md){ data-names="Olympus PEN E-PM2|E-PM2|PEN mini E-PM2|EPM2|E101|E101" }
+
+[OM-3 · E147](om3.md){ data-names="OM SYSTEM OM-3|OM-3|OM3|E147|E147" }
+
+[OM-5 · E144](om5.md){ data-names="OM SYSTEM OM-5|Original OM-5|OM5|E144|E144" }
+
+[OM-5 Mark II · E148](om5-ii.md){ data-names="OM SYSTEM OM-5 Mark II|OM-5 II|OM5|OM5II|E148|E148" }
+
+[PEN-F · E122](pen-f.md){ data-names="Olympus PEN-F|PEN-F|PENF|E122|E122" }
+
+</div>
+
+</div>
+
 
 ## OM SYSTEM
 

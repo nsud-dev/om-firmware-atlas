@@ -12,8 +12,6 @@ The owner reports step C5 passed with normal camera behaviour afterwards.
 
 [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=Caduceus+port+for+the+original+OM-5+%28tadejs%29+%C2%B7+om5-ladder-c5)
 
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Provenance:** maintainer summary. **Reported:** 2026-11-08. **Test date:** Not explicitly recorded.
 
 **Reported/observed package SHA-256:** not recorded.

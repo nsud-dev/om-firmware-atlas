@@ -5,7 +5,7 @@
 Film looks, a colour wheel, colour editors and a longer video limit for the original OM-D E-M10.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
@@ -19,18 +19,6 @@ Film looks, a colour wheel, colour editors and a longer video limit for the orig
 [Look file spec (draft)](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/docs/lookfile/LOOKFILE_SPEC.md){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for om10mi-mods (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/om10mi-mods.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** mod · **Camera details:** [OM-D E-M10 (Mark I)](#for-em10) · **Latest release:** [v87](https://github.com/Meghnus/om10mi-mods/releases/tag/v87), 21 Nov 2026 · **Maintained by** [Meghnus](https://github.com/Meghnus)
 { .facts }
@@ -49,7 +37,7 @@ Use the Atlas entry for om10mi-mods (https://github.com/xulfr/om-firmware-atlas/
 **Get it:** [v87](https://github.com/Meghnus/om10mi-mods/releases/tag/v87), 21 Nov 2026 · [Install guide](https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/INSTALL.md)
 { .card-get }
 
-[Camera overview](../cameras/em10.md) · [Test results](../research/em10.md#evidence)
+[Mods and installation](../cameras/em10.md) · [Test results](../research/em10.md#evidence)
 
 </div>
 

@@ -2,21 +2,13 @@
 
 # Olympus PEN E-PM2 research
 
-E101, TruePic VI (2012): one camera-tested mod; its addresses and edits do not carry over to newer bodies.
+E101 · Stock firmware 1.6 · build 1600
+{ .facts }
 
-[Camera overview](../cameras/epm2.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/epm2.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus PEN E-PM2 (E101) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/epm2.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -52,24 +44,15 @@ Results belong to the named project and package. Emulator output does not establ
 
 ## Firmware and technical reference { #platform }
 
-[E-PM2 firmware 1.6, build 1600](../firmware/epm2-1600.md).
-
 ### E-PM2 firmware 1.6, build 1600
 
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Image processor generation](../reference/epm2-1600.image-processor.md) | TruePic VI | Single source |
-| [Main CPU](../reference/epm2-1600.main-cpu.md) | MN103, two cores, uITRON | Single source |
-| [ARM co-processor](../reference/epm2-1600.arm-coprocessor.md) | None | Single source |
-| [Update file magic](../reference/epm2-1600.container-magic.md) | OE 10 10 | Single source |
-| [Firmware blocks](../reference/epm2-1600.firmware-blocks.md) | 4, plus an image-stabiliser tail | Single source |
-| [Main program compression](../reference/epm2-1600.main-compression.md) | None | Single source |
+[File identity, platform and stock features](../firmware/epm2-1600.md)
 
 ### Build-specific reference
 
 - [Main CPU base, E-PM2 1.6](../reference/epm2-1600.main-cpu-base.md)
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

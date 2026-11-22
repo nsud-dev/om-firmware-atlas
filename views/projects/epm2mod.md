@@ -5,12 +5,12 @@
 Film simulations, interval shooting, focus peaking and a level gauge for the PEN E-PM2.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
 
-[Read the install guide](https://github.com/cfu288/EPM2Mod/blob/475486f4d581d090162ea9f733fb31e05bc6e08a/docs/user/install.md){ .btn .btn-primary }
+[Read the install guide](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5){ .btn .btn-primary }
 [Project home](https://github.com/cfu288/EPM2Mod){ .btn .btn-ghost }
 [Ask or report issues](https://github.com/cfu288/EPM2Mod/issues){ .btn .btn-ghost }
 [Film simulation comparison](https://cfu288.github.io/EPM2Mod/films){ .btn .btn-ghost }
@@ -19,18 +19,6 @@ Film simulations, interval shooting, focus peaking and a level gauge for the PEN
 [Landscape of Olympus mods](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/reference/landscape.md){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for EPM2Mod (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/epm2mod.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** mod · **Camera details:** [PEN E-PM2](#for-epm2) · **Latest release:** [v2026.11.20-rc.5 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5), 22 Nov 2026 · **Maintained by** [cfu288](https://github.com/cfu288)
 { .facts }
@@ -46,10 +34,10 @@ Use the Atlas entry for EPM2Mod (https://github.com/xulfr/om-firmware-atlas/blob
 **For this camera:** 6 features, including Film simulations, Interval shooting and Level gauge.
 { .card-for }
 
-**Get it:** [v2026.11.20-rc.5 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5), 22 Nov 2026 · [Install guide](https://github.com/cfu288/EPM2Mod/blob/475486f4d581d090162ea9f733fb31e05bc6e08a/docs/user/install.md)
+**Get it:** [v2026.11.20-rc.5 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5), 22 Nov 2026
 { .card-get }
 
-[Camera overview](../cameras/epm2.md) · [Test results](../research/epm2.md#evidence)
+[Mods and installation](../cameras/epm2.md) · [Test results](../research/epm2.md#evidence)
 
 </div>
 

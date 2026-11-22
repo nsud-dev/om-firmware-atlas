@@ -5,15 +5,14 @@
   'views/cameras/': ['For camera owners', 'views/cameras/'],
   'views/showcases/': ['For camera owners', 'views/cameras/'],
   'views/research/': ['For developers', 'views/research/'],
-  'views/projects/': ['For developers', 'cross-body/'],
-  'views/firmware/': ['For developers', 'cross-body/'],
-  'views/capabilities/': ['For developers', 'cross-body/'],
-  'views/evidence/': ['For developers', 'cross-body/'],
-  'views/sources/': ['For developers', 'cross-body/'],
-  'views/reference/': ['For developers', 'cross-body/'],
-  'knowledge/': ['For developers', 'cross-body/'],
-  'how-it-works/': ['For developers', 'cross-body/'],
-  'views/community/': ['For developers', 'community/']
+  'views/projects/': ['For developers', 'views/projects/'],
+  'views/firmware/': ['For developers', 'views/reference/'],
+  'views/capabilities/': ['For developers', 'views/evidence/'],
+  'views/evidence/': ['For developers', 'views/evidence/'],
+  'views/sources/': ['For developers', 'views/reference/'],
+  'views/reference/': ['For developers', 'views/reference/'],
+  'knowledge/': ['For developers', 'knowledge/'],
+  'cross-body/': ['For developers', 'knowledge/']
 } -%}
 {%- set ns = namespace(section=none, parent=none, parent_title=none, item=none, top=none) -%}
 {%- for item in nav -%}
@@ -46,6 +45,9 @@
 </ul>
 {%- endmacro -%}
 {%- set is_home = page and page.is_homepage -%}
+{%- set is_owner_camera = page and page.url and page.url.startswith('views/cameras/') and page.url != 'views/cameras/' -%}
+{%- set is_research_camera = page and page.url and page.url.startswith('views/research/') and page.url != 'views/research/' -%}
+{%- set is_research_home = page and page.url == 'research/' -%}
 <!DOCTYPE html>
 <html lang="{{ config.theme.locale|default('en') }}">
 <head>
@@ -53,7 +55,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
   <meta name="color-scheme" content="dark light">
-  {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+  {% if page and page.url and page.url.startswith('views/showcases/') %}
+    {% set destination = page.url | replace('views/showcases/', 'views/cameras/') | url %}
+    <link rel="canonical" href="{{ page.canonical_url | replace('views/showcases/', 'views/cameras/') }}">
+    <script>
+      (function () {
+        var fragment = window.location.hash;
+        window.location.replace({{ destination | tojson }} + window.location.search + (fragment.endsWith('-showcase') ? '' : fragment));
+      })();
+    </script>
+  {% elif page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
   <link rel="icon" href="{{ 'assets/favicon.svg'|url }}" type="image/svg+xml">
   <title>{% if page and page.title and not is_home %}{{ page.title|striptags }} · {% endif %}{{ config.site_name }}</title>
   <script>
@@ -69,7 +80,7 @@
   {%- endfor %}
 </head>
 
-<body class="{% if is_home %}is-home{% else %}is-doc{% endif %}">
+<body class="{% if is_home %}is-home{% else %}is-doc{% endif %}{% if is_owner_camera %} is-owner-camera{% endif %}">
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="topbar">
@@ -125,8 +136,8 @@
     </article>
   </main>
   {%- else %}
-  <div class="doc-shell{% if ns.item %} has-side{% endif %}">
-    {%- if ns.item %}
+  <div class="doc-shell{% if ns.item and not is_research_home %} has-side{% endif %}">
+    {%- if ns.item and not is_research_home %}
     <nav class="doc-side" aria-label="{{ ns.item.title }}">
       <div class="side-sticky">
         <p class="side-title">{{ ns.item.title }}</p>
@@ -140,7 +151,7 @@
         {%- if ns.item %}<a href="{{ first_url(ns.item)|trim|url }}">{{ ns.section }}</a>{% else %}{{ ns.section }}{% endif %}
         {%- if ns.parent_title %}<span aria-hidden="true">/</span><a href="{{ ns.parent|url }}">{{ ns.parent_title }}</a>{% endif %}</p>
       {%- endif %}
-      {%- if ns.item %}
+      {%- if ns.item and not (is_owner_camera or is_research_camera or is_research_home) %}
       <details class="side-mobile">
         <summary>In {{ ns.item.title }}</summary>
         {{ side_list(ns.item.children, ns.parent) }}
@@ -175,7 +186,7 @@
       {%- endif %}
     </main>
 
-    {%- if page and page.toc and (page.toc|first) and (page.toc|first).children %}
+    {%- if page and not is_research_home and page.toc and (page.toc|first) and (page.toc|first).children %}
     <aside class="doc-toc" aria-label="On this page">
       <div class="toc-sticky">
         <p class="toc-title">On this page</p>
@@ -208,6 +219,8 @@
       <nav class="footer-links" aria-label="Footer">
         {%- for item in nav %}{% if not item.is_homepage %}<a href="{{ first_url(item)|trim|url }}">{{ item.title }}</a>{% endif %}{% endfor %}
         <a href="{{ 'community/'|url }}">Community</a>
+        <a href="{{ 'add/'|url }}">Contribute</a>
+        <a href="{{ 'research-with-ai/'|url }}">Use with AI</a>
         <a href="{{ 'about/'|url }}">About</a>
         {%- if config.repo_url %}<a href="{{ config.repo_url }}">{{ config.repo_name }}</a>{% endif %}
       </nav>
@@ -222,7 +235,21 @@
       <input type="search" id="mkdocs-search-query" placeholder="Search cameras, projects, firmware, evidence…" autocomplete="off" aria-label="Search terms">
       <button type="button" class="search-close" aria-label="Close search">Close</button>
     </form>
-    <div id="mkdocs-search-results" class="search-results" data-no-results-text="No matching pages yet. Try a camera model code such as E148."></div>
+    <div class="search-scroll">
+      <div class="search-models" aria-label="Matching cameras" hidden>
+        {% for camera in config.extra.atlas_cameras %}
+        <article data-model="{{ ([camera.title] + camera.aliases + camera.codes) | join('|') | e }}" hidden>
+          <h3>{{ camera.title }} · {{ camera.codes | join(', ') }}</h3>
+          {% if ns.section == 'For developers' %}
+          <a href="{{ camera.research | url }}">Developer research</a> · <a href="{{ camera.owner | url }}">Mods &amp; installation</a>
+          {% else %}
+          <a href="{{ camera.owner | url }}">Mods &amp; installation</a> · <a href="{{ camera.research | url }}">Developer research</a>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+      <div id="mkdocs-search-results" class="search-results" data-no-results-text="No matching pages yet. Try a camera model code such as E148."></div>
+    </div>
   </dialog>
   {%- endif %}
 

@@ -443,7 +443,12 @@ kbd {
 .search-box input::placeholder { color: var(--muted); }
 .search-box input::-webkit-search-cancel-button { display: none; }
 .search-close { min-height: 44px; padding: 0 .5rem; border: 0; background: none; color: var(--ink); font: inherit; cursor: pointer; }
-.search-results { overflow-y: auto; padding: 8px; }
+.search-scroll { overflow-y: auto; }
+.search-models, .search-results { padding: 8px; }
+.search-models { border-bottom: 1px solid var(--line); }
+.search-models article { padding: 12px 14px; }
+.search-models h3 { margin: 0 0 3px; font: 650 1rem var(--display); }
+.search-kind { display: block; color: var(--muted); font-size: .78rem; }
 .search-results:empty::before { content: "Type at least three characters to search every page."; display: block; padding: 22px 14px; color: var(--muted); font-size: .92rem; }
 .search-results > p { padding: 14px; margin: 0; color: var(--muted); }
 .search-results article { padding: 12px 14px; border-radius: 12px; }
@@ -607,6 +612,13 @@ kbd {
 .release-model { color: var(--cool); margin-bottom: .4rem; }
 .model-panel { margin: 1rem 0; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--panel); }
 .prose .model-panel > :is(h2, h3) { margin-top: 0; }
+.is-owner-camera .prose h1 { margin-bottom: .45rem; }
+.is-owner-camera .prose .camera-id, .is-owner-camera .prose .release-scope { color: var(--muted); margin-bottom: .55rem; }
+.is-owner-camera .prose .model-panel > h2 { border: 0; padding-top: 0; margin-bottom: .55rem; }
+.is-owner-camera .prose .model-panel > p { margin-bottom: .65rem; }
+.mod-details { margin: .9rem 0; }
+.mod-details summary { cursor: pointer; color: var(--ink-2); }
+.prose .page-jumps, .research-links { padding-block: .65rem; border-block: 1px solid var(--line); }
 .model-panel p:last-child { margin-bottom: 0; }
 .prose .model-panel .hero-image img { width: auto; max-width: 100%; max-height: 24rem; object-fit: contain; }
 .evidence-entry p + p { margin-top: .4rem; }

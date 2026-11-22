@@ -8,7 +8,7 @@ Loader flashed once; core and modules then run from the SD card.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [omkit.yaml](../../../records/projects/omkit.yaml) | Project scope, related work and contribution destination | 5,768 | ~1,442 |
+| [omkit.yaml](../../../records/projects/omkit.yaml) | Project scope, related work and contribution destination | 5,981 | ~1,496 |
 | [omkit.yaml](../../../records/sources/omkit.yaml) | Find the relevant source/observation ID; use bounded reads | 9,028 | ~2,257 |
 | [omkit.yaml](../../../records/evidence/omkit.yaml) | Find the relevant source/observation ID; use bounded reads | 2,273 | ~569 |
 

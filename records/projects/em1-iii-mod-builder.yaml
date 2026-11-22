@@ -200,6 +200,10 @@ records:
     prerelease: false
     camera_ids:
     - camera.em1-iii
+    installation:
+      camera.em1-iii:
+        firmware_id: firmware.em1-iii-1600
+        url: https://github.com/dfeldt91-blip/E-M1-Miii/blob/ba87b5f4358b6ee518cf133676d69698db6ef83e/builder/README.md
     highlights:
     - Packages the builder for Windows and macOS, including a universal Mac build.
     - Includes the Monochrome II option. The tagged mod pack says the profile and labels worked in a camera test and the Shade effect change still needs a retest.

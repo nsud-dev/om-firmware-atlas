@@ -8,7 +8,7 @@ Separate original OM-5 and Mark II work, strict builders and failures.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [caduceus-om5.yaml](../../../records/projects/caduceus-om5.yaml) | Project scope, related work and contribution destination | 7,653 | ~1,914 |
+| [caduceus-om5.yaml](../../../records/projects/caduceus-om5.yaml) | Project scope, related work and contribution destination | 7,847 | ~1,962 |
 | [om5.yaml](../../../records/sources/om5.yaml) | Find the relevant source/observation ID; use bounded reads | 9,606 | ~2,402 |
 | [caduceus-om5.yaml](../../../records/evidence/caduceus-om5.yaml) | Find the relevant source/observation ID; use bounded reads | 7,339 | ~1,835 |
 

@@ -112,6 +112,10 @@ records:
     url: https://github.com/necrostaz/omkit/releases/tag/v0.1.0
     prerelease: false
     camera_ids: *id001
+    installation:
+      camera.om5-ii:
+        firmware_id: firmware.om5-ii-1100
+        url: https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/fw1100/install.md
     highlights:
     - First public release, for the OM-5 Mark II on firmware 1.1; core 1.32, CREATPRF 1.5, FILMLOOK 1.12.
     - Firmware tool for Windows, macOS and Linux that makes the patched and original update files locally.

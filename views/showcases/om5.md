@@ -2,57 +2,10 @@
 
 # OM SYSTEM OM-5 showcase
 
-[Camera overview](../cameras/om5.md)
+[Mods and installation](../cameras/om5.md)
 
+- [Caduceus for OM-5](../cameras/om5.md#caduceus-om5){ #caduceus-om5 }
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
+- [Caduceus port for the original OM-5 (tadejs)](../cameras/om5.md#caduceus-om5-tadejs){ #caduceus-om5-tadejs }
 
-<section class="model-panel" markdown="1">
-
-## db firmware / om-c-firmware { #db-firmware }
-
-**For this camera:** Beta patches include Panasonic aperture rings, Korean menus and Hybrid Shutter. The Mark II-based port’s boot fix has only simulator and emulator results in the release notes.
-{ .card-for }
-
-**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
-{ .card-get }
-
-Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
-{ .release-warning }
-
-- **Panasonic aperture rings** · Beta. The aperture ring on Panasonic lenses that have one controls the aperture.
-- **Korean menus** · Beta. Korean language support on several bodies.
-- **Hybrid Shutter** · Beta. Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
-
-[Full project details](../projects/db-firmware.md#for-om5) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
-
-</section>
-
-<section class="model-panel" markdown="1">
-
-## Caduceus for OM-5 { #caduceus-om5 }
-
-**For this camera:** No working build for this camera. One test build (pre-alpha 1) failed to start on an owner's original OM-5, and OM's firmware was put back from the card. The releases are for the OM-5 Mark II only, and Mark II results do not apply here. Current original OM-5 work is the tadejs port.
-{ .card-for }
-
-**Get it:** No release for this camera yet.
-{ .card-get }
-
-[Full project details](../projects/caduceus-om5.md#for-om5) · [Ask or report issues](https://github.com/xulfr/caduceus-om5/issues)
-
-</section>
-
-<section class="model-panel" markdown="1">
-
-## Caduceus port for the original OM-5 (tadejs) { #caduceus-om5-tadejs }
-
-**For this camera:** Not released: an experimental branch offered to Caduceus for OM-5 as a pull request. Its test steps C1 to C5 passed on the owner's OM-5; the COLOR 1–3 back end runs in an emulator only, with no Picture Mode entry yet.
-{ .card-for }
-
-**Get it:** No release for this camera yet.
-{ .card-get }
-
-[Full project details](../projects/caduceus-om5-tadejs.md#for-om5) · [Ask or report issues](https://github.com/tadejs/caduceus-om5/pull/1)
-
-</section>
+- [db firmware / om-c-firmware](../cameras/om5.md#db-firmware){ #db-firmware }

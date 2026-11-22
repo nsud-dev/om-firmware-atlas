@@ -2,30 +2,22 @@
 
 # Olympus OM-D E-M10 Mark IV
 
-E140: port/signature research and emulator coverage; no physical feature report imported.
+Model E140
+{ .camera-id }
 
-**Model code:** E140 · **Also known as:** E-M10 IV, E-M10 Mark IV, EM10IV
-{ .facts }
+<span id="research"></span><span id="platform"></span><span id="firmware"></span><span id="evidence"></span><span id="talk"></span>
 
-[View the showcase](../showcases/em10-iv.md){ #features .btn .btn-primary }
+[Developer research for this camera](../research/em10-iv.md)
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
+<span id="features"></span><span id="projects"></span>
 
-## Firmware projects { #projects }
 
-<div class="glance" markdown="1">
+No community firmware release is catalogued for this camera.
 
-**Releases for this camera:** none listed here.
+## In development { #in-development }
 
-**No release for this camera yet:** [Caduceus for E-P7](../showcases/em10-iv.md#caduceus-ep7).
+### Caduceus for E-P7 { #caduceus-ep7 }
 
-</div>
+No build for this camera. Caduceus's body survey includes the E-M10 IV in its firmware-signature comparisons for possible ports; nothing has been ported.
 
-[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
-
-## Developer resources { #research }
-
-<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
-
-[Research for this model](../research/em10-iv.md) · [Community](../../docs/community.md)
+[Full project details](../projects/caduceus-ep7.md#for-em10-iv) · [View the testing request](https://github.com/cakelesscoder/caduceus-ep7/issues/21)

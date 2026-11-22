@@ -2,30 +2,20 @@
 
 # Olympus OM-D E-M10 Mark II
 
-E120: one card-loaded plugin project for firmware 1.4, tested by its maintainer on one body; distinct from the E-M10 Mark I and Mark IV.
+Model E120
+{ .camera-id }
 
-**Model code:** E120 · **Also known as:** E-M10 II, E-M10 Mark II, E-M10II, EM10II · **Stock firmware covered:** 1.4
-{ .facts }
+<span id="research"></span><span id="platform"></span><span id="firmware"></span><span id="evidence"></span><span id="talk"></span>
 
-[View the showcase](../showcases/em10-ii.md){ #features .btn .btn-primary }
+[Developer research for this camera](../research/em10-ii.md)
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
+<span id="features"></span><span id="projects"></span>
 
-## Firmware projects { #projects }
 
-<div class="glance" markdown="1">
+No community firmware release is catalogued for this camera.
 
-**Releases for this camera:** none listed here.
+## In development { #in-development }
 
-**No release for this camera yet:** [fenykl](../showcases/em10-ii.md#fenykl).
+### fenykl { #fenykl }
 
-</div>
-
-[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
-
-## Developer resources { #research }
-
-<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
-
-[Research for this model](../research/em10-ii.md) · [Community](../../docs/community.md)
+[Full project details](../projects/fenykl.md#for-em10-ii)

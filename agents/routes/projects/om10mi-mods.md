@@ -8,7 +8,7 @@ Firmware mod for the original OM-D E-M10 with 18 film looks, a colour wheel, per
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [om10mi-mods.yaml](../../../records/projects/om10mi-mods.yaml) | Project scope, related work and contribution destination | 7,972 | ~1,993 |
+| [om10mi-mods.yaml](../../../records/projects/om10mi-mods.yaml) | Project scope, related work and contribution destination | 8,158 | ~2,040 |
 | [om10mi-mods.yaml](../../../records/sources/om10mi-mods.yaml) | Find the relevant source/observation ID; use bounded reads | 9,149 | ~2,288 |
 | [om10mi-mods.yaml](../../../records/evidence/om10mi-mods.yaml) | Find the relevant source/observation ID; use bounded reads | 7,605 | ~1,902 |
 

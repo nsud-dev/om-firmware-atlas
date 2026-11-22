@@ -12,8 +12,6 @@ With the notes' patches, om-emu shows the vector-GPU layer and the camera's own 
 
 [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M5+Mark+III+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+notes+%28E-M5+Mark+III%29+%C2%B7+notes%27+om-emu+patch+set+%282026-11-21%29)
 
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Provenance:** maintainer summary. **Reported:** 2026-11-21. **Test date:** 2026-11-21.
 
 **Reported/observed package SHA-256:** not recorded.

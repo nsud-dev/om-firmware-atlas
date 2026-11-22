@@ -2,32 +2,60 @@
 
 # OM SYSTEM OM-5
 
-Original E144: several projects have distinct experiments. Mark II results do not apply.
+Model E144
+{ .camera-id }
 
-**Model code:** E144 · **Also known as:** Original OM-5, OM5 · **Stock firmware covered:** 1.2
-{ .facts }
+<span id="research"></span><span id="platform"></span><span id="firmware"></span><span id="evidence"></span><span id="talk"></span>
 
-[View the showcase](../showcases/om5.md){ #features .btn .btn-primary }
+[Developer research for this camera](../research/om5.md)
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+<span id="features"></span><span id="projects"></span>
+
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
-## Firmware projects { #projects }
+<section class="model-panel" markdown="1">
 
-<div class="glance" markdown="1">
+## db firmware / om-c-firmware { #db-firmware }
 
-**Releases for this camera:**
+Beta patches include Panasonic aperture rings, Korean menus and Hybrid Shutter. The Mark II-based port’s boot fix has only simulator and emulator results in the release notes.
 
-- [db firmware / om-c-firmware](../showcases/om5.md#db-firmware) · dbv0.4.4b · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
+**dbv0.4.4b**
+{ .release-scope }
 
-**No release for this camera yet:** [Caduceus for OM-5](../showcases/om5.md#caduceus-om5), [Caduceus port for the original OM-5 (tadejs)](../showcases/om5.md#caduceus-om5-tadejs).
+No camera test recorded for this release.
 
-</div>
+Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
+{ .release-warning }
 
-[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
+[Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b)
 
-## Developer resources { #research }
+<details class="mod-details" markdown="1"><summary>Features and examples</summary>
 
-<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
+- **Panasonic aperture rings.** The aperture ring on Panasonic lenses that have one controls the aperture.
+- **Korean menus.** Korean language support on several bodies.
+- **Hybrid Shutter.** Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
 
-[Research for this model](../research/om5.md) · [Community](../../docs/community.md)
+</details>
+
+[Full project details](../projects/db-firmware.md#for-om5)
+
+</section>
+
+## In development { #in-development }
+
+### Caduceus for OM-5 { #caduceus-om5 }
+
+No working build for this camera. One test build (pre-alpha 1) failed to start on an owner's original OM-5, and OM's firmware was put back from the card. The releases are for the OM-5 Mark II only, and Mark II results do not apply here. Current original OM-5 work is the tadejs port.
+
+[Full project details](../projects/caduceus-om5.md#for-om5)
+
+### Caduceus port for the original OM-5 (tadejs) { #caduceus-om5-tadejs }
+
+Not released: an experimental branch offered to Caduceus for OM-5 as a pull request. Its test steps C1 to C5 passed on the owner's OM-5; the COLOR 1–3 back end runs in an emulator only, with no Picture Mode entry yet.
+
+[Full project details](../projects/caduceus-om5-tadejs.md#for-om5)
+
+
+[Report a camera result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+)

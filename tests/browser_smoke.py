@@ -17,41 +17,54 @@ class SiteHandler(SimpleHTTPRequestHandler):
 def owner_journey(page, base, phone):
     page.goto(base)
     finder = page.get_by_label("Find your camera")
+    finder.fill("OM-5")
+    matches = page.locator(".finder-results a:visible")
+    expect(matches).to_have_count(2)
+    finder.press("Enter")
+    expect(page).to_have_url(base)
     finder.fill("E148")
     finder.press("Enter")
     expect(page).to_have_url(base + "views/cameras/om5-ii/")
-
-    page.get_by_role("link", name="View the showcase").click()
-    expect(page).to_have_url(base + "views/showcases/om5-ii/")
     expect(page.locator("#primary-nav").get_by_text("For camera owners", exact=True)).to_have_attribute(
         "aria-current", "true")
     project = page.locator(".model-panel:has(> #caduceus-om5)")
-    expect(project.get_by_role("img")).to_have_attribute("src", re.compile(r"picture-mode-look\.png$"))
+    guide = project.get_by_role("link", name="Install guide")
+    expect(guide).to_be_in_viewport()
     expect(project.get_by_role("link", name="Full project details")).to_have_attribute(
         "href", re.compile(r"caduceus-om5/#for-om5-ii$"))
-
     # Click the actual link with pointer hit testing. Do not fetch upstream.
-    guide = project.get_by_role("link", name="Install guide")
     destination = guide.evaluate("a => a.href")
     page.route(destination, lambda route: route.fulfill(content_type="text/plain", body="Install guide"))
     guide.click()
     expect(page).to_have_url(destination)
     page.go_back()
 
+    project.locator("summary").click()
+    expect(project.get_by_role("img")).to_have_attribute("src", re.compile(r"picture-mode-look\.png$"))
+
+    page.goto(base + "views/showcases/om5-ii/#omkit")
+    expect(page).to_have_url(base + "views/cameras/om5-ii/#omkit")
+    page.get_by_role("link", name="Developer research for this camera").click()
+    expect(page).to_have_url(base + "views/research/om5-ii/")
+    page.get_by_role("link", name="Mods & installation for this camera").click()
+    expect(page).to_have_url(base + "views/cameras/om5-ii/")
+
     page.keyboard.press("/")
     search = page.get_by_role("searchbox", name="Search terms")
     expect(search).to_be_focused()
-    search.press_sequentially("Caduceus")
-    results = page.locator(".search-results a")
-    # The search index is loaded by a worker. Wait for the first real result.
-    page.wait_for_function("""() => {
-        if (document.querySelector('.search-results a')) return true;
-        document.querySelector('#mkdocs-search-query').dispatchEvent(new KeyboardEvent('keyup'));
-        return false;
-    }""", polling=200)
-    destination = results.first.evaluate("a => a.href")
+    search.fill("OM-5")
+    expect(page.locator(".search-models article:visible")).to_have_count(2)
     search.press("Enter")
-    expect(page).to_have_url(destination)
+    expect(page).to_have_url(base + "views/cameras/om5-ii/")
+    search.fill("OM-5 Mark II")
+    expect(page.locator(".search-models article:visible")).to_have_count(1)
+    search.press("Enter")
+    expect(page).to_have_url(base + "views/cameras/om5-ii/")
+
+    page.goto(base + "views/cameras/om5/")
+    expect(page.get_by_role("link", name="Install guide", exact=True)).to_have_count(0)
+    expect(page.get_by_role("link", name="Read release notes")).to_be_visible()
+    expect(page.get_by_role("heading", name="In development")).to_be_visible()
 
     if phone:
         menu = page.locator("[data-menu-toggle]")
@@ -82,22 +95,41 @@ def developer_journey(page, base, phone):
         page.locator("[data-menu-toggle]").click()
     page.locator("#primary-nav").get_by_role("link", name="For developers").click()
     expect(page).to_have_url(base + "research/")
-    page.locator(".explore-grid").get_by_role("link", name="Cross-body research").click()
-    expect(page).to_have_url(base + "cross-body/")
-    page.get_by_role("link", name="E-M5 Mark III platform").click()
-    expect(page).to_have_url(base + "views/research/em5-iii/#platform")
-    expect(page.get_by_role("heading", name="Claims and test evidence")).to_be_visible()
-    page.goto(base + "research/")
-    page.locator(".explore-grid").get_by_role("link", name="Research by camera").click()
-    page.get_by_role("link", name="OM-5 Mark II", exact=True).click()
-    expect(page).to_have_url(base + "views/research/om5-ii/")
-    page.goto(base + "research/")
-    page.get_by_role("link", name="Use the Atlas with your AI", exact=True).last.click()
-    expect(page).to_have_url(base + "research-with-ai/")
-    page.go_back()
-    page.get_by_role("link", name="Share a finding").click()
-    expect(page).to_have_url(base + "research-with-ai/#share-what-you-find")
+    expect(page.get_by_role("heading", name="Recent research findings")).to_be_visible()
+    page.get_by_role("link", name="By topic", exact=True).click()
+    page.get_by_role("link", name="Display and drawing").click()
+    expect(page).to_have_url(base + "knowledge/subsystems/display/")
+    expect(page.get_by_role("link", name="Drawing to the screen")).to_be_visible()
 
+    page.goto(base + "research/")
+    finder = page.get_by_label("Find your camera")
+    finder.fill("E148")
+    finder.press("Enter")
+    expect(page).to_have_url(base + "views/research/om5-ii/")
+    page.get_by_role("link", name="Firmware & platform").click()
+    expect(page).to_have_url(base + "views/research/om5-ii/#platform")
+    page.get_by_role("link", name="File identity, platform and stock features").click()
+    expect(page).to_have_url(base + "views/firmware/om5-ii-1100/")
+
+    page.keyboard.press("/")
+    search = page.get_by_role("searchbox", name="Search terms")
+    search.press_sequentially("Ghidra MN103")
+    page.wait_for_function("""() => {
+        if (document.querySelector('.search-results article:not([hidden]) .search-kind')) return true;
+        document.querySelector('#mkdocs-search-query').dispatchEvent(new KeyboardEvent('keyup'));
+        return false;
+    }""", polling=200)
+    result = page.locator('.search-results article:not([hidden])').first
+    expect(result.locator('.search-kind')).to_have_text('Project or tool')
+    expect(result.get_by_role('link')).to_have_attribute('href', re.compile(r'views/projects/ghidra-mn103/'))
+
+    page.goto(base + "research/")
+    page.get_by_role("link", name="Test evidence", exact=True).filter(visible=True).last.click()
+    expect(page).to_have_url(base + "views/evidence/")
+    expect(page.get_by_text("Camera test · reported working", exact=False).first).to_be_visible()
+    expect(page.get_by_text("Emulator test ·", exact=False).first).to_be_visible()
+    page.get_by_role("link", name="Use with AI").click()
+    expect(page).to_have_url(base + "research-with-ai/")
 
 
 if __name__ == "__main__":

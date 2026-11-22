@@ -5,7 +5,7 @@
 A downstream OM-3 fork for trying fixes before sending them upstream.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
@@ -14,18 +14,6 @@ A downstream OM-3 fork for trying fixes before sending them upstream.
 [Ask or report issues](https://github.com/fernandezk26/camera-stuff/issues){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for OM-3 downstream experiments (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/camera-stuff.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** experimental fork · **Camera details:** [OM-3](#for-om3) · **Maintained by** [fernandezk26](https://github.com/fernandezk26)
 { .facts }
@@ -42,7 +30,7 @@ Use the Atlas entry for OM-3 downstream experiments (https://github.com/xulfr/om
 **Get it:** No release for this camera yet.
 { .card-get }
 
-[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
+[Mods and installation](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 

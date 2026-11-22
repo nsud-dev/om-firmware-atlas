@@ -16,15 +16,13 @@ nav:
       - Cameras: views/cameras/index.md
       - TruePic generations: truepic-generations.md
       - Before you install: before-you-install.md
-      - Reading the evidence: evidence.md
-      - Report a camera result: report.md
   - For developers:
-      - Developer overview: research.md
-      - Cross-body research: cross-body.md
+      - Firmware research: research.md
       - Research by camera: views/research/index.md
-      - Use the Atlas with your AI: research-with-ai.md
-      - Contribute a finding: add.md
-      - Community and Discord: community.md
+      - Research by topic: knowledge/README.md
+      - Technical reference: views/reference/index.md
+      - Test evidence: views/evidence/index.md
+      - Projects and tools: views/projects/index.md
 plugins:
   - search
 markdown_extensions:

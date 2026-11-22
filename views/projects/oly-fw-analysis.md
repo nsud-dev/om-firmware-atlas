@@ -5,7 +5,7 @@
 The research base: PEN-F HSL, firmware formats and tools for many bodies.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
@@ -16,18 +16,6 @@ The research base: PEN-F HSL, firmware formats and tools for many bodies.
 [Build the PEN-F HSL patch](https://github.com/fishcu/oly_fw_analysis/blob/main/patches/hsl/pen-f/README.md){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/oly-fw-analysis.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** research · **Camera details:** [PEN-F](#for-pen-f), [OM-5](#for-om5), [PEN E-P7](#for-ep7), [OM-3](#for-om3) · **Latest release:** [alpha-20261017 (pre-release)](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017), 18 Oct 2026 · **Maintained by** [fishcu](https://github.com/fishcu)
 { .facts }
@@ -43,10 +31,10 @@ Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-f
 **For this camera:** Publishes the PEN-F HSL patch as alpha releases: hue and lightness added to the 12-colour saturation editor in COLOR1–3. The project asks for a firsthand hardware report before publishing a flashable patch.
 { .card-for }
 
-**Get it:** [alpha-20261017 (pre-release)](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017), 18 Oct 2026. Check the release notes for files and instructions for this model.
+**Get it:** [alpha-20261017 (pre-release)](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017), 18 Oct 2026. See the release notes for this model.
 { .card-get }
 
-[Camera overview](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
+[Mods and installation](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
 
 </div>
 
@@ -60,7 +48,7 @@ Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-f
 **Get it:** [Project home](https://github.com/fishcu/oly_fw_analysis)
 { .card-get }
 
-[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
+[Mods and installation](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -74,7 +62,7 @@ Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-f
 **Get it:** [Project home](https://github.com/fishcu/oly_fw_analysis)
 { .card-get }
 
-[Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
+[Mods and installation](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
 
 </div>
 
@@ -88,7 +76,7 @@ Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-f
 **Get it:** [Project home](https://github.com/fishcu/oly_fw_analysis)
 { .card-get }
 
-[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
+[Mods and installation](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 
@@ -100,7 +88,7 @@ The camera page links this project as a research reference.
 
 Recorded findings: [Card-file debug Wi-Fi shell on stock E-M5 III 1.7](../capabilities/em5-iii-wifi-debug-shell.md).
 
-[Camera overview](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
+[Mods and installation](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
 
 </div>
 

@@ -2,41 +2,8 @@
 
 # Olympus PEN-F showcase
 
-[Camera overview](../cameras/pen-f.md)
+[Mods and installation](../cameras/pen-f.md)
 
+- [Olympus firmware research](../cameras/pen-f.md#oly-fw-analysis){ #oly-fw-analysis }
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
-
-<section class="model-panel" markdown="1">
-
-## Olympus firmware research { #oly-fw-analysis }
-
-**For this camera:** Publishes the PEN-F HSL patch as alpha releases: hue and lightness added to the 12-colour saturation editor in COLOR1–3. The project asks for a firsthand hardware report before publishing a flashable patch.
-{ .card-for }
-
-**Get it:** [alpha-20261017 (pre-release)](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017), 18 Oct 2026. Check the release notes for files and instructions for this model.
-{ .card-get }
-
-Experimental; recovery from every failure is not guaranteed. Bring saturation values within −5 to +5 before downgrading.
-{ .release-warning }
-
-- **PEN-F HSL** · Alpha. Hue and lightness added to the 12-colour saturation editor in COLOR1–3, from −7 to +7 since the 17 October alpha.
-
-[Full project details](../projects/oly-fw-analysis.md#for-pen-f) · [Ask or report issues](https://github.com/fishcu/oly_fw_analysis/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+research+%C2%B7+alpha-20261017)
-
-</section>
-
-<section class="model-panel" markdown="1">
-
-## db firmware / om-c-firmware { #db-firmware }
-
-**For this camera:** No PEN-F feature is catalogued.
-{ .card-for }
-
-**dbv0.3.2 · The release names this camera without saying which features it adds.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2).
-{ .release-warning }
-
-[Full project details](../projects/db-firmware.md#for-pen-f) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues)
-
-</section>
+- [db firmware / om-c-firmware](../cameras/pen-f.md#db-firmware){ #db-firmware }

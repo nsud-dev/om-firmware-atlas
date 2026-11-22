@@ -14,18 +14,6 @@ How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
 
 </div>
 
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus firmware notes (E-M5 Mark III) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/em5-iii-notes.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Type:** research · **Camera details:** [OM-D E-M5 Mark III](#for-em5-iii) · **Maintained by** [nsud-dev](https://github.com/nsud-dev)
 { .facts }
 
@@ -41,7 +29,7 @@ Use the Atlas entry for Olympus firmware notes (E-M5 Mark III) (https://github.c
 **Get it:** [Firmware guides](https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/guides/README.md)
 { .card-get }
 
-[Camera overview](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
+[Mods and installation](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
 
 </div>
 

@@ -143,6 +143,10 @@ records:
     url: https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1
     prerelease: true
     camera_ids: [camera.om5-ii]
+    installation:
+      camera.om5-ii:
+        firmware_id: firmware.om5-ii-1100
+        url: https://github.com/xulfr/caduceus-om5/blob/4c1e0e53ca9bc5ea5005f268d5ba7953dc4a42d1/docs/INSTALL.md
     highlights:
     - Black and White points, split-tone controls and live-view updates without a half-press.
     - Picture Mode stays open 30 seconds; startup guard on the gamma hook after an intermittent boot loop on a

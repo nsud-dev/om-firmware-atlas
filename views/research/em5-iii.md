@@ -2,21 +2,13 @@
 
 # Olympus OM-D E-M5 Mark III research
 
-E137: firmware 1.7 studied in depth; focus stacking with any lens, a Live ND port and the card-file debug shell tested on one camera.
+E137 · Stock firmware 1.7 · build 1700
+{ .facts }
 
-[Camera overview](../cameras/em5-iii.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/em5-iii.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus OM-D E-M5 Mark III (E137) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/em5-iii.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -151,28 +143,9 @@ Results belong to the named project and package. Emulator output does not establ
 
 ## Firmware and technical reference { #platform }
 
-[E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md).
-
 ### E-M5 Mark III firmware 1.7, build 1700
 
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Image processor generation](../reference/em5-iii-1700.image-processor.md) | TruePic VIII | Single source |
-| [Main CPU](../reference/em5-iii-1700.main-cpu.md) | MN103/AM33-2, cores CPU0 to CPU2 | Single source |
-| [ARM co-processor](../reference/em5-iii-1700.arm-coprocessor.md) | Cortex-A9, Linux 4.4 | Single source |
-| [Image memory class](../reference/em5-iii-1700.memory-class.md) | 1 GB (image buffer map 924 MB) | Single source |
-| [Update file magic](../reference/em5-iii-1700.container-magic.md) | OE 13 70 | Single source |
-| [Firmware blocks](../reference/em5-iii-1700.firmware-blocks.md) | 5 | Single source |
-| [Main program compression](../reference/em5-iii-1700.main-compression.md) | None | Single source |
-| [Wi-Fi chip](../reference/em5-iii-1700.wifi-chip.md) | CYW43455 | Single source |
-| [Live ND](../reference/em5-iii-1700.native-nd.md) | Partial: Plumbing compiled in but off; no DSP jobs or states | Single source |
-| [USB webcam (UVC)](../reference/em5-iii-1700.native-uvc-webcam.md) | Absent | Single source |
-| [Live GND](../reference/em5-iii-1700.native-live-gnd.md) | Absent | Single source |
-| [Handheld High Res Shot](../reference/em5-iii-1700.native-hhhr.md) | Partial: Tripod High Res only; ARM hhhr helper present | Single source |
-| [Starry Sky AF](../reference/em5-iii-1700.native-starry-sky-af.md) | Absent | Single source |
-| [AI subject detection AF](../reference/em5-iii-1700.native-subject-detect.md) | Absent | Single source |
+[File identity, platform and stock features](../firmware/em5-iii-1700.md)
 
 ### Build-specific reference
 
@@ -221,6 +194,8 @@ What the stock firmware itself contains, separate from what projects add. Follow
 - [Only call code in a section that has already loaded](../reference/hazard.section-load-order.md)
 - [A hung task does not trigger the watchdog](../reference/hazard.task-hang-no-reset.md)
 - [Give added shooting states a handler for every event they can receive](../reference/hazard.unhandled-state-event.md)
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

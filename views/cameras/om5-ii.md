@@ -2,32 +2,106 @@
 
 # OM SYSTEM OM-5 Mark II
 
-E148: v0.2.0-alpha1 has an overall positive owner report; original OM-5 work is separate.
+Model E148
+{ .camera-id }
 
-**Model code:** E148 · **Also known as:** OM-5 II, OM5, OM5II · **Stock firmware covered:** 1.1
-{ .facts }
+<span id="research"></span><span id="platform"></span><span id="firmware"></span><span id="evidence"></span><span id="talk"></span>
 
-[View the showcase](../showcases/om5-ii.md){ #features .btn .btn-primary }
+[Developer research for this camera](../research/om5-ii.md)
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+<span id="features"></span><span id="projects"></span>
+
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
-## Firmware projects { #projects }
+<section class="model-panel" markdown="1">
 
-<div class="glance" markdown="1">
+## Caduceus for OM-5 { #caduceus-om5 }
 
-**Releases for this camera:**
+Color Profiles 1–3 and Monochrome Profiles 1–3, Custom looks, Colour editor.
 
-- [Caduceus for OM-5](../showcases/om5-ii.md#caduceus-om5) · v0.2.0-alpha1 (pre-release) · [Camera test · reported working](../evidence/om5-ii-v020-alpha1-owner.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-5+%C2%B7+v0.2.0-alpha1)
-- [OMKit](../showcases/om5-ii.md#omkit) · v0.1.0 · The latest camera report gives its build as [loader fw1100 (OMKit 0.1.0)](../evidence/om5-ii-omkit-loader.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=OMKit+%C2%B7+v0.1.0)
-- [db firmware / om-c-firmware](../showcases/om5-ii.md#db-firmware) · dbv0.4.4b · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
+**v0.2.0-alpha1 (pre-release)** · Stock firmware 1.1
+{ .release-scope }
 
-</div>
+[Camera test · reported working](../evidence/om5-ii-v020-alpha1-owner.md) (partial report)
 
-[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
+For E148 firmware 1.1. Verify the file on the card against the checksum in the release notes.
+{ .release-warning }
 
-## Developer resources { #research }
+[Install guide](https://github.com/xulfr/caduceus-om5/blob/4c1e0e53ca9bc5ea5005f268d5ba7953dc4a42d1/docs/INSTALL.md){ .btn .btn-primary } · [Release notes & files](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1)
 
-<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
+<details class="mod-details" markdown="1"><summary>Features and examples</summary>
 
-[Research for this model](../research/om5-ii.md) · [Community](../../docs/community.md)
+- **Color Profiles 1–3 and Monochrome Profiles 1–3.** Six hidden Picture Mode slots restored after Color Creator.
+- **Custom looks.** Up to ten looks from LookLab in one LOOKS.BIN; the trash button steps through them and the look's name is shown.
+- **Colour editor.** Hue, saturation and lightness for 12 colours, with a tone curve, Sharpness, Contrast and Shading.
+
+![The OM-5 Mark II Picture Mode screen showing Color Profile 2 with the look Portra 160](../../docs/assets/projects/caduceus-om5/picture-mode-look.png)
+{ .hero-image }
+
+A look's name on the Picture Mode screen. *Caduceus for OM-5 website.*
+{ .image-caption }
+
+</details>
+
+[Full project details](../projects/caduceus-om5.md#for-om5-ii)
+
+</section>
+
+<section class="model-panel" markdown="1">
+
+## OMKit { #omkit }
+
+Card-loaded core and modules, Creative profiles (CREATPRF), Film look (FILMLOOK).
+
+**v0.1.0** · Stock firmware 1.1
+{ .release-scope }
+
+No camera test recorded for this release. See the camera report for [loader fw1100 (OMKit 0.1.0)](../evidence/om5-ii-omkit-loader.md).
+
+Unofficial; only for the OM-5 Mark II on firmware 1.1. Never interrupt the firmware update; a power loss while writing leaves no known recovery path.
+{ .release-warning }
+
+[Install guide](https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/fw1100/install.md){ .btn .btn-primary } · [Release notes & files](https://github.com/necrostaz/omkit/releases/tag/v0.1.0)
+
+<details class="mod-details" markdown="1"><summary>Features and examples</summary>
+
+- **Card-loaded core and modules.** A one-time loader patch starts OMKIT\CORE.BIN from the card on every power-on. Updates are file copies; no card, or OK held at power-on, gives a stock camera.
+- **Creative profiles (CREATPRF).** Three colour and three monochrome profiles in the picture mode strip, edited in the camera's own column (12-sector saturation, tone curve, filter, toning, grain); applied to stills, live view and video.
+- **Film look (FILMLOOK).** One picture mode, i-Enhance by default, becomes a film look; the dials step through .ISP presets on the card, 32 bundled, with a tone curve per preset and grain on stills.
+
+</details>
+
+[Full project details](../projects/omkit.md#for-om5-ii)
+
+</section>
+
+<section class="model-panel" markdown="1">
+
+## db firmware / om-c-firmware { #db-firmware }
+
+Korean menus and Hybrid Shutter, both beta.
+
+**dbv0.4.4b**
+{ .release-scope }
+
+No camera test recorded for this release.
+
+Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
+{ .release-warning }
+
+[Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b)
+
+<details class="mod-details" markdown="1"><summary>Features and examples</summary>
+
+- **Korean menus.** Korean language support on several bodies.
+- **Hybrid Shutter.** Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
+
+</details>
+
+[Full project details](../projects/db-firmware.md#for-om5-ii)
+
+</section>
+
+[Report a camera result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+)

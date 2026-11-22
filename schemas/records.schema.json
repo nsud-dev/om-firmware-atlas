@@ -88,6 +88,10 @@
               "url": {"type": "string", "format": "uri"}, "prerelease": {"type": "boolean"},
               "camera_ids": {"$ref": "#/$defs/ids"}, "highlights": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
               "camera_limits": {"type": "object", "minProperties": 1, "additionalProperties": {"enum": ["reported-not-working", "features-unspecified"]}},
+              "installation": {"type": "object", "minProperties": 1, "additionalProperties": {
+                "type": "object", "required": ["firmware_id", "url"], "additionalProperties": false,
+                "properties": {"firmware_id": {"type": "string"}, "url": {"type": "string", "format": "uri"}}
+              }},
               "warning": {"$ref": "#/$defs/text"}, "source_ref": {"type": "string"}
             }}},
           "images": {"type": "array", "items": {"type": "object", "additionalProperties": false,

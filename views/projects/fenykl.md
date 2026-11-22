@@ -5,7 +5,7 @@
 A loader flashed once, then plugins written in C from the SD card. E-M10 Mark II.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
@@ -17,18 +17,6 @@ A loader flashed once, then plugins written in C from the SD card. E-M10 Mark II
 [Firmware symbol table, 1.4](https://github.com/atx/fenykl/blob/dd8dde0ead63bfc2a722f65a7b86e19577ad9778/sdk/arch/em10ii/firmware.toml){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for fenykl (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/fenykl.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** mod · **Camera details:** [OM-D E-M10 Mark II](#for-em10-ii) · **Maintained by** [atx](https://github.com/atx)
 { .facts }
@@ -45,7 +33,7 @@ Use the Atlas entry for fenykl (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** No release for this camera yet.
 { .card-get }
 
-[Camera overview](../cameras/em10-ii.md) · [Test results](../research/em10-ii.md#evidence)
+[Mods and installation](../cameras/em10-ii.md) · [Test results](../research/em10-ii.md#evidence)
 
 </div>
 
