@@ -2,8 +2,8 @@
 import argparse
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
-from pathlib import Path
 import re
+from pathlib import Path
 from threading import Thread
 
 from playwright.sync_api import expect, sync_playwright
@@ -25,7 +25,7 @@ def owner_journey(page, base, phone):
     expect(page).to_have_url(base + "views/showcases/om5-ii/")
     expect(page.locator("#primary-nav").get_by_text("For camera owners", exact=True)).to_have_attribute(
         "aria-current", "true")
-    project = page.locator(".model-panel").filter(has=page.get_by_role("heading", name="Caduceus for OM-5", exact=True))
+    project = page.locator(".model-panel:has(> #caduceus-om5)")
     expect(project.get_by_role("img")).to_have_attribute("src", re.compile(r"picture-mode-look\.png$"))
     expect(project.get_by_role("link", name="Full project details")).to_have_attribute(
         "href", re.compile(r"caduceus-om5/#for-om5-ii$"))

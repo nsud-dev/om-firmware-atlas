@@ -267,6 +267,11 @@ class AtlasTests(unittest.TestCase):
         self.catalogue.records["project.caduceus-om3"]["camera_notes"] = [{"camera_id": "camera.pen-f", "note": "x"}]
         self.assertTrue(any("camera note for camera.pen-f" in e for e in self.catalogue.validate()))
 
+    def test_showcase_image_cannot_claim_uncatalogued_camera(self):
+        self.catalogue.records["project.caduceus-om5"]["images"][0]["camera_id"] = "camera.om3"
+        self.assertTrue(any("image" in error and "camera outside the project" in error
+                            for error in self.catalogue.validate()))
+
     def test_showcase_feature_cannot_claim_uncatalogued_camera(self):
         self.catalogue.records["project.caduceus-om3"]["features"][0]["camera_ids"] = ["camera.pen-f"]
         self.assertTrue(any("not in the project's camera_ids" in e for e in self.catalogue.validate()))
