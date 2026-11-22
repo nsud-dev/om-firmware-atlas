@@ -18,24 +18,12 @@ E148: v0.2.0-alpha1 has an overall positive owner report; original OM-5 work is 
 
 - [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5-ii) · dbv0.4.3 · The project reports that this build does not work on this camera. [Project’s release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3)
 
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Platform](#platform)
+**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Platform](#platform) · [Research](#research)
 
 </div>
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
-
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for OM SYSTEM OM-5 Mark II (E148) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om5-ii.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## What you can do with this camera { #features }
 
@@ -50,8 +38,10 @@ Features as each project describes them, with their status. Follow a project's o
 
 Six hidden Picture Mode slots restored after Color Creator.
 
-[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · [Latest project release for this model · v0.2.0-alpha1](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1) · [Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -62,8 +52,10 @@ Six hidden Picture Mode slots restored after Color Creator.
 
 Up to ten looks from LookLab in one LOOKS.BIN; the trash button steps through them and the look's name is shown.
 
-[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · [Latest project release for this model · v0.2.0-alpha1](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1) · [Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -74,8 +66,10 @@ Up to ten looks from LookLab in one LOOKS.BIN; the trash button steps through th
 
 Hue, saturation and lightness for 12 colours, with a tone curve, Sharpness, Contrast and Shading.
 
-[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii)
-{ .card-meta }
+Stock firmware 1.1 · [Evidence and limits for v0.1.0-alpha12](../capabilities/om5-ii-alpha12-hsl.md)
+
+[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · [Latest project release for this model · v0.2.0-alpha1](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1) · [Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -86,8 +80,10 @@ Hue, saturation and lightness for 12 colours, with a tone curve, Sharpness, Cont
 
 The mode, Kelvin and shift are kept for each Color Profile. Not yet checked on a camera.
 
+No separate test record linked to this feature.
+
 [Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -98,8 +94,10 @@ The mode, Kelvin and shift are kept for each Color Profile. Not yet checked on a
 
 Colour filter, toning, grain and tone, with the filter graphic restored in alpha12.
 
-[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · [Latest project release for this model · v0.2.0-alpha1](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1) · [Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -110,8 +108,10 @@ Colour filter, toning, grain and tone, with the filter graphic restored in alpha
 
 Two stronger Live ND settings after ND16.
 
-[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii)
-{ .card-meta }
+Stock firmware 1.1 · [Evidence and limits for v0.1.0-alpha12](../capabilities/om5-ii-alpha12-nd.md)
+
+[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · [Latest project release for this model · v0.2.0-alpha1](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1) · [Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -122,8 +122,10 @@ Two stronger Live ND settings after ND16.
 
 Per-profile Black and White (−7..+7) on the tone-curve page of Color Profiles 1–3; INFO steps Hi/Sh, Black/White and Mid. Live view updates without a half-press. Covered by the overall owner report.
 
-[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · since v0.2.0-alpha1
-{ .card-meta }
+Stock firmware 1.1 · [Evidence and limits for v0.2.0-alpha1](../capabilities/om5-ii-v020-alpha1-tone.md)
+
+[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · since v0.2.0-alpha1 · [Latest project release for this model · v0.2.0-alpha1](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1) · [Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -134,8 +136,10 @@ Per-profile Black and White (−7..+7) on the tone-curve page of Color Profiles 
 
 Shadow, Midtone and Highlight Tint for Color Profiles 1–3, each one of 12 colours; INFO switches the wheel between HSL and Tint. Covered by the overall owner report.
 
-[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · since v0.2.0-alpha1
-{ .card-meta }
+Stock firmware 1.1 · [Evidence and limits for v0.2.0-alpha1](../capabilities/om5-ii-v020-alpha1-tone.md)
+
+[Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · since v0.2.0-alpha1 · [Latest project release for this model · v0.2.0-alpha1](https://github.com/xulfr/caduceus-om5/releases/tag/v0.2.0-alpha1) · [Install guide](https://github.com/xulfr/caduceus-om5/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -146,8 +150,10 @@ Shadow, Midtone and Highlight Tint for Color Profiles 1–3, each one of 12 colo
 
 Removed before v0.2.0-alpha1. A development build showed no grain on the camera at any level; the stock grain pass is monochrome-only, so colour grain needs image-pipeline work on an experiment branch.
 
+No separate test record linked to this feature.
+
 [Caduceus for OM-5](../projects/caduceus-om5.md#for-om5-ii) · since v0.2.0-dev
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -161,8 +167,10 @@ Korean language support on several bodies.
 **dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
 { .release-warning }
 
+No separate test record linked to this feature.
+
 [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -176,8 +184,10 @@ Switches to the electronic shutter on overexposure in P or A mode and, since v0.
 **dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
 { .release-warning }
 
+No separate test record linked to this feature.
+
 [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5-ii) · since dbv0.4.2
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -188,8 +198,10 @@ Switches to the electronic shutter on overexposure in P or A mode and, since v0.
 
 A one-time loader patch starts OMKIT\CORE.BIN from the card on every power-on. Updates are file copies; no card, or OK held at power-on, gives a stock camera.
 
-[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0
-{ .card-meta }
+Stock firmware 1.1 · [Evidence and limits for loader fw1100 (OMKit 0.1.0)](../capabilities/om5-ii-omkit-loader.md)
+
+[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0 · [Latest project release for this model · v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0) · [Install guide](https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/fw1100/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -200,8 +212,10 @@ A one-time loader patch starts OMKIT\CORE.BIN from the card on every power-on. U
 
 Three colour and three monochrome profiles in the picture mode strip, edited in the camera's own column (12-sector saturation, tone curve, filter, toning, grain); applied to stills, live view and video.
 
-[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0
-{ .card-meta }
+No separate test record linked to this feature.
+
+[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0 · [Latest project release for this model · v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0) · [Install guide](https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/fw1100/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -212,8 +226,10 @@ Three colour and three monochrome profiles in the picture mode strip, edited in 
 
 One picture mode, i-Enhance by default, becomes a film look; the dials step through .ISP presets on the card, 32 bundled, with a tone curve per preset and grain on stills.
 
-[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0
-{ .card-meta }
+Stock firmware 1.1 · [Evidence and limits for loader fw1100 (OMKit 0.1.0)](../capabilities/om5-ii-omkit-filmlook.md)
+
+[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0 · [Latest project release for this model · v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0) · [Install guide](https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/fw1100/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -224,8 +240,10 @@ One picture mode, i-Enhance by default, becomes a film look; the dials step thro
 
 A public API table, headers and an example module HELLO for writing modules that load from the card.
 
-[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0
-{ .card-meta }
+No separate test record linked to this feature.
+
+[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0 · [Latest project release for this model · v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0) · [Install guide](https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/fw1100/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -236,8 +254,10 @@ A public API table, headers and an example module HELLO for writing modules that
 
 ISP player, ISP fitter (.cube look to preset) and ISP neurofit (preset from RAW files and film scans, driven by an AI agent), run on a computer.
 
-[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0
-{ .card-meta }
+No separate test record linked to this feature.
+
+[OMKit](../projects/omkit.md#for-om5-ii) · since v0.1.0 · [Latest project release for this model · v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0) · [Install guide](https://github.com/necrostaz/omkit/blob/a29db07f4cab2f9f9688462975ffa510b4d6fd97/docs/platform/om5m2/fw1100/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -499,6 +519,20 @@ What the stock firmware itself contains, separate from what projects add. Follow
 ## Firmware
 
 [om5-ii firmware 1.1, build 1100](../firmware/om5-ii-1100.md).
+
+## Research this camera { #research }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for OM SYSTEM OM-5 Mark II (E148) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om5-ii.md) to investigate [my question] on [my stock firmware version].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Sources and record
 

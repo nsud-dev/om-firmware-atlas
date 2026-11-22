@@ -16,24 +16,12 @@ E147: advanced Caduceus work, other modifications and an established research no
 
 **No release for this camera yet:** [OM-3 downstream experiments](../projects/camera-stuff.md#for-om3).
 
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk)
+**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Research](#research)
 
 </div>
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
-
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for OM SYSTEM OM-3 (E147) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om3.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## What you can do with this camera { #features }
 
@@ -48,8 +36,10 @@ Features as each project describes them, with their status. Follow a project's o
 
 FILM 1–20 appear after COLOR 1–4, with their names on the title, quick menu, shooting screen and viewfinder.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.24.1
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.24.1 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -60,8 +50,10 @@ FILM 1–20 appear after COLOR 1–4, with their names on the title, quick menu,
 
 Looks inspired by Portra, Gold, Ektar, Ektachrome, Kodachrome, CineStill 800T, Velvia, Provia, Superia and more, made only from the camera's own settings.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -72,8 +64,10 @@ Looks inspired by Portra, Gold, Ektar, Ektachrome, Kodachrome, CineStill 800T, V
 
 Hue and luminance for each of 12 colours next to the camera's saturation, with Color Mix and RGB curves since v0.30.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.11
-{ .card-meta }
+Stock firmware 1.1 · [Evidence and limits for v0.30.3](../capabilities/om3-hsl.md)
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.11 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -84,8 +78,10 @@ Hue and luminance for each of 12 colours next to the camera's saturation, with C
 
 Tint shadows and highlights separately in 12 colours, with a Tone Balance row. Shows in live view.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.26
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.26 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -96,8 +92,10 @@ Tint shadows and highlights separately in 12 colours, with a Tone Balance row. S
 
 Colour grain made by the camera's image processor, as fast as a photo without grain.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.25
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.25 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -108,8 +106,10 @@ Colour grain made by the camera's image processor, as fast as a photo without gr
 
 A Glow / Clarity row, and halation: a red glow around bright lights, strength 0–5.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.28
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.28 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -120,8 +120,10 @@ A Glow / Clarity row, and halation: a red glow around bright lights, strength 0�
 
 Edits stay with each film over power off. A * marks what changed; hold OK to reset.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.25
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.25 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -132,8 +134,10 @@ Edits stay with each film over power off. A * marks what changed; hold OK to res
 
 Films, your changes and the Extras settings live in the camera's memory, so any card works, or none.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.29
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.29 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -144,8 +148,10 @@ Films, your changes and the Extras settings live in the camera's memory, so any 
 
 Each film and COLOR remembers its white balance mode and Kelvin. From v0.40.1, film compensation shows in the Super Control Panel and edits there are saved with the film.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.28
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.28 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -156,8 +162,10 @@ Each film and COLOR remembers its white balance mode and Kelvin. From v0.40.1, f
 
 All four arrow keys in Button Function; each Creative Dial position set to CRT, ART, COLOR or MONO, with its own film.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.27
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.27 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -168,8 +176,10 @@ All four arrow keys in Button Function; each Creative Dial position set to CRT, 
 
 Each JPEG records its film and recipe in EXIF, so LookLab can open the film from a photo.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.27
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.27 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -180,8 +190,10 @@ Each JPEG records its film and recipe in EXIF, so LookLab can open the film from
 
 Make and change films in your browser with a preview on sample photos or your own, starting from 62 looks. Nothing is uploaded.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -192,8 +204,10 @@ Make and change films in your browser with a preview on sample photos or your ow
 
 LookLab finds the camera settings closest to a .cube LUT or a Lightroom preset, with a match score.
 
+No separate test record linked to this feature.
+
 [Caduceus for OM-3](../projects/caduceus-om3.md#for-om3)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -204,8 +218,10 @@ LookLab finds the camera settings closest to a .cube LUT or a Lightroom preset, 
 
 Extends in-camera focus stacking to more lenses, including the M.Zuiko 17mm F1.8 II.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.40
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.40 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -216,8 +232,10 @@ Extends in-camera focus stacking to more lenses, including the M.Zuiko 17mm F1.8
 
 The aperture ring on Panasonic lenses that have one sets the aperture.
 
+No separate test record linked to this feature.
+
 [Caduceus for OM-3](../projects/caduceus-om3.md#for-om3)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -228,8 +246,10 @@ The aperture ring on Panasonic lenses that have one sets the aperture.
 
 XPan, 21:9 and 5:4 for JPEGs. RAW retains the full sensor with crop metadata.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.40-alpha
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.40-alpha · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -240,8 +260,10 @@ XPan, 21:9 and 5:4 for JPEGs. RAW retains the full sensor with crop metadata.
 
 Black or white JPEG borders and adjustable film grain with Fine, Medium and Coarse sizes. v0.40.2 reduces colour banding and red–green speckle.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.40-alpha
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.40-alpha · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -252,8 +274,10 @@ Black or white JPEG borders and adjustable film grain with Fine, Medium and Coar
 
 Choose which of 17 items appear on the rear screen in Information 1, 2 and 3.
 
-[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.40
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for OM-3](../projects/caduceus-om3.md#for-om3) · since v0.40 · [Latest project release for this model · v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+{ .feature-actions }
 
 </div>
 
@@ -264,8 +288,10 @@ Choose which of 17 items appear on the rear screen in Information 1, 2 and 3.
 
 Korean language support on several bodies.
 
-[db firmware / om-c-firmware](../projects/db-firmware.md#for-om3)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[db firmware / om-c-firmware](../projects/db-firmware.md#for-om3) · [Latest project release for this model · dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3)
+{ .feature-actions }
 
 </div>
 
@@ -276,8 +302,10 @@ Korean language support on several bodies.
 
 Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. v0.4.3 lists nine bodies, including the OM-3, OM-5, OM-5 Mark II and E-P7; its OM-5 and OM-5 Mark II builds are listed as not working.
 
-[db firmware / om-c-firmware](../projects/db-firmware.md#for-om3) · since dbv0.4.2
-{ .card-meta }
+No separate test record linked to this feature.
+
+[db firmware / om-c-firmware](../projects/db-firmware.md#for-om3) · since dbv0.4.2 · [Latest project release for this model · dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3)
+{ .feature-actions }
 
 </div>
 
@@ -451,6 +479,20 @@ Results belong to the named project and package. Emulator output does not establ
 ## Firmware
 
 [om3 firmware 1.1, build 1100](../firmware/om3-1100.md).
+
+## Research this camera { #research }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for OM SYSTEM OM-3 (E147) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om3.md) to investigate [my question] on [my stock firmware version].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Sources and record
 

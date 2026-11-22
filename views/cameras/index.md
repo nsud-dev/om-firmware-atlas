@@ -2,7 +2,7 @@
 
 # Cameras
 
-Choose your exact model and generation. A listing is a research starting point, not a compatibility claim. The catalogue is not exhaustive.
+Choose your exact model to see its features, releases, camera tests and installation guidance.
 
 <div class="camera-finder" markdown="1" hidden>
 

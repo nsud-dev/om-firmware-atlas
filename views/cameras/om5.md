@@ -17,24 +17,12 @@ Original E144: several projects have distinct experiments. Mark II results do no
 
 **No release for this camera yet:** [Caduceus port for the original OM-5 (tadejs)](../projects/caduceus-om5-tadejs.md#for-om5), [Caduceus for OM-5](../projects/caduceus-om5.md#for-om5).
 
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Platform](#platform)
+**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Platform](#platform) · [Research](#research)
 
 </div>
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
-
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for OM SYSTEM OM-5 (E144) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om5.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## What you can do with this camera { #features }
 
@@ -49,8 +37,10 @@ Features as each project describes them, with their status. Follow a project's o
 
 SD updater, re-encoded LZ4 parts, a patched label, a half-press hook and a card read, each passed on the owner's OM-5 with normal shooting, playback and menus.
 
+Stock firmware 1.2 · [Evidence and limits for om5-ladder-c5](../capabilities/om5-tadejs-ladder-start.md)
+
 [Caduceus port for the original OM-5 (tadejs)](../projects/caduceus-om5-tadejs.md#for-om5)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -61,8 +51,10 @@ SD updater, re-encoded LZ4 parts, a patched label, a half-press hook and a card 
 
 For a COLOR profile, the capture path reads that profile's 12 saturation values. Emulator only; no Picture Mode entry exists yet.
 
+No separate test record linked to this feature.
+
 [Caduceus port for the original OM-5 (tadejs)](../projects/caduceus-om5-tadejs.md#for-om5)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -73,8 +65,10 @@ For a COLOR profile, the capture path reads that profile's 12 saturation values.
 
 Panel table analysed; paused because the owner sees no pink cast on the OM-5 screen. Nothing built.
 
+No separate test record linked to this feature.
+
 [Caduceus port for the original OM-5 (tadejs)](../projects/caduceus-om5-tadejs.md#for-om5)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -88,8 +82,10 @@ The aperture ring on Panasonic lenses that have one controls the aperture.
 **dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
 { .release-warning }
 
+[Evidence and limits for dbv0.4.1](../capabilities/om5-db-aperture.md)
+
 [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -103,8 +99,10 @@ Korean language support on several bodies.
 **dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
 { .release-warning }
 
+No separate test record linked to this feature.
+
 [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -118,8 +116,10 @@ Switches to the electronic shutter on overexposure in P or A mode and, since v0.
 **dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
 { .release-warning }
 
+No separate test record linked to this feature.
+
 [db firmware / om-c-firmware](../projects/db-firmware.md#for-om5) · since dbv0.4.2
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -379,6 +379,20 @@ What the stock firmware itself contains, separate from what projects add. Follow
 ## Firmware
 
 [om5 firmware 1.2, build 1200](../firmware/om5-1200.md).
+
+## Research this camera { #research }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for OM SYSTEM OM-5 (E144) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/om5.md) to investigate [my question] on [my stock firmware version].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Sources and record
 

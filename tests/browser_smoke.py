@@ -60,6 +60,19 @@ def owner_journey(page, base, phone):
         expect(menu).to_have_attribute("aria-expanded", "false")
 
 
+def developer_journey(page, base, phone):
+    page.goto(base + "views/evidence/om5-ii-v020-alpha1-owner/")
+    if phone:
+        page.locator("[data-menu-toggle]").click()
+    page.locator("#primary-nav").get_by_role("link", name="Research & development").click()
+    expect(page).to_have_url(base + "research/")
+    page.locator(".explore-grid").get_by_role("link", name="Start with your AI agent").click()
+    expect(page).to_have_url(base + "research-with-ai/")
+    page.go_back()
+    page.locator(".explore-grid").get_by_role("link", name="Share a finding").click()
+    expect(page).to_have_url(base + "research-with-ai/#share-what-you-find")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--executable", help="Optional path to an existing Chromium binary")
@@ -76,7 +89,8 @@ if __name__ == "__main__":
                 for width, height in ((1440, 900), (390, 844)):
                     page = browser.new_page(viewport={"width": width, "height": height})
                     owner_journey(page, f"http://127.0.0.1:{server.server_port}/", width == 390)
-                    print(f"Owner journey passed at {width} x {height}")
+                    developer_journey(page, f"http://127.0.0.1:{server.server_port}/", width == 390)
+                    print(f"Owner and developer journeys passed at {width} x {height}")
                 browser.close()
         finally:
             server.shutdown()

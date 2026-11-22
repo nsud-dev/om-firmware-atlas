@@ -11,24 +11,12 @@ E137: firmware 1.7 studied in depth; focus stacking with any lens, a Live ND por
 
 **Releases for this camera:** none listed here.
 
-**Jump to:** [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform)
+**Jump to:** [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform) · [Research](#research)
 
 </div>
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
-
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus OM-D E-M5 Mark III (E137) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em5-iii.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Projects for this camera { #projects }
 
@@ -245,6 +233,20 @@ What the stock firmware itself contains, separate from what projects add. Follow
 ## Firmware
 
 [E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md).
+
+## Research this camera { #research }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Olympus OM-D E-M5 Mark III (E137) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em5-iii.md) to investigate [my question] on [my stock firmware version].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Sources and record
 

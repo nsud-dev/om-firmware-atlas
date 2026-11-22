@@ -241,7 +241,7 @@ kbd {
 .doc-side a:hover, .side-mobile a:hover { color: var(--ink); background: var(--panel); }
 .doc-side a.is-active, .side-mobile a.is-active { color: var(--ink); background: var(--panel-2); box-shadow: inset 2px 0 0 var(--accent); }
 .side-group { margin-top: 18px !important; }
-.side-label { display: block; padding: 0 12px 6px; font: 500 11px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.side-label { display: list-item; cursor: pointer; padding: 0 12px 6px; font: 500 11px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .side-group .side-group { margin-top: 10px !important; }
 .side-group .side-group .side-label { font-size: 10.5px; opacity: .8; }
 .side-mobile { display: none; margin: 0 0 1.6rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--panel); }
@@ -653,3 +653,8 @@ kbd {
 
 .research-action > summary { cursor: pointer; color: var(--accent); font-weight: 600; }
 .research-action > summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+.prose .feature-actions { margin: auto 0 0; padding-top: .65rem; border-top: 1px solid var(--line); font-size: .9rem; }
+@media (min-width: 720px) {
+  .research-start { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

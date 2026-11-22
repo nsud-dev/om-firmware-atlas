@@ -1,12 +1,12 @@
 {#- The Atlas page shell. It replaces the stock MkDocs/Bootstrap layout entirely; styles live in docs/assets/atlas.css,
     behaviour in docs/assets/atlas.js. Page content still comes from the staged Markdown.
-    Navigation: four journey sections from mkdocs.yml (expanded at build time by scripts/atlas.py expand_nav).
+    Navigation: audience sections from mkdocs.yml (expanded at build time by scripts/atlas.py expand_nav).
     Generated record pages outside the nav join a section, and highlight their directory, through their URL. -#}
 {%- set homes = {
-  'views/cameras/': ['Cameras', 'views/cameras/'], 'views/projects/': ['Projects', 'views/projects/'],
-  'views/firmware/': ['Research', 'views/firmware/'], 'views/capabilities/': ['Research', 'views/capabilities/'],
-  'views/evidence/': ['Research', 'views/evidence/'], 'views/sources/': ['Research', 'views/sources/'], 'views/reference/': ['Research', 'views/reference/'],
-  'knowledge/': ['Research', none], 'views/community/': ['Community', 'views/community/']
+  'views/cameras/': ['Find your camera', 'views/cameras/'], 'views/projects/': ['Research & development', 'views/projects/'],
+  'views/firmware/': ['Research & development', 'views/firmware/'], 'views/capabilities/': ['Research & development', 'views/capabilities/'],
+  'views/evidence/': ['Research & development', 'views/evidence/'], 'views/sources/': ['Research & development', 'views/sources/'], 'views/reference/': ['Research & development', 'views/reference/'],
+  'knowledge/': ['Research & development', none], 'views/community/': ['Research & development', 'views/community/']
 } -%}
 {%- set ns = namespace(section=none, parent=none, parent_title=none, item=none, top=none) -%}
 {%- for item in nav -%}
@@ -31,7 +31,7 @@
 <ul>
 {%- for c in items %}
   {%- if c.children %}
-  <li class="side-group"><span class="side-label">{{ c.title }}</span>{{ side_list(c.children, parent) }}</li>
+  <li class="side-group"><details{% if c.active or (parent and c.children|selectattr('url', 'equalto', parent)|list) %} open{% endif %}><summary class="side-label">{{ c.title }}</summary>{{ side_list(c.children, parent) }}</details></li>
   {%- else %}
   <li><a href="{{ c.url|url }}"{% if c.active or (parent and c.url == parent) %} class="is-active" aria-current="page"{% endif %}>{{ c.title }}</a></li>
   {%- endif %}

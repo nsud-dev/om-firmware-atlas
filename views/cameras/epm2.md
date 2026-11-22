@@ -13,24 +13,12 @@ E101, TruePic VI (2012): one camera-tested mod; its addresses and edits do not c
 
 - [EPM2Mod](../projects/epm2mod.md#for-epm2) · v2026.11.20-rc.1 (pre-release) · The latest camera report gives its build as [films-twelve-off](../evidence/epm2-films-twelve-off.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.1)
 
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform)
+**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform) · [Research](#research)
 
 </div>
 
 **[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
 { .install-note }
-
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus PEN E-PM2 (E101) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/epm2.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## What you can do with this camera { #features }
 
@@ -45,8 +33,10 @@ Features as each project describes them, with their status. Follow a project's o
 
 Up to 12 of 32 film simulations in the ART entries, loaded from a card file with Load Looks; kept after power-off. For photos and live view; the photo records the film's name.
 
-[EPM2Mod](../projects/epm2mod.md#for-epm2) · since v2026.11.20-rc.1
-{ .card-meta }
+Stock firmware 1.6 · [Evidence and limits for films-look-exif](../capabilities/epm2-films-look-exif.md)
+
+[EPM2Mod](../projects/epm2mod.md#for-epm2) · since v2026.11.20-rc.1 · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -57,8 +47,10 @@ Up to 12 of 32 film simulations in the ART entries, loaded from a card file with
 
 Time Lapse Settings with up to 240 frames.
 
-[EPM2Mod](../projects/epm2mod.md#for-epm2)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -69,8 +61,10 @@ Time Lapse Settings with up to 240 frames.
 
 The firmware's own gauge as an LV-Info view, with calibration and the histogram screen's shooting information. Three data edits, no new code.
 
-[EPM2Mod](../projects/epm2mod.md#for-epm2)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -81,8 +75,10 @@ The firmware's own gauge as an LV-Info view, with calibration and the histogram 
 
 Turning the focus ring with MF Assist zooms in and outlines sharp edges in white, red, yellow or blue; ported from the E-P5.
 
-[EPM2Mod](../projects/epm2mod.md#for-epm2)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -93,8 +89,10 @@ Turning the focus ring with MF Assist zooms in and outlines sharp edges in white
 
 In P and A, the shutter speed at which ISO Auto starts to rise; a copy of the PEN-F 3.1's logic.
 
-[EPM2Mod](../projects/epm2mod.md#for-epm2)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -105,8 +103,10 @@ In P and A, the shutter speed at which ISO Auto starts to rise; a copy of the PE
 
 A Custom Menu J row, Off by default, that writes EPM2LOG.BIN to the card for developers.
 
-[EPM2Mod](../projects/epm2mod.md#for-epm2)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[EPM2Mod](../projects/epm2mod.md#for-epm2) · [Latest project release for this model · v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · [Install guide](https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md)
+{ .feature-actions }
 
 </div>
 
@@ -184,6 +184,20 @@ What the stock firmware itself contains, separate from what projects add. Follow
 ## Firmware
 
 [E-PM2 firmware 1.6, build 1600](../firmware/epm2-1600.md).
+
+## Research this camera { #research }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Olympus PEN E-PM2 (E101) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/epm2.md) to investigate [my question] on [my stock firmware version].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Sources and record
 

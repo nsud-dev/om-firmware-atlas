@@ -31,7 +31,7 @@ INDEX_INTROS = {
     "reference": ("Compact, sourced facts that projects and agents reuse: named addresses for one exact firmware build, platform facts and built-in features per build, and known trouble spots. "
                   "Each entry links the upstream section that holds the full explanation; derivations, disassembly and code stay there. "
                   "Status is worked out from the observations: single source, corroborated by independent projects, camera-confirmed, or disputed."),
-    "camera": "Choose your exact model and generation. A listing is a research starting point, not a compatibility claim. The catalogue is not exhaustive.",
+    "camera": "Choose your exact model to see its features, releases, camera tests and installation guidance.",
     "project": "Independent projects by members of the community, each with its own home, maintainers and support route. Features are described as each project describes them. A listing does not imply endorsement.",
     "firmware": "Stock firmware versions that catalogued work starts from. A version number alone is not byte-exact identity.",
     "capability": "Scoped feature claims: one camera, firmware, project and build each. Availability and test evidence are listed separately.",
@@ -181,7 +181,7 @@ def project_actions(project, records):
 
 
 GLANCE_SECTIONS = (("features", "What you can do"), ("projects", "Projects"), ("evidence", "Test evidence"),
-                   ("talk", "Where to talk"), ("platform", "Platform"))
+                   ("talk", "Where to talk"), ("platform", "Platform"), ("research", "Research"))
 
 
 def report_link(camera, project, build):
@@ -237,7 +237,7 @@ def glance(origin, camera, mods, records, page):
         lines.append("**No release for this camera yet:** " + ", ".join(waiting) + ".")
     jumps = [f"[{title}](#{anchor})" for anchor, title in GLANCE_SECTIONS if "{ #" + anchor + " }" in page]
     lines.append("**Jump to:** " + " · ".join(jumps))
-    return '\n<div class="glance" markdown="1">\n\n' + "\n\n".join(lines) + "\n\n</div>\n" + risk_note(origin) + research_actions(origin, camera)
+    return '\n<div class="glance" markdown="1">\n\n' + "\n\n".join(lines) + "\n\n</div>\n" + risk_note(origin)
 
 
 def installs(records, project, camera_id):
@@ -458,7 +458,23 @@ def render(catalogue):
                     limit = release_limit(current, row["id"])
                     if limit:
                         text += f"**{release_name(current)} · {limit}** [Read release notes]({current['url']}).\n{{ .release-warning }}\n\n"
-                    text += f"[{cell(project['title'])}]({project_target(path, project, row['id'])})" + (f" · since {feature['since']}" if feature.get("since") else "") + "\n{ .card-meta }\n\n</div>\n\n"
+                    cap = records.get(feature.get("capability_id"))
+                    if cap and cap["camera_id"] == row["id"] and cap["project_id"] == project["id"]:
+                        build = cap.get("mod_build") or "build unspecified"
+                        firmware = records.get(cap.get("firmware_id"))
+                        scope = f"Stock firmware {firmware['version']} · " if firmware else ""
+                        text += f"{scope}[Evidence and limits for {cell(build)}]({link(path, view_path(cap))})\n\n"
+                    else:
+                        text += "No separate test record linked to this feature.\n\n"
+                    actions = [f"[{cell(project['title'])}]({project_target(path, project, row['id'])})"]
+                    if feature.get("since"):
+                        actions.append(f"since {cell(feature['since'])}")
+                    if current and not limit and feature["status"] in ("released", "beta", "alpha"):
+                        actions.append(f"[Latest project release for this model · {cell(current['tag'])}]({current['url']})")
+                        guide = install_guide(project)
+                        if guide:
+                            actions.append(f"[Install guide]({guide['url']})")
+                    text += " · ".join(actions) + "\n{ .feature-actions }\n\n</div>\n\n"
                 text += "</div>\n"
             text += "\n## Projects for this camera { #projects }\n\n"
             if projects:
@@ -511,6 +527,7 @@ def render(catalogue):
                     for r in platform + native:
                         text += f"| [{cell(trait_title(catalogue, r))}]({link(path, view_path(r))}) | {cell(trait_value(r))} | {REFERENCE_STATUS[reference_status(records, r)][0]} |\n"
             text += "\n## Firmware\n\n" + refs(path, [r["id"] for r in firmwares]) + ".\n"
+            text += "\n## Research this camera { #research }\n" + research_actions(path, row)
             text = text.replace("{ .facts }\n", "{ .facts }\n" + glance(path, row, mods, records, text), 1)
         elif kind == "firmware":
             text += f"\n**Camera:** {ref(path, row['camera_id'])}. **Advertised version:** {row['version']}. **Internal build:** {label(row['internal_build'])}.\n"
