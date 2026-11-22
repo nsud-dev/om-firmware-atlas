@@ -212,3 +212,99 @@ E122: foundational HSL research; exact internal build identity matters.
 
 </div>
 
+<section class="camera-updates" markdown="1">
+
+<div class="tester-panel" markdown="1">
+
+## Projects looking for testers
+
+**[OM-D E-M10 Mark IV · Caduceus for E-P7](../projects/caduceus-ep7.md#for-em10-iv)**
+
+E-M10 IV target needs physical-camera evidence. [View the testing request](https://github.com/cakelesscoder/caduceus-ep7/issues/21)
+
+</div>
+
+## Recent releases
+
+<div class="release-list" markdown="1">
+
+<div class="release-item" markdown="1">
+
+**OM-D E-M10 (Mark I)**
+{ .release-model }
+
+[om10mi-mods](../projects/om10mi-mods.md) · [v87](https://github.com/Meghnus/om10mi-mods/releases/tag/v87) · 21 Nov 2026
+{ .release-head }
+
+Colour wheel in Color Creator at the ART dial, with an on-screen key hint and a COLOR WHEEL mode guide.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**OM-3, OM-5, OM-5 Mark II, PEN E-P7**
+{ .release-model }
+
+[db firmware / om-c-firmware](../projects/db-firmware.md) · [dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3) · 21 Nov 2026
+{ .release-head }
+
+
+
+**OM-5:** The project reports that this build does not work on this camera. **OM-5 Mark II:** The project reports that this build does not work on this camera. [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
+{ .release-warning }
+
+Hybrid Shutter in S and M mode switches to the electronic shutter below the slowest mechanical speed; P and A switch on overexposure.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**OM-D E-M1 Mark III**
+{ .release-model }
+
+[E-M1 Mark III Mod Builder](../projects/em1-iii-mod-builder.md) · [mod-builder-1.18](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.18) · 21 Nov 2026
+{ .release-head }
+
+Adds Fill Flash to handheld High Res, so Fill In and Manual flash are both offered (test 1.745).
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**OM-3**
+{ .release-model }
+
+[Caduceus for OM-3](../projects/caduceus-om3.md) · [v0.40.3-beta3](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3) · 21 Nov 2026 <span class="pill pill-alpha">Pre-release</span>
+{ .release-head }
+
+Replaces the withdrawn v0.40.3-beta2, with the same #91, #97 and #99 fixes and without its boot loop on some start-ups or its restart on a film change after the Creative Dial's centre.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**OM-5 Mark II**
+{ .release-model }
+
+[OMKit](../projects/omkit.md) · [v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0) · 20 Nov 2026
+{ .release-head }
+
+First public release, for the OM-5 Mark II on firmware 1.1; core 1.32, CREATPRF 1.5, FILMLOOK 1.12.
+
+</div>
+
+<div class="release-item" markdown="1">
+
+**PEN E-PM2**
+{ .release-model }
+
+[EPM2Mod](../projects/epm2mod.md) · [v2026.11.20-rc.1](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1) · 20 Nov 2026 <span class="pill pill-alpha">Pre-release</span>
+{ .release-head }
+
+Film simulations use the identity look and record each film's name in the photo's metadata.
+
+</div>
+
+</div>
+
+</section>

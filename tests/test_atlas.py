@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from atlas_core import Catalogue
-from atlas_generate import generated_diff, home_updates, latest_release, release_limit, render
+from atlas_generate import generated_diff, camera_updates, latest_release, release_limit, render
 from atlas import expand_nav, freshness, inspect_remote, review_notice, update_queue
 from atlas_core import read_yaml, reference_status
 
@@ -236,7 +236,7 @@ class AtlasTests(unittest.TestCase):
             self.assertIn(warning, project)
             self.assertIn("Read release notes", project)
             self.assertNotIn("**Get it:**", project)
-        self.assertIn(warning, home_updates(self.catalogue, "docs/index.md"))
+        self.assertIn(warning, camera_updates(self.catalogue, "views/cameras/index.md"))
         latest_release(self.catalogue.records["project.db-firmware"])["camera_limits"]["camera.pen-f"] = "features-unspecified"
         self.assertTrue(any("limitation outside" in error for error in self.catalogue.validate()))
 
@@ -249,11 +249,11 @@ class AtlasTests(unittest.TestCase):
         self.assertNotIn("INSTALL.md", original)
         self.assertIn("Read the OM-5 Mark II install guide", project)
 
-    def test_only_explicit_current_tester_requests_appear_on_home_page(self):
+    def test_only_explicit_current_tester_requests_appear_in_camera_directory(self):
         item = self.catalogue.records["project.caduceus-ep7"]["work_items"][0]
-        self.assertIn(item["url"], home_updates(self.catalogue, "docs/index.md"))
+        self.assertIn(item["url"], camera_updates(self.catalogue, "views/cameras/index.md"))
         item["state"] = "paused"
-        self.assertNotIn(item["url"], home_updates(self.catalogue, "docs/index.md"))
+        self.assertNotIn(item["url"], camera_updates(self.catalogue, "views/cameras/index.md"))
         item["tester_camera_id"] = "camera.om5"
         self.assertTrue(any("outside the project" in error for error in self.catalogue.validate()))
 

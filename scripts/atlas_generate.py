@@ -323,20 +323,8 @@ def project_card(catalogue, origin, row, image=False, features=0, links=False, c
     return text + "</div>\n\n"
 
 
-def showcase_markdown(catalogue, origin):
-    """Featured projects with images for the home page."""
-    projects = [r for r in catalogue.of_type("project") if r.get("images")]
-    projects.sort(key=lambda r: (latest_release(r) or {}).get("date", ""), reverse=True)
-    text = '<section class="showcase" markdown="1">\n\n<p class="eyebrow">Featured projects</p>\n\n'
-    text += "## What the community has built.\n\n"
-    text += '<div class="project-grid featured" markdown="1">\n\n'
-    text += "".join(project_card(catalogue, origin, row, image=True, features=4) for row in projects)
-    text += f"</div>\n\n[See every project]({link(origin, 'views/projects/index.md')}){{ .btn .btn-ghost }}\n\n</section>\n\n"
-    return text
-
-
-def home_updates(catalogue, origin):
-    text = '<section class="home-updates" markdown="1">\n\n'
+def camera_updates(catalogue, origin):
+    text = '<section class="camera-updates" markdown="1">\n\n'
     requests = [(project, item) for project in catalogue.of_type("project") for item in testing_requests(project)]
     if requests:
         text += '<div class="tester-panel" markdown="1">\n\n## Projects looking for testers\n\n'
@@ -729,7 +717,7 @@ def render(catalogue):
                     text += f"{', '.join(row['model_codes'])}\n{{ .model-code }}\n\n{row['summary']}\n\n"
                     text += " · ".join(meta) + "\n{ .card-meta }\n\n</div>\n\n"
                 text += "</div>\n\n"
-            outputs[path] = text
+            outputs[path] = text + camera_updates(catalogue, path)
             continue
         if kind == "reference":
             rows = catalogue.of_type("reference")
