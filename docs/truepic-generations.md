@@ -2,6 +2,9 @@
 
 Find where your camera sits among 37 Olympus and OM SYSTEM Micro Four Thirds bodies. The list runs from the newest TruePic generation to the oldest, with newer bodies first within each group. Years refer to announcements.
 
+![TruePic generations at a glance. X and IX have four bodies each, VIII, VII and VI have eight each, and V has five.](assets/truepic-generations.jpg)
+{ .hero-image }
+
 Linked models have Atlas camera pages. Before sharing firmware, tools or research across models, check the exact camera and firmware version. A shared TruePic generation alone does not establish compatibility.
 
 ## TruePic X
@@ -61,7 +64,7 @@ Linked models have Atlas camera pages. Before sharing firmware, tools or researc
 
 ## Sources
 
-Adapted from the [contributor’s processor overview](https://r-hg.co.uk/om-processors-x4c7kga4/), shared in [Atlas issue #34](https://github.com/xulfr/om-firmware-atlas/issues/34).
+The list and original artwork come from the [contributor’s processor overview](https://r-hg.co.uk/om-processors-x4c7kga4/), shared in [Atlas issue #34](https://github.com/xulfr/om-firmware-atlas/issues/34).
 
 - OM SYSTEM specifications for [OM-3 ASTRO](https://explore.omsystem.com/c/en/om-3-astro) and [OM SYSTEM PEN](https://explore.omsystem.com/c/en/pen).
 - Olympus announcements for [E-M1X](https://www.olympus-global.com/news/2019/nr01113.html), [E-PL8](https://www.olympus-global.com/news/2016/nr161012epl8e.html), [PEN-F](https://www.olympus-global.com/news/2016/nr160127penfe.html) and [E-PL1s](https://www.olympus.co.jp/jp/news/2010b/nr101116epl1sj.html).
