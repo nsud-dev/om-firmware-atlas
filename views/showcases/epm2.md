@@ -2,26 +2,6 @@
 
 # Olympus PEN E-PM2 showcase
 
-[Camera overview](../cameras/epm2.md)
+[Mods and installation](../cameras/epm2.md)
 
-
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
-
-<section class="model-panel" markdown="1">
-
-## EPM2Mod { #epm2mod }
-
-**Get it:** [v2026.11.20-rc.5 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5), 22 Nov 2026 · [Install guide](https://github.com/cfu288/EPM2Mod/blob/475486f4d581d090162ea9f733fb31e05bc6e08a/docs/user/install.md)
-{ .card-get }
-
-Unofficial pre-release for the Olympus PEN E-PM2.
-{ .release-warning }
-
-- **Film simulations** · Beta. Up to 12 of 32 film simulations in the ART entries, loaded from a card file with Load Looks; kept after power-off. For photos and live view; the photo records the film's name.
-- **Interval shooting** · Beta. Time Lapse Settings with up to 240 frames.
-- **Level gauge** · Beta. The firmware's own gauge as an LV-Info view, with calibration and the histogram screen's shooting information. Three data edits, no new code.
-
-[Full project details](../projects/epm2mod.md#for-epm2) · [Ask or report issues](https://github.com/cfu288/EPM2Mod/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.5)
-
-</section>
+- [EPM2Mod](../cameras/epm2.md#epm2mod){ #epm2mod }

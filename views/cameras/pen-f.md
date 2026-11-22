@@ -2,31 +2,61 @@
 
 # Olympus PEN-F
 
-E122: foundational HSL research; exact internal build identity matters.
+Model E122
+{ .camera-id }
 
-**Model code:** E122 · **Also known as:** PEN-F, PENF · **Stock firmware covered:** 3.1
-{ .facts }
+<span id="research"></span><span id="platform"></span><span id="firmware"></span><span id="evidence"></span><span id="talk"></span>
 
-[View the showcase](../showcases/pen-f.md){ #features .btn .btn-primary }
+[Developer research for this camera](../research/pen-f.md)
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+<span id="features"></span><span id="projects"></span>
+
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
-## Firmware projects { #projects }
+<section class="model-panel" markdown="1">
 
-<div class="glance" markdown="1">
+## Olympus firmware research { #oly-fw-analysis }
 
-**Releases for this camera:**
+Publishes the PEN-F HSL patch as alpha releases: hue and lightness added to the 12-colour saturation editor in COLOR1–3. The project asks for a firsthand hardware report before publishing a flashable patch.
 
-- [Olympus firmware research](../showcases/pen-f.md#oly-fw-analysis) · alpha-20261017 (pre-release) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+research+%C2%B7+alpha-20261017)
-- [db firmware / om-c-firmware](../showcases/pen-f.md#db-firmware) · dbv0.3.2 · The release names this camera without saying which features it adds. [Release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.3.2)
+**alpha-20261017 (pre-release)**
+{ .release-scope }
 
-</div>
+No camera test recorded for this release.
 
-[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
+Experimental; recovery from every failure is not guaranteed. Bring saturation values within −5 to +5 before downgrading.
+{ .release-warning }
 
-## Developer resources { #research }
+[Read release notes](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017)
 
-<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
+<details class="mod-details" markdown="1"><summary>Features and examples</summary>
 
-[Research for this model](../research/pen-f.md) · [Community](../../docs/community.md)
+- **PEN-F HSL.** Hue and lightness added to the 12-colour saturation editor in COLOR1–3, from −7 to +7 since the 17 October alpha.
+
+</details>
+
+[Full project details](../projects/oly-fw-analysis.md#for-pen-f)
+
+</section>
+
+<section class="model-panel" markdown="1">
+
+## db firmware / om-c-firmware { #db-firmware }
+
+No PEN-F feature is catalogued.
+
+**dbv0.3.2**
+{ .release-scope }
+
+**The release names this camera without saying which features it adds.**
+{ .release-warning }
+
+[Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2)
+
+[Full project details](../projects/db-firmware.md#for-pen-f)
+
+</section>
+
+[Report a camera result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+)

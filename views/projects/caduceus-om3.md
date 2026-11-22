@@ -5,12 +5,12 @@
 Film looks and a full colour editor, built into the OM SYSTEM OM-3.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
 
-[Read the install guide](https://androidfanman.github.io/caduceus-om3/pages/install/){ .btn .btn-primary }
+[Read the install guide](https://github.com/androidfanman/caduceus-om3/blob/45706369aa922dfeeccf7d60a9721e0b9f3fcc43/releases/v0.40.3-beta4/NOTES.md){ .btn .btn-primary }
 [Project home](https://github.com/androidfanman/caduceus-om3){ .btn .btn-ghost }
 [Ask or report issues](https://github.com/androidfanman/caduceus-om3/issues){ .btn .btn-ghost }
 [Tour](https://androidfanman.github.io/caduceus-om3/){ .btn .btn-ghost }
@@ -19,18 +19,6 @@ Film looks and a full colour editor, built into the OM SYSTEM OM-3.
 [Roadmap](https://androidfanman.github.io/caduceus-om3/pages/roadmap/){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Caduceus for OM-3 (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-om3.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** mod · **Camera details:** [OM-3](#for-om3) · **Latest release:** [v0.40.3-beta4 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta4), 21 Nov 2026 · **Maintained by** [androidfanman](https://github.com/androidfanman)
 { .facts }
@@ -46,10 +34,10 @@ Use the Atlas entry for Caduceus for OM-3 (https://github.com/xulfr/om-firmware-
 **For this camera:** 18 features, including Your films in Picture Mode, 20 film simulations and Colour editor on the camera.
 { .card-for }
 
-**Get it:** [v0.40.3-beta4 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta4), 21 Nov 2026 · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+**Get it:** [v0.40.3-beta4 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta4), 21 Nov 2026 · [Install guide](https://github.com/androidfanman/caduceus-om3/blob/45706369aa922dfeeccf7d60a9721e0b9f3fcc43/releases/v0.40.3-beta4/NOTES.md)
 { .card-get }
 
-[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
+[Mods and installation](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 

@@ -5,28 +5,18 @@
 Pick firmware mods for the E-M1 Mark III and build your own update file.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
 
-[Project home](https://github.com/dfeldt91-blip/E-M1-Miii){ .btn .btn-primary }
+[Read the install guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ba87b5f4358b6ee518cf133676d69698db6ef83e/builder/README.md){ .btn .btn-primary }
+[Project home](https://github.com/dfeldt91-blip/E-M1-Miii){ .btn .btn-ghost }
+[Ask or report issues](https://github.com/dfeldt91-blip/E-M1-Miii){ .btn .btn-ghost }
 [Builder guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ae16f3d2836e7273164c7cd3497237117c8b9ff9/builder/README.md){ .btn .btn-ghost }
 [Latest release](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for E-M1 Mark III Mod Builder (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/em1-iii-mod-builder.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** mod · **Camera details:** [OM-D E-M1 Mark III](#for-em1-iii) · **Latest release:** [mod-builder-1.19](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19), 22 Nov 2026 · **Maintained by** [dfeldt91-blip](https://github.com/dfeldt91-blip)
 { .facts }
@@ -42,10 +32,10 @@ Use the Atlas entry for E-M1 Mark III Mod Builder (https://github.com/xulfr/om-f
 **For this camera:** 20 features, including Panorama 65:24, Multiple Exposure with 3 and 4 frames and Focus stacking with any lens.
 { .card-for }
 
-**Get it:** [mod-builder-1.19](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19), 22 Nov 2026 · [Builder guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ae16f3d2836e7273164c7cd3497237117c8b9ff9/builder/README.md)
+**Get it:** [mod-builder-1.19](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19), 22 Nov 2026 · [Install guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ba87b5f4358b6ee518cf133676d69698db6ef83e/builder/README.md)
 { .card-get }
 
-[Camera overview](../cameras/em1-iii.md) · [Test results](../research/em1-iii.md#evidence)
+[Mods and installation](../cameras/em1-iii.md) · [Test results](../research/em1-iii.md#evidence)
 
 </div>
 

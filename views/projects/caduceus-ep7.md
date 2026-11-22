@@ -5,12 +5,12 @@
 The original Caduceus: HSLFX colour editing and 29 film looks for the PEN E-P7.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
 
-[Read the PEN E-P7 install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md){ .btn .btn-primary }
+[Read the PEN E-P7 install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/a0c351f5398a4e7b69738103bda3e5c92f81971d/docs/INSTALL.md){ .btn .btn-primary }
 [Project home](https://github.com/cakelesscoder/caduceus-ep7){ .btn .btn-ghost }
 [Ask or report issues](https://github.com/cakelesscoder/caduceus-ep7/issues){ .btn .btn-ghost }
 [Control Panel](https://cakelesscoder.github.io/caduceus-ep7/){ .btn .btn-ghost }
@@ -18,18 +18,6 @@ The original Caduceus: HSLFX colour editing and 29 film looks for the PEN E-P7.
 [Ports to other bodies](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/BODIES.md){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Caduceus for E-P7 (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-ep7.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** mod · **Camera details:** [PEN E-P7](#for-ep7), [OM-D E-M10 Mark IV](#for-em10-iv) · **Latest release:** [v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a), 15 Nov 2026 · **Maintained by** [cakelesscoder](https://github.com/cakelesscoder)
 { .facts }
@@ -45,10 +33,10 @@ Use the Atlas entry for Caduceus for E-P7 (https://github.com/xulfr/om-firmware-
 **For this camera:** 17 features, including On-camera look editor (HSLFX), 29 film simulations and Colour mix and base curve.
 { .card-for }
 
-**Get it:** [v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a), 15 Nov 2026 · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+**Get it:** [v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a), 15 Nov 2026 · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/a0c351f5398a4e7b69738103bda3e5c92f81971d/docs/INSTALL.md)
 { .card-get }
 
-[Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
+[Mods and installation](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
 
 </div>
 
@@ -64,7 +52,7 @@ Use the Atlas entry for Caduceus for E-P7 (https://github.com/xulfr/om-firmware-
 
 [View the testing request](https://github.com/cakelesscoder/caduceus-ep7/issues/21){ .btn .btn-primary }
 
-[Camera overview](../cameras/em10-iv.md) · [Test results](../research/em10-iv.md#evidence)
+[Mods and installation](../cameras/em10-iv.md) · [Test results](../research/em10-iv.md#evidence)
 
 </div>
 

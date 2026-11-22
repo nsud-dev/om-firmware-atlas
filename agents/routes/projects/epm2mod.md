@@ -8,7 +8,7 @@ Firmware mod for the 2012 PEN E-PM2 with film simulations, interval shooting, le
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [epm2mod.yaml](../../../records/projects/epm2mod.yaml) | Project scope, related work and contribution destination | 8,098 | ~2,025 |
+| [epm2mod.yaml](../../../records/projects/epm2mod.yaml) | Project scope, related work and contribution destination | 8,252 | ~2,063 |
 | [epm2mod.yaml](../../../records/sources/epm2mod.yaml) | Find the relevant source/observation ID; use bounded reads | 11,144 | ~2,786 |
 | [epm2mod.yaml](../../../records/evidence/epm2mod.yaml) | Find the relevant source/observation ID; use bounded reads | 5,215 | ~1,304 |
 

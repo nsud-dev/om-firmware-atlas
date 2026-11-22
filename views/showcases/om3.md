@@ -2,64 +2,10 @@
 
 # OM SYSTEM OM-3 showcase
 
-[Camera overview](../cameras/om3.md)
+[Mods and installation](../cameras/om3.md)
 
+- [Caduceus for OM-3](../cameras/om3.md#caduceus-om3){ #caduceus-om3 }
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
+- [OM-3 downstream experiments](../cameras/om3.md#camera-stuff){ #camera-stuff }
 
-<section class="model-panel" markdown="1">
-
-## Caduceus for OM-3 { #caduceus-om3 }
-
-**Get it:** [v0.40.3-beta4 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta4), 21 Nov 2026 · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
-{ .card-get }
-
-Test release. Upstream keeps v0.40.2 as its current release and asks owners to check their stock-mode white-balance shift once after updating.
-{ .release-warning }
-
-![A Paris street scene at night with warm, soft colour](../../docs/assets/projects/caduceus-om3/film-portra-400.jpg)
-{ .hero-image }
-
-FILM 1, Portra 400, on a sample photo from the project's tour. *Caduceus for OM-3 tour; photo by Pierre Blaché, public domain.*
-{ .image-caption }
-
-- **Your films in Picture Mode** · Available. FILM 1–20 appear after COLOR 1–4, with their names on the title, quick menu, shooting screen and viewfinder.
-- **20 film simulations** · Available. Looks inspired by Portra, Gold, Ektar, Ektachrome, Kodachrome, CineStill 800T, Velvia, Provia, Superia and more, made only from the camera's own settings.
-- **Colour editor on the camera** · Available. Hue and luminance for each of 12 colours next to the camera's saturation, with Color Mix and RGB curves since v0.30.
-
-[Full project details](../projects/caduceus-om3.md#for-om3) · [Ask or report issues](https://github.com/androidfanman/caduceus-om3/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.3-beta4)
-
-</section>
-
-<section class="model-panel" markdown="1">
-
-## db firmware / om-c-firmware { #db-firmware }
-
-**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
-{ .card-get }
-
-Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
-{ .release-warning }
-
-- **Korean menus** · Beta. Korean language support on several bodies.
-- **Quasi-LUT and DBLink** · Beta. Quasi-LUT with DBLink transfer. On OM-3, v0.4.3b adds power-cycle persistence for the on/off state and selected slot.
-- **Hybrid Shutter** · Beta. Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
-
-[Full project details](../projects/db-firmware.md#for-om3) · [Ask or report issues](https://github.com/azqeurio/om-c-firmware/issues) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
-
-</section>
-
-<section class="model-panel" markdown="1">
-
-## OM-3 downstream experiments { #camera-stuff }
-
-**For this camera:** Nothing to install from here. It is a fork where fixes are tried on an OM-3 before being offered to Caduceus for OM-3; use that project's releases.
-{ .card-for }
-
-**Get it:** No release for this camera yet.
-{ .card-get }
-
-[Full project details](../projects/camera-stuff.md#for-om3) · [Ask or report issues](https://github.com/fernandezk26/camera-stuff/issues)
-
-</section>
+- [db firmware / om-c-firmware](../cameras/om3.md#db-firmware){ #db-firmware }

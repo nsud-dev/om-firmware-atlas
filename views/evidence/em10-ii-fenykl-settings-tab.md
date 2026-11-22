@@ -12,8 +12,6 @@ The settings tab ran with the main plugin's options, saving values over a reboot
 
 [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M10+Mark+II+%C2%B7+stock+firmware%3A+&package=fenykl+%C2%B7+main+plugin+%282026-11-20+builds%29)
 
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Provenance:** maintainer summary. **Reported:** 2026-11-20. **Test date:** 2026-11-20.
 
 **Reported/observed package SHA-256:** not recorded.

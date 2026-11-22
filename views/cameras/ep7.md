@@ -2,31 +2,77 @@
 
 # Olympus PEN E-P7
 
-E142: original Caduceus project and a documented Ghidra/REA setup.
+Model E142
+{ .camera-id }
 
-**Model code:** E142 · **Also known as:** E-P7, EP7, PEN E-P7 · **Stock firmware covered:** 1.1
-{ .facts }
+<span id="research"></span><span id="platform"></span><span id="firmware"></span><span id="evidence"></span><span id="talk"></span>
 
-[View the showcase](../showcases/ep7.md){ #features .btn .btn-primary }
+[Developer research for this camera](../research/ep7.md)
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+<span id="features"></span><span id="projects"></span>
+
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
-## Firmware projects { #projects }
+<section class="model-panel" markdown="1">
 
-<div class="glance" markdown="1">
+## Caduceus for E-P7 { #caduceus-ep7 }
 
-**Releases for this camera:**
+On-camera look editor (HSLFX), 29 film simulations, Colour mix and base curve.
 
-- [Caduceus for E-P7](../showcases/ep7.md#caduceus-ep7) · v0.34a · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.34a)
-- [db firmware / om-c-firmware](../showcases/ep7.md#db-firmware) · dbv0.4.4b · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
+**v0.34a** · Stock firmware 1.1
+{ .release-scope }
 
-</div>
+No camera test recorded for this release.
 
-[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
+Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
+{ .release-warning }
 
-## Developer resources { #research }
+[Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/a0c351f5398a4e7b69738103bda3e5c92f81971d/docs/INSTALL.md){ .btn .btn-primary } · [Release notes & files](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a)
 
-<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
+<details class="mod-details" markdown="1"><summary>Features and examples</summary>
 
-[Research for this model](../research/ep7.md) · [Community](../../docs/community.md)
+- **On-camera look editor (HSLFX).** Film, Saturation, Hue, Light and Effects pages on the camera's own colour wheel; changed looks are marked with *.
+- **29 film simulations.** Velvia, Classic Chrome, Kodachrome, Portra, Ektar, CineStill, Vision3, Polaroid, Cross Process and more, one per Colour Profile slot.
+- **Colour mix and base curve.** A per-look 3×3 colour matrix applied by the camera's image hardware, plus a choice of the camera's base tone curves.
+
+![Eight film looks shown on four sample scenes](../../docs/assets/projects/caduceus-ep7/film-looks.jpg)
+{ .hero-image }
+
+Eight Standard 1.2 looks, rendered by the Control Panel's preview. The preview approximates the camera; grain and halation are not drawn. *Caduceus for E-P7; CC0 sample photos.*
+{ .image-caption }
+
+</details>
+
+[Full project details](../projects/caduceus-ep7.md#for-ep7)
+
+</section>
+
+<section class="model-panel" markdown="1">
+
+## db firmware / om-c-firmware { #db-firmware }
+
+Hybrid Shutter.
+
+**dbv0.4.4b**
+{ .release-scope }
+
+No camera test recorded for this release.
+
+Upstream calls this a beta. The notes provide no physical-camera results for the claimed fixes.
+{ .release-warning }
+
+[Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b)
+
+<details class="mod-details" markdown="1"><summary>Features and examples</summary>
+
+- **Hybrid Shutter.** Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. In v0.4.3b the project adds retention of the selected mode across power cycles.
+
+</details>
+
+[Full project details](../projects/db-firmware.md#for-ep7)
+
+</section>
+
+[Report a camera result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+)

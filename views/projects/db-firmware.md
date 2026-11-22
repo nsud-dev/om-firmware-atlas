@@ -5,7 +5,7 @@
 Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to new burst rates.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
@@ -15,18 +15,6 @@ Feature patches across many OM SYSTEM and Olympus bodies, from aperture rings to
 [Releases](https://github.com/azqeurio/om-c-firmware/releases){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/db-firmware.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** mod · **Camera details:** [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii), [OM-3](#for-om3), [PEN E-P7](#for-ep7), [PEN-F](#for-pen-f) · **Latest release:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026 · **Maintained by** [azqeurio](https://github.com/azqeurio)
 { .facts }
@@ -42,10 +30,10 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **For this camera:** Beta patches include Panasonic aperture rings, Korean menus and Hybrid Shutter. The Mark II-based port’s boot fix has only simulator and emulator results in the release notes.
 { .card-for }
 
-**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. See the release notes for this model.
 { .card-get }
 
-[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
+[Mods and installation](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -58,10 +46,10 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **For this camera:** Korean menus and Hybrid Shutter, both beta.
 { .card-for }
 
-**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. See the release notes for this model.
 { .card-get }
 
-[Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
+[Mods and installation](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
 </div>
 
@@ -74,10 +62,10 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **For this camera:** Listed for this camera: Korean menus (beta), Quasi-LUT and DBLink (beta), Hybrid Shutter (beta).
 { .card-for }
 
-**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. See the release notes for this model.
 { .card-get }
 
-[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
+[Mods and installation](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 
@@ -90,10 +78,10 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **For this camera:** Listed for this camera: Hybrid Shutter (beta).
 { .card-for }
 
-**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. Check the release notes for files and instructions for this model.
+**Get it:** [dbv0.4.4b](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.4b), 22 Nov 2026. See the release notes for this model.
 { .card-get }
 
-[Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
+[Mods and installation](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
 
 </div>
 
@@ -107,7 +95,7 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **dbv0.3.2 · The release names this camera without saying which features it adds.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2).
 { .release-warning }
 
-[Camera overview](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
+[Mods and installation](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
 
 </div>
 

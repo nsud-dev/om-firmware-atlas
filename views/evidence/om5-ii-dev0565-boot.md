@@ -12,8 +12,6 @@ A pre-release development package first failed to flash, then worked, then boot-
 
 [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-5+%C2%B7+dev-0565540a)
 
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Provenance:** maintainer summary. **Reported:** 2026-11-20. **Test date:** Not explicitly recorded.
 
 **Reported/observed package SHA-256:** `0565540a52e09e483573bf59e1d4a62946db944a6364a9a605c4ee8b4a94de73`

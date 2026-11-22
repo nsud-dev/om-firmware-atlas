@@ -12,8 +12,6 @@ The E-M5 III firmware notes report the method working on a stock E-M5 III, with 
 
 [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M5+Mark+III+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+research+%C2%B7+stock+1.7+with+a+card+settings+file)
 
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Provenance:** firsthand tester report. **Reported:** 2026-11-12. **Test date:** 2026-11-12.
 
 **Reported/observed package SHA-256:** not recorded.

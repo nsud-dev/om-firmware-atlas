@@ -151,14 +151,13 @@ class AtlasTests(unittest.TestCase):
         self.assertIn("https://discord.gg/fKpcKGsNPY", output)
         self.assertIn("https://www.reddit.com/r/M43/", output)
 
-    def test_each_camera_has_an_overview_showcase_and_research_page(self):
+    def test_each_camera_has_an_owner_page_research_page_and_legacy_showcase(self):
         pages = render(self.catalogue)
         for row in self.catalogue.of_type("camera"):
             name = row["id"].split(".", 1)[1]
             with self.subTest(camera=name):
                 overview = pages[f"views/cameras/{name}.md"]
                 self.assertIn(f"]({name}.md)", pages["views/cameras/index.md"])
-                self.assertIn(f"](../showcases/{name}.md)", overview)
                 self.assertIn(f"](../research/{name}.md)", overview)
                 self.assertIn(f"]({name}.md)", pages["views/research/index.md"])
                 self.assertIn(f"](../cameras/{name}.md)", pages[f"views/showcases/{name}.md"])
@@ -166,7 +165,7 @@ class AtlasTests(unittest.TestCase):
 
     def test_mark_ii_showcase_keeps_project_features_and_installs_together(self):
         pages = render(self.catalogue)
-        showcase = pages["views/showcases/om5-ii.md"]
+        showcase = pages["views/cameras/om5-ii.md"]
         caduceus = showcase.split("{ #caduceus-om5 }")[1].split("</section>")[0]
         omkit = showcase.split("{ #omkit }")[1].split("</section>")[0]
         self.assertIn("Colour editor", caduceus)
@@ -175,7 +174,7 @@ class AtlasTests(unittest.TestCase):
         self.assertIn("Card-loaded core and modules", omkit)
         self.assertIn("/fw1100/install.md", omkit)
         self.assertNotIn("Card-loaded core and modules", caduceus)
-        self.assertNotIn("picture-mode-look.png", pages["views/showcases/om5.md"])
+        self.assertNotIn("picture-mode-look.png", pages["views/cameras/om5.md"])
         self.assertIn("partial report", pages["views/research/om5-ii.md"])
 
     def test_new_upstream_release_is_queued_not_applied(self):
@@ -191,29 +190,46 @@ class AtlasTests(unittest.TestCase):
         self.assertIn("v9.9", update_queue(report))
         self.assertEqual(before, self.catalogue.records)
 
-    def test_original_om5_overview_keeps_research_and_release_scope_clear(self):
+    def test_original_om5_showcase_keeps_research_and_release_scope_clear(self):
         pages = render(self.catalogue)
-        overview = pages["views/cameras/om5.md"]
-        showcase = pages["views/showcases/om5.md"]
+        showcase = pages["views/cameras/om5.md"]
         research = pages["views/research/om5.md"]
         note = next(n["note"] for n in self.catalogue.records["project.caduceus-om5"]["camera_notes"]
                     if n["camera_id"] == "camera.om5")
-        self.assertIn(f"**For this camera:** {note}", showcase)
+        self.assertIn(note, showcase)
         self.assertIn("[Ghidra MN103", research)
-        self.assertNotIn("[Ghidra MN103", overview)
-        self.assertNotIn("v0.2.0-alpha1", overview)
-        self.assertIn("**Releases for this camera:**", overview)
-        self.assertIn("dbv0.4.4b", overview)
-        self.assertIn("No camera test recorded here for this project on this model", overview)
-        self.assertIn("**No release for this camera yet:**", overview)
-        self.assertNotIn("## Claims and test evidence", overview)
+        self.assertNotIn("[Ghidra MN103", showcase)
+        self.assertNotIn("v0.2.0-alpha1", showcase)
+        self.assertIn("dbv0.4.4b", showcase)
+        self.assertIn("No camera test recorded for this release.", showcase)
+        self.assertIn("## In development", showcase)
+        self.assertIn("Read release notes", showcase)
+        self.assertNotIn("[Install guide]", showcase)
+        self.assertNotIn("## Claims and test evidence", showcase)
 
-    def test_glance_keeps_camera_report_scoped_to_its_release_label(self):
-        pages = render(self.catalogue)
-        glance = pages["views/cameras/om5-ii.md"].split('class="glance"')[1].split("</div>", 1)[0]
-        self.assertIn("[Camera test · reported working](../evidence/om5-ii-v020-alpha1-owner.md)", glance)
-        self.assertIn("[loader fw1100 (OMKit 0.1.0)](../evidence/om5-ii-omkit-loader.md)", glance)
-        self.assertNotIn("dbv0.4.3", glance.split("**Reported not working")[0])
+    def test_owner_page_keeps_camera_report_scoped_to_its_release_label(self):
+        showcase = render(self.catalogue)["views/cameras/om5-ii.md"]
+        caduceus = showcase.split("{ #caduceus-om5 }")[1].split("</section>")[0]
+        omkit = showcase.split("{ #omkit }")[1].split("</section>")[0]
+        self.assertIn("[Camera test · reported working](../evidence/om5-ii-v020-alpha1-owner.md) (partial report)", caduceus)
+        self.assertIn("No camera test recorded for this release.", omkit)
+        self.assertIn("[loader fw1100 (OMKit 0.1.0)](../evidence/om5-ii-omkit-loader.md)", omkit)
+        self.assertEqual(showcase.count("[Report a camera result]"), 1)
+
+    def test_installation_cannot_point_to_another_camera_or_transfer_to_a_new_release(self):
+        project = self.catalogue.records["project.caduceus-om5"]
+        current = latest_release(project)
+        later = dict(current, tag="next")
+        del later["installation"]
+        project["releases"].insert(0, later)
+        owner = render(self.catalogue)["views/cameras/om5-ii.md"]
+        caduceus = owner.split("{ #caduceus-om5 }")[1].split("</section>")[0]
+        self.assertNotIn("[Install guide]", caduceus)
+        self.assertIn("[Read release notes]", caduceus)
+        project["releases"].pop(0)
+        current["installation"]["camera.om5-ii"]["firmware_id"] = "firmware.om5-1200"
+        self.assertTrue(any("references stock firmware for a different camera" in error
+                            for error in self.catalogue.validate()))
 
     def test_latest_release_is_chronological_and_camera_specific(self):
         project = copy.deepcopy(self.catalogue.records["project.db-firmware"])
@@ -243,9 +259,9 @@ class AtlasTests(unittest.TestCase):
         for camera in ("om5", "om5-ii"):
             page = pages[f"views/cameras/{camera}.md"]
             self.assertIn(warning, page)
-            showcase = pages[f"views/showcases/{camera}.md"].split("{ #db-firmware }")[1].split("</section>")[0]
+            showcase = page.split("{ #db-firmware }")[1].split("</section>")[0]
             self.assertIn(warning, showcase)
-            self.assertNotIn("**Get it:**", showcase)
+            self.assertNotIn("[Install guide]", showcase)
             project = pages["views/projects/db-firmware.md"].split("{ #for-" + camera + " }")[1].split("</div>")[0]
             self.assertIn(warning, project)
             self.assertIn("Read release notes", project)
@@ -256,7 +272,7 @@ class AtlasTests(unittest.TestCase):
 
     def test_original_camera_links_to_its_own_project_details(self):
         pages = render(self.catalogue)
-        self.assertIn("../projects/caduceus-om5.md#for-om5)", pages["views/showcases/om5.md"])
+        self.assertIn("../projects/caduceus-om5.md#for-om5)", pages["views/cameras/om5.md"])
         project = pages["views/projects/caduceus-om5.md"]
         original = project.split("{ #for-om5 }")[1].split("{ #for-om5-ii }")[0]
         self.assertIn("No release for this camera yet", original)

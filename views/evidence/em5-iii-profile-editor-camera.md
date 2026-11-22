@@ -12,8 +12,6 @@ Modes selectable, wheels drawn, edits seen in live view and photos, over a serie
 
 [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M5+Mark+III+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+notes+%28E-M5+Mark+III%29+%C2%B7+unpublished+test+builds+%282026-11-19+to+2026-11-20%29)
 
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Provenance:** firsthand tester report. **Reported:** 2026-11-21. **Test date:** 2026-11-20.
 
 **Reported/observed package SHA-256:** not recorded.

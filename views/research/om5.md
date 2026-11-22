@@ -2,21 +2,13 @@
 
 # OM SYSTEM OM-5 research
 
-Original E144: several projects have distinct experiments. Mark II results do not apply.
+E144 · Stock firmware 1.2 · build 1200
+{ .facts }
 
-[Camera overview](../cameras/om5.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/om5.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for OM SYSTEM OM-5 (E144) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/om5.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -101,34 +93,11 @@ Results belong to the named project and package. Emulator output does not establ
 - **Camera test · reported working** · [Original OM-5 C4: half-press no-op hook](../evidence/om5-tadejs-c4.md)
 - **Emulator test · reported working** · [Original OM-5 COLOR 1–3 back end: emulator runs](../evidence/om5-tadejs-color-core-emu.md)
 
-## Where to talk { #talk }
-
-[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
-
 ## Firmware and technical reference { #platform }
-
-[om5 firmware 1.2, build 1200](../firmware/om5-1200.md).
 
 ### om5 firmware 1.2, build 1200
 
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Image processor generation](../reference/om5-1200.image-processor.md) | TruePic IX | Single source |
-| [Main CPU](../reference/om5-1200.main-cpu.md) | MN103/AM33-2, cores CPU0 to CPU2 | Single source |
-| [ARM co-processor](../reference/om5-1200.arm-coprocessor.md) | Cortex-A9, Linux 4.4 | Single source |
-| [Image memory class](../reference/om5-1200.memory-class.md) | 1 GB (same buffer map span as the E-M5 III) | Single source |
-| [Update file magic](../reference/om5-1200.container-magic.md) | OE 14 40 | Single source |
-| [Firmware blocks](../reference/om5-1200.firmware-blocks.md) | 5 | Single source |
-| [Main program compression](../reference/om5-1200.main-compression.md) | Two LZ4 sections | Single source |
-| [Wi-Fi chip](../reference/om5-1200.wifi-chip.md) | CYW43455 | Single source |
-| [Live ND](../reference/om5-1200.native-nd.md) | Native: ND2 to ND16 | Single source |
-| [USB webcam (UVC)](../reference/om5-1200.native-uvc-webcam.md) | Native | Single source |
-| [Live GND](../reference/om5-1200.native-live-gnd.md) | Absent | Single source |
-| [Handheld High Res Shot](../reference/om5-1200.native-hhhr.md) | Native: 50 MP handheld | Single source |
-| [Starry Sky AF](../reference/om5-1200.native-starry-sky-af.md) | Native | Single source |
-| [AI subject detection AF](../reference/om5-1200.native-subject-detect.md) | Dormant code: Code present, not reachable | Single source |
+[File identity, platform and stock features](../firmware/om5-1200.md)
 
 ### Build-specific reference
 
@@ -136,6 +105,8 @@ What the stock firmware itself contains, separate from what projects add. Follow
 - [Half-press (S1) event hook site, OM-5 1.2](../reference/om5-1200.s1-hook.md)
 - [Section 1 loaded tail, OM-5 1.2](../reference/om5-1200.section-1-loaded-tail.md)
 - [Section 8 loaded tail, OM-5 1.2](../reference/om5-1200.section-8-loaded-tail.md)
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

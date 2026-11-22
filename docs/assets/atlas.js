@@ -122,15 +122,64 @@
     }
   });
   if (dialog) {
+    var models = dialog.querySelector('.search-models');
+    var modelCards = Array.from(models.querySelectorAll('article'));
+    var searchResults = dialog.querySelector('.search-results');
+    var resultKinds = {
+      cameras: 'Camera', research: 'Camera research', projects: 'Project or tool',
+      firmware: 'Firmware', reference: 'Reference', evidence: 'Test evidence',
+      capabilities: 'Feature claim', sources: 'Source', community: 'Community'
+    };
+
+    function showModelMatches() {
+      var query = cameraKey(input.value);
+      modelCards.forEach(function (card) {
+        card.hidden = !query || !card.dataset.model.split('|').some(function (name) {
+          return cameraKey(name) === query;
+        });
+      });
+      models.hidden = modelCards.every(function (card) { return card.hidden; });
+    }
+
+    // The search plugin emits page and section results separately. Keep useful sections and suppress duplicate titles.
+    new MutationObserver(function () {
+      var seen = new Set();
+      searchResults.querySelectorAll('article').forEach(function (article) {
+        var link = article.querySelector('h3 a');
+        var path = new URL(link.href).pathname;
+        var match = path.match(/\/views\/([^/]+)/);
+        var kind = match ? resultKinds[match[1]] : /\/knowledge\//.test(path) ? 'Guide' : '';
+        var key = path + '\n' + link.textContent.trim().toLowerCase();
+        article.hidden = (match && match[1] === 'showcases') || seen.has(key);
+        seen.add(key);
+        if (kind && !article.querySelector('.search-kind')) {
+          var label = document.createElement('span');
+          label.className = 'search-kind';
+          label.textContent = kind;
+          article.prepend(label);
+        }
+      });
+    }).observe(searchResults, { childList: true });
+
+    input.addEventListener('input', showModelMatches);
     dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
     dialog.querySelector('.search-close').addEventListener('click', function () { dialog.close(); });
-    /* Enter opens the first result rather than closing the dialog. */
     dialog.querySelector('form').addEventListener('submit', function (event) {
       event.preventDefault();
-      var first = dialog.querySelector('.search-results a');
+      var matches = models.querySelectorAll('article:not([hidden])');
+      if (matches.length > 1) {
+        matches[0].querySelector('a').focus();
+        return;
+      }
+      var first = matches.length === 1 ? matches[0].querySelector('a') : searchResults.querySelector('article:not([hidden]) a');
       if (input.value.trim() && first) location.href = first.href;
     });
-    if (/[?&]q=/.test(location.search)) openSearch();
+    var initialQuery = new URLSearchParams(location.search).get('q');
+    if (initialQuery !== null) {
+      input.value = initialQuery;
+      showModelMatches();
+      openSearch();
+    }
   }
 
   /* Highlight the current section in the "On this page" list. */

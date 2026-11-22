@@ -229,6 +229,14 @@ class Catalogue:
                     for camera in release.get("camera_limits", {}):
                         if camera not in release["camera_ids"]:
                             errors.append(f"{node_id}: release {release['tag']} has a limitation outside its camera_ids: {camera}.")
+                    for camera, guide in release.get("installation", {}).items():
+                        what = f"release {release['tag']} installation for {camera}"
+                        firmware_id = guide["firmware_id"]
+                        check_ref(node_id, what, firmware_id, "firmware")
+                        if camera not in release["camera_ids"] or camera in release.get("camera_limits", {}):
+                            errors.append(f"{node_id}: {what} needs an unrestricted camera in the release's camera_ids.")
+                        if firmware_id in self.records and self.records[firmware_id].get("camera_id") != camera:
+                            errors.append(f"{node_id}: {what} references stock firmware for a different camera.")
                     for camera in release["camera_ids"]:
                         if camera not in row["camera_ids"]:
                             errors.append(f"{node_id}: release {release['tag']} names {camera}, which is not in the project's camera_ids.")

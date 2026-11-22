@@ -119,6 +119,10 @@ records:
     prerelease: true
     camera_ids:
     - camera.epm2
+    installation:
+      camera.epm2:
+        firmware_id: firmware.epm2-1600
+        url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5
     highlights:
     - Corrects the Tri-X look pack entry and shows 32 films across nine scenes on the project site.
     - Upstream lists the same expected firmware digest for rc.3 through rc.5.

@@ -6,23 +6,19 @@
 
 <section class="journey" markdown="1">
 
-## For camera owners
-
-Choose your camera to see community firmware projects, examples and installation guidance.
+## Find mods for my camera
 
 <!-- atlas:camera-finder -->
 
-[Browse cameras](../views/cameras/index.md){ .btn .btn-primary }
+[Browse all cameras](../views/cameras/index.md)
 
 </section>
 
 <section class="journey" markdown="1">
 
-## For developers
+## Explore firmware research
 
-Find firmware research, tools and test results across models or for a specific camera.
-
-[Explore developer resources](research.md){ .btn .btn-primary }
+[Open developer research](research.md){ .btn .btn-primary }
 
 </section>
 

@@ -2,21 +2,13 @@
 
 # OM SYSTEM OM-5 Mark II research
 
-E148: v0.2.0-alpha1 has an overall positive owner report; original OM-5 work is separate.
+E148 · Stock firmware 1.1 · build 1100
+{ .facts }
 
-[Camera overview](../cameras/om5-ii.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/om5-ii.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for OM SYSTEM OM-5 Mark II (E148) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/om5-ii.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -138,34 +130,11 @@ Results belong to the named project and package. Emulator output does not establ
 - **Camera test · reported failure** · [Mark II dev package 0565540a: flash failure, then intermittent boot loop](../evidence/om5-ii-dev0565-boot.md)
 - **Emulator test · reported working** · [Mark II image-store probe](../evidence/om5-ii-image-store-probe.md)
 
-## Where to talk { #talk }
-
-[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
-
 ## Firmware and technical reference { #platform }
-
-[om5-ii firmware 1.1, build 1100](../firmware/om5-ii-1100.md).
 
 ### om5-ii firmware 1.1, build 1100
 
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Image processor generation](../reference/om5-ii-1100.image-processor.md) | TruePic IX | Single source |
-| [Main CPU](../reference/om5-ii-1100.main-cpu.md) | MN103/AM33-2, cores CPU0 to CPU2 | Single source |
-| [ARM co-processor](../reference/om5-ii-1100.arm-coprocessor.md) | Cortex-A9, Linux 5.10 | Single source |
-| [Image memory class](../reference/om5-ii-1100.memory-class.md) | 1 GB (same layout as the OM-5) | Single source |
-| [Update file magic](../reference/om5-ii-1100.container-magic.md) | OE 14 80 | Single source |
-| [Firmware blocks](../reference/om5-ii-1100.firmware-blocks.md) | 5 | Single source |
-| [Main program compression](../reference/om5-ii-1100.main-compression.md) | Two LZ4 sections | Single source |
-| [Wi-Fi chip](../reference/om5-ii-1100.wifi-chip.md) | CYW43439 | Single source |
-| [Live ND](../reference/om5-ii-1100.native-nd.md) | Native: ND2 to ND16; ND32 to ND128 strings are shared UI only | Single source |
-| [USB webcam (UVC)](../reference/om5-ii-1100.native-uvc-webcam.md) | Native | Single source |
-| [Live GND](../reference/om5-ii-1100.native-live-gnd.md) | Partial: Settings and UI only; the shooting API methods are empty stubs | Single source |
-| [Handheld High Res Shot](../reference/om5-ii-1100.native-hhhr.md) | Native: Jobs 14 and 15 changed from the OM-5 | Single source |
-| [Starry Sky AF](../reference/om5-ii-1100.native-starry-sky-af.md) | Native: Adds start triggers | Single source |
-| [AI subject detection AF](../reference/om5-ii-1100.native-subject-detect.md) | Dormant code: Code and menu present, not reachable | Single source |
+[File identity, platform and stock features](../firmware/om5-ii-1100.md)
 
 ### Build-specific reference
 
@@ -185,6 +154,8 @@ What the stock firmware itself contains, separate from what projects add. Follow
 - [Section descriptor table](../reference/om5-ii-1100.section-table.md)
 - [Update component kind dispatch](../reference/om5-ii-1100.update-dispatch.md)
 - [White balance commit](../reference/om5-ii-1100.wb-commit.md)
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

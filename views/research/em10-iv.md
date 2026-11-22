@@ -2,21 +2,13 @@
 
 # Olympus OM-D E-M10 Mark IV research
 
-E140: port/signature research and emulator coverage; no physical feature report imported.
+E140
+{ .facts }
 
-[Camera overview](../cameras/em10-iv.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/em10-iv.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus OM-D E-M10 Mark IV (E140) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/em10-iv.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -27,13 +19,11 @@ Use the Atlas entry for Olympus OM-D E-M10 Mark IV (E140) (https://github.com/xu
 
 No feature-level assertion is catalogued yet. This is a coverage gap, not a finding that modifications are impossible.
 
-## Where to talk { #talk }
-
-[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
-
 ## Firmware and technical reference { #platform }
 
-None catalogued.
+No stock firmware build is catalogued for this camera.
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

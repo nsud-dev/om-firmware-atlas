@@ -33,8 +33,8 @@ CAMERA_LINES = ("OM SYSTEM", "Olympus OM-D", "Olympus PEN", "Other")
 PRESENCE = {"native": "Native", "dormant": "Dormant code", "partial": "Partial", "strings-only": "Strings only", "absent": "Absent"}
 REFERENCE_STATUS = {"camera-confirmed": ("Camera-confirmed", "released"), "corroborated": ("Corroborated", "beta"),
                     "single-source": ("Single source", "planned"), "disputed": ("Disputed", "alpha")}
-INDEX_TITLES = {"reference": "Technical reference", "camera": "Cameras", "firmware": "Firmware", "project": "Projects", "capability": "Feature claims",
-                "evidence": "Observations", "source": "Sources", "community": "Find the community"}
+INDEX_TITLES = {"reference": "Technical reference", "camera": "Cameras", "firmware": "Firmware", "project": "Projects and tools", "capability": "Feature claims",
+                "evidence": "Test evidence", "source": "Sources", "community": "Find the community"}
 INDEX_INTROS = {
     "reference": ("Compact, sourced facts that projects and agents reuse: named addresses for one exact firmware build, platform facts and built-in features per build, and known trouble spots. "
                   "Each entry links the upstream section that holds the full explanation; derivations, disassembly and code stay there. "
@@ -75,7 +75,7 @@ PROJECT_GROUPS = (("Camera modifications", ("mod", "experimental-fork")),
                   ("Research and tools", ("research", "emulator", "tool", "reference")))
 STATUS_LABELS = {"released": "Available", "beta": "Beta", "alpha": "Alpha", "testing": "Testing",
                  "in-development": "In development", "planned": "Planned", "research": "Research"}
-def camera_finder(catalogue, origin):
+def camera_finder(catalogue, origin, research=False):
     """Render scoped links from the same identities used by the camera pages."""
     lines = ['<div class="camera-finder" markdown="1" hidden>',
              '<label for="camera-query">Find your camera</label>',
@@ -86,15 +86,17 @@ def camera_finder(catalogue, origin):
         aliases = escape("|".join(names), quote=True)
         title = cell(short_name(camera["title"]))
         codes = ", ".join(camera["model_codes"])
-        lines.append(f'[{title} · {codes}]({link(origin, view_path(camera))}){{ data-names="{aliases}" }}')
+        destination = camera_research_path(camera) if research else view_path(camera)
+        display = f"{title} · {codes}" if codes else title
+        lines.append(f'[{display}]({link(origin, destination)}){{ data-names="{aliases}" }}')
     lines.extend(["</div>", "</div>"])
     return "\n\n".join(lines) + "\n\n"
 
 
 def risk_note(origin):
     guide = link(origin, "docs/before-you-install.md")
-    return (f"\n**[Before you install]({guide})** · Unofficial firmware can leave your camera stuck "
-            "restarting or unable to start. Recovery from a memory card is not guaranteed."
+    return (f"\n**[Before you install]({guide})** · Unofficial firmware can stop your camera from starting. "
+            "Recovery is not guaranteed."
             "\n{ .install-note }\n")
 
 
@@ -163,85 +165,39 @@ def testing_requests(project):
             if item.get("tester_camera_id") and item["state"] in ("open", "needs-evidence")]
 
 
-def install_guide(project):
-    return next((item for item in project.get("links", []) if "install" in item["label"].lower()), None)
-
-
 def project_actions(project, records):
-    guide = install_guide(project)
     links = [{"label": "Project home", "url": project["url"]},
              {"label": "Ask or report issues", "url": project["contribution_home"]}, *project.get("links", [])]
-    released = [c for c in project["camera_ids"] if (release := latest_release(project, c)) and not release_limit(release, c)]
+    guides = {}
+    for camera in project["camera_ids"]:
+        release = latest_release(project, camera)
+        guide = (release or {}).get("installation", {}).get(camera)
+        if guide and not release_limit(release, camera):
+            guides[camera] = guide["url"]
     requests = testing_requests(project)
-    if guide and released:
+    if len(set(guides.values())) == 1:
         label = "Read the install guide"
-        if len(released) == 1 and len(project["camera_ids"]) > 1:
-            label = f"Read the {short_name(records[released[0]]['title'])} install guide"
-        primary = {"label": label, "url": guide["url"]}
+        if len(guides) == 1 and len(project["camera_ids"]) > 1:
+            label = f"Read the {short_name(records[next(iter(guides))]['title'])} install guide"
+        primary = {"label": label, "url": next(iter(guides.values()))}
     elif requests:
         primary = {"label": "View the testing request", "url": requests[0]["url"]}
     else:
         primary = links[0]
     buttons = [f"[{cell(primary['label'])}]({primary['url']}){{ .btn .btn-primary }}"]
+    show_general_install_links = project["kind"] not in MOD_KINDS or not project.get("releases")
     buttons.extend(f"[{cell(item['label'])}]({item['url']}){{ .btn .btn-ghost }}"
-                   for item in links if item["url"] != primary["url"])
+                   for item in links if item["url"] != primary["url"]
+                   and (show_general_install_links or "install" not in item["label"].lower()))
     return '<div class="cta-row" markdown="1">\n\n' + "\n".join(buttons) + "\n\n</div>\n"
 
 
-def report_link(camera, project, build):
-    fields = urlencode({"template": "camera-report.yml",
-                        "target": camera["title"] + " · stock firmware: ",
-                        "package": project["title"] + " · " + (build or "build: ")})
-    return f"[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?{fields})"
-
-
-def research_actions(origin, row):
-    kind = row["type"]
-    identity = row["title"]
-    if row.get("model_codes"):
-        identity += " (" + ", ".join(row["model_codes"]) + ")"
-    entry = camera_research_path(row) if kind == "camera" else view_path(row)
-    target = f"https://github.com/xulfr/om-firmware-atlas/blob/main/{entry}"
-    scope = "[my stock firmware version]" if kind == "camera" else "[my exact camera and firmware]"
-    guide = link(origin, "docs/research-with-ai.md")
-    return (f'\n<details class="research-action" markdown="1"><summary>Research this {kind} with AI</summary>\n\n'
-            f'Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI]({guide}).\n\n'
-            f'```text\nUse the Atlas entry for {identity} ({target}) to investigate [my question] on {scope}.\n```\n\n</details>\n\n'
-            f'[Share a research finding]({guide}#share-what-you-find)\n')
-
-
-def glance(origin, camera, mods, records):
-    """Summarise release availability and exact-model test evidence."""
-    released, failed, waiting = [], [], []
-    for project in mods:
-        release = latest_release(project, camera["id"])
-        target = link(origin, camera_showcase_path(camera)) + "#" + slug(project["id"])
-        name = f"[{cell(project['title'])}]({target})"
-        if not release:
-            waiting.append(name)
-            continue
-        entry = f"{name} · {release_name(release)}"
-        limit = release_limit(release, camera["id"])
-        if release.get("camera_limits", {}).get(camera["id"]) == "reported-not-working":
-            failed.append(f"{entry} · {limit} [Project’s release notes]({release['url']})")
-            continue
-        reports = [ev for ev in records.values() if ev["type"] == "evidence" and ev["method"] == "physical-camera"
-                   and ev["project_id"] == project["id"] and ev["camera_id"] == camera["id"]]
-        exact = [ev for ev in reports if ev["mod_build"] == release["tag"]]
-        evidence = ", ".join(f"[{observation_heading(ev)}]({link(origin, view_path(ev))})" for ev in exact)
-        if not exact and reports:
-            other = max(reports, key=lambda ev: (ev["reported_on"], ev["id"]))
-            evidence = (f"The latest camera report gives its build as [{cell(other['mod_build'] or 'an unspecified build')}]"
-                        f"({link(origin, view_path(other))})")
-        if limit:
-            entry += f" · {limit} [Release notes]({release['url']})"
-        released.append(f"{entry} · {evidence or 'No camera test recorded here for this project on this model'} · {report_link(camera, project, release['tag'])}")
-    lines = ["**Releases for this camera:**" + ("\n\n- " + "\n- ".join(released) if released else " none listed here.")]
-    if failed:
-        lines.append("**Reported not working on this model:**\n\n- " + "\n- ".join(failed))
-    if waiting:
-        lines.append("**No release for this camera yet:** " + ", ".join(waiting) + ".")
-    return '\n<div class="glance" markdown="1">\n\n' + "\n\n".join(lines) + "\n\n</div>\n"
+def report_link(camera, project=None, build=None):
+    fields = {"template": "camera-report.yml", "target": camera["title"] + " · stock firmware: "}
+    if project:
+        fields["package"] = project["title"] + " · " + (build or "build: ")
+    title = "Report your result" if project else "Report a camera result"
+    return f"[{title}](https://github.com/xulfr/om-firmware-atlas/issues/new?{urlencode(fields)})"
 
 
 def installs(records, project, camera_id):
@@ -251,10 +207,14 @@ def installs(records, project, camera_id):
         for f in project.get("features", []) if camera_id in f["camera_ids"] and f.get("capability_id"))
 
 
-def for_camera(row, camera, include_feature_list=True):
+def camera_note(project, camera_id):
+    return next((entry["note"] for entry in project.get("camera_notes", []) if entry["camera_id"] == camera_id), "")
+
+
+def for_camera(row, camera):
     """What a project has for one camera, and where to get it, for that camera's page."""
     camera_id = camera["id"]
-    note = next((n["note"] for n in row.get("camera_notes", []) if n["camera_id"] == camera_id), None)
+    note = camera_note(row, camera_id)
     features = [f for f in row.get("features", []) if camera_id in f["camera_ids"]]
     if len(features) > 3:
         names = [f["name"] for f in features[:3]]
@@ -263,8 +223,6 @@ def for_camera(row, camera, include_feature_list=True):
         listed = ", ".join(f"{f['name']} ({label(f['status'])})" for f in features)
     if note:
         text = note
-    elif not include_feature_list:
-        text = ""
     elif row["kind"] in MOD_KINDS:
         text = (f"{listed[0].upper()}{listed[1:]}." if len(features) > 3 else f"Listed for this camera: {listed}.") if listed else "No features are listed for this camera."
     else:
@@ -272,20 +230,19 @@ def for_camera(row, camera, include_feature_list=True):
         text = f"{kind[0].upper()}{kind[1:]}; it does not change the camera." + (f" Covers this camera for: {listed}." if listed else " Its own page says what it holds for this model.")
     release = latest_release(row, camera_id)
     links = row.get("links", [])
-    guide = install_guide(row)
-    if not guide:
-        guide = next((item for item in links if any(word in item["label"].lower()
-                     for word in ("guide", "try it", "use"))), None)
+    guide = next((item for item in links if any(word in item["label"].lower()
+                  for word in ("guide", "try it", "use"))), None)
     limit = release_limit(release, camera_id)
     details = f"**For this camera:** {text}\n{{ .card-for }}\n\n" if text else ""
     if limit:
         return details + f"**{release_name(release)} · {limit}** [Read release notes]({release['url']}).\n{{ .release-warning }}\n\n"
     if release:
         get = f"[{release_name(release)}]({release['url']}), {nice_date(release['date'])}"
-        if not guide:
-            get += ". Check the release notes for files and instructions for this model."
+        if install := release.get("installation", {}).get(camera_id):
+            if install["url"] != release["url"]:
+                get += f" · [Install guide]({install['url']})"
         else:
-            get += f" · [{cell(guide['label'])}]({guide['url']})"
+            get += ". See the release notes for this model."
     elif row["kind"] in MOD_KINDS:
         get = "No release for this camera yet."
     elif guide:
@@ -318,43 +275,91 @@ def project_card(catalogue, origin, row):
     return text + "</div>\n\n"
 
 
-def camera_showcase(origin, camera, mods, records):
+def camera_showcase(origin, camera, mods, observations, records):
     camera_id = camera["id"]
-    text = GENERATED + f"# {camera['title']} showcase\n\n"
-    text += f"[Camera overview]({link(origin, view_path(camera))})\n\n"
-    if not mods:
-        return text + "The Atlas has no community firmware projects to showcase for this model yet.\n\n" + (
-            f"[See research for this model]({link(origin, camera_research_path(camera))}).\n")
-    text += risk_note(origin)
-    for project in mods:
-        title = cell(project["title"])
-        text += f'\n<section class="model-panel" markdown="1">\n\n## {title} {{ #{slug(project["id"])} }}\n\n'
-        text += for_camera(project, camera, include_feature_list=False)
-        release = latest_release(project, camera_id)
-        if release and release.get("warning"):
+    text = GENERATED + f"# {camera['title']}\n\n"
+    if camera["model_codes"]:
+        text += f"Model {', '.join(camera['model_codes'])}\n{{ .camera-id }}\n\n"
+    text += '<span id="research"></span><span id="platform"></span><span id="firmware"></span>'
+    text += '<span id="evidence"></span><span id="talk"></span>\n\n'
+    text += f"[Developer research for this camera]({link(origin, camera_research_path(camera))})\n\n"
+    text += '<span id="features"></span><span id="projects"></span>\n\n'
+    released = [(project, release) for project in mods if (release := latest_release(project, camera_id))]
+    if any(not release_limit(release, camera_id) for _, release in released):
+        text += risk_note(origin)
+    if not released:
+        text += "\nNo community firmware release is catalogued for this camera.\n"
+    for project, release in released:
+        text += f'\n<section class="model-panel" markdown="1">\n\n## {cell(project["title"])} {{ #{slug(project["id"])} }}\n\n'
+        limit = release_limit(release, camera_id)
+        features = [feature for feature in project.get("features", []) if camera_id in feature["camera_ids"]
+                    and feature["status"] in ("released", "beta", "alpha")]
+        note = camera_note(project, camera_id)
+        if note:
+            text += note + "\n\n"
+        elif features:
+            text += ", ".join(cell(feature["name"]) for feature in features[:3]) + ".\n\n"
+        install = release.get("installation", {}).get(camera_id)
+        scope = f" · Stock firmware {records[install['firmware_id']]['version']}" if install else ""
+        text += f"**{release_name(release)}**{scope}\n{{ .release-scope }}\n\n"
+        if limit:
+            text += f"**{limit}**\n{{ .release-warning }}\n\n"
+        else:
+            reports = [ev for ev in observations if ev["project_id"] == project["id"] and ev["method"] == "physical-camera"]
+            same_release = [ev for ev in reports if ev["mod_build"] == release["tag"]]
+            exact = [ev for ev in same_release if not install or ev["firmware_id"] == install["firmware_id"]]
+            if exact:
+                text += " · ".join(f"[{observation_heading(ev)}]({link(origin, view_path(ev))})"
+                                   + (" (partial report)" if ev["quality"] == "partial" else "") for ev in exact) + "\n\n"
+            else:
+                text += "No camera test recorded for this release on the listed stock firmware." if same_release else (
+                    "No camera test recorded for this release.")
+                if reports:
+                    other = reports[0]
+                    text += (f" See the camera report for [{cell(other['mod_build'] or 'a build with no recorded label')}]"
+                             f"({link(origin, view_path(other))}).")
+                text += "\n\n"
+        if release.get("warning"):
             text += release["warning"] + "\n{ .release-warning }\n\n"
-        if not release_limit(release, camera_id):
-            picture = next((image for image in project.get("images", [])
-                            if image.get("camera_id") == camera_id
-                            or ("camera_id" not in image and project["camera_ids"] == [camera_id])), None)
+        if install and not limit:
+            same_page = install["url"] == release["url"]
+            action = "Install instructions & files" if same_page else "Install guide"
+            text += f"[{action}]({install['url']}){{ .btn .btn-primary }}"
+            if not same_page:
+                text += f" · [Release notes & files]({release['url']})"
+        else:
+            text += f"[Read release notes]({release['url']})"
+        text += "\n\n"
+        picture = next((image for image in project.get("images", []) if image.get("camera_id") == camera_id
+                        or ("camera_id" not in image and project["camera_ids"] == [camera_id])), None)
+        if not limit and (picture or features):
+            text += '<details class="mod-details" markdown="1"><summary>Features and examples</summary>\n\n'
+            for feature in features[:3]:
+                text += f"- **{cell(feature['name'])}.** {feature['summary']}\n"
+            if features:
+                text += "\n"
             if picture:
                 text += f"![{cell(picture['alt'])}]({asset_link(origin, picture['path'])})\n{{ .hero-image }}\n\n"
                 text += f"{picture['caption']} *{picture['credit']}.*\n{{ .image-caption }}\n\n"
-            highlights = [f for f in project.get("features", [])
-                          if camera_id in f["camera_ids"] and f["status"] in ("released", "beta", "alpha")]
-            for feature in highlights[:3]:
-                text += f"- **{cell(feature['name'])}** · {STATUS_LABELS[feature['status']]}. {feature['summary']}\n"
-            if highlights:
-                text += "\n"
-        for request in testing_requests(project):
-            if request["tester_camera_id"] == camera_id:
-                text += f"[View the testing request]({request['url']})\n\n"
-        links = [f"[Full project details]({project_target(origin, project, camera_id)})",
-                 f"[Ask or report issues]({project['contribution_home']})"]
-        if release and not release_limit(release, camera_id):
-            links.append(report_link(camera, project, release["tag"]))
-        text += " · ".join(links) + "\n\n</section>\n"
-    return text
+            text += "</details>\n\n"
+        text += f"[Full project details]({project_target(origin, project, camera_id)})\n\n</section>\n"
+
+    waiting = [project for project in mods if not latest_release(project, camera_id)]
+    if waiting:
+        text += "\n## In development { #in-development }\n\n"
+        for project in waiting:
+            title = cell(project["title"])
+            text += f'### {title} {{ #{slug(project["id"])} }}\n\n'
+            if note := camera_note(project, camera_id):
+                text += f"{note}\n\n"
+            text += f"[Full project details]({project_target(origin, project, camera_id)})"
+            for request in testing_requests(project):
+                if request["tester_camera_id"] == camera_id:
+                    text += f" · [View the testing request]({request['url']})"
+            text += "\n\n"
+    if released:
+        text += "\n" + report_link(camera) + "\n"
+    return text.rstrip() + "\n"
 
 
 def camera_updates(catalogue, origin):
@@ -410,6 +415,23 @@ def observation_heading(row):
     return f"{method} · {outcome}"
 
 
+def recent_findings(catalogue, origin):
+    observations = [row for row in catalogue.of_type("evidence") if row["method"] != "upstream-description"]
+    observations.sort(key=lambda row: (row["reported_on"], row["id"]), reverse=True)
+    # Show the newest observation per model so one batch of tests cannot fill the landing page.
+    by_camera = {}
+    for row in observations:
+        by_camera.setdefault(row["camera_id"], row)
+    lines = []
+    for row in list(by_camera.values())[:3]:
+        camera = short_name(catalogue.records[row["camera_id"]]["title"])
+        firmware = catalogue.records.get(row["firmware_id"])
+        scope = f"{camera} {firmware['version']}" if firmware else camera
+        lines.append(f"- [{cell(row['title'])}]({link(origin, view_path(row))}) · {scope} · "
+                     f"{observation_heading(row)} · {nice_date(row['reported_on'])}")
+    return "\n".join(lines)
+
+
 def trait_title(catalogue, row):
     """Display name of a platform trait or native feature."""
     if row["category"] == "platform":
@@ -455,35 +477,32 @@ def render(catalogue):
         text = GENERATED + f"# {row['title']}\n\n{row['summary']}\n"
         kind = row["type"]
         if kind == "camera":
-            facts = [f"**Model code{'s' if len(row['model_codes']) != 1 else ''}:** {', '.join(row['model_codes']) or 'not recorded'}"]
-            aliases = [a for a in row["aliases"] if a not in row["model_codes"]]
-            if aliases:
-                facts.append("**Also known as:** " + ", ".join(aliases))
             firmwares = [r for r in catalogue.of_type("firmware") if r["camera_id"] == row["id"]]
-            if firmwares:
-                facts.append("**Stock firmware covered:** " + ", ".join(dict.fromkeys(r["version"] for r in firmwares)))
-            text += "\n" + " · ".join(facts) + "\n{ .facts }\n"
             projects = [records[p] for p in row["project_ids"]]
             mods = sorted((p for p in projects if installs(records, p, row["id"])),
-                          key=lambda p: (release_limit(latest_release(p, row["id"]), row["id"]) is not None,
-                                         latest_release(p, row["id"]) is None, p["title"]))
+                          key=lambda p: (not bool((latest_release(p, row["id"]) or {}).get("installation", {}).get(row["id"])),
+                                         p["title"]))
+            observations = [ev for ev in catalogue.of_type("evidence") if ev["camera_id"] == row["id"]]
+            observations.sort(key=lambda ev: (ev["reported_on"], ev["id"]), reverse=True)
+            owner = camera_showcase(path, row, mods, observations, records)
             showcase = camera_showcase_path(row)
-            research = camera_research_path(row)
-            outputs[showcase] = camera_showcase(showcase, row, mods, records)
-            text += f"\n[View the showcase]({link(path, showcase)}){{ #features .btn .btn-primary }}\n"
-            if mods:
-                text += risk_note(path)
-            text += "\n## Firmware projects { #projects }\n"
-            text += glance(path, row, mods, records)
-            text += f"\n[Read the evidence guide]({link(path, 'docs/evidence.md')}) · [Report a camera result]({link(path, 'docs/report.md')})\n"
-            text += "\n## Developer resources { #research }\n\n"
-            # Existing public camera links can still land on the relevant shortcut.
-            text += '<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>\n\n'
-            text += f"[Research for this model]({link(path, research)}) · [Community]({link(path, 'docs/community.md')})\n"
-            overview, path = text, research
-            text = GENERATED + f"# {row['title']} research\n\n{row['summary']}\n\n"
-            text += f"[Camera overview]({link(path, view_path(row))}) · [Cross-body research]({link(path, 'docs/cross-body.md')})\n"
-            text += research_actions(path, row)
+            target = link(showcase, path)
+            outputs[showcase] = GENERATED + f"# {row['title']} showcase\n\n[Mods and installation]({target})\n"
+            for project in mods:
+                anchor = slug(project["id"])
+                title = cell(project["title"])
+                outputs[showcase] += f"\n- [{title}]({target}#{anchor}){{ #{anchor} }}\n"
+            outputs[path] = owner
+            path = camera_research_path(row)
+            text = GENERATED + f"# {row['title']} research\n\n"
+            scope = list(row["model_codes"])
+            scope.extend(f"Stock firmware {r['version']} · build {r['internal_build']}" if r["internal_build"]
+                         else f"Stock firmware {r['version']}" for r in firmwares)
+            if scope:
+                text += " · ".join(scope) + "\n{ .facts }\n\n"
+            owner_link = link(path, view_path(row))
+            text += f"[Mods & installation for this camera]({owner_link})\n\n"
+            text += "[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)\n{ .page-jumps }\n"
             text += "\n## Projects and repositories\n\n"
             for project in projects:
                 text += f"- [{cell(project['title'])}]({project_target(path, project, row['id'])}) · [Repository or project home]({project['url']})\n"
@@ -517,27 +536,19 @@ def render(catalogue):
             if other_observations:
                 text += "\n### Other observations\n\n"
                 text += "".join(f"- **{observation_heading(ev)}** · {ref(path, ev['id'])}\n" for ev in other_observations)
-            venues = [r["id"] for r in catalogue.of_type("community") if set(r["project_ids"]) & set(row["project_ids"])]
-            if venues:
-                text += "\n## Where to talk { #talk }\n\n" + refs(path, venues) + ". For a reproducible bug, use the project's own issue tracker.\n"
             text += "\n## Firmware and technical reference { #platform }\n\n"
-            text += refs(path, [r["id"] for r in firmwares]) + ".\n"
+            if not firmwares:
+                text += "No stock firmware build is catalogued for this camera.\n"
             for firmware in firmwares:
-                platform = trait_rows(catalogue, "platform", [firmware["id"]])
-                native = trait_rows(catalogue, "native-feature", [firmware["id"]])
-                if platform or native:
-                    text += f"\n### {cell(firmware['title'])}\n\n"
-                    text += "What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.\n\n"
-                    text += "| | Value | Status |\n|---|---|---|\n"
-                    for r in platform + native:
-                        text += f"| [{cell(trait_title(catalogue, r))}]({link(path, view_path(r))}) | {cell(trait_value(r))} | {REFERENCE_STATUS[reference_status(records, r)][0]} |\n"
+                text += f"### {cell(firmware['title'])}\n\n"
+                text += f"[File identity, platform and stock features]({link(path, view_path(firmware))})\n"
             entries = [r for r in catalogue.of_type("reference")
                        if row["id"] in r["camera_ids"] and r["category"] not in TRAIT_CATEGORIES]
             if entries:
                 text += "\n### Build-specific reference\n\n"
                 text += "".join(f"- {ref(path, entry['id'])}\n" for entry in entries)
+            text += f"\n[Community and discussion]({link(path, 'docs/community.md')}){{ #talk }}\n"
             outputs[path] = text + source_section(path, row)
-            outputs[view_path(row)] = overview
             continue
         elif kind == "firmware":
             text += f"\n**Camera:** {ref(path, row['camera_id'])}. **Advertised version:** {row['version']}. **Internal build:** {label(row['internal_build'])}.\n"
@@ -556,7 +567,7 @@ def render(catalogue):
             text = GENERATED + f"# {row['title']}\n\n{row.get('tagline', row['summary'])}\n\n"
             if any(installs(records, row, camera_id) for camera_id in row["camera_ids"]):
                 text += risk_note(path) + "\n"
-            text += project_actions(row, records) + research_actions(path, row)
+            text += project_actions(row, records)
             facts = [f"**Type:** {label(row['kind'])}"]
             if row["camera_ids"]:
                 facts.append("**Camera details:** " + ", ".join(
@@ -594,7 +605,7 @@ def render(catalogue):
                     for item in requests:
                         if item["tester_camera_id"] == camera_id:
                             text += f"[View the testing request]({item['url']}){{ .btn .btn-primary }}\n\n"
-                    text += f"[Camera overview]({link(path, view_path(camera))}) · [Test results]({link(path, camera_research_path(camera))}#evidence)\n\n</div>\n\n"
+                    text += f"[Mods and installation]({link(path, view_path(camera))}) · [Test results]({link(path, camera_research_path(camera))}#evidence)\n\n</div>\n\n"
             images = row.get("images", [])
             if images:
                 picture = images[0]
@@ -665,7 +676,6 @@ def render(catalogue):
             text += f"\n**Firmware:** {ref(path, row['firmware_id']) if row['firmware_id'] else 'Not recorded'} · **Mod build:** {row['mod_build'] or 'Not specified'}\n"
             if row["camera_id"]:
                 text += "\n" + report_link(records[row["camera_id"]], records[row["project_id"]], row["mod_build"]) + "\n"
-            text += f"\n[Share a research finding]({link(path, 'docs/research-with-ai.md')}#share-what-you-find)\n"
             text += f"\n**Provenance:** {label(row['provenance'])}. **Reported:** {row['reported_on']}. **Test date:** {row['tested_on'] or 'Not explicitly recorded'}.\n"
             text += f"\n**Reported/observed package SHA-256:** `{row['package_sha256']}`\n" if row["package_sha256"] else "\n**Reported/observed package SHA-256:** not recorded.\n"
             if row["expected_package_sha256"]:
@@ -741,6 +751,8 @@ def render(catalogue):
             outputs[path] = text + camera_updates(catalogue, path)
             continue
         if kind == "reference":
+            text += ("[Firmware builds](../firmware/index.md) · [Known hazards](#trouble-spots) · "
+                     "[Stock features](#built-in-features-by-build) · [Platform comparison](#platform-by-build)\n\n")
             rows = catalogue.of_type("reference")
             hazards = [r for r in rows if r["category"] == "hazard"]
             if hazards:
@@ -776,7 +788,23 @@ def render(catalogue):
             text += "What belongs here, and what stays upstream: [the reference policy](../../maintenance/reference-policy.md). For detailed research, start with [Olympus firmware research](../projects/oly-fw-analysis.md).\n"
             outputs[path] = text
             continue
+        if kind == "evidence":
+            for camera in catalogue.of_type("camera"):
+                observations = [r for r in catalogue.of_type("evidence") if r["camera_id"] == camera["id"]]
+                if observations:
+                    observations.sort(key=lambda row: (row["reported_on"], row["id"]), reverse=True)
+                    text += f"## {short_name(camera['title'])}\n\n"
+                    text += "".join(f"- {ref(path, r['id'])} · {observation_heading(r)} · {nice_date(r['reported_on'])}\n"
+                                    for r in observations) + "\n"
+            outputs[path] = text.rstrip() + "\n"
+            continue
         if kind == "project":
+            questions = [(project, item) for project in catalogue.of_type("project")
+                         for item in project.get("work_items", []) if item["state"] in ("open", "needs-evidence")]
+            if questions:
+                text += "## Open research questions\n\n"
+                text += "".join(f"- {ref(path, p['id'])} · [{cell(item['summary'].rstrip('.'))}]({item['url']})\n"
+                                for p, item in questions) + "\n"
             for title, kinds in PROJECT_GROUPS:
                 members = [r for r in catalogue.of_type("project") if r["kind"] in kinds]
                 members.sort(key=lambda r: (bool(r.get("images")), (latest_release(r) or {}).get("date", ""), r["title"]), reverse=True)
@@ -794,7 +822,7 @@ def render(catalogue):
         outputs[path] = text
 
     path = "views/research/index.md"
-    text = GENERATED + "# Research by camera\n\nChoose a model for its firmware builds, projects, technical reference and test results.\n"
+    text = GENERATED + "# Research by camera\n\n" + camera_finder(catalogue, path, research=True)
     for line in CAMERA_LINES:
         members = sorted((r for r in catalogue.of_type("camera") if camera_line(r["title"]) == line),
                          key=lambda r: r["title"])

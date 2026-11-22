@@ -12,8 +12,6 @@ The tester reports stock 1.2 restoration after the failed experiment.
 
 [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-5+%C2%B7+original-om5-prealpha1)
 
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Provenance:** firsthand tester report. **Reported:** 2026-11-17. **Test date:** Not explicitly recorded.
 
 **Reported/observed package SHA-256:** `70788992f032dad53bfa4e145b2147e376d3f25a62e2b1ce2929973fec26d1b4`

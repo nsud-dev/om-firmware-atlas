@@ -5,7 +5,7 @@
 Groundwork for bringing Caduceus to the original OM-5. Not released.
 
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
 <div class="cta-row" markdown="1">
@@ -16,18 +16,6 @@ Groundwork for bringing Caduceus to the original OM-5. Not released.
 [om5-port branch](https://github.com/tadejs/caduceus-om5/tree/om5-port){ .btn .btn-ghost }
 
 </div>
-
-<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Caduceus port for the original OM-5 (tadejs) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-om5-tadejs.md) to investigate [my question] on [my exact camera and firmware].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 **Type:** experimental fork · **Camera details:** [OM-5](#for-om5) · **Maintained by** [tadejs](https://github.com/tadejs)
 { .facts }
@@ -44,7 +32,7 @@ Use the Atlas entry for Caduceus port for the original OM-5 (tadejs) (https://gi
 **Get it:** No release for this camera yet.
 { .card-get }
 
-[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
+[Mods and installation](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 

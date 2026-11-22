@@ -2,21 +2,13 @@
 
 # OM SYSTEM OM-3 research
 
-E147: advanced Caduceus work, other modifications and an established research notebook.
+E147 · Stock firmware 1.1 · build 1100
+{ .facts }
 
-[Camera overview](../cameras/om3.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/om3.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for OM SYSTEM OM-3 (E147) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/om3.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -47,13 +39,11 @@ Availability · published release
 
 Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
 
-## Where to talk { #talk }
-
-[Caduceus Discord](../community/caduceus-discord.md), [r/M43](../community/m43.md). For a reproducible bug, use the project's own issue tracker.
-
 ## Firmware and technical reference { #platform }
 
-[om3 firmware 1.1, build 1100](../firmware/om3-1100.md).
+### om3 firmware 1.1, build 1100
+
+[File identity, platform and stock features](../firmware/om3-1100.md)
 
 ### Build-specific reference
 
@@ -83,6 +73,8 @@ Results belong to the named project and package. Emulator output does not establ
 - [Start a software timer](../reference/om3-1100.timer-start.md)
 - [Software timer table](../reference/om3-1100.timer-table.md)
 - [Touch timer re-arm](../reference/om3-1100.touch-timer-rearm.md)
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

@@ -133,6 +133,10 @@ records:
     url: https://github.com/Meghnus/om10mi-mods/releases/tag/v87
     prerelease: false
     camera_ids: *id001
+    installation:
+      camera.em10:
+        firmware_id: firmware.em10-1400
+        url: https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/INSTALL.md
     highlights:
     - Colour wheel in Color Creator at the ART dial, with an on-screen key hint and a COLOR WHEEL mode guide.
     - Own icons for Portra 400, Kodachrome 64, Ektar 100 and Gold 200.

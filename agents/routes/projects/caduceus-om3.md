@@ -8,7 +8,7 @@ OM-3 looks, colour editing, persistence and research.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [caduceus-om3.yaml](../../../records/projects/caduceus-om3.yaml) | Project scope, related work and contribution destination | 20,906 | ~5,227 |
+| [caduceus-om3.yaml](../../../records/projects/caduceus-om3.yaml) | Project scope, related work and contribution destination | 21,118 | ~5,280 |
 | [om3.yaml](../../../records/sources/om3.yaml) | Find the relevant source/observation ID; use bounded reads | 14,928 | ~3,732 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

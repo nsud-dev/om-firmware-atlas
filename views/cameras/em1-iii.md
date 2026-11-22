@@ -2,30 +2,45 @@
 
 # Olympus OM-D E-M1 Mark III
 
-E139: one mod builder for firmware 1.6; owner camera reports per mod, no Atlas evidence imported.
+Model E139
+{ .camera-id }
 
-**Model code:** E139 · **Also known as:** E-M1 III, E-M1 Mark III, EM1III · **Stock firmware covered:** 1.6
-{ .facts }
+<span id="research"></span><span id="platform"></span><span id="firmware"></span><span id="evidence"></span><span id="talk"></span>
 
-[View the showcase](../showcases/em1-iii.md){ #features .btn .btn-primary }
+[Developer research for this camera](../research/em1-iii.md)
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+<span id="features"></span><span id="projects"></span>
+
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
-## Firmware projects { #projects }
+<section class="model-panel" markdown="1">
 
-<div class="glance" markdown="1">
+## E-M1 Mark III Mod Builder { #em1-iii-mod-builder }
 
-**Releases for this camera:**
+Panorama 65:24, Multiple Exposure with 3 and 4 frames, Focus stacking with any lens.
 
-- [E-M1 Mark III Mod Builder](../showcases/em1-iii.md#em1-iii-mod-builder) · mod-builder-1.19 · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M1+Mark+III+%C2%B7+stock+firmware%3A+&package=E-M1+Mark+III+Mod+Builder+%C2%B7+mod-builder-1.19)
+**mod-builder-1.19** · Stock firmware 1.6
+{ .release-scope }
 
-</div>
+No camera test recorded for this release.
 
-[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
+Unofficial firmware builder. The apps are unsigned.
+{ .release-warning }
 
-## Developer resources { #research }
+[Install guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ba87b5f4358b6ee518cf133676d69698db6ef83e/builder/README.md){ .btn .btn-primary } · [Release notes & files](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19)
 
-<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
+<details class="mod-details" markdown="1"><summary>Features and examples</summary>
 
-[Research for this model](../research/em1-iii.md) · [Community](../../docs/community.md)
+- **Panorama 65:24.** Replaces the 7:6 aspect with 65:24 in the menu, live-view frame, AF areas and raw frame. Worked on the camera (1.5 build).
+- **Multiple Exposure with 3 and 4 frames.** Creates 3- and 4-frame multiple exposures correctly; the live preview is missing between frames 2–3 and 3–4 (fix in test 1.746, awaiting a camera result). Worked on the camera (1.5 build).
+- **Focus stacking with any lens.** Removes the lens check for in-camera focus stacking. Worked on the camera (1.5 build).
+
+</details>
+
+[Full project details](../projects/em1-iii-mod-builder.md#for-em1-iii)
+
+</section>
+
+[Report a camera result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M1+Mark+III+%C2%B7+stock+firmware%3A+)

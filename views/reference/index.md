@@ -4,6 +4,8 @@
 
 Compact, sourced facts that projects and agents reuse: named addresses for one exact firmware build, platform facts and built-in features per build, and known trouble spots. Each entry links the upstream section that holds the full explanation; derivations, disassembly and code stay there. Status is worked out from the observations: single source, corroborated by independent projects, camera-confirmed, or disputed.
 
+[Firmware builds](../firmware/index.md) · [Known hazards](#trouble-spots) · [Stock features](#built-in-features-by-build) · [Platform comparison](#platform-by-build)
+
 ## Trouble spots
 
 | Rule | Cameras | Status |

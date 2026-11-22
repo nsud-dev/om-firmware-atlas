@@ -2,8 +2,4 @@
 
 # Olympus OM-D E-M5 Mark III showcase
 
-[Camera overview](../cameras/em5-iii.md)
-
-The Atlas has no community firmware projects to showcase for this model yet.
-
-[See research for this model](../research/em5-iii.md).
+[Mods and installation](../cameras/em5-iii.md)

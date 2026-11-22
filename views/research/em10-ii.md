@@ -2,21 +2,13 @@
 
 # Olympus OM-D E-M10 Mark II research
 
-E120: one card-loaded plugin project for firmware 1.4, tested by its maintainer on one body; distinct from the E-M10 Mark I and Mark IV.
+E120 · Stock firmware 1.4 · build 1400
+{ .facts }
 
-[Camera overview](../cameras/em10-ii.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/em10-ii.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus OM-D E-M10 Mark II (E120) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/em10-ii.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -63,17 +55,9 @@ Results belong to the named project and package. Emulator output does not establ
 
 ## Firmware and technical reference { #platform }
 
-[E-M10 Mark II firmware 1.4, build 1400](../firmware/em10-ii-1400.md).
-
 ### E-M10 Mark II firmware 1.4, build 1400
 
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Main CPU](../reference/em10-ii-1400.main-cpu.md) | MN103 base ISA (no AM33 or AM33-2), cores CPU0 to CPU2 | Single source |
-| [Update file magic](../reference/em10-ii-1400.container-magic.md) | OE 12 00 | Single source |
-| [Firmware blocks](../reference/em10-ii-1400.firmware-blocks.md) | 3 | Single source |
+[File identity, platform and stock features](../firmware/em10-ii-1400.md)
 
 ### Build-specific reference
 
@@ -90,6 +74,8 @@ What the stock firmware itself contains, separate from what projects add. Follow
 - [Block, never spin, at or above the watchdog task's priority](../reference/hazard.spin-starves-watchdog.md)
 - [A code patch refreshes only the patching core's I-cache](../reference/hazard.stale-icache-other-cores.md)
 - [Remove a card-loaded payload before a PC firmware update](../reference/hazard.usb-update-with-card-payload.md)
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

@@ -12,8 +12,6 @@ The owner reports peaking in normal MF live view and a clean post-shot preview o
 
 [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+peaking-mf)
 
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
 **Provenance:** maintainer summary. **Reported:** 2026-11-21. **Test date:** 2026-11-21.
 
 **Reported/observed package SHA-256:** `6a47806dfafce15d281358eae2beffe397132e5999c50b28c69b2a2467efcf39`

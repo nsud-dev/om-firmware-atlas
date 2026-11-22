@@ -182,6 +182,10 @@ records:
     url: https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a
     prerelease: false
     camera_ids: *id001
+    installation:
+      camera.ep7:
+        firmware_id: firmware.ep7-1100
+        url: https://github.com/cakelesscoder/caduceus-ep7/blob/a0c351f5398a4e7b69738103bda3e5c92f81971d/docs/INSTALL.md
     highlights:
     - Halation now applies in brighter scenes.
     - Japanese labels when the camera is set to Japanese.

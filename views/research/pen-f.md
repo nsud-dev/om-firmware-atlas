@@ -2,21 +2,13 @@
 
 # Olympus PEN-F research
 
-E122: foundational HSL research; exact internal build identity matters.
+E122 · Stock firmware 3.1 · build 3101
+{ .facts }
 
-[Camera overview](../cameras/pen-f.md) · [Cross-body research](../../docs/cross-body.md)
+[Mods & installation for this camera](../cameras/pen-f.md)
 
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus PEN-F (E122) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/research/pen-f.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+[Firmware & platform](#platform) · [Findings & tests](#evidence) · [Projects & tools](#projects-and-repositories)
+{ .page-jumps }
 
 ## Projects and repositories
 
@@ -47,16 +39,9 @@ Results belong to the named project and package. Emulator output does not establ
 
 ## Firmware and technical reference { #platform }
 
-[pen-f firmware 3.1, build 3101](../firmware/pen-f-3101.md).
-
 ### pen-f firmware 3.1, build 3101
 
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Main CPU](../reference/pen-f-3101.main-cpu.md) | MN103, cores CPU0 to CPU2 | Single source |
-| [Firmware blocks](../reference/pen-f-3101.firmware-blocks.md) | 4 | Camera-confirmed |
+[File identity, platform and stock features](../firmware/pen-f-3101.md)
 
 ### Build-specific reference
 
@@ -71,6 +56,8 @@ What the stock firmware itself contains, separate from what projects add. Follow
 - [Section 3 free tail](../reference/pen-f-3101.section-3-tail.md)
 - [Section load request](../reference/pen-f-3101.section-load-request.md)
 - [Start a task](../reference/pen-f-3101.task-start.md)
+
+[Community and discussion](../../docs/community.md){ #talk }
 
 ## Sources and record
 

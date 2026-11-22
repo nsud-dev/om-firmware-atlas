@@ -2,30 +2,45 @@
 
 # Olympus PEN E-PM2
 
-E101, TruePic VI (2012): one camera-tested mod; its addresses and edits do not carry over to newer bodies.
+Model E101
+{ .camera-id }
 
-**Model code:** E101 · **Also known as:** E-PM2, PEN mini E-PM2, EPM2 · **Stock firmware covered:** 1.6
-{ .facts }
+<span id="research"></span><span id="platform"></span><span id="firmware"></span><span id="evidence"></span><span id="talk"></span>
 
-[View the showcase](../showcases/epm2.md){ #features .btn .btn-primary }
+[Developer research for this camera](../research/epm2.md)
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+<span id="features"></span><span id="projects"></span>
+
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can stop your camera from starting. Recovery is not guaranteed.
 { .install-note }
 
-## Firmware projects { #projects }
+<section class="model-panel" markdown="1">
 
-<div class="glance" markdown="1">
+## EPM2Mod { #epm2mod }
 
-**Releases for this camera:**
+Film simulations, Interval shooting, Level gauge.
 
-- [EPM2Mod](../showcases/epm2.md#epm2mod) · v2026.11.20-rc.5 (pre-release) · The latest camera report gives its build as [peaking-mf](../evidence/epm2-peaking-mf.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.5)
+**v2026.11.20-rc.5 (pre-release)** · Stock firmware 1.6
+{ .release-scope }
 
-</div>
+No camera test recorded for this release. See the camera report for [peaking-mf](../evidence/epm2-peaking-mf.md).
 
-[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
+Unofficial pre-release for the Olympus PEN E-PM2.
+{ .release-warning }
 
-## Developer resources { #research }
+[Install instructions & files](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5){ .btn .btn-primary }
 
-<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
+<details class="mod-details" markdown="1"><summary>Features and examples</summary>
 
-[Research for this model](../research/epm2.md) · [Community](../../docs/community.md)
+- **Film simulations.** Up to 12 of 32 film simulations in the ART entries, loaded from a card file with Load Looks; kept after power-off. For photos and live view; the photo records the film's name.
+- **Interval shooting.** Time Lapse Settings with up to 240 frames.
+- **Level gauge.** The firmware's own gauge as an LV-Info view, with calibration and the histogram screen's shooting information. Three data edits, no new code.
+
+</details>
+
+[Full project details](../projects/epm2mod.md#for-epm2)
+
+</section>
+
+[Report a camera result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+)

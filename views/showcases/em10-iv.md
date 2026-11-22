@@ -2,24 +2,6 @@
 
 # Olympus OM-D E-M10 Mark IV showcase
 
-[Camera overview](../cameras/em10-iv.md)
+[Mods and installation](../cameras/em10-iv.md)
 
-
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
-
-<section class="model-panel" markdown="1">
-
-## Caduceus for E-P7 { #caduceus-ep7 }
-
-**For this camera:** No build for this camera. Caduceus's body survey includes the E-M10 IV in its firmware-signature comparisons for possible ports; nothing has been ported.
-{ .card-for }
-
-**Get it:** No release for this camera yet.
-{ .card-get }
-
-[View the testing request](https://github.com/cakelesscoder/caduceus-ep7/issues/21)
-
-[Full project details](../projects/caduceus-ep7.md#for-em10-iv) · [Ask or report issues](https://github.com/cakelesscoder/caduceus-ep7/issues)
-
-</section>
+- [Caduceus for E-P7](../cameras/em10-iv.md#caduceus-ep7){ #caduceus-ep7 }
