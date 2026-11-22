@@ -45,7 +45,7 @@ Use the Atlas entry for E-M1 Mark III Mod Builder (https://github.com/xulfr/om-f
 **Get it:** [mod-builder-1.18](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.18), 21 Nov 2026 · [Builder guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ae16f3d2836e7273164c7cd3497237117c8b9ff9/builder/README.md)
 { .card-get }
 
-[Camera overview and test results](../cameras/em1-iii.md)
+[Camera overview](../cameras/em1-iii.md) · [Test results](../research/em1-iii.md#evidence)
 
 </div>
 

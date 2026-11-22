@@ -2,7 +2,7 @@
 
 # Cameras
 
-Choose your exact model to see its features, releases, camera tests and installation guidance.
+Choose your exact model to see its firmware projects and release status.
 
 <div class="camera-finder" markdown="1" hidden>
 
@@ -53,7 +53,7 @@ E147
 
 E147: advanced Caduceus work, other modifications and an established research notebook.
 
-3 mods or ports, 2 with a release · 3 other projects
+3 mods or ports, 2 with a release
 { .card-meta }
 
 </div>
@@ -67,7 +67,7 @@ E144
 
 Original E144: several projects have distinct experiments. Mark II results do not apply.
 
-3 mods or ports, 1 with a release · dbv0.4.3: The project reports that this build does not work on this camera. · 4 other projects
+3 mods or ports, 1 with a release · dbv0.4.3: The project reports that this build does not work on this camera.
 { .card-meta }
 
 </div>
@@ -81,7 +81,7 @@ E148
 
 E148: v0.2.0-alpha1 has an overall positive owner report; original OM-5 work is separate.
 
-3 mods or ports, 3 with a release · dbv0.4.3: The project reports that this build does not work on this camera. · 2 other projects
+3 mods or ports, 3 with a release · dbv0.4.3: The project reports that this build does not work on this camera.
 { .card-meta }
 
 </div>
@@ -143,7 +143,7 @@ E140
 
 E140: port/signature research and emulator coverage; no physical feature report imported.
 
-1 mod or port, none released yet · 1 other project · discovery only
+1 mod or port, none released yet · discovery only
 { .card-meta }
 
 </div>
@@ -157,7 +157,7 @@ E137
 
 E137: firmware 1.7 studied in depth; focus stacking with any lens, a Live ND port and the card-file debug shell tested on one camera.
 
-No mods yet · 3 other projects
+No mods catalogued
 { .card-meta }
 
 </div>
@@ -177,7 +177,7 @@ E142
 
 E142: original Caduceus project and a documented Ghidra/REA setup.
 
-2 mods or ports, 2 with a release · 3 other projects
+2 mods or ports, 2 with a release
 { .card-meta }
 
 </div>
@@ -205,7 +205,7 @@ E122
 
 E122: foundational HSL research; exact internal build identity matters.
 
-2 mods or ports, 2 with a release · dbv0.3.2: The release names this camera without saying which features it adds. · 2 other projects
+2 mods or ports, 2 with a release · dbv0.3.2: The release names this camera without saying which features it adds.
 { .card-meta }
 
 </div>

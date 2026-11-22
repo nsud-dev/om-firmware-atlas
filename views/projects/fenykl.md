@@ -45,7 +45,7 @@ Use the Atlas entry for fenykl (https://github.com/xulfr/om-firmware-atlas/blob/
 **Get it:** No release for this camera yet.
 { .card-get }
 
-[Camera overview and test results](../cameras/em10-ii.md)
+[Camera overview](../cameras/em10-ii.md) · [Test results](../research/em10-ii.md#evidence)
 
 </div>
 

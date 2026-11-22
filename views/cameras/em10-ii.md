@@ -4,244 +4,28 @@
 
 E120: one card-loaded plugin project for firmware 1.4, tested by its maintainer on one body; distinct from the E-M10 Mark I and Mark IV.
 
-**Model code:** E120 · **Also known as:** E-M10 II, E-M10 Mark II, E-M10II, EM10II · **Catalogue depth:** initial review
+**Model code:** E120 · **Also known as:** E-M10 II, E-M10 Mark II, E-M10II, EM10II · **Stock firmware covered:** 1.4
 { .facts }
+
+[View the showcase](../showcases/em10-ii.md){ #features .btn .btn-primary }
+
+**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
+{ .install-note }
+
+## Firmware projects { #projects }
 
 <div class="glance" markdown="1">
 
 **Releases for this camera:** none listed here.
 
-**No release for this camera yet:** [fenykl](../projects/fenykl.md#for-em10-ii).
-
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform) · [Research](#research)
+**No release for this camera yet:** [fenykl](../showcases/em10-ii.md#fenykl).
 
 </div>
 
-**[Before you install](../../docs/before-you-install.md)** · Unofficial firmware can leave your camera stuck restarting or unable to start. Recovery from a memory card is not guaranteed.
-{ .install-note }
+[Read the evidence guide](../../docs/evidence.md) · [Report a camera result](../../docs/report.md)
 
-## What you can do with this camera { #features }
+## Developer resources { #research }
 
-Features as each project describes them, with their status. Follow a project's own guide before installing anything.
+<span id="evidence"></span><span id="platform"></span><span id="firmware"></span><span id="talk"></span>
 
-<div class="feature-grid" markdown="1">
-
-<div class="feature-card" markdown="1">
-
-**Card-loaded plugins** <span class="pill pill-testing">Testing</span>
-{ .feature-head }
-
-A one-time loader patch runs FENYKL.BIN from the card on power-switch and battery-connect boots. Without a valid file the camera runs as stock; OK held at power-on runs no payload.
-
-Stock firmware 1.4 · [Evidence and limits for fenykl-loader with FENYKL.TST and battery-connect boots](../capabilities/em10-ii-fenykl-loader.md)
-
-[fenykl](../projects/fenykl.md#for-em10-ii)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Settings tab L in the Custom menu** <span class="pill pill-testing">Testing</span>
-{ .feature-head }
-
-A native twelfth Custom menu tab, drawn and edited by the stock menu code; values are saved to the card two seconds after a change.
-
-Stock firmware 1.4 · [Evidence and limits for main plugin (2026-11-20 builds)](../capabilities/em10-ii-fenykl-settings-tab.md)
-
-[fenykl](../projects/fenykl.md#for-em10-ii)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Pre-capture** <span class="pill pill-testing">Testing</span>
-{ .feature-head }
-
-A half press in silent sequential H starts the burst and keeps the latest 6 frames; the full press records them. Needs flash off, long-exposure NR off and S-AF or MF.
-
-No separate test record linked to this feature.
-
-[fenykl](../projects/fenykl.md#for-em10-ii)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Focus distance, depth of field and focus meter** <span class="pill pill-testing">Testing</span>
-{ .feature-head }
-
-The focus distance and depth of field the camera writes to EXIF, and a contrast bar, on the live-view INFO screens, also in MF.
-
-No separate test record linked to this feature.
-
-[fenykl](../projects/fenykl.md#for-em10-ii)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Battery percentage** <span class="pill pill-testing">Testing</span>
-{ .feature-head }
-
-An estimated percentage replaces the stock battery icon on the INFO screens.
-
-No separate test record linked to this feature.
-
-[fenykl](../projects/fenykl.md#for-em10-ii)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**R/B swap** <span class="pill pill-testing">Testing</span>
-{ .feature-head }
-
-Swaps the red and blue channels, for infrared photography.
-
-No separate test record linked to this feature.
-
-[fenykl](../projects/fenykl.md#for-em10-ii)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Screenshot button** <span class="pill pill-testing">Testing</span>
-{ .feature-head }
-
-A Button Function entry for Fn1, Fn2, Fn3, REC or L-Fn that saves the live view as SHOTnnnn.PPM to the card root.
-
-No separate test record linked to this feature.
-
-[fenykl](../projects/fenykl.md#for-em10-ii)
-{ .feature-actions }
-
-</div>
-
-<div class="feature-card" markdown="1">
-
-**Wi-Fi dev monitor** <span class="pill pill-testing">Testing</span>
-{ .feature-head }
-
-An opt-in plugin that opens the camera's access point for memory reads and writes, small test programs, card files and screen capture from a PC.
-
-No separate test record linked to this feature.
-
-[fenykl](../projects/fenykl.md#for-em10-ii)
-{ .feature-actions }
-
-</div>
-
-</div>
-
-## Projects for this camera { #projects }
-
-Each card says what the project has for this camera and where to get it. A project can be listed here for a small part of its work; its own page covers the rest.
-
-### Mods and ports
-
-These change the camera's firmware.
-
-<div class="project-grid" markdown="1">
-
-<div class="project-card" markdown="1">
-
-[fenykl](../projects/fenykl.md#for-em10-ii){ .card-title }
-
-A loader flashed once, then plugins written in C from the SD card. E-M10 Mark II.
-
-**For this camera:** 8 features, including Card-loaded plugins, Settings tab L in the Custom menu and Pre-capture.
-{ .card-for }
-
-**Get it:** No release for this camera yet.
-{ .card-get }
-
-Mod
-{ .card-meta }
-
-[Project home](https://github.com/atx/fenykl) · [Ask or report issues](https://github.com/atx/fenykl/issues)
-{ .card-links }
-
-</div>
-
-</div>
-
-
-## Claims and test evidence { #evidence }
-
-<div class="evidence-list" markdown="1">
-
-<div class="evidence-entry" markdown="1">
-
-**Camera test · reported working** · [E-M10 Mark II fenykl loader: maintainer's camera](../evidence/em10-ii-fenykl-loader-current.md)
-
-partial report · release label only
-{ .observation-meta }
-
-Claim · [E-M10 Mark II code loaded from the card, fenykl loader](../capabilities/em10-ii-fenykl-loader.md)
-
-Project and build · [fenykl](../projects/fenykl.md#for-em10-ii) / fenykl-loader with FENYKL.TST and battery-connect boots
-
-Availability · experimental branch
-
-</div>
-
-<div class="evidence-entry" markdown="1">
-
-**Camera test · reported working** · [E-M10 Mark II fenykl settings tab: maintainer's camera](../evidence/em10-ii-fenykl-settings-tab.md)
-
-partial report · release label only
-{ .observation-meta }
-
-Claim · [E-M10 Mark II native settings tab with saved values, fenykl main plugin](../capabilities/em10-ii-fenykl-settings-tab.md)
-
-Project and build · [fenykl](../projects/fenykl.md#for-em10-ii) / main plugin (2026-11-20 builds)
-
-Availability · experimental branch
-
-</div>
-
-</div>
-
-Results belong to the named project and package. Emulator output does not establish physical-camera behaviour.
-
-## Platform and built-in features (E-M10 Mark II firmware 1.4, build 1400) { #platform }
-
-What the stock firmware itself contains, separate from what projects add. Follow an entry for its sources.
-
-| | Value | Status |
-|---|---|---|
-| [Main CPU](../reference/em10-ii-1400.main-cpu.md) | MN103 base ISA (no AM33 or AM33-2), cores CPU0 to CPU2 | Single source |
-| [Update file magic](../reference/em10-ii-1400.container-magic.md) | OE 12 00 | Single source |
-| [Firmware blocks](../reference/em10-ii-1400.firmware-blocks.md) | 3 | Single source |
-
-## Firmware
-
-[E-M10 Mark II firmware 1.4, build 1400](../firmware/em10-ii-1400.md).
-
-## Research this camera { #research }
-
-<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
-
-Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
-
-```text
-Use the Atlas entry for Olympus OM-D E-M10 Mark II (E120) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em10-ii.md) to investigate [my question] on [my stock firmware version].
-```
-
-</details>
-
-[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
-
-## Sources and record
-
-- [fenykl overview and install](../sources/fenykl.readme.md)
-- [fenykl stock firmware identity](../sources/fenykl.firmware.md)
-
-[Canonical record](../../records/cameras/em10-ii.yaml) · Substantively reviewed: 2026-11-21.
+[Research for this model](../research/em10-ii.md) · [Community](../../docs/community.md)

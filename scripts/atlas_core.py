@@ -233,6 +233,8 @@ class Catalogue:
                         if camera not in row["camera_ids"]:
                             errors.append(f"{node_id}: release {release['tag']} names {camera}, which is not in the project's camera_ids.")
                 for image in row.get("images", []):
+                    if "camera_id" in image and image["camera_id"] not in row["camera_ids"]:
+                        errors.append(f"{node_id}: image {image['path']} names a camera outside the project.")
                     if not (self.root / "docs" / image["path"]).is_file():
                         errors.append(f"{node_id}: image docs/{image['path']} does not exist.")
             if row["type"] == "capability":

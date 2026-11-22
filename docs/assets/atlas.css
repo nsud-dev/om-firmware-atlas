@@ -529,7 +529,6 @@ kbd {
 .project-card a.card-title::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .project-card a:not(.card-title) { position: relative; z-index: 1; }
 .prose p.card-features { font-size: .82rem !important; color: var(--accent); line-height: 1.5; }
-.project-grid.featured { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 
 .prose p.hero-image, .prose .gallery-item p:has(> img) { margin: 1.6rem 0 .5rem; }
 .prose .hero-image img, .gallery img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); background: var(--panel); }
@@ -561,8 +560,6 @@ kbd {
 .hero-visual p { margin: 0; }
 .hero-visual img { display: block; width: 100%; border-radius: 22px; border: 1px solid var(--line); box-shadow: var(--shadow), 0 30px 80px -30px var(--glow-a); }
 .prose p.hero-visual-caption { margin-top: 12px; font-size: .85rem; color: var(--muted); }
-.home-prose .showcase .btn { margin-top: .4rem; }
-.home-prose .showcase h2, .home-prose .releases-strip h2 { margin-bottom: 1.6rem; }
 
 /* Camera page summary */
 .glance { margin: 1rem 0 1.4rem; padding: 14px 18px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius); background: var(--panel); }
@@ -600,7 +597,6 @@ kbd {
   border-radius: var(--radius-sm); overflow-wrap: anywhere;
 }
 .evidence-entry p { margin: 0; }
-.camera-mobile-nav { display: none; }
 .prose [id^="for-"], .prose h2[id] { scroll-margin-top: calc(var(--topbar-h) + 1rem); }
 .tester-panel {
   margin-bottom: 2rem; padding: 1.25rem 1.5rem; border-left: 3px solid var(--cool);
@@ -610,14 +606,11 @@ kbd {
 .tester-panel p:last-child { margin-bottom: 0; }
 .release-model { color: var(--cool); margin-bottom: .4rem; }
 .model-panel { margin: 1rem 0; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--panel); }
-.prose .model-panel h3 { margin-top: 0; }
+.prose .model-panel > :is(h2, h3) { margin-top: 0; }
 .model-panel p:last-child { margin-bottom: 0; }
 .evidence-entry p + p { margin-top: .4rem; }
 .evidence-entry .observation-meta { color: var(--muted); font-size: .88rem; }
 @media (max-width: 1020px) {
-  .camera-mobile-nav { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.4rem; }
-  .camera-mobile-nav .side-mobile { flex: 1; margin: 0; }
-  .camera-mobile-nav > a { padding: .6rem 0; font-size: .9rem; }
 }
 
 @media (max-width: 385px) {
@@ -629,7 +622,7 @@ kbd {
 
 
 /* Keep the selected body visible when a camera link opens a shared project. */
-.model-panel:has(> h3:target) {
+.model-panel:has(> :is(h2, h3):target) {
   border-color: var(--accent-line);
   box-shadow: inset 3px 0 var(--accent);
   background: linear-gradient(105deg, var(--accent-soft), transparent 65%), var(--panel);
@@ -654,7 +647,8 @@ kbd {
 .research-action > summary { cursor: pointer; color: var(--accent); font-weight: 600; }
 .research-action > summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
-.prose .feature-actions { margin: auto 0 0; padding-top: .65rem; border-top: 1px solid var(--line); font-size: .9rem; }
 @media (min-width: 720px) {
   .research-start { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+.prose .model-panel .hero-image img { width: auto; max-width: 100%; max-height: 24rem; object-fit: contain; }

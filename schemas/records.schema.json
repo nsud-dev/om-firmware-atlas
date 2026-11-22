@@ -93,7 +93,8 @@
           "images": {"type": "array", "items": {"type": "object", "additionalProperties": false,
             "required": ["path", "alt", "caption", "credit"], "properties": {
               "path": {"type": "string", "pattern": "^assets/projects/[a-z0-9-]+/[a-z0-9-]+\\.(jpg|png|webp)$"},
-              "alt": {"$ref": "#/$defs/text"}, "caption": {"$ref": "#/$defs/text"}, "credit": {"$ref": "#/$defs/text"}
+              "alt": {"$ref": "#/$defs/text"}, "caption": {"$ref": "#/$defs/text"}, "credit": {"$ref": "#/$defs/text"},
+              "camera_id": {"type": "string"}
             }}}
         }}
       ], "unevaluatedProperties": false

@@ -48,7 +48,7 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
 { .release-warning }
 
-[Camera overview and test results](../cameras/om5.md)
+[Camera overview](../cameras/om5.md) · [Test results](../research/om5.md#evidence)
 
 </div>
 
@@ -62,7 +62,7 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **dbv0.4.3 · The project reports that this build does not work on this camera.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3).
 { .release-warning }
 
-[Camera overview and test results](../cameras/om5-ii.md)
+[Camera overview](../cameras/om5-ii.md) · [Test results](../research/om5-ii.md#evidence)
 
 </div>
 
@@ -78,7 +78,7 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **Get it:** [dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3), 21 Nov 2026. Check the release notes for files and instructions for this model.
 { .card-get }
 
-[Camera overview and test results](../cameras/om3.md)
+[Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
 
 </div>
 
@@ -94,7 +94,7 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **Get it:** [dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3), 21 Nov 2026. Check the release notes for files and instructions for this model.
 { .card-get }
 
-[Camera overview and test results](../cameras/ep7.md)
+[Camera overview](../cameras/ep7.md) · [Test results](../research/ep7.md#evidence)
 
 </div>
 
@@ -108,7 +108,7 @@ Use the Atlas entry for db firmware / om-c-firmware (https://github.com/xulfr/om
 **dbv0.3.2 · The release names this camera without saying which features it adds.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2).
 { .release-warning }
 
-[Camera overview and test results](../cameras/pen-f.md)
+[Camera overview](../cameras/pen-f.md) · [Test results](../research/pen-f.md#evidence)
 
 </div>
 

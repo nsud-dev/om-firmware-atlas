@@ -17,8 +17,7 @@ from pathlib import Path
 import yaml
 
 from atlas_core import Catalogue, LINK_RE, REPO, cost, markdown_links, read_yaml, routing_checks
-from atlas_generate import (CAMERA_LINES, PROJECT_GROUPS, camera_line, generated_diff, render, short_name,
-                            camera_finder, people_markdown, view_path, write_generated)
+from atlas_generate import camera_finder, camera_research_path, generated_diff, people_markdown, render, view_path, write_generated
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -51,44 +50,6 @@ def review_notice(catalogue, row, day):
     return f"\n\n> **Source review due:** the oldest linked source check was {oldest} ({age} days before this publication). Historical observations are retained; review current upstream state before relying on a current-status claim.\n"
 
 
-def expand_nav(nav, catalogue):
-    """Fill record-driven navigation: cameras grouped by line, and the knowledge guides in README order."""
-    readme = catalogue.root / "knowledge/README.md"
-    by_path = {(catalogue.root / a["path"]).resolve(): a for a in catalogue.articles.values()}
-    guides = []
-    for text, target in re.findall(r"\[([^\]]+)\]\(([^)\s]+)\)", readme.read_text(encoding="utf-8")):
-        article = by_path.get((readme.parent / target).resolve())
-        if article and article["path"] not in (path for _, path in guides):
-            guides.append((text, article["path"]))
-    listed = {path for _, path in guides}
-    guides += sorted((a["title"], a["path"]) for a in catalogue.articles.values() if a["path"] not in listed)
-    cameras = catalogue.of_type("camera")
-
-    def expand(entry):
-        if not isinstance(entry, dict):
-            return entry
-        (title, value), = entry.items()
-        if value == "views/cameras/index.md":
-            groups = []
-            for line in CAMERA_LINES:
-                members = sorted((r for r in cameras if camera_line(r["title"]) == line), key=lambda r: r["title"])
-                if members:
-                    groups.append({line: [{short_name(r["title"]): view_path(r)} for r in members]})
-            return {title: [{"All cameras": value}] + groups}
-        if value == "views/projects/index.md":
-            projects = catalogue.of_type("project")
-            groups = [{group: [{r["title"]: view_path(r)} for r in sorted(projects, key=lambda r: r["title"]) if r["kind"] in kinds]}
-                      for group, kinds in PROJECT_GROUPS if any(r["kind"] in kinds for r in projects)]
-            return {title: [{"All projects": value}] + groups}
-        if value == "knowledge/README.md":
-            return {title: [{text: path} for text, path in guides]}
-        if isinstance(value, list):
-            return {title: [expand(child) for child in value]}
-        return entry
-
-    return [expand(entry) for entry in nav]
-
-
 def stage_site(catalogue, revision=None, timestamp=None):
     root = catalogue.root
     stage = (root / ".build/docs").resolve()
@@ -99,6 +60,7 @@ def stage_site(catalogue, revision=None, timestamp=None):
     stage.mkdir(parents=True)
     publication_day = dt.datetime.fromisoformat(timestamp).date() if timestamp else dt.datetime.now(dt.timezone.utc).date()
     record_pages = {view_path(row): row for row in catalogue.records.values()}
+    record_pages.update({camera_research_path(row): row for row in catalogue.of_type("camera")})
     mapping = {}
     for directory in ("docs", "knowledge", "views"):
         for source in (root / directory).rglob("*"):
@@ -145,7 +107,6 @@ def stage_site(catalogue, revision=None, timestamp=None):
     timestamp = timestamp or dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     config = read_yaml(root / "mkdocs.yml")
     config.update(docs_dir=str(stage), site_dir=str(root / "site"))
-    config["nav"] = expand_nav(config["nav"], catalogue)
     config["theme"]["custom_dir"] = str(root / "overrides")
     config["extra"] = dict(config.get("extra", {}), atlas_revision=revision, atlas_built_at=timestamp)
     config_path = root / ".build/mkdocs.yml"
