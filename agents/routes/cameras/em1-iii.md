@@ -8,11 +8,12 @@ Exact ID: `camera.em1-iii`. Codes: E139. [Human status view](../../../views/came
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [em1-iii.yaml](../../../records/cameras/em1-iii.yaml) | Identity and aliases | 453 | ~114 |
+| [em1-iii.yaml](../../../records/cameras/em1-iii.yaml) | Identity and aliases | 472 | ~118 |
 | [em1-iii-1600.yaml](../../../records/firmware/em1-iii/em1-iii-1600.yaml) | E-M1 Mark III firmware 1.6, build 1600 | 640 | ~160 |
 
 ## Existing project homes
 
 - [E-M1 Mark III Mod Builder](../projects/em1-iii-mod-builder.md): Mod builder for E-M1 III firmware 1.6; after a short pause the author reports the project continuing, with Fill and Manual flash in handheld High Res in 1.18.
+- [OM-Emu](../projects/om-emu.md): Firmware lab, model ports, traces and patch overlays.
 
 Then choose the [task topic](../topics/index.md). Read exact upstream sections only as needed. Do not transfer test results between models or packages.

@@ -12,7 +12,7 @@ Pick firmware mods for the E-M1 Mark III and build your own update file.
 
 [Project home](https://github.com/dfeldt91-blip/E-M1-Miii){ .btn .btn-primary }
 [Builder guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ae16f3d2836e7273164c7cd3497237117c8b9ff9/builder/README.md){ .btn .btn-ghost }
-[Latest release](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.18){ .btn .btn-ghost }
+[Latest release](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19){ .btn .btn-ghost }
 
 </div>
 
@@ -28,7 +28,7 @@ Use the Atlas entry for E-M1 Mark III Mod Builder (https://github.com/xulfr/om-f
 
 [Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
-**Type:** mod · **Camera details:** [OM-D E-M1 Mark III](#for-em1-iii) · **Latest release:** [mod-builder-1.18](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.18), 21 Nov 2026 · **Maintained by** [dfeldt91-blip](https://github.com/dfeldt91-blip)
+**Type:** mod · **Camera details:** [OM-D E-M1 Mark III](#for-em1-iii) · **Latest release:** [mod-builder-1.19](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19), 22 Nov 2026 · **Maintained by** [dfeldt91-blip](https://github.com/dfeldt91-blip)
 { .facts }
 
 ## Cameras
@@ -39,10 +39,10 @@ Use the Atlas entry for E-M1 Mark III Mod Builder (https://github.com/xulfr/om-f
 
 [Before you install: risks and recovery](../../docs/before-you-install.md)
 
-**For this camera:** 19 features, including Panorama 65:24, Multiple Exposure with 3 and 4 frames and Focus stacking with any lens.
+**For this camera:** 20 features, including Panorama 65:24, Multiple Exposure with 3 and 4 frames and Focus stacking with any lens.
 { .card-for }
 
-**Get it:** [mod-builder-1.18](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.18), 21 Nov 2026 · [Builder guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ae16f3d2836e7273164c7cd3497237117c8b9ff9/builder/README.md)
+**Get it:** [mod-builder-1.19](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19), 22 Nov 2026 · [Builder guide](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ae16f3d2836e7273164c7cd3497237117c8b9ff9/builder/README.md)
 { .card-get }
 
 [Camera overview](../cameras/em1-iii.md) · [Test results](../research/em1-iii.md#evidence)
@@ -56,7 +56,7 @@ The author paused the project on 2026-11-20 and resumed it the next day, now wor
 
 The E-M1 III Mod Builder is a small Mac and Windows app. It downloads the official E-M1 Mark III firmware 1.6 from OM Digital Solutions' update server, checks its SHA-256, lets you tick the mods you want and writes an E1399999.BIN for the camera's card updater. The mods are stored as edit lists, so no OM firmware is kept in the app.
 
-The 19 mods cover a 65:24 Panorama aspect, 3- and 4-frame Multiple Exposure, focus stacking with any lens, High Res with flash and art filters, a linear Sharpness scale, Custom Modes in video, ISO-Auto down to 64, a 9-hour recording limit, extra Gradation curves, a plain white Frame effect, and film looks in Custom from Caduceus's recipes. Each mod's camera status is the owner's own; most were tried on the owner's camera in numbered test builds.
+The builder's mods cover a 65:24 Panorama aspect, 3- and 4-frame Multiple Exposure, focus stacking with any lens, High Res with flash and art filters, a linear Sharpness scale, Custom Modes in video, ISO-Auto down to 64, a 9-hour recording limit, extra Gradation curves, a plain white Frame effect, and film looks in Custom from Caduceus's recipes. Each mod's camera status is the owner's own; most were tried on the owner's camera in numbered test builds.
 
 ### What it's working towards
 
@@ -297,9 +297,36 @@ The Shooting Menu 1 title shows your own text, up to 36 characters. Worked on th
 
 </div>
 
+<div class="feature-card" markdown="1">
+
+**Monochrome II** <span class="pill pill-released">Available</span>
+{ .feature-head }
+
+Replaces i-Finish with a separate monochrome profile. The author reports the profile and labels worked in test 1.7.7.8.
+
+[OM-D E-M1 Mark III](../cameras/em1-iii.md) · since mod-builder-1.19
+{ .card-meta }
+
+</div>
+
 </div>
 
 ## Releases
+
+<div class="release-item" markdown="1">
+
+**[E-M1 III Mod Builder mod-builder-1.19](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19)** · 22 Nov 2026
+{ .release-head }
+
+- Packages the builder for Windows and macOS, including a universal Mac build.
+- Includes the Monochrome II option. The tagged mod pack says the profile and labels worked in a camera test and the Shade effect change still needs a retest.
+
+OM-D E-M1 Mark III · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M1+Mark+III+%C2%B7+stock+firmware%3A+&package=E-M1+Mark+III+Mod+Builder+%C2%B7+mod-builder-1.19)
+
+Unofficial firmware builder. The apps are unsigned.
+{ .release-warning }
+
+</div>
 
 <div class="release-item" markdown="1">
 
@@ -340,7 +367,7 @@ Unofficial; flashing modified firmware is at your own risk. The apps are unsigne
 
 ## Research notes
 
-Active again. On 2026-11-20 the author had declared the project ended; on 2026-11-21 the README says it continues and release mod-builder-1.18 adds Fill In next to Manual flash in handheld High Res (test 1.745). A fix for the missing Multiple Exposure overlay after shots 2 and 3 is in test 1.746, awaiting a camera result.
+The latest packaged builder is mod-builder-1.19 for stock firmware 1.6. The project is active again. On 2026-11-20 the author had declared the project ended; on 2026-11-21 the README says it continues and release mod-builder-1.18 adds Fill In next to Manual flash in handheld High Res (test 1.745). A fix for the missing Multiple Exposure overlay after shots 2 and 3 is in test 1.746, awaiting a camera result.
 
 - [Multiple Exposure shows no preview between frames 2–3 and 3–4; the 3- and 4-frame result itself is correct. Test 1.746 changes the overlay refresh to every shot but the last; awaiting a camera result.](https://github.com/dfeldt91-blip/E-M1-Miii/blob/ae16f3d2836e7273164c7cd3497237117c8b9ff9/docs/FINDINGS.md) — needs evidence; owner: not assigned here.
 
@@ -352,5 +379,7 @@ Active again. On 2026-11-20 the author had declared the project ended; on 2026-1
 - [E-M1 III mod pack](../sources/em1m3.mods.md)
 - [E-M1 III firmware findings](../sources/em1m3.findings.md)
 - [E-M1 III Mod Builder releases](../sources/em1m3.releases.md)
+- [E-M1 III Mod Builder mod-builder-1.19](../sources/em1m3.release119.md)
+- [E-M1 III mod pack at builder 1.19](../sources/em1m3.mods119.md)
 
-[Canonical record](../../records/projects/em1-iii-mod-builder.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/projects/em1-iii-mod-builder.yaml) · Substantively reviewed: 2026-11-22.

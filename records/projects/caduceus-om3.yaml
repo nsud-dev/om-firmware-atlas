@@ -7,6 +7,7 @@ records:
   source_refs:
   - source.om3.readme
   - source.om3.looklab
+  - source.om3.looklab-current
   - source.om3.research
   - source.om3.roadmap
   - source.om3.releases
@@ -21,22 +22,21 @@ records:
   - source.om3.v040-beta2
   - source.om3.v040-beta
   - source.om3.atlas-grain-report
+  - source.om3.v0403-beta4
   topics:
   - colour
   - interfaces
   - capture
   - emulation
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-22'
   url: https://github.com/androidfanman/caduceus-om3
   kind: mod
   camera_ids:
   - camera.om3
   contribution_home: https://github.com/androidfanman/caduceus-om3/issues
-  status_summary: The newest stable release is v0.40.2 for the OM-3 on stock firmware 1.1. Test versions
-    followed, v0.40.3-beta (Halation Radius, faster Halation) on 2026-11-20 and v0.40.3-beta3 on 2026-11-21 (fixes
-    for a shut-down with Film Grain on Drive Priority, Magnify in the crop modes, stock modes' WB compensation and
-    Delete's long press). v0.40.3-beta2 was withdrawn for a boot loop on some start-ups and is replaced by beta3; the
-    maintainer reports beta3 camera-tested on an OM-3 as its test build.
+  status_summary: The project's current stable release is v0.40.2 for OM-3 firmware 1.1. The newest test release,
+    v0.40.3-beta4, makes film white-balance compensation independent of the stock modes. The maintainer reports a
+    camera test. The earlier beta2 remains withdrawn because of a startup loop.
   related_projects:
   - project.caduceus-ep7
   - project.om-emu
@@ -148,12 +148,12 @@ records:
     since: v0.27
     source_ref: source.om3.readme
   - name: LookLab
-    summary: Make and change films in your browser with a preview on sample photos or your own, starting
-      from 62 looks. Nothing is uploaded.
+    summary: Edit films in your browser and preview one film on up to 12 of your own photos at once. LookLab
+      can open a card’s curves with its look file, or read a recipe JSON. Photos stay in the browser.
     camera_ids: *id001
     status: released
     since: null
-    source_ref: source.om3.readme
+    source_ref: source.om3.looklab-current
   - name: Films from your LUTs and Lightroom presets
     summary: LookLab finds the camera settings closest to a .cube LUT or a Lightroom preset, with a match
       score.
@@ -193,6 +193,20 @@ records:
     since: v0.40
     source_ref: source.om3.v040-release
   releases:
+  - tag: v0.40.3-beta4
+    title: Caduceus for OM-3 v0.40.3-beta4 (test version)
+    date: '2026-11-21'
+    url: https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta4
+    prerelease: true
+    camera_ids:
+    - camera.om3
+    highlights:
+    - Films and COLOR keep their own white-balance shift in live view and stills. The stock picture modes keep the
+      camera’s own setting.
+    - The maintainer reports testing the release as build w1 on an OM-3 on 21 November.
+    warning: Test release. Upstream keeps v0.40.2 as its current release and asks owners to check their stock-mode
+      white-balance shift once after updating.
+    source_ref: source.om3.v0403-beta4
   - tag: v0.40.3-beta3
     title: Caduceus for OM-3 v0.40.3-beta3 (test version)
     date: '2026-11-21'

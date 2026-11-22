@@ -23,26 +23,19 @@ records:
   - capture
   - patching
   - interfaces
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-22'
   url: https://github.com/Meghnus/om10mi-mods
   kind: mod
   camera_ids:
   - camera.em10
   contribution_home: https://github.com/Meghnus/om10mi-mods/issues
-  status_summary: The owner released version 87 on 2026-11-21, adding a colour wheel, and reports it tested in a
-    PC emulator, independently reviewed and field-tested on one E-M10 Mark I with firmware 1.4. Recording past 30
-    minutes is not yet confirmed. Two open user reports name no body or build; the maintainer has replied to both,
-    calling the Lightroom white-balance offset stock behaviour and hardening the code suspected in the freeze.
+  status_summary: Version 87 adds a colour wheel for the original E-M10 on firmware 1.4. The owner reports emulator
+    and camera tests; recording past 30 minutes is still unconfirmed. A filter-related reboot report remains open.
+    The reporter closed the Lightroom white-balance display issue after a second look.
   work_items:
-  - summary: Intermittent freeze and reboot with filters enabled; body, build and filter not stated. The maintainer
-      asked four questions and hardened the suspected Contrast/Gradation code in 87; untested by the reporter
+  - summary: The reporter confirmed immediate freeze and automatic restart during single-shot JPEG + RAW while trying looks, with no reset of User Hue. The exact look and build remain unspecified.
     state: needs-evidence
     url: https://github.com/Meghnus/om10mi-mods/issues/4
-    owner: null
-  - summary: RAWs open about 300 K lower in Lightroom Classic than set in camera; the maintainer says this is stock
-      behaviour and asked for a comparison on official firmware
-    state: needs-evidence
-    url: https://github.com/Meghnus/om10mi-mods/issues/3
     owner: null
   - summary: E-M10 Mark I export from the Caduceus Control Panel, using the draft look file
     state: proposed
@@ -82,9 +75,9 @@ records:
   - label: Development and testing method
     url: https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/docs/DEVELOPMENT.md
   - label: Install guide
-    url: https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/INSTALL.md
+    url: https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/INSTALL.md
   - label: Looks and colour editors guide and test list
-    url: https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/docs/GUIDE-56.md
+    url: https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/docs/GUIDE-56.md
   - label: Look file spec (draft)
     url: https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/docs/lookfile/LOOKFILE_SPEC.md
   features:

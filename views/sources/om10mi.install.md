@@ -2,16 +2,16 @@
 
 # om10mi-mods install guide
 
-Builder steps for version 87, the stock and result SHA-1 checks, the SD-card update and the route back to stock.
+Install and restore instructions for the original E-M10 on 1.4, plus the recommended User Hue reset.
 
-**[Open original source](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/INSTALL.md)**
+**[Open original source](https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/INSTALL.md)**
 
 **Kind:** github file. **Locator:** INSTALL.md.
 
-**Revision / release:** `46874155947715e0d54baabe2df5006376c8bbab`. **Retrieved:** 2026-11-21. **Last source check:** 2026-11-21.
+**Revision / release:** `a73028a8cc38d581e0279c0890811d68e8a8ca0b`. **Retrieved:** 2026-11-22. **Last source check:** 2026-11-22.
 
 **Publication:** public. Linked and synthesised; upstream material retains its own terms.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/om10mi-mods.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/sources/om10mi-mods.yaml) · Substantively reviewed: 2026-11-22.

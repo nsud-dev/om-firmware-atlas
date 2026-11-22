@@ -32,7 +32,7 @@ Use the Atlas entry for Caduceus for OM-3 (https://github.com/xulfr/om-firmware-
 
 [Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
-**Type:** mod · **Camera details:** [OM-3](#for-om3) · **Latest release:** [v0.40.3-beta3 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3), 21 Nov 2026 · **Maintained by** [androidfanman](https://github.com/androidfanman)
+**Type:** mod · **Camera details:** [OM-3](#for-om3) · **Latest release:** [v0.40.3-beta4 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta4), 21 Nov 2026 · **Maintained by** [androidfanman](https://github.com/androidfanman)
 { .facts }
 
 ## Cameras
@@ -46,7 +46,7 @@ Use the Atlas entry for Caduceus for OM-3 (https://github.com/xulfr/om-firmware-
 **For this camera:** 18 features, including Your films in Picture Mode, 20 film simulations and Colour editor on the camera.
 { .card-for }
 
-**Get it:** [v0.40.3-beta3 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3), 21 Nov 2026 · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
+**Get it:** [v0.40.3-beta4 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta4), 21 Nov 2026 · [Install guide](https://androidfanman.github.io/caduceus-om3/pages/install/)
 { .card-get }
 
 [Camera overview](../cameras/om3.md) · [Test results](../research/om3.md#evidence)
@@ -217,7 +217,7 @@ Each JPEG records its film and recipe in EXIF, so LookLab can open the film from
 **LookLab** <span class="pill pill-released">Available</span>
 { .feature-head }
 
-Make and change films in your browser with a preview on sample photos or your own, starting from 62 looks. Nothing is uploaded.
+Edit films in your browser and preview one film on up to 12 of your own photos at once. LookLab can open a card’s curves with its look file, or read a recipe JSON. Photos stay in the browser.
 
 [OM-3](../cameras/om3.md)
 { .card-meta }
@@ -332,6 +332,21 @@ Halation at strength 5 on a sample photo. *Caduceus for OM-3 tour; photo by Bler
 </div>
 
 ## Releases
+
+<div class="release-item" markdown="1">
+
+**[Caduceus for OM-3 v0.40.3-beta4 (test version)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta4)** <span class="pill pill-alpha">Pre-release</span> · 21 Nov 2026
+{ .release-head }
+
+- Films and COLOR keep their own white-balance shift in live view and stills. The stock picture modes keep the camera’s own setting.
+- The maintainer reports testing the release as build w1 on an OM-3 on 21 November.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.3-beta4)
+
+Test release. Upstream keeps v0.40.2 as its current release and asks owners to check their stock-mode white-balance shift once after updating.
+{ .release-warning }
+
+</div>
 
 <div class="release-item" markdown="1">
 
@@ -629,12 +644,13 @@ OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/n
 
 ## Research notes
 
-The newest stable release is v0.40.2 for the OM-3 on stock firmware 1.1. Test versions followed, v0.40.3-beta (Halation Radius, faster Halation) on 2026-11-20 and v0.40.3-beta3 on 2026-11-21 (fixes for a shut-down with Film Grain on Drive Priority, Magnify in the crop modes, stock modes' WB compensation and Delete's long press). v0.40.3-beta2 was withdrawn for a boot loop on some start-ups and is replaced by beta3; the maintainer reports beta3 camera-tested on an OM-3 as its test build.
+The project's current stable release is v0.40.2 for OM-3 firmware 1.1. The newest test release, v0.40.3-beta4, makes film white-balance compensation independent of the stock modes. The maintainer reports a camera test. The earlier beta2 remains withdrawn because of a startup loop.
 
 ## Sources and record
 
 - [Caduceus OM-3 overview](../sources/om3.readme.md)
 - [OM-3 LookLab](../sources/om3.looklab.md)
+- [LookLab import and preview updates](../sources/om3.looklab-current.md)
 - [OM-3 research index](../sources/om3.research.md)
 - [Caduceus OM-3 roadmap](../sources/om3.roadmap.md)
 - [Caduceus OM-3 releases](../sources/om3.releases.md)
@@ -649,5 +665,6 @@ The newest stable release is v0.40.2 for the OM-3 on stock firmware 1.1. Test ve
 - [Caduceus for OM-3 v0.40-beta2 (test version)](../sources/om3.v040-beta2.md)
 - [Caduceus for OM-3 v0.40-beta (test version)](../sources/om3.v040-beta.md)
 - [OM-3 v0.40 grain crash report](../sources/om3.atlas-grain-report.md)
+- [Caduceus for OM-3 v0.40.3-beta4 (test version)](../sources/om3.v0403-beta4.md)
 
-[Canonical record](../../records/projects/caduceus-om3.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/projects/caduceus-om3.yaml) · Substantively reviewed: 2026-11-22.

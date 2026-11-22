@@ -20,10 +20,7 @@ E148: v0.2.0-alpha1 has an overall positive owner report; original OM-5 work is 
 
 - [Caduceus for OM-5](../showcases/om5-ii.md#caduceus-om5) · v0.2.0-alpha1 (pre-release) · [Camera test · reported working](../evidence/om5-ii-v020-alpha1-owner.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-5+%C2%B7+v0.2.0-alpha1)
 - [OMKit](../showcases/om5-ii.md#omkit) · v0.1.0 · The latest camera report gives its build as [loader fw1100 (OMKit 0.1.0)](../evidence/om5-ii-omkit-loader.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=OMKit+%C2%B7+v0.1.0)
-
-**Reported not working on this model:**
-
-- [db firmware / om-c-firmware](../showcases/om5-ii.md#db-firmware) · dbv0.4.3 · The project reports that this build does not work on this camera. [Project’s release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3)
+- [db firmware / om-c-firmware](../showcases/om5-ii.md#db-firmware) · dbv0.4.4b · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
 
 </div>
 

@@ -2,16 +2,16 @@
 
 # om10mi-mods changes
 
-Version 87 contents against 56, earlier milestones and the expected result SHA-1s for 87 and 56.
+Version history through 87 and the updated User Hue reset recommendation.
 
-**[Open original source](https://github.com/Meghnus/om10mi-mods/blob/46874155947715e0d54baabe2df5006376c8bbab/CHANGELOG.md)**
+**[Open original source](https://github.com/Meghnus/om10mi-mods/blob/a73028a8cc38d581e0279c0890811d68e8a8ca0b/CHANGELOG.md)**
 
 **Kind:** github file. **Locator:** CHANGELOG.md.
 
-**Revision / release:** `46874155947715e0d54baabe2df5006376c8bbab`. **Retrieved:** 2026-11-21. **Last source check:** 2026-11-21.
+**Revision / release:** `a73028a8cc38d581e0279c0890811d68e8a8ca0b`. **Retrieved:** 2026-11-22. **Last source check:** 2026-11-22.
 
 **Publication:** public. Linked and synthesised; upstream material retains its own terms.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/om10mi-mods.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/sources/om10mi-mods.yaml) · Substantively reviewed: 2026-11-22.

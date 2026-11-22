@@ -4,11 +4,11 @@
 
 OM-3 looks, colour editing, persistence and research.
 
-[Contribution home](https://github.com/androidfanman/caduceus-om3/issues). The newest stable release is v0.40.2 for the OM-3 on stock firmware 1.1. Test versions followed, v0.40.3-beta (Halation Radius, faster Halation) on 2026-11-20 and v0.40.3-beta3 on 2026-11-21 (fixes for a shut-down with Film Grain on Drive Priority, Magnify in the crop modes, stock modes' WB compensation and Delete's long press). v0.40.3-beta2 was withdrawn for a boot loop on some start-ups and is replaced by beta3; the maintainer reports beta3 camera-tested on an OM-3 as its test build.
+[Contribution home](https://github.com/androidfanman/caduceus-om3/issues). The project's current stable release is v0.40.2 for OM-3 firmware 1.1. The newest test release, v0.40.3-beta4, makes film white-balance compensation independent of the stock modes. The maintainer reports a camera test. The earlier beta2 remains withdrawn because of a startup loop.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [caduceus-om3.yaml](../../../records/projects/caduceus-om3.yaml) | Project scope, related work and contribution destination | 20,301 | ~5,076 |
-| [om3.yaml](../../../records/sources/om3.yaml) | Find the relevant source/observation ID; use bounded reads | 13,343 | ~3,336 |
+| [caduceus-om3.yaml](../../../records/projects/caduceus-om3.yaml) | Project scope, related work and contribution destination | 20,906 | ~5,227 |
+| [om3.yaml](../../../records/sources/om3.yaml) | Find the relevant source/observation ID; use bounded reads | 14,928 | ~3,732 |
 
 Follow only relevant camera/topic routes. Upstream policies apply to work there; Atlas does not assign ownership across projects.

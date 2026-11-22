@@ -8,12 +8,13 @@ Exact ID: `camera.em10-ii`. Codes: E120. [Human status view](../../../views/came
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|
-| [em10-ii.yaml](../../../records/cameras/em10-ii.yaml) | Identity and aliases | 518 | ~130 |
+| [em10-ii.yaml](../../../records/cameras/em10-ii.yaml) | Identity and aliases | 537 | ~135 |
 | [em10-ii-1400.yaml](../../../records/firmware/em10-ii/em10-ii-1400.yaml) | E-M10 Mark II firmware 1.4, build 1400 | 716 | ~179 |
 
 ## Existing project homes
 
 - [fenykl](../projects/fenykl.md): Loader flashed once, then C plugins from the SD card hook the firmware. E-M10 Mark II 1.4.
+- [OM-Emu](../projects/om-emu.md): Firmware lab, model ports, traces and patch overlays.
 
 | Read when relevant | Scope / purpose | Bytes | Approx. tokens |
 |---|---|---:|---:|

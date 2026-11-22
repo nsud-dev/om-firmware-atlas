@@ -24,7 +24,7 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 
 [Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
-**Type:** emulator · **Camera details:** [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii), [OM-3](#for-om3), [PEN E-P7](#for-ep7), [PEN-F](#for-pen-f), [OM-D E-M10 Mark IV](#for-em10-iv) · **Maintained by** [flatpanda](https://github.com/flatpanda)
+**Type:** emulator · **Camera details:** [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii), [OM-3](#for-om3), [PEN E-P7](#for-ep7), [PEN-F](#for-pen-f), [OM-D E-M10 Mark IV](#for-em10-iv), [OM-D E-M10 Mark II](#for-em10-ii), [OM-D E-M1 Mark III](#for-em1-iii), [OM-D E-M5 Mark III](#for-em5-iii) · **Maintained by** [flatpanda](https://github.com/flatpanda)
 { .facts }
 
 ## Cameras
@@ -113,6 +113,48 @@ Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/
 
 </div>
 
+<div class="model-panel" markdown="1">
+
+### OM-D E-M10 Mark II { #for-em10-ii }
+
+**For this camera:** An emulator; it does not change the camera. Covers this camera for: Browser player (released), Native card file system (released).
+{ .card-for }
+
+**Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
+{ .card-get }
+
+[Camera overview](../cameras/em10-ii.md) · [Test results](../research/em10-ii.md#evidence)
+
+</div>
+
+<div class="model-panel" markdown="1">
+
+### OM-D E-M1 Mark III { #for-em1-iii }
+
+**For this camera:** An emulator; it does not change the camera. Covers this camera for: Browser player (released), Native card file system (released).
+{ .card-for }
+
+**Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
+{ .card-get }
+
+[Camera overview](../cameras/em1-iii.md) · [Test results](../research/em1-iii.md#evidence)
+
+</div>
+
+<div class="model-panel" markdown="1">
+
+### OM-D E-M5 Mark III { #for-em5-iii }
+
+**For this camera:** An emulator; it does not change the camera. Covers this camera for: Browser player (released), Native card file system (released).
+{ .card-for }
+
+**Get it:** [Try it in your browser](https://flatpanda.github.io/om-emu/)
+{ .card-get }
+
+[Camera overview](../cameras/em5-iii.md) · [Test results](../research/em5-iii.md#evidence)
+
+</div>
+
 
 ## About
 
@@ -135,7 +177,7 @@ As the project describes them. Status is the project's own; linked evidence is t
 
 Start-up to the shooting screen, menus, Super Control Panel, shutter and playback, from the official firmware file.
 
-[OM-3](../cameras/om3.md), [OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [PEN E-P7](../cameras/ep7.md), [PEN-F](../cameras/pen-f.md), [OM-D E-M10 Mark IV](../cameras/em10-iv.md)
+[OM-3](../cameras/om3.md), [OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [PEN E-P7](../cameras/ep7.md), [PEN-F](../cameras/pen-f.md), [OM-D E-M10 Mark IV](../cameras/em10-iv.md), [OM-D E-M10 Mark II](../cameras/em10-ii.md), [OM-D E-M1 Mark III](../cameras/em1-iii.md), [OM-D E-M5 Mark III](../cameras/em5-iii.md)
 { .card-meta }
 
 </div>
@@ -177,7 +219,7 @@ Headless sessions, traces, breakpoints and calls into firmware functions for res
 
 The upstream model check covers mounting and formatting the card, remaining-shot counts, and the firmware’s own file-writing task.
 
-[OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [OM-3](../cameras/om3.md), [PEN E-P7](../cameras/ep7.md), [PEN-F](../cameras/pen-f.md), [OM-D E-M10 Mark IV](../cameras/em10-iv.md)
+[OM-5](../cameras/om5.md), [OM-5 Mark II](../cameras/om5-ii.md), [OM-3](../cameras/om3.md), [PEN E-P7](../cameras/ep7.md), [PEN-F](../cameras/pen-f.md), [OM-D E-M10 Mark IV](../cameras/em10-iv.md), [OM-D E-M10 Mark II](../cameras/em10-ii.md), [OM-D E-M1 Mark III](../cameras/em1-iii.md), [OM-D E-M5 Mark III](../cameras/em5-iii.md)
 { .card-meta }
 
 </div>

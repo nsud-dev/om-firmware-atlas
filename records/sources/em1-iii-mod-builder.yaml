@@ -67,20 +67,21 @@ records:
 - type: source
   id: source.em1m3.releases
   title: E-M1 III Mod Builder releases
-  summary: Mac and Windows builds of the mod builder, mod-builder-1.12 to 1.18; 1.18 (2026-11-21, Latest) adds a note on Fill Flash in handheld High Res, the rest share the same notes.
+  summary: Mac and Windows builder releases through mod-builder-1.19.
   source_refs: []
   topics: []
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-22'
   url: https://github.com/dfeldt91-blip/E-M1-Miii/releases
   source_kind: github-release
   upstream_repo: dfeldt91-blip/E-M1-Miii
-  revision: mod-builder-1.18
-  locator: Releases page; release mod-builder-1.18 at commit dabf1d15f5627077316a3b62107219b1c1b553c2
-  retrieved_on: '2026-11-21'
-  last_checked: '2026-11-21'
-  published_on: '2026-11-21'
+  revision: mod-builder-1.19
+  locator: Release listing through mod-builder-1.19
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-22'
   publication: public
   reuse_note: Attributed summary of mutable release notes; no code, firmware or executables imported.
+  content_sha256: 1ebb26ac7c28dd099f315fd60a0c01d248050a71192a68dd78cbec401d4f488f
 - type: source
   id: source.em1m3.author-note
   title: Author's note on project status
@@ -97,3 +98,38 @@ records:
   last_checked: '2026-11-20'
   publication: authorised-summary
   reuse_note: Summarised at the author's request; no other private material published.
+- type: source
+  id: source.em1m3.release119
+  title: E-M1 III Mod Builder mod-builder-1.19
+  summary: Packaged builder for E-M1 Mark III firmware 1.6, with Windows and macOS assets.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.19
+  source_kind: github-release
+  upstream_repo: dfeldt91-blip/E-M1-Miii
+  revision: mod-builder-1.19
+  locator: GitHub release notes for mod-builder-1.19
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  published_on: '2026-11-22'
+  publication: public
+  reuse_note: Attributed summary of the maintainer’s release notes.
+  content_sha256: 1ebb26ac7c28dd099f315fd60a0c01d248050a71192a68dd78cbec401d4f488f
+- type: source
+  id: source.em1m3.mods119
+  title: E-M1 III mod pack at builder 1.19
+  summary: Monochrome II, the author’s camera report for its profile and labels, and the Shade effect mitigation
+    awaiting a camera retest.
+  source_refs: []
+  topics: []
+  last_reviewed: '2026-11-22'
+  url: https://github.com/dfeldt91-blip/E-M1-Miii/blob/ba87b5f4358b6ee518cf133676d69698db6ef83e/builder/mods.json
+  source_kind: github-file
+  upstream_repo: dfeldt91-blip/E-M1-Miii
+  revision: ba87b5f4358b6ee518cf133676d69698db6ef83e
+  locator: builder/mods.json at mod-builder-1.19, mono_slots
+  retrieved_on: '2026-11-22'
+  last_checked: '2026-11-22'
+  publication: public
+  reuse_note: Summarised metadata only.

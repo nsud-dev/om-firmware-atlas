@@ -19,4 +19,5 @@ records:
   - E120
   project_ids:
   - project.fenykl
+  - project.om-emu
   coverage: initial-review

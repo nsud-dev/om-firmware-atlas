@@ -14,6 +14,7 @@ nav:
   - Home: index.md
   - For camera owners:
       - Cameras: views/cameras/index.md
+      - TruePic generations: truepic-generations.md
       - Before you install: before-you-install.md
       - Reading the evidence: evidence.md
       - Report a camera result: report.md

@@ -18,7 +18,7 @@ E101, TruePic VI (2012): one camera-tested mod; its addresses and edits do not c
 
 **Releases for this camera:**
 
-- [EPM2Mod](../showcases/epm2.md#epm2mod) · v2026.11.20-rc.1 (pre-release) · The latest camera report gives its build as [films-twelve-off](../evidence/epm2-films-twelve-off.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.1)
+- [EPM2Mod](../showcases/epm2.md#epm2mod) · v2026.11.20-rc.5 (pre-release) · The latest camera report gives its build as [peaking-mf](../evidence/epm2-peaking-mf.md) · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.5)
 
 </div>
 

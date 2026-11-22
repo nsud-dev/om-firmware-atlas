@@ -124,7 +124,7 @@ The camera, project, firmware, capability, evidence, source and community pages 
 - `check` re-renders everything in memory and compares it with the committed files. Any difference, including a hand edit or a forgotten `generate`, is reported as **drift** and fails CI.
 - Generated changes are committed in the same PR as the record change, so reviewers can see both the data and its effect on the pages.
 - At build time, the site builder adds a "Source review due" notice to record pages whose oldest linked source was last checked more than 30 days before publication. This notice exists only in the built site, not in the committed files.
-- The home page's featured projects and latest releases, the Community page's list of maintainers, and the camera and project lists in the navigation are also filled in at build time from the records.
+- The site fills in the home page camera finder and the Community page’s maintainer list at build time. The Cameras directory shows recent releases from the project records and links to the TruePic overview.
 
 ### Project showcase pages
 

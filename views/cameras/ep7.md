@@ -19,7 +19,7 @@ E142: original Caduceus project and a documented Ghidra/REA setup.
 **Releases for this camera:**
 
 - [Caduceus for E-P7](../showcases/ep7.md#caduceus-ep7) · v0.34a · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.34a)
-- [db firmware / om-c-firmware](../showcases/ep7.md#db-firmware) · dbv0.4.3 · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.3)
+- [db firmware / om-c-firmware](../showcases/ep7.md#db-firmware) · dbv0.4.4b · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.4b)
 
 </div>
 

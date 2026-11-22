@@ -25,6 +25,7 @@ Individual observations from physical cameras, emulators and code inspection, wi
 | [E-M5 III 1.7: card-file debug shell tested](em5-iii-wifi-shell-camera.md) | The E-M5 III firmware notes report the method working on a stock E-M5 III, with a live sequencer trace. |
 | [E-PM2 films-look-exif: owner camera test](epm2-films-look-exif.md) | The owner reports the pinned build working, with film output matching the fitted model and the film name in EXIF. |
 | [E-PM2 films-twelve-off: owner camera test](epm2-films-twelve-off.md) | The owner reports the new pinned build booting, loading the default film file and recording the new Portra 400 fit; the RAW Data Edit check was not done. |
+| [E-PM2 peaking-mf owner camera test](epm2-peaking-mf.md) | The owner reports peaking in normal MF live view and a clean post-shot preview on the rebuilt firmware. |
 | [Mark II alpha12: overall owner report](om5-ii-alpha12-owner.md) | A positive overall report with explicitly missing details. |
 | [Mark II dev package 0565540a: flash failure, then intermittent boot loop](om5-ii-dev0565-boot.md) | A pre-release development package first failed to flash, then worked, then boot-looped intermittently. |
 | [Mark II image-store probe](om5-ii-image-store-probe.md) | Upstream GUI tracing reports no patch writes into the watched image after correction. |

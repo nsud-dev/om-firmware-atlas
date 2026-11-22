@@ -23,4 +23,5 @@ records:
   - project.em5-iii-notes
   - project.ghidra-mn103
   - project.oly-fw-analysis
+  - project.om-emu
   coverage: initial-review

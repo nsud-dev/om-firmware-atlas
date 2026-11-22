@@ -2,16 +2,16 @@
 
 # Freezes and reboots with filters (issue 4)
 
-A user reports three freezes and reboots in about 40 to 50 shots with filters enabled; the maintainer asks four questions and suspects the Contrast/Gradation code on looks.
+The reporter describes freezes and automatic restarts while taking single-shot JPEG + RAW with looks. Exact look and build unspecified.
 
 **[Open original source](https://github.com/Meghnus/om10mi-mods/issues/4)**
 
-**Kind:** github comment. **Locator:** Issue 4 by kzjken, opened 2026-11-21; maintainer reply by Meghnus on 2026-11-21; open, no reporter follow-up when read.
+**Kind:** github comment. **Locator:** Issue 4 and replies through 2026-11-22; open.
 
-**Revision / release:** `Mutable page; no pinned revision`. **Retrieved:** 2026-11-21. **Last source check:** 2026-11-21.
+**Revision / release:** `Mutable page; no pinned revision`. **Retrieved:** 2026-11-22. **Last source check:** 2026-11-22.
 
 **Publication:** public. Public issue paraphrased with attribution; issue text is mutable.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/om10mi-mods.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/sources/om10mi-mods.yaml) · Substantively reviewed: 2026-11-22.

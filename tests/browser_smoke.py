@@ -63,6 +63,16 @@ def owner_journey(page, base, phone):
         expect(menu).to_have_attribute("aria-expanded", "false")
 
 
+def truepic_journey(page, base):
+    page.goto(base + "views/cameras/")
+    page.get_by_role("link", name="Browse cameras by TruePic generation").click()
+    expect(page).to_have_url(base + "truepic-generations/")
+    expect(page.get_by_role("heading", name="Cameras by TruePic generation")).to_be_visible()
+    expect(page.locator("main").get_by_role("heading", level=2, name=re.compile(r"^TruePic "))).to_have_count(6)
+    page.get_by_role("link", name="E-PM2", exact=True).click()
+    expect(page).to_have_url(base + "views/cameras/epm2/")
+
+
 def developer_journey(page, base, phone):
     page.goto(base + "views/evidence/om5-ii-v020-alpha1-owner/")
     if phone:
@@ -104,7 +114,8 @@ if __name__ == "__main__":
                     page = browser.new_page(viewport={"width": width, "height": height})
                     owner_journey(page, f"http://127.0.0.1:{server.server_port}/", width == 390)
                     developer_journey(page, f"http://127.0.0.1:{server.server_port}/", width == 390)
-                    print(f"Owner and developer journeys passed at {width} x {height}")
+                    truepic_journey(page, f"http://127.0.0.1:{server.server_port}/")
+                    print(f"Owner, developer and TruePic journeys passed at {width} x {height}")
                 browser.close()
         finally:
             server.shutdown()

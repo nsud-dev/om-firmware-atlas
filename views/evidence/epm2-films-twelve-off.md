@@ -33,11 +33,12 @@ Flashed the logged build; loaded the default film file with Load Looks; took a p
 
 - The RAW Data Edit colour check was not done on this build; the colour results (all 31 colour films closer to target, median natural-colour error 1.19 to 1.04) were measured on films-twelve-off-artbkt, not on this build.
 - One owner and one camera; not reproduced by the Atlas.
-- Not in a release when read; the newest release, v2026.11.20-rc.1, carries films-look-exif.
+- This firmware digest subsequently appeared in rc.2. The test predates that release.
 
 ## Sources and record
 
 - [films-twelve-off camera log](../sources/epm2.camera-log-twelve-off.md)
+- [EPM2Mod 2026.11.20-rc.2](../sources/epm2.rc2.md)
 - [EPM2Mod pinned build](../sources/epm2.install.md)
 - [E-PM2 feasibility and real limits](../sources/epm2.feasibility.md)
 

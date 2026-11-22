@@ -7,35 +7,40 @@ records:
   source_refs:
   - source.epm2.readme
   - source.epm2.feasibility
-  - source.epm2.install
+  - source.epm2.install-peaking-mf
+  - source.epm2.camera-log-peaking-mf
   - source.epm2.camera-log
   - source.epm2.camera-log-twelve-off
   - source.epm2.format
   - source.epm2.model-matrix
   - source.epm2.landscape
   - source.epm2.releases
+  - source.epm2.rc5
+  - source.epm2.rc4
+  - source.epm2.rc3
+  - source.epm2.rc2
+  - source.epm2.pana-ring-probe
   topics:
   - colour
   - capture
   - patching
   - emulation
   - tooling
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-22'
   url: https://github.com/cfu288/EPM2Mod
   kind: mod
   camera_ids:
   - camera.epm2
   contribution_home: https://github.com/cfu288/EPM2Mod/issues
-  status_summary: The owner pinned a new build, films-twelve-off, and reports it tested on a real E-PM2 on 2026-11-21;
-    it gives film simulations no 12-region table and carries refitted films, but is not in a release yet. The newest
-    pre-release, v2026.11.20-rc.1, carries films-look-exif. The project calls the firmware unofficial and at the
-    user's own risk.
+  status_summary: The latest general-use release candidate is v2026.11.20-rc.5. It includes continuous focus peaking
+    in MF and applies saved film simulations on startup. A separate Panasonic aperture-ring probe is a developer debug
+    build. The project calls the firmware unofficial and at the user's own risk.
   related_projects:
   - project.om-emu
   - project.caduceus-ep7
   tagline: Film simulations, interval shooting, focus peaking and a level gauge for the PEN E-PM2.
   description:
-  - EPM2Mod is a firmware mod for the Olympus PEN E-PM2 (2012), the oldest body in the Atlas. It loads film
+  - EPM2Mod is a firmware mod for the Olympus PEN E-PM2 (2012). It loads film
     simulations such as Portra, Ektachrome and Velvia into the art-filter entries, and adds interval shooting up
     to 240 frames, a level gauge, focus peaking and a lowest shutter speed for ISO Auto.
   - The E-PM2 is two image-processor generations older than the bodies the Caduceus family patches and has no
@@ -56,8 +61,10 @@ records:
   links:
   - label: Film simulation comparison
     url: https://cfu288.github.io/EPM2Mod/films
+  - label: Panasonic aperture-ring debug build
+    url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-pana-ring-probe.1
   - label: Install guide
-    url: https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/user/install.md
+    url: https://github.com/cfu288/EPM2Mod/blob/475486f4d581d090162ea9f733fb31e05bc6e08a/docs/user/install.md
   - label: Feasibility and limits
     url: https://github.com/cfu288/EPM2Mod/blob/f8f173d8b53d4370f85505cdec7be2b52d1ec830/docs/dev/feasibility.md
   - label: Landscape of Olympus mods
@@ -86,12 +93,12 @@ records:
     since: null
     source_ref: source.epm2.feasibility
   - name: Focus peaking
-    summary: Turning the focus ring with MF Assist zooms in and outlines sharp edges in white, red, yellow or blue;
-      ported from the E-P5.
+    summary: From rc.3, focus peaking stays visible in normal live view in MF with any lens. MF Assist also shows
+      peaking when the focus ring turns.
     camera_ids: *id001
     status: beta
-    since: null
-    source_ref: source.epm2.feasibility
+    since: v2026.11.20-rc.3
+    source_ref: source.epm2.rc3
   - name: Lowest S/S Setting for ISO Auto
     summary: In P and A, the shutter speed at which ISO Auto starts to rise; a copy of the PEN-F 3.1's logic.
     camera_ids: *id001
@@ -105,6 +112,54 @@ records:
     since: null
     source_ref: source.epm2.install
   releases:
+  - tag: v2026.11.20-rc.5
+    title: EPM2Mod 2026.11.20-rc.5
+    date: '2026-11-22'
+    url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.5
+    prerelease: true
+    camera_ids:
+    - camera.epm2
+    highlights:
+    - Corrects the Tri-X look pack entry and shows 32 films across nine scenes on the project site.
+    - Upstream lists the same expected firmware digest for rc.3 through rc.5.
+    warning: Unofficial pre-release for the Olympus PEN E-PM2.
+    source_ref: source.epm2.rc5
+  - tag: v2026.11.20-rc.4
+    title: EPM2Mod 2026.11.20-rc.4
+    date: '2026-11-22'
+    url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.4
+    prerelease: true
+    camera_ids:
+    - camera.epm2
+    highlights:
+    - Adds a signed and notarised Mac disk image. Windows and Linux continue to use the zip.
+    - The project says the restore flow resets the camera’s settings.
+    warning: Unofficial pre-release for the Olympus PEN E-PM2.
+    source_ref: source.epm2.rc4
+  - tag: v2026.11.20-rc.3
+    title: EPM2Mod 2026.11.20-rc.3
+    date: '2026-11-22'
+    url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.3
+    prerelease: true
+    camera_ids:
+    - camera.epm2
+    highlights:
+    - Adds continuous focus peaking in normal live view in MF with any lens.
+    - Applies stored films at startup and shows the added menu text in every language.
+    warning: Unofficial pre-release for the Olympus PEN E-PM2.
+    source_ref: source.epm2.rc3
+  - tag: v2026.11.20-rc.2
+    title: EPM2Mod 2026.11.20-rc.2
+    date: '2026-11-21'
+    url: https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.2
+    prerelease: true
+    camera_ids:
+    - camera.epm2
+    highlights:
+    - Ships the refitted films without the stock picture mode’s selective colour adjustments.
+    - Adds an installer choice for copying just the look pack to a camera already running EPM2Mod.
+    warning: Unofficial pre-release for the Olympus PEN E-PM2.
+    source_ref: source.epm2.rc2
   - tag: v2026.11.20-rc.1
     title: EPM2Mod 2026.11.20-rc.1
     date: '2026-11-20'

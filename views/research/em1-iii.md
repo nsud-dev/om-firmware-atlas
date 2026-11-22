@@ -21,6 +21,7 @@ Use the Atlas entry for Olympus OM-D E-M1 Mark III (E139) (https://github.com/xu
 ## Projects and repositories
 
 - [E-M1 Mark III Mod Builder](../projects/em1-iii-mod-builder.md#for-em1-iii) · [Repository or project home](https://github.com/dfeldt91-blip/E-M1-Miii)
+- [OM-Emu](../projects/om-emu.md#for-em1-iii) · [Repository or project home](https://github.com/flatpanda/om-emu)
 
 ## Claims and test evidence { #evidence }
 
