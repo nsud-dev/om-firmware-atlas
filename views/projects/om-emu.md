@@ -12,6 +12,18 @@ Run OM SYSTEM and Olympus camera firmware in your browser.
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for OM-Emu (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/om-emu.md) to investigate [my question] on [my exact camera and firmware].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** emulator · **Camera details:** [OM-5](#for-om5), [OM-5 Mark II](#for-om5-ii), [OM-3](#for-om3), [PEN E-P7](#for-ep7), [PEN-F](#for-pen-f), [OM-D E-M10 Mark IV](#for-em10-iv) · **Maintained by** [flatpanda](https://github.com/flatpanda)
 { .facts }
 

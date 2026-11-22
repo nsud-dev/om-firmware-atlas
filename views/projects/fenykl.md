@@ -18,6 +18,18 @@ A loader flashed once, then plugins written in C from the SD card. E-M10 Mark II
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for fenykl (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/fenykl.md) to investigate [my question] on [my exact camera and firmware].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** mod · **Camera details:** [OM-D E-M10 Mark II](#for-em10-ii) · **Maintained by** [atx](https://github.com/atx)
 { .facts }
 

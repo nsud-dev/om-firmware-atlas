@@ -10,6 +10,10 @@ The owner reports version 56 working well on their camera after two independent 
 
 **Firmware:** [E-M10 firmware 1.4, build 1400](../firmware/em10-1400.md) · **Mod build:** 56
 
+[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M10+%28Mark+I%29+%C2%B7+stock+firmware%3A+&package=om10mi-mods+%C2%B7+56)
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Provenance:** maintainer summary. **Reported:** 2026-11-18. **Test date:** Not explicitly recorded.
 
 **Reported/observed package SHA-256:** not recorded.

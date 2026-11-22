@@ -19,6 +19,18 @@ Film simulations, interval shooting, focus peaking and a level gauge for the PEN
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for EPM2Mod (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/epm2mod.md) to investigate [my question] on [my exact camera and firmware].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** mod · **Camera details:** [PEN E-PM2](#for-epm2) · **Latest release:** [v2026.11.20-rc.1 (pre-release)](https://github.com/cfu288/EPM2Mod/releases/tag/v2026.11.20-rc.1), 20 Nov 2026 · **Maintained by** [cfu288](https://github.com/cfu288)
 { .facts }
 
@@ -144,6 +156,8 @@ A Custom Menu J row, Off by default, that writes EPM2LOG.BIN to the card for dev
 - Film simulations use the identity look and record each film's name in the photo's metadata.
 - Ten more films and corrected fits for 24; all 32 films developed on the owner's camera.
 
+PEN E-PM2 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.20-rc.1)
+
 Unofficial and for the E-PM2 only; installing is at your own risk. Charge the battery fully first.
 { .release-warning }
 
@@ -156,6 +170,8 @@ Unofficial and for the E-PM2 only; installing is at your own risk. Charge the ba
 
 - Shooting information kept on the level gauge screen.
 - Experimental Full HD movie and bit-rate candidates.
+
+PEN E-PM2 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-PM2+%C2%B7+stock+firmware%3A+&package=EPM2Mod+%C2%B7+v2026.11.19-rc.3)
 
 Unofficial and for the E-PM2 only; installing is at your own risk.
 { .release-warning }

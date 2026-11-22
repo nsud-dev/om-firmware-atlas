@@ -17,6 +17,18 @@ The research base: PEN-F HSL, firmware formats and tools for many bodies.
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Olympus firmware research (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/oly-fw-analysis.md) to investigate [my question] on [my exact camera and firmware].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** research · **Camera details:** [PEN-F](#for-pen-f), [OM-5](#for-om5), [PEN E-P7](#for-ep7), [OM-3](#for-om3) · **Latest release:** [alpha-20261017 (pre-release)](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017), 18 Oct 2026 · **Maintained by** [fishcu](https://github.com/fishcu)
 { .facts }
 
@@ -149,6 +161,8 @@ Notes on update files, start-up, settings and image processing, each tied to a m
 - Hue, saturation and lightness now span −7 to +7.
 - Includes the patched firmware, a stock restore, instructions and checksums.
 
+PEN-F · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+research+%C2%B7+alpha-20261017)
+
 Experimental; recovery from every failure is not guaranteed. Bring saturation values within −5 to +5 before downgrading.
 { .release-warning }
 
@@ -161,6 +175,8 @@ Experimental; recovery from every failure is not guaranteed. Bring saturation va
 
 - Adds hue and lightness to the 12-colour saturation editor, −5 to +5.
 - New raw files carry the HSL look.
+
+PEN-F · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+research+%C2%B7+alpha-20261013)
 
 An early alpha for voluntary testing, with owner-reported checks only.
 { .release-warning }

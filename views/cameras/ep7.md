@@ -9,9 +9,12 @@ E142: original Caduceus project and a documented Ghidra/REA setup.
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** [Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) (v0.34a), [db firmware / om-c-firmware](../projects/db-firmware.md#for-ep7) (dbv0.4.3).
+**Releases for this camera:**
 
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Platform](#platform)
+- [Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · v0.34a · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.34a)
+- [db firmware / om-c-firmware](../projects/db-firmware.md#for-ep7) · dbv0.4.3 · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.4.3)
+
+**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Platform](#platform) · [Research](#research)
 
 </div>
 
@@ -31,8 +34,10 @@ Features as each project describes them, with their status. Follow a project's o
 
 Film, Saturation, Hue, Light and Effects pages on the camera's own colour wheel; changed looks are marked with *.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7)
-{ .card-meta }
+Stock firmware 1.1 · [Evidence and limits for v0.34a](../capabilities/ep7-hsl.md)
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -43,8 +48,10 @@ Film, Saturation, Hue, Light and Effects pages on the camera's own colour wheel;
 
 Velvia, Classic Chrome, Kodachrome, Portra, Ektar, CineStill, Vision3, Polaroid, Cross Process and more, one per Colour Profile slot.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -55,8 +62,10 @@ Velvia, Classic Chrome, Kodachrome, Portra, Ektar, CineStill, Vision3, Polaroid,
 
 A per-look 3×3 colour matrix applied by the camera's image hardware, plus a choice of the camera's base tone curves.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.34
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.34 · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -67,8 +76,10 @@ A per-look 3×3 colour matrix applied by the camera's image hardware, plus a cho
 
 Tint shadows and highlights separately in 12 colours, in live view and photos.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.32
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.32 · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -79,8 +90,10 @@ Tint shadows and highlights separately in 12 colours, in live view and photos.
 
 Film-like grain on colour photos, Off to High per profile.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.27
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.27 · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -91,8 +104,10 @@ Film-like grain on colour photos, Off to High per profile.
 
 A red-orange glow around bright lights, as on CineStill film.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.31
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.31 · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -103,8 +118,10 @@ A red-orange glow around bright lights, as on CineStill film.
 
 Each look carries its own tone curve, with new Blacks and Whites controls.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.20
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.20 · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -115,8 +132,10 @@ Each look carries its own tone curve, with new Blacks and Whites controls.
 
 Pan F, Acros, T-Max, Tri-X, HP5, Delta 3200, sepia, selenium and cyanotype for the Monochrome Profiles.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -127,8 +146,10 @@ Pan F, Acros, T-Max, Tri-X, HP5, Delta 3200, sepia, selenium and cyanotype for t
 
 A log curve hidden in the firmware, switched on with the Muted movie picture mode.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -139,8 +160,10 @@ A log curve hidden in the firmware, switched on with the Muted movie picture mod
 
 Panorama and Wide aspect ratios with matching live view, playback and frame lines.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -151,8 +174,10 @@ Panorama and Wide aspect ratios with matching live view, playback and frame line
 
 ND3 and ND4 in Multiple Exposure: frames averaged at normal brightness.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -163,8 +188,10 @@ ND3 and ND4 in Multiple Exposure: frames averaged at normal brightness.
 
 More choices for REC and Fn, and the right and down arrow keys in Button Function.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.29
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.29 · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -175,8 +202,10 @@ More choices for REC and Fn, and the right and down arrow keys in Button Functio
 
 The 29-minute and 2-hour caps raised to 9 hours; file and heat limits still apply.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -187,8 +216,10 @@ The 29-minute and 2-hour caps raised to 9 hours; file and heat limits still appl
 
 150, 100 or 60 Mbit/s for 4K movie slots.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.34
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.34 · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -199,8 +230,10 @@ The 29-minute and 2-hour caps raised to 9 hours; file and heat limits still appl
 
 Caduceus's own labels in Japanese or Simplified Chinese when the camera uses that language.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.32
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.32 · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -211,8 +244,10 @@ Caduceus's own labels in Japanese or Simplified Chinese when the camera uses tha
 
 Natural corners per look. The firmware setting is confirmed; its effect on photos is not yet, and reports are wanted.
 
+No separate test record linked to this feature.
+
 [Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · since v0.25
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -223,8 +258,10 @@ Natural corners per look. The firmware setting is confirmed; its effect on photo
 
 Make, preview and share looks in your browser, and export them for the camera or as RapidRAW presets.
 
-[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7)
-{ .card-meta }
+No separate test record linked to this feature.
+
+[Caduceus for E-P7](../projects/caduceus-ep7.md#for-ep7) · [Latest project release for this model · v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a) · [Install guide](https://github.com/cakelesscoder/caduceus-ep7/blob/main/docs/INSTALL.md)
+{ .feature-actions }
 
 </div>
 
@@ -235,8 +272,10 @@ Make, preview and share looks in your browser, and export them for the camera or
 
 Switches to the electronic shutter on overexposure in P or A mode and, since v0.4.3, below the slowest mechanical speed in S or M mode. v0.4.3 lists nine bodies, including the OM-3, OM-5, OM-5 Mark II and E-P7; its OM-5 and OM-5 Mark II builds are listed as not working.
 
-[db firmware / om-c-firmware](../projects/db-firmware.md#for-ep7) · since dbv0.4.2
-{ .card-meta }
+No separate test record linked to this feature.
+
+[db firmware / om-c-firmware](../projects/db-firmware.md#for-ep7) · since dbv0.4.2 · [Latest project release for this model · dbv0.4.3](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.4.3)
+{ .feature-actions }
 
 </div>
 
@@ -400,6 +439,20 @@ What the stock firmware itself contains, separate from what projects add. Follow
 ## Firmware
 
 [ep7 firmware 1.1, build 1100](../firmware/ep7-1100.md).
+
+## Research this camera { #research }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Olympus PEN E-P7 (E142) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/ep7.md) to investigate [my question] on [my stock firmware version].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Sources and record
 

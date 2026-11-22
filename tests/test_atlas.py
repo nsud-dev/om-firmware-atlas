@@ -197,10 +197,18 @@ class AtlasTests(unittest.TestCase):
         self.assertGreater(output.index("[Ghidra MN103"), others)
         self.assertNotIn("Latest: v0.2.0-alpha1", output)
         glance = output[output.index('class="glance"'):output.index("## What you can do")]
-        self.assertIn("**Releases for this camera:** [db firmware", glance)
+        self.assertNotIn("db firmware", glance.split("**Reported not working")[0])
+        self.assertIn("**Reported not working on this model:**\n\n- [db firmware", glance)
         self.assertIn("**No release for this camera yet:**", glance)
         self.assertIn("[Projects](#projects)", glance)
         self.assertIn("## Projects for this camera { #projects }", output)
+
+    def test_glance_keeps_camera_report_scoped_to_its_release_label(self):
+        pages = render(self.catalogue)
+        glance = pages["views/cameras/om5-ii.md"].split("</div>", 1)[0]
+        self.assertIn("[Camera test · reported working](../evidence/om5-ii-v020-alpha1-owner.md)", glance)
+        self.assertIn("[loader fw1100 (OMKit 0.1.0)](../evidence/om5-ii-omkit-loader.md)", glance)
+        self.assertNotIn("dbv0.4.3", glance.split("**Reported not working")[0])
 
     def test_latest_release_is_chronological_and_camera_specific(self):
         project = copy.deepcopy(self.catalogue.records["project.db-firmware"])

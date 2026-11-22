@@ -9,11 +9,11 @@ E140: port/signature research and emulator coverage; no physical feature report 
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** none recorded yet.
+**Releases for this camera:** none listed here.
 
 **No release for this camera yet:** [Caduceus for E-P7](../projects/caduceus-ep7.md#for-em10-iv).
 
-**Jump to:** [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk)
+**Jump to:** [Projects](#projects) · [Test evidence](#evidence) · [Where to talk](#talk) · [Research](#research)
 
 </div>
 
@@ -92,6 +92,20 @@ No feature-level assertion is catalogued yet. This is a coverage gap, not a find
 ## Firmware
 
 None catalogued.
+
+## Research this camera { #research }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Olympus OM-D E-M10 Mark IV (E140) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em10-iv.md) to investigate [my question] on [my stock firmware version].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Sources and record
 

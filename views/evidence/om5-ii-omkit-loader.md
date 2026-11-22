@@ -10,6 +10,10 @@ The developers report the loader patch installed since 2026-10-30, with core sta
 
 **Firmware:** [om5-ii firmware 1.1, build 1100](../firmware/om5-ii-1100.md) · **Mod build:** loader fw1100 (OMKit 0.1.0)
 
+[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=OMKit+%C2%B7+loader+fw1100+%28OMKit+0.1.0%29)
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Provenance:** maintainer summary. **Reported:** 2026-11-20. **Test date:** 2026-10-30.
 
 **Reported/observed package SHA-256:** `548098cd3d62a534360bb9a5385e20e0c79f6d2f477f97ad20c92a3f5c8f990c`

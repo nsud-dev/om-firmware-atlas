@@ -11,6 +11,18 @@ How to install official OM SYSTEM firmware from an SD card.
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Historical manual update research (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/manual-update.md) to investigate [my question] on [my exact camera and firmware].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** reference · **Camera details:** [OM-5](#for-om5), [OM-3](#for-om3) · **Maintained by** [iKenndac](https://github.com/iKenndac)
 { .facts }
 

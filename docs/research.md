@@ -1,10 +1,17 @@
-# Firmware research
+# Research & development { #firmware-research }
 
-[Research with your AI](research-with-ai.md){ .btn .btn-primary }
+What do you want to find out about your camera or build?
 
-Give Claude Code or another agent your camera and question. Get a sourced starting point, then contribute your findings back to the Atlas.
+<div class="explore-grid research-start" markdown="1">
 
-Choose the [exact camera and generation](../views/cameras/index.md) and identify its starting firmware. If you are deciding whether to install a mod, start with [the owner's guide to risk and recovery](before-you-install.md).
+[**Start with your AI agent** <span>Give it your question and the Atlas link to find earlier work.</span>](research-with-ai.md)
+[**Find a project or repository** <span>See who is working on your topic and where they welcome contributions.</span>](../views/projects/index.md)
+[**Look up test results** <span>Read what happened on a camera or in an emulator, and which build was tried.</span>](../views/evidence/index.md)
+[**Share a finding** <span>Give your agent a public source to add to the Atlas.</span>](research-with-ai.md#share-what-you-find)
+
+</div>
+
+[Browse research by task](#choose-a-task) · [Discuss a question on Discord](community.md) · [Report a camera result](report.md)
 
 ## From update file to working camera
 

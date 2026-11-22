@@ -14,16 +14,18 @@ nav:
   # The build expands the Cameras and Projects entries into record-driven lists and the Guides entry
   # into the knowledge guides (scripts/atlas.py expand_nav), so none of them is maintained by hand.
   - Home: index.md
-  - Cameras: views/cameras/index.md
-  - Projects: views/projects/index.md
-  - Community:
-      - Overview: community.md
-      - Where to talk: views/community/index.md
-      - Report a result: report.md
-      - Add or correct: add.md
-  - Research:
+  - Find your camera:
+      - Cameras: views/cameras/index.md
+      - Before you install: before-you-install.md
+      - Reading the evidence: evidence.md
+      - Report a camera result: report.md
+  - Research & development:
+      - Start an investigation: research.md
       - Use the Atlas with your AI: research-with-ai.md
-      - Firmware research index: research.md
+      - Contribute a finding: add.md
+      - Community and Discord: community.md
+      - Where to talk: views/community/index.md
+      - Projects: views/projects/index.md
       - Technical reference: views/reference/index.md
       - Guides: knowledge/README.md
       - Catalogue:
@@ -31,8 +33,7 @@ nav:
           - Feature claims: views/capabilities/index.md
           - Observations: views/evidence/index.md
           - Sources: views/sources/index.md
-      - Reading the evidence: evidence.md
-      - How it works: how-it-works.md
+      - How the Atlas works: how-it-works.md
 plugins:
   - search
 markdown_extensions:

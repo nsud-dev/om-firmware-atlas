@@ -19,6 +19,18 @@ The original Caduceus: HSLFX colour editing and 29 film looks for the PEN E-P7.
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Caduceus for E-P7 (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-ep7.md) to investigate [my question] on [my exact camera and firmware].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** mod · **Camera details:** [PEN E-P7](#for-ep7), [OM-D E-M10 Mark IV](#for-em10-iv) · **Latest release:** [v0.34a](https://github.com/cakelesscoder/caduceus-ep7/releases/tag/v0.34a), 15 Nov 2026 · **Maintained by** [cakelesscoder](https://github.com/cakelesscoder)
 { .facts }
 
@@ -299,6 +311,8 @@ Make, preview and share looks in your browser, and export them for the camera or
 - Halation now applies in brighter scenes.
 - Japanese labels when the camera is set to Japanese.
 
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.34a)
+
 Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
 { .release-warning }
 
@@ -313,6 +327,8 @@ Beta. The author warns that flashing modified firmware can crash or brick the ca
 - A Colour & Light editor on the camera and the Standard 1.2 looks.
 - Selectable 4K bitrate.
 
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.34)
+
 Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
 { .release-warning }
 
@@ -324,6 +340,8 @@ Beta. The author warns that flashing modified firmware can crash or brick the ca
 { .release-head }
 
 - Fixes a crash on the Colour Profile page; adds a crash report file.
+
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.33a)
 
 Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
 { .release-warning }
@@ -338,6 +356,8 @@ Beta. The author warns that flashing modified firmware can crash or brick the ca
 - Grain about 1.85 times faster; halation needs half the work.
 - Clean start after a crash.
 
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.33)
+
 Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
 { .release-warning }
 
@@ -349,6 +369,8 @@ Beta. The author warns that flashing modified firmware can crash or brick the ca
 { .release-head }
 
 - Grain rewritten to be faster; Chinese labels reviewed.
+
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.32b)
 
 Beta. v0.33 reports a faint repeating grain pattern in this version; update if you installed it.
 { .release-warning }
@@ -363,6 +385,8 @@ Beta. v0.33 reports a faint repeating grain pattern in this version; update if y
 - Split toning on any COLOR profile and two Extras pages.
 - The Standard 1.1 look pack, framing lines and Chinese labels.
 
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.32)
+
 Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
 { .release-warning }
 
@@ -374,6 +398,8 @@ Beta. The author warns that flashing modified firmware can crash or brick the ca
 { .release-head }
 
 - Fewer freezes with grain.
+
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.32a)
 
 Beta. Heavy effect stacks can still very occasionally stall the camera.
 { .release-warning }
@@ -387,6 +413,8 @@ Beta. Heavy effect stacks can still very occasionally stall the camera.
 
 - The look's name is written into the JPEG's EXIF.
 
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.31d)
+
 Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
 { .release-warning }
 
@@ -399,6 +427,8 @@ Beta. The author warns that flashing modified firmware can crash or brick the ca
 
 - Effects locked to stills on the Movie and AP colour wheels; Muted reads 8-BIT LOG.
 
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.31c)
+
 Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
 { .release-warning }
 
@@ -410,6 +440,8 @@ Beta. The author warns that flashing modified firmware can crash or brick the ca
 { .release-head }
 
 - Fixes a crash on bright scenes with grain and halation.
+
+PEN E-P7 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN+E-P7+%C2%B7+stock+firmware%3A+&package=Caduceus+for+E-P7+%C2%B7+v0.31b)
 
 Beta. The author warns that flashing modified firmware can crash or brick the camera; never flash an E-P7 build on another body.
 { .release-warning }

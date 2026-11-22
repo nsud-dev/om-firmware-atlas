@@ -16,6 +16,18 @@ Pick firmware mods for the E-M1 Mark III and build your own update file.
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for E-M1 Mark III Mod Builder (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/em1-iii-mod-builder.md) to investigate [my question] on [my exact camera and firmware].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** mod · **Camera details:** [OM-D E-M1 Mark III](#for-em1-iii) · **Latest release:** [mod-builder-1.18](https://github.com/dfeldt91-blip/E-M1-Miii/releases/tag/mod-builder-1.18), 21 Nov 2026 · **Maintained by** [dfeldt91-blip](https://github.com/dfeldt91-blip)
 { .facts }
 
@@ -297,6 +309,8 @@ The Shooting Menu 1 title shows your own text, up to 36 characters. Worked on th
 - Adds Fill Flash to handheld High Res, so Fill In and Manual flash are both offered (test 1.745).
 - The notes say a fully manual flash does not work in handheld High Res with this.
 
+OM-D E-M1 Mark III · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M1+Mark+III+%C2%B7+stock+firmware%3A+&package=E-M1+Mark+III+Mod+Builder+%C2%B7+mod-builder-1.18)
+
 Unofficial; flashing modified firmware is at your own risk. The apps are unsigned.
 { .release-warning }
 
@@ -309,6 +323,8 @@ Unofficial; flashing modified firmware is at your own risk. The apps are unsigne
 
 - Mac (universal, Apple silicon, Intel) and Windows builds of the builder for firmware 1.6.
 - The release notes are the same for 1.12 to 1.17 and list no per-version changes.
+
+OM-D E-M1 Mark III · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M1+Mark+III+%C2%B7+stock+firmware%3A+&package=E-M1+Mark+III+Mod+Builder+%C2%B7+mod-builder-1.17)
 
 Unofficial; flashing modified firmware is at your own risk. The apps are unsigned.
 { .release-warning }

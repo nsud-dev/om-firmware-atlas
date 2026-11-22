@@ -20,6 +20,18 @@ Film looks and a full colour editor, built into the OM SYSTEM OM-3.
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Caduceus for OM-3 (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/caduceus-om3.md) to investigate [my question] on [my exact camera and firmware].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** mod · **Camera details:** [OM-3](#for-om3) · **Latest release:** [v0.40.3-beta3 (pre-release)](https://github.com/androidfanman/caduceus-om3/releases/tag/v0.40.3-beta3), 21 Nov 2026 · **Maintained by** [androidfanman](https://github.com/androidfanman)
 { .facts }
 
@@ -333,6 +345,8 @@ Halation at strength 5 on a sample photo. *Caduceus for OM-3 tour; photo by Bler
 - A function on the Delete button now acts on a long press as on AF-ON (#101); the arrow keys still report no long press.
 - The maintainer reports the build camera-tested on an OM-3 on 2026-11-21 as test build f9.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.3-beta3)
+
 Test release; v0.40.2 stays the current version. The first time after updating, the camera's own modes may start with no WB compensation.
 { .release-warning }
 
@@ -348,6 +362,8 @@ Test release; v0.40.2 stays the current version. The first time after updating, 
 - The camera's own picture modes keep their own WB compensation again, per WB mode and custom mode (#99).
 - The maintainer reports the build camera-tested on an OM-3 on 2026-11-20 as fixes2.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.3-beta2)
+
 Withdrawn: the maintainer reports that some start-ups could get stuck restarting (a boot loop) and that a film change after the Creative Dial's centre could restart the camera. Its GitHub release is unpublished; use v0.40.3-beta3 instead.
 { .release-warning }
 
@@ -361,6 +377,8 @@ Withdrawn: the maintainer reports that some start-ups could get stuck restarting
 - Halation Radius row (Bloom, Tight, Medium, Wide), per film; LookLab cannot set it yet.
 - Halation about twice as fast with identical output; burst pauses capped at 0.3 s a photo.
 - Playback shows each photo's own film name (#93).
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.3-beta)
 
 Test release; v0.40.2 stays the current version. Known issue #91 (also in v0.40.1 and v0.40.2): with Film Grain, Sequential and JPEG only, Drive Priority low-ISO processing switches the camera off on the first photo at ISO 1600 and below; fixed in v0.40.3-beta2.
 { .release-warning }
@@ -376,6 +394,8 @@ Test release; v0.40.2 stays the current version. Known issue #91 (also in v0.40.
 - The maintainer reports a successful long burst on the test build later published as v0.40.2. An earlier test build rebooted during a burst.
 - LookLab previews the updated colour grain.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.2)
+
 Known issue #91, listed later in the v0.40.3-beta notes: with Film Grain, Sequential and JPEG only, Drive Priority low-ISO processing switches the camera off on the first photo at ISO 1600 and below; workaround Detail Priority, RAW+JPEG or Single.
 { .release-warning }
 
@@ -389,6 +409,8 @@ Known issue #91, listed later in the v0.40.3-beta notes: with Film Grain, Sequen
 - Medium and Coarse grain use rounder clumps with fewer repeated patterns.
 - A film’s white-balance compensation appears in the Super Control Panel. Edits there are saved with the film.
 - A new look set applies its white balance immediately to the current film.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40.1)
 
 Stock picture modes retain the last film’s compensation for that white-balance mode, according to the release notes.
 { .release-warning }
@@ -404,6 +426,8 @@ Stock picture modes retain the last film’s compensation for that white-balance
 - Shows split tone, RGB curves and black-and-white changes live. Adds 17 rear-screen information toggles and extends focus stacking to more lenses.
 - Includes the beta3 fixes for quick shots and new film sets in custom modes. LookLab adds previews of the new settings.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40)
+
 Atlas issue #10 reports a crash at shutter release with Film Grain enabled on v0.40. The report gives no package hash and does not cover later releases.
 { .release-warning }
 
@@ -415,6 +439,8 @@ Atlas issue #10 reports a crash at shutter release with Film Grain enabled on v0
 { .release-head }
 
 - Fixes missed quick single shots with debug logging, speeds up Halation and fixes new film sets in custom modes.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40-beta3)
 
 Test release. v0.30.3 was the recommended release at publication.
 { .release-warning }
@@ -428,6 +454,8 @@ Test release. v0.30.3 was the recommended release at publication.
 
 - Adds separate rear-screen toggles for subject detection, the exposure level meter and image aspect.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40-beta2)
+
 Test release. v0.30.3 was the recommended release at publication.
 { .release-warning }
 
@@ -440,6 +468,8 @@ Test release. v0.30.3 was the recommended release at publication.
 
 - Restores crop at startup, draws crop-edge framelines and adds black JPEG borders.
 - Adds rear-screen information toggles and shows selected colour edits as they are adjusted.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40-beta)
 
 Test release. v0.30.3 was the recommended release at publication.
 { .release-warning }
@@ -455,6 +485,8 @@ Test release. v0.30.3 was the recommended release at publication.
 - A white border per film, and the project's own film grain with strength and size.
 - Picture Mode stays open 30 s; start-up waits for the camera's ready signal before running patch code.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.40-alpha)
+
 Test release. v0.30.3 was the recommended release at publication. At publication LookLab did not preview the new settings.
 { .release-warning }
 
@@ -468,6 +500,8 @@ Test release. v0.30.3 was the recommended release at publication. At publication
 - Fixes a camera restart when switching films quickly.
 - Colour wheel labels read Sat, Hue, Lum or Tint.
 - Looks such as split toning, curves and Glow are now photo-only, not applied to video.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.30.4-alpha)
 
 Test release. v0.30.3 was the recommended release at publication.
 { .release-warning }
@@ -483,6 +517,8 @@ Test release. v0.30.3 was the recommended release at publication.
 - RGB and Mix pages move one step per dial click; curves redraw about three times faster.
 - Fixes a late shutter and runaway bursts with the debug log on.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.30.3)
+
 </div>
 
 <div class="release-item" markdown="1">
@@ -492,6 +528,8 @@ Test release. v0.30.3 was the recommended release at publication.
 
 - Fixes a black review picture and a frozen live view with Glow, Clarity or Halation.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.30.2)
+
 </div>
 
 <div class="release-item" markdown="1">
@@ -500,6 +538,8 @@ Test release. v0.30.3 was the recommended release at publication.
 { .release-head }
 
 - Fixes a one-frame menu flash in Picture Mode.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.30.1)
 
 </div>
 
@@ -512,6 +552,8 @@ Test release. v0.30.3 was the recommended release at publication.
 - New Picture Mode row order.
 - Fixes for mode-dial changes, a video freeze and the Noise Filter marker.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.30)
+
 </div>
 
 <div class="release-item" markdown="1">
@@ -521,6 +563,8 @@ Test release. v0.30.3 was the recommended release at publication.
 
 - Custom modes keep their own copy of your films and changes.
 - Fixes a lost Contrast change made in P.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.29.5)
 
 After updating, assign your custom modes once.
 { .release-warning }
@@ -535,6 +579,8 @@ After updating, assign your custom modes once.
 - Fixes the * markers in Picture Mode and keeps changes when switching off straight after.
 - Display fixes and a Custom WB fix for films.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.29.4)
+
 </div>
 
 <div class="release-item" markdown="1">
@@ -543,6 +589,8 @@ After updating, assign your custom modes once.
 { .release-head }
 
 - The Delete button can take a shooting function.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.29.3)
 
 </div>
 
@@ -553,6 +601,8 @@ After updating, assign your custom modes once.
 
 - Custom modes C1–C5 no longer change your films; each brings back the films it was assigned with.
 
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.29.2)
+
 </div>
 
 <div class="release-item" markdown="1">
@@ -561,6 +611,8 @@ After updating, assign your custom modes once.
 { .release-head }
 
 - Films load with no card in the camera.
+
+OM-3 · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-3+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-3+%C2%B7+v0.29.1)
 
 </div>
 

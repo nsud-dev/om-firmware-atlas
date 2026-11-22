@@ -9,9 +9,12 @@ E122: foundational HSL research; exact internal build identity matters.
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** [Olympus firmware research](../projects/oly-fw-analysis.md#for-pen-f) (alpha-20261017 (pre-release); see its card below), [db firmware / om-c-firmware](../projects/db-firmware.md#for-pen-f) (dbv0.3.2) — **The release names this camera without saying which features it adds.** [Read release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2).
+**Releases for this camera:**
 
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform)
+- [Olympus firmware research](../projects/oly-fw-analysis.md#for-pen-f) · alpha-20261017 (pre-release) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+research+%C2%B7+alpha-20261017)
+- [db firmware / om-c-firmware](../projects/db-firmware.md#for-pen-f) · dbv0.3.2 · The release names this camera without saying which features it adds. [Release notes](https://github.com/azqeurio/om-c-firmware/releases/tag/dbv0.3.2) · No camera test recorded here for this project on this model · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+PEN-F+%C2%B7+stock+firmware%3A+&package=db+firmware+%2F+om-c-firmware+%C2%B7+dbv0.3.2)
+
+**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform) · [Research](#research)
 
 </div>
 
@@ -31,8 +34,10 @@ Features as each project describes them, with their status. Follow a project's o
 
 Hue and lightness added to the 12-colour saturation editor in COLOR1–3, from −7 to +7 since the 17 October alpha.
 
-[Olympus firmware research](../projects/oly-fw-analysis.md#for-pen-f)
-{ .card-meta }
+Stock firmware 3.1 · [Evidence and limits for alpha-20261017](../capabilities/pen-f-hsl.md)
+
+[Olympus firmware research](../projects/oly-fw-analysis.md#for-pen-f) · [Latest project release for this model · alpha-20261017](https://github.com/fishcu/oly_fw_analysis/releases/tag/alpha-20261017)
+{ .feature-actions }
 
 </div>
 
@@ -171,6 +176,20 @@ What the stock firmware itself contains, separate from what projects add. Follow
 ## Firmware
 
 [pen-f firmware 3.1, build 3101](../firmware/pen-f-3101.md).
+
+## Research this camera { #research }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Olympus PEN-F (E122) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/pen-f.md) to investigate [my question] on [my stock firmware version].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Sources and record
 

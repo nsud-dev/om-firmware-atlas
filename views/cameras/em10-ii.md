@@ -9,11 +9,11 @@ E120: one card-loaded plugin project for firmware 1.4, tested by its maintainer 
 
 <div class="glance" markdown="1">
 
-**Releases for this camera:** none recorded yet.
+**Releases for this camera:** none listed here.
 
 **No release for this camera yet:** [fenykl](../projects/fenykl.md#for-em10-ii).
 
-**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform)
+**Jump to:** [What you can do](#features) · [Projects](#projects) · [Test evidence](#evidence) · [Platform](#platform) · [Research](#research)
 
 </div>
 
@@ -33,8 +33,10 @@ Features as each project describes them, with their status. Follow a project's o
 
 A one-time loader patch runs FENYKL.BIN from the card on power-switch and battery-connect boots. Without a valid file the camera runs as stock; OK held at power-on runs no payload.
 
+Stock firmware 1.4 · [Evidence and limits for fenykl-loader with FENYKL.TST and battery-connect boots](../capabilities/em10-ii-fenykl-loader.md)
+
 [fenykl](../projects/fenykl.md#for-em10-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -45,8 +47,10 @@ A one-time loader patch runs FENYKL.BIN from the card on power-switch and batter
 
 A native twelfth Custom menu tab, drawn and edited by the stock menu code; values are saved to the card two seconds after a change.
 
+Stock firmware 1.4 · [Evidence and limits for main plugin (2026-11-20 builds)](../capabilities/em10-ii-fenykl-settings-tab.md)
+
 [fenykl](../projects/fenykl.md#for-em10-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -57,8 +61,10 @@ A native twelfth Custom menu tab, drawn and edited by the stock menu code; value
 
 A half press in silent sequential H starts the burst and keeps the latest 6 frames; the full press records them. Needs flash off, long-exposure NR off and S-AF or MF.
 
+No separate test record linked to this feature.
+
 [fenykl](../projects/fenykl.md#for-em10-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -69,8 +75,10 @@ A half press in silent sequential H starts the burst and keeps the latest 6 fram
 
 The focus distance and depth of field the camera writes to EXIF, and a contrast bar, on the live-view INFO screens, also in MF.
 
+No separate test record linked to this feature.
+
 [fenykl](../projects/fenykl.md#for-em10-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -81,8 +89,10 @@ The focus distance and depth of field the camera writes to EXIF, and a contrast 
 
 An estimated percentage replaces the stock battery icon on the INFO screens.
 
+No separate test record linked to this feature.
+
 [fenykl](../projects/fenykl.md#for-em10-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -93,8 +103,10 @@ An estimated percentage replaces the stock battery icon on the INFO screens.
 
 Swaps the red and blue channels, for infrared photography.
 
+No separate test record linked to this feature.
+
 [fenykl](../projects/fenykl.md#for-em10-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -105,8 +117,10 @@ Swaps the red and blue channels, for infrared photography.
 
 A Button Function entry for Fn1, Fn2, Fn3, REC or L-Fn that saves the live view as SHOTnnnn.PPM to the card root.
 
+No separate test record linked to this feature.
+
 [fenykl](../projects/fenykl.md#for-em10-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -117,8 +131,10 @@ A Button Function entry for Fn1, Fn2, Fn3, REC or L-Fn that saves the live view 
 
 An opt-in plugin that opens the camera's access point for memory reads and writes, small test programs, card files and screen capture from a PC.
 
+No separate test record linked to this feature.
+
 [fenykl](../projects/fenykl.md#for-em10-ii)
-{ .card-meta }
+{ .feature-actions }
 
 </div>
 
@@ -208,6 +224,20 @@ What the stock firmware itself contains, separate from what projects add. Follow
 ## Firmware
 
 [E-M10 Mark II firmware 1.4, build 1400](../firmware/em10-ii-1400.md).
+
+## Research this camera { #research }
+
+<details class="research-action" markdown="1"><summary>Research this camera with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for Olympus OM-D E-M10 Mark II (E120) (https://github.com/xulfr/om-firmware-atlas/blob/main/views/cameras/em10-ii.md) to investigate [my question] on [my stock firmware version].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
 
 ## Sources and record
 

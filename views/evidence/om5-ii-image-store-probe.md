@@ -10,6 +10,10 @@ Upstream GUI tracing reports no patch writes into the watched image after correc
 
 **Firmware:** [om5-ii firmware 1.1, build 1100](../firmware/om5-ii-1100.md) · **Mod build:** image-store-fix-2026-11-11
 
+[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=Caduceus+for+OM-5+%C2%B7+image-store-fix-2026-11-11)
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Provenance:** upstream documentation. **Reported:** 2026-11-11. **Test date:** Not explicitly recorded.
 
 **Reported/observed package SHA-256:** not recorded.

@@ -20,6 +20,18 @@ A loader flashed once, then core, modules and settings from the SD card. OM-5 Ma
 
 </div>
 
+<details class="research-action" markdown="1"><summary>Research this project with AI</summary>
+
+Copy this into your coding agent and replace the bracketed text. [How to use the Atlas with your AI](../../docs/research-with-ai.md).
+
+```text
+Use the Atlas entry for OMKit (https://github.com/xulfr/om-firmware-atlas/blob/main/views/projects/omkit.md) to investigate [my question] on [my exact camera and firmware].
+```
+
+</details>
+
+[Share a research finding](../../docs/research-with-ai.md#share-what-you-find)
+
 **Type:** mod · **Camera details:** [OM-5 Mark II](#for-om5-ii) · **Latest release:** [v0.1.0](https://github.com/necrostaz/omkit/releases/tag/v0.1.0), 20 Nov 2026 · **Maintained by** [necrostaz](https://github.com/necrostaz)
 { .facts }
 
@@ -132,6 +144,8 @@ ISP player, ISP fitter (.cube look to preset) and ISP neurofit (preset from RAW 
 
 - First public release, for the OM-5 Mark II on firmware 1.1; core 1.32, CREATPRF 1.5, FILMLOOK 1.12.
 - Firmware tool for Windows, macOS and Linux that makes the patched and original update files locally.
+
+OM-5 Mark II · [Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=OM+SYSTEM+OM-5+Mark+II+%C2%B7+stock+firmware%3A+&package=OMKit+%C2%B7+v0.1.0)
 
 Unofficial; only for the OM-5 Mark II on firmware 1.1. Never interrupt the firmware update; a power loss while writing leaves no known recovery path.
 { .release-warning }
