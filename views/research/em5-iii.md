@@ -12,7 +12,7 @@ E137 · Stock firmware 1.7 · build 1700
 
 ## Projects and repositories
 
-- [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) · [Repository or project home](https://github.com/nsud-dev/olympus-firmware-notes)
+- [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) · [Repository or project home](https://github.com/nsud-dev/olympus-firmware-notes)
 - [Ghidra MN103 processor module](../projects/ghidra-mn103.md#for-em5-iii) · [Repository or project home](https://github.com/nsud-dev/ghidra-mn103)
 - [Olympus firmware research](../projects/oly-fw-analysis.md#for-em5-iii) · [Repository or project home](https://github.com/fishcu/oly_fw_analysis)
 - [OM-Emu](../projects/om-emu.md#for-em5-iii) · [Repository or project home](https://github.com/flatpanda/om-emu)
@@ -30,7 +30,7 @@ partial report · not applicable
 
 Claim · [E-M5 III 1.7 focus stacking with any lens](../capabilities/em5-iii-focus-stacking-any-lens.md)
 
-Project and build · [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / focus-stacking lens check patch
+Project and build · [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / focus-stacking lens check patch
 
 Availability · research
 
@@ -45,7 +45,7 @@ partial report · not applicable
 
 Claim · [E-M5 III 1.7 Live ND photo (OM-5 port)](../capabilities/em5-iii-live-nd.md)
 
-Project and build · [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished test builds (to 2026-11-19)
+Project and build · [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished test builds (to 2026-11-19)
 
 Availability · experimental branch
 
@@ -60,7 +60,7 @@ partial report · not applicable
 
 Claim · [E-M5 III 1.7 Live ND live-view simulation (OM-5 port)](../capabilities/em5-iii-live-nd-preview.md)
 
-Project and build · [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished test builds (to 2026-11-17)
+Project and build · [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished test builds (to 2026-11-17)
 
 Availability · experimental branch
 
@@ -75,7 +75,7 @@ partial report · not applicable
 
 Claim · [E-M5 III 1.7 Color / Monochrome Profile with an on-camera wheel editor](../capabilities/em5-iii-profile-editor.md)
 
-Project and build · [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished test builds (2026-11-19 to 2026-11-20)
+Project and build · [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished test builds (2026-11-19 to 2026-11-20)
 
 Availability · experimental branch
 
@@ -90,7 +90,7 @@ partial report · not applicable
 
 Claim · [E-M5 III 1.7 native menu rows with mod settings kept across power-off](../capabilities/em5-iii-saved-settings-menu-rows.md)
 
-Project and build · [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished test build (2026-11-19)
+Project and build · [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished test build (2026-11-19)
 
 Availability · experimental branch
 
@@ -110,7 +110,7 @@ partial report · not applicable
 
 Claim · [E-M5 III 1.7 USB webcam (partial port)](../capabilities/em5-iii-uvc-webcam.md)
 
-Project and build · [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished webcam test builds
+Project and build · [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md#for-em5-iii) / unpublished webcam test builds
 
 Availability · research
 

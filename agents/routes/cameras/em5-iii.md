@@ -13,7 +13,7 @@ Exact ID: `camera.em5-iii`. Codes: E137. [Human status view](../../../views/came
 
 ## Existing project homes
 
-- [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md): Tagged technical notes on E-M5 III 1.7 firmware and hardware, with OM-5 donor feature ports.
+- [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md): Tagged technical notes on E-M5 III 1.7 firmware and hardware, with OM-5 donor feature ports.
 - [Ghidra MN103 processor module](../projects/ghidra-mn103.md): Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2.
 - [Olympus firmware research](../projects/oly-fw-analysis.md): Foundational firmware work with deep PEN-F coverage.
 - [OM-Emu](../projects/om-emu.md): Firmware lab, model ports, traces and patch overlays.

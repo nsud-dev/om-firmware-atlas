@@ -15,7 +15,7 @@ Change ARM power only at an Idle or Standby state change. Keep image buffers out
 
 ## Observations
 
-- **Physical camera** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): On the E-M5 III both a start in a shooting state and a stop in a shot hook reset the camera; start and stop at Idle were safe. Source: [Gotchas](../sources/em5n.gotchas.md).
+- **Physical camera** ([Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)): On the E-M5 III both a start in a shooting state and a stop in a shot hook reset the camera; start and stop at Idle were safe. Source: [Gotchas](../sources/em5n.gotchas.md).
 
 **[Full detail upstream](https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/reference/gotchas.md#wrong-beliefs-we-corrected)**
 
