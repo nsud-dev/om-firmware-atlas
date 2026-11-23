@@ -25,8 +25,10 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [AF subject, face and eye detection](em5n.af-detect.md) | Subject detection across bodies and why it needs OM-1-class hardware. |
 | [E-M5 III boot and section loading](em5n.boot.md) | Load base, always-ready range, section order, ready bits and boot guards. |
 | [E-M5 III vector GPU (c3d) reference](em5n.c3d-gpu.md) | Reference for the c3d task, the OpenVG/EGL library, draw kinds, renderer interface and command lists. |
-| [Body comparison](em5n.comparison.md) | Chip generation, memory, blocks and built-in features of seven bodies side by side. |
+| [Card mods on the E-M5 III](em5n.card-mods.md) | How small mods load from the SD card at start-up and switch on and off from a Custom Menu page, without reflashing; camera results. |
+| [Body comparison (technical notes)](em5n.comparison.md) | Chip generation, memory, blocks and built-in features of seven bodies side by side. |
 | [E-M5 III container format](em5n.container.md) | Update-file layout, obfuscation and checksum. |
+| [E-M5 III display controller](em5n.display-controller.md) | The display controller (VSC) and the view assists built on it (red night view, RGB clipping view, zebras), with camera results and emulator limits. |
 | [Focus stacking lens check patch](em5n.focus-patch.md) | Function, patched bytes and camera result. |
 | [Focus stacking](em5n.focus-stacking.md) | Lens check patch background and the shot-count setting. |
 | [Gotchas](em5n.gotchas.md) | Mistakes that hung, reset or delayed work on the camera, and the rule since. |
@@ -36,20 +38,21 @@ Every source the Atlas cites, with its revision and when it was last checked.
 | [E-M5 III guide: drawing with the vector GPU](em5n.guide-vector-gpu.md) | The DMP OpenVG library, the c3d driver and its draw kinds, own C renderers, and the decoded GPU command lists. |
 | [E-M5 Mark III firmware guides](em5n.guides.md) | Process guides for E-M5 Mark III 1.7, including boot, shooting, live view, memory and drawing to the screen. |
 | [Handheld High Res Shot](em5n.hhhr.md) | How the OM-5 does HHHR and what the E-M5 III already has. |
-| [E-M5 III image engine](em5n.image-engine.md) | Where job programs live, jobs per body, the parameter window, job records and safe submission. |
+| [E-M5 III image engine (technical notes)](em5n.image-engine.md) | Where job programs live, jobs per body, the parameter window, job records and safe submission. |
+| [E-M5 III image-stabiliser controller](em5n.is-controller.md) | The separate two-core chip that runs the in-body stabiliser, with its program, the commands it handles and the OM-5 version. |
 | [Live GND](em5n.live-gnd.md) | Which bodies have a real Live GND and which only carry its UI. |
 | [Live ND on the E-M5 III](em5n.live-nd.md) | OM-5 Live ND port, stage results and open problems. |
 | [E-M5 III memory map](em5n.memory-map.md) | RAM per body, flash layout, frame pools and spare space used by patches. |
 | [MN103 CPU on the E-M5 III](em5n.mn103.md) | Call frames, compiler, instruction limits and a table of useful routines. |
 | [E-M5 III 2D GUI drawing reference](em5n.osd-drawing.md) | Reference for the GUI layers: draw commands, palettes, pictures, text and the display update. |
 | [What the E-M5 III project has looked into](em5n.overview.md) | Tour of every area studied with a tagged result per feature. |
-| [Modifying the firmware](em5n.patching.md) | Twenty modification techniques, each with method, pitfalls and a per-camera checked-on table. |
+| [Modifying the firmware](em5n.patching.md) | Twenty-one modification techniques, each with method, pitfalls and a per-camera checked-on table. |
 | [Live ND port layers](em5n.port-layers.md) | Layers of the Live ND port and where ported and native code join. |
 | [Color and Monochrome Profile on the E-M5 III](em5n.profiles.md) | The hidden Color/Monochrome Profile back end on the E-M5 III, and an on-camera wheel editor added by test builds; camera results. |
 | [E-M5 III notes overview](em5n.readme.md) | Scope, tag meanings, address convention, tools. |
-| [E-M5 III recovery](em5n.recovery.md) | Power-on checks, flash map, write guard, card updater and recoverable failures. |
+| [E-M5 III recovery (technical notes)](em5n.recovery.md) | Power-on checks, flash map, write guard, card updater and recoverable failures. |
 | [Saved mod settings and native menu rows on the E-M5 III](em5n.saved-settings.md) | Native menu rows and mod settings kept in the unused tail of the user-settings image; camera result. |
-| [E-M5 III sensor](em5n.sensor.md) | Raw frame layout, calibration entries and sensor mode requests. |
+| [E-M5 III sensor (technical notes)](em5n.sensor.md) | Raw frame layout, calibration entries and sensor mode requests. |
 | [E-M5 III shooting sequencer](em5n.sequencer.md) | State table, path choice, burst streaming, exposure record and sensor requests. |
 | [Starry Sky AF](em5n.starry-af.md) | Starry Sky AF on the OM-5 and E-M1 III; absent on the E-M5 III. |
 | [c3d_vg: own renderers for the vector GPU](em5n.tool-c3d-vg.md) | Header, two example renderers and a GPU command-list decoder for writing c3d renderers in C. |

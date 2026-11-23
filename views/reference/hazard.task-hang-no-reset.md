@@ -15,8 +15,8 @@ Faults reset the camera in about a second, but a task waiting forever does not. 
 
 ## Observations
 
-- **Static analysis** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): Watchdog kick task and reset path read from the code. Source: [E-M5 III boot and section loading](../sources/em5n.boot.md).
-- **Physical camera** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): One E-M5 III test build hung without resetting and needed a battery pull. Source: [E-M5 III boot and section loading](../sources/em5n.boot.md).
+- **Static analysis** ([Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)): Watchdog kick task and reset path read from the code. Source: [E-M5 III boot and section loading](../sources/em5n.boot.md).
+- **Physical camera** ([Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)): One E-M5 III test build hung without resetting and needed a battery pull. Source: [E-M5 III boot and section loading](../sources/em5n.boot.md).
 
 **[Full detail upstream](https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/boot-and-sections.md#boot-order-and-why-hooks-need-a-guard)**
 

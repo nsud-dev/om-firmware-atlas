@@ -6,11 +6,11 @@ Live-view averaging with job 12 checked step by step on the camera.
 
 **physical camera; reported pass; partial report; not applicable.**
 
-**Camera:** [Olympus OM-D E-M5 Mark III](../cameras/em5-iii.md) · **Project:** [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)
+**Camera:** [Olympus OM-D E-M5 Mark III](../cameras/em5-iii.md) · **Project:** [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)
 
 **Firmware:** [E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md) · **Mod build:** unpublished test builds (to 2026-11-17)
 
-[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M5+Mark+III+%C2%B7+stock+firmware%3A+&package=Olympus+firmware+notes+%28E-M5+Mark+III%29+%C2%B7+unpublished+test+builds+%28to+2026-11-17%29)
+[Report your result](https://github.com/xulfr/om-firmware-atlas/issues/new?template=camera-report.yml&target=Olympus+OM-D+E-M5+Mark+III+%C2%B7+stock+firmware%3A+&package=Oly+Firmware+Notes+and+Mods+%28E-M5+Mark+III%29+%C2%B7+unpublished+test+builds+%28to+2026-11-17%29)
 
 **Provenance:** firsthand tester report. **Reported:** 2026-11-17. **Test date:** Not explicitly recorded.
 

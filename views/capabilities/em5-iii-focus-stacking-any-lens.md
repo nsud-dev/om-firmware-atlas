@@ -4,7 +4,7 @@
 
 A published two-byte patch removes the per-lens focus-stacking flag check.
 
-**Camera:** [Olympus OM-D E-M5 Mark III](../cameras/em5-iii.md) · **Project:** [Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)
+**Camera:** [Olympus OM-D E-M5 Mark III](../cameras/em5-iii.md) · **Project:** [Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)
 
 **Firmware:** [E-M5 Mark III firmware 1.7, build 1700](../firmware/em5-iii-1700.md) · **Mod build:** focus-stacking lens check patch
 

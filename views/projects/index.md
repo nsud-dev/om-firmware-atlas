@@ -218,10 +218,10 @@ Experimental fork
 
 <div class="project-card" markdown="1">
 
-![The Color Profile wheel over a generated lake scene, stepping through colours as each one's saturation is changed, with a small hue, saturation and lightness strip along the bottom](../../docs/assets/projects/em5-iii-notes/profile-wheel-adjust.webp)
+![The Color Profile editor over a generated lake scene. A colour is picked on the wheel, its hue and lightness sliders move, then the side bar steps down to the tone curve and five points are moved into an S curve](../../docs/assets/projects/em5-iii-notes/profile-editor-animation.webp)
 { .card-image }
 
-[Olympus firmware notes (E-M5 Mark III)](em5-iii-notes.md){ .card-title }
+[Oly Firmware Notes and Mods (E-M5 Mark III)](em5-iii-notes.md){ .card-title }
 
 How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
 

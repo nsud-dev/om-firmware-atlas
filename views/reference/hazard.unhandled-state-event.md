@@ -15,7 +15,7 @@ Route events an added state does not need to a stock no-op handler.
 
 ## Observations
 
-- **Physical camera** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): On the E-M5 III, release events without a handler in a ported Live ND state lost frames at 1/125 s; no-op handlers fixed it. Source: [Live ND port layers](../sources/em5n.port-layers.md).
+- **Physical camera** ([Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)): On the E-M5 III, release events without a handler in a ported Live ND state lost frames at 1/125 s; no-op handlers fixed it. Source: [Live ND port layers](../sources/em5n.port-layers.md).
 
 **[Full detail upstream](https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/firmware/live-nd-port-layers.md#join-points-found-on-the-camera-2026-11-12)**
 

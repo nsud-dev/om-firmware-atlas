@@ -15,7 +15,7 @@ Firmware paths are 8.3 only. Write from a cached heap buffer, and only from task
 
 ## Observations
 
-- **Physical camera** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): Early E-M5 III card logs came out empty until names were 8.3 and the buffer was cached heap memory. Source: [Gotchas](../sources/em5n.gotchas.md).
+- **Physical camera** ([Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)): Early E-M5 III card logs came out empty until names were 8.3 and the buffer was cached heap memory. Source: [Gotchas](../sources/em5n.gotchas.md).
 
 **[Full detail upstream](https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/reference/gotchas.md#things-that-hung-reset-or-bricked-for-a-while-the-camera)**
 

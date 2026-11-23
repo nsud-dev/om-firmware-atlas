@@ -13,7 +13,7 @@ Open only the matching route.
 | [OM-3 downstream experiments](camera-stuff.md) | Downstream experiments intended to send fixes upstream. |
 | [db firmware / om-c-firmware](db-firmware.md) | Release-centred controls, localisation and other modifications. |
 | [E-M1 Mark III Mod Builder](em1-iii-mod-builder.md) | Mod builder for E-M1 III firmware 1.6; after a short pause the author reports the project continuing, with Fill and Manual flash in handheld High Res in 1.18. |
-| [Olympus firmware notes (E-M5 Mark III)](em5-iii-notes.md) | Tagged technical notes on E-M5 III 1.7 firmware and hardware, with OM-5 donor feature ports. |
+| [Oly Firmware Notes and Mods (E-M5 Mark III)](em5-iii-notes.md) | Tagged technical notes on E-M5 III 1.7 firmware and hardware, with OM-5 donor feature ports. |
 | [EPM2Mod](epm2mod.md) | Firmware mod for the 2012 PEN E-PM2 with film simulations, interval shooting, level gauge and focus peaking. |
 | [fenykl](fenykl.md) | Loader flashed once, then C plugins from the SD card hook the firmware. E-M10 Mark II 1.4. |
 | [Ghidra MN103 processor module](ghidra-mn103.md) | Ghidra disassembly and decompiler support for MN10300, AM33 and AM33-2. |

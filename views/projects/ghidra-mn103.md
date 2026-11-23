@@ -128,7 +128,7 @@ The optional ptrregs compiler spec places typed pointer arguments in the MN103 a
 
 ## Related work
 
-[Olympus firmware notes (E-M5 Mark III)](em5-iii-notes.md). These links do not assign ownership or imply identical implementations.
+[Oly Firmware Notes and Mods (E-M5 Mark III)](em5-iii-notes.md). These links do not assign ownership or imply identical implementations.
 
 ## Research notes
 

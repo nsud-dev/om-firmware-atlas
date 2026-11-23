@@ -4,14 +4,14 @@
 
 Card file that starts the debug network and user shell; camera test and trace use.
 
-**[Open original source](https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/features/wifi-debug-shell.md)**
+**[Open original source](https://github.com/nsud-dev/olympus-firmware-notes/blob/4ee043ec5fd30b42b56d029c70c3fed6f2e8077a/docs/features/wifi-debug-shell.md)**
 
 **Kind:** github file. **Locator:** docs/features/wifi-debug-shell.md.
 
-**Revision / release:** `c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a`. **Retrieved:** 2026-11-21. **Last source check:** 2026-11-21.
+**Revision / release:** `4ee043ec5fd30b42b56d029c70c3fed6f2e8077a`. **Retrieved:** 2026-11-23. **Last source check:** 2026-11-23.
 
 **Publication:** public. Written by the notes' author; CC BY 4.0 per the repo licence.
 
 ## Sources and record
 
-[Canonical record](../../records/sources/em5-iii-notes.yaml) · Substantively reviewed: 2026-11-21.
+[Canonical record](../../records/sources/em5-iii-notes.yaml) · Substantively reviewed: 2026-11-23.

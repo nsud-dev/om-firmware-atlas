@@ -2,7 +2,7 @@ schema_version: 1
 records:
 - type: project
   id: project.em5-iii-notes
-  title: Olympus firmware notes (E-M5 Mark III)
+  title: Oly Firmware Notes and Mods (E-M5 Mark III)
   summary: Tagged technical notes on E-M5 III 1.7 firmware and hardware, with OM-5 donor feature ports.
   source_refs:
   - source.em5n.readme
@@ -17,12 +17,15 @@ records:
   - source.em5n.tool-osdlab
   - source.em5n.tool-c3d-vg
   - source.em5n.tool-omemu-c3d
+  - source.em5n.card-mods
+  - source.em5n.display-controller
+  - source.em5n.is-controller
   topics:
   - platform
   - patching
   - tooling
   - capture
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-23'
   url: https://github.com/nsud-dev/olympus-firmware-notes
   kind: research
   camera_ids:
@@ -37,7 +40,7 @@ records:
   tagline: How the E-M5 Mark III firmware works, and bringing OM-5 features to it.
   camera_notes:
   - camera_id: camera.em5-iii
-    note: "Notes and tools only; no builds are published. The author's own test builds on one E-M5 III cover focus stacking with any lens, Live ND and its live-view preview ported from the OM-5, a Color / Monochrome Profile editor, and a parked USB webcam. Drawing your own screens and GPU graphics is so far shown in the om-emu emulator only."
+    note: "Notes and tools only; no builds are published. The author's own test builds on one E-M5 III cover focus stacking with any lens, Live ND and its live-view preview ported from the OM-5, a Color / Monochrome Profile editor, card mods loaded from the SD card, display view assists, and a parked USB webcam. Drawing your own screens and GPU graphics is so far shown in the om-emu emulator only."
   description:
   - 'A study of the Olympus OM-D E-M5 Mark III firmware 1.7: container format, boot and section loading, recovery,
     the MN103 CPU, memory map, image engine, ARM co-processor, display, stabiliser, shooting sequencer, settings and
@@ -51,8 +54,10 @@ records:
   - label: nsud-dev
     url: https://github.com/nsud-dev
   links:
+  - label: Notes website
+    url: https://nsud-dev.github.io/olympus-firmware-notes/
   - label: Firmware guides
-    url: https://github.com/nsud-dev/olympus-firmware-notes/blob/c6eaab8f0eaaa21ca2a1af0f4990b79c5b1ddd7a/docs/guides/README.md
+    url: https://github.com/nsud-dev/olympus-firmware-notes/blob/4ee043ec5fd30b42b56d029c70c3fed6f2e8077a/docs/guides/README.md
   - label: Overview of everything studied
     url: https://github.com/nsud-dev/olympus-firmware-notes/blob/main/docs/overview.md
   - label: Gotchas
@@ -87,8 +92,9 @@ records:
     capability_id: capability.em5-iii-live-nd-preview
   - name: Color / Monochrome Profile editor
     summary: The hidden Color and Monochrome Profile modes made selectable, with an on-camera editor (E-M1 III
-      wheel routines relocated, a side bar of rows, a per-profile tone curve with the live histogram) whose edits
-      show in live view and photos, in test builds.
+      wheel routines relocated, a side bar of rows, a per-profile tone curve with the live histogram, hue,
+      saturation and lightness per colour) whose edits show in live view and photos, in test builds. A free
+      five-point tone curve works in the emulator and is still being finished on the camera.
     camera_ids:
     - camera.em5-iii
     status: research
@@ -111,6 +117,31 @@ records:
     status: research
     since: null
     source_ref: source.em5n.guide-vector-gpu
+  - name: Card mods
+    summary: The firmware is flashed once with a small loader; after that, features are files on the SD card, checked
+      before they run, each with an On/Off row on a Custom Menu page. Holding OK at power-on skips them. In test
+      builds on one camera; the loader is not released.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.card-mods
+  - name: Display view assists
+    summary: View assists through the display controller's gamma, a red night view and an RGB clipping view, work
+      as card mods on the camera; zebras need a driver hook. The 422 controller registers are mapped.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.display-controller
+  - name: Image-stabiliser controller
+    summary: The stabiliser runs on a separate chip with two MN10300-family cores; its program, command handlers,
+      servo and gyro rates are read from the update file, with the OM-5 version compared.
+    camera_ids:
+    - camera.em5-iii
+    status: research
+    since: null
+    source_ref: source.em5n.is-controller
   - name: USB webcam (parked)
     summary: Test builds enumerate as a UVC webcam and stream a generated picture; live view over USB failed, so the
       work is parked.
@@ -145,11 +176,30 @@ records:
     since: null
     source_ref: source.em5n.guides
   images:
-  - path: assets/projects/em5-iii-notes/profile-wheel-adjust.webp
-    alt: The Color Profile wheel over a generated lake scene, stepping through colours as each one's saturation is changed,
-      with a small hue, saturation and lightness strip along the bottom
-    caption: Editing a colour profile on the wheel, in the om-emu emulator with our c3d patches. The bottom hue,
-      saturation and lightness strip is our own test addition. Emulator only, not yet run on a camera.
+  - path: assets/projects/em5-iii-notes/profile-editor-animation.webp
+    alt: The Color Profile editor over a generated lake scene. A colour is picked on the wheel, its hue and lightness
+      sliders move, then the side bar steps down to the tone curve and five points are moved into an S curve
+    caption: Editing a colour profile, in the om-emu emulator with our c3d patches. The hue, saturation and lightness
+      row and the free tone curve are our own additions. In the emulator the curve type and the raised points were
+      set by writing the settings directly, because two dial steps don't work there.
+    credit: olympus-firmware-notes; om-emu by its contributors (MIT); generated backdrop, no photo
+  - path: assets/projects/em5-iii-notes/mods-page-switches.webp
+    alt: A Custom Menu page titled K1. Mods with On and Off rows for the Wi-Fi shell and each card mod
+    caption: The card mods page, with one On/Off row per mod found on the card, in the om-emu emulator.
+    credit: olympus-firmware-notes; om-emu by its contributors (MIT); generated backdrop, no photo
+  - path: assets/projects/em5-iii-notes/live-nd-page.webp
+    alt: A menu page titled Live ND Shooting with rows Live ND Shooting On, ND Number ND8 and LV Simulation Off
+    caption: The Live ND page added to the shooting menu by the port, in the om-emu emulator.
+    credit: olympus-firmware-notes; om-emu by its contributors (MIT); generated backdrop, no photo
+  - path: assets/projects/em5-iii-notes/view-assist-red-night.webp
+    alt: The shooting screen in red only, menus and information included
+    caption: The red night view card mod. The emulator stores but does not apply display gamma, so the mod's own
+      curves, read back from the emulator, were applied to the frame afterwards.
+    credit: olympus-firmware-notes; om-emu by its contributors (MIT); generated backdrop, no photo
+  - path: assets/projects/em5-iii-notes/view-assist-rgb-clipping.webp
+    alt: The shooting screen dimmed to half brightness except the brightest part of the sun
+    caption: The RGB clipping view card mod. As with the red view, its curves were applied to the emulator's frame
+      afterwards.
     credit: olympus-firmware-notes; om-emu by its contributors (MIT); generated backdrop, no photo
   - path: assets/projects/em5-iii-notes/own-2d-overlay.webp
     alt: The E-M5 III shooting screen with an extra overlay of boxes, a curve and text drawn on the GUI layers

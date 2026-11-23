@@ -15,12 +15,12 @@ Read the bridge checks (capacity, frame counts) for every change made to a job r
 
 ## Observations
 
-- **Physical camera** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): A record over the bridge's capacity hung an E-M5 III until a battery pull. Source: [E-M5 III image engine](../sources/em5n.image-engine.md).
+- **Physical camera** ([Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)): A record over the bridge's capacity hung an E-M5 III until a battery pull. Source: [E-M5 III image engine (technical notes)](../sources/em5n.image-engine.md).
 
 **[Full detail upstream](https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/hardware/image-engine.md#submitting-a-job-safely-learned-on-the-camera)**
 
 ## Sources and record
 
-- [E-M5 III image engine](../sources/em5n.image-engine.md)
+- [E-M5 III image engine (technical notes)](../sources/em5n.image-engine.md)
 
 [Canonical record](../../records/reference/hazards-em5-iii.yaml) · Substantively reviewed: 2026-11-18.

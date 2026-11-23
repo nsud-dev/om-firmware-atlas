@@ -336,8 +336,8 @@
       "method": "ceil(utf8-bytes/4)"
     },
     "records/projects/em5-iii-notes.yaml": {
-      "approx_tokens": 2081,
-      "bytes": 8323,
+      "approx_tokens": 2887,
+      "bytes": 11545,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/projects/epm2mod.yaml": {
@@ -396,8 +396,8 @@
       "method": "ceil(utf8-bytes/4)"
     },
     "records/sources/em5-iii-notes.yaml": {
-      "approx_tokens": 4736,
-      "bytes": 18944,
+      "approx_tokens": 5345,
+      "bytes": 21377,
       "method": "ceil(utf8-bytes/4)"
     },
     "records/sources/emu.yaml": {

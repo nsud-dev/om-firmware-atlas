@@ -15,7 +15,7 @@ CPU reads of the 0xc4000000 frame block rebooted the camera.
 
 ## Observations
 
-- **Physical camera** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): An E-M5 III build that read the 0xc4000000 block with the CPU rebooted. Source: [Gotchas](../sources/em5n.gotchas.md).
+- **Physical camera** ([Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)): An E-M5 III build that read the 0xc4000000 block with the CPU rebooted. Source: [Gotchas](../sources/em5n.gotchas.md).
 
 **[Full detail upstream](https://github.com/nsud-dev/olympus-firmware-notes/blob/3fcbefbd4c44894ca134cdb06c6cd1cd1bbfaa22/docs/reference/gotchas.md#things-that-hung-reset-or-bricked-for-a-while-the-camera)**
 

@@ -16,13 +16,13 @@ Patch code should never write into the logical flash range. This is an inference
 ## Observations
 
 - **Static analysis** ([Caduceus for E-P7](../projects/caduceus-ep7.md)): Marked as an inference with brick risk in the E-P7 firmware guide. Source: [E-P7 firmware guide](../sources/ep7.guide.md).
-- **Static analysis** ([Olympus firmware notes (E-M5 Mark III)](../projects/em5-iii-notes.md)): On the E-M5 III 1.7 a stock write guard resets the camera on any flash write outside three data windows; program and boot areas are written only by updates. Source: [E-M5 III recovery](../sources/em5n.recovery.md).
+- **Static analysis** ([Oly Firmware Notes and Mods (E-M5 Mark III)](../projects/em5-iii-notes.md)): On the E-M5 III 1.7 a stock write guard resets the camera on any flash write outside three data windows; program and boot areas are written only by updates. Source: [E-M5 III recovery (technical notes)](../sources/em5n.recovery.md).
 
 **[Full detail upstream](https://github.com/cakelesscoder/caduceus-ep7/blob/0cb1dbcc50595cd87f56648810762ffbbb8e17f3/docs/FIRMWARE_GUIDE.md)**
 
 ## Sources and record
 
 - [E-P7 firmware guide](../sources/ep7.guide.md)
-- [E-M5 III recovery](../sources/em5n.recovery.md)
+- [E-M5 III recovery (technical notes)](../sources/em5n.recovery.md)
 
 [Canonical record](../../records/reference/hazards.yaml) · Substantively reviewed: 2026-11-18.
